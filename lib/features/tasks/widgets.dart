@@ -7,8 +7,6 @@ var img =
 
 Widget taskWidget(TaskItem task) {
   return Card(
-    color: Colors.white,
-    shadowColor: Colors.blue,
     elevation: 3,
     shape: RoundedRectangleBorder(),
     child: Padding(
@@ -64,7 +62,6 @@ Widget fullTaskWidget(TaskItem task) {
     ),
   );
 }
-
 
 Widget loadingItem() {
   return Center(

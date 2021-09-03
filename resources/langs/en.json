@@ -1,4 +1,9 @@
 {
   "app_name": "Tawseel",
-  "test_text": "Testing flutter Bloc with states"
+  "test_text": "Testing flutter Bloc with states",
+
+  "intro_title" : "Find the best delivery price",
+  "intro_subtitle" : "Find your perfect delivery for everything\nand book it everywhere",
+  "create_an_account" : "Create An Account",
+  "login" : "Login"
 }

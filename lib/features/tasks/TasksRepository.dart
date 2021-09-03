@@ -1,8 +1,6 @@
-import 'package:retrofit/dio.dart';
 import 'package:tawseel/base/NetworkHandler.dart';
 import 'package:tawseel/data/models/task_item.dart';
 import 'package:tawseel/data/remote/ApiService.dart';
-
 
 abstract class TasksRepository {
   Future<List<TaskItem>> getTaskList();

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tawseel/data/models/task_item.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import '../widgets.dart';
-import 'TasksBloc.dart';
+import 'package:tawseel/theme/ThemeManager.dart';
+import '../../widgets.dart';
+import '../TasksBloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class BlocTasksScreen extends StatelessWidget {
@@ -14,8 +15,12 @@ class BlocTasksScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.wifi_protected_setup),
         onPressed: () {
-          // load tasks
-          context.read<TasksBloc>().add(LoadTasksEvent());
+          // if (context.locale == Locale('ar'))
+          // context.setLocale(Locale('en'));
+          // else
+          //   context.setLocale(Locale('ar'));
+          // // context.read<TasksBloc>().add(LoadTasksEvent());
+          themeManager.toggleMode();
         },
       ),
       appBar: AppBar(
