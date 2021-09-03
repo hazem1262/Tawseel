@@ -3,7 +3,10 @@ import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tawseel/base/NoNetworkWidget.dart';
+import 'package:tawseel/features/landingScreen/LandingScreenTest.dart';
+import 'package:tawseel/features/tasks/bloc/TasksBloc.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/serviceLocators/ServicesLocator.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
@@ -78,7 +81,7 @@ class _MyAppState extends State<MyApp> {
 
       home: NetworkListener(
           onNetworkFailure: noInternetWidget(),
-          onNetworkAvailable: LandingScreen()),
+          onNetworkAvailable: TestLandingScreen()),
     );
   }
 }

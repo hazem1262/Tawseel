@@ -6,3 +6,9 @@ flutter pub run build_runner watch --delete-conflicting-outputs
 
 
 shift-alt-f => to reformate
+
+
+ptf
+pts
+
+

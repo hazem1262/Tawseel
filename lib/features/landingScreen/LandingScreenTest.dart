@@ -5,8 +5,8 @@ import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-class LandingScreen extends StatelessWidget {
-  const LandingScreen({Key? key}) : super(key: key);
+class TestLandingScreen extends StatelessWidget {
+  const TestLandingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
