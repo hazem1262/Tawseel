@@ -27,7 +27,7 @@ class LandingScreen extends StatelessWidget {
                 child: Icon(Icons.language),
                 onTap: () {
                   // context.toggleLanguage();
-                  themeManager.toggleMode();
+                  tm.toggleMode();
                 },
               ),
             ),
@@ -50,14 +50,13 @@ class LandingScreen extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: themeManager.titlecolorLight))
+                            color: tm.titlecolorLight))
                     .tr(),
                 SizedBox(height: 16),
                 Text(
                   LocaleKeys.intro_subtitle,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 14, color: themeManager.subtitleColorLight),
+                  style: TextStyle(fontSize: 14, color: tm.subtitleColorLight),
                 ).tr(),
                 SizedBox(height: 34),
                 Padding(

@@ -20,7 +20,7 @@ class BlocTasksScreen extends StatelessWidget {
           // else
           //   context.setLocale(Locale('ar'));
           // // context.read<TasksBloc>().add(LoadTasksEvent());
-          themeManager.toggleMode();
+          tm.toggleMode();
         },
       ),
       appBar: AppBar(

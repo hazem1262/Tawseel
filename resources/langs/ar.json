@@ -6,5 +6,23 @@
   "intro_subtitle" : "احصل علي سعر التوصيل المناسب واحجز الي أي مكان",
 
   "create_an_account" : "إنشاء حساب",
-  "login" : "تسجيل دخول"
+  "login" : "تسجيل دخول",
+  "login_title" : "تسجيل دخول",
+  "login_subtitle" : "اهلا بك مجدداّ في نادي توصيل",
+  "with_google":"جوجل",
+  "with_apple":"ابل",
+
+  "or_via_phone":"او بالجوال",
+  
+  "phone_number_hint":"رقم الجوال",
+  "phone_empty_error":"يرجي إدخال رقم الجوال",
+  "phone_validation_error":"يرجي إدخال رقم جوال سعودي صحيح",
+
+  "password_hint":"كلمة المرور",
+  "password_empty_error":"برجاء ادخال كلمة المرور",
+  "password_length_error":"كلمة المرور يجب ان تكون ٦ احرف او اكثر",
+
+  "forgot_password":"نسيت كلمة المرور؟",
+  "dont_have_account":"ليس لديك حساب بعد؟",
+  "sign_up_word":"تسجيل حساب"
 }

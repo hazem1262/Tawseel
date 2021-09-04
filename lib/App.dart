@@ -3,14 +3,11 @@ import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tawseel/base/NoNetworkWidget.dart';
-import 'package:tawseel/features/landingScreen/LandingScreenTest.dart';
-import 'package:tawseel/features/tasks/bloc/TasksBloc.dart';
+import 'package:tawseel/features/login/LoginScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/serviceLocators/ServicesLocator.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
-import 'features/landingScreen/LandingScreen.dart';
 import 'features/tasks/TasksRepository.dart';
 
 void main() async {
@@ -43,7 +40,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    themeManager.addListener(() {
+    tm.addListener(() {
       setState(() {});
     });
   }
@@ -56,9 +53,9 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       title: LocaleKeys.app_name.tr(),
-      theme: themeManager.lightTheme,
-      darkTheme: themeManager.darkTheme,
-      themeMode: themeManager.mode,
+      theme: tm.lightTheme,
+      darkTheme: tm.darkTheme,
+      themeMode: tm.mode,
       /*home: BlocProvider(
         create: (context) => TasksCubit(repo)..getTasksList(),
         child: CubitTasksScreen(),
@@ -81,7 +78,7 @@ class _MyAppState extends State<MyApp> {
 
       home: NetworkListener(
           onNetworkFailure: noInternetWidget(),
-          onNetworkAvailable: TestLandingScreen()),
+          onNetworkAvailable: LoginScreen()),
     );
   }
 }

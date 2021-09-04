@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:derived_colors/derived_colors.dart';
+import 'package:tawseel/utils/ktx.dart';
+import 'package:tawseel/theme/style.dart';
 
-ThemeManager themeManager = ThemeManager(mode: ThemeMode.system);
+ThemeManager tm = ThemeManager(mode: ThemeMode.system);
 
 class ThemeManager with ChangeNotifier {
   ThemeMode _mode;
 
   ThemeMode get mode => _mode;
+
+  bool isDark() => mode == ThemeMode.dark;
 
   ThemeManager({ThemeMode mode = ThemeMode.light}) : _mode = mode;
 
@@ -18,45 +21,38 @@ class ThemeManager with ChangeNotifier {
   final lightTheme = ThemeData(
     primarySwatch: primary.getMaterialColor(),
     primaryColor: primary,
+    errorColor: Colors.red,
+    scaffoldBackgroundColor: Color(0xFFF9FAFF),
     accentColor: Colors.amber[700],
     brightness: Brightness.light,
     backgroundColor: Colors.grey[100],
     visualDensity: VisualDensity.adaptivePlatformDensity,
+    fontFamily: 'Poppins',
+    textTheme: TextTheme(
+      headline6: titlesTextStyle(false),
+      caption: captionTextStyle(false),
+      bodyText1: body1TextStyle(false),
+    ),
   );
 
   final darkTheme = ThemeData(
-    primarySwatch: Colors.red,
-    primaryColor: Colors.red,
+    primarySwatch: primary.getMaterialColor(),
+    primaryColor: primary,
+    errorColor: Colors.red,
     accentColor: Colors.amber,
     brightness: Brightness.dark,
-    backgroundColor: Colors.grey[900],
+    backgroundColor: Colors.grey[400],
+    fontFamily: 'Poppins',
+    textTheme: TextTheme(
+      headline6: titlesTextStyle(true),
+      caption: captionTextStyle(true),
+      bodyText1: body1TextStyle(true),
+    ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 
   void toggleMode() {
     _mode = _mode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
     notifyListeners();
-  }
-}
-
-///    rather than hard-coding colors in your build methods.
-///
-extension MaterialColorsHelpers on Color {
-  MaterialColor getMaterialColor() {
-    return MaterialColor(
-      this.value,
-      <int, Color>{
-        50: this,
-        100: this,
-        200: this,
-        300: this,
-        400: this,
-        500: this,
-        600: this,
-        700: this,
-        800: this,
-        900: this,
-      },
-    );
   }
 }

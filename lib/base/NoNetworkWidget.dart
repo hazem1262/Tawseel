@@ -63,7 +63,7 @@ class _NetworkListenerState extends State<NetworkListener> {
   @override
   Widget build(BuildContext context) {
     var screen = MediaQuery.of(context).size;
-    var h = screen.height;
+
     return SafeArea(
       child: Stack(
         children: [
@@ -107,8 +107,7 @@ Widget noInternetWidget() {
             ),
             Text(
               "No Internet connection!",
-              style:
-                  TextStyle(color: Colors.grey, fontWeight: FontWeight.w900),
+              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w900),
             ),
             SizedBox(
               height: 24,

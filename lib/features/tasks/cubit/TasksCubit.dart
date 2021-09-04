@@ -17,11 +17,3 @@ class NetworkListenerCubit extends Cubit<NetworkStatus> {
   NetworkListenerCubit() : super(NetworkStatus.IDLE);
   var currentNetworkStatus = NetworkStatus.IDLE;
 }
-
-fuss() {
-  var ss = NetworkListenerCubit();
-
-  ss.stream.listen((event) {
-
-  }, onDone: () {}, onError: () {});
-}
