@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> {
       home: BlocProvider<TasksBloc>(
         create: (context) => TasksBloc(ServicesLocator.productionRepository)
           ..add(LoadTasksEvent()),
-        child: RepositoryProvider(create: ,),
+        child: BlocTasksScreen(),
       ),
       // home: NetworkListener(
       //   key: widget.key,
