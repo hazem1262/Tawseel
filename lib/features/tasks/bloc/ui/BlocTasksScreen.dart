@@ -8,6 +8,8 @@ import '../../widgets.dart';
 import '../TasksBloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 
+import '../TasksModels.dart';
+
 class BlocTasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

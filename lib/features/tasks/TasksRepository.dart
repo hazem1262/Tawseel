@@ -25,6 +25,7 @@ class TasksRepositoryImpl with NetworkHandler implements TasksRepository {
 
   Future<List<TaskItem>> getTaskList() =>
       networkHandler(() => _apiService.getTasks());
+  // networkHandler(() => throw ("Custom message thrown!"););
 
   Future<TaskItem> getTask(String id) =>
       networkHandler(() => _apiService.getTask(id));

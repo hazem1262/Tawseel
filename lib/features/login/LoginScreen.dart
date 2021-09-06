@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -223,6 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void doLoginByPhone(BuildContext context) {
     // is form is not valid return
     if (!isFormValid()) return;
+    TextInput.finishAutofillContext();
 
     if (isFormValid()) {
       debugPrint("form is valid");

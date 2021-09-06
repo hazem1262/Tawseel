@@ -3,12 +3,16 @@ import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tawseel/base/NoNetworkWidget.dart';
 import 'package:tawseel/features/login/LoginScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/serviceLocators/ServicesLocator.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'features/tasks/TasksRepository.dart';
+import 'features/tasks/bloc/TasksBloc.dart';
+import 'features/tasks/bloc/TasksModels.dart';
+import 'features/tasks/bloc/ui/BlocTasksScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,10 +64,11 @@ class _MyAppState extends State<MyApp> {
         create: (context) => TasksCubit(repo)..getTasksList(),
         child: CubitTasksScreen(),
       ),*/
-      /*home: BlocProvider<TasksBloc>(
-        create: (context) => TasksBloc(repo)..add(LoadTasksEvent()),
-        child: BlocTasksScreen(),
-      ),*/
+      home: BlocProvider<TasksBloc>(
+        create: (context) => TasksBloc(ServicesLocator.productionRepository)
+          ..add(LoadTasksEvent()),
+        child: RepositoryProvider(create: ,),
+      ),
       // home: NetworkListener(
       //   key: widget.key,
       //   onNetworkAvailable: Container(
@@ -76,9 +81,9 @@ class _MyAppState extends State<MyApp> {
       //   onNetworkFailure: noInternetWidget(),
       // ),
 
-      home: NetworkListener(
-          onNetworkFailure: noInternetWidget(),
-          onNetworkAvailable: LoginScreen()),
+      // home: NetworkListener(
+      // onNetworkFailure: noInternetWidget(),
+      // onNetworkAvailable: LoginScreen()),
     );
   }
 }
