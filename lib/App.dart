@@ -3,16 +3,16 @@ import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tawseel/base/NoNetworkWidget.dart';
-import 'package:tawseel/features/login/LoginScreen.dart';
+import 'package:provider/provider.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/serviceLocators/ServicesLocator.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'features/tasks/TasksRepository.dart';
-import 'features/tasks/bloc/TasksBloc.dart';
-import 'features/tasks/bloc/TasksModels.dart';
-import 'features/tasks/bloc/ui/BlocTasksScreen.dart';
+import 'navigation/AppNavigationParser.dart';
+import 'navigation/AppRouterDelegate.dart';
+import 'navigation/AppState.dart';
+import 'navigation/BackButtonDispatcher.dart';
+import 'navigation/ScreenConfiguration.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,7 +40,18 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
+final appState = AppState();
+
 class _MyAppState extends State<MyApp> {
+  late AppRouterDelegate delegate;
+  final parser = AppNavigationParser();
+  late AppBackButtonDispatcher backButtonDispatcher;
+
+  _MyAppState() {
+    delegate = AppRouterDelegate(appState);
+    delegate.setNewRoutePath(SplashScreenConfig);
+    backButtonDispatcher = AppBackButtonDispatcher(delegate);
+  }
   @override
   void initState() {
     super.initState();
@@ -51,39 +62,42 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      title: LocaleKeys.app_name.tr(),
-      theme: tm.lightTheme,
-      darkTheme: tm.darkTheme,
-      themeMode: tm.mode,
-      /*home: BlocProvider(
-        create: (context) => TasksCubit(repo)..getTasksList(),
-        child: CubitTasksScreen(),
-      ),*/
-      home: BlocProvider<TasksBloc>(
-        create: (context) => TasksBloc(ServicesLocator.productionRepository)
-          ..add(LoadTasksEvent()),
-        child: BlocTasksScreen(),
+    return ChangeNotifierProvider<AppState>(
+      create: (_) => appState,
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        title: LocaleKeys.app_name.tr(),
+        theme: tm.lightTheme,
+        darkTheme: tm.darkTheme,
+        themeMode: tm.mode,
+        backButtonDispatcher: backButtonDispatcher,
+        routeInformationParser: parser,
+        routerDelegate: delegate,
       ),
-      // home: NetworkListener(
-      //   key: widget.key,
-      //   onNetworkAvailable: Container(
-      //     child: BlocProvider<TasksBloc>(
-      //       create: (context) =>
-      //           TasksBloc(widget.repository)..add(LoadTasksEvent()),
-      //       child: BlocTasksScreen(),
-      //     ),
-      //   ),
-      //   onNetworkFailure: noInternetWidget(),
-      // ),
+      // child: MaterialApp(
+      //   debugShowCheckedModeBanner: false,
+      //   localizationsDelegates: context.localizationDelegates,
+      //   supportedLocales: context.supportedLocales,
+      //   locale: context.locale,
+      //   title: LocaleKeys.app_name.tr(),
+      //   theme: tm.lightTheme,
+      //   darkTheme: tm.darkTheme,
+      //   themeMode: tm.mode,
+      //   home: Navigator(
+      //     pages: [
+      //       MaterialPage(child: LandingScreen()),
+      //       MaterialPage(child: LoginScreen()),
+      //     ],
+      //     onPopPage: (route, result) {
+      //       if (!route.didPop(result)) return false;
 
-      // home: NetworkListener(
-      // onNetworkFailure: noInternetWidget(),
-      // onNetworkAvailable: LoginScreen()),
+      //       return true;
+      //     },
+      //   ),
+      // ),
     );
   }
 }

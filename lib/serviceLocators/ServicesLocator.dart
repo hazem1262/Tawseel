@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
 import 'package:tawseel/data/remote/ApiService.dart';
+import 'package:tawseel/features/login/LoginRepository.dart';
 import 'package:tawseel/features/tasks/TasksRepository.dart';
 
 class ServicesLocator {
@@ -10,4 +11,6 @@ class ServicesLocator {
       TasksRepositoryImpl(ApiService(Dio()));
 
   static final TasksRepository fakeRepository = FakeTasksRepository();
+
+  static final LoginRepository loginRepository = LoginRepository();
 }
