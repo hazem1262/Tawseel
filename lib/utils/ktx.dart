@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:provider/provider.dart';
-import 'package:tawseel/navigation/AppState.dart';
-import 'package:tawseel/navigation/ScreenConfiguration.dart';
-import 'package:tawseel/navigation/screen_state.dart';
 
 extension ToggleLanguage on BuildContext {
   toggleLanguage() {
@@ -37,31 +33,41 @@ extension MaterialColorsHelpers on Color {
 }
 
 //?----------------------------------------------------------------------------?//
-//?                                Navigation Ktx                              ?//
-//?------------------------------------------Ò----------------------------------?//
+//?                                Navigation ktx                              ?//
+//?----------------------------------------------------------------------------?//
 
-extension NavigationKtx on BuildContext {
-  navigateTo({
-    ScreenState? state,
-    required ScreenConfiguration screenConfig,
-  }) async {
-    var appState = Provider.of<AppState>(this, listen: false);
-    appState.currentAction = ScreenAction(
-        state: (state == null) ? ScreenState.addPage() : state,
-        screen: screenConfig);
+extension IntDtx on int {
+  isSuccessfull() => this.clamp(200, 300) == this;
+}
+
+extension DefaultNavigatorExetnsions on BuildContext {
+  void open({required Widget screen}) {
+    Navigator.push(
+      this,
+      MaterialPageRoute(builder: (context) => screen),
+    );
   }
 
-  // this used to get to a screen that takes paramters into it's constructor
-  navigateToWithParams({
-    ScreenState? state,
-    required Widget screen,
-    required ScreenConfiguration screenConfig,
-  }) async {
-    var appState = Provider.of<AppState>(this, listen: false);
-    appState.currentAction = ScreenAction(
-      state: (state == null) ? ScreenState.addWidget() : state,
-      widget: screen,
-      screen: screenConfig,
+  void back() {
+    Navigator.pop(this);
+  }
+}
+
+extension MessagesDtx on BuildContext {
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showError(
+      String error) {
+    return ScaffoldMessenger.of(this).showSnackBar(
+      SnackBar(
+        backgroundColor: Colors.red,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        content: Text(
+          error,
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
     );
   }
 }

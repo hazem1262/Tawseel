@@ -21,10 +21,9 @@ class _$LoginResponseTearOff {
   const _$LoginResponseTearOff();
 
   _LoginResponse call(
-      UserItem user, int? otp, String? access_token, String? token_type) {
+      LoginDataItem data, String? access_token, String? token_type) {
     return _LoginResponse(
-      user,
-      otp,
+      data,
       access_token,
       token_type,
     );
@@ -40,8 +39,7 @@ const $LoginResponse = _$LoginResponseTearOff();
 
 /// @nodoc
 mixin _$LoginResponse {
-  UserItem get user => throw _privateConstructorUsedError;
-  int? get otp => throw _privateConstructorUsedError;
+  LoginDataItem get data => throw _privateConstructorUsedError;
   String? get access_token => throw _privateConstructorUsedError;
   String? get token_type => throw _privateConstructorUsedError;
 
@@ -56,10 +54,9 @@ abstract class $LoginResponseCopyWith<$Res> {
   factory $LoginResponseCopyWith(
           LoginResponse value, $Res Function(LoginResponse) then) =
       _$LoginResponseCopyWithImpl<$Res>;
-  $Res call(
-      {UserItem user, int? otp, String? access_token, String? token_type});
+  $Res call({LoginDataItem data, String? access_token, String? token_type});
 
-  $UserItemCopyWith<$Res> get user;
+  $LoginDataItemCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -73,20 +70,15 @@ class _$LoginResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? user = freezed,
-    Object? otp = freezed,
+    Object? data = freezed,
     Object? access_token = freezed,
     Object? token_type = freezed,
   }) {
     return _then(_value.copyWith(
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserItem,
-      otp: otp == freezed
-          ? _value.otp
-          : otp // ignore: cast_nullable_to_non_nullable
-              as int?,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as LoginDataItem,
       access_token: access_token == freezed
           ? _value.access_token
           : access_token // ignore: cast_nullable_to_non_nullable
@@ -99,9 +91,9 @@ class _$LoginResponseCopyWithImpl<$Res>
   }
 
   @override
-  $UserItemCopyWith<$Res> get user {
-    return $UserItemCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
+  $LoginDataItemCopyWith<$Res> get data {
+    return $LoginDataItemCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
     });
   }
 }
@@ -113,11 +105,10 @@ abstract class _$LoginResponseCopyWith<$Res>
           _LoginResponse value, $Res Function(_LoginResponse) then) =
       __$LoginResponseCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {UserItem user, int? otp, String? access_token, String? token_type});
+  $Res call({LoginDataItem data, String? access_token, String? token_type});
 
   @override
-  $UserItemCopyWith<$Res> get user;
+  $LoginDataItemCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -133,20 +124,15 @@ class __$LoginResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? user = freezed,
-    Object? otp = freezed,
+    Object? data = freezed,
     Object? access_token = freezed,
     Object? token_type = freezed,
   }) {
     return _then(_LoginResponse(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserItem,
-      otp == freezed
-          ? _value.otp
-          : otp // ignore: cast_nullable_to_non_nullable
-              as int?,
+      data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as LoginDataItem,
       access_token == freezed
           ? _value.access_token
           : access_token // ignore: cast_nullable_to_non_nullable
@@ -162,16 +148,13 @@ class __$LoginResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_LoginResponse implements _LoginResponse {
-  const _$_LoginResponse(
-      this.user, this.otp, this.access_token, this.token_type);
+  const _$_LoginResponse(this.data, this.access_token, this.token_type);
 
   factory _$_LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_LoginResponseFromJson(json);
 
   @override
-  final UserItem user;
-  @override
-  final int? otp;
+  final LoginDataItem data;
   @override
   final String? access_token;
   @override
@@ -179,17 +162,15 @@ class _$_LoginResponse implements _LoginResponse {
 
   @override
   String toString() {
-    return 'LoginResponse(user: $user, otp: $otp, access_token: $access_token, token_type: $token_type)';
+    return 'LoginResponse(data: $data, access_token: $access_token, token_type: $token_type)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoginResponse &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
-            (identical(other.otp, otp) ||
-                const DeepCollectionEquality().equals(other.otp, otp)) &&
+            (identical(other.data, data) ||
+                const DeepCollectionEquality().equals(other.data, data)) &&
             (identical(other.access_token, access_token) ||
                 const DeepCollectionEquality()
                     .equals(other.access_token, access_token)) &&
@@ -201,8 +182,7 @@ class _$_LoginResponse implements _LoginResponse {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(user) ^
-      const DeepCollectionEquality().hash(otp) ^
+      const DeepCollectionEquality().hash(data) ^
       const DeepCollectionEquality().hash(access_token) ^
       const DeepCollectionEquality().hash(token_type);
 
@@ -219,16 +199,14 @@ class _$_LoginResponse implements _LoginResponse {
 
 abstract class _LoginResponse implements LoginResponse {
   const factory _LoginResponse(
-          UserItem user, int? otp, String? access_token, String? token_type) =
+          LoginDataItem data, String? access_token, String? token_type) =
       _$_LoginResponse;
 
   factory _LoginResponse.fromJson(Map<String, dynamic> json) =
       _$_LoginResponse.fromJson;
 
   @override
-  UserItem get user => throw _privateConstructorUsedError;
-  @override
-  int? get otp => throw _privateConstructorUsedError;
+  LoginDataItem get data => throw _privateConstructorUsedError;
   @override
   String? get access_token => throw _privateConstructorUsedError;
   @override
@@ -236,6 +214,167 @@ abstract class _LoginResponse implements LoginResponse {
   @override
   @JsonKey(ignore: true)
   _$LoginResponseCopyWith<_LoginResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LoginDataItem _$LoginDataItemFromJson(Map<String, dynamic> json) {
+  return _LoginDataItem.fromJson(json);
+}
+
+/// @nodoc
+class _$LoginDataItemTearOff {
+  const _$LoginDataItemTearOff();
+
+  _LoginDataItem call(UserItem user) {
+    return _LoginDataItem(
+      user,
+    );
+  }
+
+  LoginDataItem fromJson(Map<String, Object> json) {
+    return LoginDataItem.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $LoginDataItem = _$LoginDataItemTearOff();
+
+/// @nodoc
+mixin _$LoginDataItem {
+  UserItem get user => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoginDataItemCopyWith<LoginDataItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoginDataItemCopyWith<$Res> {
+  factory $LoginDataItemCopyWith(
+          LoginDataItem value, $Res Function(LoginDataItem) then) =
+      _$LoginDataItemCopyWithImpl<$Res>;
+  $Res call({UserItem user});
+
+  $UserItemCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$LoginDataItemCopyWithImpl<$Res>
+    implements $LoginDataItemCopyWith<$Res> {
+  _$LoginDataItemCopyWithImpl(this._value, this._then);
+
+  final LoginDataItem _value;
+  // ignore: unused_field
+  final $Res Function(LoginDataItem) _then;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_value.copyWith(
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserItem,
+    ));
+  }
+
+  @override
+  $UserItemCopyWith<$Res> get user {
+    return $UserItemCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$LoginDataItemCopyWith<$Res>
+    implements $LoginDataItemCopyWith<$Res> {
+  factory _$LoginDataItemCopyWith(
+          _LoginDataItem value, $Res Function(_LoginDataItem) then) =
+      __$LoginDataItemCopyWithImpl<$Res>;
+  @override
+  $Res call({UserItem user});
+
+  @override
+  $UserItemCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$LoginDataItemCopyWithImpl<$Res>
+    extends _$LoginDataItemCopyWithImpl<$Res>
+    implements _$LoginDataItemCopyWith<$Res> {
+  __$LoginDataItemCopyWithImpl(
+      _LoginDataItem _value, $Res Function(_LoginDataItem) _then)
+      : super(_value, (v) => _then(v as _LoginDataItem));
+
+  @override
+  _LoginDataItem get _value => super._value as _LoginDataItem;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_LoginDataItem(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserItem,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_LoginDataItem implements _LoginDataItem {
+  const _$_LoginDataItem(this.user);
+
+  factory _$_LoginDataItem.fromJson(Map<String, dynamic> json) =>
+      _$_$_LoginDataItemFromJson(json);
+
+  @override
+  final UserItem user;
+
+  @override
+  String toString() {
+    return 'LoginDataItem(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LoginDataItem &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  _$LoginDataItemCopyWith<_LoginDataItem> get copyWith =>
+      __$LoginDataItemCopyWithImpl<_LoginDataItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_LoginDataItemToJson(this);
+  }
+}
+
+abstract class _LoginDataItem implements LoginDataItem {
+  const factory _LoginDataItem(UserItem user) = _$_LoginDataItem;
+
+  factory _LoginDataItem.fromJson(Map<String, dynamic> json) =
+      _$_LoginDataItem.fromJson;
+
+  @override
+  UserItem get user => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$LoginDataItemCopyWith<_LoginDataItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -247,14 +386,14 @@ UserItem _$UserItemFromJson(Map<String, dynamic> json) {
 class _$UserItemTearOff {
   const _$UserItemTearOff();
 
-  _UserItem call(int id, String name, String phone, String image,
-      String? otp_verified_at, bool is_verified) {
+  _UserItem call(int id, String name, String phone, String? image,
+      String? phone_verified_at, bool is_verified) {
     return _UserItem(
       id,
       name,
       phone,
       image,
-      otp_verified_at,
+      phone_verified_at,
       is_verified,
     );
   }
@@ -272,8 +411,8 @@ mixin _$UserItem {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  String? get otp_verified_at => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
+  String? get phone_verified_at => throw _privateConstructorUsedError;
   bool get is_verified => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -290,8 +429,8 @@ abstract class $UserItemCopyWith<$Res> {
       {int id,
       String name,
       String phone,
-      String image,
-      String? otp_verified_at,
+      String? image,
+      String? phone_verified_at,
       bool is_verified});
 }
 
@@ -309,7 +448,7 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
     Object? name = freezed,
     Object? phone = freezed,
     Object? image = freezed,
-    Object? otp_verified_at = freezed,
+    Object? phone_verified_at = freezed,
     Object? is_verified = freezed,
   }) {
     return _then(_value.copyWith(
@@ -328,10 +467,10 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      otp_verified_at: otp_verified_at == freezed
-          ? _value.otp_verified_at
-          : otp_verified_at // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone_verified_at: phone_verified_at == freezed
+          ? _value.phone_verified_at
+          : phone_verified_at // ignore: cast_nullable_to_non_nullable
               as String?,
       is_verified: is_verified == freezed
           ? _value.is_verified
@@ -350,8 +489,8 @@ abstract class _$UserItemCopyWith<$Res> implements $UserItemCopyWith<$Res> {
       {int id,
       String name,
       String phone,
-      String image,
-      String? otp_verified_at,
+      String? image,
+      String? phone_verified_at,
       bool is_verified});
 }
 
@@ -370,7 +509,7 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
     Object? name = freezed,
     Object? phone = freezed,
     Object? image = freezed,
-    Object? otp_verified_at = freezed,
+    Object? phone_verified_at = freezed,
     Object? is_verified = freezed,
   }) {
     return _then(_UserItem(
@@ -389,10 +528,10 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
       image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      otp_verified_at == freezed
-          ? _value.otp_verified_at
-          : otp_verified_at // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone_verified_at == freezed
+          ? _value.phone_verified_at
+          : phone_verified_at // ignore: cast_nullable_to_non_nullable
               as String?,
       is_verified == freezed
           ? _value.is_verified
@@ -406,7 +545,7 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserItem implements _UserItem {
   const _$_UserItem(this.id, this.name, this.phone, this.image,
-      this.otp_verified_at, this.is_verified);
+      this.phone_verified_at, this.is_verified);
 
   factory _$_UserItem.fromJson(Map<String, dynamic> json) =>
       _$_$_UserItemFromJson(json);
@@ -418,15 +557,15 @@ class _$_UserItem implements _UserItem {
   @override
   final String phone;
   @override
-  final String image;
+  final String? image;
   @override
-  final String? otp_verified_at;
+  final String? phone_verified_at;
   @override
   final bool is_verified;
 
   @override
   String toString() {
-    return 'UserItem(id: $id, name: $name, phone: $phone, image: $image, otp_verified_at: $otp_verified_at, is_verified: $is_verified)';
+    return 'UserItem(id: $id, name: $name, phone: $phone, image: $image, phone_verified_at: $phone_verified_at, is_verified: $is_verified)';
   }
 
   @override
@@ -441,9 +580,9 @@ class _$_UserItem implements _UserItem {
                 const DeepCollectionEquality().equals(other.phone, phone)) &&
             (identical(other.image, image) ||
                 const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.otp_verified_at, otp_verified_at) ||
+            (identical(other.phone_verified_at, phone_verified_at) ||
                 const DeepCollectionEquality()
-                    .equals(other.otp_verified_at, otp_verified_at)) &&
+                    .equals(other.phone_verified_at, phone_verified_at)) &&
             (identical(other.is_verified, is_verified) ||
                 const DeepCollectionEquality()
                     .equals(other.is_verified, is_verified)));
@@ -456,7 +595,7 @@ class _$_UserItem implements _UserItem {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(phone) ^
       const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(otp_verified_at) ^
+      const DeepCollectionEquality().hash(phone_verified_at) ^
       const DeepCollectionEquality().hash(is_verified);
 
   @JsonKey(ignore: true)
@@ -471,8 +610,8 @@ class _$_UserItem implements _UserItem {
 }
 
 abstract class _UserItem implements UserItem {
-  const factory _UserItem(int id, String name, String phone, String image,
-      String? otp_verified_at, bool is_verified) = _$_UserItem;
+  const factory _UserItem(int id, String name, String phone, String? image,
+      String? phone_verified_at, bool is_verified) = _$_UserItem;
 
   factory _UserItem.fromJson(Map<String, dynamic> json) = _$_UserItem.fromJson;
 
@@ -483,9 +622,9 @@ abstract class _UserItem implements UserItem {
   @override
   String get phone => throw _privateConstructorUsedError;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   @override
-  String? get otp_verified_at => throw _privateConstructorUsedError;
+  String? get phone_verified_at => throw _privateConstructorUsedError;
   @override
   bool get is_verified => throw _privateConstructorUsedError;
   @override

@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
-import 'package:tawseel/navigation/AppState.dart';
+import 'package:tawseel/features/landingScreen/LandingScreen.dart';
 import 'package:tawseel/res.dart';
+import 'package:tawseel/utils/AppState.dart';
+import 'package:tawseel/utils/ktx.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
@@ -38,17 +39,17 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    appState = Provider.of<AppState>(context);
-    final query = MediaQuery.of(context);
-    final size = query.size;
-    final itemWidth = size.width;
-    final itemHeight = itemWidth * (size.width / size.height);
+    // appState = Provider.of<AppState>(context);
+    // final query = MediaQuery.of(context);
+    // final size = query.size;
+    // final width = size.width;
+    // final height = size.width * (size.width / size.height);
 
     return Scaffold(
       body: SafeArea(
         child: Center(
           child: AnimatedContainer(
-            duration: Duration(seconds: 2),
+            duration: Duration(milliseconds: 1100),
             curve: Curves.fastOutSlowIn,
             height: height,
             width: width,
@@ -68,8 +69,8 @@ class _SplashScreenState extends State<SplashScreen> {
     super.didChangeDependencies();
     if (!_initialized) {
       _initialized = true;
-      Timer(const Duration(milliseconds: 2000), () {
-        appState.setSplashFinished();
+      Timer(const Duration(milliseconds: 1000), () {
+        context.open(screen: LandingScreen());
       });
     }
   }

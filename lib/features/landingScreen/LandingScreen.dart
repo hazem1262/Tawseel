@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tawseel/features/login/LoginScreen.dart';
 import 'package:tawseel/features/signup/SignUpScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/navigation/ScreenConfiguration.dart';
-import 'package:tawseel/navigation/screen_state.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -18,6 +17,9 @@ class LandingScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     var padding = MediaQuery.of(context).padding;
     double newheight = height - padding.top - padding.bottom;
+
+    debugPrint(
+        " from splash : ${context.locale.toString()} ${context.deviceLocale.toString()}");
 
     return Scaffold(
       body: Container(
@@ -77,7 +79,7 @@ class LandingScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(15)),
                             padding: const EdgeInsets.all(16.0)),
                         onPressed: () {
-                          context.navigateTo(screenConfig: SignUpScreenConfig);
+                          context.open(screen: SignUpScreen());
                         },
                         child: Text(LocaleKeys.create_an_account,
                                 style: TextStyle(
@@ -101,7 +103,7 @@ class LandingScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(15)),
                               padding: const EdgeInsets.all(16.0)),
                           onPressed: () {
-                            context.navigateTo(screenConfig: LoginScreenConfig);
+                            context.open(screen: LoginScreen());
                           },
                           child: Text(
                             LocaleKeys.login,
@@ -119,14 +121,5 @@ class LandingScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-extension ToggleLanguage on BuildContext {
-  toggleLanguage() {
-    if (this.locale == Locale('ar'))
-      this.setLocale(Locale('en'));
-    else
-      this.setLocale(Locale('ar'));
   }
 }

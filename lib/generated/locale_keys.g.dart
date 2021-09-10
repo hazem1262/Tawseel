@@ -21,5 +21,6 @@ abstract class  LocaleKeys {
   static const forgot_password = 'forgot_password';
   static const dont_have_account = 'dont_have_account';
   static const sign_up_word = 'sign_up_word';
+  static const network_error = 'network_error';
 
 }
