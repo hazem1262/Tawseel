@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,20 +8,19 @@ import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
-import 'package:tawseel/features/login/LoginScreen.dart';
-import 'package:tawseel/features/otp/OtpScreen.dart';
-import 'package:tawseel/features/otp/models/otp_models.dart';
-import 'package:tawseel/features/splash/SplashScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/utils/AppState.dart';
 
 import 'data/remote/NetworkModule.dart';
 import 'features/otp/bloc/OtpRepository.dart';
+import 'navigation/router.gr.dart';
 
 final getIt = GetIt.instance;
 final appState = AppState();
+
 const GlobalKey<NavigatorState> appKey = GlobalObjectKey("tawseel-key");
+BuildContext appContext = appKey.currentContext as BuildContext;
 Locale get currentLocal => (appKey.currentContext as BuildContext).locale;
 String get currentLocalName =>
     (appKey.currentContext as BuildContext).locale.toString();
@@ -43,7 +43,10 @@ void main() async {
       startLocale: Locale('en'),
       fallbackLocale: Locale('en'),
       saveLocale: true,
-      child: MyApp(),
+      child: ChangeNotifierProvider(
+        create: (context) => AppState(),
+        child: MyApp(),
+      ),
     ),
   );
 }
@@ -54,6 +57,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  // make sure you don't initiate your router
+  // inside of the build function.
+  final _appRouter = AppRouter(appKey);
+
   @override
   void initState() {
     super.initState();
@@ -64,8 +71,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: appKey,
+    return MaterialApp.router(
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
@@ -74,10 +82,10 @@ class _MyAppState extends State<MyApp> {
       theme: tm.lightTheme,
       darkTheme: tm.darkTheme,
       themeMode: tm.mode,
-      home: ChangeNotifierProvider(
-        create: (context) => AppState(),
-        child: SplashScreen(),
-      ),
+      // home: ChangeNotifierProvider(
+      //   create: (context) => AppState(),
+      //   child: SplashScreen(),
+      // ),
     );
   }
 }

@@ -11,15 +11,17 @@ import 'package:tawseel/features/otp/bloc/OtpBloc.dart';
 import 'package:tawseel/features/otp/bloc/OtpRepository.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
+import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/ktx.dart';
 import '../../App.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:auto_route/auto_route.dart';
 
 class OtpScreen extends StatelessWidget {
   final String phone;
   final OTP_TYPE otpType;
 
-  OtpScreen({Key? key, this.otpType = OTP_TYPE.AUTH, this.phone = ""})
+  OtpScreen({Key? key, required this.otpType, required this.phone})
       : super(key: key);
 
   late ThemeData theme;
@@ -56,7 +58,8 @@ class OtpScreen extends StatelessWidget {
                             OtpEvents.onOtpChange(textEditingController.text));
                       },
                       onOtpVerified: (loginResponse) {
-                        context.open(screen: HomeScreen());
+                        appContext.router.popAndPush(HomeScreenRoute());
+                        // appContext.pushRoute(HomeScreenRoute());
                       },
                       orElse: () => {},
                     );

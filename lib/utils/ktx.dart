@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:auto_route/auto_route.dart';
 
 extension ToggleLanguage on BuildContext {
   toggleLanguage() {
@@ -40,23 +41,29 @@ extension IntDtx on int {
   isSuccessfull() => this.clamp(200, 300) == this;
 }
 
-extension DefaultNavigatorExetnsions on BuildContext {
-  void open({required Widget screen}) {
-    Navigator.push(
-      this,
-      MaterialPageRoute(builder: (context) => screen),
-    );
-  }
+// extension DefaultNavigatorExetnsions on BuildContext {
+//   void open({required Widget screen}) {
+//     Navigator.push(
+//       this,
+//       MaterialPageRoute(builder: (context) => screen),
+//     );
+//   }
 
-  void popTo({required Widget screen}) {
-    Navigator.push(
-      this,
-      MaterialPageRoute(builder: (context) => screen),
-    );
-  }
+//   void popTo({required Widget screen}) {
+//     Navigator.push(
+//       this,
+//       MaterialPageRoute(builder: (context) => screen),
+//     );
+//   }
 
-  void back() {
-    Navigator.maybePop(this);
+//   void back() {
+//     Navigator.maybePop(this);
+//   }
+// }
+
+extension AutoRouterNavigationDtx on BuildContext {
+  Future<T?> openOnly<T extends Object?>(PageRouteInfo screenRoute) {
+    return this.router.pushAndPopUntil(screenRoute, predicate: (r) => false);
   }
 }
 

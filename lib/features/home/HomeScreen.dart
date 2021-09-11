@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/App.dart';
+import 'package:tawseel/features/landingScreen/LandingScreen.dart';
 import 'package:tawseel/features/login/models/logine_response.dart';
 import 'package:tawseel/features/splash/SplashScreen.dart';
+import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/ktx.dart';
+import 'package:auto_route/auto_route.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -39,9 +42,21 @@ class _HomeScreenState extends State<HomeScreen> {
               ElevatedButton(
                 onPressed: () {
                   appState.seLoggedInState(false);
-                  context.open(screen: SplashScreen());
+                  context.openOnly(LandingScreenRoute());
                 },
                 child: Text("Log out"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  context.openOnly(SplashScreenRoute());
+                },
+                child: Text("Splash"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  context.pushRoute(LandingScreenRoute());
+                },
+                child: Text("Landing"),
               ),
               Text("Home screen"),
               Text("Home screen ${user?.data.user.name}"),

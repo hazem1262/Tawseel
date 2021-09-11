@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tawseel/App.dart';
 import 'package:tawseel/features/login/LoginScreen.dart';
 import 'package:tawseel/features/signup/SignUpScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
+import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/utils/ktx.dart';
+import 'package:auto_route/auto_route.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -17,9 +20,6 @@ class LandingScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     var padding = MediaQuery.of(context).padding;
     double newheight = height - padding.top - padding.bottom;
-
-    debugPrint(
-        " from splash : ${context.locale.toString()} ${context.deviceLocale.toString()}");
 
     return Scaffold(
       body: Container(
@@ -33,7 +33,6 @@ class LandingScreen extends StatelessWidget {
                 child: GestureDetector(
                   child: Icon(Icons.language),
                   onTap: () {
-                    // context.toggleLanguage();
                     tm.toggleMode();
                   },
                 ),
@@ -79,7 +78,7 @@ class LandingScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(15)),
                             padding: const EdgeInsets.all(16.0)),
                         onPressed: () {
-                          context.open(screen: SignUpScreen());
+                          appContext.pushRoute(SignUpScreenRoute());
                         },
                         child: Text(LocaleKeys.create_an_account,
                                 style: TextStyle(
@@ -103,7 +102,7 @@ class LandingScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(15)),
                               padding: const EdgeInsets.all(16.0)),
                           onPressed: () {
-                            context.open(screen: LoginScreen());
+                            appContext.pushRoute(LoginScreenRoute());
                           },
                           child: Text(
                             LocaleKeys.login,

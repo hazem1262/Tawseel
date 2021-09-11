@@ -5,16 +5,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tawseel/features/home/HomeScreen.dart';
 import 'package:tawseel/features/login/LoginBloc.dart';
-import 'package:tawseel/features/otp/OtpScreen.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
-import 'package:tawseel/features/signup/SignUpScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
+import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/utils/ktx.dart';
-
+import 'package:auto_route/auto_route.dart';
 import '../../App.dart';
 import '../../res.dart';
 import 'LoginRepository.dart';
@@ -68,15 +66,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     hassError: (error) => {context.showError(error)},
                     loggedInWithPhoneSuccessfully: (response) async => {
                       if (response.data.user.is_verified)
-                        {context.open(screen: HomeScreen())}
+                        {context.openOnly(HomeScreenRoute())}
                       else
                         {
-                          context.open(
-                            screen: OtpScreen(
-                              phone: phoneController.text,
+                          appContext.pushRoute(OtpScreenRoute(
                               otpType: OTP_TYPE.AUTH,
-                            ),
-                          )
+                              phone: phoneController.text))
                         }
                     },
                     orElse: () => {},
@@ -251,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 text: LocaleKeys.sign_up_word.tr(),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    doSignUp(context);
+                                    doSignUp();
                                   },
                                 style: TextStyle(
                                   fontSize: 14,
@@ -296,8 +291,6 @@ class _LoginScreenState extends State<LoginScreen> {
           phoneController.text.trim(), passwordController.text.trim()));
     } else
       debugPrint("form is not valid");
-
-    // context.open(screen: OtpScreen(otp: "otp tesssssst param"));
   }
 
   void loginWithGoogle(BuildContext context) {}
@@ -305,6 +298,6 @@ class _LoginScreenState extends State<LoginScreen> {
   void loginWithApple(BuildContext context) {}
 }
 
-void doSignUp(BuildContext context) {
-  context.open(screen: SignUpScreen());
+void doSignUp() {
+  appContext.pushRoute(SignUpScreenRoute());
 }
