@@ -57,8 +57,7 @@ class OtpScreen extends StatelessWidget {
                             OtpEvents.onOtpChange(textEditingController.text));
                       },
                       onOtpVerified: (loginResponse) {
-                        appContext.router.popAndPush(HomeScreenRoute());
-                        // appContext.pushRoute(HomeScreenRoute());
+                        appContext.openOnly(HomeScreenRoute());
                       },
                       orElse: () => {},
                     );
