@@ -17,8 +17,8 @@ class _AppBackButtonState extends State<AppBackButton> {
           BoxShadow(
             color: Colors.grey.withOpacity(0.1),
             spreadRadius: 0.1,
-            blurRadius: 10,
-            offset: Offset(2, 1), // changes position of shadow
+            blurRadius: 4,
+            offset: Offset(0, 3), // changes position of shadow
           ),
         ],
       ),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/App.dart';
-import 'package:tawseel/features/landingScreen/LandingScreen.dart';
 import 'package:tawseel/features/login/models/logine_response.dart';
-import 'package:tawseel/features/splash/SplashScreen.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:auto_route/auto_route.dart';

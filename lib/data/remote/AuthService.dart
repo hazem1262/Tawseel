@@ -21,7 +21,11 @@ abstract class AuthService {
   @FormUrlEncoded()
   @POST("register")
   Future<HttpResponse<SignUpResponse>> signUpWithPhone(
-      @Field() String name, @Field() String phone, @Field() String password);
+      @Field() String name,
+      @Field() String phone,
+      @Field() String password,
+      // ignore: non_constant_identifier_names
+      @Field() int can_receive_offers);
 
   @FormUrlEncoded()
   @POST("send-otp")

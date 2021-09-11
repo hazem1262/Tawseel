@@ -27,6 +27,7 @@ abstract class UserItem with _$UserItem {
     String? image,
     String? phone_verified_at,
     bool is_verified,
+    bool can_receive_offers,
   ) = _UserItem;
   factory UserItem.fromJson(Map<String, dynamic> json) =>
       _$UserItemFromJson(json);

@@ -36,10 +36,15 @@ class _AuthService implements AuthService {
 
   @override
   Future<HttpResponse<SignUpResponse>> signUpWithPhone(
-      name, phone, password) async {
+      name, phone, password, can_receive_offers) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _data = {'name': name, 'phone': phone, 'password': password};
+    final _data = {
+      'name': name,
+      'phone': phone,
+      'password': password,
+      'can_receive_offers': can_receive_offers
+    };
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<SignUpResponse>>(Options(
                 method: 'POST',

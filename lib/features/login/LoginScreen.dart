@@ -9,7 +9,6 @@ import 'package:tawseel/features/login/LoginBloc.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
-import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:auto_route/auto_route.dart';
@@ -96,7 +95,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       top: height / 15,
                       right: width / 15,
                       child: GestureDetector(
-                        child: Icon(Icons.dark_mode),
+                        child: Icon(liveTm.isDark()
+                            ? Icons.light_mode
+                            : Icons.dark_mode),
                         onTap: () {
                           tm.toggleMode();
                         },

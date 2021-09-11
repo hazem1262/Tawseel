@@ -14,7 +14,6 @@ import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
-import 'package:tawseel/theme/ThemeManager.dart';
 import '../../App.dart';
 import 'bloc/SignUpBloc.dart';
 import 'bloc/SignUpRepository.dart';
@@ -22,18 +21,6 @@ import 'package:tawseel/utils/ktx.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'components/FullNameField.dart';
-
-Color getColor(Set<MaterialState> states) {
-  const Set<MaterialState> interactiveStates = <MaterialState>{
-    MaterialState.pressed,
-    MaterialState.hovered,
-    MaterialState.focused,
-  };
-  if (states.any(interactiveStates.contains)) {
-    return Colors.blue;
-  }
-  return Colors.red;
-}
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({Key? key}) : super(key: key);
@@ -47,6 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   var phoneController = TextEditingController();
   var passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+  // ignore: non_constant_identifier_names
   bool receive_offers = true;
 
   @override
@@ -260,7 +248,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .sign_up_acceptance_of_terms_message
                                     .tr(),
                                 style: theme.textTheme.caption!.copyWith(
-                                  color: Colors.grey.shade700,
+                                  color: tm.isDark()
+                                      ? Colors.white54
+                                      : Colors.grey.shade700,
                                 ),
                               ),
                               TextSpan(text: "\n"),
@@ -293,7 +283,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 style: theme.textTheme.bodyText2!.copyWith(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.grey.shade700,
+                                  color: tm.isDark()
+                                      ? Colors.white54
+                                      : Colors.grey.shade700,
                                 ),
                               ),
                               TextSpan(text: " "),
@@ -357,10 +349,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     if (isFormValid()) {
       debugPrint("form is valid");
-      context.read<SignUpBloc>().add(SignUpEvents.signUpWithPhone(
-          fullNameController.text.trim(),
-          phoneController.text.trim(),
-          passwordController.text.trim()));
+      context.read<SignUpBloc>().add(
+            SignUpEvents.signUpWithPhone(
+                fullNameController.text.trim(),
+                phoneController.text.trim(),
+                passwordController.text.trim(),
+                receive_offers
+                    ? CAN_RECEIVE_OFFERS.CAN
+                    : CAN_RECEIVE_OFFERS.CANOT),
+          );
     } else
       debugPrint("form is not valid");
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tawseel/App.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -20,7 +20,6 @@ class _FullNameFieldState extends State<FullNameField> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

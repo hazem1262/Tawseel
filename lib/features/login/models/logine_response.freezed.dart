@@ -386,7 +386,7 @@ class _$UserItemTearOff {
   const _$UserItemTearOff();
 
   _UserItem call(int id, String name, String phone, String? image,
-      String? phone_verified_at, bool is_verified) {
+      String? phone_verified_at, bool is_verified, bool can_receive_offers) {
     return _UserItem(
       id,
       name,
@@ -394,6 +394,7 @@ class _$UserItemTearOff {
       image,
       phone_verified_at,
       is_verified,
+      can_receive_offers,
     );
   }
 
@@ -413,6 +414,7 @@ mixin _$UserItem {
   String? get image => throw _privateConstructorUsedError;
   String? get phone_verified_at => throw _privateConstructorUsedError;
   bool get is_verified => throw _privateConstructorUsedError;
+  bool get can_receive_offers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -430,7 +432,8 @@ abstract class $UserItemCopyWith<$Res> {
       String phone,
       String? image,
       String? phone_verified_at,
-      bool is_verified});
+      bool is_verified,
+      bool can_receive_offers});
 }
 
 /// @nodoc
@@ -449,6 +452,7 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
     Object? image = freezed,
     Object? phone_verified_at = freezed,
     Object? is_verified = freezed,
+    Object? can_receive_offers = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -475,6 +479,10 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
           ? _value.is_verified
           : is_verified // ignore: cast_nullable_to_non_nullable
               as bool,
+      can_receive_offers: can_receive_offers == freezed
+          ? _value.can_receive_offers
+          : can_receive_offers // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -490,7 +498,8 @@ abstract class _$UserItemCopyWith<$Res> implements $UserItemCopyWith<$Res> {
       String phone,
       String? image,
       String? phone_verified_at,
-      bool is_verified});
+      bool is_verified,
+      bool can_receive_offers});
 }
 
 /// @nodoc
@@ -510,6 +519,7 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
     Object? image = freezed,
     Object? phone_verified_at = freezed,
     Object? is_verified = freezed,
+    Object? can_receive_offers = freezed,
   }) {
     return _then(_UserItem(
       id == freezed
@@ -536,6 +546,10 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
           ? _value.is_verified
           : is_verified // ignore: cast_nullable_to_non_nullable
               as bool,
+      can_receive_offers == freezed
+          ? _value.can_receive_offers
+          : can_receive_offers // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -544,7 +558,7 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserItem implements _UserItem {
   const _$_UserItem(this.id, this.name, this.phone, this.image,
-      this.phone_verified_at, this.is_verified);
+      this.phone_verified_at, this.is_verified, this.can_receive_offers);
 
   factory _$_UserItem.fromJson(Map<String, dynamic> json) =>
       _$_$_UserItemFromJson(json);
@@ -561,10 +575,12 @@ class _$_UserItem implements _UserItem {
   final String? phone_verified_at;
   @override
   final bool is_verified;
+  @override
+  final bool can_receive_offers;
 
   @override
   String toString() {
-    return 'UserItem(id: $id, name: $name, phone: $phone, image: $image, phone_verified_at: $phone_verified_at, is_verified: $is_verified)';
+    return 'UserItem(id: $id, name: $name, phone: $phone, image: $image, phone_verified_at: $phone_verified_at, is_verified: $is_verified, can_receive_offers: $can_receive_offers)';
   }
 
   @override
@@ -584,7 +600,10 @@ class _$_UserItem implements _UserItem {
                     .equals(other.phone_verified_at, phone_verified_at)) &&
             (identical(other.is_verified, is_verified) ||
                 const DeepCollectionEquality()
-                    .equals(other.is_verified, is_verified)));
+                    .equals(other.is_verified, is_verified)) &&
+            (identical(other.can_receive_offers, can_receive_offers) ||
+                const DeepCollectionEquality()
+                    .equals(other.can_receive_offers, can_receive_offers)));
   }
 
   @override
@@ -595,7 +614,8 @@ class _$_UserItem implements _UserItem {
       const DeepCollectionEquality().hash(phone) ^
       const DeepCollectionEquality().hash(image) ^
       const DeepCollectionEquality().hash(phone_verified_at) ^
-      const DeepCollectionEquality().hash(is_verified);
+      const DeepCollectionEquality().hash(is_verified) ^
+      const DeepCollectionEquality().hash(can_receive_offers);
 
   @JsonKey(ignore: true)
   @override
@@ -609,8 +629,14 @@ class _$_UserItem implements _UserItem {
 }
 
 abstract class _UserItem implements UserItem {
-  const factory _UserItem(int id, String name, String phone, String? image,
-      String? phone_verified_at, bool is_verified) = _$_UserItem;
+  const factory _UserItem(
+      int id,
+      String name,
+      String phone,
+      String? image,
+      String? phone_verified_at,
+      bool is_verified,
+      bool can_receive_offers) = _$_UserItem;
 
   factory _UserItem.fromJson(Map<String, dynamic> json) = _$_UserItem.fromJson;
 
@@ -626,6 +652,8 @@ abstract class _UserItem implements UserItem {
   String? get phone_verified_at => throw _privateConstructorUsedError;
   @override
   bool get is_verified => throw _privateConstructorUsedError;
+  @override
+  bool get can_receive_offers => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserItemCopyWith<_UserItem> get copyWith =>

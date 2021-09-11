@@ -32,7 +32,7 @@ class AppRouter extends _i1.RootStackRouter {
     LandingScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i4.LandingScreen();
+          return _i4.LandingScreen();
         }),
     LoginScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,

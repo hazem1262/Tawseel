@@ -24,12 +24,13 @@ class _$SignUpEventsTearOff {
     return const SignUpWithApple();
   }
 
-  SignUpWithPhone signUpWithPhone(
-      String fullName, String phone, String password) {
+  SignUpWithPhone signUpWithPhone(String fullName, String phone,
+      String password, CAN_RECEIVE_OFFERS can_receive_offers) {
     return SignUpWithPhone(
       fullName,
       phone,
       password,
+      can_receive_offers,
     );
   }
 }
@@ -43,7 +44,8 @@ mixin _$SignUpEvents {
   TResult when<TResult extends Object?>({
     required TResult Function() signUpWithGoogle,
     required TResult Function() signUpWithApple,
-    required TResult Function(String fullName, String phone, String password)
+    required TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)
         signUpWithPhone,
   }) =>
       throw _privateConstructorUsedError;
@@ -51,7 +53,8 @@ mixin _$SignUpEvents {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUpWithGoogle,
     TResult Function()? signUpWithApple,
-    TResult Function(String fullName, String phone, String password)?
+    TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)?
         signUpWithPhone,
     required TResult orElse(),
   }) =>
@@ -140,7 +143,8 @@ class _$SignUpWithGoogle
   TResult when<TResult extends Object?>({
     required TResult Function() signUpWithGoogle,
     required TResult Function() signUpWithApple,
-    required TResult Function(String fullName, String phone, String password)
+    required TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)
         signUpWithPhone,
   }) {
     return signUpWithGoogle();
@@ -151,7 +155,8 @@ class _$SignUpWithGoogle
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUpWithGoogle,
     TResult Function()? signUpWithApple,
-    TResult Function(String fullName, String phone, String password)?
+    TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)?
         signUpWithPhone,
     required TResult orElse(),
   }) {
@@ -241,7 +246,8 @@ class _$SignUpWithApple
   TResult when<TResult extends Object?>({
     required TResult Function() signUpWithGoogle,
     required TResult Function() signUpWithApple,
-    required TResult Function(String fullName, String phone, String password)
+    required TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)
         signUpWithPhone,
   }) {
     return signUpWithApple();
@@ -252,7 +258,8 @@ class _$SignUpWithApple
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUpWithGoogle,
     TResult Function()? signUpWithApple,
-    TResult Function(String fullName, String phone, String password)?
+    TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)?
         signUpWithPhone,
     required TResult orElse(),
   }) {
@@ -296,7 +303,11 @@ abstract class $SignUpWithPhoneCopyWith<$Res> {
   factory $SignUpWithPhoneCopyWith(
           SignUpWithPhone value, $Res Function(SignUpWithPhone) then) =
       _$SignUpWithPhoneCopyWithImpl<$Res>;
-  $Res call({String fullName, String phone, String password});
+  $Res call(
+      {String fullName,
+      String phone,
+      String password,
+      CAN_RECEIVE_OFFERS can_receive_offers});
 }
 
 /// @nodoc
@@ -315,6 +326,7 @@ class _$SignUpWithPhoneCopyWithImpl<$Res>
     Object? fullName = freezed,
     Object? phone = freezed,
     Object? password = freezed,
+    Object? can_receive_offers = freezed,
   }) {
     return _then(SignUpWithPhone(
       fullName == freezed
@@ -329,6 +341,10 @@ class _$SignUpWithPhoneCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      can_receive_offers == freezed
+          ? _value.can_receive_offers
+          : can_receive_offers // ignore: cast_nullable_to_non_nullable
+              as CAN_RECEIVE_OFFERS,
     ));
   }
 }
@@ -338,7 +354,8 @@ class _$SignUpWithPhoneCopyWithImpl<$Res>
 class _$SignUpWithPhone
     with DiagnosticableTreeMixin
     implements SignUpWithPhone {
-  const _$SignUpWithPhone(this.fullName, this.phone, this.password);
+  const _$SignUpWithPhone(
+      this.fullName, this.phone, this.password, this.can_receive_offers);
 
   @override
   final String fullName;
@@ -346,10 +363,12 @@ class _$SignUpWithPhone
   final String phone;
   @override
   final String password;
+  @override
+  final CAN_RECEIVE_OFFERS can_receive_offers;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignUpEvents.signUpWithPhone(fullName: $fullName, phone: $phone, password: $password)';
+    return 'SignUpEvents.signUpWithPhone(fullName: $fullName, phone: $phone, password: $password, can_receive_offers: $can_receive_offers)';
   }
 
   @override
@@ -359,7 +378,8 @@ class _$SignUpWithPhone
       ..add(DiagnosticsProperty('type', 'SignUpEvents.signUpWithPhone'))
       ..add(DiagnosticsProperty('fullName', fullName))
       ..add(DiagnosticsProperty('phone', phone))
-      ..add(DiagnosticsProperty('password', password));
+      ..add(DiagnosticsProperty('password', password))
+      ..add(DiagnosticsProperty('can_receive_offers', can_receive_offers));
   }
 
   @override
@@ -373,7 +393,10 @@ class _$SignUpWithPhone
                 const DeepCollectionEquality().equals(other.phone, phone)) &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
-                    .equals(other.password, password)));
+                    .equals(other.password, password)) &&
+            (identical(other.can_receive_offers, can_receive_offers) ||
+                const DeepCollectionEquality()
+                    .equals(other.can_receive_offers, can_receive_offers)));
   }
 
   @override
@@ -381,7 +404,8 @@ class _$SignUpWithPhone
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(fullName) ^
       const DeepCollectionEquality().hash(phone) ^
-      const DeepCollectionEquality().hash(password);
+      const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(can_receive_offers);
 
   @JsonKey(ignore: true)
   @override
@@ -393,10 +417,11 @@ class _$SignUpWithPhone
   TResult when<TResult extends Object?>({
     required TResult Function() signUpWithGoogle,
     required TResult Function() signUpWithApple,
-    required TResult Function(String fullName, String phone, String password)
+    required TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)
         signUpWithPhone,
   }) {
-    return signUpWithPhone(fullName, phone, password);
+    return signUpWithPhone(fullName, phone, password, can_receive_offers);
   }
 
   @override
@@ -404,12 +429,13 @@ class _$SignUpWithPhone
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUpWithGoogle,
     TResult Function()? signUpWithApple,
-    TResult Function(String fullName, String phone, String password)?
+    TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)?
         signUpWithPhone,
     required TResult orElse(),
   }) {
     if (signUpWithPhone != null) {
-      return signUpWithPhone(fullName, phone, password);
+      return signUpWithPhone(fullName, phone, password, can_receive_offers);
     }
     return orElse();
   }
@@ -440,12 +466,14 @@ class _$SignUpWithPhone
 }
 
 abstract class SignUpWithPhone implements SignUpEvents {
-  const factory SignUpWithPhone(
-      String fullName, String phone, String password) = _$SignUpWithPhone;
+  const factory SignUpWithPhone(String fullName, String phone, String password,
+      CAN_RECEIVE_OFFERS can_receive_offers) = _$SignUpWithPhone;
 
   String get fullName => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
+  CAN_RECEIVE_OFFERS get can_receive_offers =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SignUpWithPhoneCopyWith<SignUpWithPhone> get copyWith =>
       throw _privateConstructorUsedError;

@@ -5,7 +5,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
-import 'package:tawseel/features/home/HomeScreen.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/features/otp/bloc/OtpBloc.dart';
 import 'package:tawseel/features/otp/bloc/OtpRepository.dart';
@@ -78,6 +77,7 @@ class OtpScreen extends StatelessWidget {
                               width: double.infinity,
                               child: AppBackButton(),
                             ),
+                            SizedBox(height: 4),
                             Container(
                               width: double.infinity,
                               child: Text(
@@ -144,7 +144,7 @@ class OtpScreen extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: width / 15),
       child: PinCodeTextField(
-        cursorColor: Colors.black87,
+        cursorColor: tm.isDark() ? Colors.white70 : Colors.black87,
         appContext: context,
         length: 5,
         obscureText: false,
@@ -153,6 +153,11 @@ class OtpScreen extends StatelessWidget {
         cursorWidth: width / 17,
         useExternalAutoFillGroup: true,
         animationType: AnimationType.scale,
+        textStyle: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Colors.black87,
+        ),
         pinTheme: PinTheme(
           selectedColor: theme.primaryColor,
           shape: PinCodeFieldShape.box,

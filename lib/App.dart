@@ -17,13 +17,15 @@ import 'features/otp/bloc/OtpRepository.dart';
 import 'navigation/router.gr.dart';
 
 final getIt = GetIt.instance;
-final appState = AppState();
+
+ThemeManager tm = ThemeManager(mode: ThemeMode.light);
+ThemeManager get liveTm => Provider.of<ThemeManager>(appContext, listen: true);
+AppState get appState => Provider.of<AppState>(appContext, listen: false);
 
 const GlobalKey<NavigatorState> appKey = GlobalObjectKey("tawseel-key");
 BuildContext appContext = appKey.currentContext as BuildContext;
-Locale get currentLocal => (appKey.currentContext as BuildContext).locale;
-String get currentLocalName =>
-    (appKey.currentContext as BuildContext).locale.toString();
+Locale get currentLocal => appContext.locale;
+String get currentLocalName => appContext.locale.toString();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,8 +48,15 @@ void main() async {
       startLocale: Locale('en'),
       fallbackLocale: Locale('en'),
       saveLocale: true,
-      child: ChangeNotifierProvider(
-        create: (context) => AppState(),
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => AppState(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => tm,
+          ),
+        ],
         child: MyApp(),
       ),
     ),

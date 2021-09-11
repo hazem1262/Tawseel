@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:tawseel/theme/style.dart';
 
-ThemeManager tm = ThemeManager(mode: ThemeMode.system);
-
 class ThemeManager with ChangeNotifier {
   ThemeMode _mode;
 

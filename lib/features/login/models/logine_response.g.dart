@@ -40,6 +40,7 @@ _$_UserItem _$_$_UserItemFromJson(Map<String, dynamic> json) {
     json['image'] as String?,
     json['phone_verified_at'] as String?,
     json['is_verified'] as bool,
+    json['can_receive_offers'] as bool,
   );
 }
 
@@ -51,4 +52,5 @@ Map<String, dynamic> _$_$_UserItemToJson(_$_UserItem instance) =>
       'image': instance.image,
       'phone_verified_at': instance.phone_verified_at,
       'is_verified': instance.is_verified,
+      'can_receive_offers': instance.can_receive_offers,
     };

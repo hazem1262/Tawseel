@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/App.dart';
-import 'package:tawseel/features/login/LoginScreen.dart';
-import 'package:tawseel/features/signup/SignUpScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:tawseel/utils/ktx.dart';
 import 'package:auto_route/auto_route.dart';
 
 class LandingScreen extends StatelessWidget {
-  const LandingScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     var padding = MediaQuery.of(context).padding;
     double newheight = height - padding.top - padding.bottom;
+    debugPrint(liveTm.mode.toString());
 
     return Scaffold(
       body: Container(
@@ -31,7 +27,7 @@ class LandingScreen extends StatelessWidget {
                 top: height / 40,
                 right: width / 15,
                 child: GestureDetector(
-                  child: Icon(Icons.language),
+                  child: Icon(tm.isDark() ? Icons.light_mode : Icons.dark_mode),
                   onTap: () {
                     tm.toggleMode();
                   },
@@ -52,18 +48,22 @@ class LandingScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 24),
-                  Text(LocaleKeys.intro_title,
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: tm.titlecolorLight))
-                      .tr(),
+                  Text(
+                    LocaleKeys.intro_title.tr(),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: tm.isDark() ? Colors.white : tm.titlecolorLight),
+                  ),
                   SizedBox(height: 16),
                   Text(
                     LocaleKeys.intro_subtitle,
                     textAlign: TextAlign.center,
-                    style:
-                        TextStyle(fontSize: 14, color: tm.subtitleColorLight),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color:
+                          !tm.isDark() ? tm.subtitleColorLight : Colors.white,
+                    ),
                   ).tr(),
                   SizedBox(height: 34),
                   Padding(

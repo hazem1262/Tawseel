@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:tawseel/utils/ktx.dart';
 import '../../App.dart';
 
