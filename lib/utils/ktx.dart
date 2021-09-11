@@ -48,26 +48,45 @@ extension DefaultNavigatorExetnsions on BuildContext {
     );
   }
 
+  void popTo({required Widget screen}) {
+    Navigator.push(
+      this,
+      MaterialPageRoute(builder: (context) => screen),
+    );
+  }
+
   void back() {
-    Navigator.pop(this);
+    Navigator.maybePop(this);
   }
 }
 
 extension MessagesDtx on BuildContext {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showError(
       String error) {
-    return ScaffoldMessenger.of(this).showSnackBar(
-      SnackBar(
-        backgroundColor: Colors.red,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        content: Text(
-          error,
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-    );
+    return _snackBar(
+        message: error, isError: true, backgroundColor: Colors.red);
   }
+
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast(
+      String message) {
+    return _snackBar(message: message, isError: false);
+  }
+
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _snackBar(
+          {required String message,
+          bool isError = false,
+          Color backgroundColor = Colors.green}) =>
+      ScaffoldMessenger.of(this).showSnackBar(
+        SnackBar(
+          backgroundColor: isError ? Colors.red : backgroundColor,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          content: Text(
+            message,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      );
 }

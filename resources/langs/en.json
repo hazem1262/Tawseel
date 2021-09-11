@@ -28,5 +28,14 @@
   "dont_have_account":"Don't have an account?",
   "sign_up_word":"Sign up",
 
-  "network_error":"Please check your network and try again."
+  "network_error":"Please check your network and try again.",
+
+  "verification_code_title":"Verification Code",
+  "otp_subtitle" : "We've sent the code to your phone to verify",
+
+  "verify_otp" : "Confirm",
+
+  "didnot_recieve_otp" : "Didn't receive the code? ",
+  "resend":"Resend"
+  
 }

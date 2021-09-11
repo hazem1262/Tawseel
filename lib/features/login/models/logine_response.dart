@@ -5,16 +5,15 @@ part 'logine_response.g.dart';
 
 @freezed
 abstract class LoginResponse with _$LoginResponse {
-  const factory LoginResponse(
-          LoginDataItem data, String? access_token, String? token_type) =
-      _LoginResponse;
+  const factory LoginResponse(LoginDataItem data) = _LoginResponse;
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
 }
 
 @freezed
 abstract class LoginDataItem with _$LoginDataItem {
-  const factory LoginDataItem(UserItem user) = _LoginDataItem;
+  const factory LoginDataItem(
+      UserItem user, String? access_token, String? token_type) = _LoginDataItem;
   factory LoginDataItem.fromJson(Map<String, dynamic> json) =>
       _$LoginDataItemFromJson(json);
 }

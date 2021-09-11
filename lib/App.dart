@@ -1,18 +1,22 @@
-import 'dart:io';
 import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:provider/provider.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
+import 'package:tawseel/features/login/LoginScreen.dart';
+import 'package:tawseel/features/otp/OtpScreen.dart';
+import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/features/splash/SplashScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/utils/AppState.dart';
 
 import 'data/remote/NetworkModule.dart';
+import 'features/otp/bloc/OtpRepository.dart';
 
 final getIt = GetIt.instance;
 final appState = AppState();
@@ -26,15 +30,11 @@ void main() async {
   await EasyLocalization.ensureInitialized();
 
   getIt.registerSingleton<NetworkModule>(NetworkModule());
-
   getIt.registerSingleton<AuthService>(
       AuthService(getIt<NetworkModule>().getDio(BaseUrl)));
-
-  getIt.registerSingleton<LoginRepository>(
+  getIt.registerSingleton<ILoginRepository>(
       LoginRepository(getIt<AuthService>()));
-
-  final String defaultSystemLocale = Platform.localeName;
-  debugPrint(defaultSystemLocale);
+  getIt.registerSingleton<IOtpRepository>(OtpRepository(getIt<AuthService>()));
 
   runApp(
     EasyLocalization(
@@ -74,7 +74,10 @@ class _MyAppState extends State<MyApp> {
       theme: tm.lightTheme,
       darkTheme: tm.darkTheme,
       themeMode: tm.mode,
-      home: SplashScreen(),
+      home: ChangeNotifierProvider(
+        create: (context) => AppState(),
+        child: SplashScreen(),
+      ),
     );
   }
 }

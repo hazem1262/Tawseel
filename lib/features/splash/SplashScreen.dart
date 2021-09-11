@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tawseel/features/home/HomeScreen.dart';
 import 'package:tawseel/features/landingScreen/LandingScreen.dart';
 import 'package:tawseel/res.dart';
-import 'package:tawseel/utils/AppState.dart';
 import 'package:tawseel/utils/ktx.dart';
+
+import '../../App.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
@@ -16,7 +18,6 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   bool _initialized = false;
-  late AppState appState;
 
   late double width = 200;
   late double height = 200;
@@ -69,9 +70,21 @@ class _SplashScreenState extends State<SplashScreen> {
     super.didChangeDependencies();
     if (!_initialized) {
       _initialized = true;
-      Timer(const Duration(milliseconds: 1000), () {
-        context.open(screen: LandingScreen());
-      });
+      appState.isLoggedIn().then((yes) => {
+            yes
+                ? Timer(
+                    const Duration(milliseconds: 1000),
+                    () => context.open(
+                      screen: HomeScreen(),
+                    ),
+                  )
+                : Timer(
+                    const Duration(milliseconds: 1000),
+                    () => context.open(
+                      screen: LandingScreen(),
+                    ),
+                  )
+          });
     }
   }
 }

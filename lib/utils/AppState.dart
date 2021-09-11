@@ -1,58 +1,52 @@
+import 'dart:convert';
+
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tawseel/features/login/models/logine_response.dart';
 
 class AppState extends ChangeNotifier {
   // ignore: non_constant_identifier_names
   final String LoggedInKey = "isLoggedIn";
-  bool _loggedIn = false;
-  bool get loggedIn => _loggedIn;
-  bool _splashFinished = false;
-  bool get splashFinished => _splashFinished;
+  final String LoginModelKey = "LoginModelKeyyyy";
 
-  String phoneNumber = "";
-  String password = "";
-
-  AppState() {
-    getLoggedInState();
-  }
-
-  void setSplashFinished() {
-    _splashFinished = true;
-    if (_loggedIn) {
-    } else {}
-    notifyListeners();
-  }
-
-  void login() {
-    _loggedIn = true;
-    saveLoginState(loggedIn);
-    // TODO set logged in
-    notifyListeners();
-  }
-
-  void logout() {
-    _loggedIn = false;
-    saveLoginState(loggedIn);
-    // TODO set logged out
-    notifyListeners();
-  }
+  AppState();
 
   Future<bool> saveLoginState(bool loggedIn) async {
     final prefs = await SharedPreferences.getInstance();
     return await prefs.setBool(LoggedInKey, loggedIn);
   }
 
-  Future<bool> getLoggedInState() async {
-    final prefs = await SharedPreferences.getInstance();
-    _loggedIn = prefs.getBool(LoggedInKey) ?? false;
-    return _loggedIn;
+  Future<bool> isLoggedIn() async {
+    final pref = await SharedPreferences.getInstance();
+    return pref.getBool(LoggedInKey) ?? false;
   }
 
-  var _lang = "";
-  String get lang => _lang;
+  Future<bool> seLoggedInState(bool isLoggedInValue) async {
+    final pref = await SharedPreferences.getInstance();
+    return pref.setBool(LoggedInKey, isLoggedInValue);
+  }
 
-  void setCurrentLanguageName(String newlang) {
-    _lang = newlang;
-    debugPrint("appState setCurrentLanguageName : ${newlang}");
+  Future<bool> saveUserModelString(String res) async {
+    debugPrint("App state saveUserModelString : $res");
+
+    final pref = await SharedPreferences.getInstance();
+    var saved = await pref.setString(LoginModelKey, res);
+    seLoggedInState(true);
+    return saved;
+  }
+
+  printUserModel() async {
+    final pref = await SharedPreferences.getInstance();
+    var model = pref.getString(LoginModelKey);
+
+    debugPrint("AppState printUserModel : ${model.toString()}");
+  }
+
+  Future<LoginResponse> get getUserModel async {
+    final pref = await SharedPreferences.getInstance();
+    var model = pref.getString(LoginModelKey);
+    debugPrint("AppState getUserModel : ${model.toString()}");
+    var userMap = jsonDecode(model!) as Map<String, dynamic>;
+    return LoginResponse.fromJson(userMap);
   }
 }

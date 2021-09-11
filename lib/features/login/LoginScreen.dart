@@ -5,8 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tawseel/features/home/HomeScreen.dart';
 import 'package:tawseel/features/login/LoginBloc.dart';
 import 'package:tawseel/features/otp/OtpScreen.dart';
+import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/features/signup/SignUpScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
@@ -16,7 +18,7 @@ import 'package:tawseel/utils/ktx.dart';
 import '../../App.dart';
 import '../../res.dart';
 import 'LoginRepository.dart';
-import 'components/LoginButton.dart';
+import 'components/LoadingButton.dart';
 import 'components/PasswordField.dart';
 import 'components/AuthButton.dart';
 import 'components/PhoneNumberField.dart';
@@ -52,28 +54,39 @@ class _LoginScreenState extends State<LoginScreen> {
     var theme = Theme.of(context);
 
     return BlocProvider(
-      create: (context) => LoginBloc(getIt<LoginRepository>()),
+      create: (context) => LoginBloc(getIt<ILoginRepository>()),
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
             child: Center(
+              //?----------------------------------------------------------------------------?//
+              //?                                Actions Listeners                           ?//
+              //?----------------------------------------------------------------------------?//
               child: BlocListener<LoginBloc, LoginViewState>(
                 listener: (context, state) {
                   state.maybeWhen(
                     hassError: (error) => {context.showError(error)},
-                    loggedInWithPhoneSuccessfully: (response) => {
+                    loggedInWithPhoneSuccessfully: (response) async => {
                       if (response.data.user.is_verified)
-                        {
-                          //TODO go to home screen
-                        }
+                        {context.open(screen: HomeScreen())}
                       else
-                        {context.open(screen: OtpScreen())}
+                        {
+                          context.open(
+                            screen: OtpScreen(
+                              phone: phoneController.text,
+                              otpType: OTP_TYPE.AUTH,
+                            ),
+                          )
+                        }
                     },
                     orElse: () => {},
                   );
                 },
                 child: Stack(
                   children: [
+                    //?----------------------------------------------------------------------------?//
+                    //?                           Language and theme toggles                       ?//
+                    //?----------------------------------------------------------------------------?//
                     Positioned(
                       top: height / 15,
                       right: width / 6,
@@ -208,7 +221,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             return Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 16),
-                              child: loginButton(
+                              child: LoadingButton(
+                                  text: LocaleKeys.login_title.tr(),
                                   onPressed: () {
                                     doLoginByPhone(context);
                                   },
@@ -279,7 +293,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (isFormValid()) {
       debugPrint("form is valid");
       context.read<LoginBloc>().add(LoginEvent.loginWithPhone(
-          phoneController.text, passwordController.text));
+          phoneController.text.trim(), passwordController.text.trim()));
     } else
       debugPrint("form is not valid");
 

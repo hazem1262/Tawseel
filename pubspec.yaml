@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   animations: ^2.0.1
+  auto_route: ^2.3.2
   connectivity: ^3.0.6
   cupertino_icons: ^1.0.3
   derived_colors: ^0.3.0
@@ -24,6 +25,7 @@ dependencies:
   json_annotation: ^4.0.1
   logger: any
   meta: ^1.3.0
+  pin_code_fields: ^7.3.0
   provider: ^6.0.0
   retrofit: any
   shared_preferences: ^2.0.7

@@ -20,12 +20,9 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) {
 class _$LoginResponseTearOff {
   const _$LoginResponseTearOff();
 
-  _LoginResponse call(
-      LoginDataItem data, String? access_token, String? token_type) {
+  _LoginResponse call(LoginDataItem data) {
     return _LoginResponse(
       data,
-      access_token,
-      token_type,
     );
   }
 
@@ -40,8 +37,6 @@ const $LoginResponse = _$LoginResponseTearOff();
 /// @nodoc
 mixin _$LoginResponse {
   LoginDataItem get data => throw _privateConstructorUsedError;
-  String? get access_token => throw _privateConstructorUsedError;
-  String? get token_type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +49,7 @@ abstract class $LoginResponseCopyWith<$Res> {
   factory $LoginResponseCopyWith(
           LoginResponse value, $Res Function(LoginResponse) then) =
       _$LoginResponseCopyWithImpl<$Res>;
-  $Res call({LoginDataItem data, String? access_token, String? token_type});
+  $Res call({LoginDataItem data});
 
   $LoginDataItemCopyWith<$Res> get data;
 }
@@ -71,22 +66,12 @@ class _$LoginResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = freezed,
-    Object? access_token = freezed,
-    Object? token_type = freezed,
   }) {
     return _then(_value.copyWith(
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as LoginDataItem,
-      access_token: access_token == freezed
-          ? _value.access_token
-          : access_token // ignore: cast_nullable_to_non_nullable
-              as String?,
-      token_type: token_type == freezed
-          ? _value.token_type
-          : token_type // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 
@@ -105,7 +90,7 @@ abstract class _$LoginResponseCopyWith<$Res>
           _LoginResponse value, $Res Function(_LoginResponse) then) =
       __$LoginResponseCopyWithImpl<$Res>;
   @override
-  $Res call({LoginDataItem data, String? access_token, String? token_type});
+  $Res call({LoginDataItem data});
 
   @override
   $LoginDataItemCopyWith<$Res> get data;
@@ -125,22 +110,12 @@ class __$LoginResponseCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = freezed,
-    Object? access_token = freezed,
-    Object? token_type = freezed,
   }) {
     return _then(_LoginResponse(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as LoginDataItem,
-      access_token == freezed
-          ? _value.access_token
-          : access_token // ignore: cast_nullable_to_non_nullable
-              as String?,
-      token_type == freezed
-          ? _value.token_type
-          : token_type // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -148,21 +123,17 @@ class __$LoginResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_LoginResponse implements _LoginResponse {
-  const _$_LoginResponse(this.data, this.access_token, this.token_type);
+  const _$_LoginResponse(this.data);
 
   factory _$_LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_LoginResponseFromJson(json);
 
   @override
   final LoginDataItem data;
-  @override
-  final String? access_token;
-  @override
-  final String? token_type;
 
   @override
   String toString() {
-    return 'LoginResponse(data: $data, access_token: $access_token, token_type: $token_type)';
+    return 'LoginResponse(data: $data)';
   }
 
   @override
@@ -170,21 +141,12 @@ class _$_LoginResponse implements _LoginResponse {
     return identical(this, other) ||
         (other is _LoginResponse &&
             (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.access_token, access_token) ||
-                const DeepCollectionEquality()
-                    .equals(other.access_token, access_token)) &&
-            (identical(other.token_type, token_type) ||
-                const DeepCollectionEquality()
-                    .equals(other.token_type, token_type)));
+                const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(access_token) ^
-      const DeepCollectionEquality().hash(token_type);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
@@ -198,19 +160,13 @@ class _$_LoginResponse implements _LoginResponse {
 }
 
 abstract class _LoginResponse implements LoginResponse {
-  const factory _LoginResponse(
-          LoginDataItem data, String? access_token, String? token_type) =
-      _$_LoginResponse;
+  const factory _LoginResponse(LoginDataItem data) = _$_LoginResponse;
 
   factory _LoginResponse.fromJson(Map<String, dynamic> json) =
       _$_LoginResponse.fromJson;
 
   @override
   LoginDataItem get data => throw _privateConstructorUsedError;
-  @override
-  String? get access_token => throw _privateConstructorUsedError;
-  @override
-  String? get token_type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$LoginResponseCopyWith<_LoginResponse> get copyWith =>
@@ -225,9 +181,11 @@ LoginDataItem _$LoginDataItemFromJson(Map<String, dynamic> json) {
 class _$LoginDataItemTearOff {
   const _$LoginDataItemTearOff();
 
-  _LoginDataItem call(UserItem user) {
+  _LoginDataItem call(UserItem user, String? access_token, String? token_type) {
     return _LoginDataItem(
       user,
+      access_token,
+      token_type,
     );
   }
 
@@ -242,6 +200,8 @@ const $LoginDataItem = _$LoginDataItemTearOff();
 /// @nodoc
 mixin _$LoginDataItem {
   UserItem get user => throw _privateConstructorUsedError;
+  String? get access_token => throw _privateConstructorUsedError;
+  String? get token_type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -254,7 +214,7 @@ abstract class $LoginDataItemCopyWith<$Res> {
   factory $LoginDataItemCopyWith(
           LoginDataItem value, $Res Function(LoginDataItem) then) =
       _$LoginDataItemCopyWithImpl<$Res>;
-  $Res call({UserItem user});
+  $Res call({UserItem user, String? access_token, String? token_type});
 
   $UserItemCopyWith<$Res> get user;
 }
@@ -271,12 +231,22 @@ class _$LoginDataItemCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = freezed,
+    Object? access_token = freezed,
+    Object? token_type = freezed,
   }) {
     return _then(_value.copyWith(
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserItem,
+      access_token: access_token == freezed
+          ? _value.access_token
+          : access_token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      token_type: token_type == freezed
+          ? _value.token_type
+          : token_type // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -295,7 +265,7 @@ abstract class _$LoginDataItemCopyWith<$Res>
           _LoginDataItem value, $Res Function(_LoginDataItem) then) =
       __$LoginDataItemCopyWithImpl<$Res>;
   @override
-  $Res call({UserItem user});
+  $Res call({UserItem user, String? access_token, String? token_type});
 
   @override
   $UserItemCopyWith<$Res> get user;
@@ -315,12 +285,22 @@ class __$LoginDataItemCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = freezed,
+    Object? access_token = freezed,
+    Object? token_type = freezed,
   }) {
     return _then(_LoginDataItem(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserItem,
+      access_token == freezed
+          ? _value.access_token
+          : access_token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      token_type == freezed
+          ? _value.token_type
+          : token_type // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -328,17 +308,21 @@ class __$LoginDataItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_LoginDataItem implements _LoginDataItem {
-  const _$_LoginDataItem(this.user);
+  const _$_LoginDataItem(this.user, this.access_token, this.token_type);
 
   factory _$_LoginDataItem.fromJson(Map<String, dynamic> json) =>
       _$_$_LoginDataItemFromJson(json);
 
   @override
   final UserItem user;
+  @override
+  final String? access_token;
+  @override
+  final String? token_type;
 
   @override
   String toString() {
-    return 'LoginDataItem(user: $user)';
+    return 'LoginDataItem(user: $user, access_token: $access_token, token_type: $token_type)';
   }
 
   @override
@@ -346,12 +330,21 @@ class _$_LoginDataItem implements _LoginDataItem {
     return identical(this, other) ||
         (other is _LoginDataItem &&
             (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.access_token, access_token) ||
+                const DeepCollectionEquality()
+                    .equals(other.access_token, access_token)) &&
+            (identical(other.token_type, token_type) ||
+                const DeepCollectionEquality()
+                    .equals(other.token_type, token_type)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(user) ^
+      const DeepCollectionEquality().hash(access_token) ^
+      const DeepCollectionEquality().hash(token_type);
 
   @JsonKey(ignore: true)
   @override
@@ -365,13 +358,19 @@ class _$_LoginDataItem implements _LoginDataItem {
 }
 
 abstract class _LoginDataItem implements LoginDataItem {
-  const factory _LoginDataItem(UserItem user) = _$_LoginDataItem;
+  const factory _LoginDataItem(
+          UserItem user, String? access_token, String? token_type) =
+      _$_LoginDataItem;
 
   factory _LoginDataItem.fromJson(Map<String, dynamic> json) =
       _$_LoginDataItem.fromJson;
 
   @override
   UserItem get user => throw _privateConstructorUsedError;
+  @override
+  String? get access_token => throw _privateConstructorUsedError;
+  @override
+  String? get token_type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$LoginDataItemCopyWith<_LoginDataItem> get copyWith =>

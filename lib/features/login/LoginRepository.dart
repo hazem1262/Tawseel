@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:tawseel/App.dart';
 import 'package:tawseel/base/NetworkHandler.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'models/logine_response.dart';
@@ -14,5 +16,17 @@ class LoginRepository with NetworkHandler implements ILoginRepository {
 
   @override
   Future<LoginResponse> loginWithPhone(String phone, String password) =>
-      networkHandler(() => api.loginWithPhone(phone, password));
+      networkHandler(
+        () {
+          var response = api.loginWithPhone(phone, password);
+          // save User data into prefrences if he is verified
+          response.then((value) async {
+            if (value.data.data.user.is_verified) {
+              debugPrint("Login Repository : ${value.response.toString()}");
+              await appState.saveUserModelString(value.response.toString());
+            }
+          });
+          return response;
+        },
+      );
 }

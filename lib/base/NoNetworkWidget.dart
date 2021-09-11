@@ -8,8 +8,11 @@ class NetworkListener extends StatefulWidget {
   final Widget? onNetworkAvailable;
   final Widget? onNetworkFailure;
 
-  NetworkListener({Key? key, this.onNetworkAvailable, this.onNetworkFailure})
-      : super(key: key);
+  NetworkListener({
+    Key? key,
+    this.onNetworkAvailable,
+    this.onNetworkFailure,
+  }) : super(key: key);
 
   @override
   _NetworkListenerState createState() =>
@@ -70,13 +73,6 @@ class _NetworkListenerState extends State<NetworkListener> {
           Container(
             child: onNetworkAvailable,
           ),
-
-          // AnimatedPositioned(
-          //   top: noNetwork ? 50.0 : 150.0,
-          //   duration: const Duration(milliseconds: 600),
-          //   curve: Curves.fastOutSlowIn,
-          //   child: Container(child: onNetworkFailure),
-          // ),
           AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
@@ -85,7 +81,15 @@ class _NetworkListenerState extends State<NetworkListener> {
               curve: Curves.fastOutSlowIn,
               opacity: noNetwork ? showOpacity : hideOpacity,
               duration: const Duration(milliseconds: 1000),
-              child: Container(child: onNetworkFailure),
+              child: Container(
+                child: Stack(
+                  children: [
+                    Container(
+                      child: onNetworkFailure,
+                    ),
+                  ],
+                ),
+              ),
             ),
           )
         ],

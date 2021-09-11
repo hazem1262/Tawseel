@@ -1,6 +1,7 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 import 'package:tawseel/features/login/models/logine_response.dart';
+import 'package:tawseel/features/otp/models/otp_models.dart';
 part 'AuthService.g.dart';
 
 const String BaseUrl = "https://tawseelclub.com/api/";
@@ -15,4 +16,14 @@ abstract class AuthService {
   @POST("login")
   Future<HttpResponse<LoginResponse>> loginWithPhone(
       @Field() String phone, @Field() String password);
+
+  @FormUrlEncoded()
+  @POST("send-otp")
+  Future<HttpResponse<OtpResponse>> sendOtp(
+      @Field() String phone, @Field() String type);
+
+  @FormUrlEncoded()
+  @POST("verify")
+  Future<HttpResponse<LoginResponse>> verifyOtp(
+      @Field() String phone, @Field() String otp, @Field() String type);
 }

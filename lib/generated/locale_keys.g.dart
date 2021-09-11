@@ -22,5 +22,10 @@ abstract class  LocaleKeys {
   static const dont_have_account = 'dont_have_account';
   static const sign_up_word = 'sign_up_word';
   static const network_error = 'network_error';
+  static const verification_code_title = 'verification_code_title';
+  static const otp_subtitle = 'otp_subtitle';
+  static const verify_otp = 'verify_otp';
+  static const didnot_recieve_otp = 'didnot_recieve_otp';
+  static const resend = 'resend';
 
 }
