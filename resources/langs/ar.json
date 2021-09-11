@@ -34,6 +34,20 @@
   "verify_otp" : "تأكيد",
 
   "didnot_recieve_otp" : "لم يصلك رمز التحقق؟ ",
-  "resend":"إعادة إرسال"
+  "resend":"إعادة إرسال",
+
+  "sign_up_title":"تسجيل مستخدم جديد",
+  "sign_up_subtitle":"اهلا بك أنشئ حساب واحصل علي كافه خدماتنا",
+  "full_name_hint":"الإسم",
+
+  "full_name_empty_error":"برجاء إدخال الاسم اولاّ",
+  "full_name_validation_error":"برجاء إدخال الإسم بشكل صحيح",
+
+  "sign_up_acceptance_of_terms_message":"بتسجيلك حساب جديد قد قمت بالموافقه علي",
+  "terms_and_condition_phrase":" الشروط والاحكام",
+  "already_have_an_account":"لديك حساب بالفعل ؟",
+
+  "receive_offers": "اوافق علي الحصول علي العروض والخصومات"
+
   
 }

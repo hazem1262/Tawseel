@@ -36,6 +36,20 @@
   "verify_otp" : "Confirm",
 
   "didnot_recieve_otp" : "Didn't receive the code? ",
-  "resend":"Resend"
+  "resend":"Resend",
+
+
+  "sign_up_title":"Sign up As a User",
+  "sign_up_subtitle":"Welcome, create an account and get unlimited access to the application features",
+  "full_name_hint":"Name",
+  
+  "full_name_empty_error":"Please enter your name first.",
+  "full_name_validation_error":"Please enter a valid name.",
+
+  "sign_up_acceptance_of_terms_message":"by signing up you accept our",
+  "terms_and_condition_phrase":"Terms & Conditions",
+  "already_have_an_account":"Already have an account? ",
+  
+  "receive_offers": "I want to receive offers and discounts"
   
 }

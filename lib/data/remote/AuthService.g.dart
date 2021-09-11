@@ -35,6 +35,26 @@ class _AuthService implements AuthService {
   }
 
   @override
+  Future<HttpResponse<SignUpResponse>> signUpWithPhone(
+      name, phone, password) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = {'name': name, 'phone': phone, 'password': password};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<HttpResponse<SignUpResponse>>(Options(
+                method: 'POST',
+                headers: <String, dynamic>{},
+                extra: _extra,
+                contentType: 'application/x-www-form-urlencoded')
+            .compose(_dio.options, 'register',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = SignUpResponse.fromJson(_result.data!);
+    final httpResponse = HttpResponse(value, _result);
+    return httpResponse;
+  }
+
+  @override
   Future<HttpResponse<OtpResponse>> sendOtp(phone, type) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

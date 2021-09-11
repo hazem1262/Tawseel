@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
+import 'package:tawseel/features/signup/bloc/SignUpRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/utils/AppState.dart';
@@ -34,6 +34,9 @@ void main() async {
       AuthService(getIt<NetworkModule>().getDio(BaseUrl)));
   getIt.registerSingleton<ILoginRepository>(
       LoginRepository(getIt<AuthService>()));
+  getIt.registerSingleton<ISignUpRepository>(
+      SignUpRepository(getIt<AuthService>()));
+
   getIt.registerSingleton<IOtpRepository>(OtpRepository(getIt<AuthService>()));
 
   runApp(
@@ -82,10 +85,6 @@ class _MyAppState extends State<MyApp> {
       theme: tm.lightTheme,
       darkTheme: tm.darkTheme,
       themeMode: tm.mode,
-      // home: ChangeNotifierProvider(
-      //   create: (context) => AppState(),
-      //   child: SplashScreen(),
-      // ),
     );
   }
 }

@@ -27,5 +27,14 @@ abstract class  LocaleKeys {
   static const verify_otp = 'verify_otp';
   static const didnot_recieve_otp = 'didnot_recieve_otp';
   static const resend = 'resend';
+  static const sign_up_title = 'sign_up_title';
+  static const sign_up_subtitle = 'sign_up_subtitle';
+  static const full_name_hint = 'full_name_hint';
+  static const full_name_empty_error = 'full_name_empty_error';
+  static const full_name_validation_error = 'full_name_validation_error';
+  static const sign_up_acceptance_of_terms_message = 'sign_up_acceptance_of_terms_message';
+  static const terms_and_condition_phrase = 'terms_and_condition_phrase';
+  static const already_have_an_account = 'already_have_an_account';
+  static const receive_offers = 'receive_offers';
 
 }
