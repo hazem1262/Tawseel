@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tawseel/App.dart';
+import 'package:tawseel/main.dart';
 import 'package:tawseel/features/login/models/logine_response.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/ktx.dart';

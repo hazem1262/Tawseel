@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tawseel/App.dart';
+import 'package:tawseel/main.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -9,7 +9,15 @@ import '../../../res.dart';
 
 class FullNameField extends StatefulWidget {
   final TextEditingController controller;
-  FullNameField({Key? key, required this.controller}) : super(key: key);
+  final TextInputAction inputAction;
+  final VoidCallback? onSubmitCallback;
+
+  FullNameField({
+    Key? key,
+    required this.controller,
+    this.inputAction = TextInputAction.next,
+    this.onSubmitCallback,
+  }) : super(key: key);
   @override
   _FullNameFieldState createState() => _FullNameFieldState();
 }
@@ -33,7 +41,9 @@ class _FullNameFieldState extends State<FullNameField> {
             onEditingComplete: () => TextInput.finishAutofillContext(),
             controller: widget.controller,
             inputFormatters: [FilteringTextInputFormatter.singleLineFormatter],
-            keyboardType: TextInputType.phone,
+            keyboardType: TextInputType.name,
+            textInputAction: widget.inputAction,
+            onFieldSubmitted: (value) => {widget.onSubmitCallback?.call()},
             decoration: InputDecoration(
               prefixIcon: ImageIcon(
                 AssetImage(Res.fullname_icon),

@@ -1,6 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tawseel/App.dart';
+import 'package:tawseel/main.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -9,7 +11,14 @@ import '../../../../res.dart';
 
 class PasswordField extends StatefulWidget {
   final TextEditingController controller;
-  PasswordField({Key? key, required this.controller}) : super(key: key);
+  final TextInputAction inputAction;
+  final VoidCallback? onSubmitCallback;
+  PasswordField({
+    Key? key,
+    required this.controller,
+    this.inputAction = TextInputAction.next,
+    this.onSubmitCallback,
+  }) : super(key: key);
 
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
@@ -39,6 +48,8 @@ class _PasswordFieldState extends State<PasswordField> {
             controller: widget.controller,
             obscureText: isHidden,
             keyboardType: TextInputType.text,
+            textInputAction: widget.inputAction,
+            onFieldSubmitted: (value) => {widget.onSubmitCallback?.call()},
             decoration: InputDecoration(
               prefixIcon: ImageIcon(
                 AssetImage(Res.password_icon),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tawseel/App.dart';
+import 'package:tawseel/main.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';

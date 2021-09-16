@@ -38,7 +38,7 @@ extension MaterialColorsHelpers on Color {
 //?----------------------------------------------------------------------------?//
 
 extension IntDtx on int {
-  isSuccessfull() => this.clamp(200, 300) == this;
+  isSuccessfull() => this.clamp(200, 299) == this;
 }
 
 // extension DefaultNavigatorExetnsions on BuildContext {
@@ -65,6 +65,22 @@ extension AutoRouterNavigationDtx on BuildContext {
   Future<T?> openOnly<T extends Object?>(PageRouteInfo screenRoute) {
     return this.router.pushAndPopUntil(screenRoute, predicate: (r) => false);
   }
+
+  Future<dynamic> openIfExist(PageRouteInfo screenRoute) {
+    return this.router.navigate(screenRoute);
+  }
+}
+
+extension GeneralDtx on BuildContext {
+  void nextFoucs() => FocusScope.of(this).nextFocus();
+  FocusScopeNode currentFoucs() => FocusScope.of(this);
+}
+
+FocusManager get focusManager => FocusManager.instance;
+FocusNode? get currentFocus => FocusManager.instance.primaryFocus;
+
+hideKeyboard() {
+  FocusManager.instance.primaryFocus?.unfocus();
 }
 
 extension MessagesDtx on BuildContext {

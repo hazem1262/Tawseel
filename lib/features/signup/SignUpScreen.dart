@@ -14,7 +14,7 @@ import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
-import '../../App.dart';
+import '../../main.dart';
 import 'bloc/SignUpBloc.dart';
 import 'bloc/SignUpRepository.dart';
 import 'package:tawseel/utils/ktx.dart';
@@ -177,13 +177,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 child: Column(
                                   children: [
                                     FullNameField(
-                                        controller: fullNameController),
+                                      controller: fullNameController,
+                                      inputAction: TextInputAction.next,
+                                      onSubmitCallback: () =>
+                                          context.nextFoucs(),
+                                    ),
                                     SizedBox(height: 8),
                                     PhoneNumberField(
-                                        controller: phoneController),
+                                      controller: phoneController,
+                                      inputAction: TextInputAction.next,
+                                      onSubmitCallback: () =>
+                                          context.nextFoucs(),
+                                    ),
                                     SizedBox(height: 8),
-                                    PasswordField(
-                                        controller: passwordController),
+                                    Builder(
+                                      builder: (newContext) {
+                                        return PasswordField(
+                                          controller: passwordController,
+                                          inputAction: TextInputAction.done,
+                                          onSubmitCallback: () =>
+                                              doSignUpByPhone(newContext),
+                                        );
+                                      },
+                                    ),
                                   ],
                                 ),
                               ),
@@ -346,6 +362,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     // is form is not valid return
     if (!isFormValid()) return;
     TextInput.finishAutofillContext();
+    hideKeyboard();
 
     if (isFormValid()) {
       debugPrint("form is valid");
@@ -364,5 +381,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void openLoginAlready() {
     debugPrint("openLoginAlready");
+    appContext.openIfExist(LoginScreenRoute());
   }
 }

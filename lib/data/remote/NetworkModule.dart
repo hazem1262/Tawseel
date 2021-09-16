@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:tawseel/App.dart';
+import 'package:tawseel/main.dart';
 
 class NetworkModule {
   Dio getDio(String baseUrl) {

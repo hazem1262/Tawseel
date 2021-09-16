@@ -12,7 +12,7 @@ import 'package:tawseel/navigation/router.gr.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:auto_route/auto_route.dart';
-import '../../App.dart';
+import '../../main.dart';
 import '../../res.dart';
 import 'LoginRepository.dart';
 import 'components/LoadingButton.dart';
@@ -178,10 +178,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: Column(
                                   children: [
                                     PhoneNumberField(
-                                        controller: phoneController),
+                                      controller: phoneController,
+                                      inputAction: TextInputAction.next,
+                                      onSubmitCallback: () =>
+                                          context.nextFoucs(),
+                                    ),
                                     SizedBox(height: 8),
-                                    PasswordField(
-                                        controller: passwordController),
+                                    Builder(builder: (nctx) {
+                                      return PasswordField(
+                                          controller: passwordController,
+                                          inputAction: TextInputAction.go,
+                                          onSubmitCallback: () {
+                                            doLoginByPhone(nctx);
+                                          });
+                                    }),
                                   ],
                                 ),
                               ),
@@ -284,6 +294,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void doLoginByPhone(BuildContext context) {
     // is form is not valid return
     if (!isFormValid()) return;
+    hideKeyboard();
     TextInput.finishAutofillContext();
 
     if (isFormValid()) {
@@ -300,5 +311,5 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 
 void doSignUp() {
-  appContext.pushRoute(SignUpScreenRoute());
+  appContext.openIfExist(SignUpScreenRoute());
 }

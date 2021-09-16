@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tawseel/App.dart';
+import 'package:tawseel/main.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -9,7 +9,14 @@ import '../../../res.dart';
 
 class PhoneNumberField extends StatefulWidget {
   final TextEditingController controller;
-  PhoneNumberField({Key? key, required this.controller}) : super(key: key);
+  final TextInputAction inputAction;
+  final VoidCallback? onSubmitCallback;
+  PhoneNumberField({
+    Key? key,
+    required this.controller,
+    this.inputAction = TextInputAction.next,
+    this.onSubmitCallback,
+  }) : super(key: key);
   @override
   _PhoneNumberFieldState createState() => _PhoneNumberFieldState();
 }
@@ -35,6 +42,8 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             controller: widget.controller,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             keyboardType: TextInputType.phone,
+            textInputAction: widget.inputAction,
+            onFieldSubmitted: (value) => {widget.onSubmitCallback?.call()},
             decoration: InputDecoration(
               prefixIcon: ImageIcon(
                 AssetImage(Res.phone_icon),
