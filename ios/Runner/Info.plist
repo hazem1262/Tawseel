@@ -47,5 +47,14 @@
     	<string>en</string>
     	<string>ar</string>
     </array>
+    
+    <key>NSLocationWhenInUseUsageDescription</key>
+
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+
+    <key>NSLocationAlwaysUsageDescription</key>
+
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+
 </dict>
 </plist>

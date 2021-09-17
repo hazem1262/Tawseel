@@ -36,5 +36,6 @@ abstract class  LocaleKeys {
   static const terms_and_condition_phrase = 'terms_and_condition_phrase';
   static const already_have_an_account = 'already_have_an_account';
   static const receive_offers = 'receive_offers';
+  static const location_confirm_button = 'location_confirm_button';
 
 }

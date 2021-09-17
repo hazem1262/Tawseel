@@ -50,6 +50,9 @@
   "terms_and_condition_phrase":"Terms & Conditions",
   "already_have_an_account":"Already have an account? ",
   
-  "receive_offers": "I want to receive offers and discounts"
+  "receive_offers": "I want to receive offers and discounts",
+  
+
+  "location_confirm_button": "Confirm Location"
   
 }

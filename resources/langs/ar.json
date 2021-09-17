@@ -47,7 +47,9 @@
   "terms_and_condition_phrase":" الشروط والاحكام",
   "already_have_an_account":"لديك حساب بالفعل ؟",
 
-  "receive_offers": "اوافق علي الحصول علي العروض والخصومات"
+  "receive_offers": "اوافق علي الحصول علي العروض والخصومات",
+
+  "location_confirm_button": "إختيار العنوان"
 
   
 }

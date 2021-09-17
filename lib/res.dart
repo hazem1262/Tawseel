@@ -11,4 +11,5 @@ class Res {
   static const String password_visability = "assets/password-visability.png";
   static const String phone_icon = "assets/phone-icon.png";
   static const String back_icon = "assets/back.svg";
+  static const String location_icon = "assets/location_icon.png";
 }

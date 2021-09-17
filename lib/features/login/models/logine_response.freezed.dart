@@ -385,8 +385,15 @@ UserItem _$UserItemFromJson(Map<String, dynamic> json) {
 class _$UserItemTearOff {
   const _$UserItemTearOff();
 
-  _UserItem call(int id, String name, String phone, String? image,
-      String? phone_verified_at, bool is_verified, bool can_receive_offers) {
+  _UserItem call(
+      int id,
+      String name,
+      String phone,
+      String? image,
+      String? phone_verified_at,
+      bool is_verified,
+      bool can_receive_offers,
+      List<AddressItem> address) {
     return _UserItem(
       id,
       name,
@@ -395,6 +402,7 @@ class _$UserItemTearOff {
       phone_verified_at,
       is_verified,
       can_receive_offers,
+      address,
     );
   }
 
@@ -415,6 +423,7 @@ mixin _$UserItem {
   String? get phone_verified_at => throw _privateConstructorUsedError;
   bool get is_verified => throw _privateConstructorUsedError;
   bool get can_receive_offers => throw _privateConstructorUsedError;
+  List<AddressItem> get address => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -433,7 +442,8 @@ abstract class $UserItemCopyWith<$Res> {
       String? image,
       String? phone_verified_at,
       bool is_verified,
-      bool can_receive_offers});
+      bool can_receive_offers,
+      List<AddressItem> address});
 }
 
 /// @nodoc
@@ -453,6 +463,7 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
     Object? phone_verified_at = freezed,
     Object? is_verified = freezed,
     Object? can_receive_offers = freezed,
+    Object? address = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -483,6 +494,10 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
           ? _value.can_receive_offers
           : can_receive_offers // ignore: cast_nullable_to_non_nullable
               as bool,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as List<AddressItem>,
     ));
   }
 }
@@ -499,7 +514,8 @@ abstract class _$UserItemCopyWith<$Res> implements $UserItemCopyWith<$Res> {
       String? image,
       String? phone_verified_at,
       bool is_verified,
-      bool can_receive_offers});
+      bool can_receive_offers,
+      List<AddressItem> address});
 }
 
 /// @nodoc
@@ -520,6 +536,7 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
     Object? phone_verified_at = freezed,
     Object? is_verified = freezed,
     Object? can_receive_offers = freezed,
+    Object? address = freezed,
   }) {
     return _then(_UserItem(
       id == freezed
@@ -550,6 +567,10 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
           ? _value.can_receive_offers
           : can_receive_offers // ignore: cast_nullable_to_non_nullable
               as bool,
+      address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as List<AddressItem>,
     ));
   }
 }
@@ -557,8 +578,15 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UserItem implements _UserItem {
-  const _$_UserItem(this.id, this.name, this.phone, this.image,
-      this.phone_verified_at, this.is_verified, this.can_receive_offers);
+  const _$_UserItem(
+      this.id,
+      this.name,
+      this.phone,
+      this.image,
+      this.phone_verified_at,
+      this.is_verified,
+      this.can_receive_offers,
+      this.address);
 
   factory _$_UserItem.fromJson(Map<String, dynamic> json) =>
       _$_$_UserItemFromJson(json);
@@ -577,10 +605,12 @@ class _$_UserItem implements _UserItem {
   final bool is_verified;
   @override
   final bool can_receive_offers;
+  @override
+  final List<AddressItem> address;
 
   @override
   String toString() {
-    return 'UserItem(id: $id, name: $name, phone: $phone, image: $image, phone_verified_at: $phone_verified_at, is_verified: $is_verified, can_receive_offers: $can_receive_offers)';
+    return 'UserItem(id: $id, name: $name, phone: $phone, image: $image, phone_verified_at: $phone_verified_at, is_verified: $is_verified, can_receive_offers: $can_receive_offers, address: $address)';
   }
 
   @override
@@ -603,7 +633,9 @@ class _$_UserItem implements _UserItem {
                     .equals(other.is_verified, is_verified)) &&
             (identical(other.can_receive_offers, can_receive_offers) ||
                 const DeepCollectionEquality()
-                    .equals(other.can_receive_offers, can_receive_offers)));
+                    .equals(other.can_receive_offers, can_receive_offers)) &&
+            (identical(other.address, address) ||
+                const DeepCollectionEquality().equals(other.address, address)));
   }
 
   @override
@@ -615,7 +647,8 @@ class _$_UserItem implements _UserItem {
       const DeepCollectionEquality().hash(image) ^
       const DeepCollectionEquality().hash(phone_verified_at) ^
       const DeepCollectionEquality().hash(is_verified) ^
-      const DeepCollectionEquality().hash(can_receive_offers);
+      const DeepCollectionEquality().hash(can_receive_offers) ^
+      const DeepCollectionEquality().hash(address);
 
   @JsonKey(ignore: true)
   @override
@@ -636,7 +669,8 @@ abstract class _UserItem implements UserItem {
       String? image,
       String? phone_verified_at,
       bool is_verified,
-      bool can_receive_offers) = _$_UserItem;
+      bool can_receive_offers,
+      List<AddressItem> address) = _$_UserItem;
 
   factory _UserItem.fromJson(Map<String, dynamic> json) = _$_UserItem.fromJson;
 
@@ -655,7 +689,269 @@ abstract class _UserItem implements UserItem {
   @override
   bool get can_receive_offers => throw _privateConstructorUsedError;
   @override
+  List<AddressItem> get address => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$UserItemCopyWith<_UserItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AddressItem _$AddressItemFromJson(Map<String, dynamic> json) {
+  return _AddressItem.fromJson(json);
+}
+
+/// @nodoc
+class _$AddressItemTearOff {
+  const _$AddressItemTearOff();
+
+  _AddressItem call(int id, String name, String address, String lat,
+      String long, bool is_default) {
+    return _AddressItem(
+      id,
+      name,
+      address,
+      lat,
+      long,
+      is_default,
+    );
+  }
+
+  AddressItem fromJson(Map<String, Object> json) {
+    return AddressItem.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $AddressItem = _$AddressItemTearOff();
+
+/// @nodoc
+mixin _$AddressItem {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
+  String get lat => throw _privateConstructorUsedError;
+  String get long => throw _privateConstructorUsedError;
+  bool get is_default => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AddressItemCopyWith<AddressItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddressItemCopyWith<$Res> {
+  factory $AddressItemCopyWith(
+          AddressItem value, $Res Function(AddressItem) then) =
+      _$AddressItemCopyWithImpl<$Res>;
+  $Res call(
+      {int id,
+      String name,
+      String address,
+      String lat,
+      String long,
+      bool is_default});
+}
+
+/// @nodoc
+class _$AddressItemCopyWithImpl<$Res> implements $AddressItemCopyWith<$Res> {
+  _$AddressItemCopyWithImpl(this._value, this._then);
+
+  final AddressItem _value;
+  // ignore: unused_field
+  final $Res Function(AddressItem) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? address = freezed,
+    Object? lat = freezed,
+    Object? long = freezed,
+    Object? is_default = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      lat: lat == freezed
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as String,
+      long: long == freezed
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
+              as String,
+      is_default: is_default == freezed
+          ? _value.is_default
+          : is_default // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$AddressItemCopyWith<$Res>
+    implements $AddressItemCopyWith<$Res> {
+  factory _$AddressItemCopyWith(
+          _AddressItem value, $Res Function(_AddressItem) then) =
+      __$AddressItemCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {int id,
+      String name,
+      String address,
+      String lat,
+      String long,
+      bool is_default});
+}
+
+/// @nodoc
+class __$AddressItemCopyWithImpl<$Res> extends _$AddressItemCopyWithImpl<$Res>
+    implements _$AddressItemCopyWith<$Res> {
+  __$AddressItemCopyWithImpl(
+      _AddressItem _value, $Res Function(_AddressItem) _then)
+      : super(_value, (v) => _then(v as _AddressItem));
+
+  @override
+  _AddressItem get _value => super._value as _AddressItem;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? address = freezed,
+    Object? lat = freezed,
+    Object? long = freezed,
+    Object? is_default = freezed,
+  }) {
+    return _then(_AddressItem(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      lat == freezed
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as String,
+      long == freezed
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
+              as String,
+      is_default == freezed
+          ? _value.is_default
+          : is_default // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AddressItem implements _AddressItem {
+  const _$_AddressItem(
+      this.id, this.name, this.address, this.lat, this.long, this.is_default);
+
+  factory _$_AddressItem.fromJson(Map<String, dynamic> json) =>
+      _$_$_AddressItemFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final String address;
+  @override
+  final String lat;
+  @override
+  final String long;
+  @override
+  final bool is_default;
+
+  @override
+  String toString() {
+    return 'AddressItem(id: $id, name: $name, address: $address, lat: $lat, long: $long, is_default: $is_default)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _AddressItem &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.address, address) ||
+                const DeepCollectionEquality()
+                    .equals(other.address, address)) &&
+            (identical(other.lat, lat) ||
+                const DeepCollectionEquality().equals(other.lat, lat)) &&
+            (identical(other.long, long) ||
+                const DeepCollectionEquality().equals(other.long, long)) &&
+            (identical(other.is_default, is_default) ||
+                const DeepCollectionEquality()
+                    .equals(other.is_default, is_default)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(address) ^
+      const DeepCollectionEquality().hash(lat) ^
+      const DeepCollectionEquality().hash(long) ^
+      const DeepCollectionEquality().hash(is_default);
+
+  @JsonKey(ignore: true)
+  @override
+  _$AddressItemCopyWith<_AddressItem> get copyWith =>
+      __$AddressItemCopyWithImpl<_AddressItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AddressItemToJson(this);
+  }
+}
+
+abstract class _AddressItem implements AddressItem {
+  const factory _AddressItem(int id, String name, String address, String lat,
+      String long, bool is_default) = _$_AddressItem;
+
+  factory _AddressItem.fromJson(Map<String, dynamic> json) =
+      _$_AddressItem.fromJson;
+
+  @override
+  int get id => throw _privateConstructorUsedError;
+  @override
+  String get name => throw _privateConstructorUsedError;
+  @override
+  String get address => throw _privateConstructorUsedError;
+  @override
+  String get lat => throw _privateConstructorUsedError;
+  @override
+  String get long => throw _privateConstructorUsedError;
+  @override
+  bool get is_default => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$AddressItemCopyWith<_AddressItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

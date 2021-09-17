@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
+import 'package:tawseel/features/locationPicker/location_bloc.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
 import 'package:tawseel/features/signup/bloc/SignUpRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -55,6 +56,9 @@ void main() async {
           ),
           ChangeNotifierProvider(
             create: (context) => tm,
+          ),
+          ChangeNotifierProvider(
+            create: (context) => LocationBloc(),
           ),
         ],
         child: MyApp(),
