@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -7,6 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
+import 'package:tawseel/features/locationPicker/SearchInput.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/main.dart';
@@ -15,7 +15,6 @@ import 'package:tawseel/res.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/ktx.dart';
-import 'location_bloc.dart';
 
 class LocationPickerDialog extends StatefulWidget {
   LocationPickerDialog({Key? key}) : super(key: key);
@@ -47,37 +46,10 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
     super.initState();
     init();
     getUserLocation();
-
-//     final locationBloc = Provider.of<LocationBloc>(context, listen: false);
-// //Listen for selected Location
-//     locationSubscription = locationBloc.selectedLocation.stream.listen((place) {
-//       if (place != null) {
-//         searchController.text = place.name;
-//         // _goToPlace(place);
-//         print(place.toString());
-//       } else
-//         searchController.text = "";
-//     });
-
-//     locationBloc.bounds.stream.listen((bounds) async {
-//       final GoogleMapController controller = await mapController.future;
-//       controller.animateCamera(CameraUpdate.newLatLngBounds(bounds, 50));
-//     });
-
-    // searchController.addListener(() {
-    //   setState(() {
-    //     search = searchController.text;
-    //   });
-    // });
   }
 
   @override
   void dispose() {
-    final locationBloc = Provider.of<LocationBloc>(context, listen: false);
-    locationBloc.dispose();
-    searchController.dispose();
-    locationSubscription.cancel();
-    boundsSubscription.cancel();
     super.dispose();
   }
 
@@ -137,6 +109,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
     var padding = media.padding;
     double height = h - padding.top - padding.bottom;
     var inSerachMode = search.isNotEmpty;
+    print("setstate : $inSerachMode");
     return Scaffold(
       body: Stack(
         children: [
@@ -214,8 +187,9 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
           //?----------------------------------------------------------------------------?//
           //?                                Search bar                                   ?//
           //?----------------------------------------------------------------------------?//
+
           Positioned(
-            top: height / 7,
+            top: height / 6,
             left: 0,
             right: 0,
             child: Container(
@@ -225,19 +199,14 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
               width: double.infinity,
               child: Column(
                 children: [
-                  SearchBar(
-                    onSearchTextChange: (text) {
+                  SearchInput(
+                    onSearchInput: (input) {
+                      print("object : $input");
                       setState(() {
-                        search = text;
+                        search = input;
+                        print("object : $input");
                       });
-
-                      print(search);
                     },
-                    onSubmitCallback: () {
-                      print("onSubmitCallback");
-                      print(searchController.text);
-                    },
-                    controller: searchController,
                   ),
                   AnimatedOpacity(
                     opacity: inSerachMode ? 1 : 0,
