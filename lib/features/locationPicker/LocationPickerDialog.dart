@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -7,6 +9,8 @@ import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/locationPicker/SearchInput.dart';
+import 'package:tawseel/features/locationPicker/models/localization_item.dart';
+import 'package:tawseel/features/locationPicker/rich_suggestion.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/main.dart';
@@ -15,6 +19,10 @@ import 'package:tawseel/res.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/ktx.dart';
+
+import 'models/auto_complete_item.dart';
+import 'models/location_result.dart';
+import 'models/uuid.dart';
 
 class LocationPickerDialog extends StatefulWidget {
   LocationPickerDialog({Key? key}) : super(key: key);
@@ -201,11 +209,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
                 children: [
                   SearchInput(
                     onSearchInput: (input) {
-                      print("object : $input");
-                      setState(() {
-                        search = input;
-                        print("object : $input");
-                      });
+                      autoCompleteSearch(input);
                     },
                   ),
                   AnimatedOpacity(
@@ -231,12 +235,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
                       ),
                       child: Column(
                         children: [
-                          Text("search : $search"),
-                          Text("search : $search"),
-                          Text("search : $search"),
-                          Text("search : $search"),
-                          Text("search : $search"),
-                          Text("search : $search"),
+                          Text("search : ${searchList.toString()}"),
                           Text("search : $search"),
                         ],
                       ),
@@ -299,6 +298,131 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
   }
 
   void createAddress(BuildContext context) {}
+
+  String sessionToken = Uuid().generateV4();
+  var apiKey = "AIzaSyDMzkUYPN1EpcZ-y7g9hd2bF9mQ_WPrw20";
+  var languageCode = "en-us";
+
+  /// Result returned after user completes selection
+  LocationResult? locationResult;
+
+  void autoCompleteSearch(String place) async {
+    try {
+      place = place.replaceAll(" ", "+");
+
+      var endpoint =
+          "https://maps.googleapis.com/maps/api/place/autocomplete/json?"
+          "key=$apiKey&"
+          "language=$languageCode&"
+          "input={$place}&sessiontoken=${this.sessionToken}";
+
+      if (this.locationResult != null) {
+        endpoint += "&location=${locationResult?.latLng.latitude}," +
+            "${locationResult?.latLng.longitude}";
+      }
+
+      var dio = Dio();
+      dio.interceptors
+          .add(LogInterceptor(responseBody: true, requestBody: true));
+
+      final response = await dio.get(endpoint);
+      if (response.statusCode != 200) {
+        throw Error();
+        printResponse(response.toString());
+      }
+
+      final responseJson = jsonDecode(response.data);
+      if (responseJson['predictions'] == null) {
+        throw Error();
+      }
+
+      List<dynamic> predictions = responseJson['predictions'];
+
+      List<RichSuggestion> suggestions = [];
+
+      if (predictions.isEmpty) {
+        var aci = AutoCompleteItem("noResultsFound", "0", 0, 0);
+        suggestions.add(RichSuggestion(aci, onTap: () {}));
+      } else {
+        for (dynamic t in predictions) {
+          final aci = AutoCompleteItem(
+            t['place_id'],
+            t['description'],
+            t['matched_substrings'][0]['offset'],
+            t['matched_substrings'][0]['length'],
+          );
+          suggestions.add(RichSuggestion(aci, onTap: () {
+            FocusScope.of(context).requestFocus(FocusNode());
+            getLatLngFromPlaceId(aci.id);
+          }));
+        }
+      }
+
+      updateSuggestions(suggestions);
+    } catch (e) {
+      debugPrint('Exception : $e');
+      printResponse(e.toString());
+    }
+
+    printResponse("response");
+  }
+
+  List<RichSuggestion> searchList = [];
+
+  void updateSuggestions(List<RichSuggestion> suggestions) {
+    setState(() {
+      searchList = suggestions;
+    });
+  }
+
+  void hideSuggestions() {
+    setState(() {
+      searchList = [];
+    });
+  }
+
+  /// To navigate to the selected place from the autocomplete list to the map,
+  /// the lat,lng is required. This method fetches the lat,lng of the place and
+  /// proceeds to moving the map to that location.
+  void getLatLngFromPlaceId(String placeId) async {
+    // hide suggestions
+    hideSuggestions();
+
+    try {
+      final url =
+          "https://maps.googleapis.com/maps/api/place/details/json?key=$apiKey&" +
+              "language=$languageCode&" +
+              "placeid=$placeId";
+
+      var dio = Dio();
+      dio.interceptors
+          .add(LogInterceptor(responseBody: true, requestBody: true));
+
+      final response = await dio.get(url);
+
+      if (response.statusCode != 200) {
+        throw Error();
+      }
+
+      final responseJson = jsonDecode(response.data);
+
+      if (responseJson['result'] == null) {
+        throw Error();
+      }
+
+      final location = responseJson['result']['geometry']['location'];
+      _addMarker(LatLng(location['lat'], location['lng']));
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void printResponse(String response) {
+    setState(() {
+      search = response;
+      print("object : $response");
+    });
+  }
 }
 
 class SearchBar extends StatefulWidget {
