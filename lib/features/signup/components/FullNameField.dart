@@ -47,11 +47,11 @@ class _FullNameFieldState extends State<FullNameField> {
             decoration: InputDecoration(
               prefixIcon: ImageIcon(
                 AssetImage(Res.fullname_icon),
-                color: tm.isDark() ? Colors.white : Colors.blueGrey,
+                color: tm.isDark() ? Colors.white : hintColor,
               ),
               border: InputBorder.none,
               hintStyle: TextStyle(
-                  color: tm.isDark() ? Colors.white : Colors.blueGrey[500],
+                  color: tm.isDark() ? Colors.white : hintColor,
                   fontWeight: FontWeight.w500),
               hintText: LocaleKeys.full_name_hint.tr(),
             ),

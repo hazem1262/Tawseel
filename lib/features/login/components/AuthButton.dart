@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tawseel/main.dart';
 
 class AuthButton extends StatelessWidget {
   final String title;
@@ -10,7 +11,17 @@ class AuthButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    List<Widget> enWidgets = [
+      icon,
+      SizedBox(width: 8),
+      Text(title, style: theme.textTheme.bodyText1)
+    ];
 
+    List<Widget> arWidgets = [
+      Text(title, style: theme.textTheme.bodyText1),
+      SizedBox(width: 8),
+      icon,
+    ];
     return Container(
       child: Card(
         elevation: 0,
@@ -26,11 +37,7 @@ class AuthButton extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
-              children: [
-                icon,
-                SizedBox(width: 8),
-                Text(title, style: theme.textTheme.bodyText1),
-              ],
+              children: isAr ? arWidgets : enWidgets,
             ),
           ),
         ),

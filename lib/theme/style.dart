@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 const LargeTextSize = 26.0;
 const MeduimTextSize = 20.0;
 const BodyTextSize = 16.0;
@@ -10,15 +12,17 @@ const ErrorTextSize = 12.0;
 const Color TitleDarkColor_Light = Color(0xff242454);
 const Color TitleDarkColor_Dark = Color(0xffFFFFFF);
 
+const Color hintColor = Color(0xfffacb1c0);
 const Color CaptionDarkColor_Light = Color(0xff969696);
 const Color CaptionDarkColor_Dark = Color(0xffFFFFFF);
 
 const String FontNameDefault = "Poppins";
+const String FontNameDefaultAr = "test";
 
 // ignore: non_constant_identifier_names
 titlesTextStyle(bool isDark) => TextStyle(
       fontFamily: FontNameDefault,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w900,
       fontSize: LargeTextSize,
       color: isDark ? TitleDarkColor_Dark : TitleDarkColor_Light,
     );

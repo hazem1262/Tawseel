@@ -209,7 +209,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         LocaleKeys.forgot_password.tr(),
                                         style: theme.textTheme.bodyText1!
                                             .copyWith(
-                                                fontWeight: FontWeight.w500),
+                                                fontWeight: FontWeight.w700),
                                         textAlign: TextAlign.end,
                                       ),
                                     )),

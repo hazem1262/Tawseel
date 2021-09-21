@@ -26,6 +26,7 @@ const GlobalKey<NavigatorState> appKey = GlobalObjectKey("tawseel-key");
 BuildContext appContext = appKey.currentContext as BuildContext;
 Locale get currentLocal => appContext.locale;
 String get currentLocalName => appContext.locale.toString();
+bool get isAr => appContext.locale.toString().contains("ar");
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

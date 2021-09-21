@@ -25,6 +25,8 @@ class TextBetweenDividers extends StatelessWidget {
         Text(
           text,
           textAlign: TextAlign.center,
+          style:
+              TextStyle(color: tm.isDark() ? Colors.white : Color(0xfff676767)),
         ),
         Expanded(
           child: new Container(

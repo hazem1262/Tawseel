@@ -47,11 +47,11 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             decoration: InputDecoration(
               prefixIcon: ImageIcon(
                 AssetImage(Res.phone_icon),
-                color: tm.isDark() ? Colors.white : Colors.blueGrey,
+                color: tm.isDark() ? Colors.white : hintColor,
               ),
               border: InputBorder.none,
               hintStyle: TextStyle(
-                  color: tm.isDark() ? Colors.white : Colors.blueGrey[500],
+                  color: tm.isDark() ? Colors.white : hintColor,
                   fontWeight: FontWeight.w500),
               hintText: LocaleKeys.phone_number_hint.tr(),
             ),
