@@ -7,6 +7,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:tawseel/data/remote/places_api_service.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/locationPicker/SearchInput.dart';
 import 'package:tawseel/features/locationPicker/rich_suggestion.dart';
@@ -31,10 +33,9 @@ class LocationPickerDialog extends StatefulWidget {
 }
 
 class _LocationPickerDialogState extends State<LocationPickerDialog> {
-  late StreamSubscription locationSubscription;
-  late StreamSubscription boundsSubscription;
-
-  final searchController = TextEditingController();
+  String sessionToken = Uuid().generateV4();
+  var apiKey = "AIzaSyDMzkUYPN1EpcZ-y7g9hd2bF9mQ_WPrw20";
+  var languageCode = "en-us";
 
   Completer<GoogleMapController> mapController = Completer();
   late BitmapDescriptor locationIcon;
@@ -76,7 +77,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
         setState(() {
           defaultLocation =
               LatLng(currentLocation.latitude!, currentLocation.longitude!);
-          _addMarker(defaultLocation);
+          _addMarker(defaultLocation, "654321", "default");
         });
       }
     }
@@ -119,18 +120,22 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
     });
   }
 
+  late var height;
+  late var width;
+
   @override
   Widget build(BuildContext context) {
     theme = Theme.of(context);
     var media = MediaQuery.of(context);
     double h = media.size.height;
-    double width = media.size.width;
+    width = media.size.width;
     var padding = media.padding;
-    double height = h - padding.top - padding.bottom;
-    var inSerachMode = search.isNotEmpty;
-    print("setstate : $inSerachMode");
+    height = h - padding.top - padding.bottom;
+
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
+        fit: StackFit.expand,
         children: [
           Container(
             //?----------------------------------------------------------------------------?//
@@ -138,22 +143,23 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
             //?----------------------------------------------------------------------------?//
             child: GoogleMap(
               myLocationEnabled: (serviceEnabled && permissionsGranted),
-              zoomGesturesEnabled: true,
+              zoomGesturesEnabled: false,
+              compassEnabled: false,
+              tiltGesturesEnabled: false,
+              myLocationButtonEnabled: false,
               zoomControlsEnabled: false,
               mapType: MapType.normal,
               onTap: (point) {
-                _addMarker(point);
+                _addMarker(point, "123456", "");
               },
               onMapCreated: (controller) {
                 mapController.complete(controller);
-                // mapController.future.then((value) {
-                //   value.setMapStyle('');
-                // });
-
                 _getFileData('assets/night_mode.json').then(_setMapStyle);
               },
-              initialCameraPosition:
-                  CameraPosition(target: defaultLocation, zoom: 4.5),
+              initialCameraPosition: CameraPosition(
+                target: defaultLocation,
+                zoom: 4.5,
+              ),
               markers: {
                 if (userPickedMarker != null) userPickedMarker!,
               },
@@ -206,58 +212,10 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
               )),
 
           //?----------------------------------------------------------------------------?//
-          //?                                Search bar                                   ?//
+          //?                                Search bar                                  ?//
           //?----------------------------------------------------------------------------?//
 
-          Positioned(
-            top: height / 6,
-            left: 0,
-            right: 0,
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: width * 0.06),
-              alignment: AlignmentDirectional.center,
-              color: Colors.transparent,
-              width: double.infinity,
-              child: Column(
-                children: [
-                  SearchInput(
-                    onSearchInput: (input) {
-                      autoCompleteSearch(input);
-                    },
-                  ),
-                  AnimatedOpacity(
-                    opacity: inSerachMode ? 1 : 0,
-                    duration: Duration(milliseconds: 500),
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 375),
-                      margin: EdgeInsets.symmetric(
-                          horizontal: inSerachMode ? 0 : width * 0.02),
-                      alignment: AlignmentDirectional.center,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black26,
-                            spreadRadius: -10,
-                            blurRadius: 10,
-                            offset: Offset(0, 10),
-                          )
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Text("search : ${searchList.toString()}"),
-                          Text("search : $search"),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
+          // SearchWidget(),
 
           //?----------------------------------------------------------------------------?//
           //?                             Confirm  location button                       ?//
@@ -278,16 +236,141 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
               ),
             ),
           ),
+          TestSearchWidget(),
         ],
       ),
     );
   }
 
-  void _addMarker(LatLng point) {
+  var searchController = FloatingSearchBarController();
+
+  Widget TestSearchWidget() {
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+
+    return FloatingSearchBar(
+      margins: EdgeInsets.only(top: height / 6),
+      controller: searchController,
+      borderRadius: BorderRadius.circular(15),
+      clearQueryOnClose: true,
+      progress: searchIsLoading,
+      onFocusChanged: (isFouced) {
+        if (!isFouced) {
+          hideSuggestions();
+        }
+      },
+      elevation: 0,
+      shadowColor: theme.primaryColor,
+      leadingActions: [
+        FloatingSearchBarAction.searchToClear(
+          showIfClosed: true,
+        ),
+      ],
+      actions: [
+        FloatingSearchBarAction(
+          showIfOpened: false,
+          child: CircularButton(
+            icon: const Icon(Icons.place),
+            onPressed: () {
+              getUserLocation();
+            },
+          ),
+        ),
+      ],
+      hint: 'Find your location ',
+      scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
+      transitionDuration: const Duration(milliseconds: 800),
+      transitionCurve: Curves.easeInOut,
+      physics: const BouncingScrollPhysics(),
+      axisAlignment: isPortrait ? 0.0 : -1.0,
+      openAxisAlignment: 0.0,
+      width: width * 0.88,
+      debounceDelay: const Duration(milliseconds: 500),
+      onQueryChanged: (query) {
+        // Call your model, bloc, controller here.
+        autoCompleteSearch(query);
+      },
+      transition: CircularFloatingSearchBarTransition(),
+      builder: (context, transition) {
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Material(
+            color: Colors.white,
+            elevation: 4.0,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: searchList,
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget SearchWidget() {
+    var inSerachMode = search.isNotEmpty;
+
+    return Positioned(
+      top: height / 6,
+      left: 0,
+      right: 0,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: width * 0.06),
+        alignment: AlignmentDirectional.center,
+        color: Colors.transparent,
+        width: double.infinity,
+        child: Column(
+          children: [
+            // SearchInput(
+            //   onSearchInput: (input) {
+            //     setState(() {
+            //       search = input;
+            //     });
+
+            //     autoCompleteSearch(input);
+            //   },
+            // ),
+            Column(
+              children: searchList,
+            ),
+            AnimatedOpacity(
+              opacity: inSerachMode ? 1 : 0,
+              duration: Duration(milliseconds: 500),
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 375),
+                margin: EdgeInsets.symmetric(
+                    horizontal: inSerachMode ? 0 : width * 0.02),
+                alignment: AlignmentDirectional.center,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      spreadRadius: -10,
+                      blurRadius: 10,
+                      offset: Offset(0, 10),
+                    )
+                  ],
+                ),
+                child: Column(
+                  children: searchList,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _addMarker(LatLng point, String placeId, String title) {
     setState(() {
+      // reset search list
       userPickedMarker = Marker(
-        markerId: MarkerId("pickedMarker"),
-        infoWindow: InfoWindow(title: "Picked Location"),
+        markerId: MarkerId(title),
+        infoWindow: InfoWindow(title: title.isEmpty ? "" : ""),
         icon: locationIcon,
         position: point,
       );
@@ -304,80 +387,57 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
           bearing: 10.8334901395799,
           target: position,
           tilt: 10.440717697143555,
-          zoom: 5.151926040649414,
+          zoom: 15.151926040649414,
         ),
       ),
     );
+
+    hideSuggestions();
   }
 
   void createAddress(BuildContext context) {}
 
-  String sessionToken = Uuid().generateV4();
-  var apiKey = "AIzaSyDMzkUYPN1EpcZ-y7g9hd2bF9mQ_WPrw20";
-  var languageCode = "en-us";
-
-  /// Result returned after user completes selection
-  LocationResult? locationResult;
+  var searchIsLoading = false;
 
   void autoCompleteSearch(String place) async {
-    try {
-      place = place.replaceAll(" ", "+");
+    var query = place.replaceAll(" ", "+");
+    if (query.isEmpty) return;
 
-      var endpoint =
-          "https://maps.googleapis.com/maps/api/place/autocomplete/json?"
-          "key=$apiKey&"
-          "language=$languageCode&"
-          "input={$place}&sessiontoken=${this.sessionToken}";
+    setState(() {
+      searchIsLoading = true;
+    });
 
-      if (this.locationResult != null) {
-        endpoint += "&location=${locationResult?.latLng.latitude}," +
-            "${locationResult?.latLng.longitude}";
-      }
-
-      var dio = Dio();
-      dio.interceptors
-          .add(LogInterceptor(responseBody: true, requestBody: true));
-
-      final response = await dio.get(endpoint);
-      if (response.statusCode != 200) {
-        throw Error();
-        printResponse(response.toString());
-      }
-
-      final responseJson = jsonDecode(response.data);
-      if (responseJson['predictions'] == null) {
-        throw Error();
-      }
-
-      List<dynamic> predictions = responseJson['predictions'];
-
+    getIt<PlacesApiService>()
+        .getSuggestions(
+      apiKey,
+      currentLocalName,
+      query,
+      this.sessionToken,
+    )
+        .then((response) {
       List<RichSuggestion> suggestions = [];
 
-      if (predictions.isEmpty) {
+      if (response.predictions.isEmpty) {
         var aci = AutoCompleteItem("noResultsFound", "0", 0, 0);
         suggestions.add(RichSuggestion(aci, onTap: () {}));
+        return;
       } else {
-        for (dynamic t in predictions) {
-          final aci = AutoCompleteItem(
-            t['place_id'],
-            t['description'],
-            t['matched_substrings'][0]['offset'],
-            t['matched_substrings'][0]['length'],
+        response.predictions.forEach((element) {
+          final autoCompleteItem = AutoCompleteItem(
+            element.place_id,
+            element.description,
+            element.matched_substrings.first.offset,
+            element.matched_substrings.first.length,
           );
-          suggestions.add(RichSuggestion(aci, onTap: () {
+          suggestions.add(RichSuggestion(autoCompleteItem, onTap: () {
             FocusScope.of(context).requestFocus(FocusNode());
-            getLatLngFromPlaceId(aci.id);
+            getLatLngFromPlaceId(autoCompleteItem.id);
           }));
-        }
+        });
+
+        updateSuggestions(suggestions);
       }
-
-      updateSuggestions(suggestions);
-    } catch (e) {
-      debugPrint('Exception : $e');
-      printResponse(e.toString());
-    }
-
-    printResponse("response");
+    });
   }
 
   List<RichSuggestion> searchList = [];
@@ -385,55 +445,47 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
   void updateSuggestions(List<RichSuggestion> suggestions) {
     setState(() {
       searchList = suggestions;
+      searchIsLoading = false;
     });
   }
 
   void hideSuggestions() {
     setState(() {
       searchList = [];
+      search = "";
     });
   }
 
-  /// To navigate to the selected place from the autocomplete list to the map,
-  /// the lat,lng is required. This method fetches the lat,lng of the place and
-  /// proceeds to moving the map to that location.
   void getLatLngFromPlaceId(String placeId) async {
     // hide suggestions
     hideSuggestions();
+    if (placeId.isEmpty) return;
 
-    try {
-      final url =
-          "https://maps.googleapis.com/maps/api/place/details/json?key=$apiKey&" +
-              "language=$languageCode&" +
-              "placeid=$placeId";
-
-      var dio = Dio();
-      dio.interceptors
-          .add(LogInterceptor(responseBody: true, requestBody: true));
-
-      final response = await dio.get(url);
-
-      if (response.statusCode != 200) {
-        throw Error();
-      }
-
-      final responseJson = jsonDecode(response.data);
-
-      if (responseJson['result'] == null) {
-        throw Error();
-      }
-
-      final location = responseJson['result']['geometry']['location'];
-      _addMarker(LatLng(location['lat'], location['lng']));
-    } catch (e) {
-      print(e);
-    }
-  }
-
-  void printResponse(String response) {
     setState(() {
-      search = response;
-      print("object : $response");
+      searchIsLoading = true;
+    });
+
+    getIt<PlacesApiService>()
+        .getPlaceDetails(apiKey, currentLocalName, placeId)
+        .then((response) {
+      if (response.result == null) {
+        appContext.showToast("No results for this place");
+        hideSuggestions();
+      } else {
+        final location = response.result!.geometry.location;
+        _addMarker(
+          LatLng(location.lat, location.lng),
+          response.result!.place_id,
+          response.result!.name,
+        );
+
+        searchController.clear();
+        searchController.close();
+      }
+
+      setState(() {
+        searchIsLoading = false;
+      });
     });
   }
 }

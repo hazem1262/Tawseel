@@ -199,18 +199,18 @@ class _$PredictionsTearOff {
 
   _Predictions call(
       String description,
-      List<MatchedSubstring> matchedSubstrings,
-      String placeId,
+      List<MatchedSubstring> matched_substrings,
+      String place_id,
       String reference,
-      StructuredFormatting structuredFormatting,
+      StructuredFormatting structured_formatting,
       List<Terms> terms,
       List<String> types) {
     return _Predictions(
       description,
-      matchedSubstrings,
-      placeId,
+      matched_substrings,
+      place_id,
       reference,
-      structuredFormatting,
+      structured_formatting,
       terms,
       types,
     );
@@ -227,11 +227,11 @@ const $Predictions = _$PredictionsTearOff();
 /// @nodoc
 mixin _$Predictions {
   String get description => throw _privateConstructorUsedError;
-  List<MatchedSubstring> get matchedSubstrings =>
+  List<MatchedSubstring> get matched_substrings =>
       throw _privateConstructorUsedError;
-  String get placeId => throw _privateConstructorUsedError;
+  String get place_id => throw _privateConstructorUsedError;
   String get reference => throw _privateConstructorUsedError;
-  StructuredFormatting get structuredFormatting =>
+  StructuredFormatting get structured_formatting =>
       throw _privateConstructorUsedError;
   List<Terms> get terms => throw _privateConstructorUsedError;
   List<String> get types => throw _privateConstructorUsedError;
@@ -249,14 +249,14 @@ abstract class $PredictionsCopyWith<$Res> {
       _$PredictionsCopyWithImpl<$Res>;
   $Res call(
       {String description,
-      List<MatchedSubstring> matchedSubstrings,
-      String placeId,
+      List<MatchedSubstring> matched_substrings,
+      String place_id,
       String reference,
-      StructuredFormatting structuredFormatting,
+      StructuredFormatting structured_formatting,
       List<Terms> terms,
       List<String> types});
 
-  $StructuredFormattingCopyWith<$Res> get structuredFormatting;
+  $StructuredFormattingCopyWith<$Res> get structured_formatting;
 }
 
 /// @nodoc
@@ -270,10 +270,10 @@ class _$PredictionsCopyWithImpl<$Res> implements $PredictionsCopyWith<$Res> {
   @override
   $Res call({
     Object? description = freezed,
-    Object? matchedSubstrings = freezed,
-    Object? placeId = freezed,
+    Object? matched_substrings = freezed,
+    Object? place_id = freezed,
     Object? reference = freezed,
-    Object? structuredFormatting = freezed,
+    Object? structured_formatting = freezed,
     Object? terms = freezed,
     Object? types = freezed,
   }) {
@@ -282,21 +282,21 @@ class _$PredictionsCopyWithImpl<$Res> implements $PredictionsCopyWith<$Res> {
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      matchedSubstrings: matchedSubstrings == freezed
-          ? _value.matchedSubstrings
-          : matchedSubstrings // ignore: cast_nullable_to_non_nullable
+      matched_substrings: matched_substrings == freezed
+          ? _value.matched_substrings
+          : matched_substrings // ignore: cast_nullable_to_non_nullable
               as List<MatchedSubstring>,
-      placeId: placeId == freezed
-          ? _value.placeId
-          : placeId // ignore: cast_nullable_to_non_nullable
+      place_id: place_id == freezed
+          ? _value.place_id
+          : place_id // ignore: cast_nullable_to_non_nullable
               as String,
       reference: reference == freezed
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as String,
-      structuredFormatting: structuredFormatting == freezed
-          ? _value.structuredFormatting
-          : structuredFormatting // ignore: cast_nullable_to_non_nullable
+      structured_formatting: structured_formatting == freezed
+          ? _value.structured_formatting
+          : structured_formatting // ignore: cast_nullable_to_non_nullable
               as StructuredFormatting,
       terms: terms == freezed
           ? _value.terms
@@ -310,10 +310,10 @@ class _$PredictionsCopyWithImpl<$Res> implements $PredictionsCopyWith<$Res> {
   }
 
   @override
-  $StructuredFormattingCopyWith<$Res> get structuredFormatting {
-    return $StructuredFormattingCopyWith<$Res>(_value.structuredFormatting,
+  $StructuredFormattingCopyWith<$Res> get structured_formatting {
+    return $StructuredFormattingCopyWith<$Res>(_value.structured_formatting,
         (value) {
-      return _then(_value.copyWith(structuredFormatting: value));
+      return _then(_value.copyWith(structured_formatting: value));
     });
   }
 }
@@ -327,15 +327,15 @@ abstract class _$PredictionsCopyWith<$Res>
   @override
   $Res call(
       {String description,
-      List<MatchedSubstring> matchedSubstrings,
-      String placeId,
+      List<MatchedSubstring> matched_substrings,
+      String place_id,
       String reference,
-      StructuredFormatting structuredFormatting,
+      StructuredFormatting structured_formatting,
       List<Terms> terms,
       List<String> types});
 
   @override
-  $StructuredFormattingCopyWith<$Res> get structuredFormatting;
+  $StructuredFormattingCopyWith<$Res> get structured_formatting;
 }
 
 /// @nodoc
@@ -351,10 +351,10 @@ class __$PredictionsCopyWithImpl<$Res> extends _$PredictionsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? description = freezed,
-    Object? matchedSubstrings = freezed,
-    Object? placeId = freezed,
+    Object? matched_substrings = freezed,
+    Object? place_id = freezed,
     Object? reference = freezed,
-    Object? structuredFormatting = freezed,
+    Object? structured_formatting = freezed,
     Object? terms = freezed,
     Object? types = freezed,
   }) {
@@ -363,21 +363,21 @@ class __$PredictionsCopyWithImpl<$Res> extends _$PredictionsCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      matchedSubstrings == freezed
-          ? _value.matchedSubstrings
-          : matchedSubstrings // ignore: cast_nullable_to_non_nullable
+      matched_substrings == freezed
+          ? _value.matched_substrings
+          : matched_substrings // ignore: cast_nullable_to_non_nullable
               as List<MatchedSubstring>,
-      placeId == freezed
-          ? _value.placeId
-          : placeId // ignore: cast_nullable_to_non_nullable
+      place_id == freezed
+          ? _value.place_id
+          : place_id // ignore: cast_nullable_to_non_nullable
               as String,
       reference == freezed
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as String,
-      structuredFormatting == freezed
-          ? _value.structuredFormatting
-          : structuredFormatting // ignore: cast_nullable_to_non_nullable
+      structured_formatting == freezed
+          ? _value.structured_formatting
+          : structured_formatting // ignore: cast_nullable_to_non_nullable
               as StructuredFormatting,
       terms == freezed
           ? _value.terms
@@ -394,8 +394,8 @@ class __$PredictionsCopyWithImpl<$Res> extends _$PredictionsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Predictions implements _Predictions {
-  const _$_Predictions(this.description, this.matchedSubstrings, this.placeId,
-      this.reference, this.structuredFormatting, this.terms, this.types);
+  const _$_Predictions(this.description, this.matched_substrings, this.place_id,
+      this.reference, this.structured_formatting, this.terms, this.types);
 
   factory _$_Predictions.fromJson(Map<String, dynamic> json) =>
       _$_$_PredictionsFromJson(json);
@@ -403,13 +403,13 @@ class _$_Predictions implements _Predictions {
   @override
   final String description;
   @override
-  final List<MatchedSubstring> matchedSubstrings;
+  final List<MatchedSubstring> matched_substrings;
   @override
-  final String placeId;
+  final String place_id;
   @override
   final String reference;
   @override
-  final StructuredFormatting structuredFormatting;
+  final StructuredFormatting structured_formatting;
   @override
   final List<Terms> terms;
   @override
@@ -417,7 +417,7 @@ class _$_Predictions implements _Predictions {
 
   @override
   String toString() {
-    return 'Predictions(description: $description, matchedSubstrings: $matchedSubstrings, placeId: $placeId, reference: $reference, structuredFormatting: $structuredFormatting, terms: $terms, types: $types)';
+    return 'Predictions(description: $description, matched_substrings: $matched_substrings, place_id: $place_id, reference: $reference, structured_formatting: $structured_formatting, terms: $terms, types: $types)';
   }
 
   @override
@@ -427,18 +427,18 @@ class _$_Predictions implements _Predictions {
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
-            (identical(other.matchedSubstrings, matchedSubstrings) ||
+            (identical(other.matched_substrings, matched_substrings) ||
                 const DeepCollectionEquality()
-                    .equals(other.matchedSubstrings, matchedSubstrings)) &&
-            (identical(other.placeId, placeId) ||
+                    .equals(other.matched_substrings, matched_substrings)) &&
+            (identical(other.place_id, place_id) ||
                 const DeepCollectionEquality()
-                    .equals(other.placeId, placeId)) &&
+                    .equals(other.place_id, place_id)) &&
             (identical(other.reference, reference) ||
                 const DeepCollectionEquality()
                     .equals(other.reference, reference)) &&
-            (identical(other.structuredFormatting, structuredFormatting) ||
+            (identical(other.structured_formatting, structured_formatting) ||
                 const DeepCollectionEquality().equals(
-                    other.structuredFormatting, structuredFormatting)) &&
+                    other.structured_formatting, structured_formatting)) &&
             (identical(other.terms, terms) ||
                 const DeepCollectionEquality().equals(other.terms, terms)) &&
             (identical(other.types, types) ||
@@ -449,10 +449,10 @@ class _$_Predictions implements _Predictions {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(matchedSubstrings) ^
-      const DeepCollectionEquality().hash(placeId) ^
+      const DeepCollectionEquality().hash(matched_substrings) ^
+      const DeepCollectionEquality().hash(place_id) ^
       const DeepCollectionEquality().hash(reference) ^
-      const DeepCollectionEquality().hash(structuredFormatting) ^
+      const DeepCollectionEquality().hash(structured_formatting) ^
       const DeepCollectionEquality().hash(terms) ^
       const DeepCollectionEquality().hash(types);
 
@@ -470,10 +470,10 @@ class _$_Predictions implements _Predictions {
 abstract class _Predictions implements Predictions {
   const factory _Predictions(
       String description,
-      List<MatchedSubstring> matchedSubstrings,
-      String placeId,
+      List<MatchedSubstring> matched_substrings,
+      String place_id,
       String reference,
-      StructuredFormatting structuredFormatting,
+      StructuredFormatting structured_formatting,
       List<Terms> terms,
       List<String> types) = _$_Predictions;
 
@@ -483,14 +483,14 @@ abstract class _Predictions implements Predictions {
   @override
   String get description => throw _privateConstructorUsedError;
   @override
-  List<MatchedSubstring> get matchedSubstrings =>
+  List<MatchedSubstring> get matched_substrings =>
       throw _privateConstructorUsedError;
   @override
-  String get placeId => throw _privateConstructorUsedError;
+  String get place_id => throw _privateConstructorUsedError;
   @override
   String get reference => throw _privateConstructorUsedError;
   @override
-  StructuredFormatting get structuredFormatting =>
+  StructuredFormatting get structured_formatting =>
       throw _privateConstructorUsedError;
   @override
   List<Terms> get terms => throw _privateConstructorUsedError;
@@ -679,12 +679,14 @@ StructuredFormatting _$StructuredFormattingFromJson(Map<String, dynamic> json) {
 class _$StructuredFormattingTearOff {
   const _$StructuredFormattingTearOff();
 
-  _StructuredFormatting call(String mainText,
-      List<MatchedSubstring> mainTextMatchedSubstrings, String secondaryText) {
+  _StructuredFormatting call(
+      String main_text,
+      List<MatchedSubstring> main_text_matched_substrings,
+      String secondary_text) {
     return _StructuredFormatting(
-      mainText,
-      mainTextMatchedSubstrings,
-      secondaryText,
+      main_text,
+      main_text_matched_substrings,
+      secondary_text,
     );
   }
 
@@ -698,10 +700,10 @@ const $StructuredFormatting = _$StructuredFormattingTearOff();
 
 /// @nodoc
 mixin _$StructuredFormatting {
-  String get mainText => throw _privateConstructorUsedError;
-  List<MatchedSubstring> get mainTextMatchedSubstrings =>
+  String get main_text => throw _privateConstructorUsedError;
+  List<MatchedSubstring> get main_text_matched_substrings =>
       throw _privateConstructorUsedError;
-  String get secondaryText => throw _privateConstructorUsedError;
+  String get secondary_text => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -715,9 +717,9 @@ abstract class $StructuredFormattingCopyWith<$Res> {
           $Res Function(StructuredFormatting) then) =
       _$StructuredFormattingCopyWithImpl<$Res>;
   $Res call(
-      {String mainText,
-      List<MatchedSubstring> mainTextMatchedSubstrings,
-      String secondaryText});
+      {String main_text,
+      List<MatchedSubstring> main_text_matched_substrings,
+      String secondary_text});
 }
 
 /// @nodoc
@@ -731,22 +733,22 @@ class _$StructuredFormattingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? mainText = freezed,
-    Object? mainTextMatchedSubstrings = freezed,
-    Object? secondaryText = freezed,
+    Object? main_text = freezed,
+    Object? main_text_matched_substrings = freezed,
+    Object? secondary_text = freezed,
   }) {
     return _then(_value.copyWith(
-      mainText: mainText == freezed
-          ? _value.mainText
-          : mainText // ignore: cast_nullable_to_non_nullable
+      main_text: main_text == freezed
+          ? _value.main_text
+          : main_text // ignore: cast_nullable_to_non_nullable
               as String,
-      mainTextMatchedSubstrings: mainTextMatchedSubstrings == freezed
-          ? _value.mainTextMatchedSubstrings
-          : mainTextMatchedSubstrings // ignore: cast_nullable_to_non_nullable
+      main_text_matched_substrings: main_text_matched_substrings == freezed
+          ? _value.main_text_matched_substrings
+          : main_text_matched_substrings // ignore: cast_nullable_to_non_nullable
               as List<MatchedSubstring>,
-      secondaryText: secondaryText == freezed
-          ? _value.secondaryText
-          : secondaryText // ignore: cast_nullable_to_non_nullable
+      secondary_text: secondary_text == freezed
+          ? _value.secondary_text
+          : secondary_text // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -760,9 +762,9 @@ abstract class _$StructuredFormattingCopyWith<$Res>
       __$StructuredFormattingCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String mainText,
-      List<MatchedSubstring> mainTextMatchedSubstrings,
-      String secondaryText});
+      {String main_text,
+      List<MatchedSubstring> main_text_matched_substrings,
+      String secondary_text});
 }
 
 /// @nodoc
@@ -778,22 +780,22 @@ class __$StructuredFormattingCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? mainText = freezed,
-    Object? mainTextMatchedSubstrings = freezed,
-    Object? secondaryText = freezed,
+    Object? main_text = freezed,
+    Object? main_text_matched_substrings = freezed,
+    Object? secondary_text = freezed,
   }) {
     return _then(_StructuredFormatting(
-      mainText == freezed
-          ? _value.mainText
-          : mainText // ignore: cast_nullable_to_non_nullable
+      main_text == freezed
+          ? _value.main_text
+          : main_text // ignore: cast_nullable_to_non_nullable
               as String,
-      mainTextMatchedSubstrings == freezed
-          ? _value.mainTextMatchedSubstrings
-          : mainTextMatchedSubstrings // ignore: cast_nullable_to_non_nullable
+      main_text_matched_substrings == freezed
+          ? _value.main_text_matched_substrings
+          : main_text_matched_substrings // ignore: cast_nullable_to_non_nullable
               as List<MatchedSubstring>,
-      secondaryText == freezed
-          ? _value.secondaryText
-          : secondaryText // ignore: cast_nullable_to_non_nullable
+      secondary_text == freezed
+          ? _value.secondary_text
+          : secondary_text // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -803,46 +805,46 @@ class __$StructuredFormattingCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_StructuredFormatting implements _StructuredFormatting {
   const _$_StructuredFormatting(
-      this.mainText, this.mainTextMatchedSubstrings, this.secondaryText);
+      this.main_text, this.main_text_matched_substrings, this.secondary_text);
 
   factory _$_StructuredFormatting.fromJson(Map<String, dynamic> json) =>
       _$_$_StructuredFormattingFromJson(json);
 
   @override
-  final String mainText;
+  final String main_text;
   @override
-  final List<MatchedSubstring> mainTextMatchedSubstrings;
+  final List<MatchedSubstring> main_text_matched_substrings;
   @override
-  final String secondaryText;
+  final String secondary_text;
 
   @override
   String toString() {
-    return 'StructuredFormatting(mainText: $mainText, mainTextMatchedSubstrings: $mainTextMatchedSubstrings, secondaryText: $secondaryText)';
+    return 'StructuredFormatting(main_text: $main_text, main_text_matched_substrings: $main_text_matched_substrings, secondary_text: $secondary_text)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _StructuredFormatting &&
-            (identical(other.mainText, mainText) ||
+            (identical(other.main_text, main_text) ||
                 const DeepCollectionEquality()
-                    .equals(other.mainText, mainText)) &&
-            (identical(other.mainTextMatchedSubstrings,
-                    mainTextMatchedSubstrings) ||
+                    .equals(other.main_text, main_text)) &&
+            (identical(other.main_text_matched_substrings,
+                    main_text_matched_substrings) ||
                 const DeepCollectionEquality().equals(
-                    other.mainTextMatchedSubstrings,
-                    mainTextMatchedSubstrings)) &&
-            (identical(other.secondaryText, secondaryText) ||
+                    other.main_text_matched_substrings,
+                    main_text_matched_substrings)) &&
+            (identical(other.secondary_text, secondary_text) ||
                 const DeepCollectionEquality()
-                    .equals(other.secondaryText, secondaryText)));
+                    .equals(other.secondary_text, secondary_text)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(mainText) ^
-      const DeepCollectionEquality().hash(mainTextMatchedSubstrings) ^
-      const DeepCollectionEquality().hash(secondaryText);
+      const DeepCollectionEquality().hash(main_text) ^
+      const DeepCollectionEquality().hash(main_text_matched_substrings) ^
+      const DeepCollectionEquality().hash(secondary_text);
 
   @JsonKey(ignore: true)
   @override
@@ -858,20 +860,20 @@ class _$_StructuredFormatting implements _StructuredFormatting {
 
 abstract class _StructuredFormatting implements StructuredFormatting {
   const factory _StructuredFormatting(
-      String mainText,
-      List<MatchedSubstring> mainTextMatchedSubstrings,
-      String secondaryText) = _$_StructuredFormatting;
+      String main_text,
+      List<MatchedSubstring> main_text_matched_substrings,
+      String secondary_text) = _$_StructuredFormatting;
 
   factory _StructuredFormatting.fromJson(Map<String, dynamic> json) =
       _$_StructuredFormatting.fromJson;
 
   @override
-  String get mainText => throw _privateConstructorUsedError;
+  String get main_text => throw _privateConstructorUsedError;
   @override
-  List<MatchedSubstring> get mainTextMatchedSubstrings =>
+  List<MatchedSubstring> get main_text_matched_substrings =>
       throw _privateConstructorUsedError;
   @override
-  String get secondaryText => throw _privateConstructorUsedError;
+  String get secondary_text => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StructuredFormattingCopyWith<_StructuredFormatting> get copyWith =>

@@ -17,10 +17,10 @@ class PlacesSuggestionsResponse with _$PlacesSuggestionsResponse {
 class Predictions with _$Predictions {
   const factory Predictions(
     String description,
-    List<MatchedSubstring> matchedSubstrings,
-    String placeId,
+    List<MatchedSubstring> matched_substrings,
+    String place_id,
     String reference,
-    StructuredFormatting structuredFormatting,
+    StructuredFormatting structured_formatting,
     List<Terms> terms,
     List<String> types,
   ) = _Predictions;
@@ -41,9 +41,9 @@ class MatchedSubstring with _$MatchedSubstring {
 @freezed
 class StructuredFormatting with _$StructuredFormatting {
   const factory StructuredFormatting(
-    String mainText,
-    List<MatchedSubstring> mainTextMatchedSubstrings,
-    String secondaryText,
+    String main_text,
+    List<MatchedSubstring> main_text_matched_substrings,
+    String secondary_text,
   ) = _StructuredFormatting;
   factory StructuredFormatting.fromJson(Map<String, dynamic> json) =>
       _$StructuredFormattingFromJson(json);

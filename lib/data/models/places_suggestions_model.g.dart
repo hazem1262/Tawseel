@@ -26,13 +26,13 @@ Map<String, dynamic> _$_$_PlacesSuggestionsResponseToJson(
 _$_Predictions _$_$_PredictionsFromJson(Map<String, dynamic> json) {
   return _$_Predictions(
     json['description'] as String,
-    (json['matchedSubstrings'] as List<dynamic>)
+    (json['matched_substrings'] as List<dynamic>)
         .map((e) => MatchedSubstring.fromJson(e as Map<String, dynamic>))
         .toList(),
-    json['placeId'] as String,
+    json['place_id'] as String,
     json['reference'] as String,
     StructuredFormatting.fromJson(
-        json['structuredFormatting'] as Map<String, dynamic>),
+        json['structured_formatting'] as Map<String, dynamic>),
     (json['terms'] as List<dynamic>)
         .map((e) => Terms.fromJson(e as Map<String, dynamic>))
         .toList(),
@@ -43,10 +43,10 @@ _$_Predictions _$_$_PredictionsFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_PredictionsToJson(_$_Predictions instance) =>
     <String, dynamic>{
       'description': instance.description,
-      'matchedSubstrings': instance.matchedSubstrings,
-      'placeId': instance.placeId,
+      'matched_substrings': instance.matched_substrings,
+      'place_id': instance.place_id,
       'reference': instance.reference,
-      'structuredFormatting': instance.structuredFormatting,
+      'structured_formatting': instance.structured_formatting,
       'terms': instance.terms,
       'types': instance.types,
     };
@@ -68,20 +68,20 @@ Map<String, dynamic> _$_$_MatchedSubstringToJson(
 _$_StructuredFormatting _$_$_StructuredFormattingFromJson(
     Map<String, dynamic> json) {
   return _$_StructuredFormatting(
-    json['mainText'] as String,
-    (json['mainTextMatchedSubstrings'] as List<dynamic>)
+    json['main_text'] as String,
+    (json['main_text_matched_substrings'] as List<dynamic>)
         .map((e) => MatchedSubstring.fromJson(e as Map<String, dynamic>))
         .toList(),
-    json['secondaryText'] as String,
+    json['secondary_text'] as String,
   );
 }
 
 Map<String, dynamic> _$_$_StructuredFormattingToJson(
         _$_StructuredFormatting instance) =>
     <String, dynamic>{
-      'mainText': instance.mainText,
-      'mainTextMatchedSubstrings': instance.mainTextMatchedSubstrings,
-      'secondaryText': instance.secondaryText,
+      'main_text': instance.main_text,
+      'main_text_matched_substrings': instance.main_text_matched_substrings,
+      'secondary_text': instance.secondary_text,
     };
 
 _$_Terms _$_$_TermsFromJson(Map<String, dynamic> json) {

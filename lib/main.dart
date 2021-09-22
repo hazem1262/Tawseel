@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
+import 'package:tawseel/data/remote/places_api_service.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
 import 'package:tawseel/features/signup/bloc/SignUpRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -35,6 +36,8 @@ void main() async {
   getIt.registerSingleton<NetworkModule>(NetworkModule());
   getIt.registerSingleton<AuthService>(
       AuthService(getIt<NetworkModule>().getDio(BaseUrl)));
+  getIt.registerSingleton<PlacesApiService>(
+      PlacesApiService(getIt<NetworkModule>().getDio(PlacesBaseUrl)));
   getIt.registerSingleton<ILoginRepository>(
       LoginRepository(getIt<AuthService>()));
   getIt.registerSingleton<ISignUpRepository>(
