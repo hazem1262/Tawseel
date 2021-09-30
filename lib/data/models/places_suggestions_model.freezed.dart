@@ -682,7 +682,7 @@ class _$StructuredFormattingTearOff {
   _StructuredFormatting call(
       String main_text,
       List<MatchedSubstring> main_text_matched_substrings,
-      String secondary_text) {
+      String? secondary_text) {
     return _StructuredFormatting(
       main_text,
       main_text_matched_substrings,
@@ -703,7 +703,7 @@ mixin _$StructuredFormatting {
   String get main_text => throw _privateConstructorUsedError;
   List<MatchedSubstring> get main_text_matched_substrings =>
       throw _privateConstructorUsedError;
-  String get secondary_text => throw _privateConstructorUsedError;
+  String? get secondary_text => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -719,7 +719,7 @@ abstract class $StructuredFormattingCopyWith<$Res> {
   $Res call(
       {String main_text,
       List<MatchedSubstring> main_text_matched_substrings,
-      String secondary_text});
+      String? secondary_text});
 }
 
 /// @nodoc
@@ -749,7 +749,7 @@ class _$StructuredFormattingCopyWithImpl<$Res>
       secondary_text: secondary_text == freezed
           ? _value.secondary_text
           : secondary_text // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -764,7 +764,7 @@ abstract class _$StructuredFormattingCopyWith<$Res>
   $Res call(
       {String main_text,
       List<MatchedSubstring> main_text_matched_substrings,
-      String secondary_text});
+      String? secondary_text});
 }
 
 /// @nodoc
@@ -796,7 +796,7 @@ class __$StructuredFormattingCopyWithImpl<$Res>
       secondary_text == freezed
           ? _value.secondary_text
           : secondary_text // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -815,7 +815,7 @@ class _$_StructuredFormatting implements _StructuredFormatting {
   @override
   final List<MatchedSubstring> main_text_matched_substrings;
   @override
-  final String secondary_text;
+  final String? secondary_text;
 
   @override
   String toString() {
@@ -862,7 +862,7 @@ abstract class _StructuredFormatting implements StructuredFormatting {
   const factory _StructuredFormatting(
       String main_text,
       List<MatchedSubstring> main_text_matched_substrings,
-      String secondary_text) = _$_StructuredFormatting;
+      String? secondary_text) = _$_StructuredFormatting;
 
   factory _StructuredFormatting.fromJson(Map<String, dynamic> json) =
       _$_StructuredFormatting.fromJson;
@@ -873,7 +873,7 @@ abstract class _StructuredFormatting implements StructuredFormatting {
   List<MatchedSubstring> get main_text_matched_substrings =>
       throw _privateConstructorUsedError;
   @override
-  String get secondary_text => throw _privateConstructorUsedError;
+  String? get secondary_text => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StructuredFormattingCopyWith<_StructuredFormatting> get copyWith =>

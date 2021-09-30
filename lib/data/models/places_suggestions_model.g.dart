@@ -72,7 +72,7 @@ _$_StructuredFormatting _$_$_StructuredFormattingFromJson(
     (json['main_text_matched_substrings'] as List<dynamic>)
         .map((e) => MatchedSubstring.fromJson(e as Map<String, dynamic>))
         .toList(),
-    json['secondary_text'] as String,
+    json['secondary_text'] as String?,
   );
 }
 

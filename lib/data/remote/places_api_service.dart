@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:tawseel/data/models/place_address_details.dart';
 import 'package:tawseel/data/models/place_details_model.dart';
 import 'package:tawseel/data/models/places_suggestions_model.dart';
 
@@ -23,6 +24,16 @@ abstract class PlacesApiService {
   );
 
   @GET("https://maps.googleapis.com/maps/api/place/details/json")
-  Future<PlaceDetails> getPlaceDetails(@Query("key") String apiKey,
-      @Query("language") String lang, @Query("placeid") String placeId);
+  Future<PlaceDetails> getPlaceDetails(
+    @Query("key") String apiKey,
+    @Query("language") String lang,
+    @Query("placeid") String placeId,
+  );
+
+  @GET("https://maps.googleapis.com/maps/api/geocode/json?{latlng}")
+  Future<PlaceAddressDetails> getPlaceDetailsLatLng(
+    @Query("key") String apiKey,
+    @Path() String latlng,
+    // @Query("language") String lang,
+  );
 }

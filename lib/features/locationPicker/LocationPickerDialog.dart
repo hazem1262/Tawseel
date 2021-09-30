@@ -1,16 +1,16 @@
 import 'dart:async';
-import 'dart:convert';
+import 'dart:collection';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:tawseel/data/models/place_address_details.dart';
+import 'package:tawseel/data/models/place_details_model.dart';
 import 'package:tawseel/data/remote/places_api_service.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
-import 'package:tawseel/features/locationPicker/SearchInput.dart';
 import 'package:tawseel/features/locationPicker/rich_suggestion.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -22,7 +22,6 @@ import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 import 'models/auto_complete_item.dart';
-import 'models/location_result.dart';
 import 'models/uuid.dart';
 
 class LocationPickerDialog extends StatefulWidget {
@@ -150,7 +149,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
               zoomControlsEnabled: false,
               mapType: MapType.normal,
               onTap: (point) {
-                _addMarker(point, "123456", "");
+                getPlaceDetailsFromLatLng(point);
               },
               onMapCreated: (controller) {
                 mapController.complete(controller);
@@ -200,22 +199,16 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
                       SizedBox(
                         width: width * 0.08,
                       ),
-                      IconButton(
-                          onPressed: () {
-                            appState.seLoggedInState(false);
-                            context.openOnly(LandingScreenRoute());
-                          },
-                          icon: Icon(Icons.logout))
+                      // IconButton(
+                      //     onPressed: () {
+                      //       appState.seLoggedInState(false);
+                      //       context.openOnly(LandingScreenRoute());
+                      //     },
+                      //     icon: Icon(Icons.logout))
                     ],
                   ),
                 ],
               )),
-
-          //?----------------------------------------------------------------------------?//
-          //?                                Search bar                                  ?//
-          //?----------------------------------------------------------------------------?//
-
-          // SearchWidget(),
 
           //?----------------------------------------------------------------------------?//
           //?                             Confirm  location button                       ?//
@@ -236,7 +229,10 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
               ),
             ),
           ),
-          TestSearchWidget(),
+          //?----------------------------------------------------------------------------?//
+          //?                                Search bar                                  ?//
+          //?----------------------------------------------------------------------------?//
+          searchWidget(),
         ],
       ),
     );
@@ -244,7 +240,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
 
   var searchController = FloatingSearchBarController();
 
-  Widget TestSearchWidget() {
+  Widget searchWidget() {
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
 
@@ -307,70 +303,12 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
     );
   }
 
-  Widget SearchWidget() {
-    var inSerachMode = search.isNotEmpty;
-
-    return Positioned(
-      top: height / 6,
-      left: 0,
-      right: 0,
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: width * 0.06),
-        alignment: AlignmentDirectional.center,
-        color: Colors.transparent,
-        width: double.infinity,
-        child: Column(
-          children: [
-            // SearchInput(
-            //   onSearchInput: (input) {
-            //     setState(() {
-            //       search = input;
-            //     });
-
-            //     autoCompleteSearch(input);
-            //   },
-            // ),
-            Column(
-              children: searchList,
-            ),
-            AnimatedOpacity(
-              opacity: inSerachMode ? 1 : 0,
-              duration: Duration(milliseconds: 500),
-              child: AnimatedContainer(
-                duration: Duration(milliseconds: 375),
-                margin: EdgeInsets.symmetric(
-                    horizontal: inSerachMode ? 0 : width * 0.02),
-                alignment: AlignmentDirectional.center,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      spreadRadius: -10,
-                      blurRadius: 10,
-                      offset: Offset(0, 10),
-                    )
-                  ],
-                ),
-                child: Column(
-                  children: searchList,
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
   void _addMarker(LatLng point, String placeId, String title) {
     setState(() {
       // reset search list
       userPickedMarker = Marker(
         markerId: MarkerId(title),
-        infoWindow: InfoWindow(title: title.isEmpty ? "" : ""),
+        infoWindow: InfoWindow(title: title.isEmpty ? "" : title),
         icon: locationIcon,
         position: point,
       );
@@ -399,9 +337,25 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
 
   var searchIsLoading = false;
 
+  SplayTreeMap suggestionsCache =
+      new SplayTreeMap<String, List<RichSuggestion>>();
+
   void autoCompleteSearch(String place) async {
     var query = place.replaceAll(" ", "+");
     if (query.isEmpty) return;
+
+    //?----------------------------------------------------------------------------?//
+    //?                                  Caching                                   ?//
+    //?----------------------------------------------------------------------------?//
+
+    if (suggestionsCache.containsKey(query)) {
+      updateSuggestions(suggestionsCache[query]);
+      return;
+    }
+
+    //?----------------------------------------------------------------------------?//
+    //?                                  Caching                                   ?//
+    //?----------------------------------------------------------------------------?//
 
     setState(() {
       searchIsLoading = true;
@@ -434,9 +388,12 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
             getLatLngFromPlaceId(autoCompleteItem.id);
           }));
         });
-
-        updateSuggestions(suggestions);
       }
+
+      if (!suggestionsCache.containsKey(query))
+        suggestionsCache.putIfAbsent(query, () => suggestions);
+
+      updateSuggestions(suggestions);
     });
   }
 
@@ -456,11 +413,32 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
     });
   }
 
+  SplayTreeMap placesCache = new SplayTreeMap<String, PlaceResultItem>();
+
   void getLatLngFromPlaceId(String placeId) async {
     // hide suggestions
     hideSuggestions();
     if (placeId.isEmpty) return;
 
+    //?----------------------------------------------------------------------------?//
+    //?                                Cache                                       ?//
+    //?----------------------------------------------------------------------------?//
+    if (placesCache.containsKey(placeId)) {
+      PlaceResultItem item = placesCache[placeId];
+
+      _addMarker(
+        LatLng(item.geometry.location.lat, item.geometry.location.lng),
+        item.place_id,
+        item.name,
+      );
+
+      searchController.clear();
+      searchController.close();
+      return;
+    }
+    //?----------------------------------------------------------------------------?//
+    //?                                Cache                                       ?//
+    //?----------------------------------------------------------------------------?//
     setState(() {
       searchIsLoading = true;
     });
@@ -481,6 +459,62 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
 
         searchController.clear();
         searchController.close();
+
+        //?----------------------------------------------------------------------------?//
+        //?                                Cache                                       ?//
+        //?----------------------------------------------------------------------------?//
+        placesCache.putIfAbsent(placeId, () => response.result);
+      }
+
+      setState(() {
+        searchIsLoading = false;
+      });
+    });
+  }
+
+  SplayTreeMap placeAddressCache = new SplayTreeMap<String, AddressItem>();
+
+  void getPlaceDetailsFromLatLng(LatLng point) {
+    //?----------------------------------------------------------------------------?//
+    //?                                Cache                                       ?//
+    //?----------------------------------------------------------------------------?//
+    if (placeAddressCache.containsKey("${point.latitude},${point.longitude}")) {
+      AddressItem item = placeAddressCache[point];
+
+      _addMarker(
+        LatLng(item.geometry.location.lat, item.geometry.location.lng),
+        item.place_id,
+        item.formatted_address,
+      );
+
+      return;
+    }
+
+    setState(() {
+      searchIsLoading = true;
+    });
+
+    getIt<PlacesApiService>()
+        .getPlaceDetailsLatLng(
+            apiKey, "latlng=${point.latitude},${point.longitude}")
+        .then((response) {
+      if (response.results == null && response.results.isEmpty) {
+        appContext.showToast("No results found for this place");
+      } else {
+        final location = response.results.first;
+
+        _addMarker(
+          LatLng(
+              location.geometry.location.lat, location.geometry.location.lng),
+          location.place_id,
+          location.formatted_address,
+        );
+
+        searchController.clear();
+        searchController.close();
+
+        placeAddressCache.putIfAbsent("${point.latitude},${point.longitude}",
+            () => response.results.first);
       }
 
       setState(() {

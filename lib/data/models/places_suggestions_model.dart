@@ -43,7 +43,7 @@ class StructuredFormatting with _$StructuredFormatting {
   const factory StructuredFormatting(
     String main_text,
     List<MatchedSubstring> main_text_matched_substrings,
-    String secondary_text,
+    String? secondary_text,
   ) = _StructuredFormatting;
   factory StructuredFormatting.fromJson(Map<String, dynamic> json) =>
       _$StructuredFormattingFromJson(json);
