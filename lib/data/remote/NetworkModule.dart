@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 import 'package:tawseel/main.dart';
 
 class NetworkModule {
@@ -22,9 +24,25 @@ class NetworkModule {
 
 class KeysInjectionInterceptor extends Interceptor {
   @override
-  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+  Future<void> onRequest(
+      RequestOptions options, RequestInterceptorHandler handler) async {
     options.headers['Accept'] = 'application/json';
     options.headers['Content-Language'] = currentLocalName;
+    try {
+      var token = await appState.getUserModel;
+      options.headers['Authorization'] =
+          "${token.data.token_type} ${token.data.access_token}";
+    } catch (e) {
+      debugPrint('Exception : $e');
+    }
+
     super.onRequest(options, handler);
   }
+}
+
+void printAnnotationValue(final Type clazz) {}
+
+@immutable
+class TOKEN_REQUIRED {
+  const TOKEN_REQUIRED();
 }

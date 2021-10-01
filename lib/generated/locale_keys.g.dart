@@ -37,5 +37,18 @@ abstract class  LocaleKeys {
   static const already_have_an_account = 'already_have_an_account';
   static const receive_offers = 'receive_offers';
   static const location_confirm_button = 'location_confirm_button';
+  static const saved_successfully = 'saved_successfully';
+  static const enter_location_name = 'enter_location_name';
+  static const error_while_saving = 'error_while_saving';
+  static const choose_category = 'choose_category';
+  static const category_hint = 'category_hint';
+  static const save_location = 'save_location';
+  static const default_address = 'default_address';
+  static const address = 'address';
+  static const location_category = 'location_category';
+  static const pick_location = 'pick_location';
+  static const find_your_location = 'find_your_location';
+  static const pick_location_first = 'pick_location_first';
+  static const no_result_fount = 'no_result_fount';
 
 }

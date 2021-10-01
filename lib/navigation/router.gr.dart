@@ -6,12 +6,15 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
-import 'package:flutter/widgets.dart' as _i9;
+import 'package:flutter/widgets.dart' as _i11;
 
+import '../features/address/models/AddressDetailsScreen.dart' as _i10;
 import '../features/home/HomeScreen.dart' as _i8;
 import '../features/landingScreen/LandingScreen.dart' as _i4;
+import '../features/locationPicker/LocationPickerDialog.dart' as _i9;
+import '../features/locationPicker/user_picked_location.dart' as _i13;
 import '../features/login/LoginScreen.dart' as _i5;
-import '../features/otp/models/otp_models.dart' as _i10;
+import '../features/otp/models/otp_models.dart' as _i12;
 import '../features/otp/OtpScreen.dart' as _i7;
 import '../features/signup/SignUpScreen.dart' as _i6;
 import '../features/splash/SplashScreen.dart' as _i3;
@@ -59,6 +62,20 @@ class AppRouter extends _i1.RootStackRouter {
           final args = data.argsAs<HomeScreenRouteArgs>(
               orElse: () => const HomeScreenRouteArgs());
           return _i8.HomeScreen(key: args.key);
+        }),
+    LocationPickerDialogRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<LocationPickerDialogRouteArgs>(
+              orElse: () => const LocationPickerDialogRouteArgs());
+          return _i9.LocationPickerDialog(key: args.key);
+        }),
+    AddressDetailsScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<AddressDetailsScreenRouteArgs>();
+          return _i10.AddressDetailsScreen(
+              key: args.key, pickedLocation: args.pickedLocation);
         })
   };
 
@@ -69,12 +86,16 @@ class AppRouter extends _i1.RootStackRouter {
         _i1.RouteConfig(LoginScreenRoute.name, path: '/login-screen'),
         _i1.RouteConfig(SignUpScreenRoute.name, path: '/sign-up-screen'),
         _i1.RouteConfig(OtpScreenRoute.name, path: '/otp-screen'),
-        _i1.RouteConfig(HomeScreenRoute.name, path: '/home-screen')
+        _i1.RouteConfig(HomeScreenRoute.name, path: '/home-screen'),
+        _i1.RouteConfig(LocationPickerDialogRoute.name,
+            path: '/location-picker-dialog'),
+        _i1.RouteConfig(AddressDetailsScreenRoute.name,
+            path: '/address-details-screen')
       ];
 }
 
 class SplashScreenRoute extends _i1.PageRouteInfo<SplashScreenRouteArgs> {
-  SplashScreenRoute({_i9.Key? key})
+  SplashScreenRoute({_i11.Key? key})
       : super(name, path: '/', args: SplashScreenRouteArgs(key: key));
 
   static const String name = 'SplashScreenRoute';
@@ -83,7 +104,7 @@ class SplashScreenRoute extends _i1.PageRouteInfo<SplashScreenRouteArgs> {
 class SplashScreenRouteArgs {
   const SplashScreenRouteArgs({this.key});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
 }
 
 class LandingScreenRoute extends _i1.PageRouteInfo {
@@ -99,7 +120,7 @@ class LoginScreenRoute extends _i1.PageRouteInfo {
 }
 
 class SignUpScreenRoute extends _i1.PageRouteInfo<SignUpScreenRouteArgs> {
-  SignUpScreenRoute({_i9.Key? key})
+  SignUpScreenRoute({_i11.Key? key})
       : super(name,
             path: '/sign-up-screen', args: SignUpScreenRouteArgs(key: key));
 
@@ -109,12 +130,12 @@ class SignUpScreenRoute extends _i1.PageRouteInfo<SignUpScreenRouteArgs> {
 class SignUpScreenRouteArgs {
   const SignUpScreenRouteArgs({this.key});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
 }
 
 class OtpScreenRoute extends _i1.PageRouteInfo<OtpScreenRouteArgs> {
   OtpScreenRoute(
-      {_i9.Key? key, required _i10.OTP_TYPE otpType, required String phone})
+      {_i11.Key? key, required _i12.OTP_TYPE otpType, required String phone})
       : super(name,
             path: '/otp-screen',
             args: OtpScreenRouteArgs(key: key, otpType: otpType, phone: phone));
@@ -126,15 +147,15 @@ class OtpScreenRouteArgs {
   const OtpScreenRouteArgs(
       {this.key, required this.otpType, required this.phone});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
 
-  final _i10.OTP_TYPE otpType;
+  final _i12.OTP_TYPE otpType;
 
   final String phone;
 }
 
 class HomeScreenRoute extends _i1.PageRouteInfo<HomeScreenRouteArgs> {
-  HomeScreenRoute({_i9.Key? key})
+  HomeScreenRoute({_i11.Key? key})
       : super(name, path: '/home-screen', args: HomeScreenRouteArgs(key: key));
 
   static const String name = 'HomeScreenRoute';
@@ -143,5 +164,41 @@ class HomeScreenRoute extends _i1.PageRouteInfo<HomeScreenRouteArgs> {
 class HomeScreenRouteArgs {
   const HomeScreenRouteArgs({this.key});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
+}
+
+class LocationPickerDialogRoute
+    extends _i1.PageRouteInfo<LocationPickerDialogRouteArgs> {
+  LocationPickerDialogRoute({_i11.Key? key})
+      : super(name,
+            path: '/location-picker-dialog',
+            args: LocationPickerDialogRouteArgs(key: key));
+
+  static const String name = 'LocationPickerDialogRoute';
+}
+
+class LocationPickerDialogRouteArgs {
+  const LocationPickerDialogRouteArgs({this.key});
+
+  final _i11.Key? key;
+}
+
+class AddressDetailsScreenRoute
+    extends _i1.PageRouteInfo<AddressDetailsScreenRouteArgs> {
+  AddressDetailsScreenRoute(
+      {_i11.Key? key, required _i13.UserPickedLocation pickedLocation})
+      : super(name,
+            path: '/address-details-screen',
+            args: AddressDetailsScreenRouteArgs(
+                key: key, pickedLocation: pickedLocation));
+
+  static const String name = 'AddressDetailsScreenRoute';
+}
+
+class AddressDetailsScreenRouteArgs {
+  const AddressDetailsScreenRouteArgs({this.key, required this.pickedLocation});
+
+  final _i11.Key? key;
+
+  final _i13.UserPickedLocation pickedLocation;
 }

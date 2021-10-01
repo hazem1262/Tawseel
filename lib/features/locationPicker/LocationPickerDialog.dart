@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:collection';
-
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -12,6 +12,7 @@ import 'package:tawseel/data/models/place_details_model.dart';
 import 'package:tawseel/data/remote/places_api_service.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/locationPicker/rich_suggestion.dart';
+import 'package:tawseel/features/locationPicker/user_picked_location.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/main.dart';
@@ -41,6 +42,8 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
   late ThemeData theme;
   var defaultLocation = LatLng(24.2222, 23.22232);
   Marker? userPickedMarker;
+  UserPickedLocation? pickedLocation;
+
   var location = Location();
 
   var permissionsGranted = false;
@@ -76,7 +79,9 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
         setState(() {
           defaultLocation =
               LatLng(currentLocation.latitude!, currentLocation.longitude!);
-          _addMarker(defaultLocation, "654321", "default");
+
+          getPlaceDetailsFromLatLng(
+              LatLng(currentLocation.latitude!, currentLocation.longitude!));
         });
       }
     }
@@ -142,7 +147,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
             //?----------------------------------------------------------------------------?//
             child: GoogleMap(
               myLocationEnabled: (serviceEnabled && permissionsGranted),
-              zoomGesturesEnabled: false,
+              zoomGesturesEnabled: true,
               compassEnabled: false,
               tiltGesturesEnabled: false,
               myLocationButtonEnabled: false,
@@ -191,7 +196,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
                         alignment: AlignmentDirectional.center,
                         color: Colors.transparent,
                         child: Text(
-                          "Pick Location",
+                          LocaleKeys.pick_location.tr(),
                           style: theme.textTheme.headline6!
                               .copyWith(fontSize: MeduimTextSize),
                         ),
@@ -199,12 +204,6 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
                       SizedBox(
                         width: width * 0.08,
                       ),
-                      // IconButton(
-                      //     onPressed: () {
-                      //       appState.seLoggedInState(false);
-                      //       context.openOnly(LandingScreenRoute());
-                      //     },
-                      //     icon: Icon(Icons.logout))
                     ],
                   ),
                 ],
@@ -259,21 +258,21 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
       shadowColor: theme.primaryColor,
       leadingActions: [
         FloatingSearchBarAction.searchToClear(
-          showIfClosed: true,
+          showIfClosed: false,
         ),
       ],
       actions: [
-        FloatingSearchBarAction(
-          showIfOpened: false,
-          child: CircularButton(
-            icon: const Icon(Icons.place),
-            onPressed: () {
-              getUserLocation();
-            },
-          ),
-        ),
+        // FloatingSearchBarAction(
+        //   showIfOpened: false,
+        //   child: CircularButton(
+        //     icon: const Icon(Icons.place),
+        //     onPressed: () {
+        //       getUserLocation();
+        //     },
+        //   ),
+        // ),
       ],
-      hint: 'Find your location ',
+      hint: LocaleKeys.find_your_location.tr(),
       scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
       transitionDuration: const Duration(milliseconds: 800),
       transitionCurve: Curves.easeInOut,
@@ -305,12 +304,19 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
 
   void _addMarker(LatLng point, String placeId, String title) {
     setState(() {
-      // reset search list
       userPickedMarker = Marker(
         markerId: MarkerId(title),
         infoWindow: InfoWindow(title: title.isEmpty ? "" : title),
         icon: locationIcon,
         position: point,
+      );
+
+      pickedLocation = new UserPickedLocation(
+        null,
+        title,
+        point.latitude,
+        point.longitude,
+        null,
       );
 
       _moveCameraTo(userPickedMarker!.position);
@@ -333,7 +339,18 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
     hideSuggestions();
   }
 
-  void createAddress(BuildContext context) {}
+  void createAddress(BuildContext context) {
+    if (pickedLocation == null) {
+      appContext.showToast(LocaleKeys.pick_location_first.tr());
+      return;
+    }
+
+    appContext.pushRoute(
+      AddressDetailsScreenRoute(
+        pickedLocation: pickedLocation!,
+      ),
+    );
+  }
 
   var searchIsLoading = false;
 
@@ -372,7 +389,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
       List<RichSuggestion> suggestions = [];
 
       if (response.predictions.isEmpty) {
-        var aci = AutoCompleteItem("noResultsFound", "0", 0, 0);
+        var aci = AutoCompleteItem(LocaleKeys.no_result_fount.tr(), "0", 0, 0);
         suggestions.add(RichSuggestion(aci, onTap: () {}));
         return;
       } else {
@@ -447,7 +464,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
         .getPlaceDetails(apiKey, currentLocalName, placeId)
         .then((response) {
       if (response.result == null) {
-        appContext.showToast("No results for this place");
+        appContext.showToast(LocaleKeys.no_result_fount.tr());
         hideSuggestions();
       } else {
         final location = response.result!.geometry.location;
@@ -499,7 +516,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
             apiKey, "latlng=${point.latitude},${point.longitude}")
         .then((response) {
       if (response.results == null && response.results.isEmpty) {
-        appContext.showToast("No results found for this place");
+        appContext.showToast(LocaleKeys.no_result_fount.tr());
       } else {
         final location = response.results.first;
 

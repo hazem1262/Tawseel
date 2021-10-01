@@ -53,6 +53,21 @@
   "receive_offers": "I want to receive offers and discounts",
   
 
-  "location_confirm_button": "Confirm Location"
+  "location_confirm_button": "Confirm Location",
+
+  "saved_successfully": "Saved Successfully",
+  "enter_location_name":"Enter Location Category First",
+  "error_while_saving":"Error Happened while saving",
+  "choose_category":"Choose a category",
+  "category_hint":"Home, Work, other ...",
+  "save_location":"Save Location",
+  "default_address":"Default Address",
+  "address":"Address",
+  "location_category":"Location Category",
+  "pick_location":"Pick Location",
+  "find_your_location":"Find your location",
+  "pick_location_first":"Pick a location first!",
+  "no_result_fount":"no results found"
+  
   
 }

@@ -13,7 +13,9 @@ import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/utils/AppState.dart';
 
+import 'data/remote/AddressService.dart';
 import 'data/remote/NetworkModule.dart';
+import 'features/address/models/AddressDetailsScreen.dart';
 import 'features/otp/bloc/OtpRepository.dart';
 import 'navigation/router.gr.dart';
 
@@ -34,8 +36,11 @@ void main() async {
   await EasyLocalization.ensureInitialized();
 
   getIt.registerSingleton<NetworkModule>(NetworkModule());
+
   getIt.registerSingleton<AuthService>(
       AuthService(getIt<NetworkModule>().getDio(BaseUrl)));
+  getIt.registerSingleton<AddressService>(
+      AddressService(getIt<NetworkModule>().getDio(BaseUrl)));
   getIt.registerSingleton<PlacesApiService>(
       PlacesApiService(getIt<NetworkModule>().getDio(PlacesBaseUrl)));
   getIt.registerSingleton<ILoginRepository>(
@@ -60,9 +65,9 @@ void main() async {
           ChangeNotifierProvider(
             create: (context) => tm,
           ),
-          // ChangeNotifierProvider(
-          //   create: (context) => LocationBloc(),
-          // ),
+          ChangeNotifierProvider(
+            create: (context) => AddressProvider(),
+          ),
         ],
         child: MyApp(),
       ),

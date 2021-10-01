@@ -49,7 +49,21 @@
 
   "receive_offers": "اوافق علي الحصول علي العروض والخصومات",
 
-  "location_confirm_button": "إختيار العنوان"
+  "location_confirm_button": "إختيار العنوان",
+
+  "saved_successfully": "تمت العملية بنجاح",
+  "enter_location_name":"ادخل نوع العنوان",
+  "error_while_saving":"حدثت خطأ ما",
+  "choose_category":"اختر نوع العنوان",
+  "category_hint":"المنزل , العمل , اخر",
+  "save_location":"حفظ العنوان",
+  "default_address":"العنوان الرئيسي",
+  "address":"العنوان",
+  "location_category":"فئة العنوان",
+  "pick_location":"اختر الموقع",
+  "find_your_location":"ابحث عن موقعك",
+  "pick_location_first":"اختر عنوان اولاّ",
+  "no_result_fount":"لا توجد نتائج"
 
   
 }
