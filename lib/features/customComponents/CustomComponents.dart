@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tawseel/main.dart';
+import 'package:auto_route/auto_route.dart';
 
 class AppBackButton extends StatefulWidget {
   AppBackButton({Key? key}) : super(key: key);
@@ -29,7 +31,7 @@ class _AppBackButtonState extends State<AppBackButton> {
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(8),
-          onTap: () => Navigator.of(context).maybePop(),
+          onTap: () => appContext.router.pop(),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Icon(Icons.arrow_back_ios_new_outlined),
