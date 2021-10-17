@@ -12,4 +12,9 @@ class Res {
   static const String phone_icon = "assets/phone-icon.png";
   static const String back_icon = "assets/back.svg";
   static const String location_icon = "assets/location_icon.png";
+
+  static const String home_icon = "assets/home-icon.png";
+  static const String offers_icon = "assets/home-offers.png";
+  static const String fav_icon = "assets/home-favorites.png";
+  static const String profile_icon = "assets/home-profile.png";
 }
