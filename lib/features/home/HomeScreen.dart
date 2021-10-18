@@ -52,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SafeArea(
         top: false,
         bottom: true,
@@ -64,6 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
             LandingScreen(),
             Center(
               child: Container(
+                color: Colors.black,
                 child: Text('Offers'),
               ),
             ),
