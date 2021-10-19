@@ -71,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
       appState.isLoggedIn().then((yes) => {
             yes
                 ? Timer(const Duration(milliseconds: 1000), () {
-                    appContext.openOnly(HomeScreenRoute());
+                    appContext.openOnly(MainScreenRoute());
                   })
                 : Timer(const Duration(milliseconds: 1000), () {
                     appContext.openOnly(LandingScreenRoute());

@@ -50,5 +50,9 @@ abstract class  LocaleKeys {
   static const find_your_location = 'find_your_location';
   static const pick_location_first = 'pick_location_first';
   static const no_result_fount = 'no_result_fount';
+  static const email_hint = 'email_hint';
+  static const edit_profile_title = 'edit_profile_title';
+  static const email_empty_field_error = 'email_empty_field_error';
+  static const invalid_email_error = 'invalid_email_error';
 
 }

@@ -63,7 +63,12 @@
   "pick_location":"اختر الموقع",
   "find_your_location":"ابحث عن موقعك",
   "pick_location_first":"اختر عنوان اولاّ",
-  "no_result_fount":"لا توجد نتائج"
+  "no_result_fount":"لا توجد نتائج",
+  
+  "email_hint":"البريد الإلكتروني",
+  "edit_profile_title":"تعديل بيانات المستخدم",
+  "email_empty_field_error":"ادخل بريد الكتروني",
+  "invalid_email_error":"يرجي إدخال بريد الكتروني صحيح"
 
   
 }

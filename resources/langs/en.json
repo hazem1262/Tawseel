@@ -67,7 +67,11 @@
   "pick_location":"Pick Location",
   "find_your_location":"Find your location",
   "pick_location_first":"Pick a location first!",
-  "no_result_fount":"no results found"
-  
+  "no_result_fount":"no results found",
+
+  "email_hint":"Email",
+  "edit_profile_title":"Edit Profile",
+  "email_empty_field_error":"Please enter an email.",
+  "invalid_email_error":"Please enter a valid mail!"
   
 }

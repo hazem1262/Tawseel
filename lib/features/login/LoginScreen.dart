@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hassError: (error) => {context.showError(error)},
                     loggedInWithPhoneSuccessfully: (response) async => {
                       if (response.data.user.is_verified)
-                        {context.openOnly(HomeScreenRoute())}
+                        {context.openOnly(MainScreenRoute())}
                       else
                         {
                           appContext.pushRoute(OtpScreenRoute(

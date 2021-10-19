@@ -14,7 +14,6 @@ import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/ktx.dart';
 import '../../main.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:auto_route/auto_route.dart';
 
 class OtpScreen extends StatelessWidget {
   final String phone;
@@ -57,7 +56,7 @@ class OtpScreen extends StatelessWidget {
                             OtpEvents.onOtpChange(textEditingController.text));
                       },
                       onOtpVerified: (loginResponse) {
-                        appContext.openOnly(HomeScreenRoute());
+                        appContext.openOnly(MainScreenRoute());
                       },
                       orElse: () => {},
                     );

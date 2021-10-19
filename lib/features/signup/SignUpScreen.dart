@@ -348,7 +348,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     var form = formKey.currentState!;
     form.validate();
 
-    var fullNameErrorMessage = fullNameValidationError(passwordController.text);
+    var fullNameErrorMessage = fullNameValidationError(fullNameController.text);
     var passwordErrorMessage = passwordValidationError(passwordController.text);
     var phoneErrorMessage = phoneValidationError(phoneController.text);
     var isValid = passwordErrorMessage.isEmpty &&

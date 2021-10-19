@@ -17,4 +17,6 @@ class Res {
   static const String offers_icon = "assets/home-offers.png";
   static const String fav_icon = "assets/home-favorites.png";
   static const String profile_icon = "assets/home-profile.png";
+
+  static const String email_icon = "assets/email_icon.png";
 }

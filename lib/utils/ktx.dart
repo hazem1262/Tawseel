@@ -113,3 +113,24 @@ extension MessagesDtx on BuildContext {
         ),
       );
 }
+
+extension BoolDtx on bool {
+  bool not() {
+    return !this;
+  }
+
+  void ifTrue({required VoidCallback invoke, VoidCallback? elseDo}) {
+    // ignore: unnecessary_statements
+    this ? invoke() : elseDo;
+  }
+}
+
+extension EmailValidator on String? {
+  bool isValidEmail() {
+    return this == null
+        ? false
+        : RegExp(
+                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+            .hasMatch(this!);
+  }
+}
