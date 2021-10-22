@@ -16,6 +16,8 @@ import 'package:tawseel/utils/AppState.dart';
 import 'data/remote/AddressService.dart';
 import 'data/remote/NetworkModule.dart';
 import 'features/address/models/AddressDetailsScreen.dart';
+import 'features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/EditProfileBloc.dart';
+import 'features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'features/otp/bloc/OtpRepository.dart';
 import 'navigation/router.gr.dart';
 
@@ -47,6 +49,8 @@ void main() async {
       LoginRepository(getIt<AuthService>()));
   getIt.registerSingleton<ISignUpRepository>(
       SignUpRepository(getIt<AuthService>()));
+  getIt.registerSingleton<IProfileRepository>(
+      ProfileRepository(getIt<AuthService>()));
 
   getIt.registerSingleton<IOtpRepository>(OtpRepository(getIt<AuthService>()));
 

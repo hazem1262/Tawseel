@@ -23,7 +23,7 @@ class LoginRepository with NetworkHandler implements ILoginRepository {
           response.then((value) async {
             if (value.data.data.user.is_verified) {
               debugPrint("Login Repository : ${value.response.toString()}");
-              await appState.saveUserModelString(value.response.toString());
+              await appState.saveUserEntityFromLogin(value.data);
             }
           });
           return response;

@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/main.dart';
-import 'package:tawseel/features/login/models/logine_response.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
@@ -18,21 +17,6 @@ class MainScreen extends StatefulWidget {
 enum _SelectedTab { HOME, OFFERS, FAVORITES, PROFILE }
 
 class _MainScreenState extends State<MainScreen> {
-  LoginResponse? user;
-
-  @override
-  void initState() {
-    super.initState();
-    getUser();
-  }
-
-  getUser() async {
-    await appState.printUserModel();
-    var value = await appState.getUserModel;
-    debugPrint("from home response : ${value.toString()}");
-    setState(() => user = value);
-  }
-
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(

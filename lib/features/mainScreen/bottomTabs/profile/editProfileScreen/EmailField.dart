@@ -11,12 +11,14 @@ class EmailField extends StatefulWidget {
   final TextEditingController controller;
   final TextInputAction inputAction;
   final VoidCallback? onSubmitCallback;
+  final bool? readOnly;
 
   EmailField({
     Key? key,
     required this.controller,
     this.inputAction = TextInputAction.next,
     this.onSubmitCallback,
+    this.readOnly,
   }) : super(key: key);
   @override
   _EmailFieldState createState() => _EmailFieldState();
@@ -27,6 +29,7 @@ class _EmailFieldState extends State<EmailField> {
 
   @override
   Widget build(BuildContext context) {
+    var readOnly = widget.readOnly ?? false;
     var theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +40,8 @@ class _EmailFieldState extends State<EmailField> {
             borderRadius: BorderRadius.circular(14),
           ),
           child: TextFormField(
-            autofillHints: [AutofillHints.email],
+            readOnly: readOnly,
+            autofillHints: readOnly ? null : [AutofillHints.email],
             onEditingComplete: () => TextInput.finishAutofillContext(),
             controller: widget.controller,
             inputFormatters: [FilteringTextInputFormatter.singleLineFormatter],

@@ -27,7 +27,7 @@ class OtpRepository with NetworkHandler implements IOtpRepository {
           if (response.data.data.user.is_verified) {
             debugPrint(
                 "OtpRepository Repository : ${response.response.toString()}");
-            await appState.saveUserModelString(response.response.toString());
+            await appState.saveUserEntityFromLogin(response.data);
           }
           return response;
         },

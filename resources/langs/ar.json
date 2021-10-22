@@ -68,7 +68,13 @@
   "email_hint":"البريد الإلكتروني",
   "edit_profile_title":"تعديل بيانات المستخدم",
   "email_empty_field_error":"ادخل بريد الكتروني",
-  "invalid_email_error":"يرجي إدخال بريد الكتروني صحيح"
+  "invalid_email_error":"يرجي إدخال بريد الكتروني صحيح",
+  "edit_profile_save_button":"حفظ التعديل",
+  "camera":"تصوير",
+  "gallery":"معرض الصور",
+  "remove_avatar":"إزالة الصورة",
+
+  "profile_updated_message":"تم تحديث البيانات بنجاح"
 
   
 }

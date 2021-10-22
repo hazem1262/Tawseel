@@ -390,6 +390,8 @@ class _$UserItemTearOff {
       String name,
       String phone,
       String? image,
+      String? email,
+      bool is_social,
       String? phone_verified_at,
       bool is_verified,
       bool can_receive_offers,
@@ -399,6 +401,8 @@ class _$UserItemTearOff {
       name,
       phone,
       image,
+      email,
+      is_social,
       phone_verified_at,
       is_verified,
       can_receive_offers,
@@ -420,6 +424,8 @@ mixin _$UserItem {
   String get name => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  bool get is_social => throw _privateConstructorUsedError;
   String? get phone_verified_at => throw _privateConstructorUsedError;
   bool get is_verified => throw _privateConstructorUsedError;
   bool get can_receive_offers => throw _privateConstructorUsedError;
@@ -440,6 +446,8 @@ abstract class $UserItemCopyWith<$Res> {
       String name,
       String phone,
       String? image,
+      String? email,
+      bool is_social,
       String? phone_verified_at,
       bool is_verified,
       bool can_receive_offers,
@@ -460,6 +468,8 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
     Object? name = freezed,
     Object? phone = freezed,
     Object? image = freezed,
+    Object? email = freezed,
+    Object? is_social = freezed,
     Object? phone_verified_at = freezed,
     Object? is_verified = freezed,
     Object? can_receive_offers = freezed,
@@ -482,6 +492,14 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      is_social: is_social == freezed
+          ? _value.is_social
+          : is_social // ignore: cast_nullable_to_non_nullable
+              as bool,
       phone_verified_at: phone_verified_at == freezed
           ? _value.phone_verified_at
           : phone_verified_at // ignore: cast_nullable_to_non_nullable
@@ -512,6 +530,8 @@ abstract class _$UserItemCopyWith<$Res> implements $UserItemCopyWith<$Res> {
       String name,
       String phone,
       String? image,
+      String? email,
+      bool is_social,
       String? phone_verified_at,
       bool is_verified,
       bool can_receive_offers,
@@ -533,6 +553,8 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
     Object? name = freezed,
     Object? phone = freezed,
     Object? image = freezed,
+    Object? email = freezed,
+    Object? is_social = freezed,
     Object? phone_verified_at = freezed,
     Object? is_verified = freezed,
     Object? can_receive_offers = freezed,
@@ -555,6 +577,14 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      is_social == freezed
+          ? _value.is_social
+          : is_social // ignore: cast_nullable_to_non_nullable
+              as bool,
       phone_verified_at == freezed
           ? _value.phone_verified_at
           : phone_verified_at // ignore: cast_nullable_to_non_nullable
@@ -583,6 +613,8 @@ class _$_UserItem implements _UserItem {
       this.name,
       this.phone,
       this.image,
+      this.email,
+      this.is_social,
       this.phone_verified_at,
       this.is_verified,
       this.can_receive_offers,
@@ -600,6 +632,10 @@ class _$_UserItem implements _UserItem {
   @override
   final String? image;
   @override
+  final String? email;
+  @override
+  final bool is_social;
+  @override
   final String? phone_verified_at;
   @override
   final bool is_verified;
@@ -610,7 +646,7 @@ class _$_UserItem implements _UserItem {
 
   @override
   String toString() {
-    return 'UserItem(id: $id, name: $name, phone: $phone, image: $image, phone_verified_at: $phone_verified_at, is_verified: $is_verified, can_receive_offers: $can_receive_offers, address: $address)';
+    return 'UserItem(id: $id, name: $name, phone: $phone, image: $image, email: $email, is_social: $is_social, phone_verified_at: $phone_verified_at, is_verified: $is_verified, can_receive_offers: $can_receive_offers, address: $address)';
   }
 
   @override
@@ -625,6 +661,11 @@ class _$_UserItem implements _UserItem {
                 const DeepCollectionEquality().equals(other.phone, phone)) &&
             (identical(other.image, image) ||
                 const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.is_social, is_social) ||
+                const DeepCollectionEquality()
+                    .equals(other.is_social, is_social)) &&
             (identical(other.phone_verified_at, phone_verified_at) ||
                 const DeepCollectionEquality()
                     .equals(other.phone_verified_at, phone_verified_at)) &&
@@ -645,6 +686,8 @@ class _$_UserItem implements _UserItem {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(phone) ^
       const DeepCollectionEquality().hash(image) ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(is_social) ^
       const DeepCollectionEquality().hash(phone_verified_at) ^
       const DeepCollectionEquality().hash(is_verified) ^
       const DeepCollectionEquality().hash(can_receive_offers) ^
@@ -667,6 +710,8 @@ abstract class _UserItem implements UserItem {
       String name,
       String phone,
       String? image,
+      String? email,
+      bool is_social,
       String? phone_verified_at,
       bool is_verified,
       bool can_receive_offers,
@@ -682,6 +727,10 @@ abstract class _UserItem implements UserItem {
   String get phone => throw _privateConstructorUsedError;
   @override
   String? get image => throw _privateConstructorUsedError;
+  @override
+  String? get email => throw _privateConstructorUsedError;
+  @override
+  bool get is_social => throw _privateConstructorUsedError;
   @override
   String? get phone_verified_at => throw _privateConstructorUsedError;
   @override

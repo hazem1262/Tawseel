@@ -3,11 +3,16 @@ import 'dart:convert';
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tawseel/features/login/models/logine_response.dart';
+import 'package:tawseel/models/data.dart';
+import 'package:tawseel/models/user_entity.dart';
 
 class AppState extends ChangeNotifier {
   // ignore: non_constant_identifier_names
   final String LoggedInKey = "isLoggedIn";
   final String LoginModelKey = "LoginModelKeyyyy";
+
+  final String USER_ENTITY = "USER_ENTITY";
+  final String USER_TOKEN = "USER_TOKEN";
 
   AppState();
 
@@ -23,30 +28,49 @@ class AppState extends ChangeNotifier {
 
   Future<bool> seLoggedInState(bool isLoggedInValue) async {
     final pref = await SharedPreferences.getInstance();
+    if (isLoggedInValue == false) clearData();
     return pref.setBool(LoggedInKey, isLoggedInValue);
   }
 
-  Future<bool> saveUserModelString(String res) async {
-    debugPrint("App state saveUserModelString : $res");
-
+  Future<bool> saveUserEntityFromLogin(LoginResponse res) async {
+    debugPrint("saveUserEntityFromLogin $res");
     final pref = await SharedPreferences.getInstance();
-    var saved = await pref.setString(LoginModelKey, res);
     seLoggedInState(true);
-    return saved;
+    var userEntity =
+        await pref.setString(USER_ENTITY, jsonEncode(res.getUserEntity()));
+    var userToken =
+        await setToken("${res.data.token_type} ${res.data.access_token}");
+
+    return (userEntity && userToken);
   }
 
-  printUserModel() async {
+  Future<bool> setToken(String token) async {
     final pref = await SharedPreferences.getInstance();
-    var model = pref.getString(LoginModelKey);
-
-    debugPrint("AppState printUserModel : ${model.toString()}");
+    return await pref.setString(USER_TOKEN, token);
   }
 
-  Future<LoginResponse> get getUserModel async {
+  Future<String?> getToken() async {
     final pref = await SharedPreferences.getInstance();
-    var model = pref.getString(LoginModelKey);
-    debugPrint("AppState getUserModel : ${model.toString()}");
-    var userMap = jsonDecode(model!) as Map<String, dynamic>;
-    return LoginResponse.fromJson(userMap);
+    return pref.getString(USER_TOKEN);
+  }
+
+  Future<bool> saveUserEntityFromEditProfile(Data res) async {
+    debugPrint("saveUserEntityFromEditProfile $res");
+    final pref = await SharedPreferences.getInstance();
+    return await pref.setString(USER_ENTITY, jsonEncode(res.getUserEntity()));
+  }
+
+  Future<UserEntity?> get getUserEntity async {
+    final pref = await SharedPreferences.getInstance();
+    var model = pref.getString(USER_ENTITY);
+    debugPrint("AppState getUserEntity : ${model.toString()}");
+    if (model == null) return Future.error("null value");
+    Map<String, dynamic> decodedJson = jsonDecode(model);
+    return UserEntity.fromJson(decodedJson);
+  }
+
+  clearData() async {
+    final pref = await SharedPreferences.getInstance();
+    pref.clear();
   }
 }

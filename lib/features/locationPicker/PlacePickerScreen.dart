@@ -487,7 +487,7 @@
 //         locality = locality ?? administrativeAreaLevel1;
 //         city = locality;
 //         this.locationResult = LocationResult(name, locality, latLng, formattedAddress, country, city, administrativeAreaLevel1, administrativeAreaLevel2, subLocalityLevel1, subLocalityLevel2, postalCode, placeId)
-        
+
 //           ..name = name
 //           ..locality = locality
 //           ..latLng = latLng

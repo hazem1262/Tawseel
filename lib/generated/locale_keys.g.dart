@@ -54,5 +54,10 @@ abstract class  LocaleKeys {
   static const edit_profile_title = 'edit_profile_title';
   static const email_empty_field_error = 'email_empty_field_error';
   static const invalid_email_error = 'invalid_email_error';
+  static const edit_profile_save_button = 'edit_profile_save_button';
+  static const camera = 'camera';
+  static const gallery = 'gallery';
+  static const remove_avatar = 'remove_avatar';
+  static const profile_updated_message = 'profile_updated_message';
 
 }

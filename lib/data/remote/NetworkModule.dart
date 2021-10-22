@@ -29,11 +29,10 @@ class KeysInjectionInterceptor extends Interceptor {
     options.headers['Accept'] = 'application/json';
     options.headers['Content-Language'] = currentLocalName;
     try {
-      var token = await appState.getUserModel;
-      options.headers['Authorization'] =
-          "${token.data.token_type} ${token.data.access_token}";
+      var token = await appState.getToken();
+      if (token != null) options.headers['Authorization'] = token;
     } catch (e) {
-      debugPrint('Exception : $e');
+      debugPrint('Exception While injecting user token : $e');
     }
 
     super.onRequest(options, handler);

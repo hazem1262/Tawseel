@@ -2,8 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:tawseel/models/user_entity.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/ktx.dart';
+
+import '../../../../../main.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key? key}) : super(key: key);
@@ -13,6 +16,20 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  UserEntity? user;
+
+  @override
+  void initState() {
+    super.initState();
+    getUser();
+  }
+
+  getUser() async {
+    var value = await appState.getUserEntity;
+    debugPrint("from home response : ${value.toString()}");
+    setState(() => user = value);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +38,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
+          IconButton(
+            onPressed: () {
+              appState.seLoggedInState(false);
+              context.openOnly(LandingScreenRoute());
+            },
+            icon: Icon(Icons.logout),
+          ),
           profileActionItem(
             text: "Edit Profile",
             icon: Icons.edit,
@@ -37,6 +61,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             text: "Edit Profile",
             icon: Icons.edit,
             onPressed: () {},
+          ),
+          profileActionItem(
+            text: user?.image ?? "No Image Yet",
+            icon: Icons.edit,
+            onPressed: () {
+              getUser();
+            },
           ),
         ],
       )),

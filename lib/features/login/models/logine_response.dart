@@ -25,6 +25,8 @@ class UserItem with _$UserItem {
     String name,
     String phone,
     String? image,
+    String? email,
+    bool is_social,
     String? phone_verified_at,
     bool is_verified,
     bool can_receive_offers,
