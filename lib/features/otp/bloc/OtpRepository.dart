@@ -25,8 +25,6 @@ class OtpRepository with NetworkHandler implements IOtpRepository {
           var response = await api.verifyOtp(phone, otp, type);
           // save User data into prefrences if he is verified
           if (response.data.data.user.is_verified) {
-            debugPrint(
-                "OtpRepository Repository : ${response.response.toString()}");
             await appState.saveUserEntityFromLogin(response.data);
           }
           return response;

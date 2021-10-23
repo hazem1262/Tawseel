@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tawseel/features/login/LoginBloc.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
+import 'package:tawseel/features/phone/SendPhoneScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -69,8 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       else
                         {
                           appContext.pushRoute(OtpScreenRoute(
-                              otpType: OTP_TYPE.AUTH,
-                              phone: phoneController.text))
+                            otpType: OTP_TYPE.AUTH,
+                            phone: phoneController.text,
+                          ))
                         }
                     },
                     orElse: () => {},
@@ -202,7 +204,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               Container(
                                 width: double.infinity,
                                 child: TextButton(
-                                    onPressed: () => {},
+                                    onPressed: () => {
+                                          context.openIfExist(
+                                              SendPhoneScreenRoute(
+                                                  intention: Intention
+                                                      .FORGET_PASSWORD))
+                                        },
                                     child: Container(
                                       width: double.infinity,
                                       child: Text(

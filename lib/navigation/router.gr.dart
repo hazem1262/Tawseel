@@ -6,24 +6,26 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
-import 'package:flutter/widgets.dart' as _i16;
+import 'package:flutter/widgets.dart' as _i18;
 
 import '../features/address/models/AddressDetailsScreen.dart' as _i11;
+import '../features/changePassword/ChangePasswordScreen.dart' as _i13;
 import '../features/landingScreen/LandingScreen.dart' as _i4;
 import '../features/locationPicker/LocationPickerDialog.dart' as _i10;
-import '../features/locationPicker/user_picked_location.dart' as _i18;
+import '../features/locationPicker/user_picked_location.dart' as _i20;
 import '../features/login/LoginScreen.dart' as _i5;
 import '../features/mainScreen/bottomTabs/favorites/FavoritesScreen.dart'
-    as _i14;
-import '../features/mainScreen/bottomTabs/home/HomeScreen.dart' as _i12;
-import '../features/mainScreen/bottomTabs/offers/OffersScreen.dart' as _i13;
+    as _i16;
+import '../features/mainScreen/bottomTabs/home/HomeScreen.dart' as _i14;
+import '../features/mainScreen/bottomTabs/offers/OffersScreen.dart' as _i15;
 import '../features/mainScreen/bottomTabs/profile/editProfileScreen/EditProfileScreen.dart'
     as _i9;
 import '../features/mainScreen/bottomTabs/profile/profileScreen/ProfileScreen.dart'
-    as _i15;
+    as _i17;
 import '../features/mainScreen/MainScreen.dart' as _i8;
-import '../features/otp/models/otp_models.dart' as _i17;
+import '../features/otp/models/otp_models.dart' as _i19;
 import '../features/otp/OtpScreen.dart' as _i7;
+import '../features/phone/SendPhoneScreen.dart' as _i12;
 import '../features/signup/SignUpScreen.dart' as _i6;
 import '../features/splash/SplashScreen.dart' as _i3;
 
@@ -92,33 +94,46 @@ class AppRouter extends _i1.RootStackRouter {
           return _i11.AddressDetailsScreen(
               key: args.key, pickedLocation: args.pickedLocation);
         }),
+    SendPhoneScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<SendPhoneScreenRouteArgs>();
+          return _i12.SendPhoneScreen(key: args.key, intention: args.intention);
+        }),
+    ChangePasswordScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<ChangePasswordScreenRouteArgs>();
+          return _i13.ChangePasswordScreen(
+              key: args.key, intention: args.intention);
+        }),
     HomeScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<HomeScreenRouteArgs>(
               orElse: () => const HomeScreenRouteArgs());
-          return _i12.HomeScreen(key: args.key);
+          return _i14.HomeScreen(key: args.key);
         }),
     OffersScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<OffersScreenRouteArgs>(
               orElse: () => const OffersScreenRouteArgs());
-          return _i13.OffersScreen(key: args.key);
+          return _i15.OffersScreen(key: args.key);
         }),
     FavoritesScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<FavoritesScreenRouteArgs>(
               orElse: () => const FavoritesScreenRouteArgs());
-          return _i14.FavoritesScreen(key: args.key);
+          return _i16.FavoritesScreen(key: args.key);
         }),
     ProfileScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<ProfileScreenRouteArgs>(
               orElse: () => const ProfileScreenRouteArgs());
-          return _i15.ProfileScreen(key: args.key);
+          return _i17.ProfileScreen(key: args.key);
         })
   };
 
@@ -140,12 +155,15 @@ class AppRouter extends _i1.RootStackRouter {
         _i1.RouteConfig(LocationPickerDialogRoute.name,
             path: '/location-picker-dialog'),
         _i1.RouteConfig(AddressDetailsScreenRoute.name,
-            path: '/address-details-screen')
+            path: '/address-details-screen'),
+        _i1.RouteConfig(SendPhoneScreenRoute.name, path: '/send-phone-screen'),
+        _i1.RouteConfig(ChangePasswordScreenRoute.name,
+            path: '/change-password-screen')
       ];
 }
 
 class SplashScreenRoute extends _i1.PageRouteInfo<SplashScreenRouteArgs> {
-  SplashScreenRoute({_i16.Key? key})
+  SplashScreenRoute({_i18.Key? key})
       : super(name, path: '/', args: SplashScreenRouteArgs(key: key));
 
   static const String name = 'SplashScreenRoute';
@@ -154,7 +172,7 @@ class SplashScreenRoute extends _i1.PageRouteInfo<SplashScreenRouteArgs> {
 class SplashScreenRouteArgs {
   const SplashScreenRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }
 
 class LandingScreenRoute extends _i1.PageRouteInfo {
@@ -170,7 +188,7 @@ class LoginScreenRoute extends _i1.PageRouteInfo {
 }
 
 class SignUpScreenRoute extends _i1.PageRouteInfo<SignUpScreenRouteArgs> {
-  SignUpScreenRoute({_i16.Key? key})
+  SignUpScreenRoute({_i18.Key? key})
       : super(name,
             path: '/sign-up-screen', args: SignUpScreenRouteArgs(key: key));
 
@@ -180,12 +198,12 @@ class SignUpScreenRoute extends _i1.PageRouteInfo<SignUpScreenRouteArgs> {
 class SignUpScreenRouteArgs {
   const SignUpScreenRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }
 
 class OtpScreenRoute extends _i1.PageRouteInfo<OtpScreenRouteArgs> {
   OtpScreenRoute(
-      {_i16.Key? key, required _i17.OTP_TYPE otpType, required String phone})
+      {_i18.Key? key, required _i19.OTP_TYPE otpType, required String phone})
       : super(name,
             path: '/otp-screen',
             args: OtpScreenRouteArgs(key: key, otpType: otpType, phone: phone));
@@ -197,15 +215,15 @@ class OtpScreenRouteArgs {
   const OtpScreenRouteArgs(
       {this.key, required this.otpType, required this.phone});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 
-  final _i17.OTP_TYPE otpType;
+  final _i19.OTP_TYPE otpType;
 
   final String phone;
 }
 
 class MainScreenRoute extends _i1.PageRouteInfo<MainScreenRouteArgs> {
-  MainScreenRoute({_i16.Key? key, List<_i1.PageRouteInfo>? children})
+  MainScreenRoute({_i18.Key? key, List<_i1.PageRouteInfo>? children})
       : super(name,
             path: '/main-screen',
             args: MainScreenRouteArgs(key: key),
@@ -217,12 +235,12 @@ class MainScreenRoute extends _i1.PageRouteInfo<MainScreenRouteArgs> {
 class MainScreenRouteArgs {
   const MainScreenRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }
 
 class EditProfileScreenRoute
     extends _i1.PageRouteInfo<EditProfileScreenRouteArgs> {
-  EditProfileScreenRoute({_i16.Key? key})
+  EditProfileScreenRoute({_i18.Key? key})
       : super(name,
             path: '/edit-profile-screen',
             args: EditProfileScreenRouteArgs(key: key));
@@ -233,12 +251,12 @@ class EditProfileScreenRoute
 class EditProfileScreenRouteArgs {
   const EditProfileScreenRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }
 
 class LocationPickerDialogRoute
     extends _i1.PageRouteInfo<LocationPickerDialogRouteArgs> {
-  LocationPickerDialogRoute({_i16.Key? key})
+  LocationPickerDialogRoute({_i18.Key? key})
       : super(name,
             path: '/location-picker-dialog',
             args: LocationPickerDialogRouteArgs(key: key));
@@ -249,13 +267,13 @@ class LocationPickerDialogRoute
 class LocationPickerDialogRouteArgs {
   const LocationPickerDialogRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }
 
 class AddressDetailsScreenRoute
     extends _i1.PageRouteInfo<AddressDetailsScreenRouteArgs> {
   AddressDetailsScreenRoute(
-      {_i16.Key? key, required _i18.UserPickedLocation pickedLocation})
+      {_i18.Key? key, required _i20.UserPickedLocation pickedLocation})
       : super(name,
             path: '/address-details-screen',
             args: AddressDetailsScreenRouteArgs(
@@ -267,13 +285,50 @@ class AddressDetailsScreenRoute
 class AddressDetailsScreenRouteArgs {
   const AddressDetailsScreenRouteArgs({this.key, required this.pickedLocation});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 
-  final _i18.UserPickedLocation pickedLocation;
+  final _i20.UserPickedLocation pickedLocation;
+}
+
+class SendPhoneScreenRoute extends _i1.PageRouteInfo<SendPhoneScreenRouteArgs> {
+  SendPhoneScreenRoute({_i18.Key? key, required _i12.Intention intention})
+      : super(name,
+            path: '/send-phone-screen',
+            args: SendPhoneScreenRouteArgs(key: key, intention: intention));
+
+  static const String name = 'SendPhoneScreenRoute';
+}
+
+class SendPhoneScreenRouteArgs {
+  const SendPhoneScreenRouteArgs({this.key, required this.intention});
+
+  final _i18.Key? key;
+
+  final _i12.Intention intention;
+}
+
+class ChangePasswordScreenRoute
+    extends _i1.PageRouteInfo<ChangePasswordScreenRouteArgs> {
+  ChangePasswordScreenRoute(
+      {_i18.Key? key, required _i13.ChangePasswordIntention intention})
+      : super(name,
+            path: '/change-password-screen',
+            args:
+                ChangePasswordScreenRouteArgs(key: key, intention: intention));
+
+  static const String name = 'ChangePasswordScreenRoute';
+}
+
+class ChangePasswordScreenRouteArgs {
+  const ChangePasswordScreenRouteArgs({this.key, required this.intention});
+
+  final _i18.Key? key;
+
+  final _i13.ChangePasswordIntention intention;
 }
 
 class HomeScreenRoute extends _i1.PageRouteInfo<HomeScreenRouteArgs> {
-  HomeScreenRoute({_i16.Key? key})
+  HomeScreenRoute({_i18.Key? key})
       : super(name, path: '', args: HomeScreenRouteArgs(key: key));
 
   static const String name = 'HomeScreenRoute';
@@ -282,11 +337,11 @@ class HomeScreenRoute extends _i1.PageRouteInfo<HomeScreenRouteArgs> {
 class HomeScreenRouteArgs {
   const HomeScreenRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }
 
 class OffersScreenRoute extends _i1.PageRouteInfo<OffersScreenRouteArgs> {
-  OffersScreenRoute({_i16.Key? key})
+  OffersScreenRoute({_i18.Key? key})
       : super(name,
             path: 'offers-screen', args: OffersScreenRouteArgs(key: key));
 
@@ -296,11 +351,11 @@ class OffersScreenRoute extends _i1.PageRouteInfo<OffersScreenRouteArgs> {
 class OffersScreenRouteArgs {
   const OffersScreenRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }
 
 class FavoritesScreenRoute extends _i1.PageRouteInfo<FavoritesScreenRouteArgs> {
-  FavoritesScreenRoute({_i16.Key? key})
+  FavoritesScreenRoute({_i18.Key? key})
       : super(name,
             path: 'favorites-screen', args: FavoritesScreenRouteArgs(key: key));
 
@@ -310,11 +365,11 @@ class FavoritesScreenRoute extends _i1.PageRouteInfo<FavoritesScreenRouteArgs> {
 class FavoritesScreenRouteArgs {
   const FavoritesScreenRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }
 
 class ProfileScreenRoute extends _i1.PageRouteInfo<ProfileScreenRouteArgs> {
-  ProfileScreenRoute({_i16.Key? key})
+  ProfileScreenRoute({_i18.Key? key})
       : super(name,
             path: 'profile-screen', args: ProfileScreenRouteArgs(key: key));
 
@@ -324,5 +379,5 @@ class ProfileScreenRoute extends _i1.PageRouteInfo<ProfileScreenRouteArgs> {
 class ProfileScreenRouteArgs {
   const ProfileScreenRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i18.Key? key;
 }

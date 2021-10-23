@@ -16,7 +16,7 @@ import 'package:tawseel/utils/AppState.dart';
 import 'data/remote/AddressService.dart';
 import 'data/remote/NetworkModule.dart';
 import 'features/address/models/AddressDetailsScreen.dart';
-import 'features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/EditProfileBloc.dart';
+import 'features/changePassword/bloc/ChangePasswordRepository.dart';
 import 'features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'features/otp/bloc/OtpRepository.dart';
 import 'navigation/router.gr.dart';
@@ -33,26 +33,43 @@ Locale get currentLocal => appContext.locale;
 String get currentLocalName => appContext.locale.toString();
 bool get isAr => appContext.locale.toString().contains("ar");
 
-void main() async {
+Future<void> initAppDependencies() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
-  getIt.registerSingleton<NetworkModule>(NetworkModule());
-
+  getIt.registerSingleton<NetworkModule>(
+    NetworkModule(),
+  );
   getIt.registerSingleton<AuthService>(
-      AuthService(getIt<NetworkModule>().getDio(BaseUrl)));
+    AuthService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
   getIt.registerSingleton<AddressService>(
-      AddressService(getIt<NetworkModule>().getDio(BaseUrl)));
+    AddressService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
   getIt.registerSingleton<PlacesApiService>(
-      PlacesApiService(getIt<NetworkModule>().getDio(PlacesBaseUrl)));
+    PlacesApiService(getIt<NetworkModule>().getDio(PlacesBaseUrl)),
+  );
   getIt.registerSingleton<ILoginRepository>(
-      LoginRepository(getIt<AuthService>()));
+    LoginRepository(getIt<AuthService>()),
+  );
   getIt.registerSingleton<ISignUpRepository>(
-      SignUpRepository(getIt<AuthService>()));
+    SignUpRepository(getIt<AuthService>()),
+  );
   getIt.registerSingleton<IProfileRepository>(
-      ProfileRepository(getIt<AuthService>()));
+    ProfileRepository(getIt<AuthService>()),
+  );
 
-  getIt.registerSingleton<IOtpRepository>(OtpRepository(getIt<AuthService>()));
+  getIt.registerSingleton<IOtpRepository>(
+    OtpRepository(getIt<AuthService>()),
+  );
+
+  getIt.registerSingleton<IChangePasswordRepository>(
+    ChangePasswordRepository(getIt<AuthService>()),
+  );
+}
+
+void main() async {
+  await initAppDependencies();
 
   runApp(
     EasyLocalization(

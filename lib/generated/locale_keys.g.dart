@@ -59,5 +59,13 @@ abstract class  LocaleKeys {
   static const gallery = 'gallery';
   static const remove_avatar = 'remove_avatar';
   static const profile_updated_message = 'profile_updated_message';
+  static const next = 'next';
+  static const password_changed_successfully = 'password_changed_successfully';
+  static const password_changed_title = 'password_changed_title';
+  static const password_changed_dialog_message = 'password_changed_dialog_message';
+  static const back_to_login = 'back_to_login';
+  static const password_doesnt_match = 'password_doesnt_match';
+  static const confirm_password = 'confirm_password';
+  static const phone_changed_successfully = 'phone_changed_successfully';
 
 }

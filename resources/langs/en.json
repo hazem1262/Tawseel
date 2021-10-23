@@ -79,6 +79,17 @@
   "gallery":"Gallery",
   "remove_avatar":"Remove Avatar",
 
-  "profile_updated_message":"Profile Info Updated Successfully"
+  "profile_updated_message":"Profile Info Updated Successfully",
+
+  "next":"Next",
+  "password_changed_successfully":"Password Changed Successfully",
   
+  "password_changed_title":"Password Changed",
+  "password_changed_dialog_message":"Congratulations your password changed successfully",
+  "back_to_login":"Back To Login",
+
+  "password_doesnt_match":"Passwords Doesn't match!",
+
+  "confirm_password":"Confirm Password",
+  "phone_changed_successfully":"Phone Changed Successfully"
 }

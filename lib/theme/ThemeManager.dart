@@ -27,6 +27,7 @@ class ThemeManager with ChangeNotifier {
     fontFamily: 'Poppins',
     textTheme: TextTheme(
       headline6: titlesTextStyle(false),
+      headline5: headline5TextStyle(false),
       caption: captionTextStyle(false),
       bodyText1: body1TextStyle(false),
     ),
@@ -41,6 +42,7 @@ class ThemeManager with ChangeNotifier {
     fontFamily: 'Poppins',
     textTheme: TextTheme(
       headline6: titlesTextStyle(true),
+      headline5: headline5TextStyle(true),
       caption: captionTextStyle(true),
       bodyText1: body1TextStyle(true),
     ),

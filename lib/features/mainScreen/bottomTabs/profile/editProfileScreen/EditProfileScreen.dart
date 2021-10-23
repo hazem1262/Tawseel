@@ -45,7 +45,6 @@ class EditProfileScreen extends StatelessWidget {
           EditProfileBloc(getIt<IProfileRepository>())..add(GetProfileEvent()),
       child: BlocListener<EditProfileBloc, EditProfileState>(
         listener: (context, state) {
-          print(state.toString());
           if (state.error.isNotEmpty) appContext.showError(state.error);
           if (state.showChooser) showPicker(context);
           if (state.userData != null) {

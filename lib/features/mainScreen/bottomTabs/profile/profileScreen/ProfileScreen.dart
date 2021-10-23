@@ -2,8 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:tawseel/features/changePassword/ChangePasswordScreen.dart';
+import 'package:tawseel/features/login/components/LoadingButton.dart';
+import 'package:tawseel/features/phone/SendPhoneScreen.dart';
 import 'package:tawseel/models/user_entity.dart';
 import 'package:tawseel/navigation/router.gr.dart';
+import 'package:tawseel/res.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 import '../../../../../main.dart';
@@ -53,14 +57,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
           ),
           profileActionItem(
-            text: "Edit Profile",
+            text: "Change Phone",
             icon: Icons.edit,
-            onPressed: () {},
+            onPressed: () {
+              context.openIfExist(
+                  SendPhoneScreenRoute(intention: Intention.CHANGE_PHONE));
+            },
           ),
           profileActionItem(
-            text: "Edit Profile",
+            text: "Change Password",
             icon: Icons.edit,
-            onPressed: () {},
+            onPressed: () {
+              context.openIfExist(
+                ChangePasswordScreenRoute(
+                    intention: ChangePasswordIntention.CHANGE_PASSWORD),
+              );
+            },
+          ),
+          profileActionItem(
+            text: "Show Dialog",
+            icon: Icons.edit,
+            onPressed: () {
+              // showSuccessDialog(context);
+            },
           ),
           profileActionItem(
             text: user?.image ?? "No Image Yet",

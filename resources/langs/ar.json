@@ -74,7 +74,21 @@
   "gallery":"معرض الصور",
   "remove_avatar":"إزالة الصورة",
 
-  "profile_updated_message":"تم تحديث البيانات بنجاح"
+  "profile_updated_message":"تم تحديث البيانات بنجاح",
 
+  "next":"التالي",
+
+  "password_changed_successfully":"تم تغيير كلمة المرور بنجاح",
+  
+  "password_changed_title":"تم تغيير كلمة المرور",
+  "password_changed_dialog_message":"تم تغيير كلمة المرور بنجاح",
+  "back_to_login":"تسجيل الدخول",
+
+
+  "password_doesnt_match":"كلمة المرور غير متطابقه",
+
+  "confirm_password":"تأكيد",
+
+  "phone_changed_successfully":"تم تغيير رقم الهاتف بنجاح"
   
 }

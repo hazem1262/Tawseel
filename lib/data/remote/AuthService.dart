@@ -61,4 +61,11 @@ abstract class AuthService {
   Future<HttpResponse<UserProfileResponse>> updateAvatar(
     @Part(name: "image") File file,
   );
+
+  @FormUrlEncoded()
+  @POST("change-password")
+  Future<HttpResponse<String>> changePassword({
+    @Field() String? password,
+    @Field() String? password_confirmation,
+  });
 }

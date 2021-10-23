@@ -4,16 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:tawseel/features/changePassword/ChangePasswordScreen.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/features/otp/bloc/OtpBloc.dart';
 import 'package:tawseel/features/otp/bloc/OtpRepository.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
+import 'package:tawseel/features/phone/SendPhoneScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/ktx.dart';
 import '../../main.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:auto_route/auto_route.dart';
 
 class OtpScreen extends StatelessWidget {
   final String phone;
@@ -56,7 +59,23 @@ class OtpScreen extends StatelessWidget {
                             OtpEvents.onOtpChange(textEditingController.text));
                       },
                       onOtpVerified: (loginResponse) {
-                        appContext.openOnly(MainScreenRoute());
+                        if (otpType == OTP_TYPE.FORGET_PASSWORD) {
+                          // close otp and open change password
+                          // so when the user click back return to the phone input again.
+                          appContext.router
+                              .popAndPush(ChangePasswordScreenRoute(
+                            intention: ChangePasswordIntention.FORGET_PASSWORD,
+                          ));
+                        } else if (otpType == OTP_TYPE.CHANGE_PHONE) {
+                          // user is changing the phone from his profile
+                          // so return back
+                          appContext.showToast(
+                            LocaleKeys.phone_changed_successfully.tr(),
+                          );
+                          appContext.router.pop();
+                        } else if (otpType == OTP_TYPE.AUTH) {
+                          appContext.openOnly(MainScreenRoute());
+                        }
                       },
                       orElse: () => {},
                     );

@@ -4,6 +4,7 @@ import '../main.dart';
 
 const LargeTextSize = 26.0;
 const MeduimTextSize = 20.0;
+const SmallTitleTextSize = 18.0;
 const BodyTextSize = 16.0;
 const BodySmallTextSize = 15.0;
 const CaptionTextSize = 14.0;
@@ -18,6 +19,14 @@ const Color CaptionDarkColor_Dark = Color(0xffFFFFFF);
 
 const String FontNameDefault = "Poppins";
 const String FontNameDefaultAr = "test";
+
+// ignore: non_constant_identifier_names
+headline5TextStyle(bool isDark) => TextStyle(
+      fontFamily: FontNameDefault,
+      fontWeight: FontWeight.w500,
+      fontSize: SmallTitleTextSize,
+      color: isDark ? TitleDarkColor_Dark : TitleDarkColor_Light,
+    );
 
 // ignore: non_constant_identifier_names
 titlesTextStyle(bool isDark) => TextStyle(

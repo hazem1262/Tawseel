@@ -180,6 +180,31 @@ class _AuthService implements AuthService {
     return httpResponse;
   }
 
+  @override
+  Future<HttpResponse<String>> changePassword(
+      {password, password_confirmation}) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _data = {
+      'password': password,
+      'password_confirmation': password_confirmation
+    };
+    _data.removeWhere((k, v) => v == null);
+    final _result = await _dio.fetch<String>(
+        _setStreamType<HttpResponse<String>>(Options(
+                method: 'POST',
+                headers: <String, dynamic>{},
+                extra: _extra,
+                contentType: 'application/x-www-form-urlencoded')
+            .compose(_dio.options, 'change-password',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = _result.data!;
+    final httpResponse = HttpResponse(value, _result);
+    return httpResponse;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

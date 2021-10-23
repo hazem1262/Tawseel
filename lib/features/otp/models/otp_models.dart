@@ -12,7 +12,7 @@ abstract class OtpResponse with _$OtpResponse {
 
 // otp confirmation response is the same response as verified login response now
 
-enum OTP_TYPE { AUTH, FORGET_PASSWORD }
+enum OTP_TYPE { AUTH, FORGET_PASSWORD, CHANGE_PASSWORD, CHANGE_PHONE }
 
 extension OTP_TYPE_DTX on OTP_TYPE {
   String get apiValue {
@@ -21,6 +21,10 @@ extension OTP_TYPE_DTX on OTP_TYPE {
         return 'auth';
       case OTP_TYPE.FORGET_PASSWORD:
         return 'forgetpassword';
+      case OTP_TYPE.CHANGE_PASSWORD:
+        return 'forgetpassword';
+      case OTP_TYPE.CHANGE_PHONE:
+        return 'changephone';
       default:
         return 'auth';
     }

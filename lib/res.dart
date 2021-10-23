@@ -21,4 +21,7 @@ class Res {
   static const String email_icon = "assets/email_icon.png";
   static const String pick_image_icon = "assets/pick_image_icon.png";
   static const String pick_image_camera_icon = "assets/camera-icon.png";
+
+  static const String password_changed_image =
+      "assets/password-changed-image.png";
 }
