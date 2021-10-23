@@ -5,6 +5,8 @@ import 'package:retrofit/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:tawseel/data/models/error_model.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
+import 'package:tawseel/main.dart';
+import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -30,7 +32,15 @@ mixin NetworkHandler {
             throw (LocaleKeys.network_error.tr());
           // server error
           case DioErrorType.response:
-            throw (_getErrorFrom(e.response?.data));
+            {
+              if (e.response?.statusCode == 401) {
+                appState.clearData();
+                appContext.openOnly(LoginScreenRoute());
+                return Future.error(e);
+              }
+              throw (_getErrorFrom(e.response));
+            }
+
           default:
             throw (e.toString());
         }
@@ -40,15 +50,41 @@ mixin NetworkHandler {
     }
   }
 
-  String _getErrorFrom(data) {
+  String _getErrorFrom(Response<dynamic>? response) {
     try {
-      // final parsed = jsonDecode(data).cast<Map<String, dynamic>>();
-      return ErrorModel.fromJson(data).message;
+      // get fileds detailed errors
+      var detailedErrors = getDetailedErrors(response);
+      // get global message
+      final em = ErrorModel.fromJson(response!.data);
+      // if we have error details return it else return the global message
+      var finalUiError =
+          detailedErrors.isNotEmpty ? detailedErrors : "${em.message}";
+
+      return finalUiError;
     } catch (e, _) {
       debugPrint(
-          "Unkown error happend while getting the error message from server response \n : $e \n data: $data");
+          "Unkown error happend while getting the error message from server response \n : $e \n response: ${response!.data}");
 
-      return "Unkown error happend";
+      return LocaleKeys.unknown_error.tr();
+    }
+  }
+
+  String getDetailedErrors(Response<dynamic>? response) {
+    try {
+      Map<String, dynamic> arrayOfErros = response!.data['errors'];
+      var errors = "";
+      arrayOfErros.forEach((key, value) {
+        List<dynamic> fieldErrorMessages = value as List<dynamic>;
+        String errorsCombinedString = fieldErrorMessages.join("\n");
+        errors += "$errorsCombinedString";
+      });
+      debugPrint("-------------------> array of errors : $errors");
+      // remove last space casued by \n with the join
+      return errors.replaceAll(".", "\n").substring(0, errors.length - 1);
+    } catch (e) {
+      debugPrint(
+          "-------------------> error happened while getting the detailed field errors :\n $e");
+      return '';
     }
   }
 }

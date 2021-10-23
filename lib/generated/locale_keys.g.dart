@@ -2,6 +2,7 @@
 
 abstract class  LocaleKeys {
   static const app_name = 'app_name';
+  static const unknown_error = 'unknown_error';
   static const test_text = 'test_text';
   static const intro_title = 'intro_title';
   static const intro_subtitle = 'intro_subtitle';

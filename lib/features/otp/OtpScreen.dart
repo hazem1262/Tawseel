@@ -72,7 +72,6 @@ class OtpScreen extends StatelessWidget {
                           appContext.showToast(
                             LocaleKeys.phone_changed_successfully.tr(),
                           );
-                          appContext.router.pop();
                         } else if (otpType == OTP_TYPE.AUTH) {
                           appContext.openOnly(MainScreenRoute());
                         }

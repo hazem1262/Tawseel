@@ -1,5 +1,8 @@
 {
   "app_name": "Tawseel",
+
+  "unknown_error":"Unknown Error!",
+  
   "test_text": "Testing flutter Bloc with states",
 
   "intro_title" : "Find the best delivery price",

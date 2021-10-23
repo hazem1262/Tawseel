@@ -14,6 +14,7 @@ import 'package:tawseel/features/otp/OtpScreen.dart';
 import 'package:tawseel/features/phone/SendPhoneScreen.dart';
 import 'package:tawseel/features/signup/SignUpScreen.dart';
 import 'package:tawseel/features/splash/SplashScreen.dart';
+import 'package:tawseel/features/support/SupportScreen.dart';
 
 @MaterialAutoRouter(replaceInRouteName: 'screen', routes: <AutoRoute>[
   AutoRoute(page: SplashScreen, initial: true),
@@ -32,5 +33,6 @@ import 'package:tawseel/features/splash/SplashScreen.dart';
   AutoRoute(page: AddressDetailsScreen),
   AutoRoute(page: SendPhoneScreen),
   AutoRoute(page: ChangePasswordScreen),
+  AutoRoute(page: SupportScreen),
 ])
 class $AppRouter {}

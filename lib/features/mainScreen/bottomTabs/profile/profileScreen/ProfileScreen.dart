@@ -37,59 +37,69 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          IconButton(
-            onPressed: () {
-              appState.seLoggedInState(false);
-              context.openOnly(LandingScreenRoute());
-            },
-            icon: Icon(Icons.logout),
+      body: Container(
+        margin: EdgeInsets.all(9),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(width: 0.1),
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
           ),
-          profileActionItem(
-            text: "Edit Profile",
-            icon: Icons.edit,
-            onPressed: () {
-              context.openIfExist(EditProfileScreenRoute());
-            },
-          ),
-          profileActionItem(
-            text: "Change Phone",
-            icon: Icons.edit,
-            onPressed: () {
-              context.openIfExist(
-                  SendPhoneScreenRoute(intention: Intention.CHANGE_PHONE));
-            },
-          ),
-          profileActionItem(
-            text: "Change Password",
-            icon: Icons.edit,
-            onPressed: () {
-              context.openIfExist(
-                ChangePasswordScreenRoute(
-                    intention: ChangePasswordIntention.CHANGE_PASSWORD),
-              );
-            },
-          ),
-          profileActionItem(
-            text: "Show Dialog",
-            icon: Icons.edit,
-            onPressed: () {
-              // showSuccessDialog(context);
-            },
-          ),
-          profileActionItem(
-            text: user?.image ?? "No Image Yet",
-            icon: Icons.edit,
-            onPressed: () {
-              getUser();
-            },
-          ),
-        ],
-      )),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(),
+            IconButton(
+              onPressed: () {
+                appState.seLoggedInState(false);
+                context.openOnly(LandingScreenRoute());
+              },
+              icon: Icon(Icons.logout),
+            ),
+            profileActionItem(
+              text: "Edit Profile",
+              icon: Icons.edit,
+              onPressed: () {
+                context.openIfExist(EditProfileScreenRoute());
+              },
+            ),
+            profileActionItem(
+              text: "Change Phone",
+              icon: Icons.edit,
+              onPressed: () {
+                context.openIfExist(
+                    SendPhoneScreenRoute(intention: Intention.CHANGE_PHONE));
+              },
+            ),
+            profileActionItem(
+              text: "Change Password",
+              icon: Icons.edit,
+              onPressed: () {
+                context.openIfExist(
+                  ChangePasswordScreenRoute(
+                      intention: ChangePasswordIntention.CHANGE_PASSWORD),
+                );
+              },
+            ),
+            profileActionItem(
+              text: "Support",
+              icon: Icons.edit,
+              onPressed: () {
+                context.openIfExist(SupportScreenRoute());
+              },
+            ),
+            profileActionItem(
+              text: user?.image ?? "No Image Yet",
+              icon: Icons.edit,
+              onPressed: () {
+                getUser();
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
