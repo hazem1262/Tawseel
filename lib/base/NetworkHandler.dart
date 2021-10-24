@@ -37,6 +37,8 @@ mixin NetworkHandler {
                 appState.clearData();
                 appContext.openOnly(LoginScreenRoute());
                 return Future.error(e);
+              } else if (e.response?.statusCode == 500) {
+                throw (LocaleKeys.server_error.tr());
               }
               throw (_getErrorFrom(e.response));
             }
@@ -55,10 +57,13 @@ mixin NetworkHandler {
       // get fileds detailed errors
       var detailedErrors = getDetailedErrors(response);
       // get global message
-      final em = ErrorModel.fromJson(response!.data);
+      final em = getMessageValue(response);
       // if we have error details return it else return the global message
-      var finalUiError =
-          detailedErrors.isNotEmpty ? detailedErrors : "${em.message}";
+      var finalUiError = detailedErrors.isNotEmpty
+          ? detailedErrors
+          : em.isNotEmpty
+              ? em
+              : LocaleKeys.unknown_error.tr();
 
       return finalUiError;
     } catch (e, _) {
@@ -76,14 +81,23 @@ mixin NetworkHandler {
       arrayOfErros.forEach((key, value) {
         List<dynamic> fieldErrorMessages = value as List<dynamic>;
         String errorsCombinedString = fieldErrorMessages.join("\n");
-        errors += "$errorsCombinedString";
+        errors += "$errorsCombinedString\n";
       });
       debugPrint("-------------------> array of errors : $errors");
       // remove last space casued by \n with the join
-      return errors.replaceAll(".", "\n").substring(0, errors.length - 1);
+      return errors.substring(0, errors.length - 1);
     } catch (e) {
       debugPrint(
           "-------------------> error happened while getting the detailed field errors :\n $e");
+      return '';
+    }
+  }
+
+  String getMessageValue(Response? response) {
+    try {
+      return ErrorModel.fromJson(response!.data).message;
+    } catch (e, trace) {
+      debugPrint('Exception : $e');
       return '';
     }
   }

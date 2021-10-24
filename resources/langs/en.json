@@ -2,7 +2,8 @@
   "app_name": "Tawseel",
 
   "unknown_error":"Unknown Error!",
-  
+  "server_error":"Something went wrong!",
+
   "test_text": "Testing flutter Bloc with states",
 
   "intro_title" : "Find the best delivery price",
@@ -94,5 +95,20 @@
   "password_doesnt_match":"Passwords Doesn't match!",
 
   "confirm_password":"Confirm Password",
-  "phone_changed_successfully":"Phone Changed Successfully"
+  "phone_changed_successfully":"Phone Changed Successfully",
+
+
+  "support_title":"Support",
+  "support_subtitle":"Send your message and we will respond in 24 hour",
+
+  "empty_error":"this field is required.",
+
+  "subject":"Subject",
+  "add_your_message":"Add your message",
+  "send_message":"Send Message",
+
+  "sent_successfully":"Sent Successfully",
+  "subject_length":"length must not be longer than 150 char",
+  "message_length":"length must not be longer than 500 char"
+
 }

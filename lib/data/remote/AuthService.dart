@@ -68,4 +68,9 @@ abstract class AuthService {
     @Field() String? password,
     @Field() String? password_confirmation,
   });
+
+  @FormUrlEncoded()
+  @POST("supports")
+  Future<HttpResponse<String>> sendSupportMessage(
+      @Field() String subject, @Field() String text);
 }

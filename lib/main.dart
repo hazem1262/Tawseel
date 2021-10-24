@@ -9,6 +9,7 @@ import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/data/remote/places_api_service.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
 import 'package:tawseel/features/signup/bloc/SignUpRepository.dart';
+import 'package:tawseel/features/support/bloc/SupportRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/utils/AppState.dart';
@@ -65,6 +66,10 @@ Future<void> initAppDependencies() async {
 
   getIt.registerSingleton<IChangePasswordRepository>(
     ChangePasswordRepository(getIt<AuthService>()),
+  );
+
+  getIt.registerSingleton<ISupportRepository>(
+    SupportRepository(getIt<AuthService>()),
   );
 }
 

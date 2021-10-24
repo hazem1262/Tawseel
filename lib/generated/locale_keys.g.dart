@@ -3,6 +3,7 @@
 abstract class  LocaleKeys {
   static const app_name = 'app_name';
   static const unknown_error = 'unknown_error';
+  static const server_error = 'server_error';
   static const test_text = 'test_text';
   static const intro_title = 'intro_title';
   static const intro_subtitle = 'intro_subtitle';
@@ -68,5 +69,14 @@ abstract class  LocaleKeys {
   static const password_doesnt_match = 'password_doesnt_match';
   static const confirm_password = 'confirm_password';
   static const phone_changed_successfully = 'phone_changed_successfully';
+  static const support_title = 'support_title';
+  static const support_subtitle = 'support_subtitle';
+  static const empty_error = 'empty_error';
+  static const subject = 'subject';
+  static const add_your_message = 'add_your_message';
+  static const send_message = 'send_message';
+  static const sent_successfully = 'sent_successfully';
+  static const subject_length = 'subject_length';
+  static const message_length = 'message_length';
 
 }

@@ -110,8 +110,10 @@ class AppRouter extends _i1.RootStackRouter {
         }),
     SupportScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return const _i14.SupportScreen();
+        builder: (data) {
+          final args = data.argsAs<SupportScreenRouteArgs>(
+              orElse: () => const SupportScreenRouteArgs());
+          return _i14.SupportScreen(key: args.key);
         }),
     HomeScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
@@ -334,10 +336,18 @@ class ChangePasswordScreenRouteArgs {
   final _i13.ChangePasswordIntention intention;
 }
 
-class SupportScreenRoute extends _i1.PageRouteInfo {
-  const SupportScreenRoute() : super(name, path: '/support-screen');
+class SupportScreenRoute extends _i1.PageRouteInfo<SupportScreenRouteArgs> {
+  SupportScreenRoute({_i19.Key? key})
+      : super(name,
+            path: '/support-screen', args: SupportScreenRouteArgs(key: key));
 
   static const String name = 'SupportScreenRoute';
+}
+
+class SupportScreenRouteArgs {
+  const SupportScreenRouteArgs({this.key});
+
+  final _i19.Key? key;
 }
 
 class HomeScreenRoute extends _i1.PageRouteInfo<HomeScreenRouteArgs> {

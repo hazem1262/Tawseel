@@ -2,7 +2,8 @@
   "app_name": "توصيل",
 
   "unknown_error":"خطأ غير معروف",
-
+  "server_error":"حدث خطأ اثناء الإتصال",
+  
   "test_text": "تجربه الترجمه",
 
   "intro_title" : "احصل علي افضل سعر توصيل",
@@ -92,6 +93,21 @@
 
   "confirm_password":"تأكيد",
 
-  "phone_changed_successfully":"تم تغيير رقم الهاتف بنجاح"
+  "phone_changed_successfully":"تم تغيير رقم الهاتف بنجاح",
+
+  "support_title":"الدعم",
+  "support_subtitle":"إرسل لنا رسالة وسوف نرجع اليك في خلال ٢٤ ساعة",
+
+  "empty_error":"حقل مطلوب",
+
+
+  "subject":"العنوان",
+  "add_your_message":"اكتب رسالتك",
+  "send_message":"إرسال",
+
+  "sent_successfully":"تم الإرسال بنجاح",
+  "subject_length":"يجب ان لا تتخطي ١٥٠ حرف",
+  "message_length":"يجب ان لا تتخطي ٥٠٠ حرف"
+
   
 }
