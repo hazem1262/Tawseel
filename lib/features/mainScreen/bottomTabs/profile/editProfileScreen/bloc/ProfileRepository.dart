@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_native_image/flutter_native_image.dart';
 import 'package:tawseel/base/NetworkHandler.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/models/user_profile_response.dart';
+import 'package:tawseel/utils/ktx.dart';
 
 abstract class IProfileRepository {
   Future<UserProfileResponse> getProfile();
@@ -43,16 +45,12 @@ class ProfileRepository with NetworkHandler implements IProfileRepository {
   @override
   Future<UserProfileResponse> updateAvatar(File file) =>
       networkHandler(() async {
-        print(file.length());
-        ImageProperties properties =
-            await FlutterNativeImage.getImageProperties(file.path);
-        File compressedFile = await FlutterNativeImage.compressImage(file.path,
-            quality: 70,
-            targetWidth: 600,
-            targetHeight:
-                (properties.height! * 600 / properties.width!).round());
-        print(compressedFile.length());
-        return api.updateAvatar(compressedFile);
+        File fileToUpload = file;
+        // if file size is bigger than 2MB compress it
+        if (await file.length() > 2000000) {
+          fileToUpload = await fileToUpload.compressFile();
+        }
+        return api.updateAvatar(fileToUpload);
       });
 
   @override

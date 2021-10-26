@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_native_image/flutter_native_image.dart';
 
 extension ToggleLanguage on BuildContext {
   toggleLanguage() {
@@ -112,6 +115,23 @@ extension MessagesDtx on BuildContext {
           ),
         ),
       );
+}
+
+extension FilesDtx on File {
+  Future<File> compressFile({int quality = 90, int targetWidth = 600}) async {
+    debugPrint("before compressing : ${await this.length()}");
+    ImageProperties properties =
+        await FlutterNativeImage.getImageProperties(this.path);
+    final compressed = await FlutterNativeImage.compressImage(
+      this.path,
+      quality: quality,
+      targetWidth: targetWidth,
+      targetHeight:
+          (properties.height! * targetWidth / properties.width!).round(),
+    );
+    debugPrint("after compressing : ${await compressed.length()}");
+    return compressed;
+  }
 }
 
 extension BoolDtx on bool {
