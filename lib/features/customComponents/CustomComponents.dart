@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tawseel/main.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:tawseel/navigation/router.gr.dart';
+import 'package:tawseel/res.dart';
+import 'package:tawseel/utils/ktx.dart';
 
-class AppBackButton extends StatefulWidget {
-  AppBackButton({Key? key}) : super(key: key);
-
-  @override
-  _AppBackButtonState createState() => _AppBackButtonState();
-}
-
-class _AppBackButtonState extends State<AppBackButton> {
+class AppBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,6 +21,7 @@ class _AppBackButtonState extends State<AppBackButton> {
         ],
       ),
       child: Card(
+        color: Colors.white,
         elevation: 0.1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -34,7 +31,47 @@ class _AppBackButtonState extends State<AppBackButton> {
           onTap: () => appContext.router.pop(),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.arrow_back_ios_new_outlined),
+            child: Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: Colors.black87,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class LogoutButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 0.1,
+            blurRadius: 4,
+            offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
+      ),
+      child: Card(
+        color: Colors.white,
+        elevation: 0.1,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          onTap: () {
+            appState.seLoggedInState(false);
+            context.openOnly(LandingScreenRoute());
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ImageIcon(AssetImage(Res.logout_icon), color: Colors.grey),
           ),
         ),
       ),

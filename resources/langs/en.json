@@ -109,6 +109,16 @@
 
   "sent_successfully":"Sent Successfully",
   "subject_length":"length must not be longer than 150 char",
-  "message_length":"length must not be longer than 500 char"
+  "message_length":"length must not be longer than 500 char",
+
+  "profile_title":"Profile",
+  "languages":"Language",
+  "allow_notification":"Allow Notifications",
+  "my_address":"My Address",
+  "change_password":"Change Password",
+  "terms_conditions":"Terms & Conditions",
+  "about_us":"About Us",
+  "change_phone":"Change Phone",
+  "dark_mode":"Dark Mode"
 
 }

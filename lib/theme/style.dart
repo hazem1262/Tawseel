@@ -10,14 +10,24 @@ const BodySmallTextSize = 15.0;
 const CaptionTextSize = 14.0;
 const ErrorTextSize = 12.0;
 
+const Color creamyWhite = Color(0xffF5F6FA);
+const Color creamyGrey = Color(0xffACB1C0);
+
+const Color creamyWhiteBorder = Color(0xffE8ECEF);
+
 const Color TitleDarkColor_Light = Color(0xff242454);
 const Color TitleDarkColor_Dark = Color(0xffFFFFFF);
 
 const Color hintColor = Color(0xfffacb1c0);
 const Color CaptionDarkColor_Light = Color(0xff969696);
+const Color ProfileActionsColor_Light = Color(0xff8383A4);
+const Color ProfileActionsColor_Dark = Color(0xffFFFFFF);
 const Color CaptionDarkColor_Dark = Color(0xffFFFFFF);
 
-const String FontNameDefault = "Poppins";
+const String POP = "Poppins";
+const String MAR = "Almarai";
+
+const String FontNameDefault = MAR;
 const String FontNameDefaultAr = "test";
 
 // ignore: non_constant_identifier_names

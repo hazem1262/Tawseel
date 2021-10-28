@@ -43,6 +43,7 @@ class _PasswordFieldState extends State<PasswordField> {
             borderRadius: BorderRadius.circular(14),
           ),
           child: TextFormField(
+            textAlignVertical: TextAlignVertical.center,
             autofillHints: [AutofillHints.password],
             onEditingComplete: () => TextInput.finishAutofillContext(),
             controller: widget.controller,

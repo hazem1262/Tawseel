@@ -31,6 +31,7 @@ class _SendPhoneScreenState extends State<SendPhoneScreen> {
     super.dispose();
   }
 
+  late double newheight;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -53,17 +54,20 @@ class _SendPhoneScreenState extends State<SendPhoneScreen> {
             SizedBox(height: 4),
             Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Form(
-                    key: formKey,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: PhoneNumberField(
-                        controller: phoneController,
-                        inputAction: TextInputAction.next,
-                        onSubmitCallback: () => context.nextFoucs(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 150),
+                    child: Form(
+                      key: formKey,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: PhoneNumberField(
+                          controller: phoneController,
+                          inputAction: TextInputAction.next,
+                          onSubmitCallback: () => context.nextFoucs(),
+                        ),
                       ),
                     ),
                   ),

@@ -40,6 +40,7 @@ class _EmailFieldState extends State<EmailField> {
             borderRadius: BorderRadius.circular(14),
           ),
           child: TextFormField(
+            textAlignVertical: TextAlignVertical.center,
             readOnly: readOnly,
             autofillHints: readOnly ? null : [AutofillHints.email],
             onEditingComplete: () => TextInput.finishAutofillContext(),

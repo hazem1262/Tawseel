@@ -37,6 +37,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             borderRadius: BorderRadius.circular(14),
           ),
           child: TextFormField(
+            textAlignVertical: TextAlignVertical.center,
             autofillHints: [AutofillHints.telephoneNumber],
             onEditingComplete: () => TextInput.finishAutofillContext(),
             controller: widget.controller,

@@ -107,7 +107,18 @@
 
   "sent_successfully":"تم الإرسال بنجاح",
   "subject_length":"يجب ان لا تتخطي ١٥٠ حرف",
-  "message_length":"يجب ان لا تتخطي ٥٠٠ حرف"
+  "message_length":"يجب ان لا تتخطي ٥٠٠ حرف",
 
   
+  "profile_title":"الملف الشخصي",
+  "languages":"اللغة",
+  "allow_notification":"تفعيل الإشعارات",
+  "my_address":"عناوين",
+  "change_password":"تغيير كلمة المرور",
+  "terms_conditions":"الشروط والأحكام",
+  "about_us":"عنا",
+
+  "change_phone":"تغيير رقم الهاتف",
+  "dark_mode":"الوضع الداكن"
+
 }

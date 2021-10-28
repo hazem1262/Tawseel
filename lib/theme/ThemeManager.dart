@@ -24,7 +24,7 @@ class ThemeManager with ChangeNotifier {
     brightness: Brightness.light,
     backgroundColor: Colors.grey[100],
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    fontFamily: 'Poppins',
+    fontFamily: MAR,
     textTheme: TextTheme(
       headline6: titlesTextStyle(false),
       headline5: headline5TextStyle(false),
@@ -39,7 +39,7 @@ class ThemeManager with ChangeNotifier {
     errorColor: Colors.red,
     brightness: Brightness.dark,
     backgroundColor: Colors.grey[400],
-    fontFamily: 'Poppins',
+    fontFamily: MAR,
     textTheme: TextTheme(
       headline6: titlesTextStyle(true),
       headline5: headline5TextStyle(true),

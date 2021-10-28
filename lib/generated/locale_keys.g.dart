@@ -78,5 +78,14 @@ abstract class  LocaleKeys {
   static const sent_successfully = 'sent_successfully';
   static const subject_length = 'subject_length';
   static const message_length = 'message_length';
+  static const profile_title = 'profile_title';
+  static const languages = 'languages';
+  static const allow_notification = 'allow_notification';
+  static const my_address = 'my_address';
+  static const change_password = 'change_password';
+  static const terms_conditions = 'terms_conditions';
+  static const about_us = 'about_us';
+  static const change_phone = 'change_phone';
+  static const dark_mode = 'dark_mode';
 
 }

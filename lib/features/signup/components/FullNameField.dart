@@ -37,6 +37,7 @@ class _FullNameFieldState extends State<FullNameField> {
             borderRadius: BorderRadius.circular(14),
           ),
           child: TextFormField(
+            textAlignVertical: TextAlignVertical.center,
             autofillHints: [AutofillHints.name],
             onEditingComplete: () => TextInput.finishAutofillContext(),
             controller: widget.controller,

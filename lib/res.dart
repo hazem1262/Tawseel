@@ -24,4 +24,15 @@ class Res {
 
   static const String password_changed_image =
       "assets/password-changed-image.png";
+
+  static const String about_us_icon = "assets/about-us-icon.png";
+  static const String change_phone_icon = "assets/change-phone-icon.png";
+  static const String address_icon = "assets/address-icon.png";
+  static const String edit_icon = "assets/edit-icon.png";
+  static const String language_icon = "assets/language-icon.png";
+  static const String lock_icon = "assets/lock-icon.png";
+  static const String logout_icon = "assets/logout-icon.png";
+  static const String notification_icon = "assets/notification-icon.png";
+  static const String support_icon = "assets/support-icon.png";
+  static const String terms_icon = "assets/terms-icon.png";
 }

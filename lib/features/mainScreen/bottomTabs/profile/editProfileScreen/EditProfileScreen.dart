@@ -201,15 +201,6 @@ class EditProfileScreen extends StatelessWidget {
               emailController.text.toString(),
             ),
           );
-    else
-      appContext.showError("UI/LOG error happened");
-
-    // isFormValid().ifTrue(
-    //   invoke: () {},
-    //   elseDo: () {
-    //     appContext.showError("UI/LOG error happened");
-    //   },
-    // );
   }
 
   Widget profileImageWidget() {

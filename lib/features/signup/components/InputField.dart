@@ -67,6 +67,7 @@ class _InputFieldState extends State<InputField> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: TextFormField(
+              textAlignVertical: TextAlignVertical.center,
               maxLines: widget.lines,
               maxLength: widget.maxLenght,
               autofillHints: widget.autofillHints,
