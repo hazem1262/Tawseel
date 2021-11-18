@@ -13,6 +13,7 @@ class AppState extends ChangeNotifier {
 
   final String USER_ENTITY = "USER_ENTITY";
   final String USER_TOKEN = "USER_TOKEN";
+  final String HAS_ADDRESSES = "HAS_ADDRESSES";
 
   AppState();
 
@@ -41,12 +42,27 @@ class AppState extends ChangeNotifier {
     var userToken =
         await setToken("${res.data.token_type} ${res.data.access_token}");
 
-    return (userEntity && userToken);
+    var hasAddresses =
+        await setHasAddresses(res.data.user.address.isEmpty ? false : true);
+
+    return (userEntity && userToken && hasAddresses);
   }
 
   Future<bool> setToken(String token) async {
     final pref = await SharedPreferences.getInstance();
     return await pref.setString(USER_TOKEN, token);
+  }
+
+  // TODO call this in MyAddresses screen if user has no addresses
+
+  Future<bool> setHasAddresses(bool hasAddresses) async {
+    final pref = await SharedPreferences.getInstance();
+    return await pref.setBool(HAS_ADDRESSES, hasAddresses);
+  }
+
+  Future<bool> hasAddresses() async {
+    final pref = await SharedPreferences.getInstance();
+    return pref.getBool(HAS_ADDRESSES) ?? false;
   }
 
   Future<String?> getToken() async {

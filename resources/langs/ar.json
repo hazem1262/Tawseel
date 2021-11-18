@@ -119,6 +119,9 @@
   "about_us":"عنا",
 
   "change_phone":"تغيير رقم الهاتف",
-  "dark_mode":"الوضع الداكن"
+  "dark_mode":"الوضع الداكن",
+
+  "delete":"مسح",
+  "add_new_address":"اضافة عنوان جديد"
 
 }

@@ -6,24 +6,25 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
-import 'package:flutter/widgets.dart' as _i19;
+import 'package:flutter/widgets.dart' as _i20;
 
 import '../features/address/models/AddressDetailsScreen.dart' as _i11;
+import '../features/address/my_addresses/MyAddressesScreen.dart' as _i15;
 import '../features/changePassword/ChangePasswordScreen.dart' as _i13;
 import '../features/landingScreen/LandingScreen.dart' as _i4;
 import '../features/locationPicker/LocationPickerDialog.dart' as _i10;
-import '../features/locationPicker/user_picked_location.dart' as _i21;
+import '../features/locationPicker/user_picked_location.dart' as _i22;
 import '../features/login/LoginScreen.dart' as _i5;
 import '../features/mainScreen/bottomTabs/favorites/FavoritesScreen.dart'
-    as _i17;
-import '../features/mainScreen/bottomTabs/home/HomeScreen.dart' as _i15;
-import '../features/mainScreen/bottomTabs/offers/OffersScreen.dart' as _i16;
+    as _i18;
+import '../features/mainScreen/bottomTabs/home/HomeScreen.dart' as _i16;
+import '../features/mainScreen/bottomTabs/offers/OffersScreen.dart' as _i17;
 import '../features/mainScreen/bottomTabs/profile/editProfileScreen/EditProfileScreen.dart'
     as _i9;
 import '../features/mainScreen/bottomTabs/profile/profileScreen/ProfileScreen.dart'
-    as _i18;
+    as _i19;
 import '../features/mainScreen/MainScreen.dart' as _i8;
-import '../features/otp/models/otp_models.dart' as _i20;
+import '../features/otp/models/otp_models.dart' as _i21;
 import '../features/otp/OtpScreen.dart' as _i7;
 import '../features/phone/SendPhoneScreen.dart' as _i12;
 import '../features/signup/SignUpScreen.dart' as _i6;
@@ -84,16 +85,19 @@ class AppRouter extends _i1.RootStackRouter {
     LocationPickerDialogRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
-          final args = data.argsAs<LocationPickerDialogRouteArgs>(
-              orElse: () => const LocationPickerDialogRouteArgs());
-          return _i10.LocationPickerDialog(key: args.key);
+          final args = data.argsAs<LocationPickerDialogRouteArgs>();
+          return _i10.LocationPickerDialog(
+              key: args.key,
+              oppenedFromMyAddresses: args.oppenedFromMyAddresses);
         }),
     AddressDetailsScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<AddressDetailsScreenRouteArgs>();
           return _i11.AddressDetailsScreen(
-              key: args.key, pickedLocation: args.pickedLocation);
+              key: args.key,
+              pickedLocation: args.pickedLocation,
+              oppenedFromMyAddresses: args.oppenedFromMyAddresses);
         }),
     SendPhoneScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
@@ -115,33 +119,40 @@ class AppRouter extends _i1.RootStackRouter {
               orElse: () => const SupportScreenRouteArgs());
           return _i14.SupportScreen(key: args.key);
         }),
+    MyAddressesScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<MyAddressesScreenRouteArgs>(
+              orElse: () => const MyAddressesScreenRouteArgs());
+          return _i15.MyAddressesScreen(key: args.key);
+        }),
     HomeScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<HomeScreenRouteArgs>(
               orElse: () => const HomeScreenRouteArgs());
-          return _i15.HomeScreen(key: args.key);
+          return _i16.HomeScreen(key: args.key);
         }),
     OffersScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<OffersScreenRouteArgs>(
               orElse: () => const OffersScreenRouteArgs());
-          return _i16.OffersScreen(key: args.key);
+          return _i17.OffersScreen(key: args.key);
         }),
     FavoritesScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<FavoritesScreenRouteArgs>(
               orElse: () => const FavoritesScreenRouteArgs());
-          return _i17.FavoritesScreen(key: args.key);
+          return _i18.FavoritesScreen(key: args.key);
         }),
     ProfileScreenRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
         routeData: routeData,
         builder: (data) {
           final args = data.argsAs<ProfileScreenRouteArgs>(
               orElse: () => const ProfileScreenRouteArgs());
-          return _i18.ProfileScreen(key: args.key);
+          return _i19.ProfileScreen(key: args.key);
         })
   };
 
@@ -167,12 +178,14 @@ class AppRouter extends _i1.RootStackRouter {
         _i1.RouteConfig(SendPhoneScreenRoute.name, path: '/send-phone-screen'),
         _i1.RouteConfig(ChangePasswordScreenRoute.name,
             path: '/change-password-screen'),
-        _i1.RouteConfig(SupportScreenRoute.name, path: '/support-screen')
+        _i1.RouteConfig(SupportScreenRoute.name, path: '/support-screen'),
+        _i1.RouteConfig(MyAddressesScreenRoute.name,
+            path: '/my-addresses-screen')
       ];
 }
 
 class SplashScreenRoute extends _i1.PageRouteInfo<SplashScreenRouteArgs> {
-  SplashScreenRoute({_i19.Key? key})
+  SplashScreenRoute({_i20.Key? key})
       : super(name, path: '/', args: SplashScreenRouteArgs(key: key));
 
   static const String name = 'SplashScreenRoute';
@@ -181,7 +194,7 @@ class SplashScreenRoute extends _i1.PageRouteInfo<SplashScreenRouteArgs> {
 class SplashScreenRouteArgs {
   const SplashScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 }
 
 class LandingScreenRoute extends _i1.PageRouteInfo {
@@ -197,7 +210,7 @@ class LoginScreenRoute extends _i1.PageRouteInfo {
 }
 
 class SignUpScreenRoute extends _i1.PageRouteInfo<SignUpScreenRouteArgs> {
-  SignUpScreenRoute({_i19.Key? key})
+  SignUpScreenRoute({_i20.Key? key})
       : super(name,
             path: '/sign-up-screen', args: SignUpScreenRouteArgs(key: key));
 
@@ -207,12 +220,12 @@ class SignUpScreenRoute extends _i1.PageRouteInfo<SignUpScreenRouteArgs> {
 class SignUpScreenRouteArgs {
   const SignUpScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 }
 
 class OtpScreenRoute extends _i1.PageRouteInfo<OtpScreenRouteArgs> {
   OtpScreenRoute(
-      {_i19.Key? key, required _i20.OTP_TYPE otpType, required String phone})
+      {_i20.Key? key, required _i21.OTP_TYPE otpType, required String phone})
       : super(name,
             path: '/otp-screen',
             args: OtpScreenRouteArgs(key: key, otpType: otpType, phone: phone));
@@ -224,15 +237,15 @@ class OtpScreenRouteArgs {
   const OtpScreenRouteArgs(
       {this.key, required this.otpType, required this.phone});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 
-  final _i20.OTP_TYPE otpType;
+  final _i21.OTP_TYPE otpType;
 
   final String phone;
 }
 
 class MainScreenRoute extends _i1.PageRouteInfo<MainScreenRouteArgs> {
-  MainScreenRoute({_i19.Key? key, List<_i1.PageRouteInfo>? children})
+  MainScreenRoute({_i20.Key? key, List<_i1.PageRouteInfo>? children})
       : super(name,
             path: '/main-screen',
             args: MainScreenRouteArgs(key: key),
@@ -244,12 +257,12 @@ class MainScreenRoute extends _i1.PageRouteInfo<MainScreenRouteArgs> {
 class MainScreenRouteArgs {
   const MainScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 }
 
 class EditProfileScreenRoute
     extends _i1.PageRouteInfo<EditProfileScreenRouteArgs> {
-  EditProfileScreenRoute({_i19.Key? key})
+  EditProfileScreenRoute({_i20.Key? key})
       : super(name,
             path: '/edit-profile-screen',
             args: EditProfileScreenRouteArgs(key: key));
@@ -260,47 +273,61 @@ class EditProfileScreenRoute
 class EditProfileScreenRouteArgs {
   const EditProfileScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 }
 
 class LocationPickerDialogRoute
     extends _i1.PageRouteInfo<LocationPickerDialogRouteArgs> {
-  LocationPickerDialogRoute({_i19.Key? key})
+  LocationPickerDialogRoute(
+      {_i20.Key? key, required bool oppenedFromMyAddresses})
       : super(name,
             path: '/location-picker-dialog',
-            args: LocationPickerDialogRouteArgs(key: key));
+            args: LocationPickerDialogRouteArgs(
+                key: key, oppenedFromMyAddresses: oppenedFromMyAddresses));
 
   static const String name = 'LocationPickerDialogRoute';
 }
 
 class LocationPickerDialogRouteArgs {
-  const LocationPickerDialogRouteArgs({this.key});
+  const LocationPickerDialogRouteArgs(
+      {this.key, required this.oppenedFromMyAddresses});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
+
+  final bool oppenedFromMyAddresses;
 }
 
 class AddressDetailsScreenRoute
     extends _i1.PageRouteInfo<AddressDetailsScreenRouteArgs> {
   AddressDetailsScreenRoute(
-      {_i19.Key? key, required _i21.UserPickedLocation pickedLocation})
+      {_i20.Key? key,
+      required _i22.UserPickedLocation pickedLocation,
+      required bool oppenedFromMyAddresses})
       : super(name,
             path: '/address-details-screen',
             args: AddressDetailsScreenRouteArgs(
-                key: key, pickedLocation: pickedLocation));
+                key: key,
+                pickedLocation: pickedLocation,
+                oppenedFromMyAddresses: oppenedFromMyAddresses));
 
   static const String name = 'AddressDetailsScreenRoute';
 }
 
 class AddressDetailsScreenRouteArgs {
-  const AddressDetailsScreenRouteArgs({this.key, required this.pickedLocation});
+  const AddressDetailsScreenRouteArgs(
+      {this.key,
+      required this.pickedLocation,
+      required this.oppenedFromMyAddresses});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 
-  final _i21.UserPickedLocation pickedLocation;
+  final _i22.UserPickedLocation pickedLocation;
+
+  final bool oppenedFromMyAddresses;
 }
 
 class SendPhoneScreenRoute extends _i1.PageRouteInfo<SendPhoneScreenRouteArgs> {
-  SendPhoneScreenRoute({_i19.Key? key, required _i12.Intention intention})
+  SendPhoneScreenRoute({_i20.Key? key, required _i12.Intention intention})
       : super(name,
             path: '/send-phone-screen',
             args: SendPhoneScreenRouteArgs(key: key, intention: intention));
@@ -311,7 +338,7 @@ class SendPhoneScreenRoute extends _i1.PageRouteInfo<SendPhoneScreenRouteArgs> {
 class SendPhoneScreenRouteArgs {
   const SendPhoneScreenRouteArgs({this.key, required this.intention});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 
   final _i12.Intention intention;
 }
@@ -319,7 +346,7 @@ class SendPhoneScreenRouteArgs {
 class ChangePasswordScreenRoute
     extends _i1.PageRouteInfo<ChangePasswordScreenRouteArgs> {
   ChangePasswordScreenRoute(
-      {_i19.Key? key, required _i13.ChangePasswordIntention intention})
+      {_i20.Key? key, required _i13.ChangePasswordIntention intention})
       : super(name,
             path: '/change-password-screen',
             args:
@@ -331,13 +358,13 @@ class ChangePasswordScreenRoute
 class ChangePasswordScreenRouteArgs {
   const ChangePasswordScreenRouteArgs({this.key, required this.intention});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 
   final _i13.ChangePasswordIntention intention;
 }
 
 class SupportScreenRoute extends _i1.PageRouteInfo<SupportScreenRouteArgs> {
-  SupportScreenRoute({_i19.Key? key})
+  SupportScreenRoute({_i20.Key? key})
       : super(name,
             path: '/support-screen', args: SupportScreenRouteArgs(key: key));
 
@@ -347,11 +374,27 @@ class SupportScreenRoute extends _i1.PageRouteInfo<SupportScreenRouteArgs> {
 class SupportScreenRouteArgs {
   const SupportScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
+}
+
+class MyAddressesScreenRoute
+    extends _i1.PageRouteInfo<MyAddressesScreenRouteArgs> {
+  MyAddressesScreenRoute({_i20.Key? key})
+      : super(name,
+            path: '/my-addresses-screen',
+            args: MyAddressesScreenRouteArgs(key: key));
+
+  static const String name = 'MyAddressesScreenRoute';
+}
+
+class MyAddressesScreenRouteArgs {
+  const MyAddressesScreenRouteArgs({this.key});
+
+  final _i20.Key? key;
 }
 
 class HomeScreenRoute extends _i1.PageRouteInfo<HomeScreenRouteArgs> {
-  HomeScreenRoute({_i19.Key? key})
+  HomeScreenRoute({_i20.Key? key})
       : super(name, path: '', args: HomeScreenRouteArgs(key: key));
 
   static const String name = 'HomeScreenRoute';
@@ -360,11 +403,11 @@ class HomeScreenRoute extends _i1.PageRouteInfo<HomeScreenRouteArgs> {
 class HomeScreenRouteArgs {
   const HomeScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 }
 
 class OffersScreenRoute extends _i1.PageRouteInfo<OffersScreenRouteArgs> {
-  OffersScreenRoute({_i19.Key? key})
+  OffersScreenRoute({_i20.Key? key})
       : super(name,
             path: 'offers-screen', args: OffersScreenRouteArgs(key: key));
 
@@ -374,11 +417,11 @@ class OffersScreenRoute extends _i1.PageRouteInfo<OffersScreenRouteArgs> {
 class OffersScreenRouteArgs {
   const OffersScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 }
 
 class FavoritesScreenRoute extends _i1.PageRouteInfo<FavoritesScreenRouteArgs> {
-  FavoritesScreenRoute({_i19.Key? key})
+  FavoritesScreenRoute({_i20.Key? key})
       : super(name,
             path: 'favorites-screen', args: FavoritesScreenRouteArgs(key: key));
 
@@ -388,11 +431,11 @@ class FavoritesScreenRoute extends _i1.PageRouteInfo<FavoritesScreenRouteArgs> {
 class FavoritesScreenRouteArgs {
   const FavoritesScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 }
 
 class ProfileScreenRoute extends _i1.PageRouteInfo<ProfileScreenRouteArgs> {
-  ProfileScreenRoute({_i19.Key? key})
+  ProfileScreenRoute({_i20.Key? key})
       : super(name,
             path: 'profile-screen', args: ProfileScreenRouteArgs(key: key));
 
@@ -402,5 +445,5 @@ class ProfileScreenRoute extends _i1.PageRouteInfo<ProfileScreenRouteArgs> {
 class ProfileScreenRouteArgs {
   const ProfileScreenRouteArgs({this.key});
 
-  final _i19.Key? key;
+  final _i20.Key? key;
 }

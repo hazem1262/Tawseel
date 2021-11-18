@@ -119,6 +119,9 @@
   "terms_conditions":"Terms & Conditions",
   "about_us":"About Us",
   "change_phone":"Change Phone",
-  "dark_mode":"Dark Mode"
+  "dark_mode":"Dark Mode",
+
+  "delete":"Delete",
+  "add_new_address":"Add New Address"
 
 }

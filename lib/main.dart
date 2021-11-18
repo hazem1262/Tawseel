@@ -7,6 +7,7 @@ import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/data/remote/places_api_service.dart';
+import 'package:tawseel/features/address/my_addresses/bloc/AddressesRepository.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
 import 'package:tawseel/features/signup/bloc/SignUpRepository.dart';
 import 'package:tawseel/features/support/bloc/SupportRepository.dart';
@@ -62,6 +63,10 @@ Future<void> initAppDependencies() async {
 
   getIt.registerSingleton<IOtpRepository>(
     OtpRepository(getIt<AuthService>()),
+  );
+
+  getIt.registerSingleton<IAddressRepository>(
+    AddressesRepository(getIt<AddressService>()),
   );
 
   getIt.registerSingleton<IChangePasswordRepository>(

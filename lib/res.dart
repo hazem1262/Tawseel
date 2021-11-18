@@ -35,4 +35,6 @@ class Res {
   static const String notification_icon = "assets/notification-icon.png";
   static const String support_icon = "assets/support-icon.png";
   static const String terms_icon = "assets/terms-icon.png";
+  static const String map_pic = "assets/map-pic.png";
+  static const String three_dots = "assets/three-dots.png";
 }

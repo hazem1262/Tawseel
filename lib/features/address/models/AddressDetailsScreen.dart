@@ -1,3 +1,4 @@
+import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tawseel/data/remote/AddressService.dart';
@@ -32,10 +33,13 @@ class AddressProvider with ChangeNotifier {
 
 class AddressDetailsScreen extends StatefulWidget {
   final UserPickedLocation pickedLocation;
-  AddressDetailsScreen({
-    Key? key,
-    required this.pickedLocation,
-  }) : super(key: key);
+  final bool oppenedFromMyAddresses;
+
+  AddressDetailsScreen(
+      {Key? key,
+      required this.pickedLocation,
+      required this.oppenedFromMyAddresses})
+      : super(key: key);
 
   @override
   _AddressDetailsScreenState createState() => _AddressDetailsScreenState();
@@ -216,6 +220,12 @@ class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
         isLoading = false;
       });
       appContext.showToast(LocaleKeys.saved_successfully.tr());
+      appState.setHasAddresses(true);
+
+      if (widget.oppenedFromMyAddresses)
+        appContext.router.pop(true);
+      else
+        appContext.openOnly(MainScreenRoute());
     }).catchError((e) {
       setState(() {
         isLoading = false;

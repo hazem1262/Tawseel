@@ -261,7 +261,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               padding: 10,
               icon: ImageIcon(AssetImage(Res.address_icon),
                   size: 28, color: tm.isDark() ? Colors.white : creamyGrey),
-              onPressed: () {},
+              onPressed: () {
+                appContext.openIfExist(MyAddressesScreenRoute());
+              },
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),

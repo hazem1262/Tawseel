@@ -33,7 +33,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.esmaeel.tawseel.tawseel"
+        applicationId "com.ibrahim.tawseel"
         minSdkVersion 20
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()

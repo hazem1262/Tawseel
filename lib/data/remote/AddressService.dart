@@ -30,6 +30,10 @@ abstract class AddressService {
     @Field() String address,
     @Field() double lat,
     @Field() double long,
-    @Field() bool is_default,
+    @Field() int is_default,
   );
+
+  @FormUrlEncoded()
+  @DELETE("addresses/{id}")
+  Future<HttpResponse<String>> deleteAddress(@Path() String id);
 }

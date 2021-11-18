@@ -26,7 +26,10 @@ import 'models/auto_complete_item.dart';
 import 'models/uuid.dart';
 
 class LocationPickerDialog extends StatefulWidget {
-  LocationPickerDialog({Key? key}) : super(key: key);
+  final bool oppenedFromMyAddresses;
+
+  LocationPickerDialog({Key? key, required this.oppenedFromMyAddresses})
+      : super(key: key);
 
   @override
   _LocationPickerDialogState createState() => _LocationPickerDialogState();
@@ -345,11 +348,10 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
       return;
     }
 
-    appContext.pushRoute(
-      AddressDetailsScreenRoute(
-        pickedLocation: pickedLocation!,
-      ),
-    );
+    appContext.router.popAndPush(AddressDetailsScreenRoute(
+      pickedLocation: pickedLocation!,
+      oppenedFromMyAddresses: widget.oppenedFromMyAddresses,
+    ));
   }
 
   var searchIsLoading = false;

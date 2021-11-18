@@ -87,5 +87,7 @@ abstract class  LocaleKeys {
   static const about_us = 'about_us';
   static const change_phone = 'change_phone';
   static const dark_mode = 'dark_mode';
+  static const delete = 'delete';
+  static const add_new_address = 'add_new_address';
 
 }

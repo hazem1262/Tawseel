@@ -66,7 +66,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     hassError: (error) => {context.showError(error)},
                     loggedInWithPhoneSuccessfully: (response) async => {
                       if (response.data.user.is_verified)
-                        {context.openOnly(MainScreenRoute())}
+                        {
+                          if (response.data.user.address.isEmpty)
+                            {appContext.openOnly(LocationPickerDialogRoute(oppenedFromMyAddresses: false))}
+                          else
+                            {appContext.openOnly(MainScreenRoute())}
+                        }
                       else
                         {
                           appContext.pushRoute(OtpScreenRoute(

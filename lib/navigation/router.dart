@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:tawseel/features/address/models/AddressDetailsScreen.dart';
+import 'package:tawseel/features/address/my_addresses/MyAddressesScreen.dart';
 import 'package:tawseel/features/changePassword/ChangePasswordScreen.dart';
 import 'package:tawseel/features/landingScreen/LandingScreen.dart';
 import 'package:tawseel/features/locationPicker/LocationPickerDialog.dart';
@@ -34,5 +35,6 @@ import 'package:tawseel/features/support/SupportScreen.dart';
   AutoRoute(page: SendPhoneScreen),
   AutoRoute(page: ChangePasswordScreen),
   AutoRoute(page: SupportScreen),
+  AutoRoute(page: MyAddressesScreen),
 ])
 class $AppRouter {}

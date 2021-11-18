@@ -74,7 +74,12 @@ class OtpScreen extends StatelessWidget {
                           );
                           appContext.openOnly(MainScreenRoute());
                         } else if (otpType == OTP_TYPE.AUTH) {
-                          appContext.openOnly(MainScreenRoute());
+                          if (loginResponse.data.user.address.isEmpty) {
+                            appContext.openOnly(LocationPickerDialogRoute(
+                                oppenedFromMyAddresses: false));
+                          } else {
+                            appContext.openOnly(MainScreenRoute());
+                          }
                         }
                       },
                       orElse: () => {},

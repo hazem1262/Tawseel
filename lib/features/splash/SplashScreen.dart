@@ -68,15 +68,23 @@ class _SplashScreenState extends State<SplashScreen> {
     super.didChangeDependencies();
     if (!_initialized) {
       _initialized = true;
-      appState.isLoggedIn().then((yes) => {
-            yes
-                ? Timer(const Duration(milliseconds: 1000), () {
-                    appContext.openOnly(MainScreenRoute());
-                  })
-                : Timer(const Duration(milliseconds: 1000), () {
-                    appContext.openOnly(LandingScreenRoute());
-                  })
+      appState.isLoggedIn().then((yes) {
+        if (yes) {
+          Timer(const Duration(milliseconds: 1000), () async {
+            var hasAddress = await appState.hasAddresses();
+            if (hasAddress) {
+              appContext.openOnly(MainScreenRoute());
+            } else {
+              appContext.openOnly(
+                  LocationPickerDialogRoute(oppenedFromMyAddresses: false));
+            }
           });
+        } else {
+          Timer(const Duration(milliseconds: 1000), () {
+            appContext.openOnly(LandingScreenRoute());
+          });
+        }
+      });
     }
   }
 }
