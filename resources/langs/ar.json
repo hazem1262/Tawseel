@@ -122,6 +122,16 @@
   "dark_mode":"الوضع الداكن",
 
   "delete":"مسح",
-  "add_new_address":"اضافة عنوان جديد"
+  "add_new_address":"اضافة عنوان جديد",
+
+  "your_location":"عنوانك الحالي",
+
+  "search_all":"البحث",
+  "categories_title":"التصنيفات",
+
+  "offers_title":"العروض",
+  "view_all":"الكل",
+
+  "all_categories":"كل التصنيفات"
 
 }

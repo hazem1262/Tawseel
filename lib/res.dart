@@ -12,6 +12,7 @@ class Res {
   static const String phone_icon = "assets/phone-icon.png";
   static const String back_icon = "assets/back.svg";
   static const String location_icon = "assets/location_icon.png";
+  static const String home_location_icon = "assets/home-location-icon.png";
 
   static const String home_icon = "assets/home-icon.png";
   static const String offers_icon = "assets/home-offers.png";
@@ -37,4 +38,8 @@ class Res {
   static const String terms_icon = "assets/terms-icon.png";
   static const String map_pic = "assets/map-pic.png";
   static const String three_dots = "assets/three-dots.png";
+
+  static const String settings_icon = "assets/settings-icon.png";
+  static const String search_icon = "assets/search-icon.png";
+  static const String category_icon = "assets/cat-icon.png";
 }

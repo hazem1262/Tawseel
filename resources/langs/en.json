@@ -122,6 +122,15 @@
   "dark_mode":"Dark Mode",
 
   "delete":"Delete",
-  "add_new_address":"Add New Address"
+  "add_new_address":"Add New Address",
+
+  "your_location":"Your Location",
+
+  "search_all":"Search For All..",
+  "categories_title":"Categories",
+  "offers_title":"Offers",
+  "view_all":"View All",
+
+  "all_categories":"All Categories"
 
 }

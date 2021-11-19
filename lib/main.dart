@@ -16,9 +16,12 @@ import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/utils/AppState.dart';
 
 import 'data/remote/AddressService.dart';
+import 'data/remote/CategoriesService.dart';
 import 'data/remote/NetworkModule.dart';
+import 'data/remote/OffersService.dart';
 import 'features/address/models/AddressDetailsScreen.dart';
 import 'features/changePassword/bloc/ChangePasswordRepository.dart';
+import 'features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
 import 'features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'features/otp/bloc/OtpRepository.dart';
 import 'navigation/router.gr.dart';
@@ -45,6 +48,15 @@ Future<void> initAppDependencies() async {
   getIt.registerSingleton<AuthService>(
     AuthService(getIt<NetworkModule>().getDio(BaseUrl)),
   );
+
+  getIt.registerSingleton<CategoriesService>(
+    CategoriesService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
+
+  getIt.registerSingleton<OffersService>(
+    OffersService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
+
   getIt.registerSingleton<AddressService>(
     AddressService(getIt<NetworkModule>().getDio(BaseUrl)),
   );
@@ -75,6 +87,10 @@ Future<void> initAppDependencies() async {
 
   getIt.registerSingleton<ISupportRepository>(
     SupportRepository(getIt<AuthService>()),
+  );
+
+  getIt.registerSingleton<IHomeRepository>(
+    HomeRepository(getIt<CategoriesService>(), getIt<OffersService>()),
   );
 }
 

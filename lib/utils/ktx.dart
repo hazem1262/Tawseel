@@ -99,22 +99,24 @@ extension MessagesDtx on BuildContext {
   }
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _snackBar(
-          {required String message,
-          bool isError = false,
-          Color backgroundColor = Colors.green}) =>
-      ScaffoldMessenger.of(this).showSnackBar(
-        SnackBar(
-          backgroundColor: isError ? Colors.red : backgroundColor,
-          behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          content: Text(
-            message,
-            style: TextStyle(color: Colors.white),
-          ),
+      {required String message,
+      bool isError = false,
+      Color backgroundColor = Colors.green}) {
+    ScaffoldMessenger.of(this).hideCurrentSnackBar();
+    return ScaffoldMessenger.of(this).showSnackBar(
+      SnackBar(
+        backgroundColor: isError ? Colors.red : backgroundColor,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
-      );
+        content: Text(
+          message,
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
 }
 
 extension FilesDtx on File {

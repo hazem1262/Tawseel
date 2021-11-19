@@ -1,0 +1,60 @@
+import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
+
+part 'home_bloc.freezed.dart';
+
+@freezed
+class HomeBlocEvent with _$HomeBlocEvent {
+  const factory HomeBlocEvent.getOffers() = GetHomeOffers;
+  const factory HomeBlocEvent.getCategories() = GetHomeCategories;
+}
+
+@freezed
+class HomeBlocState with _$HomeBlocState {
+  const factory HomeBlocState.defaultState([
+    @Default(false) bool offersIsLoading,
+    @Default(false) bool categoriesIsLoading,
+    @Default(false) bool nearbyIsLoading,
+    @Default("") String error,
+    @Default(false) bool refreshData,
+    @Default([]) List<CategoryData> categories,
+    @Default([]) List<OfferItem> offersList,
+  ]) = HomeBlocStateDefaultState;
+}
+
+class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
+  IHomeRepository repo;
+  HomeBloc(this.repo) : super(HomeBlocStateDefaultState()) {
+    on<HomeBlocEvent>((event, emit) async {
+      if (event is GetHomeCategories) {
+        emit(state.copyWith(categoriesIsLoading: true, error: ""));
+        try {
+          var cats = await repo.getCategories();
+
+          emit(state.copyWith(
+              categoriesIsLoading: false, error: "", categories: cats.data));
+        } catch (e) {
+          emit(state.copyWith(categoriesIsLoading: false, error: e.toString()));
+          debugPrint('Exception : $e');
+        }
+      }
+
+      if (event is GetHomeOffers) {
+        emit(state.copyWith(offersIsLoading: true, error: ""));
+        try {
+          var offers = await repo.getOffers();
+
+          emit(state.copyWith(
+              offersIsLoading: false, error: "", offersList: offers.data));
+        } catch (e) {
+          emit(state.copyWith(offersIsLoading: false, error: e.toString()));
+          debugPrint('Exception : $e');
+        }
+      }
+    });
+  }
+}

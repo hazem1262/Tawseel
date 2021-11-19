@@ -89,5 +89,11 @@ abstract class  LocaleKeys {
   static const dark_mode = 'dark_mode';
   static const delete = 'delete';
   static const add_new_address = 'add_new_address';
+  static const your_location = 'your_location';
+  static const search_all = 'search_all';
+  static const categories_title = 'categories_title';
+  static const offers_title = 'offers_title';
+  static const view_all = 'view_all';
+  static const all_categories = 'all_categories';
 
 }
