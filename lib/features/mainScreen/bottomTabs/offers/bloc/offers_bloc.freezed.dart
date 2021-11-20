@@ -16,10 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$OffersEventTearOff {
   const _$OffersEventTearOff();
 
-  GetOffers getOffers([int page = 1]) {
-    return GetOffers(
-      page,
-    );
+  GetOffers getOffers() {
+    return const GetOffers();
+  }
+
+  ResetOffers resetOffers() {
+    return const ResetOffers();
   }
 }
 
@@ -28,33 +30,31 @@ const $OffersEvent = _$OffersEventTearOff();
 
 /// @nodoc
 mixin _$OffersEvent {
-  int get page => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int page) getOffers,
+    required TResult Function() getOffers,
+    required TResult Function() resetOffers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int page)? getOffers,
+    TResult Function()? getOffers,
+    TResult Function()? resetOffers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
+    required TResult Function(ResetOffers value) resetOffers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetOffers value)? getOffers,
+    TResult Function(ResetOffers value)? resetOffers,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $OffersEventCopyWith<OffersEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -63,7 +63,6 @@ abstract class $OffersEventCopyWith<$Res> {
   factory $OffersEventCopyWith(
           OffersEvent value, $Res Function(OffersEvent) then) =
       _$OffersEventCopyWithImpl<$Res>;
-  $Res call({int page});
 }
 
 /// @nodoc
@@ -73,26 +72,12 @@ class _$OffersEventCopyWithImpl<$Res> implements $OffersEventCopyWith<$Res> {
   final OffersEvent _value;
   // ignore: unused_field
   final $Res Function(OffersEvent) _then;
-
-  @override
-  $Res call({
-    Object? page = freezed,
-  }) {
-    return _then(_value.copyWith(
-      page: page == freezed
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $GetOffersCopyWith<$Res> implements $OffersEventCopyWith<$Res> {
+abstract class $GetOffersCopyWith<$Res> {
   factory $GetOffersCopyWith(GetOffers value, $Res Function(GetOffers) then) =
       _$GetOffersCopyWithImpl<$Res>;
-  @override
-  $Res call({int page});
 }
 
 /// @nodoc
@@ -103,67 +88,44 @@ class _$GetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res>
 
   @override
   GetOffers get _value => super._value as GetOffers;
-
-  @override
-  $Res call({
-    Object? page = freezed,
-  }) {
-    return _then(GetOffers(
-      page == freezed
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$GetOffers implements GetOffers {
-  const _$GetOffers([this.page = 1]);
-
-  @JsonKey(defaultValue: 1)
-  @override
-  final int page;
+  const _$GetOffers();
 
   @override
   String toString() {
-    return 'OffersEvent.getOffers(page: $page)';
+    return 'OffersEvent.getOffers()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is GetOffers &&
-            (identical(other.page, page) ||
-                const DeepCollectionEquality().equals(other.page, page)));
+    return identical(this, other) || (other is GetOffers);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(page);
-
-  @JsonKey(ignore: true)
-  @override
-  $GetOffersCopyWith<GetOffers> get copyWith =>
-      _$GetOffersCopyWithImpl<GetOffers>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int page) getOffers,
+    required TResult Function() getOffers,
+    required TResult Function() resetOffers,
   }) {
-    return getOffers(page);
+    return getOffers();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int page)? getOffers,
+    TResult Function()? getOffers,
+    TResult Function()? resetOffers,
     required TResult orElse(),
   }) {
     if (getOffers != null) {
-      return getOffers(page);
+      return getOffers();
     }
     return orElse();
   }
@@ -172,6 +134,7 @@ class _$GetOffers implements GetOffers {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
+    required TResult Function(ResetOffers value) resetOffers,
   }) {
     return getOffers(this);
   }
@@ -180,6 +143,7 @@ class _$GetOffers implements GetOffers {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetOffers value)? getOffers,
+    TResult Function(ResetOffers value)? resetOffers,
     required TResult orElse(),
   }) {
     if (getOffers != null) {
@@ -190,14 +154,92 @@ class _$GetOffers implements GetOffers {
 }
 
 abstract class GetOffers implements OffersEvent {
-  const factory GetOffers([int page]) = _$GetOffers;
+  const factory GetOffers() = _$GetOffers;
+}
+
+/// @nodoc
+abstract class $ResetOffersCopyWith<$Res> {
+  factory $ResetOffersCopyWith(
+          ResetOffers value, $Res Function(ResetOffers) then) =
+      _$ResetOffersCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ResetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res>
+    implements $ResetOffersCopyWith<$Res> {
+  _$ResetOffersCopyWithImpl(
+      ResetOffers _value, $Res Function(ResetOffers) _then)
+      : super(_value, (v) => _then(v as ResetOffers));
 
   @override
-  int get page => throw _privateConstructorUsedError;
+  ResetOffers get _value => super._value as ResetOffers;
+}
+
+/// @nodoc
+
+class _$ResetOffers implements ResetOffers {
+  const _$ResetOffers();
+
   @override
-  @JsonKey(ignore: true)
-  $GetOffersCopyWith<GetOffers> get copyWith =>
-      throw _privateConstructorUsedError;
+  String toString() {
+    return 'OffersEvent.resetOffers()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ResetOffers);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getOffers,
+    required TResult Function() resetOffers,
+  }) {
+    return resetOffers();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getOffers,
+    TResult Function()? resetOffers,
+    required TResult orElse(),
+  }) {
+    if (resetOffers != null) {
+      return resetOffers();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetOffers value) getOffers,
+    required TResult Function(ResetOffers value) resetOffers,
+  }) {
+    return resetOffers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetOffers value)? getOffers,
+    TResult Function(ResetOffers value)? resetOffers,
+    required TResult orElse(),
+  }) {
+    if (resetOffers != null) {
+      return resetOffers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetOffers implements OffersEvent {
+  const factory ResetOffers() = _$ResetOffers;
 }
 
 /// @nodoc
@@ -205,13 +247,13 @@ class _$OffersStateTearOff {
   const _$OffersStateTearOff();
 
   OffersDefaultState call(
-      [bool isLoading = false,
+      [bool isPagingLoading = false,
       String error = "",
       bool refreshData = false,
       List<OfferItem> offersList = const [],
       bool hasMorePages = false]) {
     return OffersDefaultState(
-      isLoading,
+      isPagingLoading,
       error,
       refreshData,
       offersList,
@@ -225,7 +267,7 @@ const $OffersState = _$OffersStateTearOff();
 
 /// @nodoc
 mixin _$OffersState {
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isPagingLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get refreshData => throw _privateConstructorUsedError;
   List<OfferItem> get offersList => throw _privateConstructorUsedError;
@@ -242,7 +284,7 @@ abstract class $OffersStateCopyWith<$Res> {
           OffersState value, $Res Function(OffersState) then) =
       _$OffersStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isLoading,
+      {bool isPagingLoading,
       String error,
       bool refreshData,
       List<OfferItem> offersList,
@@ -259,16 +301,16 @@ class _$OffersStateCopyWithImpl<$Res> implements $OffersStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? isLoading = freezed,
+    Object? isPagingLoading = freezed,
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? offersList = freezed,
     Object? hasMorePages = freezed,
   }) {
     return _then(_value.copyWith(
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isPagingLoading: isPagingLoading == freezed
+          ? _value.isPagingLoading
+          : isPagingLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       error: error == freezed
           ? _value.error
@@ -298,7 +340,7 @@ abstract class $OffersDefaultStateCopyWith<$Res>
       _$OffersDefaultStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isLoading,
+      {bool isPagingLoading,
       String error,
       bool refreshData,
       List<OfferItem> offersList,
@@ -318,16 +360,16 @@ class _$OffersDefaultStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isLoading = freezed,
+    Object? isPagingLoading = freezed,
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? offersList = freezed,
     Object? hasMorePages = freezed,
   }) {
     return _then(OffersDefaultState(
-      isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isPagingLoading == freezed
+          ? _value.isPagingLoading
+          : isPagingLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       error == freezed
           ? _value.error
@@ -353,7 +395,7 @@ class _$OffersDefaultStateCopyWithImpl<$Res>
 
 class _$OffersDefaultState implements OffersDefaultState {
   const _$OffersDefaultState(
-      [this.isLoading = false,
+      [this.isPagingLoading = false,
       this.error = "",
       this.refreshData = false,
       this.offersList = const [],
@@ -361,7 +403,7 @@ class _$OffersDefaultState implements OffersDefaultState {
 
   @JsonKey(defaultValue: false)
   @override
-  final bool isLoading;
+  final bool isPagingLoading;
   @JsonKey(defaultValue: "")
   @override
   final String error;
@@ -377,16 +419,16 @@ class _$OffersDefaultState implements OffersDefaultState {
 
   @override
   String toString() {
-    return 'OffersState(isLoading: $isLoading, error: $error, refreshData: $refreshData, offersList: $offersList, hasMorePages: $hasMorePages)';
+    return 'OffersState(isPagingLoading: $isPagingLoading, error: $error, refreshData: $refreshData, offersList: $offersList, hasMorePages: $hasMorePages)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is OffersDefaultState &&
-            (identical(other.isLoading, isLoading) ||
+            (identical(other.isPagingLoading, isPagingLoading) ||
                 const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
+                    .equals(other.isPagingLoading, isPagingLoading)) &&
             (identical(other.error, error) ||
                 const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.refreshData, refreshData) ||
@@ -403,7 +445,7 @@ class _$OffersDefaultState implements OffersDefaultState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(isPagingLoading) ^
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(refreshData) ^
       const DeepCollectionEquality().hash(offersList) ^
@@ -417,14 +459,14 @@ class _$OffersDefaultState implements OffersDefaultState {
 
 abstract class OffersDefaultState implements OffersState {
   const factory OffersDefaultState(
-      [bool isLoading,
+      [bool isPagingLoading,
       String error,
       bool refreshData,
       List<OfferItem> offersList,
       bool hasMorePages]) = _$OffersDefaultState;
 
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isPagingLoading => throw _privateConstructorUsedError;
   @override
   String get error => throw _privateConstructorUsedError;
   @override

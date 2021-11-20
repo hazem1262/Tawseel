@@ -11,9 +11,9 @@ import 'package:tawseel/features/phone/SendPhoneScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:auto_route/auto_route.dart';
-import '../../main.dart';
 import '../../res.dart';
 import 'LoginRepository.dart';
 import 'components/LoadingButton.dart';
@@ -68,7 +68,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       if (response.data.user.is_verified)
                         {
                           if (response.data.user.address.isEmpty)
-                            {appContext.openOnly(LocationPickerDialogRoute(oppenedFromMyAddresses: false))}
+                            {
+                              appContext.openOnly(LocationPickerDialogRoute(
+                                  oppenedFromMyAddresses: false))
+                            }
                           else
                             {appContext.openOnly(MainScreenRoute())}
                         }

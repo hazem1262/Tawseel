@@ -6,8 +6,8 @@ import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/locationPicker/user_picked_location.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/navigation/router.gr.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:easy_localization/easy_localization.dart';
 

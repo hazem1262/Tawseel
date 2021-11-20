@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tawseel/main.dart';
+import 'package:tawseel/utils/globals.dart';
 
 class TextBetweenDividers extends StatelessWidget {
   final String text;

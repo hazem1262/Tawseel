@@ -11,9 +11,9 @@ import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/features/signup/components/FullNameField.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 import 'EmailField.dart';

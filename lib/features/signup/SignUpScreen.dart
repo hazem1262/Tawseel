@@ -14,6 +14,7 @@ import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
+import 'package:tawseel/utils/globals.dart';
 import '../../main.dart';
 import 'bloc/SignUpBloc.dart';
 import 'bloc/SignUpRepository.dart';

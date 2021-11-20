@@ -12,12 +12,14 @@ import 'package:tawseel/components/SectionWithViewAll.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
+import 'package:tawseel/models/address.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/theme/style.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 import 'bloc/home_bloc.dart';
@@ -38,10 +40,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext ctx) {
     return BlocProvider(
-      create: (context) =>
-          HomeBloc(getIt.get<IHomeRepository>(), getIt.get<IOffersRepository>())
-            ..add(GetHomeOffers())
-            ..add(GetHomeCategories()),
+      create: (context) => HomeBloc(getIt.get<IHomeRepository>(),
+          getIt.get<IOffersRepository>(), getIt.get<IProfileRepository>())
+        ..add(GetHomeProfile())
+        ..add(GetHomeOffers())
+        ..add(GetHomeCategories()),
       lazy: false,
       child: Builder(builder: (context) {
         return Scaffold(
@@ -50,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
             if (state.error.isNotEmpty) appContext.showError(state.error);
             if (state.refreshData)
               BlocProvider.of<HomeBloc>(context)
+                ..add(GetHomeProfile())
                 ..add(GetHomeOffers())
                 ..add(GetHomeCategories());
           },
@@ -59,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
               enablePullDown: true,
               onRefresh: () {
                 BlocProvider.of<HomeBloc>(context)
+                  ..add(GetHomeProfile())
                   ..add(GetHomeOffers())
                   ..add(GetHomeCategories());
                 _refreshController.refreshToIdle();
@@ -69,7 +74,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  yourLocation(context, "Alexandria Smouha 23423"),
+                  BlocBuilder<HomeBloc, HomeBlocState>(
+                    builder: (context, state) {
+                      return yourLocation(
+                        context,
+                        state.profileIsLoading,
+                        state.userAddress,
+                      );
+                    },
+                  ),
                   searchArea(onClick: () {
                     appContext.showToast("Search Clicked");
                   }),
@@ -468,50 +481,89 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
     );
   }
-}
 
-Widget yourLocation(BuildContext context, String addressText) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 20),
-    child: FoucsedMenu(
-      onPressed: () {},
-      menuItems: [
-        FocusedMenuItem(
-          title: Text(
-            LocaleKeys.my_address.tr(),
-            style: TextStyle(
-              fontSize: CaptionTextSize,
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
+  Widget yourProfileShimmer() {
+    return Shimmer.fromColors(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 8, right: 8),
+              decoration: BoxDecoration(
+                color: Colors.grey[900],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              width: screenWidth * 0.39,
+              height: screenHeight * 0.032,
             ),
-          ),
-          onPressed: () {
-            appContext.openIfExist(MyAddressesScreenRoute());
-          },
-        ),
-        FocusedMenuItem(
-          trailingIcon: Icon(
-            Icons.add_location_alt_rounded,
-            color: ThemeManager.primary,
-          ),
-          title: Text(
-            LocaleKeys.add_new_address.tr(),
-            style: TextStyle(
-              fontSize: CaptionTextSize,
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
+            SizedBox(
+              height: 4,
             ),
-          ),
-          onPressed: () {
-            appContext.openIfExist(
-              LocationPickerDialogRoute(oppenedFromMyAddresses: true),
-            );
-          },
+            Container(
+              margin: EdgeInsets.only(left: 8, right: 8),
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              width: screenWidth * 0.7,
+              height: screenHeight * 0.032,
+            )
+          ],
         ),
-      ],
-      child: YourLocationPart(
-        addressText: addressText,
       ),
-    ),
-  );
+      baseColor: Colors.grey.shade200,
+      highlightColor: ThemeManager.primary,
+    );
+  }
+
+  Widget yourLocation(BuildContext context, bool isLoading, Address? address) {
+    return isLoading
+        ? yourProfileShimmer()
+        : Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: FoucsedMenu(
+              onPressed: () {},
+              menuItems: [
+                FocusedMenuItem(
+                  title: Text(
+                    LocaleKeys.my_address.tr(),
+                    style: TextStyle(
+                      fontSize: CaptionTextSize,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  onPressed: () {
+                    appContext.openIfExist(MyAddressesScreenRoute());
+                  },
+                ),
+                FocusedMenuItem(
+                  trailingIcon: Icon(
+                    Icons.add_location_alt_rounded,
+                    color: ThemeManager.primary,
+                  ),
+                  title: Text(
+                    LocaleKeys.add_new_address.tr(),
+                    style: TextStyle(
+                      fontSize: CaptionTextSize,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  onPressed: () {
+                    appContext.openIfExist(
+                      LocationPickerDialogRoute(oppenedFromMyAddresses: true),
+                    );
+                  },
+                ),
+              ],
+              child: YourLocationPart(
+                addressText: address?.address ?? "Pick Your Location",
+              ),
+            ),
+          );
+  }
 }

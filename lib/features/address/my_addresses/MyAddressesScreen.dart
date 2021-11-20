@@ -10,11 +10,11 @@ import 'package:tawseel/features/address/my_addresses/bloc/addresses_bloc.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/models/address.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 class MyAddressesScreen extends StatelessWidget {

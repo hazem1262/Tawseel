@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:focused_menu/focused_menu.dart';
 import 'package:focused_menu/modals.dart';
-
-import '../main.dart';
+import 'package:tawseel/utils/globals.dart';
 
 class FoucsedMenu extends StatelessWidget {
   final Widget child;

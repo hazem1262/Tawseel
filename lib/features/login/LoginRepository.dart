@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/base/NetworkHandler.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'models/logine_response.dart';
 
 abstract class ILoginRepository {

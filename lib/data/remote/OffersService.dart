@@ -11,6 +11,6 @@ abstract class OffersService {
     return _OffersService(dio, baseUrl: baseUrl);
   }
 
-  @GET("offers")
-  Future<HttpResponse<OffersResponse>> getOffers(int page);
+  @GET("offers?page={page}")
+  Future<HttpResponse<OffersResponse>> getOffers(@Path("page") int page);
 }

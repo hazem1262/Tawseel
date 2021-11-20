@@ -20,6 +20,7 @@ import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/theme/style.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 import 'models/auto_complete_item.dart';

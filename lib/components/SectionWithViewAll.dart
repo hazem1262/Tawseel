@@ -1,9 +1,9 @@
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/theme/style.dart';
+import 'package:tawseel/utils/globals.dart';
 
 class SectionWithViewAll extends StatelessWidget {
   final String title;

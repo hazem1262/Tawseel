@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/main.dart';
+import 'package:tawseel/utils/globals.dart';
 
 // ignore: non_constant_identifier_names
 SizedBox LoadingButton(

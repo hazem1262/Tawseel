@@ -4,6 +4,7 @@ import 'package:tawseel/main.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:tawseel/utils/globals.dart';
 
 import '../../../res.dart';
 

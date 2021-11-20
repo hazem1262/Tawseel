@@ -10,11 +10,10 @@ import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/features/otp/bloc/OtpBloc.dart';
 import 'package:tawseel/features/otp/bloc/OtpRepository.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
-import 'package:tawseel/features/phone/SendPhoneScreen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
-import '../../main.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:auto_route/auto_route.dart';
 

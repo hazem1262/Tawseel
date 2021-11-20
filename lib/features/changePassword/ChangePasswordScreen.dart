@@ -12,6 +12,7 @@ import 'package:tawseel/features/login/components/PasswordField.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/main.dart';
 import 'package:tawseel/navigation/router.gr.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 import '../../res.dart';

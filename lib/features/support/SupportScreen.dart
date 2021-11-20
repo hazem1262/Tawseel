@@ -7,8 +7,8 @@ import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/features/signup/components/InputField.dart';
 import 'package:tawseel/features/support/bloc/SupportRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/theme/style.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 import 'bloc/SupportBloc.dart';

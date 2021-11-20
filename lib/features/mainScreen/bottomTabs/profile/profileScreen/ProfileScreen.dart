@@ -12,9 +12,8 @@ import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/AppColors.dart';
 import 'package:tawseel/theme/style.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
-
-import '../../../../../main.dart';
 
 enum SelectedLanguage { En, Ar }
 

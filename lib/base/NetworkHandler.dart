@@ -5,8 +5,8 @@ import 'package:retrofit/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:tawseel/data/models/error_model.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/navigation/router.gr.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:easy_localization/easy_localization.dart';
 

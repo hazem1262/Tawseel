@@ -7,6 +7,7 @@ import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:tawseel/utils/globals.dart';
 
 class LandingScreen extends StatelessWidget {
   @override

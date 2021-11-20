@@ -16,6 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$HomeBlocEventTearOff {
   const _$HomeBlocEventTearOff();
 
+  GetHomeProfile getProfile() {
+    return const GetHomeProfile();
+  }
+
   GetHomeOffers getOffers() {
     return const GetHomeOffers();
   }
@@ -32,12 +36,14 @@ const $HomeBlocEvent = _$HomeBlocEventTearOff();
 mixin _$HomeBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() getProfile,
     required TResult Function() getOffers,
     required TResult Function() getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
     TResult Function()? getOffers,
     TResult Function()? getCategories,
     required TResult orElse(),
@@ -45,12 +51,14 @@ mixin _$HomeBlocEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeOffers value) getOffers,
     required TResult Function(GetHomeCategories value) getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
     TResult Function(GetHomeOffers value)? getOffers,
     TResult Function(GetHomeCategories value)? getCategories,
     required TResult orElse(),
@@ -73,6 +81,96 @@ class _$HomeBlocEventCopyWithImpl<$Res>
   final HomeBlocEvent _value;
   // ignore: unused_field
   final $Res Function(HomeBlocEvent) _then;
+}
+
+/// @nodoc
+abstract class $GetHomeProfileCopyWith<$Res> {
+  factory $GetHomeProfileCopyWith(
+          GetHomeProfile value, $Res Function(GetHomeProfile) then) =
+      _$GetHomeProfileCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetHomeProfileCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res>
+    implements $GetHomeProfileCopyWith<$Res> {
+  _$GetHomeProfileCopyWithImpl(
+      GetHomeProfile _value, $Res Function(GetHomeProfile) _then)
+      : super(_value, (v) => _then(v as GetHomeProfile));
+
+  @override
+  GetHomeProfile get _value => super._value as GetHomeProfile;
+}
+
+/// @nodoc
+
+class _$GetHomeProfile implements GetHomeProfile {
+  const _$GetHomeProfile();
+
+  @override
+  String toString() {
+    return 'HomeBlocEvent.getProfile()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GetHomeProfile);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getProfile,
+    required TResult Function() getOffers,
+    required TResult Function() getCategories,
+  }) {
+    return getProfile();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getOffers,
+    TResult Function()? getCategories,
+    required TResult orElse(),
+  }) {
+    if (getProfile != null) {
+      return getProfile();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetHomeProfile value) getProfile,
+    required TResult Function(GetHomeOffers value) getOffers,
+    required TResult Function(GetHomeCategories value) getCategories,
+  }) {
+    return getProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeOffers value)? getOffers,
+    TResult Function(GetHomeCategories value)? getCategories,
+    required TResult orElse(),
+  }) {
+    if (getProfile != null) {
+      return getProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeProfile implements HomeBlocEvent {
+  const factory GetHomeProfile() = _$GetHomeProfile;
 }
 
 /// @nodoc
@@ -115,6 +213,7 @@ class _$GetHomeOffers implements GetHomeOffers {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() getProfile,
     required TResult Function() getOffers,
     required TResult Function() getCategories,
   }) {
@@ -124,6 +223,7 @@ class _$GetHomeOffers implements GetHomeOffers {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
     TResult Function()? getOffers,
     TResult Function()? getCategories,
     required TResult orElse(),
@@ -137,6 +237,7 @@ class _$GetHomeOffers implements GetHomeOffers {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeOffers value) getOffers,
     required TResult Function(GetHomeCategories value) getCategories,
   }) {
@@ -146,6 +247,7 @@ class _$GetHomeOffers implements GetHomeOffers {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
     TResult Function(GetHomeOffers value)? getOffers,
     TResult Function(GetHomeCategories value)? getCategories,
     required TResult orElse(),
@@ -201,6 +303,7 @@ class _$GetHomeCategories implements GetHomeCategories {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() getProfile,
     required TResult Function() getOffers,
     required TResult Function() getCategories,
   }) {
@@ -210,6 +313,7 @@ class _$GetHomeCategories implements GetHomeCategories {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
     TResult Function()? getOffers,
     TResult Function()? getCategories,
     required TResult orElse(),
@@ -223,6 +327,7 @@ class _$GetHomeCategories implements GetHomeCategories {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeOffers value) getOffers,
     required TResult Function(GetHomeCategories value) getCategories,
   }) {
@@ -232,6 +337,7 @@ class _$GetHomeCategories implements GetHomeCategories {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
     TResult Function(GetHomeOffers value)? getOffers,
     TResult Function(GetHomeCategories value)? getCategories,
     required TResult orElse(),
@@ -253,20 +359,24 @@ class _$HomeBlocStateTearOff {
 
   HomeBlocStateDefaultState defaultState(
       [bool offersIsLoading = false,
+      bool profileIsLoading = false,
       bool categoriesIsLoading = false,
       bool nearbyIsLoading = false,
       String error = "",
       bool refreshData = false,
       List<CategoryData> categories = const [],
-      List<OfferItem> offersList = const []]) {
+      List<OfferItem> offersList = const [],
+      Address? userAddress]) {
     return HomeBlocStateDefaultState(
       offersIsLoading,
+      profileIsLoading,
       categoriesIsLoading,
       nearbyIsLoading,
       error,
       refreshData,
       categories,
       offersList,
+      userAddress,
     );
   }
 }
@@ -277,23 +387,27 @@ const $HomeBlocState = _$HomeBlocStateTearOff();
 /// @nodoc
 mixin _$HomeBlocState {
   bool get offersIsLoading => throw _privateConstructorUsedError;
+  bool get profileIsLoading => throw _privateConstructorUsedError;
   bool get categoriesIsLoading => throw _privateConstructorUsedError;
   bool get nearbyIsLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get refreshData => throw _privateConstructorUsedError;
   List<CategoryData> get categories => throw _privateConstructorUsedError;
   List<OfferItem> get offersList => throw _privateConstructorUsedError;
+  Address? get userAddress => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             bool offersIsLoading,
+            bool profileIsLoading,
             bool categoriesIsLoading,
             bool nearbyIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
-            List<OfferItem> offersList)
+            List<OfferItem> offersList,
+            Address? userAddress)
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
@@ -301,12 +415,14 @@ mixin _$HomeBlocState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             bool offersIsLoading,
+            bool profileIsLoading,
             bool categoriesIsLoading,
             bool nearbyIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
-            List<OfferItem> offersList)?
+            List<OfferItem> offersList,
+            Address? userAddress)?
         defaultState,
     required TResult orElse(),
   }) =>
@@ -335,12 +451,14 @@ abstract class $HomeBlocStateCopyWith<$Res> {
       _$HomeBlocStateCopyWithImpl<$Res>;
   $Res call(
       {bool offersIsLoading,
+      bool profileIsLoading,
       bool categoriesIsLoading,
       bool nearbyIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
-      List<OfferItem> offersList});
+      List<OfferItem> offersList,
+      Address? userAddress});
 }
 
 /// @nodoc
@@ -355,17 +473,23 @@ class _$HomeBlocStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? offersIsLoading = freezed,
+    Object? profileIsLoading = freezed,
     Object? categoriesIsLoading = freezed,
     Object? nearbyIsLoading = freezed,
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? categories = freezed,
     Object? offersList = freezed,
+    Object? userAddress = freezed,
   }) {
     return _then(_value.copyWith(
       offersIsLoading: offersIsLoading == freezed
           ? _value.offersIsLoading
           : offersIsLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      profileIsLoading: profileIsLoading == freezed
+          ? _value.profileIsLoading
+          : profileIsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       categoriesIsLoading: categoriesIsLoading == freezed
           ? _value.categoriesIsLoading
@@ -391,6 +515,10 @@ class _$HomeBlocStateCopyWithImpl<$Res>
           ? _value.offersList
           : offersList // ignore: cast_nullable_to_non_nullable
               as List<OfferItem>,
+      userAddress: userAddress == freezed
+          ? _value.userAddress
+          : userAddress // ignore: cast_nullable_to_non_nullable
+              as Address?,
     ));
   }
 }
@@ -404,12 +532,14 @@ abstract class $HomeBlocStateDefaultStateCopyWith<$Res>
   @override
   $Res call(
       {bool offersIsLoading,
+      bool profileIsLoading,
       bool categoriesIsLoading,
       bool nearbyIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
-      List<OfferItem> offersList});
+      List<OfferItem> offersList,
+      Address? userAddress});
 }
 
 /// @nodoc
@@ -427,17 +557,23 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? offersIsLoading = freezed,
+    Object? profileIsLoading = freezed,
     Object? categoriesIsLoading = freezed,
     Object? nearbyIsLoading = freezed,
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? categories = freezed,
     Object? offersList = freezed,
+    Object? userAddress = freezed,
   }) {
     return _then(HomeBlocStateDefaultState(
       offersIsLoading == freezed
           ? _value.offersIsLoading
           : offersIsLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      profileIsLoading == freezed
+          ? _value.profileIsLoading
+          : profileIsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       categoriesIsLoading == freezed
           ? _value.categoriesIsLoading
@@ -463,6 +599,10 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
           ? _value.offersList
           : offersList // ignore: cast_nullable_to_non_nullable
               as List<OfferItem>,
+      userAddress == freezed
+          ? _value.userAddress
+          : userAddress // ignore: cast_nullable_to_non_nullable
+              as Address?,
     ));
   }
 }
@@ -472,16 +612,21 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
 class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   const _$HomeBlocStateDefaultState(
       [this.offersIsLoading = false,
+      this.profileIsLoading = false,
       this.categoriesIsLoading = false,
       this.nearbyIsLoading = false,
       this.error = "",
       this.refreshData = false,
       this.categories = const [],
-      this.offersList = const []]);
+      this.offersList = const [],
+      this.userAddress]);
 
   @JsonKey(defaultValue: false)
   @override
   final bool offersIsLoading;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool profileIsLoading;
   @JsonKey(defaultValue: false)
   @override
   final bool categoriesIsLoading;
@@ -500,10 +645,12 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   @JsonKey(defaultValue: const [])
   @override
   final List<OfferItem> offersList;
+  @override
+  final Address? userAddress;
 
   @override
   String toString() {
-    return 'HomeBlocState.defaultState(offersIsLoading: $offersIsLoading, categoriesIsLoading: $categoriesIsLoading, nearbyIsLoading: $nearbyIsLoading, error: $error, refreshData: $refreshData, categories: $categories, offersList: $offersList)';
+    return 'HomeBlocState.defaultState(offersIsLoading: $offersIsLoading, profileIsLoading: $profileIsLoading, categoriesIsLoading: $categoriesIsLoading, nearbyIsLoading: $nearbyIsLoading, error: $error, refreshData: $refreshData, categories: $categories, offersList: $offersList, userAddress: $userAddress)';
   }
 
   @override
@@ -513,6 +660,9 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             (identical(other.offersIsLoading, offersIsLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.offersIsLoading, offersIsLoading)) &&
+            (identical(other.profileIsLoading, profileIsLoading) ||
+                const DeepCollectionEquality()
+                    .equals(other.profileIsLoading, profileIsLoading)) &&
             (identical(other.categoriesIsLoading, categoriesIsLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.categoriesIsLoading, categoriesIsLoading)) &&
@@ -529,19 +679,24 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
                     .equals(other.categories, categories)) &&
             (identical(other.offersList, offersList) ||
                 const DeepCollectionEquality()
-                    .equals(other.offersList, offersList)));
+                    .equals(other.offersList, offersList)) &&
+            (identical(other.userAddress, userAddress) ||
+                const DeepCollectionEquality()
+                    .equals(other.userAddress, userAddress)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(offersIsLoading) ^
+      const DeepCollectionEquality().hash(profileIsLoading) ^
       const DeepCollectionEquality().hash(categoriesIsLoading) ^
       const DeepCollectionEquality().hash(nearbyIsLoading) ^
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(refreshData) ^
       const DeepCollectionEquality().hash(categories) ^
-      const DeepCollectionEquality().hash(offersList);
+      const DeepCollectionEquality().hash(offersList) ^
+      const DeepCollectionEquality().hash(userAddress);
 
   @JsonKey(ignore: true)
   @override
@@ -554,16 +709,26 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   TResult when<TResult extends Object?>({
     required TResult Function(
             bool offersIsLoading,
+            bool profileIsLoading,
             bool categoriesIsLoading,
             bool nearbyIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
-            List<OfferItem> offersList)
+            List<OfferItem> offersList,
+            Address? userAddress)
         defaultState,
   }) {
-    return defaultState(offersIsLoading, categoriesIsLoading, nearbyIsLoading,
-        error, refreshData, categories, offersList);
+    return defaultState(
+        offersIsLoading,
+        profileIsLoading,
+        categoriesIsLoading,
+        nearbyIsLoading,
+        error,
+        refreshData,
+        categories,
+        offersList,
+        userAddress);
   }
 
   @override
@@ -571,18 +736,28 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             bool offersIsLoading,
+            bool profileIsLoading,
             bool categoriesIsLoading,
             bool nearbyIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
-            List<OfferItem> offersList)?
+            List<OfferItem> offersList,
+            Address? userAddress)?
         defaultState,
     required TResult orElse(),
   }) {
     if (defaultState != null) {
-      return defaultState(offersIsLoading, categoriesIsLoading, nearbyIsLoading,
-          error, refreshData, categories, offersList);
+      return defaultState(
+          offersIsLoading,
+          profileIsLoading,
+          categoriesIsLoading,
+          nearbyIsLoading,
+          error,
+          refreshData,
+          categories,
+          offersList,
+          userAddress);
     }
     return orElse();
   }
@@ -611,15 +786,19 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
 abstract class HomeBlocStateDefaultState implements HomeBlocState {
   const factory HomeBlocStateDefaultState(
       [bool offersIsLoading,
+      bool profileIsLoading,
       bool categoriesIsLoading,
       bool nearbyIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
-      List<OfferItem> offersList]) = _$HomeBlocStateDefaultState;
+      List<OfferItem> offersList,
+      Address? userAddress]) = _$HomeBlocStateDefaultState;
 
   @override
   bool get offersIsLoading => throw _privateConstructorUsedError;
+  @override
+  bool get profileIsLoading => throw _privateConstructorUsedError;
   @override
   bool get categoriesIsLoading => throw _privateConstructorUsedError;
   @override
@@ -632,6 +811,8 @@ abstract class HomeBlocStateDefaultState implements HomeBlocState {
   List<CategoryData> get categories => throw _privateConstructorUsedError;
   @override
   List<OfferItem> get offersList => throw _privateConstructorUsedError;
+  @override
+  Address? get userAddress => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $HomeBlocStateDefaultStateCopyWith<HomeBlocStateDefaultState> get copyWith =>

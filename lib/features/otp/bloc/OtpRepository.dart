@@ -1,9 +1,8 @@
-import 'package:flutter/foundation.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/base/NetworkHandler.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/features/login/models/logine_response.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
+import 'package:tawseel/utils/globals.dart';
 
 abstract class IOtpRepository {
   Future<OtpResponse> sendOtp(String phone, String otp);

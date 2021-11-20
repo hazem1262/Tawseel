@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tawseel/main.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 class AppBackButton extends StatelessWidget {

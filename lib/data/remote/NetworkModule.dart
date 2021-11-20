@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:tawseel/main.dart';
+import 'package:tawseel/utils/globals.dart';
 
 class NetworkModule {
   Dio getDio(String baseUrl) {

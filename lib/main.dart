@@ -3,101 +3,12 @@ import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
-import 'package:tawseel/data/remote/AuthService.dart';
-import 'package:tawseel/data/remote/places_api_service.dart';
-import 'package:tawseel/features/address/my_addresses/bloc/AddressesRepository.dart';
-import 'package:tawseel/features/login/LoginRepository.dart';
-import 'package:tawseel/features/signup/bloc/SignUpRepository.dart';
-import 'package:tawseel/features/support/bloc/SupportRepository.dart';
-import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/theme/ThemeManager.dart';
+import 'package:tawseel/TawseelApp.dart';
 import 'package:tawseel/utils/AppState.dart';
-
-import 'data/remote/AddressService.dart';
-import 'data/remote/CategoriesService.dart';
-import 'data/remote/NetworkModule.dart';
-import 'data/remote/OffersService.dart';
+import 'package:tawseel/utils/di.dart';
+import 'package:tawseel/utils/globals.dart';
 import 'features/address/models/AddressDetailsScreen.dart';
-import 'features/changePassword/bloc/ChangePasswordRepository.dart';
-import 'features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
-import 'features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
-import 'features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
-import 'features/otp/bloc/OtpRepository.dart';
-import 'navigation/router.gr.dart';
-
-final getIt = GetIt.instance;
-
-ThemeManager tm = ThemeManager(mode: ThemeMode.light);
-ThemeManager get liveTm => Provider.of<ThemeManager>(appContext, listen: true);
-AppState get appState => Provider.of<AppState>(appContext, listen: false);
-
-const GlobalKey<NavigatorState> appKey = GlobalObjectKey("tawseel-key");
-BuildContext appContext = appKey.currentContext as BuildContext;
-Locale get currentLocal => appContext.locale;
-String get currentLocalName => appContext.locale.toString();
-bool get isAr => appContext.locale.toString().contains("ar");
-
-Future<void> initAppDependencies() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
-
-  getIt.registerSingleton<NetworkModule>(
-    NetworkModule(),
-  );
-  getIt.registerSingleton<AuthService>(
-    AuthService(getIt<NetworkModule>().getDio(BaseUrl)),
-  );
-
-  getIt.registerSingleton<CategoriesService>(
-    CategoriesService(getIt<NetworkModule>().getDio(BaseUrl)),
-  );
-
-  getIt.registerSingleton<OffersService>(
-    OffersService(getIt<NetworkModule>().getDio(BaseUrl)),
-  );
-
-  getIt.registerSingleton<AddressService>(
-    AddressService(getIt<NetworkModule>().getDio(BaseUrl)),
-  );
-  getIt.registerSingleton<PlacesApiService>(
-    PlacesApiService(getIt<NetworkModule>().getDio(PlacesBaseUrl)),
-  );
-  getIt.registerSingleton<ILoginRepository>(
-    LoginRepository(getIt<AuthService>()),
-  );
-  getIt.registerSingleton<ISignUpRepository>(
-    SignUpRepository(getIt<AuthService>()),
-  );
-  getIt.registerSingleton<IProfileRepository>(
-    ProfileRepository(getIt<AuthService>()),
-  );
-
-  getIt.registerSingleton<IOtpRepository>(
-    OtpRepository(getIt<AuthService>()),
-  );
-
-  getIt.registerSingleton<IAddressRepository>(
-    AddressesRepository(getIt<AddressService>()),
-  );
-
-  getIt.registerSingleton<IChangePasswordRepository>(
-    ChangePasswordRepository(getIt<AuthService>()),
-  );
-
-  getIt.registerSingleton<ISupportRepository>(
-    SupportRepository(getIt<AuthService>()),
-  );
-
-  getIt.registerSingleton<IHomeRepository>(
-    HomeRepository(getIt<CategoriesService>()),
-  );
-
-  getIt.registerSingleton<IOffersRepository>(
-    OffersRepository(getIt<OffersService>()),
-  );
-}
 
 void main() async {
   await initAppDependencies();
@@ -121,48 +32,8 @@ void main() async {
             create: (context) => AddressProvider(),
           ),
         ],
-        child: MyApp(),
+        child: TawseelApp(),
       ),
     ),
   );
-}
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  // make sure you don't initiate your router
-  // inside of the build function.
-  final _appRouter = AppRouter(appKey);
-
-  @override
-  void initState() {
-    super.initState();
-    tm.addListener(() {
-      setState(() {});
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
-      child: MaterialApp.router(
-        routerDelegate: _appRouter.delegate(),
-        routeInformationParser: _appRouter.defaultRouteParser(),
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        title: LocaleKeys.app_name.tr(),
-        theme: tm.lightTheme,
-        darkTheme: tm.darkTheme,
-        themeMode: tm.mode,
-      ),
-    );
-  }
 }
