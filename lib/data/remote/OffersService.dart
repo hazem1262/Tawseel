@@ -12,5 +12,5 @@ abstract class OffersService {
   }
 
   @GET("offers")
-  Future<HttpResponse<OffersResponse>> getOffers();
+  Future<HttpResponse<OffersResponse>> getOffers(int page);
 }

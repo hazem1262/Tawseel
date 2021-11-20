@@ -22,6 +22,7 @@ import 'data/remote/OffersService.dart';
 import 'features/address/models/AddressDetailsScreen.dart';
 import 'features/changePassword/bloc/ChangePasswordRepository.dart';
 import 'features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
+import 'features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'features/otp/bloc/OtpRepository.dart';
 import 'navigation/router.gr.dart';
@@ -90,7 +91,11 @@ Future<void> initAppDependencies() async {
   );
 
   getIt.registerSingleton<IHomeRepository>(
-    HomeRepository(getIt<CategoriesService>(), getIt<OffersService>()),
+    HomeRepository(getIt<CategoriesService>()),
+  );
+
+  getIt.registerSingleton<IOffersRepository>(
+    OffersRepository(getIt<OffersService>()),
   );
 }
 

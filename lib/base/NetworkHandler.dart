@@ -97,7 +97,7 @@ mixin NetworkHandler {
     try {
       return ErrorModel.fromJson(response!.data).message;
     } catch (e, trace) {
-      debugPrint('Exception : $e');
+      debugPrint('Exception : $e $trace');
       return '';
     }
   }

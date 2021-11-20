@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 
 part 'home_bloc.freezed.dart';
 
@@ -28,7 +29,8 @@ class HomeBlocState with _$HomeBlocState {
 
 class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
   IHomeRepository repo;
-  HomeBloc(this.repo) : super(HomeBlocStateDefaultState()) {
+  IOffersRepository offersRepo;
+  HomeBloc(this.repo, this.offersRepo) : super(HomeBlocStateDefaultState()) {
     on<HomeBlocEvent>((event, emit) async {
       if (event is GetHomeCategories) {
         emit(state.copyWith(categoriesIsLoading: true, error: ""));
@@ -46,8 +48,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
       if (event is GetHomeOffers) {
         emit(state.copyWith(offersIsLoading: true, error: ""));
         try {
-          var offers = await repo.getOffers();
-
+          var offers = await offersRepo.getOffers();
           emit(state.copyWith(
               offersIsLoading: false, error: "", offersList: offers.data));
         } catch (e) {

@@ -6,20 +6,14 @@ import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersRespons
 
 abstract class IHomeRepository {
   Future<CategoriesResponse> getCategories();
-
-  Future<OffersResponse> getOffers();
 }
 
 class HomeRepository with NetworkHandler implements IHomeRepository {
   CategoriesService categoriesApi;
-  OffersService offersApi;
-  HomeRepository(this.categoriesApi, this.offersApi);
+
+  HomeRepository(this.categoriesApi);
 
   @override
   Future<CategoriesResponse> getCategories() =>
       networkHandler(() => categoriesApi.getCategories());
-
-  @override
-  Future<OffersResponse> getOffers() =>
-      networkHandler(() => offersApi.getOffers());
 }

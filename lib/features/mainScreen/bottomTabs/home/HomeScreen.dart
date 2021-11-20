@@ -11,11 +11,11 @@ import 'package:tawseel/components/FoucsedMenu.dart';
 import 'package:tawseel/components/SectionWithViewAll.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/main.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
-import 'package:tawseel/theme/AppColors.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/ktx.dart';
@@ -38,9 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext ctx) {
     return BlocProvider(
-      create: (context) => HomeBloc(getIt.get<IHomeRepository>())
-        ..add(GetHomeOffers())
-        ..add(GetHomeCategories()),
+      create: (context) =>
+          HomeBloc(getIt.get<IHomeRepository>(), getIt.get<IOffersRepository>())
+            ..add(GetHomeOffers())
+            ..add(GetHomeCategories()),
       lazy: false,
       child: Builder(builder: (context) {
         return Scaffold(

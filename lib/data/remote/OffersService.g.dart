@@ -16,7 +16,7 @@ class _OffersService implements OffersService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<OffersResponse>> getOffers() async {
+  Future<HttpResponse<OffersResponse>> getOffers(page) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _data = <String, dynamic>{};
