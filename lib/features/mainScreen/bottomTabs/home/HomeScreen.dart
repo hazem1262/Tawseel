@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,8 +11,11 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:tawseel/components/FoucsedMenu.dart';
 import 'package:tawseel/components/SectionWithViewAll.dart';
+import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -40,11 +45,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext ctx) {
     return BlocProvider(
-      create: (context) => HomeBloc(getIt.get<IHomeRepository>(),
-          getIt.get<IOffersRepository>(), getIt.get<IProfileRepository>())
+      create: (context) => HomeBloc(
+        getIt.get<IHomeRepository>(),
+        getIt.get<IOffersRepository>(),
+        getIt.get<IProfileRepository>(),
+        getIt.get<IMarketPlaceRepository>(),
+      )
         ..add(GetHomeProfile())
         ..add(GetHomeOffers())
-        ..add(GetHomeCategories()),
+        ..add(GetHomeCategories())
+        ..add(GetHomeNearbyMarketPlaces()),
       lazy: false,
       child: Builder(builder: (context) {
         return Scaffold(
@@ -55,7 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
               BlocProvider.of<HomeBloc>(context)
                 ..add(GetHomeProfile())
                 ..add(GetHomeOffers())
-                ..add(GetHomeCategories());
+                ..add(GetHomeCategories())
+                ..add(GetHomeNearbyMarketPlaces());
           },
           child: SafeArea(
             child: SmartRefresher(
@@ -65,45 +76,92 @@ class _HomeScreenState extends State<HomeScreen> {
                 BlocProvider.of<HomeBloc>(context)
                   ..add(GetHomeProfile())
                   ..add(GetHomeOffers())
-                  ..add(GetHomeCategories());
+                  ..add(GetHomeCategories())
+                  ..add(GetHomeNearbyMarketPlaces());
                 _refreshController.refreshToIdle();
               },
               header: WaterDropHeader(),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  BlocBuilder<HomeBloc, HomeBlocState>(
-                    builder: (context, state) {
-                      return yourLocation(
-                        context,
-                        state.profileIsLoading,
-                        state.userAddress,
-                      );
-                    },
-                  ),
-                  searchArea(onClick: () {
-                    appContext.showToast("Search Clicked");
-                  }),
-                  BlocBuilder<HomeBloc, HomeBlocState>(
-                    builder: (context, state) {
-                      return offersArea(
-                          state.offersIsLoading, state.offersList);
-                    },
-                  ),
-                  BlocBuilder<HomeBloc, HomeBlocState>(
-                    builder: (context, state) {
-                      return categoriesArea(
-                          state.categoriesIsLoading, state.categories);
-                    },
-                  ),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    BlocBuilder<HomeBloc, HomeBlocState>(
+                      builder: (context, state) {
+                        return yourLocation(
+                          context,
+                          state.profileIsLoading,
+                          state.userAddress,
+                        );
+                      },
+                    ),
+                    searchArea(onClick: () {
+                      appContext.showToast("Search Clicked");
+                    }),
+                    BlocBuilder<HomeBloc, HomeBlocState>(
+                      builder: (context, state) {
+                        return offersArea(
+                            state.offersIsLoading, state.offersList);
+                      },
+                    ),
+                    BlocBuilder<HomeBloc, HomeBlocState>(
+                      builder: (context, state) {
+                        return categoriesArea(
+                            state.categoriesIsLoading, state.categories);
+                      },
+                    ),
+                    BlocBuilder<HomeBloc, HomeBlocState>(
+                      builder: (context, state) {
+                        return marketPlaceArea(
+                            state.nearbyMarketPlaceIsLoading, state.nearbyList);
+                      },
+                    )
+                  ],
+                ),
               ),
             ),
           ),
         ));
       }),
+    );
+  }
+
+  Widget marketPlaceArea(bool isLoading, List<MarketPlaceItem> list) {
+    return Container(
+      margin: EdgeInsets.only(top: 8),
+      child: Column(
+        children: [
+          SectionWithViewAll(
+            title: LocaleKeys.nearby_word.tr(),
+            onViewAllClick: () {
+              appContext.showToast("view all market place");
+            },
+            moreInfoWidget: Text("( 5 Km)"),
+          ),
+          isLoading
+              ? marketPlaceShimmer()
+              : Padding(
+                  padding: isAr
+                      ? EdgeInsets.only(right: 8)
+                      : EdgeInsets.only(left: 8),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    itemCount: list.length,
+                    itemBuilder: (ctx, index) {
+                      return marketPlaceItem(
+                        list[index],
+                        () {
+                          appContext.showToast("${list[index].name} clicked");
+                        },
+                      );
+                    },
+                  ),
+                ),
+        ],
+      ),
     );
   }
 
@@ -216,7 +274,6 @@ class _HomeScreenState extends State<HomeScreen> {
             onViewAllClick: () {
               showCategoriesBottomSheet(categories);
             },
-            moreInfoWidget: Text("( 5 Km)"),
           ),
           isLoading
               ? categoriesShimmer()
@@ -371,6 +428,301 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Widget marketPlaceShimmer() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
+      child: Shimmer.fromColors(
+        child: Container(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height,
+          ),
+          child: Column(
+              children: List.generate(
+                  4,
+                  (index) => Expanded(
+                        child: Container(
+                          margin: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          width: screenWidth,
+                          height: screenHeight * 0.2,
+                        ),
+                      )).toList()),
+        ),
+        baseColor: Colors.grey.shade200,
+        highlightColor: ThemeManager.primary,
+      ),
+    );
+  }
+
+  // flutter item card
+
+  Widget marketPlaceItem(MarketPlaceItem marketPlace, Function onClick) {
+    final itemHeight = screenHeight * 0.30;
+    return InkWell(
+      onTap: () {
+        onClick();
+      },
+      child: Container(
+        height: itemHeight,
+        margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.05),
+              spreadRadius: 1,
+              blurRadius: 2,
+              offset: Offset(0, 3),
+            )
+          ],
+        ),
+
+        child: Stack(
+          children: [
+            Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
+                  ),
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        "https://images.unsplash.com/photo-1615380547279-f983fb6241d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1734&q=80",
+                    fit: BoxFit.fill,
+                    width: double.infinity,
+                    height: itemHeight * 0.6,
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(8),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                            flex: 1,
+                            child: Text(
+                              "${marketPlace.name}",
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontSize: BodyTextSize,
+                                fontWeight: FontWeight.w600,
+                                color: tm.titlecolorLight,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          SizedBox(width: 4),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: tawseelDarkGrey,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  Res.star_icon,
+                                  width: 17,
+                                  height: 17,
+                                ),
+                                SizedBox(width: 4),
+                                Text(
+                                  marketPlace.rating,
+                                  style: TextStyle(
+                                    fontSize: BodyTextSize,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 8),
+                      Container(
+                        width: double.infinity,
+                        child: Text(
+                          "${marketPlace.description}",
+                          maxLines: 1,
+                          style: TextStyle(
+                            fontSize: BodySmallTextSize,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                Res.watch_icon,
+                                width: 17,
+                                height: 17,
+                              ),
+                              SizedBox(width: 4),
+                              Text(
+                                "${marketPlace.delivery_time}",
+                                style: TextStyle(
+                                  fontSize: BodySmallTextSize,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                            width: screenWidth * 0.004,
+                            child: Container(
+                              color: Colors.grey.shade300,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                LocaleKeys.delivery_word.tr(),
+                                style: TextStyle(
+                                  fontSize: BodySmallTextSize,
+                                  fontWeight: FontWeight.w500,
+                                  color: ThemeManager.primary,
+                                ),
+                              ),
+                              SizedBox(width: 4),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: ThemeManager.primary.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 4,
+                                ),
+                                child: Text(
+                                  "${marketPlace.delivery_cost}",
+                                  style: TextStyle(
+                                    fontSize: BodySmallTextSize,
+                                    fontWeight: FontWeight.w500,
+                                    color: ThemeManager.primary,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                            width: screenWidth * 0.004,
+                            child: Container(
+                              color: Colors.grey.shade300,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              SizedBox(width: 4),
+                              Container(
+                                width: screenWidth * 0.18,
+                                height: screenHeight * 0.03,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.grey.shade300,
+                                    width: 1.5,
+                                  ),
+                                  color: tawseelDarkGrey,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: CachedNetworkImage(
+                                    fit: BoxFit.fill,
+                                    imageUrl:
+                                        "https://images.unsplash.com/photo-1543339469-94ba2391431f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGtmYyUyMGJ1cmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 4),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Positioned.directional(
+              textDirection: Directionality.of(context),
+              top: 10,
+              end: 10,
+              child: Container(
+                width: screenWidth * 0.1,
+                height: screenHeight * 0.045,
+                decoration: BoxDecoration(
+                  color: Colors.white.withAlpha(99),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.favorite_border,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+        // Row(
+        //   children: [
+        //     Container(
+        //       padding: EdgeInsets.all(5),
+        //       decoration: BoxDecoration(
+        //         color: creamyWhite,
+        //         borderRadius: BorderRadius.circular(8),
+        //       ),
+        //       width: 45,
+        //       child: CachedNetworkImage(
+        //         imageUrl: marketPlace.image,
+        //         fit: BoxFit.contain,
+        //       ),
+        //     ),
+        //     SizedBox(width: 16),
+        //     Text(
+        //       "${marketPlace.name}",
+        //       style: Theme.of(context).textTheme.caption!.copyWith(
+        //             fontSize: CaptionTextSize,
+        //             color: ProfileActionsColor_Light,
+        //             fontWeight: FontWeight.w600,
+        //           ),
+        //     ),
+        //     SizedBox(
+        //       width: 8,
+        //     ),
+        //   ],
+        // ),
+      ),
+    );
+  }
+
   Widget offersShimmer() {
     final screenwidth = MediaQuery.of(context).size.width;
     final screenheight = MediaQuery.of(context).size.height -
@@ -434,9 +786,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 fit: BoxFit.contain,
               ),
             ),
-            SizedBox(
-              width: 16,
-            ),
+            SizedBox(width: 16),
             Text(
               "${category.name}",
               style: Theme.of(context).textTheme.caption!.copyWith(

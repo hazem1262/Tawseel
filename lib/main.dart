@@ -22,15 +22,9 @@ void main() async {
       saveLocale: true,
       child: MultiProvider(
         providers: [
-          ChangeNotifierProvider(
-            create: (context) => AppState(),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => tm,
-          ),
-          ChangeNotifierProvider(
-            create: (context) => AddressProvider(),
-          ),
+          ChangeNotifierProvider(create: (context) => AppState()),
+          ChangeNotifierProvider(create: (context) => tm),
+          ChangeNotifierProvider(create: (context) => AddressProvider()),
         ],
         child: TawseelApp(),
       ),

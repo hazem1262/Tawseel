@@ -131,6 +131,9 @@
   "offers_title":"Offers",
   "view_all":"View All",
 
-  "all_categories":"All Categories"
+  "all_categories":"All Categories",
+
+  "nearby_word":"Nearby",
+  "delivery_word":"Delivery :"
 
 }

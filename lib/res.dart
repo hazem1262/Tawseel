@@ -42,4 +42,7 @@ class Res {
   static const String settings_icon = "assets/settings-icon.png";
   static const String search_icon = "assets/search-icon.png";
   static const String category_icon = "assets/cat-icon.png";
+  static const String star_icon = "assets/star.png";
+  static const String watch_icon = "assets/watch-icon.png";
+  static const String heart_icon = "assets/heart-icon.png";
 }

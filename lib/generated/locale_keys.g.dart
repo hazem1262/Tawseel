@@ -95,5 +95,7 @@ abstract class  LocaleKeys {
   static const offers_title = 'offers_title';
   static const view_all = 'view_all';
   static const all_categories = 'all_categories';
+  static const nearby_word = 'nearby_word';
+  static const delivery_word = 'delivery_word';
 
 }

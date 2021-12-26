@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:tawseel/data/remote/AddressService.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/data/remote/CategoriesService.dart';
+import 'package:tawseel/data/remote/MarketPlaceService.dart';
 import 'package:tawseel/data/remote/NetworkModule.dart';
 import 'package:tawseel/data/remote/OffersService.dart';
 import 'package:tawseel/data/remote/places_api_service.dart';
@@ -10,6 +11,7 @@ import 'package:tawseel/features/address/my_addresses/bloc/AddressesRepository.d
 import 'package:tawseel/features/changePassword/bloc/ChangePasswordRepository.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/features/otp/bloc/OtpRepository.dart';
@@ -39,9 +41,15 @@ Future<void> initAppDependencies() async {
   getIt.registerSingleton<AddressService>(
     AddressService(getIt<NetworkModule>().getDio(BaseUrl)),
   );
+
+  getIt.registerSingleton<MarketPlaceService>(
+    MarketPlaceService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
+
   getIt.registerSingleton<PlacesApiService>(
     PlacesApiService(getIt<NetworkModule>().getDio(PlacesBaseUrl)),
   );
+
   getIt.registerSingleton<ILoginRepository>(
     LoginRepository(getIt<AuthService>()),
   );
@@ -74,5 +82,9 @@ Future<void> initAppDependencies() async {
 
   getIt.registerSingleton<IOffersRepository>(
     OffersRepository(getIt<OffersService>()),
+  );
+
+  getIt.registerSingleton<IMarketPlaceRepository>(
+    MarketPlaceRepository(getIt<MarketPlaceService>()),
   );
 }

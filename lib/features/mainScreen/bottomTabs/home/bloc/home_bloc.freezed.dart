@@ -27,6 +27,10 @@ class _$HomeBlocEventTearOff {
   GetHomeCategories getCategories() {
     return const GetHomeCategories();
   }
+
+  GetHomeNearbyMarketPlaces getNearbyMarketPlaces() {
+    return const GetHomeNearbyMarketPlaces();
+  }
 }
 
 /// @nodoc
@@ -39,6 +43,7 @@ mixin _$HomeBlocEvent {
     required TResult Function() getProfile,
     required TResult Function() getOffers,
     required TResult Function() getCategories,
+    required TResult Function() getNearbyMarketPlaces,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +51,7 @@ mixin _$HomeBlocEvent {
     TResult Function()? getProfile,
     TResult Function()? getOffers,
     TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +60,8 @@ mixin _$HomeBlocEvent {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeOffers value) getOffers,
     required TResult Function(GetHomeCategories value) getCategories,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +69,7 @@ mixin _$HomeBlocEvent {
     TResult Function(GetHomeProfile value)? getProfile,
     TResult Function(GetHomeOffers value)? getOffers,
     TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +135,7 @@ class _$GetHomeProfile implements GetHomeProfile {
     required TResult Function() getProfile,
     required TResult Function() getOffers,
     required TResult Function() getCategories,
+    required TResult Function() getNearbyMarketPlaces,
   }) {
     return getProfile();
   }
@@ -136,6 +146,7 @@ class _$GetHomeProfile implements GetHomeProfile {
     TResult Function()? getProfile,
     TResult Function()? getOffers,
     TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
     required TResult orElse(),
   }) {
     if (getProfile != null) {
@@ -150,6 +161,8 @@ class _$GetHomeProfile implements GetHomeProfile {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeOffers value) getOffers,
     required TResult Function(GetHomeCategories value) getCategories,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
   }) {
     return getProfile(this);
   }
@@ -160,6 +173,7 @@ class _$GetHomeProfile implements GetHomeProfile {
     TResult Function(GetHomeProfile value)? getProfile,
     TResult Function(GetHomeOffers value)? getOffers,
     TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     required TResult orElse(),
   }) {
     if (getProfile != null) {
@@ -216,6 +230,7 @@ class _$GetHomeOffers implements GetHomeOffers {
     required TResult Function() getProfile,
     required TResult Function() getOffers,
     required TResult Function() getCategories,
+    required TResult Function() getNearbyMarketPlaces,
   }) {
     return getOffers();
   }
@@ -226,6 +241,7 @@ class _$GetHomeOffers implements GetHomeOffers {
     TResult Function()? getProfile,
     TResult Function()? getOffers,
     TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
     required TResult orElse(),
   }) {
     if (getOffers != null) {
@@ -240,6 +256,8 @@ class _$GetHomeOffers implements GetHomeOffers {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeOffers value) getOffers,
     required TResult Function(GetHomeCategories value) getCategories,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
   }) {
     return getOffers(this);
   }
@@ -250,6 +268,7 @@ class _$GetHomeOffers implements GetHomeOffers {
     TResult Function(GetHomeProfile value)? getProfile,
     TResult Function(GetHomeOffers value)? getOffers,
     TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     required TResult orElse(),
   }) {
     if (getOffers != null) {
@@ -306,6 +325,7 @@ class _$GetHomeCategories implements GetHomeCategories {
     required TResult Function() getProfile,
     required TResult Function() getOffers,
     required TResult Function() getCategories,
+    required TResult Function() getNearbyMarketPlaces,
   }) {
     return getCategories();
   }
@@ -316,6 +336,7 @@ class _$GetHomeCategories implements GetHomeCategories {
     TResult Function()? getProfile,
     TResult Function()? getOffers,
     TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
     required TResult orElse(),
   }) {
     if (getCategories != null) {
@@ -330,6 +351,8 @@ class _$GetHomeCategories implements GetHomeCategories {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeOffers value) getOffers,
     required TResult Function(GetHomeCategories value) getCategories,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
   }) {
     return getCategories(this);
   }
@@ -340,6 +363,7 @@ class _$GetHomeCategories implements GetHomeCategories {
     TResult Function(GetHomeProfile value)? getProfile,
     TResult Function(GetHomeOffers value)? getOffers,
     TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     required TResult orElse(),
   }) {
     if (getCategories != null) {
@@ -354,28 +378,126 @@ abstract class GetHomeCategories implements HomeBlocEvent {
 }
 
 /// @nodoc
+abstract class $GetHomeNearbyMarketPlacesCopyWith<$Res> {
+  factory $GetHomeNearbyMarketPlacesCopyWith(GetHomeNearbyMarketPlaces value,
+          $Res Function(GetHomeNearbyMarketPlaces) then) =
+      _$GetHomeNearbyMarketPlacesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetHomeNearbyMarketPlacesCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res>
+    implements $GetHomeNearbyMarketPlacesCopyWith<$Res> {
+  _$GetHomeNearbyMarketPlacesCopyWithImpl(GetHomeNearbyMarketPlaces _value,
+      $Res Function(GetHomeNearbyMarketPlaces) _then)
+      : super(_value, (v) => _then(v as GetHomeNearbyMarketPlaces));
+
+  @override
+  GetHomeNearbyMarketPlaces get _value =>
+      super._value as GetHomeNearbyMarketPlaces;
+}
+
+/// @nodoc
+
+class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
+  const _$GetHomeNearbyMarketPlaces();
+
+  @override
+  String toString() {
+    return 'HomeBlocEvent.getNearbyMarketPlaces()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GetHomeNearbyMarketPlaces);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getProfile,
+    required TResult Function() getOffers,
+    required TResult Function() getCategories,
+    required TResult Function() getNearbyMarketPlaces,
+  }) {
+    return getNearbyMarketPlaces();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getOffers,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    required TResult orElse(),
+  }) {
+    if (getNearbyMarketPlaces != null) {
+      return getNearbyMarketPlaces();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetHomeProfile value) getProfile,
+    required TResult Function(GetHomeOffers value) getOffers,
+    required TResult Function(GetHomeCategories value) getCategories,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+  }) {
+    return getNearbyMarketPlaces(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeOffers value)? getOffers,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    required TResult orElse(),
+  }) {
+    if (getNearbyMarketPlaces != null) {
+      return getNearbyMarketPlaces(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeNearbyMarketPlaces implements HomeBlocEvent {
+  const factory GetHomeNearbyMarketPlaces() = _$GetHomeNearbyMarketPlaces;
+}
+
+/// @nodoc
 class _$HomeBlocStateTearOff {
   const _$HomeBlocStateTearOff();
 
   HomeBlocStateDefaultState defaultState(
       [bool offersIsLoading = false,
       bool profileIsLoading = false,
+      bool nearbyMarketPlaceIsLoading = false,
       bool categoriesIsLoading = false,
-      bool nearbyIsLoading = false,
       String error = "",
       bool refreshData = false,
       List<CategoryData> categories = const [],
       List<OfferItem> offersList = const [],
+      List<MarketPlaceItem> nearbyList = const [],
       Address? userAddress]) {
     return HomeBlocStateDefaultState(
       offersIsLoading,
       profileIsLoading,
+      nearbyMarketPlaceIsLoading,
       categoriesIsLoading,
-      nearbyIsLoading,
       error,
       refreshData,
       categories,
       offersList,
+      nearbyList,
       userAddress,
     );
   }
@@ -388,12 +510,13 @@ const $HomeBlocState = _$HomeBlocStateTearOff();
 mixin _$HomeBlocState {
   bool get offersIsLoading => throw _privateConstructorUsedError;
   bool get profileIsLoading => throw _privateConstructorUsedError;
+  bool get nearbyMarketPlaceIsLoading => throw _privateConstructorUsedError;
   bool get categoriesIsLoading => throw _privateConstructorUsedError;
-  bool get nearbyIsLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get refreshData => throw _privateConstructorUsedError;
   List<CategoryData> get categories => throw _privateConstructorUsedError;
   List<OfferItem> get offersList => throw _privateConstructorUsedError;
+  List<MarketPlaceItem> get nearbyList => throw _privateConstructorUsedError;
   Address? get userAddress => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
@@ -401,12 +524,13 @@ mixin _$HomeBlocState {
     required TResult Function(
             bool offersIsLoading,
             bool profileIsLoading,
+            bool nearbyMarketPlaceIsLoading,
             bool categoriesIsLoading,
-            bool nearbyIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
             List<OfferItem> offersList,
+            List<MarketPlaceItem> nearbyList,
             Address? userAddress)
         defaultState,
   }) =>
@@ -416,12 +540,13 @@ mixin _$HomeBlocState {
     TResult Function(
             bool offersIsLoading,
             bool profileIsLoading,
+            bool nearbyMarketPlaceIsLoading,
             bool categoriesIsLoading,
-            bool nearbyIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
             List<OfferItem> offersList,
+            List<MarketPlaceItem> nearbyList,
             Address? userAddress)?
         defaultState,
     required TResult orElse(),
@@ -452,12 +577,13 @@ abstract class $HomeBlocStateCopyWith<$Res> {
   $Res call(
       {bool offersIsLoading,
       bool profileIsLoading,
+      bool nearbyMarketPlaceIsLoading,
       bool categoriesIsLoading,
-      bool nearbyIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
       List<OfferItem> offersList,
+      List<MarketPlaceItem> nearbyList,
       Address? userAddress});
 }
 
@@ -474,12 +600,13 @@ class _$HomeBlocStateCopyWithImpl<$Res>
   $Res call({
     Object? offersIsLoading = freezed,
     Object? profileIsLoading = freezed,
+    Object? nearbyMarketPlaceIsLoading = freezed,
     Object? categoriesIsLoading = freezed,
-    Object? nearbyIsLoading = freezed,
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? categories = freezed,
     Object? offersList = freezed,
+    Object? nearbyList = freezed,
     Object? userAddress = freezed,
   }) {
     return _then(_value.copyWith(
@@ -491,13 +618,13 @@ class _$HomeBlocStateCopyWithImpl<$Res>
           ? _value.profileIsLoading
           : profileIsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      nearbyMarketPlaceIsLoading: nearbyMarketPlaceIsLoading == freezed
+          ? _value.nearbyMarketPlaceIsLoading
+          : nearbyMarketPlaceIsLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       categoriesIsLoading: categoriesIsLoading == freezed
           ? _value.categoriesIsLoading
           : categoriesIsLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      nearbyIsLoading: nearbyIsLoading == freezed
-          ? _value.nearbyIsLoading
-          : nearbyIsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       error: error == freezed
           ? _value.error
@@ -515,6 +642,10 @@ class _$HomeBlocStateCopyWithImpl<$Res>
           ? _value.offersList
           : offersList // ignore: cast_nullable_to_non_nullable
               as List<OfferItem>,
+      nearbyList: nearbyList == freezed
+          ? _value.nearbyList
+          : nearbyList // ignore: cast_nullable_to_non_nullable
+              as List<MarketPlaceItem>,
       userAddress: userAddress == freezed
           ? _value.userAddress
           : userAddress // ignore: cast_nullable_to_non_nullable
@@ -533,12 +664,13 @@ abstract class $HomeBlocStateDefaultStateCopyWith<$Res>
   $Res call(
       {bool offersIsLoading,
       bool profileIsLoading,
+      bool nearbyMarketPlaceIsLoading,
       bool categoriesIsLoading,
-      bool nearbyIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
       List<OfferItem> offersList,
+      List<MarketPlaceItem> nearbyList,
       Address? userAddress});
 }
 
@@ -558,12 +690,13 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
   $Res call({
     Object? offersIsLoading = freezed,
     Object? profileIsLoading = freezed,
+    Object? nearbyMarketPlaceIsLoading = freezed,
     Object? categoriesIsLoading = freezed,
-    Object? nearbyIsLoading = freezed,
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? categories = freezed,
     Object? offersList = freezed,
+    Object? nearbyList = freezed,
     Object? userAddress = freezed,
   }) {
     return _then(HomeBlocStateDefaultState(
@@ -575,13 +708,13 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
           ? _value.profileIsLoading
           : profileIsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      nearbyMarketPlaceIsLoading == freezed
+          ? _value.nearbyMarketPlaceIsLoading
+          : nearbyMarketPlaceIsLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       categoriesIsLoading == freezed
           ? _value.categoriesIsLoading
           : categoriesIsLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      nearbyIsLoading == freezed
-          ? _value.nearbyIsLoading
-          : nearbyIsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       error == freezed
           ? _value.error
@@ -599,6 +732,10 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
           ? _value.offersList
           : offersList // ignore: cast_nullable_to_non_nullable
               as List<OfferItem>,
+      nearbyList == freezed
+          ? _value.nearbyList
+          : nearbyList // ignore: cast_nullable_to_non_nullable
+              as List<MarketPlaceItem>,
       userAddress == freezed
           ? _value.userAddress
           : userAddress // ignore: cast_nullable_to_non_nullable
@@ -613,12 +750,13 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   const _$HomeBlocStateDefaultState(
       [this.offersIsLoading = false,
       this.profileIsLoading = false,
+      this.nearbyMarketPlaceIsLoading = false,
       this.categoriesIsLoading = false,
-      this.nearbyIsLoading = false,
       this.error = "",
       this.refreshData = false,
       this.categories = const [],
       this.offersList = const [],
+      this.nearbyList = const [],
       this.userAddress]);
 
   @JsonKey(defaultValue: false)
@@ -629,10 +767,10 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   final bool profileIsLoading;
   @JsonKey(defaultValue: false)
   @override
-  final bool categoriesIsLoading;
+  final bool nearbyMarketPlaceIsLoading;
   @JsonKey(defaultValue: false)
   @override
-  final bool nearbyIsLoading;
+  final bool categoriesIsLoading;
   @JsonKey(defaultValue: "")
   @override
   final String error;
@@ -645,12 +783,15 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   @JsonKey(defaultValue: const [])
   @override
   final List<OfferItem> offersList;
+  @JsonKey(defaultValue: const [])
+  @override
+  final List<MarketPlaceItem> nearbyList;
   @override
   final Address? userAddress;
 
   @override
   String toString() {
-    return 'HomeBlocState.defaultState(offersIsLoading: $offersIsLoading, profileIsLoading: $profileIsLoading, categoriesIsLoading: $categoriesIsLoading, nearbyIsLoading: $nearbyIsLoading, error: $error, refreshData: $refreshData, categories: $categories, offersList: $offersList, userAddress: $userAddress)';
+    return 'HomeBlocState.defaultState(offersIsLoading: $offersIsLoading, profileIsLoading: $profileIsLoading, nearbyMarketPlaceIsLoading: $nearbyMarketPlaceIsLoading, categoriesIsLoading: $categoriesIsLoading, error: $error, refreshData: $refreshData, categories: $categories, offersList: $offersList, nearbyList: $nearbyList, userAddress: $userAddress)';
   }
 
   @override
@@ -663,12 +804,14 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             (identical(other.profileIsLoading, profileIsLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.profileIsLoading, profileIsLoading)) &&
+            (identical(other.nearbyMarketPlaceIsLoading,
+                    nearbyMarketPlaceIsLoading) ||
+                const DeepCollectionEquality().equals(
+                    other.nearbyMarketPlaceIsLoading,
+                    nearbyMarketPlaceIsLoading)) &&
             (identical(other.categoriesIsLoading, categoriesIsLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.categoriesIsLoading, categoriesIsLoading)) &&
-            (identical(other.nearbyIsLoading, nearbyIsLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.nearbyIsLoading, nearbyIsLoading)) &&
             (identical(other.error, error) ||
                 const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.refreshData, refreshData) ||
@@ -680,6 +823,9 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             (identical(other.offersList, offersList) ||
                 const DeepCollectionEquality()
                     .equals(other.offersList, offersList)) &&
+            (identical(other.nearbyList, nearbyList) ||
+                const DeepCollectionEquality()
+                    .equals(other.nearbyList, nearbyList)) &&
             (identical(other.userAddress, userAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.userAddress, userAddress)));
@@ -690,12 +836,13 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(offersIsLoading) ^
       const DeepCollectionEquality().hash(profileIsLoading) ^
+      const DeepCollectionEquality().hash(nearbyMarketPlaceIsLoading) ^
       const DeepCollectionEquality().hash(categoriesIsLoading) ^
-      const DeepCollectionEquality().hash(nearbyIsLoading) ^
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(refreshData) ^
       const DeepCollectionEquality().hash(categories) ^
       const DeepCollectionEquality().hash(offersList) ^
+      const DeepCollectionEquality().hash(nearbyList) ^
       const DeepCollectionEquality().hash(userAddress);
 
   @JsonKey(ignore: true)
@@ -710,24 +857,26 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
     required TResult Function(
             bool offersIsLoading,
             bool profileIsLoading,
+            bool nearbyMarketPlaceIsLoading,
             bool categoriesIsLoading,
-            bool nearbyIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
             List<OfferItem> offersList,
+            List<MarketPlaceItem> nearbyList,
             Address? userAddress)
         defaultState,
   }) {
     return defaultState(
         offersIsLoading,
         profileIsLoading,
+        nearbyMarketPlaceIsLoading,
         categoriesIsLoading,
-        nearbyIsLoading,
         error,
         refreshData,
         categories,
         offersList,
+        nearbyList,
         userAddress);
   }
 
@@ -737,12 +886,13 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
     TResult Function(
             bool offersIsLoading,
             bool profileIsLoading,
+            bool nearbyMarketPlaceIsLoading,
             bool categoriesIsLoading,
-            bool nearbyIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
             List<OfferItem> offersList,
+            List<MarketPlaceItem> nearbyList,
             Address? userAddress)?
         defaultState,
     required TResult orElse(),
@@ -751,12 +901,13 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
       return defaultState(
           offersIsLoading,
           profileIsLoading,
+          nearbyMarketPlaceIsLoading,
           categoriesIsLoading,
-          nearbyIsLoading,
           error,
           refreshData,
           categories,
           offersList,
+          nearbyList,
           userAddress);
     }
     return orElse();
@@ -787,12 +938,13 @@ abstract class HomeBlocStateDefaultState implements HomeBlocState {
   const factory HomeBlocStateDefaultState(
       [bool offersIsLoading,
       bool profileIsLoading,
+      bool nearbyMarketPlaceIsLoading,
       bool categoriesIsLoading,
-      bool nearbyIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
       List<OfferItem> offersList,
+      List<MarketPlaceItem> nearbyList,
       Address? userAddress]) = _$HomeBlocStateDefaultState;
 
   @override
@@ -800,9 +952,9 @@ abstract class HomeBlocStateDefaultState implements HomeBlocState {
   @override
   bool get profileIsLoading => throw _privateConstructorUsedError;
   @override
-  bool get categoriesIsLoading => throw _privateConstructorUsedError;
+  bool get nearbyMarketPlaceIsLoading => throw _privateConstructorUsedError;
   @override
-  bool get nearbyIsLoading => throw _privateConstructorUsedError;
+  bool get categoriesIsLoading => throw _privateConstructorUsedError;
   @override
   String get error => throw _privateConstructorUsedError;
   @override
@@ -811,6 +963,8 @@ abstract class HomeBlocStateDefaultState implements HomeBlocState {
   List<CategoryData> get categories => throw _privateConstructorUsedError;
   @override
   List<OfferItem> get offersList => throw _privateConstructorUsedError;
+  @override
+  List<MarketPlaceItem> get nearbyList => throw _privateConstructorUsedError;
   @override
   Address? get userAddress => throw _privateConstructorUsedError;
   @override

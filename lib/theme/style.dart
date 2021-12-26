@@ -14,6 +14,7 @@ const Color creamyWhite = Color(0xffF5F6FA);
 const Color creamyGrey = Color(0xffACB1C0);
 
 const Color creamyWhiteBorder = Color(0xffE8ECEF);
+const Color tawseelDarkGrey = Color(0xff676767);
 
 const Color TitleDarkColor_Light = Color(0xff242454);
 const Color TitleDarkColor_Dark = Color(0xffFFFFFF);
