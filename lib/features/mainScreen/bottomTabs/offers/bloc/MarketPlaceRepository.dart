@@ -4,6 +4,7 @@ import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesR
 
 abstract class IMarketPlaceRepository {
   Future<MarketPlacesResponse> getMarketPlaces([int page = 1]);
+  Future<String> addMarketPlaceToFavorite(String id);
 }
 
 class MarketPlaceRepository
@@ -15,4 +16,9 @@ class MarketPlaceRepository
   @override
   Future<MarketPlacesResponse> getMarketPlaces([int page = 1]) =>
       networkHandler(() => api.getMarketPlaces(page));
+
+  @override
+  Future<String> addMarketPlaceToFavorite(String id) {
+    return networkHandler(() => api.addMarketPlaceToFavorite(id));
+  }
 }

@@ -19,11 +19,12 @@ class _AuthService implements AuthService {
   Future<HttpResponse<LoginResponse>> loginWithPhone(phone, password) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = {'phone': phone, 'password': password};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<LoginResponse>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'login',
@@ -39,6 +40,7 @@ class _AuthService implements AuthService {
       name, phone, password, can_receive_offers) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = {
       'name': name,
       'phone': phone,
@@ -48,7 +50,7 @@ class _AuthService implements AuthService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<SignUpResponse>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'register',
@@ -63,11 +65,12 @@ class _AuthService implements AuthService {
   Future<HttpResponse<OtpResponse>> sendOtp(phone, type) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = {'phone': phone, 'type': type};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<OtpResponse>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'send-otp',
@@ -82,11 +85,12 @@ class _AuthService implements AuthService {
   Future<HttpResponse<LoginResponse>> verifyOtp(phone, otp, type) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = {'phone': phone, 'otp': otp, 'type': type};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<LoginResponse>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'verify',
@@ -101,11 +105,12 @@ class _AuthService implements AuthService {
   Future<HttpResponse<UserProfileResponse>> getProfile() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<UserProfileResponse>>(Options(
                 method: 'GET',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'profile',
@@ -122,12 +127,13 @@ class _AuthService implements AuthService {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = {'name': name, 'phone': phone, 'email': email};
     _data.removeWhere((k, v) => v == null);
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<UserProfileResponse>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'profile',
@@ -142,11 +148,12 @@ class _AuthService implements AuthService {
   Future<HttpResponse<UserProfileResponse>> removeAvatar() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<UserProfileResponse>>(Options(
                 method: 'DELETE',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'profile/image',
@@ -161,6 +168,7 @@ class _AuthService implements AuthService {
   Future<HttpResponse<UserProfileResponse>> updateAvatar(file) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = FormData();
     _data.files.add(MapEntry(
         'image',
@@ -169,7 +177,7 @@ class _AuthService implements AuthService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<UserProfileResponse>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'profile/image',
@@ -186,6 +194,7 @@ class _AuthService implements AuthService {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = {
       'password': password,
       'password_confirmation': password_confirmation
@@ -194,7 +203,7 @@ class _AuthService implements AuthService {
     final _result = await _dio.fetch<String>(
         _setStreamType<HttpResponse<String>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'change-password',
@@ -209,11 +218,12 @@ class _AuthService implements AuthService {
   Future<HttpResponse<String>> sendSupportMessage(subject, text) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = {'subject': subject, 'text': text};
     final _result = await _dio.fetch<String>(
         _setStreamType<HttpResponse<String>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'supports',

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'CategoriesService.dart';
+part of 'AdsService.dart';
 
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
 
-class _CategoriesService implements CategoriesService {
-  _CategoriesService(this._dio, {this.baseUrl}) {
+class _AdsService implements AdsService {
+  _AdsService(this._dio, {this.baseUrl}) {
     baseUrl ??= 'https://tawseelclub.com/api/';
   }
 
@@ -16,18 +16,18 @@ class _CategoriesService implements CategoriesService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<CategoriesResponse>> getCategories() async {
+  Future<HttpResponse<AdsResponse>> getAds(page) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<CategoriesResponse>>(
+        _setStreamType<HttpResponse<AdsResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'categories',
+                .compose(_dio.options, 'ads?page=$page',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = CategoriesResponse.fromJson(_result.data!);
+    final value = AdsResponse.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'EditProfileBloc.dart';
 
@@ -52,6 +53,14 @@ mixin _$EditProfileEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(XFile photo)? updateAvatar,
+    TResult Function()? removeAvatar,
+    TResult Function(String? fullname, String? email)? editProfile,
+    TResult Function()? getProfile,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(XFile photo)? updateAvatar,
     TResult Function()? removeAvatar,
@@ -66,6 +75,14 @@ mixin _$EditProfileEvent {
     required TResult Function(RemoveAvatar value) removeAvatar,
     required TResult Function(SubmitEditProfileEvent value) editProfile,
     required TResult Function(GetProfileEvent value) getProfile,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UpdateAvatar value)? updateAvatar,
+    TResult Function(RemoveAvatar value)? removeAvatar,
+    TResult Function(SubmitEditProfileEvent value)? editProfile,
+    TResult Function(GetProfileEvent value)? getProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -179,6 +196,17 @@ class _$UpdateAvatar with DiagnosticableTreeMixin implements UpdateAvatar {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(XFile photo)? updateAvatar,
+    TResult Function()? removeAvatar,
+    TResult Function(String? fullname, String? email)? editProfile,
+    TResult Function()? getProfile,
+  }) {
+    return updateAvatar?.call(photo);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(XFile photo)? updateAvatar,
     TResult Function()? removeAvatar,
@@ -201,6 +229,17 @@ class _$UpdateAvatar with DiagnosticableTreeMixin implements UpdateAvatar {
     required TResult Function(GetProfileEvent value) getProfile,
   }) {
     return updateAvatar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UpdateAvatar value)? updateAvatar,
+    TResult Function(RemoveAvatar value)? removeAvatar,
+    TResult Function(SubmitEditProfileEvent value)? editProfile,
+    TResult Function(GetProfileEvent value)? getProfile,
+  }) {
+    return updateAvatar?.call(this);
   }
 
   @override
@@ -285,6 +324,17 @@ class _$RemoveAvatar with DiagnosticableTreeMixin implements RemoveAvatar {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(XFile photo)? updateAvatar,
+    TResult Function()? removeAvatar,
+    TResult Function(String? fullname, String? email)? editProfile,
+    TResult Function()? getProfile,
+  }) {
+    return removeAvatar?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(XFile photo)? updateAvatar,
     TResult Function()? removeAvatar,
@@ -307,6 +357,17 @@ class _$RemoveAvatar with DiagnosticableTreeMixin implements RemoveAvatar {
     required TResult Function(GetProfileEvent value) getProfile,
   }) {
     return removeAvatar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UpdateAvatar value)? updateAvatar,
+    TResult Function(RemoveAvatar value)? removeAvatar,
+    TResult Function(SubmitEditProfileEvent value)? editProfile,
+    TResult Function(GetProfileEvent value)? getProfile,
+  }) {
+    return removeAvatar?.call(this);
   }
 
   @override
@@ -428,6 +489,17 @@ class _$SubmitEditProfileEvent
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(XFile photo)? updateAvatar,
+    TResult Function()? removeAvatar,
+    TResult Function(String? fullname, String? email)? editProfile,
+    TResult Function()? getProfile,
+  }) {
+    return editProfile?.call(fullname, email);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(XFile photo)? updateAvatar,
     TResult Function()? removeAvatar,
@@ -450,6 +522,17 @@ class _$SubmitEditProfileEvent
     required TResult Function(GetProfileEvent value) getProfile,
   }) {
     return editProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UpdateAvatar value)? updateAvatar,
+    TResult Function(RemoveAvatar value)? removeAvatar,
+    TResult Function(SubmitEditProfileEvent value)? editProfile,
+    TResult Function(GetProfileEvent value)? getProfile,
+  }) {
+    return editProfile?.call(this);
   }
 
   @override
@@ -537,6 +620,17 @@ class _$GetProfileEvent
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(XFile photo)? updateAvatar,
+    TResult Function()? removeAvatar,
+    TResult Function(String? fullname, String? email)? editProfile,
+    TResult Function()? getProfile,
+  }) {
+    return getProfile?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(XFile photo)? updateAvatar,
     TResult Function()? removeAvatar,
@@ -559,6 +653,17 @@ class _$GetProfileEvent
     required TResult Function(GetProfileEvent value) getProfile,
   }) {
     return getProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UpdateAvatar value)? updateAvatar,
+    TResult Function(RemoveAvatar value)? removeAvatar,
+    TResult Function(SubmitEditProfileEvent value)? editProfile,
+    TResult Function(GetProfileEvent value)? getProfile,
+  }) {
+    return getProfile?.call(this);
   }
 
   @override
@@ -620,6 +725,13 @@ mixin _$EditProfileState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(bool isLoading, String error, bool showChooser,
+            bool isUpdate, Data? userData)?
+        defaultState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isLoading, String error, bool showChooser,
             bool isUpdate, Data? userData)?
@@ -630,6 +742,11 @@ mixin _$EditProfileState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(EditProfileCurrentState value) defaultState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EditProfileCurrentState value)? defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -849,6 +966,17 @@ class _$EditProfileCurrentState
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(bool isLoading, String error, bool showChooser,
+            bool isUpdate, Data? userData)?
+        defaultState,
+  }) {
+    return defaultState?.call(
+        isLoading, error, showChooser, isUpdate, userData);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isLoading, String error, bool showChooser,
             bool isUpdate, Data? userData)?
@@ -867,6 +995,14 @@ class _$EditProfileCurrentState
     required TResult Function(EditProfileCurrentState value) defaultState,
   }) {
     return defaultState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EditProfileCurrentState value)? defaultState,
+  }) {
+    return defaultState?.call(this);
   }
 
   @override

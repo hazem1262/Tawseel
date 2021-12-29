@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'CategoriesResponse.dart';
 
@@ -114,7 +115,7 @@ class _$_CategoriesResponse implements _CategoriesResponse {
   const _$_CategoriesResponse(this.data);
 
   factory _$_CategoriesResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_CategoriesResponseFromJson(json);
+      _$$_CategoriesResponseFromJson(json);
 
   @override
   final List<CategoryData> data;
@@ -143,7 +144,7 @@ class _$_CategoriesResponse implements _CategoriesResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CategoriesResponseToJson(this);
+    return _$$_CategoriesResponseToJson(this);
   }
 }
 
@@ -301,7 +302,7 @@ class _$_CategoryData implements _CategoryData {
   const _$_CategoryData(this.id, this.name, this.image, this.sub_categories);
 
   factory _$_CategoryData.fromJson(Map<String, dynamic> json) =>
-      _$_$_CategoryDataFromJson(json);
+      _$$_CategoryDataFromJson(json);
 
   @override
   final int id;
@@ -347,7 +348,7 @@ class _$_CategoryData implements _CategoryData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CategoryDataToJson(this);
+    return _$$_CategoryDataToJson(this);
   }
 }
 

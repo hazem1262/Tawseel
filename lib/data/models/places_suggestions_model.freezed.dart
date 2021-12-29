@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'places_suggestions_model.dart';
 
@@ -129,7 +130,7 @@ class _$_PlacesSuggestionsResponse implements _PlacesSuggestionsResponse {
   const _$_PlacesSuggestionsResponse(this.predictions, this.status);
 
   factory _$_PlacesSuggestionsResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_PlacesSuggestionsResponseFromJson(json);
+      _$$_PlacesSuggestionsResponseFromJson(json);
 
   @override
   final List<Predictions> predictions;
@@ -167,7 +168,7 @@ class _$_PlacesSuggestionsResponse implements _PlacesSuggestionsResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PlacesSuggestionsResponseToJson(this);
+    return _$$_PlacesSuggestionsResponseToJson(this);
   }
 }
 
@@ -398,7 +399,7 @@ class _$_Predictions implements _Predictions {
       this.reference, this.structured_formatting, this.terms, this.types);
 
   factory _$_Predictions.fromJson(Map<String, dynamic> json) =>
-      _$_$_PredictionsFromJson(json);
+      _$$_PredictionsFromJson(json);
 
   @override
   final String description;
@@ -463,7 +464,7 @@ class _$_Predictions implements _Predictions {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PredictionsToJson(this);
+    return _$$_PredictionsToJson(this);
   }
 }
 
@@ -616,7 +617,7 @@ class _$_MatchedSubstring implements _MatchedSubstring {
   const _$_MatchedSubstring(this.length, this.offset);
 
   factory _$_MatchedSubstring.fromJson(Map<String, dynamic> json) =>
-      _$_$_MatchedSubstringFromJson(json);
+      _$$_MatchedSubstringFromJson(json);
 
   @override
   final int length;
@@ -651,7 +652,7 @@ class _$_MatchedSubstring implements _MatchedSubstring {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MatchedSubstringToJson(this);
+    return _$$_MatchedSubstringToJson(this);
   }
 }
 
@@ -808,7 +809,7 @@ class _$_StructuredFormatting implements _StructuredFormatting {
       this.main_text, this.main_text_matched_substrings, this.secondary_text);
 
   factory _$_StructuredFormatting.fromJson(Map<String, dynamic> json) =>
-      _$_$_StructuredFormattingFromJson(json);
+      _$$_StructuredFormattingFromJson(json);
 
   @override
   final String main_text;
@@ -854,7 +855,7 @@ class _$_StructuredFormatting implements _StructuredFormatting {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_StructuredFormattingToJson(this);
+    return _$$_StructuredFormattingToJson(this);
   }
 }
 
@@ -987,7 +988,7 @@ class _$_Terms implements _Terms {
   const _$_Terms(this.offset, this.value);
 
   factory _$_Terms.fromJson(Map<String, dynamic> json) =>
-      _$_$_TermsFromJson(json);
+      _$$_TermsFromJson(json);
 
   @override
   final int offset;
@@ -1022,7 +1023,7 @@ class _$_Terms implements _Terms {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_TermsToJson(this);
+    return _$$_TermsToJson(this);
   }
 }
 

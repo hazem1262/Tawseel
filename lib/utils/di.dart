@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/data/remote/AddressService.dart';
+import 'package:tawseel/data/remote/AdsService.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/data/remote/CategoriesService.dart';
 import 'package:tawseel/data/remote/MarketPlaceService.dart';
@@ -12,6 +13,7 @@ import 'package:tawseel/features/changePassword/bloc/ChangePasswordRepository.da
 import 'package:tawseel/features/login/LoginRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/features/otp/bloc/OtpRepository.dart';
@@ -87,4 +89,14 @@ Future<void> initAppDependencies() async {
   getIt.registerSingleton<IMarketPlaceRepository>(
     MarketPlaceRepository(getIt<MarketPlaceService>()),
   );
+
+
+  getIt.registerSingleton<AdsService>(
+    AdsService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
+
+  getIt.registerSingleton<IAdsRepository>(
+    AdsRepository(getIt<AdsService>()),
+  );
+
 }

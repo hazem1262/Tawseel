@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'home_bloc.dart';
 
@@ -20,8 +21,8 @@ class _$HomeBlocEventTearOff {
     return const GetHomeProfile();
   }
 
-  GetHomeOffers getOffers() {
-    return const GetHomeOffers();
+  GetHomeAds getAds() {
+    return const GetHomeAds();
   }
 
   GetHomeCategories getCategories() {
@@ -30,6 +31,16 @@ class _$HomeBlocEventTearOff {
 
   GetHomeNearbyMarketPlaces getNearbyMarketPlaces() {
     return const GetHomeNearbyMarketPlaces();
+  }
+
+  AddMarketPlaceToFavorite addMarketPlaceToFavorite(String id) {
+    return AddMarketPlaceToFavorite(
+      id,
+    );
+  }
+
+  ResetHomeRefreshData reset() {
+    return const ResetHomeRefreshData();
   }
 }
 
@@ -41,35 +52,64 @@ mixin _$HomeBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getProfile,
-    required TResult Function() getOffers,
+    required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
+    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function() reset,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getProfile,
-    TResult Function()? getOffers,
+    TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetHomeProfile value) getProfile,
-    required TResult Function(GetHomeOffers value) getOffers,
+    required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
     required TResult Function(GetHomeNearbyMarketPlaces value)
         getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(ResetHomeRefreshData value) reset,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetHomeProfile value)? getProfile,
-    TResult Function(GetHomeOffers value)? getOffers,
+    TResult Function(GetHomeAds value)? getAds,
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,20 +173,37 @@ class _$GetHomeProfile implements GetHomeProfile {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getProfile,
-    required TResult Function() getOffers,
+    required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
+    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function() reset,
   }) {
     return getProfile();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getProfile,
-    TResult Function()? getOffers,
+    TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
+  }) {
+    return getProfile?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getProfile != null) {
@@ -159,21 +216,39 @@ class _$GetHomeProfile implements GetHomeProfile {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetHomeProfile value) getProfile,
-    required TResult Function(GetHomeOffers value) getOffers,
+    required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
     required TResult Function(GetHomeNearbyMarketPlaces value)
         getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getProfile(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetHomeProfile value)? getProfile,
-    TResult Function(GetHomeOffers value)? getOffers,
+    TResult Function(GetHomeAds value)? getAds,
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+  }) {
+    return getProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
     if (getProfile != null) {
@@ -188,37 +263,35 @@ abstract class GetHomeProfile implements HomeBlocEvent {
 }
 
 /// @nodoc
-abstract class $GetHomeOffersCopyWith<$Res> {
-  factory $GetHomeOffersCopyWith(
-          GetHomeOffers value, $Res Function(GetHomeOffers) then) =
-      _$GetHomeOffersCopyWithImpl<$Res>;
+abstract class $GetHomeAdsCopyWith<$Res> {
+  factory $GetHomeAdsCopyWith(
+          GetHomeAds value, $Res Function(GetHomeAds) then) =
+      _$GetHomeAdsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetHomeOffersCopyWithImpl<$Res>
-    extends _$HomeBlocEventCopyWithImpl<$Res>
-    implements $GetHomeOffersCopyWith<$Res> {
-  _$GetHomeOffersCopyWithImpl(
-      GetHomeOffers _value, $Res Function(GetHomeOffers) _then)
-      : super(_value, (v) => _then(v as GetHomeOffers));
+class _$GetHomeAdsCopyWithImpl<$Res> extends _$HomeBlocEventCopyWithImpl<$Res>
+    implements $GetHomeAdsCopyWith<$Res> {
+  _$GetHomeAdsCopyWithImpl(GetHomeAds _value, $Res Function(GetHomeAds) _then)
+      : super(_value, (v) => _then(v as GetHomeAds));
 
   @override
-  GetHomeOffers get _value => super._value as GetHomeOffers;
+  GetHomeAds get _value => super._value as GetHomeAds;
 }
 
 /// @nodoc
 
-class _$GetHomeOffers implements GetHomeOffers {
-  const _$GetHomeOffers();
+class _$GetHomeAds implements GetHomeAds {
+  const _$GetHomeAds();
 
   @override
   String toString() {
-    return 'HomeBlocEvent.getOffers()';
+    return 'HomeBlocEvent.getAds()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetHomeOffers);
+    return identical(this, other) || (other is GetHomeAds);
   }
 
   @override
@@ -228,24 +301,41 @@ class _$GetHomeOffers implements GetHomeOffers {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getProfile,
-    required TResult Function() getOffers,
+    required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
+    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function() reset,
   }) {
-    return getOffers();
+    return getAds();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
+  }) {
+    return getAds?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getProfile,
-    TResult Function()? getOffers,
+    TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
-    if (getOffers != null) {
-      return getOffers();
+    if (getAds != null) {
+      return getAds();
     }
     return orElse();
   }
@@ -254,32 +344,50 @@ class _$GetHomeOffers implements GetHomeOffers {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetHomeProfile value) getProfile,
-    required TResult Function(GetHomeOffers value) getOffers,
+    required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
     required TResult Function(GetHomeNearbyMarketPlaces value)
         getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(ResetHomeRefreshData value) reset,
   }) {
-    return getOffers(this);
+    return getAds(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+  }) {
+    return getAds?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetHomeProfile value)? getProfile,
-    TResult Function(GetHomeOffers value)? getOffers,
+    TResult Function(GetHomeAds value)? getAds,
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
-    if (getOffers != null) {
-      return getOffers(this);
+    if (getAds != null) {
+      return getAds(this);
     }
     return orElse();
   }
 }
 
-abstract class GetHomeOffers implements HomeBlocEvent {
-  const factory GetHomeOffers() = _$GetHomeOffers;
+abstract class GetHomeAds implements HomeBlocEvent {
+  const factory GetHomeAds() = _$GetHomeAds;
 }
 
 /// @nodoc
@@ -323,20 +431,37 @@ class _$GetHomeCategories implements GetHomeCategories {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getProfile,
-    required TResult Function() getOffers,
+    required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
+    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function() reset,
   }) {
     return getCategories();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getProfile,
-    TResult Function()? getOffers,
+    TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
+  }) {
+    return getCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getCategories != null) {
@@ -349,21 +474,39 @@ class _$GetHomeCategories implements GetHomeCategories {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetHomeProfile value) getProfile,
-    required TResult Function(GetHomeOffers value) getOffers,
+    required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
     required TResult Function(GetHomeNearbyMarketPlaces value)
         getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getCategories(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetHomeProfile value)? getProfile,
-    TResult Function(GetHomeOffers value)? getOffers,
+    TResult Function(GetHomeAds value)? getAds,
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+  }) {
+    return getCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
     if (getCategories != null) {
@@ -419,20 +562,37 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getProfile,
-    required TResult Function() getOffers,
+    required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
+    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function() reset,
   }) {
     return getNearbyMarketPlaces();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getProfile,
-    TResult Function()? getOffers,
+    TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
+  }) {
+    return getNearbyMarketPlaces?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (getNearbyMarketPlaces != null) {
@@ -445,21 +605,39 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetHomeProfile value) getProfile,
-    required TResult Function(GetHomeOffers value) getOffers,
+    required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
     required TResult Function(GetHomeNearbyMarketPlaces value)
         getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getNearbyMarketPlaces(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetHomeProfile value)? getProfile,
-    TResult Function(GetHomeOffers value)? getOffers,
+    TResult Function(GetHomeAds value)? getAds,
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+  }) {
+    return getNearbyMarketPlaces?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
     if (getNearbyMarketPlaces != null) {
@@ -474,29 +652,322 @@ abstract class GetHomeNearbyMarketPlaces implements HomeBlocEvent {
 }
 
 /// @nodoc
+abstract class $AddMarketPlaceToFavoriteCopyWith<$Res> {
+  factory $AddMarketPlaceToFavoriteCopyWith(AddMarketPlaceToFavorite value,
+          $Res Function(AddMarketPlaceToFavorite) then) =
+      _$AddMarketPlaceToFavoriteCopyWithImpl<$Res>;
+  $Res call({String id});
+}
+
+/// @nodoc
+class _$AddMarketPlaceToFavoriteCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res>
+    implements $AddMarketPlaceToFavoriteCopyWith<$Res> {
+  _$AddMarketPlaceToFavoriteCopyWithImpl(AddMarketPlaceToFavorite _value,
+      $Res Function(AddMarketPlaceToFavorite) _then)
+      : super(_value, (v) => _then(v as AddMarketPlaceToFavorite));
+
+  @override
+  AddMarketPlaceToFavorite get _value =>
+      super._value as AddMarketPlaceToFavorite;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(AddMarketPlaceToFavorite(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
+  const _$AddMarketPlaceToFavorite(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'HomeBlocEvent.addMarketPlaceToFavorite(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is AddMarketPlaceToFavorite &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+
+  @JsonKey(ignore: true)
+  @override
+  $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith =>
+      _$AddMarketPlaceToFavoriteCopyWithImpl<AddMarketPlaceToFavorite>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getProfile,
+    required TResult Function() getAds,
+    required TResult Function() getCategories,
+    required TResult Function() getNearbyMarketPlaces,
+    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function() reset,
+  }) {
+    return addMarketPlaceToFavorite(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
+  }) {
+    return addMarketPlaceToFavorite?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (addMarketPlaceToFavorite != null) {
+      return addMarketPlaceToFavorite(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetHomeProfile value) getProfile,
+    required TResult Function(GetHomeAds value) getAds,
+    required TResult Function(GetHomeCategories value) getCategories,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(ResetHomeRefreshData value) reset,
+  }) {
+    return addMarketPlaceToFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+  }) {
+    return addMarketPlaceToFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+    required TResult orElse(),
+  }) {
+    if (addMarketPlaceToFavorite != null) {
+      return addMarketPlaceToFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddMarketPlaceToFavorite implements HomeBlocEvent {
+  const factory AddMarketPlaceToFavorite(String id) =
+      _$AddMarketPlaceToFavorite;
+
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ResetHomeRefreshDataCopyWith<$Res> {
+  factory $ResetHomeRefreshDataCopyWith(ResetHomeRefreshData value,
+          $Res Function(ResetHomeRefreshData) then) =
+      _$ResetHomeRefreshDataCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ResetHomeRefreshDataCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res>
+    implements $ResetHomeRefreshDataCopyWith<$Res> {
+  _$ResetHomeRefreshDataCopyWithImpl(
+      ResetHomeRefreshData _value, $Res Function(ResetHomeRefreshData) _then)
+      : super(_value, (v) => _then(v as ResetHomeRefreshData));
+
+  @override
+  ResetHomeRefreshData get _value => super._value as ResetHomeRefreshData;
+}
+
+/// @nodoc
+
+class _$ResetHomeRefreshData implements ResetHomeRefreshData {
+  const _$ResetHomeRefreshData();
+
+  @override
+  String toString() {
+    return 'HomeBlocEvent.reset()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ResetHomeRefreshData);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getProfile,
+    required TResult Function() getAds,
+    required TResult Function() getCategories,
+    required TResult Function() getNearbyMarketPlaces,
+    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function() reset,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetHomeProfile value) getProfile,
+    required TResult Function(GetHomeAds value) getAds,
+    required TResult Function(GetHomeCategories value) getCategories,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(ResetHomeRefreshData value) reset,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetHomeRefreshData implements HomeBlocEvent {
+  const factory ResetHomeRefreshData() = _$ResetHomeRefreshData;
+}
+
+/// @nodoc
 class _$HomeBlocStateTearOff {
   const _$HomeBlocStateTearOff();
 
   HomeBlocStateDefaultState defaultState(
-      [bool offersIsLoading = false,
+      [bool adsIsLoading = false,
       bool profileIsLoading = false,
       bool nearbyMarketPlaceIsLoading = false,
       bool categoriesIsLoading = false,
       String error = "",
       bool refreshData = false,
       List<CategoryData> categories = const [],
-      List<OfferItem> offersList = const [],
+      List<AdsItem> adsList = const [],
       List<MarketPlaceItem> nearbyList = const [],
       Address? userAddress]) {
     return HomeBlocStateDefaultState(
-      offersIsLoading,
+      adsIsLoading,
       profileIsLoading,
       nearbyMarketPlaceIsLoading,
       categoriesIsLoading,
       error,
       refreshData,
       categories,
-      offersList,
+      adsList,
       nearbyList,
       userAddress,
     );
@@ -508,44 +979,60 @@ const $HomeBlocState = _$HomeBlocStateTearOff();
 
 /// @nodoc
 mixin _$HomeBlocState {
-  bool get offersIsLoading => throw _privateConstructorUsedError;
+  bool get adsIsLoading => throw _privateConstructorUsedError;
   bool get profileIsLoading => throw _privateConstructorUsedError;
   bool get nearbyMarketPlaceIsLoading => throw _privateConstructorUsedError;
   bool get categoriesIsLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get refreshData => throw _privateConstructorUsedError;
   List<CategoryData> get categories => throw _privateConstructorUsedError;
-  List<OfferItem> get offersList => throw _privateConstructorUsedError;
+  List<AdsItem> get adsList => throw _privateConstructorUsedError;
   List<MarketPlaceItem> get nearbyList => throw _privateConstructorUsedError;
   Address? get userAddress => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            bool offersIsLoading,
+            bool adsIsLoading,
             bool profileIsLoading,
             bool nearbyMarketPlaceIsLoading,
             bool categoriesIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
-            List<OfferItem> offersList,
+            List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            bool offersIsLoading,
+            bool adsIsLoading,
             bool profileIsLoading,
             bool nearbyMarketPlaceIsLoading,
             bool categoriesIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
-            List<OfferItem> offersList,
+            List<AdsItem> adsList,
+            List<MarketPlaceItem> nearbyList,
+            Address? userAddress)?
+        defaultState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            bool adsIsLoading,
+            bool profileIsLoading,
+            bool nearbyMarketPlaceIsLoading,
+            bool categoriesIsLoading,
+            String error,
+            bool refreshData,
+            List<CategoryData> categories,
+            List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)?
         defaultState,
@@ -555,6 +1042,11 @@ mixin _$HomeBlocState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HomeBlocStateDefaultState value) defaultState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(HomeBlocStateDefaultState value)? defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -575,14 +1067,14 @@ abstract class $HomeBlocStateCopyWith<$Res> {
           HomeBlocState value, $Res Function(HomeBlocState) then) =
       _$HomeBlocStateCopyWithImpl<$Res>;
   $Res call(
-      {bool offersIsLoading,
+      {bool adsIsLoading,
       bool profileIsLoading,
       bool nearbyMarketPlaceIsLoading,
       bool categoriesIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
-      List<OfferItem> offersList,
+      List<AdsItem> adsList,
       List<MarketPlaceItem> nearbyList,
       Address? userAddress});
 }
@@ -598,21 +1090,21 @@ class _$HomeBlocStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? offersIsLoading = freezed,
+    Object? adsIsLoading = freezed,
     Object? profileIsLoading = freezed,
     Object? nearbyMarketPlaceIsLoading = freezed,
     Object? categoriesIsLoading = freezed,
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? categories = freezed,
-    Object? offersList = freezed,
+    Object? adsList = freezed,
     Object? nearbyList = freezed,
     Object? userAddress = freezed,
   }) {
     return _then(_value.copyWith(
-      offersIsLoading: offersIsLoading == freezed
-          ? _value.offersIsLoading
-          : offersIsLoading // ignore: cast_nullable_to_non_nullable
+      adsIsLoading: adsIsLoading == freezed
+          ? _value.adsIsLoading
+          : adsIsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       profileIsLoading: profileIsLoading == freezed
           ? _value.profileIsLoading
@@ -638,10 +1130,10 @@ class _$HomeBlocStateCopyWithImpl<$Res>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
-      offersList: offersList == freezed
-          ? _value.offersList
-          : offersList // ignore: cast_nullable_to_non_nullable
-              as List<OfferItem>,
+      adsList: adsList == freezed
+          ? _value.adsList
+          : adsList // ignore: cast_nullable_to_non_nullable
+              as List<AdsItem>,
       nearbyList: nearbyList == freezed
           ? _value.nearbyList
           : nearbyList // ignore: cast_nullable_to_non_nullable
@@ -662,14 +1154,14 @@ abstract class $HomeBlocStateDefaultStateCopyWith<$Res>
       _$HomeBlocStateDefaultStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool offersIsLoading,
+      {bool adsIsLoading,
       bool profileIsLoading,
       bool nearbyMarketPlaceIsLoading,
       bool categoriesIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
-      List<OfferItem> offersList,
+      List<AdsItem> adsList,
       List<MarketPlaceItem> nearbyList,
       Address? userAddress});
 }
@@ -688,21 +1180,21 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? offersIsLoading = freezed,
+    Object? adsIsLoading = freezed,
     Object? profileIsLoading = freezed,
     Object? nearbyMarketPlaceIsLoading = freezed,
     Object? categoriesIsLoading = freezed,
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? categories = freezed,
-    Object? offersList = freezed,
+    Object? adsList = freezed,
     Object? nearbyList = freezed,
     Object? userAddress = freezed,
   }) {
     return _then(HomeBlocStateDefaultState(
-      offersIsLoading == freezed
-          ? _value.offersIsLoading
-          : offersIsLoading // ignore: cast_nullable_to_non_nullable
+      adsIsLoading == freezed
+          ? _value.adsIsLoading
+          : adsIsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       profileIsLoading == freezed
           ? _value.profileIsLoading
@@ -728,10 +1220,10 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
-      offersList == freezed
-          ? _value.offersList
-          : offersList // ignore: cast_nullable_to_non_nullable
-              as List<OfferItem>,
+      adsList == freezed
+          ? _value.adsList
+          : adsList // ignore: cast_nullable_to_non_nullable
+              as List<AdsItem>,
       nearbyList == freezed
           ? _value.nearbyList
           : nearbyList // ignore: cast_nullable_to_non_nullable
@@ -748,20 +1240,20 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
 
 class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   const _$HomeBlocStateDefaultState(
-      [this.offersIsLoading = false,
+      [this.adsIsLoading = false,
       this.profileIsLoading = false,
       this.nearbyMarketPlaceIsLoading = false,
       this.categoriesIsLoading = false,
       this.error = "",
       this.refreshData = false,
       this.categories = const [],
-      this.offersList = const [],
+      this.adsList = const [],
       this.nearbyList = const [],
       this.userAddress]);
 
   @JsonKey(defaultValue: false)
   @override
-  final bool offersIsLoading;
+  final bool adsIsLoading;
   @JsonKey(defaultValue: false)
   @override
   final bool profileIsLoading;
@@ -782,7 +1274,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   final List<CategoryData> categories;
   @JsonKey(defaultValue: const [])
   @override
-  final List<OfferItem> offersList;
+  final List<AdsItem> adsList;
   @JsonKey(defaultValue: const [])
   @override
   final List<MarketPlaceItem> nearbyList;
@@ -791,16 +1283,16 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
 
   @override
   String toString() {
-    return 'HomeBlocState.defaultState(offersIsLoading: $offersIsLoading, profileIsLoading: $profileIsLoading, nearbyMarketPlaceIsLoading: $nearbyMarketPlaceIsLoading, categoriesIsLoading: $categoriesIsLoading, error: $error, refreshData: $refreshData, categories: $categories, offersList: $offersList, nearbyList: $nearbyList, userAddress: $userAddress)';
+    return 'HomeBlocState.defaultState(adsIsLoading: $adsIsLoading, profileIsLoading: $profileIsLoading, nearbyMarketPlaceIsLoading: $nearbyMarketPlaceIsLoading, categoriesIsLoading: $categoriesIsLoading, error: $error, refreshData: $refreshData, categories: $categories, adsList: $adsList, nearbyList: $nearbyList, userAddress: $userAddress)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is HomeBlocStateDefaultState &&
-            (identical(other.offersIsLoading, offersIsLoading) ||
+            (identical(other.adsIsLoading, adsIsLoading) ||
                 const DeepCollectionEquality()
-                    .equals(other.offersIsLoading, offersIsLoading)) &&
+                    .equals(other.adsIsLoading, adsIsLoading)) &&
             (identical(other.profileIsLoading, profileIsLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.profileIsLoading, profileIsLoading)) &&
@@ -820,9 +1312,9 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             (identical(other.categories, categories) ||
                 const DeepCollectionEquality()
                     .equals(other.categories, categories)) &&
-            (identical(other.offersList, offersList) ||
+            (identical(other.adsList, adsList) ||
                 const DeepCollectionEquality()
-                    .equals(other.offersList, offersList)) &&
+                    .equals(other.adsList, adsList)) &&
             (identical(other.nearbyList, nearbyList) ||
                 const DeepCollectionEquality()
                     .equals(other.nearbyList, nearbyList)) &&
@@ -834,14 +1326,14 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(offersIsLoading) ^
+      const DeepCollectionEquality().hash(adsIsLoading) ^
       const DeepCollectionEquality().hash(profileIsLoading) ^
       const DeepCollectionEquality().hash(nearbyMarketPlaceIsLoading) ^
       const DeepCollectionEquality().hash(categoriesIsLoading) ^
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(refreshData) ^
       const DeepCollectionEquality().hash(categories) ^
-      const DeepCollectionEquality().hash(offersList) ^
+      const DeepCollectionEquality().hash(adsList) ^
       const DeepCollectionEquality().hash(nearbyList) ^
       const DeepCollectionEquality().hash(userAddress);
 
@@ -855,27 +1347,56 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            bool offersIsLoading,
+            bool adsIsLoading,
             bool profileIsLoading,
             bool nearbyMarketPlaceIsLoading,
             bool categoriesIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
-            List<OfferItem> offersList,
+            List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)
         defaultState,
   }) {
     return defaultState(
-        offersIsLoading,
+        adsIsLoading,
         profileIsLoading,
         nearbyMarketPlaceIsLoading,
         categoriesIsLoading,
         error,
         refreshData,
         categories,
-        offersList,
+        adsList,
+        nearbyList,
+        userAddress);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            bool adsIsLoading,
+            bool profileIsLoading,
+            bool nearbyMarketPlaceIsLoading,
+            bool categoriesIsLoading,
+            String error,
+            bool refreshData,
+            List<CategoryData> categories,
+            List<AdsItem> adsList,
+            List<MarketPlaceItem> nearbyList,
+            Address? userAddress)?
+        defaultState,
+  }) {
+    return defaultState?.call(
+        adsIsLoading,
+        profileIsLoading,
+        nearbyMarketPlaceIsLoading,
+        categoriesIsLoading,
+        error,
+        refreshData,
+        categories,
+        adsList,
         nearbyList,
         userAddress);
   }
@@ -884,14 +1405,14 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            bool offersIsLoading,
+            bool adsIsLoading,
             bool profileIsLoading,
             bool nearbyMarketPlaceIsLoading,
             bool categoriesIsLoading,
             String error,
             bool refreshData,
             List<CategoryData> categories,
-            List<OfferItem> offersList,
+            List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)?
         defaultState,
@@ -899,14 +1420,14 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   }) {
     if (defaultState != null) {
       return defaultState(
-          offersIsLoading,
+          adsIsLoading,
           profileIsLoading,
           nearbyMarketPlaceIsLoading,
           categoriesIsLoading,
           error,
           refreshData,
           categories,
-          offersList,
+          adsList,
           nearbyList,
           userAddress);
     }
@@ -919,6 +1440,14 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
     required TResult Function(HomeBlocStateDefaultState value) defaultState,
   }) {
     return defaultState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(HomeBlocStateDefaultState value)? defaultState,
+  }) {
+    return defaultState?.call(this);
   }
 
   @override
@@ -936,19 +1465,19 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
 
 abstract class HomeBlocStateDefaultState implements HomeBlocState {
   const factory HomeBlocStateDefaultState(
-      [bool offersIsLoading,
+      [bool adsIsLoading,
       bool profileIsLoading,
       bool nearbyMarketPlaceIsLoading,
       bool categoriesIsLoading,
       String error,
       bool refreshData,
       List<CategoryData> categories,
-      List<OfferItem> offersList,
+      List<AdsItem> adsList,
       List<MarketPlaceItem> nearbyList,
       Address? userAddress]) = _$HomeBlocStateDefaultState;
 
   @override
-  bool get offersIsLoading => throw _privateConstructorUsedError;
+  bool get adsIsLoading => throw _privateConstructorUsedError;
   @override
   bool get profileIsLoading => throw _privateConstructorUsedError;
   @override
@@ -962,7 +1491,7 @@ abstract class HomeBlocStateDefaultState implements HomeBlocState {
   @override
   List<CategoryData> get categories => throw _privateConstructorUsedError;
   @override
-  List<OfferItem> get offersList => throw _privateConstructorUsedError;
+  List<AdsItem> get adsList => throw _privateConstructorUsedError;
   @override
   List<MarketPlaceItem> get nearbyList => throw _privateConstructorUsedError;
   @override

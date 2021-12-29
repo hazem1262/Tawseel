@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'SignUpBloc.dart';
 
@@ -50,6 +51,15 @@ mixin _$SignUpEvents {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signUpWithGoogle,
+    TResult Function()? signUpWithApple,
+    TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)?
+        signUpWithPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUpWithGoogle,
     TResult Function()? signUpWithApple,
@@ -64,6 +74,13 @@ mixin _$SignUpEvents {
     required TResult Function(SignUpWithGoogle value) signUpWithGoogle,
     required TResult Function(SignUpWithApple value) signUpWithApple,
     required TResult Function(SignUpWithPhone value) signUpWithPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(SignUpWithApple value)? signUpWithApple,
+    TResult Function(SignUpWithPhone value)? signUpWithPhone,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -152,6 +169,18 @@ class _$SignUpWithGoogle
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signUpWithGoogle,
+    TResult Function()? signUpWithApple,
+    TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)?
+        signUpWithPhone,
+  }) {
+    return signUpWithGoogle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUpWithGoogle,
     TResult Function()? signUpWithApple,
@@ -174,6 +203,16 @@ class _$SignUpWithGoogle
     required TResult Function(SignUpWithPhone value) signUpWithPhone,
   }) {
     return signUpWithGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(SignUpWithApple value)? signUpWithApple,
+    TResult Function(SignUpWithPhone value)? signUpWithPhone,
+  }) {
+    return signUpWithGoogle?.call(this);
   }
 
   @override
@@ -255,6 +294,18 @@ class _$SignUpWithApple
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signUpWithGoogle,
+    TResult Function()? signUpWithApple,
+    TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)?
+        signUpWithPhone,
+  }) {
+    return signUpWithApple?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUpWithGoogle,
     TResult Function()? signUpWithApple,
@@ -277,6 +328,16 @@ class _$SignUpWithApple
     required TResult Function(SignUpWithPhone value) signUpWithPhone,
   }) {
     return signUpWithApple(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(SignUpWithApple value)? signUpWithApple,
+    TResult Function(SignUpWithPhone value)? signUpWithPhone,
+  }) {
+    return signUpWithApple?.call(this);
   }
 
   @override
@@ -426,6 +487,18 @@ class _$SignUpWithPhone
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signUpWithGoogle,
+    TResult Function()? signUpWithApple,
+    TResult Function(String fullName, String phone, String password,
+            CAN_RECEIVE_OFFERS can_receive_offers)?
+        signUpWithPhone,
+  }) {
+    return signUpWithPhone?.call(fullName, phone, password, can_receive_offers);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUpWithGoogle,
     TResult Function()? signUpWithApple,
@@ -448,6 +521,16 @@ class _$SignUpWithPhone
     required TResult Function(SignUpWithPhone value) signUpWithPhone,
   }) {
     return signUpWithPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(SignUpWithApple value)? signUpWithApple,
+    TResult Function(SignUpWithPhone value)? signUpWithPhone,
+  }) {
+    return signUpWithPhone?.call(this);
   }
 
   @override
@@ -520,6 +603,14 @@ mixin _$SignUpState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -534,6 +625,15 @@ mixin _$SignUpState {
     required TResult Function(SignUpIsLoading value) isLoading,
     required TResult Function(_HasError value) hassError,
     required TResult Function(SignedUpWithPhoneSuccessfully value)
+        signedUpWithPhoneSuccessfully,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpInitialState value)? initialState,
+    TResult Function(SignUpIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(SignedUpWithPhoneSuccessfully value)?
         signedUpWithPhoneSuccessfully,
   }) =>
       throw _privateConstructorUsedError;
@@ -624,6 +724,17 @@ class _$SignUpInitialState
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+  }) {
+    return initialState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -647,6 +758,18 @@ class _$SignUpInitialState
         signedUpWithPhoneSuccessfully,
   }) {
     return initialState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpInitialState value)? initialState,
+    TResult Function(SignUpIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(SignedUpWithPhoneSuccessfully value)?
+        signedUpWithPhoneSuccessfully,
+  }) {
+    return initialState?.call(this);
   }
 
   @override
@@ -729,6 +852,17 @@ class _$SignUpIsLoading
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+  }) {
+    return isLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -752,6 +886,18 @@ class _$SignUpIsLoading
         signedUpWithPhoneSuccessfully,
   }) {
     return isLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpInitialState value)? initialState,
+    TResult Function(SignUpIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(SignedUpWithPhoneSuccessfully value)?
+        signedUpWithPhoneSuccessfully,
+  }) {
+    return isLoading?.call(this);
   }
 
   @override
@@ -856,6 +1002,17 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+  }) {
+    return hassError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -879,6 +1036,18 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
         signedUpWithPhoneSuccessfully,
   }) {
     return hassError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpInitialState value)? initialState,
+    TResult Function(SignUpIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(SignedUpWithPhoneSuccessfully value)?
+        signedUpWithPhoneSuccessfully,
+  }) {
+    return hassError?.call(this);
   }
 
   @override
@@ -1008,6 +1177,17 @@ class _$SignedUpWithPhoneSuccessfully
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+  }) {
+    return signedUpWithPhoneSuccessfully?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -1031,6 +1211,18 @@ class _$SignedUpWithPhoneSuccessfully
         signedUpWithPhoneSuccessfully,
   }) {
     return signedUpWithPhoneSuccessfully(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SignUpInitialState value)? initialState,
+    TResult Function(SignUpIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(SignedUpWithPhoneSuccessfully value)?
+        signedUpWithPhoneSuccessfully,
+  }) {
+    return signedUpWithPhoneSuccessfully?.call(this);
   }
 
   @override

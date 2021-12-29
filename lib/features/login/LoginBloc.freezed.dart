@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'LoginBloc.dart';
 
@@ -49,6 +50,13 @@ mixin _$LoginEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone, String password)? loginWithPhone,
+    TResult Function(String googleToken)? loginWithGoogle,
+    TResult Function(String appleToken)? loginWithApple,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? loginWithPhone,
     TResult Function(String googleToken)? loginWithGoogle,
@@ -61,6 +69,13 @@ mixin _$LoginEvent {
     required TResult Function(LoginWithPhone value) loginWithPhone,
     required TResult Function(LoginWithGoogle value) loginWithGoogle,
     required TResult Function(LoginWithApple value) loginWithApple,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginWithPhone value)? loginWithPhone,
+    TResult Function(LoginWithGoogle value)? loginWithGoogle,
+    TResult Function(LoginWithApple value)? loginWithApple,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -183,6 +198,16 @@ class _$LoginWithPhone with DiagnosticableTreeMixin implements LoginWithPhone {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone, String password)? loginWithPhone,
+    TResult Function(String googleToken)? loginWithGoogle,
+    TResult Function(String appleToken)? loginWithApple,
+  }) {
+    return loginWithPhone?.call(phone, password);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? loginWithPhone,
     TResult Function(String googleToken)? loginWithGoogle,
@@ -203,6 +228,16 @@ class _$LoginWithPhone with DiagnosticableTreeMixin implements LoginWithPhone {
     required TResult Function(LoginWithApple value) loginWithApple,
   }) {
     return loginWithPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginWithPhone value)? loginWithPhone,
+    TResult Function(LoginWithGoogle value)? loginWithGoogle,
+    TResult Function(LoginWithApple value)? loginWithApple,
+  }) {
+    return loginWithPhone?.call(this);
   }
 
   @override
@@ -315,6 +350,16 @@ class _$LoginWithGoogle
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone, String password)? loginWithPhone,
+    TResult Function(String googleToken)? loginWithGoogle,
+    TResult Function(String appleToken)? loginWithApple,
+  }) {
+    return loginWithGoogle?.call(googleToken);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? loginWithPhone,
     TResult Function(String googleToken)? loginWithGoogle,
@@ -335,6 +380,16 @@ class _$LoginWithGoogle
     required TResult Function(LoginWithApple value) loginWithApple,
   }) {
     return loginWithGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginWithPhone value)? loginWithPhone,
+    TResult Function(LoginWithGoogle value)? loginWithGoogle,
+    TResult Function(LoginWithApple value)? loginWithApple,
+  }) {
+    return loginWithGoogle?.call(this);
   }
 
   @override
@@ -443,6 +498,16 @@ class _$LoginWithApple with DiagnosticableTreeMixin implements LoginWithApple {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone, String password)? loginWithPhone,
+    TResult Function(String googleToken)? loginWithGoogle,
+    TResult Function(String appleToken)? loginWithApple,
+  }) {
+    return loginWithApple?.call(appleToken);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, String password)? loginWithPhone,
     TResult Function(String googleToken)? loginWithGoogle,
@@ -463,6 +528,16 @@ class _$LoginWithApple with DiagnosticableTreeMixin implements LoginWithApple {
     required TResult Function(LoginWithApple value) loginWithApple,
   }) {
     return loginWithApple(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginWithPhone value)? loginWithPhone,
+    TResult Function(LoginWithGoogle value)? loginWithGoogle,
+    TResult Function(LoginWithApple value)? loginWithApple,
+  }) {
+    return loginWithApple?.call(this);
   }
 
   @override
@@ -548,6 +623,16 @@ mixin _$LoginViewState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(LoginResponse response)? loggedInWithPhoneSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithGoogleSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithAppleSuccessfully,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -568,6 +653,19 @@ mixin _$LoginViewState {
     required TResult Function(_LoggedInWithGoogleSuccessfully value)
         loggedInWithGoogleSuccessfully,
     required TResult Function(_LoggedInWithAppleSuccessfully value)
+        loggedInWithAppleSuccessfully,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(LoginIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
         loggedInWithAppleSuccessfully,
   }) =>
       throw _privateConstructorUsedError;
@@ -665,6 +763,19 @@ class _$_InitialState with DiagnosticableTreeMixin implements _InitialState {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(LoginResponse response)? loggedInWithPhoneSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithGoogleSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithAppleSuccessfully,
+  }) {
+    return initialState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -694,6 +805,22 @@ class _$_InitialState with DiagnosticableTreeMixin implements _InitialState {
         loggedInWithAppleSuccessfully,
   }) {
     return initialState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(LoginIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
+  }) {
+    return initialState?.call(this);
   }
 
   @override
@@ -782,6 +909,19 @@ class _$LoginIsLoading with DiagnosticableTreeMixin implements LoginIsLoading {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(LoginResponse response)? loggedInWithPhoneSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithGoogleSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithAppleSuccessfully,
+  }) {
+    return isLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -811,6 +951,22 @@ class _$LoginIsLoading with DiagnosticableTreeMixin implements LoginIsLoading {
         loggedInWithAppleSuccessfully,
   }) {
     return isLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(LoginIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
+  }) {
+    return isLoading?.call(this);
   }
 
   @override
@@ -923,6 +1079,19 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(LoginResponse response)? loggedInWithPhoneSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithGoogleSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithAppleSuccessfully,
+  }) {
+    return hassError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -952,6 +1121,22 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
         loggedInWithAppleSuccessfully,
   }) {
     return hassError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(LoginIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
+  }) {
+    return hassError?.call(this);
   }
 
   @override
@@ -1089,6 +1274,19 @@ class _$_LoggedInWithPhoneSuccessfully
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(LoginResponse response)? loggedInWithPhoneSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithGoogleSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithAppleSuccessfully,
+  }) {
+    return loggedInWithPhoneSuccessfully?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -1118,6 +1316,22 @@ class _$_LoggedInWithPhoneSuccessfully
         loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithPhoneSuccessfully(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(LoginIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
+  }) {
+    return loggedInWithPhoneSuccessfully?.call(this);
   }
 
   @override
@@ -1256,6 +1470,19 @@ class _$_LoggedInWithGoogleSuccessfully
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(LoginResponse response)? loggedInWithPhoneSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithGoogleSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithAppleSuccessfully,
+  }) {
+    return loggedInWithGoogleSuccessfully?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -1285,6 +1512,22 @@ class _$_LoggedInWithGoogleSuccessfully
         loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithGoogleSuccessfully(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(LoginIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
+  }) {
+    return loggedInWithGoogleSuccessfully?.call(this);
   }
 
   @override
@@ -1423,6 +1666,19 @@ class _$_LoggedInWithAppleSuccessfully
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(String error)? hassError,
+    TResult Function(LoginResponse response)? loggedInWithPhoneSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithGoogleSuccessfully,
+    TResult Function(LoginResponse response)? loggedInWithAppleSuccessfully,
+  }) {
+    return loggedInWithAppleSuccessfully?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -1452,6 +1708,22 @@ class _$_LoggedInWithAppleSuccessfully
         loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithAppleSuccessfully(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitialState value)? initialState,
+    TResult Function(LoginIsLoading value)? isLoading,
+    TResult Function(_HasError value)? hassError,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
+  }) {
+    return loggedInWithAppleSuccessfully?.call(this);
   }
 
   @override

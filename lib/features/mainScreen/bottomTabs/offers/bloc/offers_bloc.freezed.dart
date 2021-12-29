@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'offers_bloc.dart';
 
@@ -37,6 +38,12 @@ mixin _$OffersEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getOffers,
+    TResult Function()? resetOffers,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getOffers,
     TResult Function()? resetOffers,
@@ -47,6 +54,12 @@ mixin _$OffersEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetOffers value)? getOffers,
+    TResult Function(ResetOffers value)? resetOffers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -119,6 +132,15 @@ class _$GetOffers implements GetOffers {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getOffers,
+    TResult Function()? resetOffers,
+  }) {
+    return getOffers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getOffers,
     TResult Function()? resetOffers,
@@ -137,6 +159,15 @@ class _$GetOffers implements GetOffers {
     required TResult Function(ResetOffers value) resetOffers,
   }) {
     return getOffers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetOffers value)? getOffers,
+    TResult Function(ResetOffers value)? resetOffers,
+  }) {
+    return getOffers?.call(this);
   }
 
   @override
@@ -204,6 +235,15 @@ class _$ResetOffers implements ResetOffers {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getOffers,
+    TResult Function()? resetOffers,
+  }) {
+    return resetOffers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getOffers,
     TResult Function()? resetOffers,
@@ -222,6 +262,15 @@ class _$ResetOffers implements ResetOffers {
     required TResult Function(ResetOffers value) resetOffers,
   }) {
     return resetOffers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetOffers value)? getOffers,
+    TResult Function(ResetOffers value)? resetOffers,
+  }) {
+    return resetOffers?.call(this);
   }
 
   @override

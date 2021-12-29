@@ -1,11 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/AdsResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/models/address.dart';
@@ -15,23 +18,31 @@ part 'home_bloc.freezed.dart';
 @freezed
 class HomeBlocEvent with _$HomeBlocEvent {
   const factory HomeBlocEvent.getProfile() = GetHomeProfile;
-  const factory HomeBlocEvent.getOffers() = GetHomeOffers;
+
+  const factory HomeBlocEvent.getAds() = GetHomeAds;
+
   const factory HomeBlocEvent.getCategories() = GetHomeCategories;
+
   const factory HomeBlocEvent.getNearbyMarketPlaces() =
       GetHomeNearbyMarketPlaces;
+
+  const factory HomeBlocEvent.addMarketPlaceToFavorite(String id) =
+      AddMarketPlaceToFavorite;
+
+  const factory HomeBlocEvent.reset() = ResetHomeRefreshData;
 }
 
 @freezed
 class HomeBlocState with _$HomeBlocState {
   const factory HomeBlocState.defaultState([
-    @Default(false) bool offersIsLoading,
+    @Default(false) bool adsIsLoading,
     @Default(false) bool profileIsLoading,
     @Default(false) bool nearbyMarketPlaceIsLoading,
     @Default(false) bool categoriesIsLoading,
     @Default("") String error,
     @Default(false) bool refreshData,
     @Default([]) List<CategoryData> categories,
-    @Default([]) List<OfferItem> offersList,
+    @Default([]) List<AdsItem> adsList,
     @Default([]) List<MarketPlaceItem> nearbyList,
     Address? userAddress,
   ]) = HomeBlocStateDefaultState;
@@ -39,10 +50,11 @@ class HomeBlocState with _$HomeBlocState {
 
 class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
   IHomeRepository repo;
-  IOffersRepository offersRepo;
+  IAdsRepository adsRepo;
   IProfileRepository profileRepo;
   IMarketPlaceRepository marketPlacesRepo;
-  HomeBloc(this.repo, this.offersRepo, this.profileRepo, this.marketPlacesRepo)
+
+  HomeBloc(this.repo, this.adsRepo, this.profileRepo, this.marketPlacesRepo)
       : super(HomeBlocStateDefaultState()) {
     on<HomeBlocEvent>((event, emit) async {
       if (event is GetHomeProfile) {
@@ -78,14 +90,14 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
         }
       }
 
-      if (event is GetHomeOffers) {
-        emit(state.copyWith(offersIsLoading: true, error: ""));
+      if (event is GetHomeAds) {
+        emit(state.copyWith(adsIsLoading: true, error: ""));
         try {
-          var offers = await offersRepo.getOffers();
+          var ads = await adsRepo.getAds();
           emit(state.copyWith(
-              offersIsLoading: false, error: "", offersList: offers.data));
+              adsIsLoading: false, error: "", adsList: ads.data));
         } catch (e) {
-          emit(state.copyWith(offersIsLoading: false, error: e.toString()));
+          emit(state.copyWith(adsIsLoading: false, error: e.toString()));
           debugPrint('Exception : $e');
         }
       }
@@ -103,6 +115,25 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
               nearbyMarketPlaceIsLoading: false, error: e.toString()));
           debugPrint('Exception : $e');
         }
+      }
+
+      if (event is AddMarketPlaceToFavorite) {
+        // add loading
+        emit(state.copyWith(nearbyMarketPlaceIsLoading: true, error: ""));
+        try {
+          var places =
+              await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
+          emit(state.copyWith(refreshData: true));
+        } catch (e) {
+          emit(state.copyWith(
+              nearbyMarketPlaceIsLoading: false, error: e.toString()));
+          debugPrint('Exception : $e');
+        }
+      }
+
+      if (event is ResetHomeRefreshData) {
+        // add loading
+        emit(state.copyWith(refreshData: false, error: ""));
       }
     });
   }

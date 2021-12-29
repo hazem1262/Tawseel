@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'signup_response.dart';
 
@@ -126,7 +127,7 @@ class _$_SignUpResponse implements _SignUpResponse {
   const _$_SignUpResponse(this.data);
 
   factory _$_SignUpResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_SignUpResponseFromJson(json);
+      _$$_SignUpResponseFromJson(json);
 
   @override
   final SignUpDataItem data;
@@ -155,7 +156,7 @@ class _$_SignUpResponse implements _SignUpResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SignUpResponseToJson(this);
+    return _$$_SignUpResponseToJson(this);
   }
 }
 
@@ -287,7 +288,7 @@ class _$_SignUpDataItem implements _SignUpDataItem {
   const _$_SignUpDataItem(this.user);
 
   factory _$_SignUpDataItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_SignUpDataItemFromJson(json);
+      _$$_SignUpDataItemFromJson(json);
 
   @override
   final UserItem user;
@@ -316,7 +317,7 @@ class _$_SignUpDataItem implements _SignUpDataItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SignUpDataItemToJson(this);
+    return _$$_SignUpDataItemToJson(this);
   }
 }
 

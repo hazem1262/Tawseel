@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'MarketPlacesResponse.dart';
 
@@ -114,7 +115,7 @@ class _$_MarketPlacesResponse implements _MarketPlacesResponse {
   const _$_MarketPlacesResponse(this.data);
 
   factory _$_MarketPlacesResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_MarketPlacesResponseFromJson(json);
+      _$$_MarketPlacesResponseFromJson(json);
 
   @override
   final List<MarketPlaceItem> data;
@@ -144,7 +145,7 @@ class _$_MarketPlacesResponse implements _MarketPlacesResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MarketPlacesResponseToJson(this);
+    return _$$_MarketPlacesResponseToJson(this);
   }
 }
 
@@ -179,7 +180,10 @@ class _$MarketPlaceItemTearOff {
       String delivery_time,
       String delivery_cost,
       String rating,
-      String image) {
+      String image,
+      String logo,
+      bool is_favorite,
+      List<CompanyItem> companies) {
     return _MarketPlaceItem(
       id,
       name,
@@ -189,6 +193,9 @@ class _$MarketPlaceItemTearOff {
       delivery_cost,
       rating,
       image,
+      logo,
+      is_favorite,
+      companies,
     );
   }
 
@@ -210,6 +217,9 @@ mixin _$MarketPlaceItem {
   String get delivery_cost => throw _privateConstructorUsedError;
   String get rating => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
+  String get logo => throw _privateConstructorUsedError;
+  bool get is_favorite => throw _privateConstructorUsedError;
+  List<CompanyItem> get companies => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -230,7 +240,10 @@ abstract class $MarketPlaceItemCopyWith<$Res> {
       String delivery_time,
       String delivery_cost,
       String rating,
-      String image});
+      String image,
+      String logo,
+      bool is_favorite,
+      List<CompanyItem> companies});
 }
 
 /// @nodoc
@@ -252,6 +265,9 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
     Object? delivery_cost = freezed,
     Object? rating = freezed,
     Object? image = freezed,
+    Object? logo = freezed,
+    Object? is_favorite = freezed,
+    Object? companies = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -286,6 +302,18 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      logo: logo == freezed
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+      is_favorite: is_favorite == freezed
+          ? _value.is_favorite
+          : is_favorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      companies: companies == freezed
+          ? _value.companies
+          : companies // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
     ));
   }
 }
@@ -305,7 +333,10 @@ abstract class _$MarketPlaceItemCopyWith<$Res>
       String delivery_time,
       String delivery_cost,
       String rating,
-      String image});
+      String image,
+      String logo,
+      bool is_favorite,
+      List<CompanyItem> companies});
 }
 
 /// @nodoc
@@ -329,6 +360,9 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
     Object? delivery_cost = freezed,
     Object? rating = freezed,
     Object? image = freezed,
+    Object? logo = freezed,
+    Object? is_favorite = freezed,
+    Object? companies = freezed,
   }) {
     return _then(_MarketPlaceItem(
       id == freezed
@@ -363,6 +397,18 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      logo == freezed
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+      is_favorite == freezed
+          ? _value.is_favorite
+          : is_favorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      companies == freezed
+          ? _value.companies
+          : companies // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
     ));
   }
 }
@@ -370,11 +416,21 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_MarketPlaceItem implements _MarketPlaceItem {
-  const _$_MarketPlaceItem(this.id, this.name, this.description, this.min_order,
-      this.delivery_time, this.delivery_cost, this.rating, this.image);
+  const _$_MarketPlaceItem(
+      this.id,
+      this.name,
+      this.description,
+      this.min_order,
+      this.delivery_time,
+      this.delivery_cost,
+      this.rating,
+      this.image,
+      this.logo,
+      this.is_favorite,
+      this.companies);
 
   factory _$_MarketPlaceItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_MarketPlaceItemFromJson(json);
+      _$$_MarketPlaceItemFromJson(json);
 
   @override
   final int id;
@@ -392,10 +448,16 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
   final String rating;
   @override
   final String image;
+  @override
+  final String logo;
+  @override
+  final bool is_favorite;
+  @override
+  final List<CompanyItem> companies;
 
   @override
   String toString() {
-    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image)';
+    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, is_favorite: $is_favorite, companies: $companies)';
   }
 
   @override
@@ -421,7 +483,15 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
             (identical(other.rating, rating) ||
                 const DeepCollectionEquality().equals(other.rating, rating)) &&
             (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+                const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.logo, logo) ||
+                const DeepCollectionEquality().equals(other.logo, logo)) &&
+            (identical(other.is_favorite, is_favorite) ||
+                const DeepCollectionEquality()
+                    .equals(other.is_favorite, is_favorite)) &&
+            (identical(other.companies, companies) ||
+                const DeepCollectionEquality()
+                    .equals(other.companies, companies)));
   }
 
   @override
@@ -434,7 +504,10 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       const DeepCollectionEquality().hash(delivery_time) ^
       const DeepCollectionEquality().hash(delivery_cost) ^
       const DeepCollectionEquality().hash(rating) ^
-      const DeepCollectionEquality().hash(image);
+      const DeepCollectionEquality().hash(image) ^
+      const DeepCollectionEquality().hash(logo) ^
+      const DeepCollectionEquality().hash(is_favorite) ^
+      const DeepCollectionEquality().hash(companies);
 
   @JsonKey(ignore: true)
   @override
@@ -443,7 +516,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MarketPlaceItemToJson(this);
+    return _$$_MarketPlaceItemToJson(this);
   }
 }
 
@@ -456,7 +529,10 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
       String delivery_time,
       String delivery_cost,
       String rating,
-      String image) = _$_MarketPlaceItem;
+      String image,
+      String logo,
+      bool is_favorite,
+      List<CompanyItem> companies) = _$_MarketPlaceItem;
 
   factory _MarketPlaceItem.fromJson(Map<String, dynamic> json) =
       _$_MarketPlaceItem.fromJson;
@@ -478,7 +554,323 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
   @override
   String get image => throw _privateConstructorUsedError;
   @override
+  String get logo => throw _privateConstructorUsedError;
+  @override
+  bool get is_favorite => throw _privateConstructorUsedError;
+  @override
+  List<CompanyItem> get companies => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$MarketPlaceItemCopyWith<_MarketPlaceItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+CompanyItem _$CompanyItemFromJson(Map<String, dynamic> json) {
+  return _CompanyItem.fromJson(json);
+}
+
+/// @nodoc
+class _$CompanyItemTearOff {
+  const _$CompanyItemTearOff();
+
+  _CompanyItem call(int id, String name, String phone, String android_app_link,
+      String ios_app_link, String? delivery_cost, String image, bool is_best) {
+    return _CompanyItem(
+      id,
+      name,
+      phone,
+      android_app_link,
+      ios_app_link,
+      delivery_cost,
+      image,
+      is_best,
+    );
+  }
+
+  CompanyItem fromJson(Map<String, Object> json) {
+    return CompanyItem.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $CompanyItem = _$CompanyItemTearOff();
+
+/// @nodoc
+mixin _$CompanyItem {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
+  String get android_app_link => throw _privateConstructorUsedError;
+  String get ios_app_link => throw _privateConstructorUsedError;
+  String? get delivery_cost => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
+  bool get is_best => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CompanyItemCopyWith<CompanyItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CompanyItemCopyWith<$Res> {
+  factory $CompanyItemCopyWith(
+          CompanyItem value, $Res Function(CompanyItem) then) =
+      _$CompanyItemCopyWithImpl<$Res>;
+  $Res call(
+      {int id,
+      String name,
+      String phone,
+      String android_app_link,
+      String ios_app_link,
+      String? delivery_cost,
+      String image,
+      bool is_best});
+}
+
+/// @nodoc
+class _$CompanyItemCopyWithImpl<$Res> implements $CompanyItemCopyWith<$Res> {
+  _$CompanyItemCopyWithImpl(this._value, this._then);
+
+  final CompanyItem _value;
+  // ignore: unused_field
+  final $Res Function(CompanyItem) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? phone = freezed,
+    Object? android_app_link = freezed,
+    Object? ios_app_link = freezed,
+    Object? delivery_cost = freezed,
+    Object? image = freezed,
+    Object? is_best = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      android_app_link: android_app_link == freezed
+          ? _value.android_app_link
+          : android_app_link // ignore: cast_nullable_to_non_nullable
+              as String,
+      ios_app_link: ios_app_link == freezed
+          ? _value.ios_app_link
+          : ios_app_link // ignore: cast_nullable_to_non_nullable
+              as String,
+      delivery_cost: delivery_cost == freezed
+          ? _value.delivery_cost
+          : delivery_cost // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      is_best: is_best == freezed
+          ? _value.is_best
+          : is_best // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$CompanyItemCopyWith<$Res>
+    implements $CompanyItemCopyWith<$Res> {
+  factory _$CompanyItemCopyWith(
+          _CompanyItem value, $Res Function(_CompanyItem) then) =
+      __$CompanyItemCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {int id,
+      String name,
+      String phone,
+      String android_app_link,
+      String ios_app_link,
+      String? delivery_cost,
+      String image,
+      bool is_best});
+}
+
+/// @nodoc
+class __$CompanyItemCopyWithImpl<$Res> extends _$CompanyItemCopyWithImpl<$Res>
+    implements _$CompanyItemCopyWith<$Res> {
+  __$CompanyItemCopyWithImpl(
+      _CompanyItem _value, $Res Function(_CompanyItem) _then)
+      : super(_value, (v) => _then(v as _CompanyItem));
+
+  @override
+  _CompanyItem get _value => super._value as _CompanyItem;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? phone = freezed,
+    Object? android_app_link = freezed,
+    Object? ios_app_link = freezed,
+    Object? delivery_cost = freezed,
+    Object? image = freezed,
+    Object? is_best = freezed,
+  }) {
+    return _then(_CompanyItem(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      android_app_link == freezed
+          ? _value.android_app_link
+          : android_app_link // ignore: cast_nullable_to_non_nullable
+              as String,
+      ios_app_link == freezed
+          ? _value.ios_app_link
+          : ios_app_link // ignore: cast_nullable_to_non_nullable
+              as String,
+      delivery_cost == freezed
+          ? _value.delivery_cost
+          : delivery_cost // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      is_best == freezed
+          ? _value.is_best
+          : is_best // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_CompanyItem implements _CompanyItem {
+  const _$_CompanyItem(this.id, this.name, this.phone, this.android_app_link,
+      this.ios_app_link, this.delivery_cost, this.image, this.is_best);
+
+  factory _$_CompanyItem.fromJson(Map<String, dynamic> json) =>
+      _$$_CompanyItemFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final String phone;
+  @override
+  final String android_app_link;
+  @override
+  final String ios_app_link;
+  @override
+  final String? delivery_cost;
+  @override
+  final String image;
+  @override
+  final bool is_best;
+
+  @override
+  String toString() {
+    return 'CompanyItem(id: $id, name: $name, phone: $phone, android_app_link: $android_app_link, ios_app_link: $ios_app_link, delivery_cost: $delivery_cost, image: $image, is_best: $is_best)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _CompanyItem &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.phone, phone) ||
+                const DeepCollectionEquality().equals(other.phone, phone)) &&
+            (identical(other.android_app_link, android_app_link) ||
+                const DeepCollectionEquality()
+                    .equals(other.android_app_link, android_app_link)) &&
+            (identical(other.ios_app_link, ios_app_link) ||
+                const DeepCollectionEquality()
+                    .equals(other.ios_app_link, ios_app_link)) &&
+            (identical(other.delivery_cost, delivery_cost) ||
+                const DeepCollectionEquality()
+                    .equals(other.delivery_cost, delivery_cost)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.is_best, is_best) ||
+                const DeepCollectionEquality().equals(other.is_best, is_best)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(phone) ^
+      const DeepCollectionEquality().hash(android_app_link) ^
+      const DeepCollectionEquality().hash(ios_app_link) ^
+      const DeepCollectionEquality().hash(delivery_cost) ^
+      const DeepCollectionEquality().hash(image) ^
+      const DeepCollectionEquality().hash(is_best);
+
+  @JsonKey(ignore: true)
+  @override
+  _$CompanyItemCopyWith<_CompanyItem> get copyWith =>
+      __$CompanyItemCopyWithImpl<_CompanyItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CompanyItemToJson(this);
+  }
+}
+
+abstract class _CompanyItem implements CompanyItem {
+  const factory _CompanyItem(
+      int id,
+      String name,
+      String phone,
+      String android_app_link,
+      String ios_app_link,
+      String? delivery_cost,
+      String image,
+      bool is_best) = _$_CompanyItem;
+
+  factory _CompanyItem.fromJson(Map<String, dynamic> json) =
+      _$_CompanyItem.fromJson;
+
+  @override
+  int get id => throw _privateConstructorUsedError;
+  @override
+  String get name => throw _privateConstructorUsedError;
+  @override
+  String get phone => throw _privateConstructorUsedError;
+  @override
+  String get android_app_link => throw _privateConstructorUsedError;
+  @override
+  String get ios_app_link => throw _privateConstructorUsedError;
+  @override
+  String? get delivery_cost => throw _privateConstructorUsedError;
+  @override
+  String get image => throw _privateConstructorUsedError;
+  @override
+  bool get is_best => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$CompanyItemCopyWith<_CompanyItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'place_details_model.dart';
 
@@ -128,7 +129,7 @@ class _$_PlaceDetails implements _PlaceDetails {
   const _$_PlaceDetails(this.result);
 
   factory _$_PlaceDetails.fromJson(Map<String, dynamic> json) =>
-      _$_$_PlaceDetailsFromJson(json);
+      _$$_PlaceDetailsFromJson(json);
 
   @override
   final PlaceResultItem? result;
@@ -157,7 +158,7 @@ class _$_PlaceDetails implements _PlaceDetails {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PlaceDetailsToJson(this);
+    return _$$_PlaceDetailsToJson(this);
   }
 }
 
@@ -335,7 +336,7 @@ class _$_PlaceResultItem implements _PlaceResultItem {
       this.geometry, this.formatted_address, this.name, this.place_id);
 
   factory _$_PlaceResultItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_PlaceResultItemFromJson(json);
+      _$$_PlaceResultItemFromJson(json);
 
   @override
   final GeometryItem geometry;
@@ -383,7 +384,7 @@ class _$_PlaceResultItem implements _PlaceResultItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PlaceResultItemToJson(this);
+    return _$$_PlaceResultItemToJson(this);
   }
 }
 
@@ -523,7 +524,7 @@ class _$_GeometryItem implements _GeometryItem {
   const _$_GeometryItem(this.location);
 
   factory _$_GeometryItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_GeometryItemFromJson(json);
+      _$$_GeometryItemFromJson(json);
 
   @override
   final GeometryLocationItem location;
@@ -553,7 +554,7 @@ class _$_GeometryItem implements _GeometryItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_GeometryItemToJson(this);
+    return _$$_GeometryItemToJson(this);
   }
 }
 
@@ -685,7 +686,7 @@ class _$_GeometryLocationItem implements _GeometryLocationItem {
   const _$_GeometryLocationItem(this.lat, this.lng);
 
   factory _$_GeometryLocationItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_GeometryLocationItemFromJson(json);
+      _$$_GeometryLocationItemFromJson(json);
 
   @override
   final double lat;
@@ -721,7 +722,7 @@ class _$_GeometryLocationItem implements _GeometryLocationItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_GeometryLocationItemToJson(this);
+    return _$$_GeometryLocationItemToJson(this);
   }
 }
 

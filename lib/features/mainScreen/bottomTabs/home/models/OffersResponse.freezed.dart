@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'OffersResponse.dart';
 
@@ -138,7 +139,7 @@ class _$_OffersResponse implements _OffersResponse {
   const _$_OffersResponse(this.data, this.meta);
 
   factory _$_OffersResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_OffersResponseFromJson(json);
+      _$$_OffersResponseFromJson(json);
 
   @override
   final List<OfferItem> data;
@@ -173,7 +174,7 @@ class _$_OffersResponse implements _OffersResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_OffersResponseToJson(this);
+    return _$$_OffersResponseToJson(this);
   }
 }
 
@@ -327,7 +328,7 @@ class _$_OfferItem implements _OfferItem {
   const _$_OfferItem(this.id, this.name, this.link, this.image);
 
   factory _$_OfferItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_OfferItemFromJson(json);
+      _$$_OfferItemFromJson(json);
 
   @override
   final int id;
@@ -372,7 +373,7 @@ class _$_OfferItem implements _OfferItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_OfferItemToJson(this);
+    return _$$_OfferItemToJson(this);
   }
 }
 
@@ -551,7 +552,7 @@ class _$_MetaPagination implements _MetaPagination {
       this.current_page, this.from, this.last_page, this.total, this.per_page);
 
   factory _$_MetaPagination.fromJson(Map<String, dynamic> json) =>
-      _$_$_MetaPaginationFromJson(json);
+      _$$_MetaPaginationFromJson(json);
 
   @override
   final int current_page;
@@ -604,7 +605,7 @@ class _$_MetaPagination implements _MetaPagination {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_MetaPaginationToJson(this);
+    return _$$_MetaPaginationToJson(this);
   }
 }
 

@@ -20,6 +20,7 @@ class _AddressService implements AddressService {
       name, address, lat, long, is_default) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = {
       'name': name,
       'address': address,
@@ -30,7 +31,7 @@ class _AddressService implements AddressService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<AddressResponse>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'addresses',
@@ -46,6 +47,7 @@ class _AddressService implements AddressService {
       id, name, address, lat, long, is_default) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = {
       'name': name,
       'address': address,
@@ -56,7 +58,7 @@ class _AddressService implements AddressService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<AddressResponse>>(Options(
                 method: 'POST',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'addresses/$id',
@@ -71,11 +73,12 @@ class _AddressService implements AddressService {
   Future<HttpResponse<String>> deleteAddress(id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<String>(
         _setStreamType<HttpResponse<String>>(Options(
                 method: 'DELETE',
-                headers: <String, dynamic>{},
+                headers: _headers,
                 extra: _extra,
                 contentType: 'application/x-www-form-urlencoded')
             .compose(_dio.options, 'addresses/$id',

@@ -14,4 +14,7 @@ abstract class MarketPlaceService {
   @GET("marketplaces?page={page}")
   Future<HttpResponse<MarketPlacesResponse>> getMarketPlaces(
       @Path("page") int page);
+
+  @POST("favorites/{id}")
+  Future<HttpResponse<String>> addMarketPlaceToFavorite(@Path("id") String id);
 }

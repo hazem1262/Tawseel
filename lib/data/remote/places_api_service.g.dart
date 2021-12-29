@@ -25,10 +25,11 @@ class _PlacesApiService implements PlacesApiService {
       r'input': query,
       r'sessiontoken': session
     };
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PlacesSuggestionsResponse>(
-            Options(method: 'GET', headers: <String, dynamic>{}, extra: _extra)
+            Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/json',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
@@ -44,10 +45,11 @@ class _PlacesApiService implements PlacesApiService {
       r'language': lang,
       r'placeid': placeId
     };
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PlaceDetails>(
-            Options(method: 'GET', headers: <String, dynamic>{}, extra: _extra)
+            Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options,
                     'https://maps.googleapis.com/maps/api/place/details/json',
                     queryParameters: queryParameters, data: _data)
@@ -60,10 +62,11 @@ class _PlacesApiService implements PlacesApiService {
   Future<PlaceAddressDetails> getPlaceDetailsLatLng(apiKey, latlng) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'key': apiKey};
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PlaceAddressDetails>(
-            Options(method: 'GET', headers: <String, dynamic>{}, extra: _extra)
+            Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options,
                     'https://maps.googleapis.com/maps/api/geocode/json?$latlng',
                     queryParameters: queryParameters, data: _data)

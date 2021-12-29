@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'OtpBloc.dart';
 
@@ -52,6 +53,13 @@ mixin _$OtpEvents {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone, OTP_TYPE type)? sendOtp,
+    TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
+    TResult Function(String? otp)? onOtpChange,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, OTP_TYPE type)? sendOtp,
     TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
@@ -64,6 +72,13 @@ mixin _$OtpEvents {
     required TResult Function(SendOtp value) sendOtp,
     required TResult Function(VerifyOtp value) verifyOtp,
     required TResult Function(OnOtpChange value) onOtpChange,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(OnOtpChange value)? onOtpChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -183,6 +198,16 @@ class _$SendOtp with DiagnosticableTreeMixin implements SendOtp {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone, OTP_TYPE type)? sendOtp,
+    TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
+    TResult Function(String? otp)? onOtpChange,
+  }) {
+    return sendOtp?.call(phone, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, OTP_TYPE type)? sendOtp,
     TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
@@ -203,6 +228,16 @@ class _$SendOtp with DiagnosticableTreeMixin implements SendOtp {
     required TResult Function(OnOtpChange value) onOtpChange,
   }) {
     return sendOtp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(OnOtpChange value)? onOtpChange,
+  }) {
+    return sendOtp?.call(this);
   }
 
   @override
@@ -332,6 +367,16 @@ class _$VerifyOtp with DiagnosticableTreeMixin implements VerifyOtp {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone, OTP_TYPE type)? sendOtp,
+    TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
+    TResult Function(String? otp)? onOtpChange,
+  }) {
+    return verifyOtp?.call(phone, otp, type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, OTP_TYPE type)? sendOtp,
     TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
@@ -352,6 +397,16 @@ class _$VerifyOtp with DiagnosticableTreeMixin implements VerifyOtp {
     required TResult Function(OnOtpChange value) onOtpChange,
   }) {
     return verifyOtp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(OnOtpChange value)? onOtpChange,
+  }) {
+    return verifyOtp?.call(this);
   }
 
   @override
@@ -463,6 +518,16 @@ class _$OnOtpChange with DiagnosticableTreeMixin implements OnOtpChange {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone, OTP_TYPE type)? sendOtp,
+    TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
+    TResult Function(String? otp)? onOtpChange,
+  }) {
+    return onOtpChange?.call(otp);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone, OTP_TYPE type)? sendOtp,
     TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
@@ -483,6 +548,16 @@ class _$OnOtpChange with DiagnosticableTreeMixin implements OnOtpChange {
     required TResult Function(OnOtpChange value) onOtpChange,
   }) {
     return onOtpChange(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SendOtp value)? sendOtp,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(OnOtpChange value)? onOtpChange,
+  }) {
+    return onOtpChange?.call(this);
   }
 
   @override
@@ -562,6 +637,16 @@ mixin _$OtpViewState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult Function(String error)? hasError,
+    TResult Function(bool disable)? disableButton,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -580,6 +665,16 @@ mixin _$OtpViewState {
     required TResult Function(OnOtpVerified value) onOtpVerified,
     required TResult Function(_HasError value) hasError,
     required TResult Function(DisableOtpConfirmButton value) disableButton,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialState value)? initialState,
+    TResult Function(OtpIsLoading value)? isLoading,
+    TResult Function(OnOtpReceived value)? onOtpReceived,
+    TResult Function(OnOtpVerified value)? onOtpVerified,
+    TResult Function(_HasError value)? hasError,
+    TResult Function(DisableOtpConfirmButton value)? disableButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -668,6 +763,19 @@ class _$InitialState with DiagnosticableTreeMixin implements InitialState {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult Function(String error)? hasError,
+    TResult Function(bool disable)? disableButton,
+  }) {
+    return initialState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -694,6 +802,19 @@ class _$InitialState with DiagnosticableTreeMixin implements InitialState {
     required TResult Function(DisableOtpConfirmButton value) disableButton,
   }) {
     return initialState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialState value)? initialState,
+    TResult Function(OtpIsLoading value)? isLoading,
+    TResult Function(OnOtpReceived value)? onOtpReceived,
+    TResult Function(OnOtpVerified value)? onOtpVerified,
+    TResult Function(_HasError value)? hasError,
+    TResult Function(DisableOtpConfirmButton value)? disableButton,
+  }) {
+    return initialState?.call(this);
   }
 
   @override
@@ -775,6 +896,19 @@ class _$OtpIsLoading with DiagnosticableTreeMixin implements OtpIsLoading {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult Function(String error)? hasError,
+    TResult Function(bool disable)? disableButton,
+  }) {
+    return isLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -801,6 +935,19 @@ class _$OtpIsLoading with DiagnosticableTreeMixin implements OtpIsLoading {
     required TResult Function(DisableOtpConfirmButton value) disableButton,
   }) {
     return isLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialState value)? initialState,
+    TResult Function(OtpIsLoading value)? isLoading,
+    TResult Function(OnOtpReceived value)? onOtpReceived,
+    TResult Function(OnOtpVerified value)? onOtpVerified,
+    TResult Function(_HasError value)? hasError,
+    TResult Function(DisableOtpConfirmButton value)? disableButton,
+  }) {
+    return isLoading?.call(this);
   }
 
   @override
@@ -919,6 +1066,19 @@ class _$OnOtpReceived with DiagnosticableTreeMixin implements OnOtpReceived {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult Function(String error)? hasError,
+    TResult Function(bool disable)? disableButton,
+  }) {
+    return onOtpReceived?.call(otpResponse);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -945,6 +1105,19 @@ class _$OnOtpReceived with DiagnosticableTreeMixin implements OnOtpReceived {
     required TResult Function(DisableOtpConfirmButton value) disableButton,
   }) {
     return onOtpReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialState value)? initialState,
+    TResult Function(OtpIsLoading value)? isLoading,
+    TResult Function(OnOtpReceived value)? onOtpReceived,
+    TResult Function(OnOtpVerified value)? onOtpVerified,
+    TResult Function(_HasError value)? hasError,
+    TResult Function(DisableOtpConfirmButton value)? disableButton,
+  }) {
+    return onOtpReceived?.call(this);
   }
 
   @override
@@ -1068,6 +1241,19 @@ class _$OnOtpVerified with DiagnosticableTreeMixin implements OnOtpVerified {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult Function(String error)? hasError,
+    TResult Function(bool disable)? disableButton,
+  }) {
+    return onOtpVerified?.call(loginResponse);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -1094,6 +1280,19 @@ class _$OnOtpVerified with DiagnosticableTreeMixin implements OnOtpVerified {
     required TResult Function(DisableOtpConfirmButton value) disableButton,
   }) {
     return onOtpVerified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialState value)? initialState,
+    TResult Function(OtpIsLoading value)? isLoading,
+    TResult Function(OnOtpReceived value)? onOtpReceived,
+    TResult Function(OnOtpVerified value)? onOtpVerified,
+    TResult Function(_HasError value)? hasError,
+    TResult Function(DisableOtpConfirmButton value)? disableButton,
+  }) {
+    return onOtpVerified?.call(this);
   }
 
   @override
@@ -1205,6 +1404,19 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult Function(String error)? hasError,
+    TResult Function(bool disable)? disableButton,
+  }) {
+    return hasError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -1231,6 +1443,19 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
     required TResult Function(DisableOtpConfirmButton value) disableButton,
   }) {
     return hasError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialState value)? initialState,
+    TResult Function(OtpIsLoading value)? isLoading,
+    TResult Function(OnOtpReceived value)? onOtpReceived,
+    TResult Function(OnOtpVerified value)? onOtpVerified,
+    TResult Function(_HasError value)? hasError,
+    TResult Function(DisableOtpConfirmButton value)? disableButton,
+  }) {
+    return hasError?.call(this);
   }
 
   @override
@@ -1348,6 +1573,19 @@ class _$DisableOtpConfirmButton
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialState,
+    TResult Function()? isLoading,
+    TResult Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult Function(String error)? hasError,
+    TResult Function(bool disable)? disableButton,
+  }) {
+    return disableButton?.call(disable);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialState,
     TResult Function()? isLoading,
@@ -1374,6 +1612,19 @@ class _$DisableOtpConfirmButton
     required TResult Function(DisableOtpConfirmButton value) disableButton,
   }) {
     return disableButton(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialState value)? initialState,
+    TResult Function(OtpIsLoading value)? isLoading,
+    TResult Function(OnOtpReceived value)? onOtpReceived,
+    TResult Function(OnOtpVerified value)? onOtpVerified,
+    TResult Function(_HasError value)? hasError,
+    TResult Function(DisableOtpConfirmButton value)? disableButton,
+  }) {
+    return disableButton?.call(this);
   }
 
   @override

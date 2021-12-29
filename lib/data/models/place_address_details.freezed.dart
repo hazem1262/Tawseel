@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'place_address_details.dart';
 
@@ -114,7 +115,7 @@ class _$_PlaceAddressDetails implements _PlaceAddressDetails {
   const _$_PlaceAddressDetails(this.results);
 
   factory _$_PlaceAddressDetails.fromJson(Map<String, dynamic> json) =>
-      _$_$_PlaceAddressDetailsFromJson(json);
+      _$$_PlaceAddressDetailsFromJson(json);
 
   @override
   final List<AddressItem> results;
@@ -144,7 +145,7 @@ class _$_PlaceAddressDetails implements _PlaceAddressDetails {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PlaceAddressDetailsToJson(this);
+    return _$$_PlaceAddressDetailsToJson(this);
   }
 }
 
@@ -302,7 +303,7 @@ class _$_AddressItem implements _AddressItem {
   const _$_AddressItem(this.formatted_address, this.place_id, this.geometry);
 
   factory _$_AddressItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_AddressItemFromJson(json);
+      _$$_AddressItemFromJson(json);
 
   @override
   final String formatted_address;
@@ -345,7 +346,7 @@ class _$_AddressItem implements _AddressItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AddressItemToJson(this);
+    return _$$_AddressItemToJson(this);
   }
 }
 
@@ -483,7 +484,7 @@ class _$_AddressGeometry implements _AddressGeometry {
   const _$_AddressGeometry(this.location);
 
   factory _$_AddressGeometry.fromJson(Map<String, dynamic> json) =>
-      _$_$_AddressGeometryFromJson(json);
+      _$$_AddressGeometryFromJson(json);
 
   @override
   final AddressLocation location;
@@ -513,7 +514,7 @@ class _$_AddressGeometry implements _AddressGeometry {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AddressGeometryToJson(this);
+    return _$$_AddressGeometryToJson(this);
   }
 }
 
@@ -645,7 +646,7 @@ class _$_AddressLocation implements _AddressLocation {
   const _$_AddressLocation(this.lat, this.lng);
 
   factory _$_AddressLocation.fromJson(Map<String, dynamic> json) =>
-      _$_$_AddressLocationFromJson(json);
+      _$$_AddressLocationFromJson(json);
 
   @override
   final double lat;
@@ -680,7 +681,7 @@ class _$_AddressLocation implements _AddressLocation {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AddressLocationToJson(this);
+    return _$$_AddressLocationToJson(this);
   }
 }
 

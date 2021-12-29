@@ -15,8 +15,8 @@ class NetworkModule {
       sendTimeout: 10000,
     );
 
-    dio.interceptors.add(KeysInjectionInterceptor());
     dio.interceptors.add(LogInterceptor(responseBody: true, requestBody: true));
+    dio.interceptors.add(KeysInjectionInterceptor());
 
     return dio;
   }
@@ -28,6 +28,7 @@ class KeysInjectionInterceptor extends Interceptor {
       RequestOptions options, RequestInterceptorHandler handler) async {
     options.headers['Accept'] = 'application/json';
     options.headers['Content-Language'] = currentLocalName;
+    options.headers['Content-Type'] = "application/json";
     try {
       var token = await appState.getToken();
       if (token != null) options.headers['Authorization'] = token;

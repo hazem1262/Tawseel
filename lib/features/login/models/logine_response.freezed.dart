@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'logine_response.dart';
 
@@ -126,7 +127,7 @@ class _$_LoginResponse implements _LoginResponse {
   const _$_LoginResponse(this.data);
 
   factory _$_LoginResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_LoginResponseFromJson(json);
+      _$$_LoginResponseFromJson(json);
 
   @override
   final LoginDataItem data;
@@ -155,7 +156,7 @@ class _$_LoginResponse implements _LoginResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_LoginResponseToJson(this);
+    return _$$_LoginResponseToJson(this);
   }
 }
 
@@ -311,7 +312,7 @@ class _$_LoginDataItem implements _LoginDataItem {
   const _$_LoginDataItem(this.user, this.access_token, this.token_type);
 
   factory _$_LoginDataItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_LoginDataItemFromJson(json);
+      _$$_LoginDataItemFromJson(json);
 
   @override
   final UserItem user;
@@ -353,7 +354,7 @@ class _$_LoginDataItem implements _LoginDataItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_LoginDataItemToJson(this);
+    return _$$_LoginDataItemToJson(this);
   }
 }
 
@@ -621,7 +622,7 @@ class _$_UserItem implements _UserItem {
       this.address);
 
   factory _$_UserItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_UserItemFromJson(json);
+      _$$_UserItemFromJson(json);
 
   @override
   final int id;
@@ -700,7 +701,7 @@ class _$_UserItem implements _UserItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UserItemToJson(this);
+    return _$$_UserItemToJson(this);
   }
 }
 
@@ -919,7 +920,7 @@ class _$_AddressItem implements _AddressItem {
       this.id, this.name, this.address, this.lat, this.long, this.is_default);
 
   factory _$_AddressItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_AddressItemFromJson(json);
+      _$$_AddressItemFromJson(json);
 
   @override
   final int id;
@@ -976,7 +977,7 @@ class _$_AddressItem implements _AddressItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AddressItemToJson(this);
+    return _$$_AddressItemToJson(this);
   }
 }
 

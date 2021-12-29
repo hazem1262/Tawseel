@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:focused_menu/modals.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -16,6 +17,7 @@ import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesRes
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -30,6 +32,7 @@ import 'package:tawseel/utils/ktx.dart';
 import 'bloc/home_bloc.dart';
 import 'bloc/home_repository.dart';
 import 'components/YourLocationPart.dart';
+import 'models/AdsResponse.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -47,12 +50,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return BlocProvider(
       create: (context) => HomeBloc(
         getIt.get<IHomeRepository>(),
-        getIt.get<IOffersRepository>(),
+        getIt.get<IAdsRepository>(),
         getIt.get<IProfileRepository>(),
         getIt.get<IMarketPlaceRepository>(),
       )
         ..add(GetHomeProfile())
-        ..add(GetHomeOffers())
+        ..add(GetHomeAds())
         ..add(GetHomeCategories())
         ..add(GetHomeNearbyMarketPlaces()),
       lazy: false,
@@ -61,12 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
             body: BlocListener<HomeBloc, HomeBlocState>(
           listener: (context, state) {
             if (state.error.isNotEmpty) appContext.showError(state.error);
-            if (state.refreshData)
+            if (state.refreshData) {
+              appContext.showToast("Added to favorites Successfully");
               BlocProvider.of<HomeBloc>(context)
-                ..add(GetHomeProfile())
-                ..add(GetHomeOffers())
-                ..add(GetHomeCategories())
-                ..add(GetHomeNearbyMarketPlaces());
+                ..add(GetHomeNearbyMarketPlaces())
+                ..add(ResetHomeRefreshData());
+            }
           },
           child: SafeArea(
             child: SmartRefresher(
@@ -75,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onRefresh: () {
                 BlocProvider.of<HomeBloc>(context)
                   ..add(GetHomeProfile())
-                  ..add(GetHomeOffers())
+                  ..add(GetHomeAds())
                   ..add(GetHomeCategories())
                   ..add(GetHomeNearbyMarketPlaces());
                 _refreshController.refreshToIdle();
@@ -101,8 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     }),
                     BlocBuilder<HomeBloc, HomeBlocState>(
                       builder: (context, state) {
-                        return offersArea(
-                            state.offersIsLoading, state.offersList);
+                        return adsArea(state.adsIsLoading, state.adsList);
                       },
                     ),
                     BlocBuilder<HomeBloc, HomeBlocState>(
@@ -113,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     BlocBuilder<HomeBloc, HomeBlocState>(
                       builder: (context, state) {
-                        return marketPlaceArea(
+                        return marketPlaceArea(context,
                             state.nearbyMarketPlaceIsLoading, state.nearbyList);
                       },
                     )
@@ -127,7 +129,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget marketPlaceArea(bool isLoading, List<MarketPlaceItem> list) {
+  Widget marketPlaceArea(
+      BuildContext blocContext, bool isLoading, List<MarketPlaceItem> list) {
     return Container(
       margin: EdgeInsets.only(top: 8),
       child: Column(
@@ -151,12 +154,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.vertical,
                     itemCount: list.length,
                     itemBuilder: (ctx, index) {
-                      return marketPlaceItem(
-                        list[index],
-                        () {
-                          appContext.showToast("${list[index].name} clicked");
-                        },
-                      );
+                      return marketPlaceItem(list[index], () {
+                        showMarketPlaceCompaniesBottomSheet(list[index].companies);
+                      }, () {
+                        BlocProvider.of<HomeBloc>(blocContext).add(
+                            AddMarketPlaceToFavorite(
+                                list[index].id.toString()));
+                      });
                     },
                   ),
                 ),
@@ -164,6 +168,110 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  Future<dynamic> showMarketPlaceCompaniesBottomSheet(List<CompanyItem> companies) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+
+    return showCupertinoModalBottomSheet(
+      bounce: true,
+      backgroundColor: Colors.transparent,
+      expand: false,
+      topRadius: Radius.circular(35),
+      context: context,
+      builder: (context) => Material(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          color: tm.isDark() ? Colors.grey[800] : Colors.white,
+          height: height * 0.45,
+          child: Column(
+            children: [
+              Container(
+                width: width * 0.13,
+                height: height * 0.006,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.grey.shade400,
+                ),
+              ),
+              SizedBox(height: height * 0.02),
+              Text(
+                LocaleKeys.all_categories.tr(),
+                style: TextStyle(
+                  fontSize: SmallTitleTextSize,
+                  fontWeight: FontWeight.w500,
+                  color: tm.isDark() ? Colors.white : tm.titlecolorLight,
+                ),
+              ),
+              SizedBox(height: height * 0.02),
+              Expanded(
+                child: Container(
+                  height: height * 0.4,
+                  child: GridView.count(
+                    childAspectRatio: 3,
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8,
+                    children: List.generate(
+                        companies.length,
+                            (index) => Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: creamyWhite,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                width: 45,
+                                child: CachedNetworkImage(
+                                  imageUrl: companies[index].image,
+                                  fit: BoxFit.contain,
+                                  placeholder: (context, url) => Center(
+                                      child: CircularProgressIndicator()),
+                                  errorWidget: (context, url, error) =>
+                                      Icon(Icons.error),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 16,
+                              ),
+                              Flexible(
+                                flex: 1,
+                                child: Text(
+                                  "${companies[index].name}",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .caption!
+                                      .copyWith(
+                                    fontSize: CaptionTextSize,
+                                    color: ProfileActionsColor_Light,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                            ],
+                          ),
+                        )).toList(),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
 
   Widget searchArea({required Function onClick}) {
     return GestureDetector(
@@ -227,13 +335,13 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget offersArea(bool isLoading, List<OfferItem> offers) {
+  Widget adsArea(bool isLoading, List<AdsItem> ads) {
     return Container(
       margin: EdgeInsets.only(top: 8),
       child: Column(
         children: [
           isLoading
-              ? offersShimmer()
+              ? adsShimmer()
               : Padding(
                   padding: isAr
                       ? EdgeInsets.only(right: 8)
@@ -245,13 +353,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: offers.length,
+                        itemCount: ads.length,
                         itemBuilder: (ctx, index) {
-                          return offerItem(
-                            offers[index],
+                          return adItem(
+                            ads[index],
                             () {
                               appContext
-                                  .showToast("${offers[index].link} clicked");
+                                  .showToast("${ads[index].image} clicked");
                             },
                           );
                         },
@@ -370,21 +478,29 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: CachedNetworkImage(
                                       imageUrl: categories[index].image,
                                       fit: BoxFit.contain,
+                                      placeholder: (context, url) => Center(
+                                          child: CircularProgressIndicator()),
+                                      errorWidget: (context, url, error) =>
+                                          Icon(Icons.error),
                                     ),
                                   ),
                                   SizedBox(
                                     width: 16,
                                   ),
-                                  Text(
-                                    "${categories[index].name}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .caption!
-                                        .copyWith(
-                                          fontSize: CaptionTextSize,
-                                          color: ProfileActionsColor_Light,
-                                          fontWeight: FontWeight.w600,
-                                        ),
+                                  Flexible(
+                                    flex: 1,
+                                    child: Text(
+                                      "${categories[index].name}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .caption!
+                                          .copyWith(
+                                            fontSize: CaptionTextSize,
+                                            color: ProfileActionsColor_Light,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
                                   SizedBox(
                                     width: 8,
@@ -459,8 +575,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // flutter item card
 
-  Widget marketPlaceItem(MarketPlaceItem marketPlace, Function onClick) {
-    final itemHeight = screenHeight * 0.30;
+  Widget marketPlaceItem(MarketPlaceItem marketPlace, Function onClick,
+      Function onFavoriteClicked) {
+    final itemHeight = screenHeight * 0.35;
     return InkWell(
       onTap: () {
         onClick();
@@ -480,7 +597,6 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
-
         child: Stack(
           children: [
             Column(
@@ -491,11 +607,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     topRight: Radius.circular(15),
                   ),
                   child: CachedNetworkImage(
-                    imageUrl:
-                        "https://images.unsplash.com/photo-1615380547279-f983fb6241d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1734&q=80",
+                    imageUrl: marketPlace.image,
                     fit: BoxFit.fill,
                     width: double.infinity,
                     height: itemHeight * 0.6,
+                    placeholder: (context, url) =>
+                        Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) => Container(
+                      width: double.infinity,
+                      color: Colors.grey,
+                      child: Icon(Icons.error),
+                    ),
                   ),
                 ),
                 Container(
@@ -641,15 +763,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                     color: Colors.grey.shade300,
                                     width: 1.5,
                                   ),
-                                  color: tawseelDarkGrey,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
-                                  child: CachedNetworkImage(
-                                    fit: BoxFit.fill,
-                                    imageUrl:
-                                        "https://images.unsplash.com/photo-1543339469-94ba2391431f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGtmYyUyMGJ1cmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: CachedNetworkImage(
+                                      fit: BoxFit.contain,
+                                      imageUrl: marketPlace.getBestDeliveryCompany().image,
+                                      errorWidget: (context, url, error) =>
+                                          Icon(Icons.error),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -668,22 +793,30 @@ class _HomeScreenState extends State<HomeScreen> {
               top: 10,
               end: 10,
               child: Container(
-                width: screenWidth * 0.1,
-                height: screenHeight * 0.045,
+                width: screenWidth * 0.101,
+                height: screenWidth * 0.101,
                 decoration: BoxDecoration(
                   color: Colors.white.withAlpha(99),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.favorite_border,
-                        color: Colors.white,
+                    child: Center(
+                      child: IconButton(
+                        icon: Icon(
+                          !marketPlace.is_favorite
+                              ? Icons.favorite_border
+                              : Icons.favorite,
+                          color: !marketPlace.is_favorite
+                              ? Colors.white
+                              : Colors.red,
+                        ),
+                        onPressed: () {
+                          onFavoriteClicked();
+                        },
                       ),
-                      onPressed: () {},
                     ),
                   ),
                 ),
@@ -691,39 +824,11 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
-        // Row(
-        //   children: [
-        //     Container(
-        //       padding: EdgeInsets.all(5),
-        //       decoration: BoxDecoration(
-        //         color: creamyWhite,
-        //         borderRadius: BorderRadius.circular(8),
-        //       ),
-        //       width: 45,
-        //       child: CachedNetworkImage(
-        //         imageUrl: marketPlace.image,
-        //         fit: BoxFit.contain,
-        //       ),
-        //     ),
-        //     SizedBox(width: 16),
-        //     Text(
-        //       "${marketPlace.name}",
-        //       style: Theme.of(context).textTheme.caption!.copyWith(
-        //             fontSize: CaptionTextSize,
-        //             color: ProfileActionsColor_Light,
-        //             fontWeight: FontWeight.w600,
-        //           ),
-        //     ),
-        //     SizedBox(
-        //       width: 8,
-        //     ),
-        //   ],
-        // ),
       ),
     );
   }
 
-  Widget offersShimmer() {
+  Widget adsShimmer() {
     final screenwidth = MediaQuery.of(context).size.width;
     final screenheight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
@@ -804,7 +909,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget offerItem(OfferItem offer, Function onClick) {
+  Widget adItem(AdsItem ad, Function onClick) {
     final screenWidth = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
@@ -827,7 +932,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: CachedNetworkImage(
             fit: BoxFit.fill,
-            imageUrl: offer.image,
+            imageUrl: ad.image,
+            placeholder: (context, url) =>
+                Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) => Icon(Icons.error),
           )),
     );
   }
@@ -916,4 +1024,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           );
   }
+}
+
+extension MarketPlaceDtx on MarketPlaceItem {
+  CompanyItem getBestDeliveryCompany() =>
+      this.companies.firstWhere((element) => element.is_best == true);
 }

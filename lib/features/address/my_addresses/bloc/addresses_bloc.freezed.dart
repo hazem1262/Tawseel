@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'addresses_bloc.dart';
 
@@ -46,6 +47,13 @@ mixin _$MyAddressesEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getAddressesList,
+    TResult Function(Address address)? makeAddressAsDefault,
+    TResult Function(Address address)? deleteAddress,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAddressesList,
     TResult Function(Address address)? makeAddressAsDefault,
@@ -58,6 +66,13 @@ mixin _$MyAddressesEvent {
     required TResult Function(GetAddressesListEvent value) getAddressesList,
     required TResult Function(MakeAddressAsDefault value) makeAddressAsDefault,
     required TResult Function(DeleteAddress value) deleteAddress,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetAddressesListEvent value)? getAddressesList,
+    TResult Function(MakeAddressAsDefault value)? makeAddressAsDefault,
+    TResult Function(DeleteAddress value)? deleteAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -136,6 +151,16 @@ class _$GetAddressesListEvent implements GetAddressesListEvent {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getAddressesList,
+    TResult Function(Address address)? makeAddressAsDefault,
+    TResult Function(Address address)? deleteAddress,
+  }) {
+    return getAddressesList?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAddressesList,
     TResult Function(Address address)? makeAddressAsDefault,
@@ -156,6 +181,16 @@ class _$GetAddressesListEvent implements GetAddressesListEvent {
     required TResult Function(DeleteAddress value) deleteAddress,
   }) {
     return getAddressesList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetAddressesListEvent value)? getAddressesList,
+    TResult Function(MakeAddressAsDefault value)? makeAddressAsDefault,
+    TResult Function(DeleteAddress value)? deleteAddress,
+  }) {
+    return getAddressesList?.call(this);
   }
 
   @override
@@ -252,6 +287,16 @@ class _$MakeAddressAsDefault implements MakeAddressAsDefault {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getAddressesList,
+    TResult Function(Address address)? makeAddressAsDefault,
+    TResult Function(Address address)? deleteAddress,
+  }) {
+    return makeAddressAsDefault?.call(address);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAddressesList,
     TResult Function(Address address)? makeAddressAsDefault,
@@ -272,6 +317,16 @@ class _$MakeAddressAsDefault implements MakeAddressAsDefault {
     required TResult Function(DeleteAddress value) deleteAddress,
   }) {
     return makeAddressAsDefault(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetAddressesListEvent value)? getAddressesList,
+    TResult Function(MakeAddressAsDefault value)? makeAddressAsDefault,
+    TResult Function(DeleteAddress value)? deleteAddress,
+  }) {
+    return makeAddressAsDefault?.call(this);
   }
 
   @override
@@ -372,6 +427,16 @@ class _$DeleteAddress implements DeleteAddress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getAddressesList,
+    TResult Function(Address address)? makeAddressAsDefault,
+    TResult Function(Address address)? deleteAddress,
+  }) {
+    return deleteAddress?.call(address);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAddressesList,
     TResult Function(Address address)? makeAddressAsDefault,
@@ -392,6 +457,16 @@ class _$DeleteAddress implements DeleteAddress {
     required TResult Function(DeleteAddress value) deleteAddress,
   }) {
     return deleteAddress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetAddressesListEvent value)? getAddressesList,
+    TResult Function(MakeAddressAsDefault value)? makeAddressAsDefault,
+    TResult Function(DeleteAddress value)? deleteAddress,
+  }) {
+    return deleteAddress?.call(this);
   }
 
   @override
@@ -454,6 +529,13 @@ mixin _$MyAddressesState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(bool isLoading, String error, bool refreshData,
+            List<Address> address)?
+        defaultState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isLoading, String error, bool refreshData,
             List<Address> address)?
@@ -464,6 +546,11 @@ mixin _$MyAddressesState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MyAddressesStateCurrentState value) defaultState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MyAddressesStateCurrentState value)? defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -646,6 +733,16 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(bool isLoading, String error, bool refreshData,
+            List<Address> address)?
+        defaultState,
+  }) {
+    return defaultState?.call(isLoading, error, refreshData, address);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isLoading, String error, bool refreshData,
             List<Address> address)?
@@ -664,6 +761,14 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
     required TResult Function(MyAddressesStateCurrentState value) defaultState,
   }) {
     return defaultState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(MyAddressesStateCurrentState value)? defaultState,
+  }) {
+    return defaultState?.call(this);
   }
 
   @override

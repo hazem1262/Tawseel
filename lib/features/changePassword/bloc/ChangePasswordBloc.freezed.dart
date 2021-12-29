@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'ChangePasswordBloc.dart';
 
@@ -39,6 +40,11 @@ mixin _$ChangePasswordEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password, String confirmPassword)? changePassword,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String password, String confirmPassword)? changePassword,
     required TResult orElse(),
@@ -47,6 +53,11 @@ mixin _$ChangePasswordEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ChangePasswordAction value) changePassword,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChangePasswordAction value)? changePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,6 +196,14 @@ class _$ChangePasswordAction implements ChangePasswordAction {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password, String confirmPassword)? changePassword,
+  }) {
+    return changePassword?.call(password, confirmPassword);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String password, String confirmPassword)? changePassword,
     required TResult orElse(),
@@ -201,6 +220,14 @@ class _$ChangePasswordAction implements ChangePasswordAction {
     required TResult Function(ChangePasswordAction value) changePassword,
   }) {
     return changePassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChangePasswordAction value)? changePassword,
+  }) {
+    return changePassword?.call(this);
   }
 
   @override
@@ -263,6 +290,13 @@ mixin _$ChangePasswordState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            bool isLoading, String error, bool passwordChangedSuccessfully)?
+        defaultState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             bool isLoading, String error, bool passwordChangedSuccessfully)?
@@ -273,6 +307,11 @@ mixin _$ChangePasswordState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ChangePasswordCurrentState value) defaultState,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChangePasswordCurrentState value)? defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -437,6 +476,16 @@ class _$ChangePasswordCurrentState implements ChangePasswordCurrentState {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            bool isLoading, String error, bool passwordChangedSuccessfully)?
+        defaultState,
+  }) {
+    return defaultState?.call(isLoading, error, passwordChangedSuccessfully);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             bool isLoading, String error, bool passwordChangedSuccessfully)?
@@ -455,6 +504,14 @@ class _$ChangePasswordCurrentState implements ChangePasswordCurrentState {
     required TResult Function(ChangePasswordCurrentState value) defaultState,
   }) {
     return defaultState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChangePasswordCurrentState value)? defaultState,
+  }) {
+    return defaultState?.call(this);
   }
 
   @override
