@@ -1082,7 +1082,7 @@ Widget bestCompanyWidget(
     child: ConstrainedBox(
       constraints: BoxConstraints(
         minHeight: screenHeight * 0.10,
-        maxHeight: screenHeight * 0.178,
+        maxHeight: screenHeight * 0.15,
       ),
       child: Container(
         width: screenWidth,
@@ -1129,75 +1129,80 @@ Widget bestCompanyWidget(
                 ),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(2),
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          width: screenWidth * 0.25,
-                          child: CachedNetworkImage(
-                            height: screenHeight * 0.09,
-                            width: double.infinity,
-                            imageUrl: item.image,
-                            fit: BoxFit.fitWidth,
-                            placeholder: (context, url) =>
-                                Center(child: CircularProgressIndicator()),
-                            errorWidget: (context, url, error) =>
-                                Icon(Icons.error),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 16,
-                        ),
-                        Flexible(
-                          flex: 1,
-                          child: Text(
-                            "25 SAR\nMinimum Order Price",
-                            style:
-                                Theme.of(context).textTheme.caption!.copyWith(
-                                      fontSize: ErrorTextSize,
-                                      color: tm.isDark()
-                                          ? Colors.white
-                                          : ProfileActionsColor_Light,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Flexible(
-                          flex: 1,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 10,
-                              horizontal: 14,
-                            ),
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(2),
                             decoration: BoxDecoration(
+                              color: Colors.transparent,
                               borderRadius: BorderRadius.circular(8),
-                              color: ThemeManager.primary.withAlpha(30),
                             ),
+                            width: screenWidth * 0.25,
+                            child: CachedNetworkImage(
+                              height: screenHeight * 0.03,
+                              width: double.infinity,
+                              imageUrl: item.image,
+                              fit: BoxFit.fitWidth,
+                              placeholder: (context, url) =>
+                                  Center(child: CircularProgressIndicator()),
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Flexible(
+                            flex: 1,
                             child: Text(
-                              "${item.delivery_cost}",
+                              "25 SAR\nMinimum Order Price",
                               style:
                                   Theme.of(context).textTheme.caption!.copyWith(
-                                        fontSize: BodySmallTextSize,
+                                        fontSize: ErrorTextSize,
                                         color: tm.isDark()
                                             ? Colors.white
-                                            : ThemeManager.primary,
+                                            : ProfileActionsColor_Light,
                                         fontWeight: FontWeight.w600,
                                       ),
                               overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
                             ),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Flexible(
+                            flex: 1,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 10,
+                                horizontal: 14,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: ThemeManager.primary.withAlpha(30),
+                              ),
+                              child: Text(
+                                "${item.delivery_cost}",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .caption!
+                                    .copyWith(
+                                      fontSize: BodySmallTextSize,
+                                      color: tm.isDark()
+                                          ? Colors.white
+                                          : ThemeManager.primary,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -1217,7 +1222,7 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
       children: [
         Container(
           width: MediaQuery.of(context).size.width,
-          height: screenHeight * 0.09,
+          height: screenHeight * 0.0855,
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
@@ -1243,7 +1248,7 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
                     ),
                     width: screenWidth * 0.25,
                     child: CachedNetworkImage(
-                      height: screenHeight * 0.12,
+                      height: screenHeight * 0.03,
                       width: double.infinity,
                       imageUrl: item.image,
                       fit: BoxFit.fitWidth,
@@ -1305,12 +1310,9 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Divider(
-            height: 1,
-            color: Colors.grey.shade100,
-          ),
+        Divider(
+          height: 1,
+          color: Colors.grey.shade100,
         ),
       ],
     ),
