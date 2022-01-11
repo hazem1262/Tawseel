@@ -134,6 +134,12 @@
 
   "all_categories":"كل التصنيفات",
   "nearby_word":"قريب منك",
-  "delivery_word":"توصيل : "
+  "delivery_word":"توصيل : ",
 
+  "favorites_title":"التفضيلات",
+  "favorites_empty_title":"التفضيلات فارغة",
+  "favorites_empty_subtitle":"لم تقم بإضافة اي تفضيلات حتي الان اذا قمت بالإضافة سوف تظهر هنا",
+  "remove":"حذف",
+
+  "best_price":"أفضل سعر"
 }

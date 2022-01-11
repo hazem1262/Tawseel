@@ -16,5 +16,5 @@ abstract class MarketPlaceService {
       @Path("page") int page);
 
   @POST("favorites/{id}")
-  Future<HttpResponse<String>> addMarketPlaceToFavorite(@Path("id") String id);
+  Future<HttpResponse<String>> addMarketPlaceToFavorite(@Path("id") int id);
 }

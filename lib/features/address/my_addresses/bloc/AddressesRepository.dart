@@ -19,8 +19,8 @@ class AddressesRepository with NetworkHandler implements IAddressRepository {
           address.id.toString(),
           address.name.toString(),
           address.address.toString(),
-          double.parse(address.lat!),
-          double.parse(address.long!),
+          address.lat.toString(),
+          address.long.toString(),
           1,
         );
       });

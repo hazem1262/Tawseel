@@ -201,11 +201,11 @@ AdsItem _$AdsItemFromJson(Map<String, dynamic> json) {
 class _$AdsItemTearOff {
   const _$AdsItemTearOff();
 
-  _AdsItem call(int id, String name, String image) {
+  _AdsItem call({required int id, String? name, String? image}) {
     return _AdsItem(
-      id,
-      name,
-      image,
+      id: id,
+      name: name,
+      image: image,
     );
   }
 
@@ -220,8 +220,8 @@ const $AdsItem = _$AdsItemTearOff();
 /// @nodoc
 mixin _$AdsItem {
   int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -232,7 +232,7 @@ mixin _$AdsItem {
 abstract class $AdsItemCopyWith<$Res> {
   factory $AdsItemCopyWith(AdsItem value, $Res Function(AdsItem) then) =
       _$AdsItemCopyWithImpl<$Res>;
-  $Res call({int id, String name, String image});
+  $Res call({int id, String? name, String? image});
 }
 
 /// @nodoc
@@ -257,11 +257,11 @@ class _$AdsItemCopyWithImpl<$Res> implements $AdsItemCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -271,7 +271,7 @@ abstract class _$AdsItemCopyWith<$Res> implements $AdsItemCopyWith<$Res> {
   factory _$AdsItemCopyWith(_AdsItem value, $Res Function(_AdsItem) then) =
       __$AdsItemCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String name, String image});
+  $Res call({int id, String? name, String? image});
 }
 
 /// @nodoc
@@ -290,18 +290,18 @@ class __$AdsItemCopyWithImpl<$Res> extends _$AdsItemCopyWithImpl<$Res>
     Object? image = freezed,
   }) {
     return _then(_AdsItem(
-      id == freezed
+      id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name == freezed
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      image == freezed
+              as String?,
+      image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -309,7 +309,7 @@ class __$AdsItemCopyWithImpl<$Res> extends _$AdsItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AdsItem implements _AdsItem {
-  const _$_AdsItem(this.id, this.name, this.image);
+  const _$_AdsItem({required this.id, this.name, this.image});
 
   factory _$_AdsItem.fromJson(Map<String, dynamic> json) =>
       _$$_AdsItemFromJson(json);
@@ -317,9 +317,9 @@ class _$_AdsItem implements _AdsItem {
   @override
   final int id;
   @override
-  final String name;
+  final String? name;
   @override
-  final String image;
+  final String? image;
 
   @override
   String toString() {
@@ -357,16 +357,17 @@ class _$_AdsItem implements _AdsItem {
 }
 
 abstract class _AdsItem implements AdsItem {
-  const factory _AdsItem(int id, String name, String image) = _$_AdsItem;
+  const factory _AdsItem({required int id, String? name, String? image}) =
+      _$_AdsItem;
 
   factory _AdsItem.fromJson(Map<String, dynamic> json) = _$_AdsItem.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AdsItemCopyWith<_AdsItem> get copyWith =>

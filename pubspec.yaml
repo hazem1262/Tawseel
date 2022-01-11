@@ -10,6 +10,7 @@ dependencies:
   animations: ^2.0.1
   auto_route: ^3.2.0
   cached_network_image: ^3.1.0+1
+  collection: ^1.15.0
   connectivity: ^3.0.6
   cupertino_icons: ^1.0.3
   dio: ^4.0.0
@@ -17,6 +18,7 @@ dependencies:
   easy_localization: ^3.0.0
   easy_localization_loader: ^1.0.0
   equatable: ^2.0.3
+  external_app_launcher: ^2.0.2
   floating_bottom_navigation_bar: ^1.5.2
   flutter:
     sdk: flutter

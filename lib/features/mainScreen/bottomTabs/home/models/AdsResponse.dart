@@ -17,7 +17,8 @@ class AdsResponse with _$AdsResponse {
 
 @freezed
 class AdsItem with _$AdsItem {
-  const factory AdsItem(int id, String name, String image) = _AdsItem;
+  const factory AdsItem({required int id, String? name, String? image}) =
+      _AdsItem;
 
   factory AdsItem.fromJson(Map<String, dynamic> json) =>
       _$AdsItemFromJson(json);

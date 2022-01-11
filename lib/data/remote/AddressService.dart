@@ -17,8 +17,8 @@ abstract class AddressService {
   Future<HttpResponse<AddressResponse>> createAddress(
     @Field() String name,
     @Field() String address,
-    @Field() double lat,
-    @Field() double long,
+    @Field() String lat,
+    @Field() String long,
     @Field() int is_default,
   );
 
@@ -28,8 +28,8 @@ abstract class AddressService {
     @Path() String id,
     @Field() String name,
     @Field() String address,
-    @Field() double lat,
-    @Field() double long,
+    @Field() String lat,
+    @Field() String long,
     @Field() int is_default,
   );
 

@@ -22,11 +22,11 @@ Map<String, dynamic> _$$_CategoriesResponseToJson(
 
 _$_CategoryData _$$_CategoryDataFromJson(Map<String, dynamic> json) =>
     _$_CategoryData(
-      json['id'] as int,
-      json['name'] as String,
-      json['image'] as String,
-      (json['sub_categories'] as List<dynamic>)
-          .map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
+      id: json['id'] as int?,
+      name: json['name'] as String?,
+      image: json['image'] as String?,
+      sub_categories: (json['sub_categories'] as List<dynamic>?)
+          ?.map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

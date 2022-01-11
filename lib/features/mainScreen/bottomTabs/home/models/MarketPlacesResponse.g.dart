@@ -28,7 +28,7 @@ _$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) =>
       json['min_order'] as String,
       json['delivery_time'] as String,
       json['delivery_cost'] as String,
-      json['rating'] as String,
+      json['rating'] as String?,
       json['image'] as String,
       json['logo'] as String,
       json['is_favorite'] as bool,

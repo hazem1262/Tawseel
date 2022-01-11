@@ -4,6 +4,7 @@ import 'package:tawseel/data/remote/AddressService.dart';
 import 'package:tawseel/data/remote/AdsService.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/data/remote/CategoriesService.dart';
+import 'package:tawseel/data/remote/FavoritesService.dart';
 import 'package:tawseel/data/remote/MarketPlaceService.dart';
 import 'package:tawseel/data/remote/NetworkModule.dart';
 import 'package:tawseel/data/remote/OffersService.dart';
@@ -11,6 +12,7 @@ import 'package:tawseel/data/remote/places_api_service.dart';
 import 'package:tawseel/features/address/my_addresses/bloc/AddressesRepository.dart';
 import 'package:tawseel/features/changePassword/bloc/ChangePasswordRepository.dart';
 import 'package:tawseel/features/login/LoginRepository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/favorites/bloc/bloc/favorites_repo.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
@@ -86,11 +88,6 @@ Future<void> initAppDependencies() async {
     OffersRepository(getIt<OffersService>()),
   );
 
-  getIt.registerSingleton<IMarketPlaceRepository>(
-    MarketPlaceRepository(getIt<MarketPlaceService>()),
-  );
-
-
   getIt.registerSingleton<AdsService>(
     AdsService(getIt<NetworkModule>().getDio(BaseUrl)),
   );
@@ -99,4 +96,16 @@ Future<void> initAppDependencies() async {
     AdsRepository(getIt<AdsService>()),
   );
 
+  getIt.registerSingleton<FavoritesService>(
+    FavoritesService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
+
+  getIt.registerSingleton<IMarketPlaceRepository>(
+    MarketPlaceRepository(
+        getIt<MarketPlaceService>(), getIt<FavoritesService>()),
+  );
+
+  getIt.registerSingleton<IFavoritesRepository>(
+    FavoritesRepository(getIt<FavoritesService>()),
+  );
 }

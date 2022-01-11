@@ -21,9 +21,9 @@ Map<String, dynamic> _$$_AdsResponseToJson(_$_AdsResponse instance) =>
     };
 
 _$_AdsItem _$$_AdsItemFromJson(Map<String, dynamic> json) => _$_AdsItem(
-      json['id'] as int,
-      json['name'] as String,
-      json['image'] as String,
+      id: json['id'] as int,
+      name: json['name'] as String?,
+      image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$$_AdsItemToJson(_$_AdsItem instance) =>

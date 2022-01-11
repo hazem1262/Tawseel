@@ -97,5 +97,10 @@ abstract class  LocaleKeys {
   static const all_categories = 'all_categories';
   static const nearby_word = 'nearby_word';
   static const delivery_word = 'delivery_word';
+  static const favorites_title = 'favorites_title';
+  static const favorites_empty_title = 'favorites_empty_title';
+  static const favorites_empty_subtitle = 'favorites_empty_subtitle';
+  static const remove = 'remove';
+  static const best_price = 'best_price';
 
 }

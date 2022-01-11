@@ -107,7 +107,7 @@ class OffersScreen extends StatelessWidget {
                         context: context,
                         offer: offer,
                         onClick: () {
-                          appContext.showToast("${offer.link} clicked");
+                          appContext.showToast("${offer.name} clicked");
                         },
                       );
                     },

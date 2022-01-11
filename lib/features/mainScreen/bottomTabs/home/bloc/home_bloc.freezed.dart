@@ -33,8 +33,14 @@ class _$HomeBlocEventTearOff {
     return const GetHomeNearbyMarketPlaces();
   }
 
-  AddMarketPlaceToFavorite addMarketPlaceToFavorite(String id) {
+  AddMarketPlaceToFavorite addMarketPlaceToFavorite(int id) {
     return AddMarketPlaceToFavorite(
+      id,
+    );
+  }
+
+  RemoveMarketPlaceFromFavorite removeMarketPlaceToFavorite(int id) {
+    return RemoveMarketPlaceFromFavorite(
       id,
     );
   }
@@ -55,7 +61,8 @@ mixin _$HomeBlocEvent {
     required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
-    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,7 +72,8 @@ mixin _$HomeBlocEvent {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -75,7 +83,8 @@ mixin _$HomeBlocEvent {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
     required TResult orElse(),
   }) =>
@@ -89,6 +98,8 @@ mixin _$HomeBlocEvent {
         getNearbyMarketPlaces,
     required TResult Function(AddMarketPlaceToFavorite value)
         addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -99,6 +110,8 @@ mixin _$HomeBlocEvent {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -109,6 +122,8 @@ mixin _$HomeBlocEvent {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) =>
@@ -176,7 +191,8 @@ class _$GetHomeProfile implements GetHomeProfile {
     required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
-    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
   }) {
     return getProfile();
@@ -189,7 +205,8 @@ class _$GetHomeProfile implements GetHomeProfile {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
   }) {
     return getProfile?.call();
@@ -202,7 +219,8 @@ class _$GetHomeProfile implements GetHomeProfile {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -222,6 +240,8 @@ class _$GetHomeProfile implements GetHomeProfile {
         getNearbyMarketPlaces,
     required TResult Function(AddMarketPlaceToFavorite value)
         addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getProfile(this);
@@ -235,6 +255,8 @@ class _$GetHomeProfile implements GetHomeProfile {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
   }) {
     return getProfile?.call(this);
@@ -248,6 +270,8 @@ class _$GetHomeProfile implements GetHomeProfile {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -304,7 +328,8 @@ class _$GetHomeAds implements GetHomeAds {
     required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
-    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
   }) {
     return getAds();
@@ -317,7 +342,8 @@ class _$GetHomeAds implements GetHomeAds {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
   }) {
     return getAds?.call();
@@ -330,7 +356,8 @@ class _$GetHomeAds implements GetHomeAds {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -350,6 +377,8 @@ class _$GetHomeAds implements GetHomeAds {
         getNearbyMarketPlaces,
     required TResult Function(AddMarketPlaceToFavorite value)
         addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getAds(this);
@@ -363,6 +392,8 @@ class _$GetHomeAds implements GetHomeAds {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
   }) {
     return getAds?.call(this);
@@ -376,6 +407,8 @@ class _$GetHomeAds implements GetHomeAds {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -434,7 +467,8 @@ class _$GetHomeCategories implements GetHomeCategories {
     required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
-    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
   }) {
     return getCategories();
@@ -447,7 +481,8 @@ class _$GetHomeCategories implements GetHomeCategories {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
   }) {
     return getCategories?.call();
@@ -460,7 +495,8 @@ class _$GetHomeCategories implements GetHomeCategories {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -480,6 +516,8 @@ class _$GetHomeCategories implements GetHomeCategories {
         getNearbyMarketPlaces,
     required TResult Function(AddMarketPlaceToFavorite value)
         addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getCategories(this);
@@ -493,6 +531,8 @@ class _$GetHomeCategories implements GetHomeCategories {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
   }) {
     return getCategories?.call(this);
@@ -506,6 +546,8 @@ class _$GetHomeCategories implements GetHomeCategories {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -565,7 +607,8 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
     required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
-    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
   }) {
     return getNearbyMarketPlaces();
@@ -578,7 +621,8 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
   }) {
     return getNearbyMarketPlaces?.call();
@@ -591,7 +635,8 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -611,6 +656,8 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
         getNearbyMarketPlaces,
     required TResult Function(AddMarketPlaceToFavorite value)
         addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getNearbyMarketPlaces(this);
@@ -624,6 +671,8 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
   }) {
     return getNearbyMarketPlaces?.call(this);
@@ -637,6 +686,8 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -656,7 +707,7 @@ abstract class $AddMarketPlaceToFavoriteCopyWith<$Res> {
   factory $AddMarketPlaceToFavoriteCopyWith(AddMarketPlaceToFavorite value,
           $Res Function(AddMarketPlaceToFavorite) then) =
       _$AddMarketPlaceToFavoriteCopyWithImpl<$Res>;
-  $Res call({String id});
+  $Res call({int id});
 }
 
 /// @nodoc
@@ -679,7 +730,7 @@ class _$AddMarketPlaceToFavoriteCopyWithImpl<$Res>
       id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -690,7 +741,7 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   const _$AddMarketPlaceToFavorite(this.id);
 
   @override
-  final String id;
+  final int id;
 
   @override
   String toString() {
@@ -722,7 +773,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
-    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
   }) {
     return addMarketPlaceToFavorite(id);
@@ -735,7 +787,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
   }) {
     return addMarketPlaceToFavorite?.call(id);
@@ -748,7 +801,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -768,6 +822,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
         getNearbyMarketPlaces,
     required TResult Function(AddMarketPlaceToFavorite value)
         addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return addMarketPlaceToFavorite(this);
@@ -781,6 +837,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
   }) {
     return addMarketPlaceToFavorite?.call(this);
@@ -794,6 +852,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -805,13 +865,186 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
 }
 
 abstract class AddMarketPlaceToFavorite implements HomeBlocEvent {
-  const factory AddMarketPlaceToFavorite(String id) =
-      _$AddMarketPlaceToFavorite;
+  const factory AddMarketPlaceToFavorite(int id) = _$AddMarketPlaceToFavorite;
 
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
+  factory $RemoveMarketPlaceFromFavoriteCopyWith(
+          RemoveMarketPlaceFromFavorite value,
+          $Res Function(RemoveMarketPlaceFromFavorite) then) =
+      _$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>;
+  $Res call({int id});
+}
+
+/// @nodoc
+class _$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res>
+    implements $RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
+  _$RemoveMarketPlaceFromFavoriteCopyWithImpl(
+      RemoveMarketPlaceFromFavorite _value,
+      $Res Function(RemoveMarketPlaceFromFavorite) _then)
+      : super(_value, (v) => _then(v as RemoveMarketPlaceFromFavorite));
+
+  @override
+  RemoveMarketPlaceFromFavorite get _value =>
+      super._value as RemoveMarketPlaceFromFavorite;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(RemoveMarketPlaceFromFavorite(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
+  const _$RemoveMarketPlaceFromFavorite(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'HomeBlocEvent.removeMarketPlaceToFavorite(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is RemoveMarketPlaceFromFavorite &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+
+  @JsonKey(ignore: true)
+  @override
+  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite>
+      get copyWith => _$RemoveMarketPlaceFromFavoriteCopyWithImpl<
+          RemoveMarketPlaceFromFavorite>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getProfile,
+    required TResult Function() getAds,
+    required TResult Function() getCategories,
+    required TResult Function() getNearbyMarketPlaces,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
+    required TResult Function() reset,
+  }) {
+    return removeMarketPlaceToFavorite(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+  }) {
+    return removeMarketPlaceToFavorite?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProfile,
+    TResult Function()? getAds,
+    TResult Function()? getCategories,
+    TResult Function()? getNearbyMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (removeMarketPlaceToFavorite != null) {
+      return removeMarketPlaceToFavorite(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetHomeProfile value) getProfile,
+    required TResult Function(GetHomeAds value) getAds,
+    required TResult Function(GetHomeCategories value) getCategories,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
+    required TResult Function(ResetHomeRefreshData value) reset,
+  }) {
+    return removeMarketPlaceToFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+  }) {
+    return removeMarketPlaceToFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetHomeProfile value)? getProfile,
+    TResult Function(GetHomeAds value)? getAds,
+    TResult Function(GetHomeCategories value)? getCategories,
+    TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetHomeRefreshData value)? reset,
+    required TResult orElse(),
+  }) {
+    if (removeMarketPlaceToFavorite != null) {
+      return removeMarketPlaceToFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveMarketPlaceFromFavorite implements HomeBlocEvent {
+  const factory RemoveMarketPlaceFromFavorite(int id) =
+      _$RemoveMarketPlaceFromFavorite;
+
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -858,7 +1091,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
     required TResult Function() getAds,
     required TResult Function() getCategories,
     required TResult Function() getNearbyMarketPlaces,
-    required TResult Function(String id) addMarketPlaceToFavorite,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
   }) {
     return reset();
@@ -871,7 +1105,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
   }) {
     return reset?.call();
@@ -884,7 +1119,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
     TResult Function()? getAds,
     TResult Function()? getCategories,
     TResult Function()? getNearbyMarketPlaces,
-    TResult Function(String id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
     required TResult orElse(),
   }) {
@@ -904,6 +1140,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
         getNearbyMarketPlaces,
     required TResult Function(AddMarketPlaceToFavorite value)
         addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return reset(this);
@@ -917,6 +1155,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
   }) {
     return reset?.call(this);
@@ -930,6 +1170,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {

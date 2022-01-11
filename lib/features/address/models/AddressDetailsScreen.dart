@@ -60,36 +60,36 @@ class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
         body: SingleChildScrollView(
       child: Stack(
         children: [
-          Positioned(
-              top: height / 14,
-              left: width * 0.60,
-              child: IconButton(
-                onPressed: () {
-                  appState.seLoggedInState(false);
-                  context.openOnly(LandingScreenRoute());
-                },
-                icon: Icon(Icons.logout),
-              )),
-          Positioned(
-            top: height / 12,
-            right: width / 6,
-            child: GestureDetector(
-              child: Icon(Icons.language),
-              onTap: () {
-                context.toggleLanguage();
-              },
-            ),
-          ),
-          Positioned(
-            top: height / 12,
-            right: width / 15,
-            child: GestureDetector(
-              child: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode),
-              onTap: () {
-                tm.toggleMode();
-              },
-            ),
-          ),
+          // Positioned(
+          //     top: height / 14,
+          //     left: width * 0.60,
+          //     child: IconButton(
+          //       onPressed: () {
+          //         appState.seLoggedInState(false);
+          //         context.openOnly(LandingScreenRoute());
+          //       },
+          //       icon: Icon(Icons.logout),
+          //     )),
+          // Positioned(
+          //   top: height / 12,
+          //   right: width / 6,
+          //   child: GestureDetector(
+          //     child: Icon(Icons.language),
+          //     onTap: () {
+          //       context.toggleLanguage();
+          //     },
+          //   ),
+          // ),
+          // Positioned(
+          //   top: height / 12,
+          //   right: width / 15,
+          //   child: GestureDetector(
+          //     child: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode),
+          //     onTap: () {
+          //       tm.toggleMode();
+          //     },
+          //   ),
+          // ),
           Positioned(
             top: height / 15,
             left: width / 15,
@@ -211,8 +211,8 @@ class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
         .createAddress(
           cn.text,
           widget.pickedLocation.address,
-          widget.pickedLocation.lat,
-          widget.pickedLocation.lng,
+          widget.pickedLocation.lat.toString(),
+          widget.pickedLocation.lng.toString(),
           context.read<AddressProvider>().isDefault ? 1 : 0,
         )
         .then((value) {

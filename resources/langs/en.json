@@ -134,6 +134,12 @@
   "all_categories":"All Categories",
 
   "nearby_word":"Nearby",
-  "delivery_word":"Delivery :"
+  "delivery_word":"Delivery :",
 
+  "favorites_title":"Favorites",
+  "favorites_empty_title":"Your Favorites List is Empty",
+  "favorites_empty_subtitle":"You didn't add any favorites yet\n when you add a favorite it will appear here",
+
+  "remove":"Remove",
+  "best_price":"Best Price"
 }

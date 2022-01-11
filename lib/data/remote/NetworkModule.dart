@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 import 'package:tawseel/utils/globals.dart';
 
 class NetworkModule {
@@ -15,8 +14,8 @@ class NetworkModule {
       sendTimeout: 10000,
     );
 
-    dio.interceptors.add(LogInterceptor(responseBody: true, requestBody: true));
     dio.interceptors.add(KeysInjectionInterceptor());
+    dio.interceptors.add(LogInterceptor(responseBody: true, requestBody: true));
 
     return dio;
   }

@@ -172,12 +172,15 @@ class _$CategoryDataTearOff {
   const _$CategoryDataTearOff();
 
   _CategoryData call(
-      int id, String name, String image, List<CategoryData> sub_categories) {
+      {int? id,
+      String? name,
+      String? image,
+      List<CategoryData>? sub_categories}) {
     return _CategoryData(
-      id,
-      name,
-      image,
-      sub_categories,
+      id: id,
+      name: name,
+      image: image,
+      sub_categories: sub_categories,
     );
   }
 
@@ -191,10 +194,10 @@ const $CategoryData = _$CategoryDataTearOff();
 
 /// @nodoc
 mixin _$CategoryData {
-  int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  List<CategoryData> get sub_categories => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
+  List<CategoryData>? get sub_categories => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -208,7 +211,10 @@ abstract class $CategoryDataCopyWith<$Res> {
           CategoryData value, $Res Function(CategoryData) then) =
       _$CategoryDataCopyWithImpl<$Res>;
   $Res call(
-      {int id, String name, String image, List<CategoryData> sub_categories});
+      {int? id,
+      String? name,
+      String? image,
+      List<CategoryData>? sub_categories});
 }
 
 /// @nodoc
@@ -230,19 +236,19 @@ class _$CategoryDataCopyWithImpl<$Res> implements $CategoryDataCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sub_categories: sub_categories == freezed
           ? _value.sub_categories
           : sub_categories // ignore: cast_nullable_to_non_nullable
-              as List<CategoryData>,
+              as List<CategoryData>?,
     ));
   }
 }
@@ -255,7 +261,10 @@ abstract class _$CategoryDataCopyWith<$Res>
       __$CategoryDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id, String name, String image, List<CategoryData> sub_categories});
+      {int? id,
+      String? name,
+      String? image,
+      List<CategoryData>? sub_categories});
 }
 
 /// @nodoc
@@ -276,22 +285,22 @@ class __$CategoryDataCopyWithImpl<$Res> extends _$CategoryDataCopyWithImpl<$Res>
     Object? sub_categories = freezed,
   }) {
     return _then(_CategoryData(
-      id == freezed
+      id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name == freezed
+              as int?,
+      name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      image == freezed
+              as String?,
+      image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      sub_categories == freezed
+              as String?,
+      sub_categories: sub_categories == freezed
           ? _value.sub_categories
           : sub_categories // ignore: cast_nullable_to_non_nullable
-              as List<CategoryData>,
+              as List<CategoryData>?,
     ));
   }
 }
@@ -299,19 +308,19 @@ class __$CategoryDataCopyWithImpl<$Res> extends _$CategoryDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CategoryData implements _CategoryData {
-  const _$_CategoryData(this.id, this.name, this.image, this.sub_categories);
+  const _$_CategoryData({this.id, this.name, this.image, this.sub_categories});
 
   factory _$_CategoryData.fromJson(Map<String, dynamic> json) =>
       _$$_CategoryDataFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
-  final String name;
+  final String? name;
   @override
-  final String image;
+  final String? image;
   @override
-  final List<CategoryData> sub_categories;
+  final List<CategoryData>? sub_categories;
 
   @override
   String toString() {
@@ -353,20 +362,23 @@ class _$_CategoryData implements _CategoryData {
 }
 
 abstract class _CategoryData implements CategoryData {
-  const factory _CategoryData(int id, String name, String image,
-      List<CategoryData> sub_categories) = _$_CategoryData;
+  const factory _CategoryData(
+      {int? id,
+      String? name,
+      String? image,
+      List<CategoryData>? sub_categories}) = _$_CategoryData;
 
   factory _CategoryData.fromJson(Map<String, dynamic> json) =
       _$_CategoryData.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   @override
-  List<CategoryData> get sub_categories => throw _privateConstructorUsedError;
+  List<CategoryData>? get sub_categories => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CategoryDataCopyWith<_CategoryData> get copyWith =>

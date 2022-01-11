@@ -12,8 +12,11 @@ class CategoriesResponse with _$CategoriesResponse {
 
 @freezed
 class CategoryData with _$CategoryData {
-  const factory CategoryData(int id, String name, String image,
-      List<CategoryData> sub_categories) = _CategoryData;
+  const factory CategoryData(
+      {int? id,
+      String? name,
+      String? image,
+      List<CategoryData>? sub_categories}) = _CategoryData;
   factory CategoryData.fromJson(Map<String, dynamic> json) =>
       _$CategoryDataFromJson(json);
 }

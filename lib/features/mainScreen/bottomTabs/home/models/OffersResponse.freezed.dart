@@ -203,12 +203,30 @@ OfferItem _$OfferItemFromJson(Map<String, dynamic> json) {
 class _$OfferItemTearOff {
   const _$OfferItemTearOff();
 
-  _OfferItem call(int id, String name, String link, String image) {
+  _OfferItem call(
+      int id,
+      String name,
+      String description,
+      String min_order,
+      String delivery_time,
+      String delivery_cost,
+      String rating,
+      String image,
+      String logo,
+      bool is_favorite,
+      List<CompanyItem> companies) {
     return _OfferItem(
       id,
       name,
-      link,
+      description,
+      min_order,
+      delivery_time,
+      delivery_cost,
+      rating,
       image,
+      logo,
+      is_favorite,
+      companies,
     );
   }
 
@@ -224,8 +242,15 @@ const $OfferItem = _$OfferItemTearOff();
 mixin _$OfferItem {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get min_order => throw _privateConstructorUsedError;
+  String get delivery_time => throw _privateConstructorUsedError;
+  String get delivery_cost => throw _privateConstructorUsedError;
+  String get rating => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
+  String get logo => throw _privateConstructorUsedError;
+  bool get is_favorite => throw _privateConstructorUsedError;
+  List<CompanyItem> get companies => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -237,7 +262,18 @@ mixin _$OfferItem {
 abstract class $OfferItemCopyWith<$Res> {
   factory $OfferItemCopyWith(OfferItem value, $Res Function(OfferItem) then) =
       _$OfferItemCopyWithImpl<$Res>;
-  $Res call({int id, String name, String link, String image});
+  $Res call(
+      {int id,
+      String name,
+      String description,
+      String min_order,
+      String delivery_time,
+      String delivery_cost,
+      String rating,
+      String image,
+      String logo,
+      bool is_favorite,
+      List<CompanyItem> companies});
 }
 
 /// @nodoc
@@ -252,8 +288,15 @@ class _$OfferItemCopyWithImpl<$Res> implements $OfferItemCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? link = freezed,
+    Object? description = freezed,
+    Object? min_order = freezed,
+    Object? delivery_time = freezed,
+    Object? delivery_cost = freezed,
+    Object? rating = freezed,
     Object? image = freezed,
+    Object? logo = freezed,
+    Object? is_favorite = freezed,
+    Object? companies = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -264,14 +307,42 @@ class _$OfferItemCopyWithImpl<$Res> implements $OfferItemCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      min_order: min_order == freezed
+          ? _value.min_order
+          : min_order // ignore: cast_nullable_to_non_nullable
+              as String,
+      delivery_time: delivery_time == freezed
+          ? _value.delivery_time
+          : delivery_time // ignore: cast_nullable_to_non_nullable
+              as String,
+      delivery_cost: delivery_cost == freezed
+          ? _value.delivery_cost
+          : delivery_cost // ignore: cast_nullable_to_non_nullable
+              as String,
+      rating: rating == freezed
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
               as String,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      logo: logo == freezed
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+      is_favorite: is_favorite == freezed
+          ? _value.is_favorite
+          : is_favorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      companies: companies == freezed
+          ? _value.companies
+          : companies // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
     ));
   }
 }
@@ -282,7 +353,18 @@ abstract class _$OfferItemCopyWith<$Res> implements $OfferItemCopyWith<$Res> {
           _OfferItem value, $Res Function(_OfferItem) then) =
       __$OfferItemCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String name, String link, String image});
+  $Res call(
+      {int id,
+      String name,
+      String description,
+      String min_order,
+      String delivery_time,
+      String delivery_cost,
+      String rating,
+      String image,
+      String logo,
+      bool is_favorite,
+      List<CompanyItem> companies});
 }
 
 /// @nodoc
@@ -298,8 +380,15 @@ class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? link = freezed,
+    Object? description = freezed,
+    Object? min_order = freezed,
+    Object? delivery_time = freezed,
+    Object? delivery_cost = freezed,
+    Object? rating = freezed,
     Object? image = freezed,
+    Object? logo = freezed,
+    Object? is_favorite = freezed,
+    Object? companies = freezed,
   }) {
     return _then(_OfferItem(
       id == freezed
@@ -310,14 +399,42 @@ class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
+      description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      min_order == freezed
+          ? _value.min_order
+          : min_order // ignore: cast_nullable_to_non_nullable
+              as String,
+      delivery_time == freezed
+          ? _value.delivery_time
+          : delivery_time // ignore: cast_nullable_to_non_nullable
+              as String,
+      delivery_cost == freezed
+          ? _value.delivery_cost
+          : delivery_cost // ignore: cast_nullable_to_non_nullable
+              as String,
+      rating == freezed
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
               as String,
       image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      logo == freezed
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+      is_favorite == freezed
+          ? _value.is_favorite
+          : is_favorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      companies == freezed
+          ? _value.companies
+          : companies // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
     ));
   }
 }
@@ -325,7 +442,18 @@ class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_OfferItem implements _OfferItem {
-  const _$_OfferItem(this.id, this.name, this.link, this.image);
+  const _$_OfferItem(
+      this.id,
+      this.name,
+      this.description,
+      this.min_order,
+      this.delivery_time,
+      this.delivery_cost,
+      this.rating,
+      this.image,
+      this.logo,
+      this.is_favorite,
+      this.companies);
 
   factory _$_OfferItem.fromJson(Map<String, dynamic> json) =>
       _$$_OfferItemFromJson(json);
@@ -335,13 +463,27 @@ class _$_OfferItem implements _OfferItem {
   @override
   final String name;
   @override
-  final String link;
+  final String description;
+  @override
+  final String min_order;
+  @override
+  final String delivery_time;
+  @override
+  final String delivery_cost;
+  @override
+  final String rating;
   @override
   final String image;
+  @override
+  final String logo;
+  @override
+  final bool is_favorite;
+  @override
+  final List<CompanyItem> companies;
 
   @override
   String toString() {
-    return 'OfferItem(id: $id, name: $name, link: $link, image: $image)';
+    return 'OfferItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, is_favorite: $is_favorite, companies: $companies)';
   }
 
   @override
@@ -352,10 +494,30 @@ class _$_OfferItem implements _OfferItem {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.link, link) ||
-                const DeepCollectionEquality().equals(other.link, link)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.min_order, min_order) ||
+                const DeepCollectionEquality()
+                    .equals(other.min_order, min_order)) &&
+            (identical(other.delivery_time, delivery_time) ||
+                const DeepCollectionEquality()
+                    .equals(other.delivery_time, delivery_time)) &&
+            (identical(other.delivery_cost, delivery_cost) ||
+                const DeepCollectionEquality()
+                    .equals(other.delivery_cost, delivery_cost)) &&
+            (identical(other.rating, rating) ||
+                const DeepCollectionEquality().equals(other.rating, rating)) &&
             (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+                const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.logo, logo) ||
+                const DeepCollectionEquality().equals(other.logo, logo)) &&
+            (identical(other.is_favorite, is_favorite) ||
+                const DeepCollectionEquality()
+                    .equals(other.is_favorite, is_favorite)) &&
+            (identical(other.companies, companies) ||
+                const DeepCollectionEquality()
+                    .equals(other.companies, companies)));
   }
 
   @override
@@ -363,8 +525,15 @@ class _$_OfferItem implements _OfferItem {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(link) ^
-      const DeepCollectionEquality().hash(image);
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(min_order) ^
+      const DeepCollectionEquality().hash(delivery_time) ^
+      const DeepCollectionEquality().hash(delivery_cost) ^
+      const DeepCollectionEquality().hash(rating) ^
+      const DeepCollectionEquality().hash(image) ^
+      const DeepCollectionEquality().hash(logo) ^
+      const DeepCollectionEquality().hash(is_favorite) ^
+      const DeepCollectionEquality().hash(companies);
 
   @JsonKey(ignore: true)
   @override
@@ -378,8 +547,18 @@ class _$_OfferItem implements _OfferItem {
 }
 
 abstract class _OfferItem implements OfferItem {
-  const factory _OfferItem(int id, String name, String link, String image) =
-      _$_OfferItem;
+  const factory _OfferItem(
+      int id,
+      String name,
+      String description,
+      String min_order,
+      String delivery_time,
+      String delivery_cost,
+      String rating,
+      String image,
+      String logo,
+      bool is_favorite,
+      List<CompanyItem> companies) = _$_OfferItem;
 
   factory _OfferItem.fromJson(Map<String, dynamic> json) =
       _$_OfferItem.fromJson;
@@ -389,9 +568,23 @@ abstract class _OfferItem implements OfferItem {
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  String get link => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  @override
+  String get min_order => throw _privateConstructorUsedError;
+  @override
+  String get delivery_time => throw _privateConstructorUsedError;
+  @override
+  String get delivery_cost => throw _privateConstructorUsedError;
+  @override
+  String get rating => throw _privateConstructorUsedError;
   @override
   String get image => throw _privateConstructorUsedError;
+  @override
+  String get logo => throw _privateConstructorUsedError;
+  @override
+  bool get is_favorite => throw _privateConstructorUsedError;
+  @override
+  List<CompanyItem> get companies => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$OfferItemCopyWith<_OfferItem> get copyWith =>
@@ -407,10 +600,9 @@ class _$MetaPaginationTearOff {
   const _$MetaPaginationTearOff();
 
   _MetaPagination call(
-      int current_page, int from, int last_page, int total, int per_page) {
+      int current_page, int last_page, int total, int per_page) {
     return _MetaPagination(
       current_page,
-      from,
       last_page,
       total,
       per_page,
@@ -428,7 +620,6 @@ const $MetaPagination = _$MetaPaginationTearOff();
 /// @nodoc
 mixin _$MetaPagination {
   int get current_page => throw _privateConstructorUsedError;
-  int get from => throw _privateConstructorUsedError;
   int get last_page => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
   int get per_page => throw _privateConstructorUsedError;
@@ -444,8 +635,7 @@ abstract class $MetaPaginationCopyWith<$Res> {
   factory $MetaPaginationCopyWith(
           MetaPagination value, $Res Function(MetaPagination) then) =
       _$MetaPaginationCopyWithImpl<$Res>;
-  $Res call(
-      {int current_page, int from, int last_page, int total, int per_page});
+  $Res call({int current_page, int last_page, int total, int per_page});
 }
 
 /// @nodoc
@@ -460,7 +650,6 @@ class _$MetaPaginationCopyWithImpl<$Res>
   @override
   $Res call({
     Object? current_page = freezed,
-    Object? from = freezed,
     Object? last_page = freezed,
     Object? total = freezed,
     Object? per_page = freezed,
@@ -469,10 +658,6 @@ class _$MetaPaginationCopyWithImpl<$Res>
       current_page: current_page == freezed
           ? _value.current_page
           : current_page // ignore: cast_nullable_to_non_nullable
-              as int,
-      from: from == freezed
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
               as int,
       last_page: last_page == freezed
           ? _value.last_page
@@ -497,8 +682,7 @@ abstract class _$MetaPaginationCopyWith<$Res>
           _MetaPagination value, $Res Function(_MetaPagination) then) =
       __$MetaPaginationCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int current_page, int from, int last_page, int total, int per_page});
+  $Res call({int current_page, int last_page, int total, int per_page});
 }
 
 /// @nodoc
@@ -515,7 +699,6 @@ class __$MetaPaginationCopyWithImpl<$Res>
   @override
   $Res call({
     Object? current_page = freezed,
-    Object? from = freezed,
     Object? last_page = freezed,
     Object? total = freezed,
     Object? per_page = freezed,
@@ -524,10 +707,6 @@ class __$MetaPaginationCopyWithImpl<$Res>
       current_page == freezed
           ? _value.current_page
           : current_page // ignore: cast_nullable_to_non_nullable
-              as int,
-      from == freezed
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
               as int,
       last_page == freezed
           ? _value.last_page
@@ -549,15 +728,13 @@ class __$MetaPaginationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MetaPagination implements _MetaPagination {
   const _$_MetaPagination(
-      this.current_page, this.from, this.last_page, this.total, this.per_page);
+      this.current_page, this.last_page, this.total, this.per_page);
 
   factory _$_MetaPagination.fromJson(Map<String, dynamic> json) =>
       _$$_MetaPaginationFromJson(json);
 
   @override
   final int current_page;
-  @override
-  final int from;
   @override
   final int last_page;
   @override
@@ -567,7 +744,7 @@ class _$_MetaPagination implements _MetaPagination {
 
   @override
   String toString() {
-    return 'MetaPagination(current_page: $current_page, from: $from, last_page: $last_page, total: $total, per_page: $per_page)';
+    return 'MetaPagination(current_page: $current_page, last_page: $last_page, total: $total, per_page: $per_page)';
   }
 
   @override
@@ -577,8 +754,6 @@ class _$_MetaPagination implements _MetaPagination {
             (identical(other.current_page, current_page) ||
                 const DeepCollectionEquality()
                     .equals(other.current_page, current_page)) &&
-            (identical(other.from, from) ||
-                const DeepCollectionEquality().equals(other.from, from)) &&
             (identical(other.last_page, last_page) ||
                 const DeepCollectionEquality()
                     .equals(other.last_page, last_page)) &&
@@ -593,7 +768,6 @@ class _$_MetaPagination implements _MetaPagination {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(current_page) ^
-      const DeepCollectionEquality().hash(from) ^
       const DeepCollectionEquality().hash(last_page) ^
       const DeepCollectionEquality().hash(total) ^
       const DeepCollectionEquality().hash(per_page);
@@ -611,7 +785,7 @@ class _$_MetaPagination implements _MetaPagination {
 
 abstract class _MetaPagination implements MetaPagination {
   const factory _MetaPagination(
-          int current_page, int from, int last_page, int total, int per_page) =
+          int current_page, int last_page, int total, int per_page) =
       _$_MetaPagination;
 
   factory _MetaPagination.fromJson(Map<String, dynamic> json) =
@@ -619,8 +793,6 @@ abstract class _MetaPagination implements MetaPagination {
 
   @override
   int get current_page => throw _privateConstructorUsedError;
-  @override
-  int get from => throw _privateConstructorUsedError;
   @override
   int get last_page => throw _privateConstructorUsedError;
   @override

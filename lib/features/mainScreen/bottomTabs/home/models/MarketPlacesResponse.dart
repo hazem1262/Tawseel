@@ -22,7 +22,7 @@ class MarketPlaceItem with _$MarketPlaceItem {
     String min_order,
     String delivery_time,
     String delivery_cost,
-    String rating,
+    String? rating,
     String image,
     String logo,
     bool is_favorite,

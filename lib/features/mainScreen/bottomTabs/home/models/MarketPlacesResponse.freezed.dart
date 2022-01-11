@@ -179,7 +179,7 @@ class _$MarketPlaceItemTearOff {
       String min_order,
       String delivery_time,
       String delivery_cost,
-      String rating,
+      String? rating,
       String image,
       String logo,
       bool is_favorite,
@@ -215,7 +215,7 @@ mixin _$MarketPlaceItem {
   String get min_order => throw _privateConstructorUsedError;
   String get delivery_time => throw _privateConstructorUsedError;
   String get delivery_cost => throw _privateConstructorUsedError;
-  String get rating => throw _privateConstructorUsedError;
+  String? get rating => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   String get logo => throw _privateConstructorUsedError;
   bool get is_favorite => throw _privateConstructorUsedError;
@@ -239,7 +239,7 @@ abstract class $MarketPlaceItemCopyWith<$Res> {
       String min_order,
       String delivery_time,
       String delivery_cost,
-      String rating,
+      String? rating,
       String image,
       String logo,
       bool is_favorite,
@@ -297,7 +297,7 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -332,7 +332,7 @@ abstract class _$MarketPlaceItemCopyWith<$Res>
       String min_order,
       String delivery_time,
       String delivery_cost,
-      String rating,
+      String? rating,
       String image,
       String logo,
       bool is_favorite,
@@ -392,7 +392,7 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
       rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -445,7 +445,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
   @override
   final String delivery_cost;
   @override
-  final String rating;
+  final String? rating;
   @override
   final String image;
   @override
@@ -528,7 +528,7 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
       String min_order,
       String delivery_time,
       String delivery_cost,
-      String rating,
+      String? rating,
       String image,
       String logo,
       bool is_favorite,
@@ -550,7 +550,7 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
   @override
   String get delivery_cost => throw _privateConstructorUsedError;
   @override
-  String get rating => throw _privateConstructorUsedError;
+  String? get rating => throw _privateConstructorUsedError;
   @override
   String get image => throw _privateConstructorUsedError;
   @override
