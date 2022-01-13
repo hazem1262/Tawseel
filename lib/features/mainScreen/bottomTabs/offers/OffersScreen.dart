@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/HomeScreen.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -70,7 +72,7 @@ class OffersScreen extends StatelessWidget {
       {required BuildContext context,
       required bool isPagingLoading,
       required bool hasMorePages,
-      required List<OfferItem> offers}) {
+      required List<MarketPlaceItem> offers}) {
     final h = MediaQuery.of(context).size.height;
     final height = h -
         MediaQuery.of(context).padding.top -
@@ -91,7 +93,7 @@ class OffersScreen extends StatelessWidget {
                   constraints: BoxConstraints(
                     maxHeight: height - height * 0.229,
                   ),
-                  child: PaginationList<OfferItem>(
+                  child: PaginationList<MarketPlaceItem>(
                     list: [...offers],
                     hasMore: hasMorePages,
                     isLoading: isPagingLoading,
@@ -103,13 +105,16 @@ class OffersScreen extends StatelessWidget {
                     },
                     loadingWidget: offersShimmer(context, 1),
                     builder: (offer) {
-                      return offerItem(
-                        context: context,
-                        offer: offer,
-                        onClick: () {
-                          appContext.showToast("${offer.name} clicked");
-                        },
-                      );
+                      return marketPlaceItem(context, offer, (item) {
+                        showMarketPlaceCompaniesBottomSheet(
+                            item, context, item.companies);
+                      }, (item) {
+                        // BlocProvider.of<HomeBloc>(blocContext).add(
+                        //   item.is_favorite
+                        //       ? RemoveMarketPlaceFromFavorite(item.id)
+                        //       : AddMarketPlaceToFavorite((item.id)),
+                        // );
+                      }, false);
                     },
                   ),
                 ),

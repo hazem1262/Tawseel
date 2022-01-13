@@ -9,7 +9,7 @@ part of 'OffersResponse.dart';
 _$_OffersResponse _$$_OffersResponseFromJson(Map<String, dynamic> json) =>
     _$_OffersResponse(
       (json['data'] as List<dynamic>)
-          .map((e) => OfferItem.fromJson(e as Map<String, dynamic>))
+          .map((e) => MarketPlaceItem.fromJson(e as Map<String, dynamic>))
           .toList(),
       MetaPagination.fromJson(json['meta'] as Map<String, dynamic>),
     );
@@ -27,7 +27,7 @@ _$_OfferItem _$$_OfferItemFromJson(Map<String, dynamic> json) => _$_OfferItem(
       json['min_order'] as String,
       json['delivery_time'] as String,
       json['delivery_cost'] as String,
-      json['rating'] as String,
+      json['rating'] as String?,
       json['image'] as String,
       json['logo'] as String,
       json['is_favorite'] as bool,

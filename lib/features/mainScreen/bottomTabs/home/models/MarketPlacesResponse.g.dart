@@ -35,6 +35,12 @@ _$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) =>
       (json['companies'] as List<dynamic>)
           .map((e) => CompanyItem.fromJson(e as Map<String, dynamic>))
           .toList(),
+      (json['parent_categories'] as List<dynamic>)
+          .map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      (json['sub_categories'] as List<dynamic>)
+          .map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) =>
@@ -50,6 +56,8 @@ Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) =>
       'logo': instance.logo,
       'is_favorite': instance.is_favorite,
       'companies': instance.companies,
+      'parent_categories': instance.parent_categories,
+      'sub_categories': instance.sub_categories,
     };
 
 _$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) =>

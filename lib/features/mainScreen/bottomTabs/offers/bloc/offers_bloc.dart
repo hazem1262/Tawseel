@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
-import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
-import 'package:tawseel/res.dart';
 
 part 'offers_bloc.freezed.dart';
 
@@ -19,7 +18,7 @@ class OffersState with _$OffersState {
     @Default(false) bool isPagingLoading,
     @Default("") String error,
     @Default(false) bool refreshData,
-    @Default([]) List<OfferItem> offersList,
+    @Default([]) List<MarketPlaceItem> offersList,
     @Default(false) bool hasMorePages,
   ]) = OffersDefaultState;
 }

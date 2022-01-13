@@ -21,7 +21,7 @@ OffersResponse _$OffersResponseFromJson(Map<String, dynamic> json) {
 class _$OffersResponseTearOff {
   const _$OffersResponseTearOff();
 
-  _OffersResponse call(List<OfferItem> data, MetaPagination meta) {
+  _OffersResponse call(List<MarketPlaceItem> data, MetaPagination meta) {
     return _OffersResponse(
       data,
       meta,
@@ -38,7 +38,7 @@ const $OffersResponse = _$OffersResponseTearOff();
 
 /// @nodoc
 mixin _$OffersResponse {
-  List<OfferItem> get data => throw _privateConstructorUsedError;
+  List<MarketPlaceItem> get data => throw _privateConstructorUsedError;
   MetaPagination get meta => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $OffersResponseCopyWith<$Res> {
   factory $OffersResponseCopyWith(
           OffersResponse value, $Res Function(OffersResponse) then) =
       _$OffersResponseCopyWithImpl<$Res>;
-  $Res call({List<OfferItem> data, MetaPagination meta});
+  $Res call({List<MarketPlaceItem> data, MetaPagination meta});
 
   $MetaPaginationCopyWith<$Res> get meta;
 }
@@ -75,7 +75,7 @@ class _$OffersResponseCopyWithImpl<$Res>
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<OfferItem>,
+              as List<MarketPlaceItem>,
       meta: meta == freezed
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -98,7 +98,7 @@ abstract class _$OffersResponseCopyWith<$Res>
           _OffersResponse value, $Res Function(_OffersResponse) then) =
       __$OffersResponseCopyWithImpl<$Res>;
   @override
-  $Res call({List<OfferItem> data, MetaPagination meta});
+  $Res call({List<MarketPlaceItem> data, MetaPagination meta});
 
   @override
   $MetaPaginationCopyWith<$Res> get meta;
@@ -124,7 +124,7 @@ class __$OffersResponseCopyWithImpl<$Res>
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<OfferItem>,
+              as List<MarketPlaceItem>,
       meta == freezed
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -142,7 +142,7 @@ class _$_OffersResponse implements _OffersResponse {
       _$$_OffersResponseFromJson(json);
 
   @override
-  final List<OfferItem> data;
+  final List<MarketPlaceItem> data;
   @override
   final MetaPagination meta;
 
@@ -179,14 +179,14 @@ class _$_OffersResponse implements _OffersResponse {
 }
 
 abstract class _OffersResponse implements OffersResponse {
-  const factory _OffersResponse(List<OfferItem> data, MetaPagination meta) =
-      _$_OffersResponse;
+  const factory _OffersResponse(
+      List<MarketPlaceItem> data, MetaPagination meta) = _$_OffersResponse;
 
   factory _OffersResponse.fromJson(Map<String, dynamic> json) =
       _$_OffersResponse.fromJson;
 
   @override
-  List<OfferItem> get data => throw _privateConstructorUsedError;
+  List<MarketPlaceItem> get data => throw _privateConstructorUsedError;
   @override
   MetaPagination get meta => throw _privateConstructorUsedError;
   @override
@@ -210,7 +210,7 @@ class _$OfferItemTearOff {
       String min_order,
       String delivery_time,
       String delivery_cost,
-      String rating,
+      String? rating,
       String image,
       String logo,
       bool is_favorite,
@@ -246,7 +246,7 @@ mixin _$OfferItem {
   String get min_order => throw _privateConstructorUsedError;
   String get delivery_time => throw _privateConstructorUsedError;
   String get delivery_cost => throw _privateConstructorUsedError;
-  String get rating => throw _privateConstructorUsedError;
+  String? get rating => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   String get logo => throw _privateConstructorUsedError;
   bool get is_favorite => throw _privateConstructorUsedError;
@@ -269,7 +269,7 @@ abstract class $OfferItemCopyWith<$Res> {
       String min_order,
       String delivery_time,
       String delivery_cost,
-      String rating,
+      String? rating,
       String image,
       String logo,
       bool is_favorite,
@@ -326,7 +326,7 @@ class _$OfferItemCopyWithImpl<$Res> implements $OfferItemCopyWith<$Res> {
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -360,7 +360,7 @@ abstract class _$OfferItemCopyWith<$Res> implements $OfferItemCopyWith<$Res> {
       String min_order,
       String delivery_time,
       String delivery_cost,
-      String rating,
+      String? rating,
       String image,
       String logo,
       bool is_favorite,
@@ -418,7 +418,7 @@ class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res>
       rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -471,7 +471,7 @@ class _$_OfferItem implements _OfferItem {
   @override
   final String delivery_cost;
   @override
-  final String rating;
+  final String? rating;
   @override
   final String image;
   @override
@@ -554,7 +554,7 @@ abstract class _OfferItem implements OfferItem {
       String min_order,
       String delivery_time,
       String delivery_cost,
-      String rating,
+      String? rating,
       String image,
       String logo,
       bool is_favorite,
@@ -576,7 +576,7 @@ abstract class _OfferItem implements OfferItem {
   @override
   String get delivery_cost => throw _privateConstructorUsedError;
   @override
-  String get rating => throw _privateConstructorUsedError;
+  String? get rating => throw _privateConstructorUsedError;
   @override
   String get image => throw _privateConstructorUsedError;
   @override

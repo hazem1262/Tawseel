@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_native_image/flutter_native_image.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
+import 'package:tawseel/utils/AppState.dart';
 
 extension ToggleLanguage on BuildContext {
   toggleLanguage() {
@@ -159,4 +161,58 @@ extension EmailValidator on String? {
   String getPackageName() {
     return this == null ? "" : this!.split("=")[1].split("&")[0];
   }
+
+  String getIosUrlScheme() =>
+      SCHEMES_MAP["id" + this!.split("/id")[1].split("?")[0]] ?? this ?? "";
+}
+
+extension MarketPlaceDtx on MarketPlaceItem {
+  CompanyItem getBestDeliveryCompany() =>
+      this.companies.firstWhere((element) => element.is_best == true);
+
+  String getItemCategories() {
+    final cats = this.parent_categories.isNotEmpty
+        ? this.parent_categories.map((element) => element.name).join(", ")
+        : "";
+
+    final subCats = this.sub_categories.isNotEmpty
+        ? this.sub_categories.map((element) => element.name).join(", ")
+        : "";
+
+    return cats + (subCats.isNotEmpty ? ", " : "") + subCats;
+  }
+}
+
+final SCHEMES_MAP = {
+  // Careem
+  "id592978487": "fb375970675824752://",
+  // Talabat
+  "id451001072": "talabat://",
+  // HungerStation
+  "id596011949": "fb359600970769625://",
+  // Jahez
+  "id1137352156": "jahez://",
+  // Shgardi
+  "id1452817340": "shgardi://",
+  // The Shefz
+  "id1139450244": "com.thashefz.shogalbait://",
+  // Toyou
+  "id1196302015": "toyou://",
+  // Wassel
+  "id1086885214": "com.w99l.customer.payments://",
+};
+
+extension CompaniesDtx on CompanyItem {
+// Careem:fb375970675824752://
+// talabat:talabat://
+// HungerStation:fb359600970769625://
+// jahez:jahez://
+// shgardi:shgardi://
+// the chefs:com.thashefz.shogalbait://
+// toyou:toyou://
+// Wssel:com.w99l.customer.payments://
+
+  String getIosUrlScheme() =>
+      SCHEMES_MAP["id" + this.ios_app_link.split("/id")[1].split("?")[0]] ??=
+          this.ios_app_link;
 }

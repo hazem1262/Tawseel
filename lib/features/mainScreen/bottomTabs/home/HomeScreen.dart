@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_statements
+
 import 'dart:ui';
 import 'dart:io' show Platform;
 import 'package:external_app_launcher/external_app_launcher.dart';
@@ -198,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text(
                       LocaleKeys.search_all.tr(),
                       style: TextStyle(
-                        fontSize: BodyTextSize,
+                        fontSize: BodySmallTextSize,
                         fontWeight: FontWeight.w500,
                         color: Colors.grey,
                       ),
@@ -639,11 +641,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-extension MarketPlaceDtx on MarketPlaceItem {
-  CompanyItem getBestDeliveryCompany() =>
-      this.companies.firstWhere((element) => element.is_best == true);
-}
-
 Widget marketPlaceShimmer(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
@@ -677,14 +674,15 @@ Widget marketPlaceItem(
     BuildContext context,
     MarketPlaceItem marketPlace,
     Function(MarketPlaceItem item) onClick,
-    Function(MarketPlaceItem item) onFavoriteClicked) {
+    Function(MarketPlaceItem item) onFavoriteClicked,
+    [bool showFavorite = true]) {
   final itemHeight = screenHeight * 0.35;
   return InkWell(
     onTap: () {
       onClick(marketPlace);
     },
     child: Container(
-      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(25),
@@ -727,17 +725,20 @@ Widget marketPlaceItem(
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Flexible(
-                          flex: 1,
-                          child: Text(
-                            "${marketPlace.name}",
-                            maxLines: 1,
-                            style: TextStyle(
-                              fontSize: BodyTextSize,
-                              fontWeight: FontWeight.w600,
-                              color: tm.titlecolorLight,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
+                          child: Flexible(
+                            flex: 1,
+                            child: Text(
+                              "${marketPlace.name}",
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontSize: BodySmallTextSize,
+                                fontWeight: FontWeight.w600,
+                                color: tm.titlecolorLight,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
-                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         SizedBox(width: 4),
@@ -751,18 +752,19 @@ Widget marketPlaceItem(
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: rateWidget(marketPlace.rating ?? "",
-                              Colors.white, BodyTextSize),
+                              Colors.white, CaptionTextSize),
                         ),
                       ],
                     ),
                     SizedBox(height: 8),
                     Container(
+                      margin: EdgeInsets.only(left: 8, right: 8),
                       width: double.infinity,
                       child: Text(
-                        "${marketPlace.description}",
+                        "${marketPlace.getItemCategories()}",
                         maxLines: 1,
                         style: TextStyle(
-                          fontSize: BodySmallTextSize,
+                          fontSize: CaptionTextSize,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey,
                         ),
@@ -771,10 +773,12 @@ Widget marketPlaceItem(
                     ),
                     SizedBox(height: 8),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
+                            SizedBox(width: 4),
                             Image.asset(
                               Res.watch_icon,
                               width: 17,
@@ -784,11 +788,12 @@ Widget marketPlaceItem(
                             Text(
                               "${marketPlace.delivery_time}",
                               style: TextStyle(
-                                fontSize: BodySmallTextSize,
+                                fontSize: CaptionTextSize,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.grey,
                               ),
                             ),
+                            SizedBox(width: 4),
                           ],
                         ),
                         SizedBox(
@@ -799,11 +804,13 @@ Widget marketPlaceItem(
                           ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
+                            SizedBox(width: 4),
                             Text(
                               LocaleKeys.delivery_word.tr(),
                               style: TextStyle(
-                                fontSize: BodySmallTextSize,
+                                fontSize: CaptionTextSize,
                                 fontWeight: FontWeight.w500,
                                 color: ThemeManager.primary,
                               ),
@@ -811,8 +818,8 @@ Widget marketPlaceItem(
                             SizedBox(width: 4),
                             Container(
                               decoration: BoxDecoration(
-                                color: ThemeManager.primary.withOpacity(0.2),
-                                borderRadius: BorderRadius.circular(20),
+                                color: ThemeManager.primary.withAlpha(30),
+                                borderRadius: BorderRadius.circular(8),
                               ),
                               padding: EdgeInsets.symmetric(
                                 horizontal: 10,
@@ -821,12 +828,13 @@ Widget marketPlaceItem(
                               child: Text(
                                 "${marketPlace.delivery_cost}",
                                 style: TextStyle(
-                                  fontSize: BodySmallTextSize,
+                                  fontSize: CaptionTextSize,
                                   fontWeight: FontWeight.w500,
                                   color: ThemeManager.primary,
                                 ),
                               ),
                             ),
+                            SizedBox(width: 8),
                           ],
                         ),
                         SizedBox(
@@ -836,26 +844,25 @@ Widget marketPlaceItem(
                             color: Colors.grey.shade300,
                           ),
                         ),
-                        SizedBox(height: 10),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            SizedBox(width: 4),
+                            SizedBox(width: 8),
                             Container(
-                              width: screenWidth * 0.17,
-                              height: screenHeight * 0.03,
+                              width: screenWidth * 0.245,
+                              height: safeHeight * 0.032,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color: Colors.grey.shade300,
                                   width: 1.5,
                                 ),
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(8),
                               ),
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(5.0),
+                                borderRadius: BorderRadius.circular(5),
+                                child: Container(
                                   child: CachedNetworkImage(
-                                    fit: BoxFit.contain,
+                                    fit: BoxFit.fitWidth,
                                     imageUrl: marketPlace
                                         .getBestDeliveryCompany()
                                         .image,
@@ -865,7 +872,7 @@ Widget marketPlaceItem(
                                 ),
                               ),
                             ),
-                            SizedBox(width: 4),
+                            SizedBox(width: 8),
                           ],
                         ),
                       ],
@@ -880,8 +887,8 @@ Widget marketPlaceItem(
             top: 10,
             start: 10,
             child: Container(
-              width: screenWidth * 0.15,
-              height: screenWidth * 0.15,
+              width: screenWidth * 0.13,
+              height: screenWidth * 0.13,
               decoration: BoxDecoration(
                 color: Colors.grey,
                 shape: BoxShape.circle,
@@ -892,40 +899,41 @@ Widget marketPlaceItem(
               ),
             ),
           ),
-          Positioned.directional(
-            textDirection: Directionality.of(context),
-            top: 16,
-            end: 16,
-            child: Container(
-              width: screenWidth * 0.101,
-              height: screenWidth * 0.101,
-              decoration: BoxDecoration(
-                color: Colors.white.withAlpha(99),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                  child: Center(
-                    child: IconButton(
-                      icon: Icon(
-                        !marketPlace.is_favorite
-                            ? Icons.favorite_border
-                            : Icons.favorite,
-                        color: !marketPlace.is_favorite
-                            ? Colors.white
-                            : Colors.red,
+          if (showFavorite)
+            Positioned.directional(
+              textDirection: Directionality.of(context),
+              top: 16,
+              end: 16,
+              child: Container(
+                width: screenWidth * 0.101,
+                height: screenWidth * 0.101,
+                decoration: BoxDecoration(
+                  color: Colors.white.withAlpha(99),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                    child: Center(
+                      child: IconButton(
+                        icon: Icon(
+                          !marketPlace.is_favorite
+                              ? Icons.favorite_border
+                              : Icons.favorite,
+                          color: !marketPlace.is_favorite
+                              ? Colors.white
+                              : Colors.red,
+                        ),
+                        onPressed: () {
+                          onFavoriteClicked(marketPlace);
+                        },
                       ),
-                      onPressed: () {
-                        onFavoriteClicked(marketPlace);
-                      },
                     ),
                   ),
                 ),
               ),
-            ),
-          )
+            )
         ],
       ),
     ),
@@ -937,8 +945,8 @@ Widget rateWidget(String rating, Color textColor, double textSize) {
     children: [
       Image.asset(
         Res.star_icon,
-        width: 17,
-        height: 17,
+        width: safeHeight * 0.02,
+        height: safeHeight * 0.02,
       ),
       SizedBox(width: 4),
       Text(
@@ -1067,7 +1075,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
 Future<void> openApp(CompanyItem item) async {
   await LaunchApp.openApp(
     androidPackageName: item.android_app_link.getPackageName(),
-    iosUrlScheme: item.ios_app_link,
+    iosUrlScheme: item.getIosUrlScheme(),
     appStoreLink: item.ios_app_link,
     openStore: true,
   );
@@ -1081,8 +1089,8 @@ Widget bestCompanyWidget(
     onTap: onTap,
     child: ConstrainedBox(
       constraints: BoxConstraints(
-        minHeight: screenHeight * 0.10,
-        maxHeight: screenHeight * 0.15,
+        minHeight: safeHeight * 0.16,
+        maxHeight: safeHeight * 0.17,
       ),
       child: Container(
         width: screenWidth,
@@ -1094,7 +1102,7 @@ Widget bestCompanyWidget(
                 top: 0,
                 end: 0,
                 child: Container(
-                  height: screenHeight * 0.046,
+                  height: safeHeight * 0.054,
                   padding: EdgeInsets.symmetric(
                     horizontal: 10,
                     vertical: 10,
@@ -1142,7 +1150,7 @@ Widget bestCompanyWidget(
                             ),
                             width: screenWidth * 0.25,
                             child: CachedNetworkImage(
-                              height: screenHeight * 0.03,
+                              height: safeHeight * 0.03,
                               width: double.infinity,
                               imageUrl: item.image,
                               fit: BoxFit.fitWidth,
@@ -1191,7 +1199,7 @@ Widget bestCompanyWidget(
                                     .textTheme
                                     .caption!
                                     .copyWith(
-                                      fontSize: BodySmallTextSize,
+                                      fontSize: CaptionTextSize,
                                       color: tm.isDark()
                                           ? Colors.white
                                           : ThemeManager.primary,
@@ -1295,7 +1303,7 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
                       child: Text(
                         "${item.delivery_cost}",
                         style: Theme.of(context).textTheme.caption!.copyWith(
-                              fontSize: BodySmallTextSize,
+                              fontSize: CaptionTextSize,
                               color: tm.isDark()
                                   ? Colors.white
                                   : ThemeManager.primary,

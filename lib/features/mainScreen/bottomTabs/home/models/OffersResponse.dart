@@ -6,8 +6,8 @@ part 'OffersResponse.freezed.dart';
 
 @freezed
 class OffersResponse with _$OffersResponse {
-  const factory OffersResponse(List<OfferItem> data, MetaPagination meta) =
-      _OffersResponse;
+  const factory OffersResponse(
+      List<MarketPlaceItem> data, MetaPagination meta) = _OffersResponse;
   factory OffersResponse.fromJson(Map<String, dynamic> json) =>
       _$OffersResponseFromJson(json);
 }
@@ -21,7 +21,7 @@ class OfferItem with _$OfferItem {
     String min_order,
     String delivery_time,
     String delivery_cost,
-    String rating,
+    String? rating,
     String image,
     String logo,
     bool is_favorite,

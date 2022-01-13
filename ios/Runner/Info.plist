@@ -24,7 +24,20 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fb375970675824752</string>
+		<string>fb219995491457376</string>
+		<string>talabat</string>
+		<string>fb359600970769625</string>
+		<string>jahez</string>
+		<string>jahez-customer</string>
+		<string>shgardi</string>
+		<string>com.thashefz.shogalbait</string>
+		<string>toyou</string>
+		<string>com.w99l.customer.payments</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>

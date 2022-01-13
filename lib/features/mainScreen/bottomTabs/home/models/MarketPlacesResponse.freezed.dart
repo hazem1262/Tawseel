@@ -183,7 +183,9 @@ class _$MarketPlaceItemTearOff {
       String image,
       String logo,
       bool is_favorite,
-      List<CompanyItem> companies) {
+      List<CompanyItem> companies,
+      List<CategoryData> parent_categories,
+      List<CategoryData> sub_categories) {
     return _MarketPlaceItem(
       id,
       name,
@@ -196,6 +198,8 @@ class _$MarketPlaceItemTearOff {
       logo,
       is_favorite,
       companies,
+      parent_categories,
+      sub_categories,
     );
   }
 
@@ -220,6 +224,9 @@ mixin _$MarketPlaceItem {
   String get logo => throw _privateConstructorUsedError;
   bool get is_favorite => throw _privateConstructorUsedError;
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
+  List<CategoryData> get parent_categories =>
+      throw _privateConstructorUsedError;
+  List<CategoryData> get sub_categories => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -243,7 +250,9 @@ abstract class $MarketPlaceItemCopyWith<$Res> {
       String image,
       String logo,
       bool is_favorite,
-      List<CompanyItem> companies});
+      List<CompanyItem> companies,
+      List<CategoryData> parent_categories,
+      List<CategoryData> sub_categories});
 }
 
 /// @nodoc
@@ -268,6 +277,8 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
     Object? logo = freezed,
     Object? is_favorite = freezed,
     Object? companies = freezed,
+    Object? parent_categories = freezed,
+    Object? sub_categories = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -314,6 +325,14 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
           ? _value.companies
           : companies // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
+      parent_categories: parent_categories == freezed
+          ? _value.parent_categories
+          : parent_categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryData>,
+      sub_categories: sub_categories == freezed
+          ? _value.sub_categories
+          : sub_categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryData>,
     ));
   }
 }
@@ -336,7 +355,9 @@ abstract class _$MarketPlaceItemCopyWith<$Res>
       String image,
       String logo,
       bool is_favorite,
-      List<CompanyItem> companies});
+      List<CompanyItem> companies,
+      List<CategoryData> parent_categories,
+      List<CategoryData> sub_categories});
 }
 
 /// @nodoc
@@ -363,6 +384,8 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
     Object? logo = freezed,
     Object? is_favorite = freezed,
     Object? companies = freezed,
+    Object? parent_categories = freezed,
+    Object? sub_categories = freezed,
   }) {
     return _then(_MarketPlaceItem(
       id == freezed
@@ -409,6 +432,14 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
           ? _value.companies
           : companies // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
+      parent_categories == freezed
+          ? _value.parent_categories
+          : parent_categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryData>,
+      sub_categories == freezed
+          ? _value.sub_categories
+          : sub_categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryData>,
     ));
   }
 }
@@ -427,7 +458,9 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       this.image,
       this.logo,
       this.is_favorite,
-      this.companies);
+      this.companies,
+      this.parent_categories,
+      this.sub_categories);
 
   factory _$_MarketPlaceItem.fromJson(Map<String, dynamic> json) =>
       _$$_MarketPlaceItemFromJson(json);
@@ -454,10 +487,14 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
   final bool is_favorite;
   @override
   final List<CompanyItem> companies;
+  @override
+  final List<CategoryData> parent_categories;
+  @override
+  final List<CategoryData> sub_categories;
 
   @override
   String toString() {
-    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, is_favorite: $is_favorite, companies: $companies)';
+    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, is_favorite: $is_favorite, companies: $companies, parent_categories: $parent_categories, sub_categories: $sub_categories)';
   }
 
   @override
@@ -491,7 +528,13 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
                     .equals(other.is_favorite, is_favorite)) &&
             (identical(other.companies, companies) ||
                 const DeepCollectionEquality()
-                    .equals(other.companies, companies)));
+                    .equals(other.companies, companies)) &&
+            (identical(other.parent_categories, parent_categories) ||
+                const DeepCollectionEquality()
+                    .equals(other.parent_categories, parent_categories)) &&
+            (identical(other.sub_categories, sub_categories) ||
+                const DeepCollectionEquality()
+                    .equals(other.sub_categories, sub_categories)));
   }
 
   @override
@@ -507,7 +550,9 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       const DeepCollectionEquality().hash(image) ^
       const DeepCollectionEquality().hash(logo) ^
       const DeepCollectionEquality().hash(is_favorite) ^
-      const DeepCollectionEquality().hash(companies);
+      const DeepCollectionEquality().hash(companies) ^
+      const DeepCollectionEquality().hash(parent_categories) ^
+      const DeepCollectionEquality().hash(sub_categories);
 
   @JsonKey(ignore: true)
   @override
@@ -532,7 +577,9 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
       String image,
       String logo,
       bool is_favorite,
-      List<CompanyItem> companies) = _$_MarketPlaceItem;
+      List<CompanyItem> companies,
+      List<CategoryData> parent_categories,
+      List<CategoryData> sub_categories) = _$_MarketPlaceItem;
 
   factory _MarketPlaceItem.fromJson(Map<String, dynamic> json) =
       _$_MarketPlaceItem.fromJson;
@@ -559,6 +606,11 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
   bool get is_favorite => throw _privateConstructorUsedError;
   @override
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
+  @override
+  List<CategoryData> get parent_categories =>
+      throw _privateConstructorUsedError;
+  @override
+  List<CategoryData> get sub_categories => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MarketPlaceItemCopyWith<_MarketPlaceItem> get copyWith =>

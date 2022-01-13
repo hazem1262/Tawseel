@@ -299,7 +299,7 @@ class _$OffersStateTearOff {
       [bool isPagingLoading = false,
       String error = "",
       bool refreshData = false,
-      List<OfferItem> offersList = const [],
+      List<MarketPlaceItem> offersList = const [],
       bool hasMorePages = false]) {
     return OffersDefaultState(
       isPagingLoading,
@@ -319,7 +319,7 @@ mixin _$OffersState {
   bool get isPagingLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get refreshData => throw _privateConstructorUsedError;
-  List<OfferItem> get offersList => throw _privateConstructorUsedError;
+  List<MarketPlaceItem> get offersList => throw _privateConstructorUsedError;
   bool get hasMorePages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -336,7 +336,7 @@ abstract class $OffersStateCopyWith<$Res> {
       {bool isPagingLoading,
       String error,
       bool refreshData,
-      List<OfferItem> offersList,
+      List<MarketPlaceItem> offersList,
       bool hasMorePages});
 }
 
@@ -372,7 +372,7 @@ class _$OffersStateCopyWithImpl<$Res> implements $OffersStateCopyWith<$Res> {
       offersList: offersList == freezed
           ? _value.offersList
           : offersList // ignore: cast_nullable_to_non_nullable
-              as List<OfferItem>,
+              as List<MarketPlaceItem>,
       hasMorePages: hasMorePages == freezed
           ? _value.hasMorePages
           : hasMorePages // ignore: cast_nullable_to_non_nullable
@@ -392,7 +392,7 @@ abstract class $OffersDefaultStateCopyWith<$Res>
       {bool isPagingLoading,
       String error,
       bool refreshData,
-      List<OfferItem> offersList,
+      List<MarketPlaceItem> offersList,
       bool hasMorePages});
 }
 
@@ -431,7 +431,7 @@ class _$OffersDefaultStateCopyWithImpl<$Res>
       offersList == freezed
           ? _value.offersList
           : offersList // ignore: cast_nullable_to_non_nullable
-              as List<OfferItem>,
+              as List<MarketPlaceItem>,
       hasMorePages == freezed
           ? _value.hasMorePages
           : hasMorePages // ignore: cast_nullable_to_non_nullable
@@ -461,7 +461,7 @@ class _$OffersDefaultState implements OffersDefaultState {
   final bool refreshData;
   @JsonKey(defaultValue: const [])
   @override
-  final List<OfferItem> offersList;
+  final List<MarketPlaceItem> offersList;
   @JsonKey(defaultValue: false)
   @override
   final bool hasMorePages;
@@ -511,7 +511,7 @@ abstract class OffersDefaultState implements OffersState {
       [bool isPagingLoading,
       String error,
       bool refreshData,
-      List<OfferItem> offersList,
+      List<MarketPlaceItem> offersList,
       bool hasMorePages]) = _$OffersDefaultState;
 
   @override
@@ -521,7 +521,7 @@ abstract class OffersDefaultState implements OffersState {
   @override
   bool get refreshData => throw _privateConstructorUsedError;
   @override
-  List<OfferItem> get offersList => throw _privateConstructorUsedError;
+  List<MarketPlaceItem> get offersList => throw _privateConstructorUsedError;
   @override
   bool get hasMorePages => throw _privateConstructorUsedError;
   @override

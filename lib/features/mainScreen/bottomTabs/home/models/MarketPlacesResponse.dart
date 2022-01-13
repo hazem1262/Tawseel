@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 
 part 'MarketPlacesResponse.g.dart';
 
@@ -27,6 +28,8 @@ class MarketPlaceItem with _$MarketPlaceItem {
     String logo,
     bool is_favorite,
     List<CompanyItem> companies,
+    List<CategoryData> parent_categories,
+    List<CategoryData> sub_categories,
   ) = _MarketPlaceItem;
 
   factory MarketPlaceItem.fromJson(Map<String, dynamic> json) =>
