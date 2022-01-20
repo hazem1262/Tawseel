@@ -1,7 +1,6 @@
 // ignore_for_file: unnecessary_statements
 
 import 'dart:ui';
-import 'dart:io' show Platform;
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/src/public_ext.dart';
@@ -26,7 +25,6 @@ import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
-import 'package:collection/collection.dart';
 
 import 'bloc/home_bloc.dart';
 import 'bloc/home_repository.dart';
@@ -727,18 +725,15 @@ Widget marketPlaceItem(
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0, right: 8),
-                          child: Flexible(
-                            flex: 1,
-                            child: Text(
-                              "${marketPlace.name}",
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontSize: BodySmallTextSize,
-                                fontWeight: FontWeight.w600,
-                                color: tm.titlecolorLight,
-                              ),
-                              overflow: TextOverflow.ellipsis,
+                          child: Text(
+                            "${marketPlace.name}",
+                            maxLines: 1,
+                            style: TextStyle(
+                              fontSize: BodySmallTextSize,
+                              fontWeight: FontWeight.w600,
+                              color: tm.titlecolorLight,
                             ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         SizedBox(width: 4),

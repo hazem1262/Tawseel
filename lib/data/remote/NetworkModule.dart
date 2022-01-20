@@ -15,7 +15,7 @@ class NetworkModule {
     );
 
     dio.interceptors.add(KeysInjectionInterceptor());
-    dio.interceptors.add(LogInterceptor(responseBody: true, requestBody: true));
+    dio.interceptors.add(LogInterceptor(responseBody: true, requestBody: true,responseHeader: true));
 
     return dio;
   }
