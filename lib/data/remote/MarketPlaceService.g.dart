@@ -16,15 +16,16 @@ class _MarketPlaceService implements MarketPlaceService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<MarketPlacesResponse>> getMarketPlaces(page) async {
+  Future<HttpResponse<MarketPlacesResponse>> getMarketPlaces(queries) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queries);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<MarketPlacesResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'marketplaces?page=$page',
+                .compose(_dio.options, 'marketplaces?page={page}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = MarketPlacesResponse.fromJson(_result.data!);

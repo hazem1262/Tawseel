@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:tawseel/data/remote/Logger.dart';
 import 'package:tawseel/utils/globals.dart';
 
 class NetworkModule {
@@ -15,7 +18,14 @@ class NetworkModule {
     );
 
     dio.interceptors.add(KeysInjectionInterceptor());
-    dio.interceptors.add(LogInterceptor(responseBody: true, requestBody: true,responseHeader: true));
+    dio.interceptors.add(PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: false,
+        error: true,
+        compact: true,
+        maxWidth: 90));
 
     return dio;
   }
@@ -37,11 +47,4 @@ class KeysInjectionInterceptor extends Interceptor {
 
     super.onRequest(options, handler);
   }
-}
-
-void printAnnotationValue(final Type clazz) {}
-
-@immutable
-class TOKEN_REQUIRED {
-  const TOKEN_REQUIRED();
 }

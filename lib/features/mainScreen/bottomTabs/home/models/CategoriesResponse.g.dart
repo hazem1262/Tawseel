@@ -28,6 +28,7 @@ _$_CategoryData _$$_CategoryDataFromJson(Map<String, dynamic> json) =>
       sub_categories: (json['sub_categories'] as List<dynamic>?)
           ?.map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
           .toList(),
+      isSelected: json['isSelected'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_CategoryDataToJson(_$_CategoryData instance) =>
@@ -36,4 +37,5 @@ Map<String, dynamic> _$$_CategoryDataToJson(_$_CategoryData instance) =>
       'name': instance.name,
       'image': instance.image,
       'sub_categories': instance.sub_categories,
+      'isSelected': instance.isSelected,
     };

@@ -4,7 +4,7 @@ part 'otp_models.freezed.dart';
 part 'otp_models.g.dart';
 
 @freezed
-abstract class OtpResponse with _$OtpResponse {
+class OtpResponse with _$OtpResponse {
   const factory OtpResponse(int otp) = _OtpResponse;
   factory OtpResponse.fromJson(Map<String, dynamic> json) =>
       _$OtpResponseFromJson(json);

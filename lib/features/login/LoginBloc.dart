@@ -7,7 +7,7 @@ import 'package:tawseel/features/login/models/logine_response.dart';
 part 'LoginBloc.freezed.dart';
 
 @freezed
-abstract class LoginEvent with _$LoginEvent {
+class LoginEvent with _$LoginEvent {
   const factory LoginEvent.loginWithPhone(String phone, String password) =
       LoginWithPhone;
   const factory LoginEvent.loginWithGoogle(String googleToken) =
@@ -16,7 +16,7 @@ abstract class LoginEvent with _$LoginEvent {
 }
 
 @freezed
-abstract class LoginViewState with _$LoginViewState {
+class LoginViewState with _$LoginViewState {
   const factory LoginViewState.initialState() = _InitialState;
   const factory LoginViewState.isLoading() = LoginIsLoading;
   const factory LoginViewState.hassError(String error) = _HasError;

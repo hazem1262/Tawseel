@@ -15,4 +15,9 @@ abstract class CategoriesService {
 
   @GET("categories")
   Future<HttpResponse<CategoriesResponse>> getCategories();
+
+  @GET("sub-categories/{id}")
+  Future<HttpResponse<CategoriesResponse>> getSubCategories(
+    @Path("id") int categoryId,
+  );
 }

@@ -4,21 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/favorites/FavoritesScreen.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/HomeScreen.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
+import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
+import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:tawseel/utils/pagination_list.dart';
 import 'bloc/offers_bloc.dart';
-import 'package:flutter/cupertino.dart';
 
 class OffersScreen extends StatelessWidget {
   OffersScreen({Key? key}) : super(key: key);
-
+  RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -31,35 +34,46 @@ class OffersScreen extends StatelessWidget {
             listener: (context, state) {
               if (state.error.isNotEmpty) appContext.showError(state.error);
               if (state.refreshData)
-                BlocProvider.of<OffersBloc>(context)..add(GetOffers());
+                BlocProvider.of<OffersBloc>(context)
+                  ..add(ResetOffers())
+                  ..add(GetOffers());
             },
             child: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    width: double.infinity,
-                    child: Text(
-                      LocaleKeys.offers_title,
-                      style: Theme.of(context).textTheme.headline6,
-                    ).tr(),
-                  ),
-                  Expanded(
-                    child: BlocBuilder<OffersBloc, OffersState>(
-                      builder: (context, state) {
-                        return offersArea(
-                          context: context,
-                          isPagingLoading: state.isPagingLoading,
-                          hasMorePages: state.hasMorePages,
-                          offers: state.offersList,
-                        );
-                      },
+              child: SmartRefresher(
+                controller: _refreshController,
+                enablePullDown: true,
+                onRefresh: () {
+                  BlocProvider.of<OffersBloc>(context)..add(ResetOffers());
+                  _refreshController.refreshToIdle();
+                },
+                header: WaterDropHeader(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      width: double.infinity,
+                      child: Text(
+                        LocaleKeys.offers_title,
+                        style: Theme.of(context).textTheme.headline6,
+                      ).tr(),
                     ),
-                  ),
-                ],
+                    Expanded(
+                      child: BlocBuilder<OffersBloc, OffersState>(
+                        builder: (context, state) {
+                          return offersArea(
+                            context: context,
+                            isPagingLoading: state.isPagingLoading,
+                            hasMorePages: state.hasMorePages,
+                            offers: state.offersList,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -77,53 +91,58 @@ class OffersScreen extends StatelessWidget {
     final height = h -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
-    return Container(
-      margin: EdgeInsets.only(top: 8),
-      child: Wrap(
-        children: [
-          Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding:
-                    isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: height - height * 0.229,
-                  ),
-                  child: PaginationList<MarketPlaceItem>(
-                    list: [...offers],
-                    hasMore: hasMorePages,
-                    isLoading: isPagingLoading,
-                    loadMore: () {
-                      BlocProvider.of<OffersBloc>(context)..add(GetOffers());
-                    },
-                    onRefresh: () {
-                      BlocProvider.of<OffersBloc>(context)..add(ResetOffers());
-                    },
-                    loadingWidget: offersShimmer(context, 1),
-                    builder: (offer) {
-                      return marketPlaceItem(context, offer, (item) {
-                        showMarketPlaceCompaniesBottomSheet(
-                            item, context, item.companies);
-                      }, (item) {
-                        // BlocProvider.of<HomeBloc>(blocContext).add(
-                        //   item.is_favorite
-                        //       ? RemoveMarketPlaceFromFavorite(item.id)
-                        //       : AddMarketPlaceToFavorite((item.id)),
-                        // );
-                      }, false);
-                    },
-                  ),
+    return offers.isEmpty
+        ? emptyOffersWidget(context)
+        : Container(
+            margin: EdgeInsets.only(top: 8),
+            child: Wrap(
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: isAr
+                          ? EdgeInsets.only(right: 8)
+                          : EdgeInsets.only(left: 8),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxHeight: height - height * 0.229,
+                        ),
+                        child: PaginationList<MarketPlaceItem>(
+                          list: [...offers],
+                          hasMore: hasMorePages,
+                          isLoading: isPagingLoading,
+                          loadMore: () {
+                            BlocProvider.of<OffersBloc>(context)
+                              ..add(GetOffers());
+                          },
+                          onRefresh: () {
+                            BlocProvider.of<OffersBloc>(context)
+                              ..add(ResetOffers());
+                          },
+                          loadingWidget: offersShimmer(context, 1),
+                          builder: (offer) {
+                            return marketPlaceItem(context, offer, (item) {
+                              showMarketPlaceCompaniesBottomSheet(
+                                  item, context, item.companies);
+                            }, (item) {
+                              // BlocProvider.of<HomeBloc>(blocContext).add(
+                              //   item.is_favorite
+                              //       ? RemoveMarketPlaceFromFavorite(item.id)
+                              //       : AddMarketPlaceToFavorite((item.id)),
+                              // );
+                            }, false);
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+              ],
+            ),
+          );
   }
 
   Widget offersShimmer(BuildContext context, int count) {
@@ -190,4 +209,39 @@ class OffersScreen extends StatelessWidget {
   String getImageFormId(int id) => id % 2 == 0
       ? "https://picsum.photos/200/300"
       : "https://images.unsplash.com/photo-1637323856940-58b83b43aa10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60";
+}
+
+Widget emptyOffersWidget(BuildContext context) {
+  return Container(
+    height: screenHeight - screenHeight * 0.229,
+    child: Center(
+        child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Image.asset(Res.no_favorites_image),
+          SizedBox(height: 24),
+          Text(
+            LocaleKeys.offers_empty_title.tr(),
+            style: Theme.of(context).textTheme.headline6!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  fontSize: MeduimTextSize,
+                ),
+          ),
+          SizedBox(height: 24),
+          Text(
+            LocaleKeys.offers_empty_subtitle.tr(),
+            style: Theme.of(context)
+                .textTheme
+                .caption!
+                .copyWith(fontSize: BodyTextSize),
+            textAlign: TextAlign.center,
+            softWrap: true,
+          )
+        ],
+      ),
+    )),
+  );
 }

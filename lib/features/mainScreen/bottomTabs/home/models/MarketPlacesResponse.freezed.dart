@@ -182,6 +182,7 @@ class _$MarketPlaceItemTearOff {
       String? rating,
       String image,
       String logo,
+      String? distance,
       bool is_favorite,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
@@ -196,6 +197,7 @@ class _$MarketPlaceItemTearOff {
       rating,
       image,
       logo,
+      distance,
       is_favorite,
       companies,
       parent_categories,
@@ -222,6 +224,7 @@ mixin _$MarketPlaceItem {
   String? get rating => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   String get logo => throw _privateConstructorUsedError;
+  String? get distance => throw _privateConstructorUsedError;
   bool get is_favorite => throw _privateConstructorUsedError;
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
   List<CategoryData> get parent_categories =>
@@ -249,6 +252,7 @@ abstract class $MarketPlaceItemCopyWith<$Res> {
       String? rating,
       String image,
       String logo,
+      String? distance,
       bool is_favorite,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
@@ -275,6 +279,7 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
     Object? rating = freezed,
     Object? image = freezed,
     Object? logo = freezed,
+    Object? distance = freezed,
     Object? is_favorite = freezed,
     Object? companies = freezed,
     Object? parent_categories = freezed,
@@ -317,6 +322,10 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
           ? _value.logo
           : logo // ignore: cast_nullable_to_non_nullable
               as String,
+      distance: distance == freezed
+          ? _value.distance
+          : distance // ignore: cast_nullable_to_non_nullable
+              as String?,
       is_favorite: is_favorite == freezed
           ? _value.is_favorite
           : is_favorite // ignore: cast_nullable_to_non_nullable
@@ -354,6 +363,7 @@ abstract class _$MarketPlaceItemCopyWith<$Res>
       String? rating,
       String image,
       String logo,
+      String? distance,
       bool is_favorite,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
@@ -382,6 +392,7 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
     Object? rating = freezed,
     Object? image = freezed,
     Object? logo = freezed,
+    Object? distance = freezed,
     Object? is_favorite = freezed,
     Object? companies = freezed,
     Object? parent_categories = freezed,
@@ -424,6 +435,10 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
           ? _value.logo
           : logo // ignore: cast_nullable_to_non_nullable
               as String,
+      distance == freezed
+          ? _value.distance
+          : distance // ignore: cast_nullable_to_non_nullable
+              as String?,
       is_favorite == freezed
           ? _value.is_favorite
           : is_favorite // ignore: cast_nullable_to_non_nullable
@@ -457,6 +472,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       this.rating,
       this.image,
       this.logo,
+      this.distance,
       this.is_favorite,
       this.companies,
       this.parent_categories,
@@ -484,6 +500,8 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
   @override
   final String logo;
   @override
+  final String? distance;
+  @override
   final bool is_favorite;
   @override
   final List<CompanyItem> companies;
@@ -494,7 +512,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
 
   @override
   String toString() {
-    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, is_favorite: $is_favorite, companies: $companies, parent_categories: $parent_categories, sub_categories: $sub_categories)';
+    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, distance: $distance, is_favorite: $is_favorite, companies: $companies, parent_categories: $parent_categories, sub_categories: $sub_categories)';
   }
 
   @override
@@ -523,6 +541,9 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
                 const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.logo, logo) ||
                 const DeepCollectionEquality().equals(other.logo, logo)) &&
+            (identical(other.distance, distance) ||
+                const DeepCollectionEquality()
+                    .equals(other.distance, distance)) &&
             (identical(other.is_favorite, is_favorite) ||
                 const DeepCollectionEquality()
                     .equals(other.is_favorite, is_favorite)) &&
@@ -549,6 +570,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       const DeepCollectionEquality().hash(rating) ^
       const DeepCollectionEquality().hash(image) ^
       const DeepCollectionEquality().hash(logo) ^
+      const DeepCollectionEquality().hash(distance) ^
       const DeepCollectionEquality().hash(is_favorite) ^
       const DeepCollectionEquality().hash(companies) ^
       const DeepCollectionEquality().hash(parent_categories) ^
@@ -576,6 +598,7 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
       String? rating,
       String image,
       String logo,
+      String? distance,
       bool is_favorite,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
@@ -602,6 +625,8 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
   String get image => throw _privateConstructorUsedError;
   @override
   String get logo => throw _privateConstructorUsedError;
+  @override
+  String? get distance => throw _privateConstructorUsedError;
   @override
   bool get is_favorite => throw _privateConstructorUsedError;
   @override

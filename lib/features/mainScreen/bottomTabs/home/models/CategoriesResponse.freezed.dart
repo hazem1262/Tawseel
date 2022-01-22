@@ -175,12 +175,14 @@ class _$CategoryDataTearOff {
       {int? id,
       String? name,
       String? image,
-      List<CategoryData>? sub_categories}) {
+      List<CategoryData>? sub_categories,
+      bool? isSelected = false}) {
     return _CategoryData(
       id: id,
       name: name,
       image: image,
       sub_categories: sub_categories,
+      isSelected: isSelected,
     );
   }
 
@@ -198,6 +200,7 @@ mixin _$CategoryData {
   String? get name => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
   List<CategoryData>? get sub_categories => throw _privateConstructorUsedError;
+  bool? get isSelected => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -214,7 +217,8 @@ abstract class $CategoryDataCopyWith<$Res> {
       {int? id,
       String? name,
       String? image,
-      List<CategoryData>? sub_categories});
+      List<CategoryData>? sub_categories,
+      bool? isSelected});
 }
 
 /// @nodoc
@@ -231,6 +235,7 @@ class _$CategoryDataCopyWithImpl<$Res> implements $CategoryDataCopyWith<$Res> {
     Object? name = freezed,
     Object? image = freezed,
     Object? sub_categories = freezed,
+    Object? isSelected = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -249,6 +254,10 @@ class _$CategoryDataCopyWithImpl<$Res> implements $CategoryDataCopyWith<$Res> {
           ? _value.sub_categories
           : sub_categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>?,
+      isSelected: isSelected == freezed
+          ? _value.isSelected
+          : isSelected // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -264,7 +273,8 @@ abstract class _$CategoryDataCopyWith<$Res>
       {int? id,
       String? name,
       String? image,
-      List<CategoryData>? sub_categories});
+      List<CategoryData>? sub_categories,
+      bool? isSelected});
 }
 
 /// @nodoc
@@ -283,6 +293,7 @@ class __$CategoryDataCopyWithImpl<$Res> extends _$CategoryDataCopyWithImpl<$Res>
     Object? name = freezed,
     Object? image = freezed,
     Object? sub_categories = freezed,
+    Object? isSelected = freezed,
   }) {
     return _then(_CategoryData(
       id: id == freezed
@@ -301,6 +312,10 @@ class __$CategoryDataCopyWithImpl<$Res> extends _$CategoryDataCopyWithImpl<$Res>
           ? _value.sub_categories
           : sub_categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>?,
+      isSelected: isSelected == freezed
+          ? _value.isSelected
+          : isSelected // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -308,7 +323,12 @@ class __$CategoryDataCopyWithImpl<$Res> extends _$CategoryDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CategoryData implements _CategoryData {
-  const _$_CategoryData({this.id, this.name, this.image, this.sub_categories});
+  const _$_CategoryData(
+      {this.id,
+      this.name,
+      this.image,
+      this.sub_categories,
+      this.isSelected = false});
 
   factory _$_CategoryData.fromJson(Map<String, dynamic> json) =>
       _$$_CategoryDataFromJson(json);
@@ -321,10 +341,13 @@ class _$_CategoryData implements _CategoryData {
   final String? image;
   @override
   final List<CategoryData>? sub_categories;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool? isSelected;
 
   @override
   String toString() {
-    return 'CategoryData(id: $id, name: $name, image: $image, sub_categories: $sub_categories)';
+    return 'CategoryData(id: $id, name: $name, image: $image, sub_categories: $sub_categories, isSelected: $isSelected)';
   }
 
   @override
@@ -339,7 +362,10 @@ class _$_CategoryData implements _CategoryData {
                 const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.sub_categories, sub_categories) ||
                 const DeepCollectionEquality()
-                    .equals(other.sub_categories, sub_categories)));
+                    .equals(other.sub_categories, sub_categories)) &&
+            (identical(other.isSelected, isSelected) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSelected, isSelected)));
   }
 
   @override
@@ -348,7 +374,8 @@ class _$_CategoryData implements _CategoryData {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(sub_categories);
+      const DeepCollectionEquality().hash(sub_categories) ^
+      const DeepCollectionEquality().hash(isSelected);
 
   @JsonKey(ignore: true)
   @override
@@ -366,7 +393,8 @@ abstract class _CategoryData implements CategoryData {
       {int? id,
       String? name,
       String? image,
-      List<CategoryData>? sub_categories}) = _$_CategoryData;
+      List<CategoryData>? sub_categories,
+      bool? isSelected}) = _$_CategoryData;
 
   factory _CategoryData.fromJson(Map<String, dynamic> json) =
       _$_CategoryData.fromJson;
@@ -379,6 +407,8 @@ abstract class _CategoryData implements CategoryData {
   String? get image => throw _privateConstructorUsedError;
   @override
   List<CategoryData>? get sub_categories => throw _privateConstructorUsedError;
+  @override
+  bool? get isSelected => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CategoryDataCopyWith<_CategoryData> get copyWith =>

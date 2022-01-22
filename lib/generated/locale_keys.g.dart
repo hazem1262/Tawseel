@@ -92,6 +92,7 @@ abstract class  LocaleKeys {
   static const your_location = 'your_location';
   static const search_all = 'search_all';
   static const categories_title = 'categories_title';
+  static const sub_categories_title = 'sub_categories_title';
   static const offers_title = 'offers_title';
   static const view_all = 'view_all';
   static const all_categories = 'all_categories';
@@ -102,5 +103,9 @@ abstract class  LocaleKeys {
   static const favorites_empty_subtitle = 'favorites_empty_subtitle';
   static const remove = 'remove';
   static const best_price = 'best_price';
+  static const offers_empty_title = 'offers_empty_title';
+  static const offers_empty_subtitle = 'offers_empty_subtitle';
+  static const related_resuturants = 'related_resuturants';
+  static const five_kilo = 'five_kilo';
 
 }

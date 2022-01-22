@@ -25,7 +25,7 @@ import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
-
+import 'package:auto_route/src/router/auto_router_x.dart';
 import 'bloc/home_bloc.dart';
 import 'bloc/home_repository.dart';
 import 'components/YourLocationPart.dart';
@@ -105,14 +105,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     BlocBuilder<HomeBloc, HomeBlocState>(
                       builder: (context, state) {
-                        return categoriesArea(
-                            state.categoriesIsLoading, state.categories);
+                        return categoriesArea(state.categoriesIsLoading,
+                            state.categories, context, false, (categoryItem) {
+                          appContext.router.push(
+                            CategoryDetailsScreenRoute(
+                                categoryId: categoryItem.id ?? 0,
+                                categoryName: categoryItem.name ?? ""),
+                          );
+                        });
                       },
                     ),
                     BlocBuilder<HomeBloc, HomeBlocState>(
                       builder: (context, state) {
-                        return marketPlaceArea(context,
-                            state.nearbyMarketPlaceIsLoading, state.nearbyList);
+                        return marketPlaceArea(
+                            context,
+                            state.nearbyMarketPlaceIsLoading,
+                            state.nearbyList,
+                            false);
                       },
                     )
                   ],
@@ -122,49 +131,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ));
       }),
-    );
-  }
-
-  Widget marketPlaceArea(
-      BuildContext blocContext, bool isLoading, List<MarketPlaceItem> list) {
-    return Container(
-      margin: EdgeInsets.only(top: 8),
-      child: Column(
-        children: [
-          SectionWithViewAll(
-            title: LocaleKeys.nearby_word.tr(),
-            onViewAllClick: () {
-              appContext.showToast("view all market place");
-            },
-            moreInfoWidget: Text("( 5 Km)"),
-          ),
-          isLoading
-              ? marketPlaceShimmer(context)
-              : Padding(
-                  padding: isAr
-                      ? EdgeInsets.only(right: 8)
-                      : EdgeInsets.only(left: 8),
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    scrollDirection: Axis.vertical,
-                    itemCount: list.length,
-                    itemBuilder: (ctx, index) {
-                      return marketPlaceItem(ctx, list[index], (item) {
-                        showMarketPlaceCompaniesBottomSheet(
-                            item, ctx, item.companies);
-                      }, (item) {
-                        BlocProvider.of<HomeBloc>(blocContext).add(
-                          item.is_favorite
-                              ? RemoveMarketPlaceFromFavorite(item.id)
-                              : AddMarketPlaceToFavorite((item.id)),
-                        );
-                      });
-                    },
-                  ),
-                ),
-        ],
-      ),
     );
   }
 
@@ -227,329 +193,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget adsArea(bool isLoading, List<AdsItem> ads) {
-    return Container(
-      margin: EdgeInsets.only(top: 8),
-      child: Column(
-        children: [
-          isLoading
-              ? adsShimmer()
-              : Padding(
-                  padding: isAr
-                      ? EdgeInsets.only(right: 8)
-                      : EdgeInsets.only(left: 8),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: MediaQuery.of(context).size.height * 0.18,
-                    ),
-                    child: Container(
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: ads.length,
-                        itemBuilder: (ctx, index) {
-                          return adItem(
-                            ads[index],
-                            () {
-                              appContext
-                                  .showToast("${ads[index].image} clicked");
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-        ],
-      ),
-    );
-  }
-
-  Widget categoriesArea(bool isLoading, List<CategoryData> categories) {
-    return Container(
-      margin: EdgeInsets.only(top: 8),
-      child: Column(
-        children: [
-          SectionWithViewAll(
-            title: LocaleKeys.categories_title.tr(),
-            onViewAllClick: () {
-              showCategoriesBottomSheet(categories);
-            },
-          ),
-          isLoading
-              ? categoriesShimmer()
-              : Padding(
-                  padding: isAr
-                      ? EdgeInsets.only(right: 8)
-                      : EdgeInsets.only(left: 8),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: MediaQuery.of(context).size.height * 0.065,
-                    ),
-                    child: Container(
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: categories.length,
-                        itemBuilder: (ctx, index) {
-                          return categoryItem(
-                            categories[index],
-                            () {
-                              appContext.showToast(
-                                  "${categories[index].name} clicked");
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-        ],
-      ),
-    );
-  }
-
-  Future<dynamic> showCategoriesBottomSheet(List<CategoryData> categories) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-
-    return showCupertinoModalBottomSheet(
-      bounce: true,
-      backgroundColor: Colors.transparent,
-      expand: false,
-      topRadius: Radius.circular(35),
-      context: context,
-      builder: (context) => Material(
-        child: Container(
-          padding: EdgeInsets.all(20),
-          color: tm.isDark() ? Colors.grey[800] : Colors.white,
-          height: height * 0.45,
-          child: Column(
-            children: [
-              Container(
-                width: width * 0.13,
-                height: height * 0.006,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey.shade400,
-                ),
-              ),
-              SizedBox(height: height * 0.02),
-              Text(
-                LocaleKeys.all_categories.tr(),
-                style: TextStyle(
-                  fontSize: SmallTitleTextSize,
-                  fontWeight: FontWeight.w500,
-                  color: tm.isDark() ? Colors.white : tm.titlecolorLight,
-                ),
-              ),
-              SizedBox(height: height * 0.02),
-              Expanded(
-                child: Container(
-                  height: height * 0.4,
-                  child: GridView.count(
-                    childAspectRatio: 3,
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 8,
-                    children: List.generate(
-                        categories.length,
-                        (index) => Container(
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                color: creamyWhite,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.all(5),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    width: 45,
-                                    child: CachedNetworkImage(
-                                      imageUrl: categories[index].image ?? "",
-                                      fit: BoxFit.contain,
-                                      placeholder: (context, url) => Center(
-                                          child: CircularProgressIndicator()),
-                                      errorWidget: (context, url, error) =>
-                                          Icon(Icons.error),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 16,
-                                  ),
-                                  Flexible(
-                                    flex: 1,
-                                    child: Text(
-                                      "${categories[index].name}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .caption!
-                                          .copyWith(
-                                            fontSize: CaptionTextSize,
-                                            color: ProfileActionsColor_Light,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                ],
-                              ),
-                            )).toList(),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget categoriesShimmer() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
-      child: Shimmer.fromColors(
-        child: Container(
-          child: Row(
-              children: List.generate(
-                  3,
-                  (index) => Expanded(
-                        child: Container(
-                          margin: EdgeInsets.only(left: 8, right: 8),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          width: 100,
-                          height: 50,
-                        ),
-                      )).toList()),
-        ),
-        baseColor: Colors.grey.shade200,
-        highlightColor: ThemeManager.primary,
-      ),
-    );
-  }
-
-  // flutter item card
-
-  Widget adsShimmer() {
-    final screenwidth = MediaQuery.of(context).size.width;
-    final screenheight = MediaQuery.of(context).size.height -
-        MediaQuery.of(context).padding.top -
-        MediaQuery.of(context).padding.bottom;
-    return Padding(
-      padding: const EdgeInsets.only(top: 16.0, left: 16, right: 16),
-      child: Shimmer.fromColors(
-        child: Container(
-          child: Row(
-              children: List.generate(
-                  1,
-                  (index) => Expanded(
-                        child: Container(
-                          margin: EdgeInsets.only(left: 8, right: 8),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          width: screenwidth,
-                          height: screenheight * 0.23,
-                        ),
-                      )).toList()),
-        ),
-        baseColor: Colors.grey.shade200,
-        highlightColor: ThemeManager.primary,
-      ),
-    );
-  }
-
-  Widget categoryItem(CategoryData category, Function onClick) {
-    return GestureDetector(
-      onTap: () {
-        onClick();
-      },
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 8),
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.05),
-                spreadRadius: 1,
-                blurRadius: 2,
-                offset: Offset(0, 3),
-              )
-            ]),
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: creamyWhite,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              width: 45,
-              child: CachedNetworkImage(
-                imageUrl: category.image ?? "",
-                fit: BoxFit.contain,
-              ),
-            ),
-            SizedBox(width: 16),
-            Text(
-              "${category.name}",
-              style: Theme.of(context).textTheme.caption!.copyWith(
-                    fontSize: CaptionTextSize,
-                    color: ProfileActionsColor_Light,
-                    fontWeight: FontWeight.w600,
-                  ),
-            ),
-            SizedBox(
-              width: 8,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget adItem(AdsItem ad, Function onClick) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    return GestureDetector(
-      onTap: () {
-        onClick();
-      },
-      child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 8),
-          width: screenWidth * 0.89,
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.05),
-                spreadRadius: 1,
-                blurRadius: 2,
-                offset: Offset(0, 3),
-              ),
-            ],
-          ),
-          child: CachedNetworkImage(
-            fit: BoxFit.fill,
-            imageUrl: ad.image ?? "",
-            placeholder: (context, url) =>
-                Center(child: CircularProgressIndicator()),
-            errorWidget: (context, url, error) => Icon(Icons.error),
-          )),
     );
   }
 
@@ -639,13 +282,393 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-Widget marketPlaceShimmer(BuildContext context) {
+Widget marketPlaceArea(BuildContext blocContext, bool isLoading,
+    List<MarketPlaceItem> list, bool isDetails) {
+  return Container(
+    margin: EdgeInsets.only(top: 8),
+    child: Column(
+      children: [
+        SectionWithViewAll(
+          title: isDetails
+              ? LocaleKeys.related_resuturants.tr()
+              : LocaleKeys.nearby_word.tr(),
+          onViewAllClick: () {
+            appContext.showToast("view all market place");
+          },
+          moreInfoWidget:
+              isDetails ? Container() : Text(LocaleKeys.five_kilo).tr(),
+        ),
+        isLoading
+            ? marketPlaceShimmer()
+            : Padding(
+                padding:
+                    isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  itemCount: list.length,
+                  itemBuilder: (ctx, index) {
+                    return marketPlaceItem(ctx, list[index], (item) {
+                      showMarketPlaceCompaniesBottomSheet(
+                          item, ctx, item.companies);
+                    }, (item) {
+                      BlocProvider.of<HomeBloc>(blocContext).add(
+                        item.is_favorite
+                            ? RemoveMarketPlaceFromFavorite(item.id)
+                            : AddMarketPlaceToFavorite((item.id)),
+                      );
+                    });
+                  },
+                ),
+              ),
+      ],
+    ),
+  );
+}
+
+Widget adsArea(bool isLoading, List<AdsItem> ads) {
+  return Container(
+    margin: EdgeInsets.only(top: 8),
+    child: Column(
+      children: [
+        isLoading
+            ? adsShimmer()
+            : Padding(
+                padding:
+                    isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: screenHeight * 0.18,
+                  ),
+                  child: Container(
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: ads.length,
+                      itemBuilder: (ctx, index) {
+                        return adItem(
+                          ads[index],
+                          () {
+                            appContext.showToast("${ads[index].image} clicked");
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ),
+      ],
+    ),
+  );
+}
+
+Widget categoriesArea(
+    bool isLoading,
+    List<CategoryData> categories,
+    BuildContext context,
+    bool isDetails,
+    Function(CategoryData category) onCategoryClick) {
+  return Container(
+    margin: EdgeInsets.only(top: 8),
+    child: Column(
+      children: [
+        SectionWithViewAll(
+          title: isDetails
+              ? LocaleKeys.sub_categories_title.tr()
+              : LocaleKeys.categories_title.tr(),
+          onViewAllClick: () {
+            showCategoriesBottomSheet(categories, context, (item) {
+              onCategoryClick(item);
+              context.popRoute();
+            });
+          },
+        ),
+        isLoading
+            ? categoriesShimmer()
+            : Padding(
+                padding:
+                    isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height * 0.065,
+                  ),
+                  child: Container(
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: categories.length,
+                      itemBuilder: (ctx, index) {
+                        return categoryItem(
+                          ctx,
+                          categories[index],
+                          () {
+                            onCategoryClick(categories[index]);
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ),
+      ],
+    ),
+  );
+}
+
+Future<dynamic> showCategoriesBottomSheet(List<CategoryData> categories,
+    BuildContext context, Function(CategoryData item) onTap) {
+  return showCupertinoModalBottomSheet(
+    bounce: true,
+    backgroundColor: Colors.transparent,
+    expand: false,
+    topRadius: Radius.circular(35),
+    context: context,
+    builder: (context) => Material(
+      child: Container(
+        padding: EdgeInsets.all(20),
+        color: tm.isDark() ? Colors.grey[800] : Colors.white,
+        height: screenHeight * 0.45,
+        child: Column(
+          children: [
+            Container(
+              width: screenWidth * 0.13,
+              height: screenHeight * 0.006,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.grey.shade400,
+              ),
+            ),
+            SizedBox(height: screenHeight * 0.02),
+            Text(
+              LocaleKeys.all_categories.tr(),
+              style: TextStyle(
+                fontSize: SmallTitleTextSize,
+                fontWeight: FontWeight.w500,
+                color: tm.isDark() ? Colors.white : tm.titlecolorLight,
+              ),
+            ),
+            SizedBox(height: screenHeight * 0.02),
+            Expanded(
+              child: Container(
+                height: screenHeight * 0.4,
+                child: GridView.count(
+                  childAspectRatio: 3,
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                  children: List.generate(
+                      categories.length,
+                      (index) => InkWell(
+                            onTap: () => {onTap(categories[index])},
+                            child: Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: (categories[index].isSelected ?? false)
+                                    ? ThemeManager.primary
+                                    : creamyWhite,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    width: 45,
+                                    child: CachedNetworkImage(
+                                      imageUrl: categories[index].image ?? "",
+                                      fit: BoxFit.contain,
+                                      placeholder: (context, url) => Center(
+                                          child: CircularProgressIndicator()),
+                                      errorWidget: (context, url, error) =>
+                                          Icon(Icons.error),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 16,
+                                  ),
+                                  Flexible(
+                                    flex: 1,
+                                    child: Text(
+                                      "${categories[index].name}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .caption!
+                                          .copyWith(
+                                            fontSize: CaptionTextSize,
+                                            color:
+                                                (categories[index].isSelected ??
+                                                        false)
+                                                    ? Colors.white
+                                                    : ProfileActionsColor_Light,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )).toList(),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+Widget categoriesShimmer() {
+  return Padding(
+    padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
+    child: Shimmer.fromColors(
+      child: Container(
+        child: Row(
+            children: List.generate(
+                3,
+                (index) => Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(left: 8, right: 8),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        width: 100,
+                        height: 50,
+                      ),
+                    )).toList()),
+      ),
+      baseColor: Colors.grey.shade200,
+      highlightColor: ThemeManager.primary,
+    ),
+  );
+}
+
+Widget adsShimmer() {
+  return Padding(
+    padding: const EdgeInsets.only(top: 16.0, left: 16, right: 16),
+    child: Shimmer.fromColors(
+      child: Container(
+        child: Row(
+            children: List.generate(
+                1,
+                (index) => Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(left: 8, right: 8),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        width: screenWidth,
+                        height: safeHeight * 0.23,
+                      ),
+                    )).toList()),
+      ),
+      baseColor: Colors.grey.shade200,
+      highlightColor: ThemeManager.primary,
+    ),
+  );
+}
+
+Widget categoryItem(
+    BuildContext context, CategoryData category, Function onClick) {
+  return GestureDetector(
+    onTap: () {
+      onClick();
+    },
+    child: Container(
+      margin: EdgeInsets.symmetric(horizontal: 8),
+      decoration: BoxDecoration(
+          color: (category.isSelected ?? false)
+              ? ThemeManager.primary
+              : Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.05),
+              spreadRadius: 1,
+              blurRadius: 2,
+              offset: Offset(0, 3),
+            )
+          ]),
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              color: creamyWhite,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            width: 45,
+            child: CachedNetworkImage(
+              imageUrl: category.image ?? "",
+              fit: BoxFit.contain,
+            ),
+          ),
+          SizedBox(width: 16),
+          Text(
+            "${category.name}",
+            style: Theme.of(context).textTheme.caption!.copyWith(
+                  fontSize: CaptionTextSize,
+                  color: (category.isSelected ?? false)
+                      ? Colors.white
+                      : ProfileActionsColor_Light,
+                  fontWeight: FontWeight.w600,
+                ),
+          ),
+          SizedBox(
+            width: 8,
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget adItem(AdsItem ad, Function onClick) {
+  return GestureDetector(
+    onTap: () {
+      onClick();
+    },
+    child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 8),
+        width: screenWidth * 0.89,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.05),
+              spreadRadius: 1,
+              blurRadius: 2,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          imageUrl: ad.image ?? "",
+          placeholder: (context, url) =>
+              Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) => Icon(Icons.error),
+        )),
+  );
+}
+
+Widget marketPlaceShimmer() {
   return Padding(
     padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
     child: Shimmer.fromColors(
       child: Container(
         constraints: BoxConstraints(
-          maxHeight: MediaQuery.of(context).size.height,
+          maxHeight: screenHeight,
         ),
         child: Column(
             children: List.generate(
@@ -1020,6 +1043,53 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                             tm.isDark() ? Colors.white : Colors.grey,
                             CaptionTextSize,
                           )
+                        ],
+                      ),
+                      SizedBox(height: height * 0.005),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 15,
+                            height: 15,
+                            child: Image.asset(Res.send_icon),
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          Text(
+                            item.distance ?? "",
+                            style: TextStyle(
+                              fontSize: BodySmallTextSize,
+                              fontWeight: FontWeight.w400,
+                              color: tm.isDark()
+                                  ? Colors.white
+                                  : tm.titlecolorLight,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            width: 18,
+                            height: 18,
+                            child: Image.asset(Res.scooter_icon),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            item.delivery_time,
+                            style: TextStyle(
+                              fontSize: BodySmallTextSize,
+                              fontWeight: FontWeight.w400,
+                              color: tm.isDark()
+                                  ? Colors.white
+                                  : tm.titlecolorLight,
+                            ),
+                          ),
+                          SizedBox(width: width * 0.03),
                         ],
                       ),
                       SizedBox(height: height * 0.02),

@@ -128,6 +128,7 @@
 
   "search_all":"Search For All..",
   "categories_title":"Categories",
+  "sub_categories_title":"Sub Categories",
   "offers_title":"Offers",
   "view_all":"View All",
 
@@ -141,5 +142,10 @@
   "favorites_empty_subtitle":"You didn't add any favorites yet\n when you add a favorite it will appear here",
 
   "remove":"Remove",
-  "best_price":"Best Price"
+  "best_price":"Best Price",
+
+  "offers_empty_title":"No offers available",
+  "offers_empty_subtitle":"There is no offers avaiable yet, but when we add them, they will appear here.",
+  "related_resuturants":"Related Resturants",
+  "five_kilo":"( 5 Kilo )"
 }

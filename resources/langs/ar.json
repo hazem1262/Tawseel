@@ -128,6 +128,7 @@
 
   "search_all":"البحث",
   "categories_title":"التصنيفات",
+  "sub_categories_title":"التصنيفات الداخلية",
 
   "offers_title":"العروض",
   "view_all":"الكل",
@@ -141,5 +142,11 @@
   "favorites_empty_subtitle":"لم تقم بإضافة اي تفضيلات حتي الان اذا قمت بالإضافة سوف تظهر هنا",
   "remove":"حذف",
 
-  "best_price":"أفضل سعر"
+  "best_price":"أفضل سعر",
+
+  "offers_empty_title":"لا يوجد عروض",
+  "offers_empty_subtitle":"لا يوجد عروض الأن عندما يتم اضافة عروض جديده ستظهر هنا.",
+  "related_resuturants":"المطاعم ذات الصلة",
+  "five_kilo":"( ٥ كيلو )"
+
 }

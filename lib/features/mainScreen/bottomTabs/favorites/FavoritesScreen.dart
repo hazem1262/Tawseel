@@ -133,7 +133,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                             BlocProvider.of<FavoritesBloc>(context)
                               ..add(ResetFavoritesState());
                           },
-                          loadingWidget: marketPlaceShimmer(context),
+                          loadingWidget: marketPlaceShimmer(),
                           builder: (favoriteItem) {
                             return Dismissible(
                               key: ValueKey(favoriteItem.id),
@@ -203,39 +203,39 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
             ),
           );
   }
+}
 
-  Widget emptyFavoritesWidget(BuildContext context) {
-    return Container(
-      height: screenHeight - screenHeight * 0.229,
-      child: Center(
-          child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Image.asset(Res.no_favorites_image),
-            SizedBox(height: 24),
-            Text(
-              LocaleKeys.favorites_empty_title.tr(),
-              style: Theme.of(context).textTheme.headline6!.copyWith(
-                    fontWeight: FontWeight.w600,
-                    fontSize: MeduimTextSize,
-                  ),
-            ),
-            SizedBox(height: 24),
-            Text(
-              LocaleKeys.favorites_empty_subtitle.tr(),
-              style: Theme.of(context)
-                  .textTheme
-                  .caption!
-                  .copyWith(fontSize: BodyTextSize),
-              textAlign: TextAlign.center,
-              softWrap: true,
-            )
-          ],
-        ),
-      )),
-    );
-  }
+Widget emptyFavoritesWidget(BuildContext context) {
+  return Container(
+    height: screenHeight - screenHeight * 0.229,
+    child: Center(
+        child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Image.asset(Res.no_favorites_image),
+          SizedBox(height: 24),
+          Text(
+            LocaleKeys.favorites_empty_title.tr(),
+            style: Theme.of(context).textTheme.headline6!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  fontSize: MeduimTextSize,
+                ),
+          ),
+          SizedBox(height: 24),
+          Text(
+            LocaleKeys.favorites_empty_subtitle.tr(),
+            style: Theme.of(context)
+                .textTheme
+                .caption!
+                .copyWith(fontSize: BodyTextSize),
+            textAlign: TextAlign.center,
+            softWrap: true,
+          )
+        ],
+      ),
+    )),
+  );
 }

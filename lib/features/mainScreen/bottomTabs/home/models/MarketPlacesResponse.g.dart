@@ -31,6 +31,7 @@ _$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) =>
       json['rating'] as String?,
       json['image'] as String,
       json['logo'] as String,
+      json['distance'] as String?,
       json['is_favorite'] as bool,
       (json['companies'] as List<dynamic>)
           .map((e) => CompanyItem.fromJson(e as Map<String, dynamic>))
@@ -54,6 +55,7 @@ Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) =>
       'rating': instance.rating,
       'image': instance.image,
       'logo': instance.logo,
+      'distance': instance.distance,
       'is_favorite': instance.is_favorite,
       'companies': instance.companies,
       'parent_categories': instance.parent_categories,

@@ -26,6 +26,7 @@ class MarketPlaceItem with _$MarketPlaceItem {
     String? rating,
     String image,
     String logo,
+    String? distance,
     bool is_favorite,
     List<CompanyItem> companies,
     List<CategoryData> parent_categories,
