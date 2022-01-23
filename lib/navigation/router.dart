@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:tawseel/features/about/about_us.dart';
 import 'package:tawseel/features/address/models/AddressDetailsScreen.dart';
 import 'package:tawseel/features/address/my_addresses/MyAddressesScreen.dart';
 import 'package:tawseel/features/categoryDetails/CategoryDetailsScreen.dart';
@@ -14,9 +15,12 @@ import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/profileScreen/ProfileScreen.dart';
 import 'package:tawseel/features/otp/OtpScreen.dart';
 import 'package:tawseel/features/phone/SendPhoneScreen.dart';
+import 'package:tawseel/features/search/search_screen.dart';
 import 'package:tawseel/features/signup/SignUpScreen.dart';
 import 'package:tawseel/features/splash/SplashScreen.dart';
 import 'package:tawseel/features/support/SupportScreen.dart';
+import 'package:tawseel/features/terms/terms_and_conditions.dart';
+import 'package:tawseel/features/view_all_marketplace/view_all_marketplace.dart';
 
 @MaterialAutoRouter(replaceInRouteName: 'screen', routes: <AutoRoute>[
   AutoRoute(page: SplashScreen, initial: true),
@@ -38,5 +42,9 @@ import 'package:tawseel/features/support/SupportScreen.dart';
   AutoRoute(page: SupportScreen),
   AutoRoute(page: MyAddressesScreen),
   AutoRoute(page: CategoryDetailsScreen),
+  AutoRoute(page: TermsAndConditionsScreen),
+  AutoRoute(page: AboutUsScreen),
+  AutoRoute(page: SearchScreen),
+  AutoRoute(page: ViewAllMarketPlaces),
 ])
 class $AppRouter {}

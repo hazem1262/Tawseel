@@ -56,20 +56,23 @@ class AppBackButton extends StatelessWidget {
           ),
         ],
       ),
-      child: Card(
-        color: Colors.white,
-        elevation: 0.1,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(8),
-          onTap: () => appContext.router.pop(),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.arrow_back_ios_new_outlined,
-              color: Colors.black87,
+      child: RotatedBox(
+        quarterTurns: isAr ? 2 : 0,
+        child: Card(
+          color: Colors.white,
+          elevation: 0.1,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(8),
+            onTap: () => appContext.router.pop(),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(
+                Icons.arrow_back_ios_new_outlined,
+                color: Colors.black87,
+              ),
             ),
           ),
         ),

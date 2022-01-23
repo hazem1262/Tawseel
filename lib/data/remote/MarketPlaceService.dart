@@ -11,7 +11,7 @@ abstract class MarketPlaceService {
     return _MarketPlaceService(dio, baseUrl: baseUrl);
   }
 
-  @GET("marketplaces?page={page}")
+  @GET("marketplaces")
   Future<HttpResponse<MarketPlacesResponse>> getMarketPlaces(
       @Queries() Map<String, dynamic> queries);
 

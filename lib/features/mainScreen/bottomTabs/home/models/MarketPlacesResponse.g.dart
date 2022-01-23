@@ -12,25 +12,27 @@ _$_MarketPlacesResponse _$$_MarketPlacesResponseFromJson(
       (json['data'] as List<dynamic>)
           .map((e) => MarketPlaceItem.fromJson(e as Map<String, dynamic>))
           .toList(),
+      MetaPagination.fromJson(json['meta'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MarketPlacesResponseToJson(
         _$_MarketPlacesResponse instance) =>
     <String, dynamic>{
       'data': instance.data,
+      'meta': instance.meta,
     };
 
 _$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) =>
     _$_MarketPlaceItem(
       json['id'] as int,
-      json['name'] as String,
-      json['description'] as String,
-      json['min_order'] as String,
-      json['delivery_time'] as String,
-      json['delivery_cost'] as String,
+      json['name'] as String?,
+      json['description'] as String?,
+      json['min_order'] as String?,
+      json['delivery_time'] as String?,
+      json['delivery_cost'] as String?,
       json['rating'] as String?,
-      json['image'] as String,
-      json['logo'] as String,
+      json['image'] as String?,
+      json['logo'] as String?,
       json['distance'] as String?,
       json['is_favorite'] as bool,
       (json['companies'] as List<dynamic>)
@@ -70,6 +72,7 @@ _$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) =>
       json['android_app_link'] as String,
       json['ios_app_link'] as String,
       json['delivery_cost'] as String?,
+      json['min_order'] as String?,
       json['image'] as String,
       json['is_best'] as bool,
     );
@@ -82,6 +85,7 @@ Map<String, dynamic> _$$_CompanyItemToJson(_$_CompanyItem instance) =>
       'android_app_link': instance.android_app_link,
       'ios_app_link': instance.ios_app_link,
       'delivery_cost': instance.delivery_cost,
+      'min_order': instance.min_order,
       'image': instance.image,
       'is_best': instance.is_best,
     };

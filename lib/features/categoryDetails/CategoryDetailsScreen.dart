@@ -1,3 +1,4 @@
+import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,8 +7,10 @@ import 'package:tawseel/features/categoryDetails/bloc/category_details_bloc.dart
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/HomeScreen.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
+import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
@@ -111,11 +114,35 @@ class CategoryDetailsScreen extends StatelessWidget {
                     ),
                     BlocBuilder<CategoryDetailsBloc, CategoryDetailsBlocState>(
                       builder: (context, state) {
+                        final selectedSubCategory = state.categories.isNotEmpty
+                            ? state.categories
+                                .where((element) => element.isSelected == true)
+                                .toList()
+                            : null;
                         return marketPlaceArea(
-                            context,
-                            state.nearbyMarketPlaceIsLoading,
-                            state.nearbyList,
-                            true);
+                          blocContext: context,
+                          isLoading: state.nearbyMarketPlaceIsLoading,
+                          list: state.nearbyList,
+                          isDetails: false,
+                          isInViewAll: false,
+                          onViewAllClick: () {
+                            appContext.router.push(ViewAllMarketPlacesRoute(
+                              categoryId: null,
+                              categoryName: categoryName,
+                              subCategoryId:
+                                  getIdOrNull(selectedSubCategory)?.id,
+                              subCategoryName:
+                                  getIdOrNull(selectedSubCategory)?.name,
+                            ));
+                          },
+                          onFavoriteClicked: (item) {
+                            BlocProvider.of<CategoryDetailsBloc>(context).add(
+                              item.is_favorite
+                                  ? RemoveMarketPlaceFromFavorite(item.id)
+                                  : AddMarketPlaceToFavorite((item.id)),
+                            );
+                          },
+                        );
                       },
                     )
                   ],
@@ -126,5 +153,10 @@ class CategoryDetailsScreen extends StatelessWidget {
         ));
       }),
     );
+  }
+
+  CategoryData? getIdOrNull(List<CategoryData>? selectedSubCategory) {
+    if (selectedSubCategory == null || selectedSubCategory.isEmpty) return null;
+    return selectedSubCategory.first;
   }
 }

@@ -147,6 +147,7 @@
   "offers_empty_title":"لا يوجد عروض",
   "offers_empty_subtitle":"لا يوجد عروض الأن عندما يتم اضافة عروض جديده ستظهر هنا.",
   "related_resuturants":"المطاعم ذات الصلة",
-  "five_kilo":"( ٥ كيلو )"
+  "five_kilo":"( ٥ كيلو )",
+  "min_order": "اقل سعر توصيل"
 
 }

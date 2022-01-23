@@ -136,40 +136,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               //?----------------------------------------------------------------------------?//
                               //?                                Google & apple signup                       ?//
                               //?----------------------------------------------------------------------------?//
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: AuthButton(
-                                      onPressed: () {
-                                        signUpWithGoogle(context);
-                                      },
-                                      title: LocaleKeys.with_google.tr(),
-                                      icon: Image.asset(Res.google_icon),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: AuthButton(
-                                      onPressed: () {
-                                        signUpWithApple(context);
-                                      },
-                                      title: LocaleKeys.with_apple.tr(),
-                                      icon: Container(
-                                        child: SvgPicture.asset(
-                                          Res.apple_icon_svg,
-                                          color: tm.isDark()
-                                              ? Colors.white
-                                              : Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(width: 8)
-                                ],
-                              ),
+                              // Row(
+                              //   children: [
+                              //     Expanded(
+                              //       child: AuthButton(
+                              //         onPressed: () {
+                              //           signUpWithGoogle(context);
+                              //         },
+                              //         title: LocaleKeys.with_google.tr(),
+                              //         icon: Image.asset(Res.google_icon),
+                              //       ),
+                              //     ),
+                              //     Expanded(
+                              //       child: AuthButton(
+                              //         onPressed: () {
+                              //           signUpWithApple(context);
+                              //         },
+                              //         title: LocaleKeys.with_apple.tr(),
+                              //         icon: Container(
+                              //           child: SvgPicture.asset(
+                              //             Res.apple_icon_svg,
+                              //             color: tm.isDark()
+                              //                 ? Colors.white
+                              //                 : Colors.black,
+                              //           ),
+                              //         ),
+                              //       ),
+                              //     ),
+                              //     SizedBox(width: 8)
+                              //   ],
+                              // ),
+                              // SizedBox(height: 16),
+                              // TextBetweenDividers(
+                              //     text: LocaleKeys.or_via_phone.tr()),
                               SizedBox(height: 16),
-                              TextBetweenDividers(
-                                  text: LocaleKeys.or_via_phone.tr()),
-                              SizedBox(height: 7),
                               //?----------------------------------------------------------------------------?//
                               //?                                  Login inputs form                         ?//
                               //?----------------------------------------------------------------------------?//

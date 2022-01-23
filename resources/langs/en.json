@@ -147,5 +147,6 @@
   "offers_empty_title":"No offers available",
   "offers_empty_subtitle":"There is no offers avaiable yet, but when we add them, they will appear here.",
   "related_resuturants":"Related Resturants",
-  "five_kilo":"( 5 Kilo )"
+  "five_kilo":"( 5 Kilo )",
+  "min_order": "Min Order"
 }

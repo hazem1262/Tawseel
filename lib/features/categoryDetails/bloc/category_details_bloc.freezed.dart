@@ -33,7 +33,7 @@ class _$CategoryDetailsBlocEventTearOff {
     );
   }
 
-  GetCategoryDetailsMarketPlaces getMarketPlaces(List<int> category_ids) {
+  GetCategoryDetailsMarketPlaces getMarketPlaces(List<int>? category_ids) {
     return GetCategoryDetailsMarketPlaces(
       category_ids,
     );
@@ -66,7 +66,7 @@ mixin _$CategoryDetailsBlocEvent {
     required TResult Function() getAds,
     required TResult Function(int categoryId) getSubCategories,
     required TResult Function(int categoryId) selectSubCategories,
-    required TResult Function(List<int> category_ids) getMarketPlaces,
+    required TResult Function(List<int>? category_ids) getMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
@@ -77,7 +77,7 @@ mixin _$CategoryDetailsBlocEvent {
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -88,7 +88,7 @@ mixin _$CategoryDetailsBlocEvent {
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -200,7 +200,7 @@ class _$GetCategoryDetailsAds implements GetCategoryDetailsAds {
     required TResult Function() getAds,
     required TResult Function(int categoryId) getSubCategories,
     required TResult Function(int categoryId) selectSubCategories,
-    required TResult Function(List<int> category_ids) getMarketPlaces,
+    required TResult Function(List<int>? category_ids) getMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
@@ -214,7 +214,7 @@ class _$GetCategoryDetailsAds implements GetCategoryDetailsAds {
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -228,7 +228,7 @@ class _$GetCategoryDetailsAds implements GetCategoryDetailsAds {
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -374,7 +374,7 @@ class _$GetCategoryDetailsSubCategories
     required TResult Function() getAds,
     required TResult Function(int categoryId) getSubCategories,
     required TResult Function(int categoryId) selectSubCategories,
-    required TResult Function(List<int> category_ids) getMarketPlaces,
+    required TResult Function(List<int>? category_ids) getMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
@@ -388,7 +388,7 @@ class _$GetCategoryDetailsSubCategories
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -402,7 +402,7 @@ class _$GetCategoryDetailsSubCategories
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -555,7 +555,7 @@ class _$SelectCategoryDetailsSubCategory
     required TResult Function() getAds,
     required TResult Function(int categoryId) getSubCategories,
     required TResult Function(int categoryId) selectSubCategories,
-    required TResult Function(List<int> category_ids) getMarketPlaces,
+    required TResult Function(List<int>? category_ids) getMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
@@ -569,7 +569,7 @@ class _$SelectCategoryDetailsSubCategory
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -583,7 +583,7 @@ class _$SelectCategoryDetailsSubCategory
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -668,7 +668,7 @@ abstract class $GetCategoryDetailsMarketPlacesCopyWith<$Res> {
           GetCategoryDetailsMarketPlaces value,
           $Res Function(GetCategoryDetailsMarketPlaces) then) =
       _$GetCategoryDetailsMarketPlacesCopyWithImpl<$Res>;
-  $Res call({List<int> category_ids});
+  $Res call({List<int>? category_ids});
 }
 
 /// @nodoc
@@ -692,7 +692,7 @@ class _$GetCategoryDetailsMarketPlacesCopyWithImpl<$Res>
       category_ids == freezed
           ? _value.category_ids
           : category_ids // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<int>?,
     ));
   }
 }
@@ -704,7 +704,7 @@ class _$GetCategoryDetailsMarketPlaces
   const _$GetCategoryDetailsMarketPlaces(this.category_ids);
 
   @override
-  final List<int> category_ids;
+  final List<int>? category_ids;
 
   @override
   String toString() {
@@ -736,7 +736,7 @@ class _$GetCategoryDetailsMarketPlaces
     required TResult Function() getAds,
     required TResult Function(int categoryId) getSubCategories,
     required TResult Function(int categoryId) selectSubCategories,
-    required TResult Function(List<int> category_ids) getMarketPlaces,
+    required TResult Function(List<int>? category_ids) getMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
@@ -750,7 +750,7 @@ class _$GetCategoryDetailsMarketPlaces
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -764,7 +764,7 @@ class _$GetCategoryDetailsMarketPlaces
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -834,10 +834,10 @@ class _$GetCategoryDetailsMarketPlaces
 
 abstract class GetCategoryDetailsMarketPlaces
     implements CategoryDetailsBlocEvent {
-  const factory GetCategoryDetailsMarketPlaces(List<int> category_ids) =
+  const factory GetCategoryDetailsMarketPlaces(List<int>? category_ids) =
       _$GetCategoryDetailsMarketPlaces;
 
-  List<int> get category_ids => throw _privateConstructorUsedError;
+  List<int>? get category_ids => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GetCategoryDetailsMarketPlacesCopyWith<GetCategoryDetailsMarketPlaces>
       get copyWith => throw _privateConstructorUsedError;
@@ -913,7 +913,7 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     required TResult Function() getAds,
     required TResult Function(int categoryId) getSubCategories,
     required TResult Function(int categoryId) selectSubCategories,
-    required TResult Function(List<int> category_ids) getMarketPlaces,
+    required TResult Function(List<int>? category_ids) getMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
@@ -927,7 +927,7 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -941,7 +941,7 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -1090,7 +1090,7 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     required TResult Function() getAds,
     required TResult Function(int categoryId) getSubCategories,
     required TResult Function(int categoryId) selectSubCategories,
-    required TResult Function(List<int> category_ids) getMarketPlaces,
+    required TResult Function(List<int>? category_ids) getMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
@@ -1104,7 +1104,7 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -1118,7 +1118,7 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -1244,7 +1244,7 @@ class _$ResetCategoryDetailsRefreshData
     required TResult Function() getAds,
     required TResult Function(int categoryId) getSubCategories,
     required TResult Function(int categoryId) selectSubCategories,
-    required TResult Function(List<int> category_ids) getMarketPlaces,
+    required TResult Function(List<int>? category_ids) getMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
@@ -1258,7 +1258,7 @@ class _$ResetCategoryDetailsRefreshData
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
@@ -1272,7 +1272,7 @@ class _$ResetCategoryDetailsRefreshData
     TResult Function()? getAds,
     TResult Function(int categoryId)? getSubCategories,
     TResult Function(int categoryId)? selectSubCategories,
-    TResult Function(List<int> category_ids)? getMarketPlaces,
+    TResult Function(List<int>? category_ids)? getMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,

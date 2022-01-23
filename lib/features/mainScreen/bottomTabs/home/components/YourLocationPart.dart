@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/style.dart';
+import 'package:tawseel/utils/globals.dart';
 
 class YourLocationPart extends StatelessWidget {
   final String addressText;
@@ -27,14 +28,23 @@ class YourLocationPart extends StatelessWidget {
                 width: screenWidth,
                 child: Row(
                   children: [
-                    Image.asset(Res.home_location_icon, width: 20, height: 20),
+                    Image.asset(
+                      Res.home_location_icon,
+                      width: 20,
+                      height: 20,
+                      color: liveTm.isDark()
+                          ? Colors.white
+                          : ProfileActionsColor_Light,
+                    ),
                     SizedBox(width: 4),
                     Text(
                       LocaleKeys.your_location.tr(),
                       style: TextStyle(
                         fontSize: BodyTextSize,
                         fontWeight: FontWeight.w300,
-                        color: ProfileActionsColor_Light,
+                        color: liveTm.isDark()
+                            ? Colors.white
+                            : ProfileActionsColor_Light,
                       ),
                     ),
                   ],

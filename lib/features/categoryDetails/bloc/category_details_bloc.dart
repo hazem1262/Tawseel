@@ -21,7 +21,7 @@ class CategoryDetailsBlocEvent with _$CategoryDetailsBlocEvent {
       SelectCategoryDetailsSubCategory;
 
   const factory CategoryDetailsBlocEvent.getMarketPlaces(
-      List<int> category_ids) = GetCategoryDetailsMarketPlaces;
+      List<int>? category_ids) = GetCategoryDetailsMarketPlaces;
 
   const factory CategoryDetailsBlocEvent.addMarketPlaceToFavorite(int id) =
       AddMarketPlaceToFavorite;

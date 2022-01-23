@@ -224,6 +224,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode),
                 onTap: () {
                   tm.toggleMode();
+                  appContext.openOnly(MainScreenRoute());
                 },
               ),
             ),
@@ -234,24 +235,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
             //?----------------------------------------------------------------------------?//
             //?                                Allow notifications                       ?//
             //?----------------------------------------------------------------------------?//
-            profileActionItem(
-              text: LocaleKeys.allow_notification.tr(),
-              icon: Image(
-                image: AssetImage(Res.notification_icon),
-                width: 24,
-                height: 24,
-                color: tm.isDark() ? Colors.white : null,
-              ),
-              actionWidget: CupertinoSwitch(
-                  activeColor: colorPrimary,
-                  value: notificationsAllowd,
-                  onChanged: _onAllowNotificationChange),
-              onPressed: () {},
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 2),
-              child: Divider(),
-            ),
+            // profileActionItem(
+            //   text: LocaleKeys.allow_notification.tr(),
+            //   icon: Image(
+            //     image: AssetImage(Res.notification_icon),
+            //     width: 24,
+            //     height: 24,
+            //     color: tm.isDark() ? Colors.white : null,
+            //   ),
+            //   actionWidget: CupertinoSwitch(
+            //       activeColor: colorPrimary,
+            //       value: notificationsAllowd,
+            //       onChanged: _onAllowNotificationChange),
+            //   onPressed: () {},
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(vertical: 2),
+            //   child: Divider(),
+            // ),
             //?----------------------------------------------------------------------------?//
             //?                                My Address                                  ?//
             //?----------------------------------------------------------------------------?//
@@ -351,7 +352,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 color: tm.isDark() ? Colors.white : creamyGrey,
                 size: 24,
               ),
-              onPressed: () {},
+              onPressed: () {
+                context.openIfExist(TermsAndConditionsScreenRoute());
+              },
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),
@@ -366,7 +369,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 AssetImage(Res.about_us_icon),
                 color: tm.isDark() ? Colors.white : creamyGrey,
               ),
-              onPressed: () {},
+              onPressed: () {
+                context.openIfExist(AboutUsScreenRoute());
+              },
             ),
           ],
         ),
@@ -456,13 +461,16 @@ class profileActionItem extends StatelessWidget {
                   width: padding ?? 16,
                 ),
                 TextButton(
-                    onPressed: onPressed,
-                    child: Text(text,
-                        style: theme.textTheme.headline5!.copyWith(
-                            fontSize: SmallTitleTextSize,
-                            color: tm.isDark()
-                                ? ProfileActionsColor_Dark
-                                : ProfileActionsColor_Light))),
+                  onPressed: onPressed,
+                  child: Text(
+                    text,
+                    style: theme.textTheme.headline5!.copyWith(
+                        fontSize: SmallTitleTextSize,
+                        color: tm.isDark()
+                            ? ProfileActionsColor_Dark
+                            : ProfileActionsColor_Light),
+                  ),
+                ),
               ],
             ),
             actionWidget ??

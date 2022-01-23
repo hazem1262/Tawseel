@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'MarketPlaceService.dart';
+part of 'AppService.dart';
 
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
 
-class _MarketPlaceService implements MarketPlaceService {
-  _MarketPlaceService(this._dio, {this.baseUrl}) {
+class _AppService implements AppService {
+  _AppService(this._dio, {this.baseUrl}) {
     baseUrl ??= 'https://tawseelclub.com/api/';
   }
 
@@ -16,36 +16,35 @@ class _MarketPlaceService implements MarketPlaceService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<MarketPlacesResponse>> getMarketPlaces(queries) async {
+  Future<HttpResponse<AboutUsResponse>> getAbout() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queries);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<MarketPlacesResponse>>(
+        _setStreamType<HttpResponse<AboutUsResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'marketplaces',
+                .compose(_dio.options, 'pages/about',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = MarketPlacesResponse.fromJson(_result.data!);
+    final value = AboutUsResponse.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
 
   @override
-  Future<HttpResponse<String>> addMarketPlaceToFavorite(id) async {
+  Future<HttpResponse<TermsResponse>> getTermsAndConditions() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<String>(
-        _setStreamType<HttpResponse<String>>(
-            Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'favorites/$id',
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<HttpResponse<TermsResponse>>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, 'pages/terms',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data!;
+    final value = TermsResponse.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }

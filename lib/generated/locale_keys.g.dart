@@ -107,5 +107,6 @@ abstract class  LocaleKeys {
   static const offers_empty_subtitle = 'offers_empty_subtitle';
   static const related_resuturants = 'related_resuturants';
   static const five_kilo = 'five_kilo';
+  static const min_order = 'min_order';
 
 }

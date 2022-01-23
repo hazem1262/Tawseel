@@ -2,12 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/data/remote/AddressService.dart';
 import 'package:tawseel/data/remote/AdsService.dart';
+import 'package:tawseel/data/remote/AppService.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/data/remote/CategoriesService.dart';
 import 'package:tawseel/data/remote/FavoritesService.dart';
 import 'package:tawseel/data/remote/MarketPlaceService.dart';
 import 'package:tawseel/data/remote/NetworkModule.dart';
 import 'package:tawseel/data/remote/OffersService.dart';
+import 'package:tawseel/data/remote/app_repo.dart';
 import 'package:tawseel/data/remote/places_api_service.dart';
 import 'package:tawseel/features/address/my_addresses/bloc/AddressesRepository.dart';
 import 'package:tawseel/features/changePassword/bloc/ChangePasswordRepository.dart';
@@ -107,5 +109,13 @@ Future<void> initAppDependencies() async {
 
   getIt.registerSingleton<IFavoritesRepository>(
     FavoritesRepository(getIt<FavoritesService>()),
+  );
+
+  getIt.registerSingleton<AppService>(
+    AppService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
+
+  getIt.registerSingleton<IAppRepository>(
+    AppRepository(getIt<AppService>()),
   );
 }

@@ -142,44 +142,50 @@ class _LoginScreenState extends State<LoginScreen> {
                                   style: theme.textTheme.caption,
                                 ).tr(),
                               ),
-                              SizedBox(height: 30),
+                              SizedBox(height: 16),
+                              // Container(
+                              //     child: Image.asset(
+                              //   Res.logo_splash,
+                              //   height: screenHeight / 5,
+                              //   width: screenWidth / 3.5,
+                              // )),
                               //?----------------------------------------------------------------------------?//
                               //?                                Google & apple login                        ?//
                               //?----------------------------------------------------------------------------?//
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: AuthButton(
-                                      onPressed: () {
-                                        loginWithGoogle(context);
-                                      },
-                                      title: LocaleKeys.with_google.tr(),
-                                      icon: Image.asset(Res.google_icon),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: AuthButton(
-                                      onPressed: () {
-                                        loginWithApple(context);
-                                      },
-                                      title: LocaleKeys.with_apple.tr(),
-                                      icon: Container(
-                                        child: SvgPicture.asset(
-                                          Res.apple_icon_svg,
-                                          color: tm.isDark()
-                                              ? Colors.white
-                                              : Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(width: 8)
-                                ],
-                              ),
+                              // Row(
+                              //   children: [
+                              //     Expanded(
+                              //       child: AuthButton(
+                              //         onPressed: () {
+                              //           loginWithGoogle(context);
+                              //         },
+                              //         title: LocaleKeys.with_google.tr(),
+                              //         icon: Image.asset(Res.google_icon),
+                              //       ),
+                              //     ),
+                              //     Expanded(
+                              //       child: AuthButton(
+                              //         onPressed: () {
+                              //           loginWithApple(context);
+                              //         },
+                              //         title: LocaleKeys.with_apple.tr(),
+                              //         icon: Container(
+                              //           child: SvgPicture.asset(
+                              //             Res.apple_icon_svg,
+                              //             color: tm.isDark()
+                              //                 ? Colors.white
+                              //                 : Colors.black,
+                              //           ),
+                              //         ),
+                              //       ),
+                              //     ),
+                              //     SizedBox(width: 8)
+                              //   ],
+                              // ),
+                              // SizedBox(height: 16),
+                              // TextBetweenDividers(
+                              //     text: LocaleKeys.or_via_phone.tr()),
                               SizedBox(height: 16),
-                              TextBetweenDividers(
-                                  text: LocaleKeys.or_via_phone.tr()),
-                              SizedBox(height: 7),
                               //?----------------------------------------------------------------------------?//
                               //?                                  Login inputs form                         ?//
                               //?----------------------------------------------------------------------------?//

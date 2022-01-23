@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_statements
+// ignore_for_file: unnecessary_statements, implementation_imports
 
 import 'dart:ui';
 import 'package:external_app_launcher/external_app_launcher.dart';
@@ -17,6 +17,7 @@ import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesR
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
+import 'package:tawseel/features/search/search_screen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/models/address.dart';
 import 'package:tawseel/navigation/router.gr.dart';
@@ -96,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                     ),
                     searchArea(onClick: () {
-                      appContext.showToast("Search Clicked");
+                      appContext.openIfExist(SearchScreenRoute());
                     }),
                     BlocBuilder<HomeBloc, HomeBlocState>(
                       builder: (context, state) {
@@ -118,10 +119,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     BlocBuilder<HomeBloc, HomeBlocState>(
                       builder: (context, state) {
                         return marketPlaceArea(
-                            context,
-                            state.nearbyMarketPlaceIsLoading,
-                            state.nearbyList,
-                            false);
+                            blocContext: context,
+                            isLoading: state.nearbyMarketPlaceIsLoading,
+                            list: state.nearbyList,
+                            isDetails: false,
+                            isInViewAll: false,
+                            onViewAllClick: () {
+                              appContext.router
+                                  .push(ViewAllMarketPlacesRoute());
+                            },
+                            onFavoriteClicked: (item) {
+                              BlocProvider.of<HomeBloc>(context).add(
+                                item.is_favorite
+                                    ? RemoveMarketPlaceFromFavorite(item.id)
+                                    : AddMarketPlaceToFavorite((item.id)),
+                              );
+                            });
                       },
                     )
                   ],
@@ -131,68 +144,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ));
       }),
-    );
-  }
-
-  Widget searchArea({required Function onClick}) {
-    return GestureDetector(
-      onTap: () {
-        onClick();
-      },
-      child: Container(
-        margin: EdgeInsets.only(top: 16),
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.all(18),
-                decoration: BoxDecoration(
-                  color: tm.isDark() ? Colors.black54 : Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      Res.search_icon,
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      LocaleKeys.search_all.tr(),
-                      style: TextStyle(
-                        fontSize: BodySmallTextSize,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: ThemeManager.primary,
-                  borderRadius: BorderRadius.circular(10),
-                  shape: BoxShape.rectangle),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset(
-                  Res.settings_icon,
-                  width: 20,
-                  height: 20,
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
     );
   }
 
@@ -282,22 +233,28 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-Widget marketPlaceArea(BuildContext blocContext, bool isLoading,
-    List<MarketPlaceItem> list, bool isDetails) {
+Widget marketPlaceArea(
+    {required BuildContext blocContext,
+    required bool isLoading,
+    required List<MarketPlaceItem> list,
+    required bool isDetails,
+    required bool isInViewAll,
+    required Function onViewAllClick,
+    required Function(MarketPlaceItem item) onFavoriteClicked}) {
   return Container(
     margin: EdgeInsets.only(top: 8),
     child: Column(
       children: [
-        SectionWithViewAll(
-          title: isDetails
-              ? LocaleKeys.related_resuturants.tr()
-              : LocaleKeys.nearby_word.tr(),
-          onViewAllClick: () {
-            appContext.showToast("view all market place");
-          },
-          moreInfoWidget:
-              isDetails ? Container() : Text(LocaleKeys.five_kilo).tr(),
-        ),
+        isInViewAll
+            ? Container()
+            : SectionWithViewAll(
+                title: isDetails
+                    ? LocaleKeys.related_resuturants.tr()
+                    : LocaleKeys.nearby_word.tr(),
+                onViewAllClick: onViewAllClick,
+                moreInfoWidget:
+                    isDetails ? Container() : Text(LocaleKeys.five_kilo).tr(),
+              ),
         isLoading
             ? marketPlaceShimmer()
             : Padding(
@@ -309,16 +266,15 @@ Widget marketPlaceArea(BuildContext blocContext, bool isLoading,
                   scrollDirection: Axis.vertical,
                   itemCount: list.length,
                   itemBuilder: (ctx, index) {
-                    return marketPlaceItem(ctx, list[index], (item) {
-                      showMarketPlaceCompaniesBottomSheet(
-                          item, ctx, item.companies);
-                    }, (item) {
-                      BlocProvider.of<HomeBloc>(blocContext).add(
-                        item.is_favorite
-                            ? RemoveMarketPlaceFromFavorite(item.id)
-                            : AddMarketPlaceToFavorite((item.id)),
-                      );
-                    });
+                    return marketPlaceItem(
+                      ctx,
+                      list[index],
+                      (item) {
+                        showMarketPlaceCompaniesBottomSheet(
+                            item, ctx, item.companies);
+                      },
+                      onFavoriteClicked,
+                    );
                   },
                 ),
               ),
@@ -726,7 +682,7 @@ Widget marketPlaceItem(
                   topRight: Radius.circular(25),
                 ),
                 child: CachedNetworkImage(
-                  imageUrl: marketPlace.image,
+                  imageUrl: marketPlace.image ?? "",
                   fit: BoxFit.fill,
                   width: double.infinity,
                   height: itemHeight * 0.6,
@@ -911,7 +867,7 @@ Widget marketPlaceItem(
                 color: Colors.grey,
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: CachedNetworkImageProvider(marketPlace.logo),
+                  image: CachedNetworkImageProvider(marketPlace.logo ?? ""),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -1028,7 +984,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            item.name,
+                            item.name ?? "",
                             style: TextStyle(
                               fontSize: SmallTitleTextSize,
                               fontWeight: FontWeight.w600,
@@ -1080,7 +1036,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                             width: 5,
                           ),
                           Text(
-                            item.delivery_time,
+                            item.delivery_time ?? "",
                             style: TextStyle(
                               fontSize: BodySmallTextSize,
                               fontWeight: FontWeight.w400,
@@ -1123,7 +1079,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                     color: Colors.grey,
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: CachedNetworkImageProvider(item.logo),
+                      image: CachedNetworkImageProvider(item.logo ?? ""),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -1230,19 +1186,23 @@ Widget bestCompanyWidget(
                           ),
                           Flexible(
                             flex: 1,
-                            child: Text(
-                              "25 SAR\nMinimum Order Price",
-                              style:
-                                  Theme.of(context).textTheme.caption!.copyWith(
-                                        fontSize: ErrorTextSize,
-                                        color: tm.isDark()
-                                            ? Colors.white
-                                            : ProfileActionsColor_Light,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
+                            child: item.min_order != null
+                                ? Text(
+                                    "${item.min_order ?? ''}\n${LocaleKeys.min_order.tr()}",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .caption!
+                                        .copyWith(
+                                          fontSize: ErrorTextSize,
+                                          color: tm.isDark()
+                                              ? Colors.white
+                                              : ProfileActionsColor_Light,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.center,
+                                  )
+                                : Container(),
                           ),
                           SizedBox(
                             width: 8,
@@ -1338,18 +1298,21 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
                   ),
                   Flexible(
                     flex: 1,
-                    child: Text(
-                      "25 SAR\nMinimum Order Price",
-                      style: Theme.of(context).textTheme.caption!.copyWith(
-                            fontSize: ErrorTextSize,
-                            color: tm.isDark()
-                                ? Colors.white
-                                : ProfileActionsColor_Light,
-                            fontWeight: FontWeight.w600,
-                          ),
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                    ),
+                    child: item.min_order != null
+                        ? Text(
+                            "${item.min_order ?? ''}\n${LocaleKeys.min_order.tr()}",
+                            style:
+                                Theme.of(context).textTheme.caption!.copyWith(
+                                      fontSize: ErrorTextSize,
+                                      color: tm.isDark()
+                                          ? Colors.white
+                                          : ProfileActionsColor_Light,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          )
+                        : Container(),
                   ),
                   SizedBox(
                     width: 8,
@@ -1388,6 +1351,68 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
           color: Colors.grey.shade100,
         ),
       ],
+    ),
+  );
+}
+
+Widget searchArea({required Function onClick}) {
+  return GestureDetector(
+    onTap: () {
+      onClick();
+    },
+    child: Container(
+      margin: EdgeInsets.only(top: 16),
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                color: tm.isDark() ? Colors.black54 : Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                children: [
+                  Image.asset(
+                    Res.search_icon,
+                    height: 20,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    LocaleKeys.search_all.tr(),
+                    style: TextStyle(
+                      fontSize: BodySmallTextSize,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+            decoration: BoxDecoration(
+                color: ThemeManager.primary,
+                borderRadius: BorderRadius.circular(10),
+                shape: BoxShape.rectangle),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset(
+                Res.settings_icon,
+                width: 20,
+                height: 20,
+              ),
+            ),
+          )
+        ],
+      ),
     ),
   );
 }

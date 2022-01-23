@@ -1,14 +1,16 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 
+import 'OffersResponse.dart';
+
 part 'MarketPlacesResponse.g.dart';
 
 part 'MarketPlacesResponse.freezed.dart';
 
 @freezed
 class MarketPlacesResponse with _$MarketPlacesResponse {
-  const factory MarketPlacesResponse(List<MarketPlaceItem> data) =
-      _MarketPlacesResponse;
+  const factory MarketPlacesResponse(
+      List<MarketPlaceItem> data, MetaPagination meta) = _MarketPlacesResponse;
 
   factory MarketPlacesResponse.fromJson(Map<String, dynamic> json) =>
       _$MarketPlacesResponseFromJson(json);
@@ -18,14 +20,14 @@ class MarketPlacesResponse with _$MarketPlacesResponse {
 class MarketPlaceItem with _$MarketPlaceItem {
   const factory MarketPlaceItem(
     int id,
-    String name,
-    String description,
-    String min_order,
-    String delivery_time,
-    String delivery_cost,
+    String? name,
+    String? description,
+    String? min_order,
+    String? delivery_time,
+    String? delivery_cost,
     String? rating,
-    String image,
-    String logo,
+    String? image,
+    String? logo,
     String? distance,
     bool is_favorite,
     List<CompanyItem> companies,
@@ -46,6 +48,7 @@ class CompanyItem with _$CompanyItem {
     String android_app_link,
     String ios_app_link,
     String? delivery_cost,
+    String? min_order,
     String image,
     bool is_best,
   ) = _CompanyItem;
