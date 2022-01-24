@@ -2,6 +2,7 @@ import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:easy_localization/src/public_ext.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -39,9 +40,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
             listener: (context, state) {
               if (state.error.isNotEmpty) appContext.showError(state.error);
               if (state.refreshData) {
-                // TODO add locale
                 BlocProvider.of<FavoritesBloc>(context)
-                  ..add(ResetFavoritesState())
                   ..add(GetFavoritesList());
               }
             },
@@ -71,8 +70,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       ),
                       BlocBuilder<FavoritesBloc, FavoritesState>(
                         builder: (context, state) {
-                          return (state.favoritesList.isEmpty &&
-                                  !state.listIsLoading)
+                          return (!state.listIsLoading && state.emptyFirstPage)
                               ? emptyFavoritesWidget(context)
                               : favoritesArea(
                                   context: context,
@@ -102,8 +100,8 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     final height = h -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
-    return favoritesList.isEmpty
-        ? emptyFavoritesWidget(context)
+    return isPagingLoading
+        ? marketPlaceShimmer()
         : Container(
             margin: EdgeInsets.only(top: 8),
             child: Wrap(
@@ -133,10 +131,15 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                             BlocProvider.of<FavoritesBloc>(context)
                               ..add(ResetFavoritesState());
                           },
-                          loadingWidget: marketPlaceShimmer(),
+                          loadingWidget: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: CupertinoActivityIndicator(),
+                          ),
                           builder: (favoriteItem) {
                             return Dismissible(
-                              key: ValueKey(favoriteItem.id),
+                              key: UniqueKey()
+                              //  ValueKey(favoriteItem.id)
+                              ,
                               background: Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 16),
@@ -164,7 +167,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                             )),
                                         SizedBox(height: 16),
                                         Text(
-                                          "Remove",
+                                          LocaleKeys.remove.tr(),
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 14,
@@ -178,8 +181,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                               ),
                               direction: DismissDirection.endToStart,
                               onDismissed: (direction) {
-                                BlocProvider.of<FavoritesBloc>(context)
-                                    .add(RemoveFromFavorite(favoriteItem.id));
+                                BlocProvider.of<FavoritesBloc>(context).add(
+                                    RemoveFromFavoriteByDismiss(
+                                        favoriteItem.id));
                               },
                               child: marketPlaceItem(context, favoriteItem,
                                   (item) {

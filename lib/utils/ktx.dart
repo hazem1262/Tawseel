@@ -169,6 +169,31 @@ extension EmailValidator on String? {
       SCHEMES_MAP["id" + this!.split("/id")[1].split("?")[0]] ?? this ?? "";
 }
 
+extension MarketPlacesDtx on List<MarketPlaceItem> {
+  List<MarketPlaceItem> setFavoriteLoadingFor(
+          {required int id, bool? isFavorite, bool? isLoading}) =>
+      this
+          .map((e) => e.id == id
+              ? e.copyWith(
+                  is_favorite: isFavorite ?? e.is_favorite,
+                  is_loading: isLoading)
+              : e)
+          .toList();
+
+  List<MarketPlaceItem> removeItem({required int id}) {
+    final temp = this.toList();
+    temp.removeWhere((e) => e.id == id);
+    return temp;
+  }
+
+  List<MarketPlaceItem> addItemAtIndex(
+      {required int index, required MarketPlaceItem item}) {
+    final temp = this.toList();
+    temp.insert(index, item);
+    return temp;
+  }
+}
+
 extension MarketPlaceDtx on MarketPlaceItem {
   CompanyItem getBestDeliveryCompany() =>
       this.companies.firstWhere((element) => element.is_best == true);

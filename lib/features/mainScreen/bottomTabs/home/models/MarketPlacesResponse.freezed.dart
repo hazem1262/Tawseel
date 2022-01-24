@@ -217,6 +217,7 @@ class _$MarketPlaceItemTearOff {
       String? logo,
       String? distance,
       bool is_favorite,
+      bool? is_loading,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
       List<CategoryData> sub_categories) {
@@ -232,6 +233,7 @@ class _$MarketPlaceItemTearOff {
       logo,
       distance,
       is_favorite,
+      is_loading,
       companies,
       parent_categories,
       sub_categories,
@@ -259,6 +261,7 @@ mixin _$MarketPlaceItem {
   String? get logo => throw _privateConstructorUsedError;
   String? get distance => throw _privateConstructorUsedError;
   bool get is_favorite => throw _privateConstructorUsedError;
+  bool? get is_loading => throw _privateConstructorUsedError;
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
   List<CategoryData> get parent_categories =>
       throw _privateConstructorUsedError;
@@ -287,6 +290,7 @@ abstract class $MarketPlaceItemCopyWith<$Res> {
       String? logo,
       String? distance,
       bool is_favorite,
+      bool? is_loading,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
       List<CategoryData> sub_categories});
@@ -314,6 +318,7 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
     Object? logo = freezed,
     Object? distance = freezed,
     Object? is_favorite = freezed,
+    Object? is_loading = freezed,
     Object? companies = freezed,
     Object? parent_categories = freezed,
     Object? sub_categories = freezed,
@@ -363,6 +368,10 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
           ? _value.is_favorite
           : is_favorite // ignore: cast_nullable_to_non_nullable
               as bool,
+      is_loading: is_loading == freezed
+          ? _value.is_loading
+          : is_loading // ignore: cast_nullable_to_non_nullable
+              as bool?,
       companies: companies == freezed
           ? _value.companies
           : companies // ignore: cast_nullable_to_non_nullable
@@ -398,6 +407,7 @@ abstract class _$MarketPlaceItemCopyWith<$Res>
       String? logo,
       String? distance,
       bool is_favorite,
+      bool? is_loading,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
       List<CategoryData> sub_categories});
@@ -427,6 +437,7 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
     Object? logo = freezed,
     Object? distance = freezed,
     Object? is_favorite = freezed,
+    Object? is_loading = freezed,
     Object? companies = freezed,
     Object? parent_categories = freezed,
     Object? sub_categories = freezed,
@@ -476,6 +487,10 @@ class __$MarketPlaceItemCopyWithImpl<$Res>
           ? _value.is_favorite
           : is_favorite // ignore: cast_nullable_to_non_nullable
               as bool,
+      is_loading == freezed
+          ? _value.is_loading
+          : is_loading // ignore: cast_nullable_to_non_nullable
+              as bool?,
       companies == freezed
           ? _value.companies
           : companies // ignore: cast_nullable_to_non_nullable
@@ -507,6 +522,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       this.logo,
       this.distance,
       this.is_favorite,
+      this.is_loading,
       this.companies,
       this.parent_categories,
       this.sub_categories);
@@ -537,6 +553,8 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
   @override
   final bool is_favorite;
   @override
+  final bool? is_loading;
+  @override
   final List<CompanyItem> companies;
   @override
   final List<CategoryData> parent_categories;
@@ -545,7 +563,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
 
   @override
   String toString() {
-    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, distance: $distance, is_favorite: $is_favorite, companies: $companies, parent_categories: $parent_categories, sub_categories: $sub_categories)';
+    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, distance: $distance, is_favorite: $is_favorite, is_loading: $is_loading, companies: $companies, parent_categories: $parent_categories, sub_categories: $sub_categories)';
   }
 
   @override
@@ -580,6 +598,9 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
             (identical(other.is_favorite, is_favorite) ||
                 const DeepCollectionEquality()
                     .equals(other.is_favorite, is_favorite)) &&
+            (identical(other.is_loading, is_loading) ||
+                const DeepCollectionEquality()
+                    .equals(other.is_loading, is_loading)) &&
             (identical(other.companies, companies) ||
                 const DeepCollectionEquality()
                     .equals(other.companies, companies)) &&
@@ -605,6 +626,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       const DeepCollectionEquality().hash(logo) ^
       const DeepCollectionEquality().hash(distance) ^
       const DeepCollectionEquality().hash(is_favorite) ^
+      const DeepCollectionEquality().hash(is_loading) ^
       const DeepCollectionEquality().hash(companies) ^
       const DeepCollectionEquality().hash(parent_categories) ^
       const DeepCollectionEquality().hash(sub_categories);
@@ -633,6 +655,7 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
       String? logo,
       String? distance,
       bool is_favorite,
+      bool? is_loading,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
       List<CategoryData> sub_categories) = _$_MarketPlaceItem;
@@ -662,6 +685,8 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
   String? get distance => throw _privateConstructorUsedError;
   @override
   bool get is_favorite => throw _privateConstructorUsedError;
+  @override
+  bool? get is_loading => throw _privateConstructorUsedError;
   @override
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
   @override

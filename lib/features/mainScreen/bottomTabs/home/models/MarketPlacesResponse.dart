@@ -30,6 +30,7 @@ class MarketPlaceItem with _$MarketPlaceItem {
     String? logo,
     String? distance,
     bool is_favorite,
+    bool? is_loading,
     List<CompanyItem> companies,
     List<CategoryData> parent_categories,
     List<CategoryData> sub_categories,

@@ -123,7 +123,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                           blocContext: context,
                           isLoading: state.nearbyMarketPlaceIsLoading,
                           list: state.nearbyList,
-                          isDetails: false,
+                          isDetails: true,
                           isInViewAll: false,
                           onViewAllClick: () {
                             appContext.router.push(ViewAllMarketPlacesRoute(

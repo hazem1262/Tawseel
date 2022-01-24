@@ -30,6 +30,12 @@ class _$FavoritesEventTearOff {
       id,
     );
   }
+
+  RemoveFromFavoriteByDismiss removeFromFavoriteByDismiss(int id) {
+    return RemoveFromFavoriteByDismiss(
+      id,
+    );
+  }
 }
 
 /// @nodoc
@@ -42,6 +48,7 @@ mixin _$FavoritesEvent {
     required TResult Function() getFavorites,
     required TResult Function() reset,
     required TResult Function(int id) removeFromFavorite,
+    required TResult Function(int id) removeFromFavoriteByDismiss,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,6 +56,7 @@ mixin _$FavoritesEvent {
     TResult Function()? getFavorites,
     TResult Function()? reset,
     TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +64,7 @@ mixin _$FavoritesEvent {
     TResult Function()? getFavorites,
     TResult Function()? reset,
     TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +73,8 @@ mixin _$FavoritesEvent {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(RemoveFromFavoriteByDismiss value)
+        removeFromFavoriteByDismiss,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +82,8 @@ mixin _$FavoritesEvent {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,6 +91,8 @@ mixin _$FavoritesEvent {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,6 +158,7 @@ class _$GetFavoritesList implements GetFavoritesList {
     required TResult Function() getFavorites,
     required TResult Function() reset,
     required TResult Function(int id) removeFromFavorite,
+    required TResult Function(int id) removeFromFavoriteByDismiss,
   }) {
     return getFavorites();
   }
@@ -153,6 +169,7 @@ class _$GetFavoritesList implements GetFavoritesList {
     TResult Function()? getFavorites,
     TResult Function()? reset,
     TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
   }) {
     return getFavorites?.call();
   }
@@ -163,6 +180,7 @@ class _$GetFavoritesList implements GetFavoritesList {
     TResult Function()? getFavorites,
     TResult Function()? reset,
     TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (getFavorites != null) {
@@ -177,6 +195,8 @@ class _$GetFavoritesList implements GetFavoritesList {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(RemoveFromFavoriteByDismiss value)
+        removeFromFavoriteByDismiss,
   }) {
     return getFavorites(this);
   }
@@ -187,6 +207,8 @@ class _$GetFavoritesList implements GetFavoritesList {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
   }) {
     return getFavorites?.call(this);
   }
@@ -197,6 +219,8 @@ class _$GetFavoritesList implements GetFavoritesList {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (getFavorites != null) {
@@ -253,6 +277,7 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     required TResult Function() getFavorites,
     required TResult Function() reset,
     required TResult Function(int id) removeFromFavorite,
+    required TResult Function(int id) removeFromFavoriteByDismiss,
   }) {
     return reset();
   }
@@ -263,6 +288,7 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     TResult Function()? getFavorites,
     TResult Function()? reset,
     TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
   }) {
     return reset?.call();
   }
@@ -273,6 +299,7 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     TResult Function()? getFavorites,
     TResult Function()? reset,
     TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -287,6 +314,8 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(RemoveFromFavoriteByDismiss value)
+        removeFromFavoriteByDismiss,
   }) {
     return reset(this);
   }
@@ -297,6 +326,8 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
   }) {
     return reset?.call(this);
   }
@@ -307,6 +338,8 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -388,6 +421,7 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     required TResult Function() getFavorites,
     required TResult Function() reset,
     required TResult Function(int id) removeFromFavorite,
+    required TResult Function(int id) removeFromFavoriteByDismiss,
   }) {
     return removeFromFavorite(id);
   }
@@ -398,6 +432,7 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     TResult Function()? getFavorites,
     TResult Function()? reset,
     TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
   }) {
     return removeFromFavorite?.call(id);
   }
@@ -408,6 +443,7 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     TResult Function()? getFavorites,
     TResult Function()? reset,
     TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (removeFromFavorite != null) {
@@ -422,6 +458,8 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(RemoveFromFavoriteByDismiss value)
+        removeFromFavoriteByDismiss,
   }) {
     return removeFromFavorite(this);
   }
@@ -432,6 +470,8 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
   }) {
     return removeFromFavorite?.call(this);
   }
@@ -442,6 +482,8 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (removeFromFavorite != null) {
@@ -458,6 +500,159 @@ abstract class RemoveFromFavorite implements FavoritesEvent {
   @JsonKey(ignore: true)
   $RemoveFromFavoriteCopyWith<RemoveFromFavorite> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RemoveFromFavoriteByDismissCopyWith<$Res> {
+  factory $RemoveFromFavoriteByDismissCopyWith(
+          RemoveFromFavoriteByDismiss value,
+          $Res Function(RemoveFromFavoriteByDismiss) then) =
+      _$RemoveFromFavoriteByDismissCopyWithImpl<$Res>;
+  $Res call({int id});
+}
+
+/// @nodoc
+class _$RemoveFromFavoriteByDismissCopyWithImpl<$Res>
+    extends _$FavoritesEventCopyWithImpl<$Res>
+    implements $RemoveFromFavoriteByDismissCopyWith<$Res> {
+  _$RemoveFromFavoriteByDismissCopyWithImpl(RemoveFromFavoriteByDismiss _value,
+      $Res Function(RemoveFromFavoriteByDismiss) _then)
+      : super(_value, (v) => _then(v as RemoveFromFavoriteByDismiss));
+
+  @override
+  RemoveFromFavoriteByDismiss get _value =>
+      super._value as RemoveFromFavoriteByDismiss;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(RemoveFromFavoriteByDismiss(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveFromFavoriteByDismiss implements RemoveFromFavoriteByDismiss {
+  const _$RemoveFromFavoriteByDismiss(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'FavoritesEvent.removeFromFavoriteByDismiss(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is RemoveFromFavoriteByDismiss &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+
+  @JsonKey(ignore: true)
+  @override
+  $RemoveFromFavoriteByDismissCopyWith<RemoveFromFavoriteByDismiss>
+      get copyWith => _$RemoveFromFavoriteByDismissCopyWithImpl<
+          RemoveFromFavoriteByDismiss>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getFavorites,
+    required TResult Function() reset,
+    required TResult Function(int id) removeFromFavorite,
+    required TResult Function(int id) removeFromFavoriteByDismiss,
+  }) {
+    return removeFromFavoriteByDismiss(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getFavorites,
+    TResult Function()? reset,
+    TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
+  }) {
+    return removeFromFavoriteByDismiss?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getFavorites,
+    TResult Function()? reset,
+    TResult Function(int id)? removeFromFavorite,
+    TResult Function(int id)? removeFromFavoriteByDismiss,
+    required TResult orElse(),
+  }) {
+    if (removeFromFavoriteByDismiss != null) {
+      return removeFromFavoriteByDismiss(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetFavoritesList value) getFavorites,
+    required TResult Function(ResetFavoritesState value) reset,
+    required TResult Function(RemoveFromFavorite value) removeFromFavorite,
+    required TResult Function(RemoveFromFavoriteByDismiss value)
+        removeFromFavoriteByDismiss,
+  }) {
+    return removeFromFavoriteByDismiss(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetFavoritesList value)? getFavorites,
+    TResult Function(ResetFavoritesState value)? reset,
+    TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
+  }) {
+    return removeFromFavoriteByDismiss?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetFavoritesList value)? getFavorites,
+    TResult Function(ResetFavoritesState value)? reset,
+    TResult Function(RemoveFromFavorite value)? removeFromFavorite,
+    TResult Function(RemoveFromFavoriteByDismiss value)?
+        removeFromFavoriteByDismiss,
+    required TResult orElse(),
+  }) {
+    if (removeFromFavoriteByDismiss != null) {
+      return removeFromFavoriteByDismiss(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveFromFavoriteByDismiss implements FavoritesEvent {
+  const factory RemoveFromFavoriteByDismiss(int id) =
+      _$RemoveFromFavoriteByDismiss;
+
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RemoveFromFavoriteByDismissCopyWith<RemoveFromFavoriteByDismiss>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

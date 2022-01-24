@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/src/public_ext.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:focused_menu/modals.dart';
@@ -618,31 +619,29 @@ Widget adItem(AdsItem ad, Function onClick) {
   );
 }
 
-Widget marketPlaceShimmer() {
+Widget marketPlaceShimmer([int count = 4]) {
   return Padding(
     padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
-    child: Shimmer.fromColors(
-      child: Container(
-        constraints: BoxConstraints(
-          maxHeight: screenHeight,
-        ),
-        child: Column(
-            children: List.generate(
-                4,
-                (index) => Expanded(
-                      child: Container(
-                        margin: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        width: screenWidth,
-                        height: screenHeight * 0.2,
-                      ),
-                    )).toList()),
+    child: Container(
+      constraints: BoxConstraints(
+        minHeight: screenHeight * 0.2,
       ),
-      baseColor: Colors.grey.shade200,
-      highlightColor: ThemeManager.primary,
+      child: Column(
+          children: List.generate(
+              count,
+              (index) => Shimmer.fromColors(
+                    baseColor: Colors.grey.shade200,
+                    highlightColor: ThemeManager.primary,
+                    child: Container(
+                      margin: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      width: screenWidth,
+                      height: screenHeight * 0.2,
+                    ),
+                  )).toList()),
     ),
   );
 }
@@ -891,14 +890,16 @@ Widget marketPlaceItem(
                     filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                     child: Center(
                       child: IconButton(
-                        icon: Icon(
-                          !marketPlace.is_favorite
-                              ? Icons.favorite_border
-                              : Icons.favorite,
-                          color: !marketPlace.is_favorite
-                              ? Colors.white
-                              : Colors.red,
-                        ),
+                        icon: (marketPlace.is_loading ?? false)
+                            ? CupertinoActivityIndicator()
+                            : Icon(
+                                !marketPlace.is_favorite
+                                    ? Icons.favorite_border
+                                    : Icons.favorite,
+                                color: !marketPlace.is_favorite
+                                    ? Colors.white
+                                    : Colors.red,
+                              ),
                         onPressed: () {
                           onFavoriteClicked(marketPlace);
                         },

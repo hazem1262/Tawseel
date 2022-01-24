@@ -12,6 +12,8 @@ class FavoritesEvent with _$FavoritesEvent {
   const factory FavoritesEvent.getFavorites() = GetFavoritesList;
   const factory FavoritesEvent.reset() = ResetFavoritesState;
   const factory FavoritesEvent.removeFromFavorite(int id) = RemoveFromFavorite;
+  const factory FavoritesEvent.removeFromFavoriteByDismiss(int id) =
+      RemoveFromFavoriteByDismiss;
 }
 
 @freezed
@@ -44,6 +46,17 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       if (event is GetFavoritesList) {
         try {
           if (!hasMorePages) return;
+
+          if (_page == 1)
+            emit(
+              state.copyWith(
+                listIsLoading: false,
+                refreshData: false,
+                emptyFirstPage: false,
+                hasMorePages: hasMorePages,
+              ),
+            );
+
           var res = await repo.getFavorites(_page);
 
           hasMorePages = res.meta.current_page < res.meta.last_page;
@@ -55,7 +68,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
             FavoritesDefaultState().copyWith(
               listIsLoading: false,
               refreshData: false,
-              emptyFirstPage: false,
+              emptyFirstPage: (state.favoritesList + res.data).isEmpty,
               favoritesList: state.favoritesList + res.data,
               hasMorePages: hasMorePages,
             ),
@@ -63,37 +76,71 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
         } catch (e) {
           emit(
             state.copyWith(
-                listIsLoading: false,
-                actionsIsLoading: false,
-                refreshData: false,
-                error: e.toString(),
-                favoritesList: state.favoritesList),
+              listIsLoading: false,
+              actionsIsLoading: false,
+              emptyFirstPage: false,
+              refreshData: false,
+              error: e.toString(),
+              favoritesList: state.favoritesList,
+            ),
           );
         }
       }
 
       if (event is RemoveFromFavorite) {
-        emit(state.copyWith(
-            actionsIsLoading: true, listIsLoading: true, error: ""));
+        emit(
+          state.copyWith(
+              favoritesList: state.favoritesList
+                  .setFavoriteLoadingFor(id: event.id, isLoading: true)),
+        );
+        try {
+          await repo.removeFromFavorites(event.id);
+
+          emit(state.copyWith(
+            favoritesList: state.favoritesList.removeItem(id: event.id),
+            emptyFirstPage: state.favoritesList.isEmpty,
+            error: "",
+          ));
+        } catch (e) {
+          emit(
+            state.copyWith(
+                favoritesList: state.favoritesList
+                    .setFavoriteLoadingFor(id: event.id, isLoading: false),
+                error: e.toString()),
+          );
+        }
+      }
+
+      if (event is RemoveFromFavoriteByDismiss) {
+        var index = -1;
+        final item = state.favoritesList.firstWhereIndexedOrNull((i, e) {
+          if (event.id == e.id) {
+            index = i;
+            return true;
+          } else
+            return false;
+        });
+
+        emit(
+          state.copyWith(
+            favoritesList: state.favoritesList.removeItem(id: item!.id),
+          ),
+        );
         try {
           await repo.removeFromFavorites(event.id);
           emit(
             state.copyWith(
-              actionsIsLoading: false,
-              listIsLoading: false,
-              emptyFirstPage: false,
+              favoritesList: state.favoritesList,
               error: "",
-              refreshData: true,
+              emptyFirstPage: state.favoritesList.isEmpty,
             ),
           );
         } catch (e) {
           emit(
             state.copyWith(
-              listIsLoading: false,
-              emptyFirstPage: false,
-              actionsIsLoading: false,
-              error: e.toString(),
-            ),
+                favoritesList: state.favoritesList
+                    .addItemAtIndex(index: index, item: item),
+                error: e.toString()),
           );
         }
       }

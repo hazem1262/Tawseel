@@ -1,4 +1,5 @@
 import 'package:auto_route/src/router/auto_router_x.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -133,19 +134,22 @@ class ViewAllMarketPlaces extends StatelessWidget {
                     BlocBuilder<ViewAllMarketPlaceBloc,
                         ViewAllMarketPlaceBlocState>(
                       builder: (context, state) {
-                        return paginatedMarketPlaceArea(
-                            blocContext: context,
-                            isLoading: state.nearbyMarketPlaceIsLoading,
-                            list: state.nearbyList,
-                            hasMorePages: state.hasMorePages,
-                            onFavoriteClicked: (item) {
-                              BlocProvider.of<ViewAllMarketPlaceBloc>(context)
-                                  .add(
-                                item.is_favorite
-                                    ? RemoveMarketPlaceFromFavorite(item.id)
-                                    : AddMarketPlaceToFavorite((item.id)),
-                              );
-                            });
+                        return state.nearbyMarketPlaceIsLoading
+                            ? marketPlaceShimmer()
+                            : paginatedMarketPlaceArea(
+                                blocContext: context,
+                                isLoading: state.nearbyMarketPlaceIsLoading,
+                                list: state.nearbyList,
+                                hasMorePages: state.hasMorePages,
+                                onFavoriteClicked: (item) {
+                                  BlocProvider.of<ViewAllMarketPlaceBloc>(
+                                          context)
+                                      .add(
+                                    item.is_favorite
+                                        ? RemoveMarketPlaceFromFavorite(item.id)
+                                        : AddMarketPlaceToFavorite((item.id)),
+                                  );
+                                });
                       },
                     )
                   ],
@@ -167,50 +171,44 @@ class ViewAllMarketPlaces extends StatelessWidget {
   }) {
     return Container(
       margin: EdgeInsets.only(top: 8),
-      child: Column(
-        children: [
-          isLoading
-              ? marketPlaceShimmer()
-              : Padding(
-                  padding: isAr
-                      ? EdgeInsets.only(right: 8)
-                      : EdgeInsets.only(left: 8),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: screenHeight - screenHeight * 0.229,
-                    ),
-                    child: PaginationList<MarketPlaceItem>(
-                      list: [...list],
-                      hasMore: hasMorePages,
-                      isLoading: isLoading,
-                      loadMore: () {
-                        BlocProvider.of<ViewAllMarketPlaceBloc>(blocContext)
-                          ..add(
-                              GetViewAllMarketPlaceMarketPlaces(getIdsList()));
-                      },
-                      onRefresh: () {
-                        BlocProvider.of<ViewAllMarketPlaceBloc>(blocContext)
-                          ..add(ResetViewAllMarketPlaceRefreshData());
-                      },
-                      loadingWidget: marketPlaceShimmer(),
-                      builder: (item) {
-                        return marketPlaceItem(
-                          blocContext,
-                          item,
-                          (item) {
-                            showMarketPlaceCompaniesBottomSheet(
-                              item,
-                              blocContext,
-                              item.companies,
-                            );
-                          },
-                          onFavoriteClicked,
-                        );
-                      },
-                    ),
-                  ),
-                ),
-        ],
+      child: Padding(
+        padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: screenHeight - screenHeight * 0.229,
+          ),
+          child: PaginationList<MarketPlaceItem>(
+            list: [...list],
+            hasMore: hasMorePages,
+            isLoading: isLoading,
+            loadMore: () {
+              BlocProvider.of<ViewAllMarketPlaceBloc>(blocContext)
+                ..add(GetViewAllMarketPlaceMarketPlaces(getIdsList()));
+            },
+            onRefresh: () {
+              BlocProvider.of<ViewAllMarketPlaceBloc>(blocContext)
+                ..add(ResetViewAllMarketPlaceRefreshData());
+            },
+            loadingWidget: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: CupertinoActivityIndicator(),
+            ),
+            builder: (item) {
+              return marketPlaceItem(
+                blocContext,
+                item,
+                (item) {
+                  showMarketPlaceCompaniesBottomSheet(
+                    item,
+                    blocContext,
+                    item.companies,
+                  );
+                },
+                onFavoriteClicked,
+              );
+            },
+          ),
+        ),
       ),
     );
   }

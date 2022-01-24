@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
+import 'package:tawseel/utils/ktx.dart';
 
 part 'view_all_bloc.freezed.dart';
 
@@ -52,9 +53,18 @@ class ViewAllMarketPlaceBloc
       }
 
       if (event is GetViewAllMarketPlaceMarketPlaces) {
-        emit(state.copyWith(nearbyMarketPlaceIsLoading: true, error: ""));
+        // emit(state.copyWith(nearbyMarketPlaceIsLoading: true, error: ""));
         try {
           if (!hasMorePages) return;
+          if (_page == 1)
+            emit(
+              state.copyWith(
+                nearbyMarketPlaceIsLoading: true,
+                refreshData: false,
+                hasMorePages: hasMorePages,
+              ),
+            );
+
           var places = await marketPlacesRepo.getMarketPlaces(
             _page,
             event.category_ids,
@@ -84,39 +94,53 @@ class ViewAllMarketPlaceBloc
       }
 
       if (event is AddMarketPlaceToFavorite) {
-        emit(state.copyWith(nearbyMarketPlaceIsLoading: true, error: ""));
+        emit(
+          state.copyWith(
+            nearbyList: state.nearbyList
+                .setFavoriteLoadingFor(id: event.id, isLoading: true),
+            nearbyMarketPlaceIsLoading: false,
+          ),
+        );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
           emit(
             state.copyWith(
-                nearbyList: state.nearbyList
-                    .map((e) =>
-                        e.id == event.id ? e.copyWith(is_favorite: true) : e)
-                    .toList(),
+                nearbyList: state.nearbyList.setFavoriteLoadingFor(
+                    id: event.id, isFavorite: true, isLoading: false),
                 nearbyMarketPlaceIsLoading: false),
           );
         } catch (e) {
           emit(state.copyWith(
-              nearbyMarketPlaceIsLoading: false, error: e.toString()));
+              nearbyList: state.nearbyList
+                  .setFavoriteLoadingFor(id: event.id, isLoading: false),
+              nearbyMarketPlaceIsLoading: false,
+              error: e.toString()));
           debugPrint('Exception : $e');
         }
       }
 
       if (event is RemoveMarketPlaceFromFavorite) {
-        emit(state.copyWith(nearbyMarketPlaceIsLoading: true, error: ""));
+        emit(
+          state.copyWith(
+            nearbyList: state.nearbyList
+                .setFavoriteLoadingFor(id: event.id, isLoading: true),
+            nearbyMarketPlaceIsLoading: false,
+          ),
+        );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
           emit(
             state.copyWith(
-                nearbyList: state.nearbyList
-                    .map((e) =>
-                        e.id == event.id ? e.copyWith(is_favorite: false) : e)
-                    .toList(),
+                nearbyList: state.nearbyList.setFavoriteLoadingFor(
+                    id: event.id, isFavorite: false, isLoading: false),
                 nearbyMarketPlaceIsLoading: false),
           );
         } catch (e) {
           emit(state.copyWith(
-              nearbyMarketPlaceIsLoading: false, error: e.toString()));
+              nearbyList: state.nearbyList
+                  .setFavoriteLoadingFor(id: event.id, isLoading: false),
+              nearbyMarketPlaceIsLoading: false,
+              error: e.toString()));
           debugPrint('Exception : $e');
         }
       }
