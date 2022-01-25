@@ -17,23 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$SearchBlocEventTearOff {
   const _$SearchBlocEventTearOff();
 
-  GetSearchMarketPlaces searchMarketPlaces(
-      {String? query,
-      List<int>? category_id,
-      List<int>? company_id,
-      int? delivery_price_range_from,
-      int? delivery_price_range_to,
-      int? max_distance,
-      int? address_id}) {
-    return GetSearchMarketPlaces(
-      query: query,
-      category_id: category_id,
-      company_id: company_id,
-      delivery_price_range_from: delivery_price_range_from,
-      delivery_price_range_to: delivery_price_range_to,
-      max_distance: max_distance,
-      address_id: address_id,
-    );
+  GetSearchMarketPlaces searchMarketPlaces() {
+    return const GetSearchMarketPlaces();
   }
 
   AddMarketPlaceToFavorite addMarketPlaceToFavorite(int id) {
@@ -51,6 +36,27 @@ class _$SearchBlocEventTearOff {
   ResetSearchRefreshData reset() {
     return const ResetSearchRefreshData();
   }
+
+  GetSearchFilterData getSearchFilterDate() {
+    return const GetSearchFilterData();
+  }
+
+  ApplySearchFilterData applyFilterDate(
+      {String? query,
+      required List<CategoryData> categoriesList,
+      required List<CompanyItem> campaniesList,
+      int? delivery_price_range_from,
+      int? delivery_price_range_to,
+      int? max_distance}) {
+    return ApplySearchFilterData(
+      query: query,
+      categoriesList: categoriesList,
+      campaniesList: campaniesList,
+      delivery_price_range_from: delivery_price_range_from,
+      delivery_price_range_to: delivery_price_range_to,
+      max_distance: max_distance,
+    );
+  }
 }
 
 /// @nodoc
@@ -60,50 +66,53 @@ const $SearchBlocEvent = _$SearchBlocEventTearOff();
 mixin _$SearchBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)
-        searchMarketPlaces,
+    required TResult Function() searchMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() getSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +124,8 @@ mixin _$SearchBlocEvent {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -124,6 +135,8 @@ mixin _$SearchBlocEvent {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -133,6 +146,8 @@ mixin _$SearchBlocEvent {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -160,14 +175,6 @@ abstract class $GetSearchMarketPlacesCopyWith<$Res> {
   factory $GetSearchMarketPlacesCopyWith(GetSearchMarketPlaces value,
           $Res Function(GetSearchMarketPlaces) then) =
       _$GetSearchMarketPlacesCopyWithImpl<$Res>;
-  $Res call(
-      {String? query,
-      List<int>? category_id,
-      List<int>? company_id,
-      int? delivery_price_range_from,
-      int? delivery_price_range_to,
-      int? max_distance,
-      int? address_id});
 }
 
 /// @nodoc
@@ -180,206 +187,86 @@ class _$GetSearchMarketPlacesCopyWithImpl<$Res>
 
   @override
   GetSearchMarketPlaces get _value => super._value as GetSearchMarketPlaces;
-
-  @override
-  $Res call({
-    Object? query = freezed,
-    Object? category_id = freezed,
-    Object? company_id = freezed,
-    Object? delivery_price_range_from = freezed,
-    Object? delivery_price_range_to = freezed,
-    Object? max_distance = freezed,
-    Object? address_id = freezed,
-  }) {
-    return _then(GetSearchMarketPlaces(
-      query: query == freezed
-          ? _value.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category_id: category_id == freezed
-          ? _value.category_id
-          : category_id // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      company_id: company_id == freezed
-          ? _value.company_id
-          : company_id // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      delivery_price_range_from: delivery_price_range_from == freezed
-          ? _value.delivery_price_range_from
-          : delivery_price_range_from // ignore: cast_nullable_to_non_nullable
-              as int?,
-      delivery_price_range_to: delivery_price_range_to == freezed
-          ? _value.delivery_price_range_to
-          : delivery_price_range_to // ignore: cast_nullable_to_non_nullable
-              as int?,
-      max_distance: max_distance == freezed
-          ? _value.max_distance
-          : max_distance // ignore: cast_nullable_to_non_nullable
-              as int?,
-      address_id: address_id == freezed
-          ? _value.address_id
-          : address_id // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
-  const _$GetSearchMarketPlaces(
-      {this.query,
-      this.category_id,
-      this.company_id,
-      this.delivery_price_range_from,
-      this.delivery_price_range_to,
-      this.max_distance,
-      this.address_id});
-
-  @override
-  final String? query;
-  @override
-  final List<int>? category_id;
-  @override
-  final List<int>? company_id;
-  @override
-  final int? delivery_price_range_from;
-  @override
-  final int? delivery_price_range_to;
-  @override
-  final int? max_distance;
-  @override
-  final int? address_id;
+  const _$GetSearchMarketPlaces();
 
   @override
   String toString() {
-    return 'SearchBlocEvent.searchMarketPlaces(query: $query, category_id: $category_id, company_id: $company_id, delivery_price_range_from: $delivery_price_range_from, delivery_price_range_to: $delivery_price_range_to, max_distance: $max_distance, address_id: $address_id)';
+    return 'SearchBlocEvent.searchMarketPlaces()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is GetSearchMarketPlaces &&
-            (identical(other.query, query) ||
-                const DeepCollectionEquality().equals(other.query, query)) &&
-            (identical(other.category_id, category_id) ||
-                const DeepCollectionEquality()
-                    .equals(other.category_id, category_id)) &&
-            (identical(other.company_id, company_id) ||
-                const DeepCollectionEquality()
-                    .equals(other.company_id, company_id)) &&
-            (identical(other.delivery_price_range_from,
-                    delivery_price_range_from) ||
-                const DeepCollectionEquality().equals(
-                    other.delivery_price_range_from,
-                    delivery_price_range_from)) &&
-            (identical(
-                    other.delivery_price_range_to, delivery_price_range_to) ||
-                const DeepCollectionEquality().equals(
-                    other.delivery_price_range_to, delivery_price_range_to)) &&
-            (identical(other.max_distance, max_distance) ||
-                const DeepCollectionEquality()
-                    .equals(other.max_distance, max_distance)) &&
-            (identical(other.address_id, address_id) ||
-                const DeepCollectionEquality()
-                    .equals(other.address_id, address_id)));
+    return identical(this, other) || (other is GetSearchMarketPlaces);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(query) ^
-      const DeepCollectionEquality().hash(category_id) ^
-      const DeepCollectionEquality().hash(company_id) ^
-      const DeepCollectionEquality().hash(delivery_price_range_from) ^
-      const DeepCollectionEquality().hash(delivery_price_range_to) ^
-      const DeepCollectionEquality().hash(max_distance) ^
-      const DeepCollectionEquality().hash(address_id);
-
-  @JsonKey(ignore: true)
-  @override
-  $GetSearchMarketPlacesCopyWith<GetSearchMarketPlaces> get copyWith =>
-      _$GetSearchMarketPlacesCopyWithImpl<GetSearchMarketPlaces>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)
-        searchMarketPlaces,
+    required TResult Function() searchMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() getSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
   }) {
-    return searchMarketPlaces(
-        query,
-        category_id,
-        company_id,
-        delivery_price_range_from,
-        delivery_price_range_to,
-        max_distance,
-        address_id);
+    return searchMarketPlaces();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
   }) {
-    return searchMarketPlaces?.call(
-        query,
-        category_id,
-        company_id,
-        delivery_price_range_from,
-        delivery_price_range_to,
-        max_distance,
-        address_id);
+    return searchMarketPlaces?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
     required TResult orElse(),
   }) {
     if (searchMarketPlaces != null) {
-      return searchMarketPlaces(
-          query,
-          category_id,
-          company_id,
-          delivery_price_range_from,
-          delivery_price_range_to,
-          max_distance,
-          address_id);
+      return searchMarketPlaces();
     }
     return orElse();
   }
@@ -393,6 +280,8 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return searchMarketPlaces(this);
   }
@@ -405,6 +294,8 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return searchMarketPlaces?.call(this);
   }
@@ -417,6 +308,8 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
     if (searchMarketPlaces != null) {
@@ -427,25 +320,7 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
 }
 
 abstract class GetSearchMarketPlaces implements SearchBlocEvent {
-  const factory GetSearchMarketPlaces(
-      {String? query,
-      List<int>? category_id,
-      List<int>? company_id,
-      int? delivery_price_range_from,
-      int? delivery_price_range_to,
-      int? max_distance,
-      int? address_id}) = _$GetSearchMarketPlaces;
-
-  String? get query => throw _privateConstructorUsedError;
-  List<int>? get category_id => throw _privateConstructorUsedError;
-  List<int>? get company_id => throw _privateConstructorUsedError;
-  int? get delivery_price_range_from => throw _privateConstructorUsedError;
-  int? get delivery_price_range_to => throw _privateConstructorUsedError;
-  int? get max_distance => throw _privateConstructorUsedError;
-  int? get address_id => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $GetSearchMarketPlacesCopyWith<GetSearchMarketPlaces> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory GetSearchMarketPlaces() = _$GetSearchMarketPlaces;
 }
 
 /// @nodoc
@@ -515,18 +390,19 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)
-        searchMarketPlaces,
+    required TResult Function() searchMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() getSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
   }) {
     return addMarketPlaceToFavorite(id);
   }
@@ -534,18 +410,19 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
   }) {
     return addMarketPlaceToFavorite?.call(id);
   }
@@ -553,18 +430,19 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
     required TResult orElse(),
   }) {
     if (addMarketPlaceToFavorite != null) {
@@ -582,6 +460,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return addMarketPlaceToFavorite(this);
   }
@@ -594,6 +474,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return addMarketPlaceToFavorite?.call(this);
   }
@@ -606,6 +488,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
     if (addMarketPlaceToFavorite != null) {
@@ -693,18 +577,19 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)
-        searchMarketPlaces,
+    required TResult Function() searchMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() getSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
   }) {
     return removeMarketPlaceToFavorite(id);
   }
@@ -712,18 +597,19 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
   }) {
     return removeMarketPlaceToFavorite?.call(id);
   }
@@ -731,18 +617,19 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
     required TResult orElse(),
   }) {
     if (removeMarketPlaceToFavorite != null) {
@@ -760,6 +647,8 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return removeMarketPlaceToFavorite(this);
   }
@@ -772,6 +661,8 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return removeMarketPlaceToFavorite?.call(this);
   }
@@ -784,6 +675,8 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
     if (removeMarketPlaceToFavorite != null) {
@@ -843,18 +736,19 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)
-        searchMarketPlaces,
+    required TResult Function() searchMarketPlaces,
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() getSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
   }) {
     return reset();
   }
@@ -862,18 +756,19 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
   }) {
     return reset?.call();
   }
@@ -881,18 +776,19 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? query,
-            List<int>? category_id,
-            List<int>? company_id,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
-        searchMarketPlaces,
+    TResult Function()? searchMarketPlaces,
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -910,6 +806,8 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return reset(this);
   }
@@ -922,6 +820,8 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return reset?.call(this);
   }
@@ -934,6 +834,8 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -948,6 +850,428 @@ abstract class ResetSearchRefreshData implements SearchBlocEvent {
 }
 
 /// @nodoc
+abstract class $GetSearchFilterDataCopyWith<$Res> {
+  factory $GetSearchFilterDataCopyWith(
+          GetSearchFilterData value, $Res Function(GetSearchFilterData) then) =
+      _$GetSearchFilterDataCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetSearchFilterDataCopyWithImpl<$Res>
+    extends _$SearchBlocEventCopyWithImpl<$Res>
+    implements $GetSearchFilterDataCopyWith<$Res> {
+  _$GetSearchFilterDataCopyWithImpl(
+      GetSearchFilterData _value, $Res Function(GetSearchFilterData) _then)
+      : super(_value, (v) => _then(v as GetSearchFilterData));
+
+  @override
+  GetSearchFilterData get _value => super._value as GetSearchFilterData;
+}
+
+/// @nodoc
+
+class _$GetSearchFilterData implements GetSearchFilterData {
+  const _$GetSearchFilterData();
+
+  @override
+  String toString() {
+    return 'SearchBlocEvent.getSearchFilterDate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GetSearchFilterData);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() searchMarketPlaces,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
+    required TResult Function() reset,
+    required TResult Function() getSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
+  }) {
+    return getSearchFilterDate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? searchMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
+  }) {
+    return getSearchFilterDate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? searchMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
+    required TResult orElse(),
+  }) {
+    if (getSearchFilterDate != null) {
+      return getSearchFilterDate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
+    required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
+  }) {
+    return getSearchFilterDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
+  }) {
+    return getSearchFilterDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
+    required TResult orElse(),
+  }) {
+    if (getSearchFilterDate != null) {
+      return getSearchFilterDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSearchFilterData implements SearchBlocEvent {
+  const factory GetSearchFilterData() = _$GetSearchFilterData;
+}
+
+/// @nodoc
+abstract class $ApplySearchFilterDataCopyWith<$Res> {
+  factory $ApplySearchFilterDataCopyWith(ApplySearchFilterData value,
+          $Res Function(ApplySearchFilterData) then) =
+      _$ApplySearchFilterDataCopyWithImpl<$Res>;
+  $Res call(
+      {String? query,
+      List<CategoryData> categoriesList,
+      List<CompanyItem> campaniesList,
+      int? delivery_price_range_from,
+      int? delivery_price_range_to,
+      int? max_distance});
+}
+
+/// @nodoc
+class _$ApplySearchFilterDataCopyWithImpl<$Res>
+    extends _$SearchBlocEventCopyWithImpl<$Res>
+    implements $ApplySearchFilterDataCopyWith<$Res> {
+  _$ApplySearchFilterDataCopyWithImpl(
+      ApplySearchFilterData _value, $Res Function(ApplySearchFilterData) _then)
+      : super(_value, (v) => _then(v as ApplySearchFilterData));
+
+  @override
+  ApplySearchFilterData get _value => super._value as ApplySearchFilterData;
+
+  @override
+  $Res call({
+    Object? query = freezed,
+    Object? categoriesList = freezed,
+    Object? campaniesList = freezed,
+    Object? delivery_price_range_from = freezed,
+    Object? delivery_price_range_to = freezed,
+    Object? max_distance = freezed,
+  }) {
+    return _then(ApplySearchFilterData(
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String?,
+      categoriesList: categoriesList == freezed
+          ? _value.categoriesList
+          : categoriesList // ignore: cast_nullable_to_non_nullable
+              as List<CategoryData>,
+      campaniesList: campaniesList == freezed
+          ? _value.campaniesList
+          : campaniesList // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
+      delivery_price_range_from: delivery_price_range_from == freezed
+          ? _value.delivery_price_range_from
+          : delivery_price_range_from // ignore: cast_nullable_to_non_nullable
+              as int?,
+      delivery_price_range_to: delivery_price_range_to == freezed
+          ? _value.delivery_price_range_to
+          : delivery_price_range_to // ignore: cast_nullable_to_non_nullable
+              as int?,
+      max_distance: max_distance == freezed
+          ? _value.max_distance
+          : max_distance // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ApplySearchFilterData implements ApplySearchFilterData {
+  const _$ApplySearchFilterData(
+      {this.query,
+      required this.categoriesList,
+      required this.campaniesList,
+      this.delivery_price_range_from,
+      this.delivery_price_range_to,
+      this.max_distance});
+
+  @override
+  final String? query;
+  @override
+  final List<CategoryData> categoriesList;
+  @override
+  final List<CompanyItem> campaniesList;
+  @override
+  final int? delivery_price_range_from;
+  @override
+  final int? delivery_price_range_to;
+  @override
+  final int? max_distance;
+
+  @override
+  String toString() {
+    return 'SearchBlocEvent.applyFilterDate(query: $query, categoriesList: $categoriesList, campaniesList: $campaniesList, delivery_price_range_from: $delivery_price_range_from, delivery_price_range_to: $delivery_price_range_to, max_distance: $max_distance)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ApplySearchFilterData &&
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)) &&
+            (identical(other.categoriesList, categoriesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.categoriesList, categoriesList)) &&
+            (identical(other.campaniesList, campaniesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.campaniesList, campaniesList)) &&
+            (identical(other.delivery_price_range_from,
+                    delivery_price_range_from) ||
+                const DeepCollectionEquality().equals(
+                    other.delivery_price_range_from,
+                    delivery_price_range_from)) &&
+            (identical(
+                    other.delivery_price_range_to, delivery_price_range_to) ||
+                const DeepCollectionEquality().equals(
+                    other.delivery_price_range_to, delivery_price_range_to)) &&
+            (identical(other.max_distance, max_distance) ||
+                const DeepCollectionEquality()
+                    .equals(other.max_distance, max_distance)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(query) ^
+      const DeepCollectionEquality().hash(categoriesList) ^
+      const DeepCollectionEquality().hash(campaniesList) ^
+      const DeepCollectionEquality().hash(delivery_price_range_from) ^
+      const DeepCollectionEquality().hash(delivery_price_range_to) ^
+      const DeepCollectionEquality().hash(max_distance);
+
+  @JsonKey(ignore: true)
+  @override
+  $ApplySearchFilterDataCopyWith<ApplySearchFilterData> get copyWith =>
+      _$ApplySearchFilterDataCopyWithImpl<ApplySearchFilterData>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() searchMarketPlaces,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
+    required TResult Function() reset,
+    required TResult Function() getSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
+  }) {
+    return applyFilterDate(query, categoriesList, campaniesList,
+        delivery_price_range_from, delivery_price_range_to, max_distance);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? searchMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
+  }) {
+    return applyFilterDate?.call(query, categoriesList, campaniesList,
+        delivery_price_range_from, delivery_price_range_to, max_distance);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? searchMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    TResult Function()? getSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
+    required TResult orElse(),
+  }) {
+    if (applyFilterDate != null) {
+      return applyFilterDate(query, categoriesList, campaniesList,
+          delivery_price_range_from, delivery_price_range_to, max_distance);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
+    required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
+  }) {
+    return applyFilterDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
+  }) {
+    return applyFilterDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
+    required TResult orElse(),
+  }) {
+    if (applyFilterDate != null) {
+      return applyFilterDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ApplySearchFilterData implements SearchBlocEvent {
+  const factory ApplySearchFilterData(
+      {String? query,
+      required List<CategoryData> categoriesList,
+      required List<CompanyItem> campaniesList,
+      int? delivery_price_range_from,
+      int? delivery_price_range_to,
+      int? max_distance}) = _$ApplySearchFilterData;
+
+  String? get query => throw _privateConstructorUsedError;
+  List<CategoryData> get categoriesList => throw _privateConstructorUsedError;
+  List<CompanyItem> get campaniesList => throw _privateConstructorUsedError;
+  int? get delivery_price_range_from => throw _privateConstructorUsedError;
+  int? get delivery_price_range_to => throw _privateConstructorUsedError;
+  int? get max_distance => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ApplySearchFilterDataCopyWith<ApplySearchFilterData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$SearchBlocStateTearOff {
   const _$SearchBlocStateTearOff();
 
@@ -957,28 +1281,28 @@ class _$SearchBlocStateTearOff {
       String error = "",
       bool refreshData = false,
       List<MarketPlaceItem> searchList = const [],
+      List<CategoryData> categoriesList = const [],
+      List<CompanyItem> campaniesList = const [],
       bool hasMorePages = false,
+      bool filterIsReady = false,
       String? query,
-      List<int>? category_id,
-      List<int>? company_id,
       int? delivery_price_range_from,
       int? delivery_price_range_to,
-      int? max_distance,
-      int? address_id]) {
+      int? max_distance]) {
     return SearchBlocStateDefaultState(
       isLoadingFirst,
       isLoadingPaging,
       error,
       refreshData,
       searchList,
+      categoriesList,
+      campaniesList,
       hasMorePages,
+      filterIsReady,
       query,
-      category_id,
-      company_id,
       delivery_price_range_from,
       delivery_price_range_to,
       max_distance,
-      address_id,
     );
   }
 }
@@ -993,14 +1317,14 @@ mixin _$SearchBlocState {
   String get error => throw _privateConstructorUsedError;
   bool get refreshData => throw _privateConstructorUsedError;
   List<MarketPlaceItem> get searchList => throw _privateConstructorUsedError;
+  List<CategoryData> get categoriesList => throw _privateConstructorUsedError;
+  List<CompanyItem> get campaniesList => throw _privateConstructorUsedError;
   bool get hasMorePages => throw _privateConstructorUsedError;
+  bool get filterIsReady => throw _privateConstructorUsedError;
   String? get query => throw _privateConstructorUsedError;
-  List<int>? get category_id => throw _privateConstructorUsedError;
-  List<int>? get company_id => throw _privateConstructorUsedError;
   int? get delivery_price_range_from => throw _privateConstructorUsedError;
   int? get delivery_price_range_to => throw _privateConstructorUsedError;
   int? get max_distance => throw _privateConstructorUsedError;
-  int? get address_id => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -1010,14 +1334,14 @@ mixin _$SearchBlocState {
             String error,
             bool refreshData,
             List<MarketPlaceItem> searchList,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
             bool hasMorePages,
+            bool filterIsReady,
             String? query,
-            List<int>? category_id,
-            List<int>? company_id,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)
+            int? max_distance)
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
@@ -1029,14 +1353,14 @@ mixin _$SearchBlocState {
             String error,
             bool refreshData,
             List<MarketPlaceItem> searchList,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
             bool hasMorePages,
+            bool filterIsReady,
             String? query,
-            List<int>? category_id,
-            List<int>? company_id,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
+            int? max_distance)?
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
@@ -1048,14 +1372,14 @@ mixin _$SearchBlocState {
             String error,
             bool refreshData,
             List<MarketPlaceItem> searchList,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
             bool hasMorePages,
+            bool filterIsReady,
             String? query,
-            List<int>? category_id,
-            List<int>? company_id,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
+            int? max_distance)?
         defaultState,
     required TResult orElse(),
   }) =>
@@ -1093,14 +1417,14 @@ abstract class $SearchBlocStateCopyWith<$Res> {
       String error,
       bool refreshData,
       List<MarketPlaceItem> searchList,
+      List<CategoryData> categoriesList,
+      List<CompanyItem> campaniesList,
       bool hasMorePages,
+      bool filterIsReady,
       String? query,
-      List<int>? category_id,
-      List<int>? company_id,
       int? delivery_price_range_from,
       int? delivery_price_range_to,
-      int? max_distance,
-      int? address_id});
+      int? max_distance});
 }
 
 /// @nodoc
@@ -1119,14 +1443,14 @@ class _$SearchBlocStateCopyWithImpl<$Res>
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? searchList = freezed,
+    Object? categoriesList = freezed,
+    Object? campaniesList = freezed,
     Object? hasMorePages = freezed,
+    Object? filterIsReady = freezed,
     Object? query = freezed,
-    Object? category_id = freezed,
-    Object? company_id = freezed,
     Object? delivery_price_range_from = freezed,
     Object? delivery_price_range_to = freezed,
     Object? max_distance = freezed,
-    Object? address_id = freezed,
   }) {
     return _then(_value.copyWith(
       isLoadingFirst: isLoadingFirst == freezed
@@ -1149,22 +1473,26 @@ class _$SearchBlocStateCopyWithImpl<$Res>
           ? _value.searchList
           : searchList // ignore: cast_nullable_to_non_nullable
               as List<MarketPlaceItem>,
+      categoriesList: categoriesList == freezed
+          ? _value.categoriesList
+          : categoriesList // ignore: cast_nullable_to_non_nullable
+              as List<CategoryData>,
+      campaniesList: campaniesList == freezed
+          ? _value.campaniesList
+          : campaniesList // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
       hasMorePages: hasMorePages == freezed
           ? _value.hasMorePages
           : hasMorePages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      filterIsReady: filterIsReady == freezed
+          ? _value.filterIsReady
+          : filterIsReady // ignore: cast_nullable_to_non_nullable
               as bool,
       query: query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String?,
-      category_id: category_id == freezed
-          ? _value.category_id
-          : category_id // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      company_id: company_id == freezed
-          ? _value.company_id
-          : company_id // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
       delivery_price_range_from: delivery_price_range_from == freezed
           ? _value.delivery_price_range_from
           : delivery_price_range_from // ignore: cast_nullable_to_non_nullable
@@ -1176,10 +1504,6 @@ class _$SearchBlocStateCopyWithImpl<$Res>
       max_distance: max_distance == freezed
           ? _value.max_distance
           : max_distance // ignore: cast_nullable_to_non_nullable
-              as int?,
-      address_id: address_id == freezed
-          ? _value.address_id
-          : address_id // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
   }
@@ -1199,14 +1523,14 @@ abstract class $SearchBlocStateDefaultStateCopyWith<$Res>
       String error,
       bool refreshData,
       List<MarketPlaceItem> searchList,
+      List<CategoryData> categoriesList,
+      List<CompanyItem> campaniesList,
       bool hasMorePages,
+      bool filterIsReady,
       String? query,
-      List<int>? category_id,
-      List<int>? company_id,
       int? delivery_price_range_from,
       int? delivery_price_range_to,
-      int? max_distance,
-      int? address_id});
+      int? max_distance});
 }
 
 /// @nodoc
@@ -1228,14 +1552,14 @@ class _$SearchBlocStateDefaultStateCopyWithImpl<$Res>
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? searchList = freezed,
+    Object? categoriesList = freezed,
+    Object? campaniesList = freezed,
     Object? hasMorePages = freezed,
+    Object? filterIsReady = freezed,
     Object? query = freezed,
-    Object? category_id = freezed,
-    Object? company_id = freezed,
     Object? delivery_price_range_from = freezed,
     Object? delivery_price_range_to = freezed,
     Object? max_distance = freezed,
-    Object? address_id = freezed,
   }) {
     return _then(SearchBlocStateDefaultState(
       isLoadingFirst == freezed
@@ -1258,22 +1582,26 @@ class _$SearchBlocStateDefaultStateCopyWithImpl<$Res>
           ? _value.searchList
           : searchList // ignore: cast_nullable_to_non_nullable
               as List<MarketPlaceItem>,
+      categoriesList == freezed
+          ? _value.categoriesList
+          : categoriesList // ignore: cast_nullable_to_non_nullable
+              as List<CategoryData>,
+      campaniesList == freezed
+          ? _value.campaniesList
+          : campaniesList // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
       hasMorePages == freezed
           ? _value.hasMorePages
           : hasMorePages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      filterIsReady == freezed
+          ? _value.filterIsReady
+          : filterIsReady // ignore: cast_nullable_to_non_nullable
               as bool,
       query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String?,
-      category_id == freezed
-          ? _value.category_id
-          : category_id // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      company_id == freezed
-          ? _value.company_id
-          : company_id // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
       delivery_price_range_from == freezed
           ? _value.delivery_price_range_from
           : delivery_price_range_from // ignore: cast_nullable_to_non_nullable
@@ -1285,10 +1613,6 @@ class _$SearchBlocStateDefaultStateCopyWithImpl<$Res>
       max_distance == freezed
           ? _value.max_distance
           : max_distance // ignore: cast_nullable_to_non_nullable
-              as int?,
-      address_id == freezed
-          ? _value.address_id
-          : address_id // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
   }
@@ -1303,14 +1627,14 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
       this.error = "",
       this.refreshData = false,
       this.searchList = const [],
+      this.categoriesList = const [],
+      this.campaniesList = const [],
       this.hasMorePages = false,
+      this.filterIsReady = false,
       this.query,
-      this.category_id,
-      this.company_id,
       this.delivery_price_range_from,
       this.delivery_price_range_to,
-      this.max_distance,
-      this.address_id]);
+      this.max_distance]);
 
   @JsonKey(defaultValue: false)
   @override
@@ -1327,27 +1651,30 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
   @JsonKey(defaultValue: const [])
   @override
   final List<MarketPlaceItem> searchList;
+  @JsonKey(defaultValue: const [])
+  @override
+  final List<CategoryData> categoriesList;
+  @JsonKey(defaultValue: const [])
+  @override
+  final List<CompanyItem> campaniesList;
   @JsonKey(defaultValue: false)
   @override
   final bool hasMorePages;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool filterIsReady;
   @override
   final String? query;
-  @override
-  final List<int>? category_id;
-  @override
-  final List<int>? company_id;
   @override
   final int? delivery_price_range_from;
   @override
   final int? delivery_price_range_to;
   @override
   final int? max_distance;
-  @override
-  final int? address_id;
 
   @override
   String toString() {
-    return 'SearchBlocState.defaultState(isLoadingFirst: $isLoadingFirst, isLoadingPaging: $isLoadingPaging, error: $error, refreshData: $refreshData, searchList: $searchList, hasMorePages: $hasMorePages, query: $query, category_id: $category_id, company_id: $company_id, delivery_price_range_from: $delivery_price_range_from, delivery_price_range_to: $delivery_price_range_to, max_distance: $max_distance, address_id: $address_id)';
+    return 'SearchBlocState.defaultState(isLoadingFirst: $isLoadingFirst, isLoadingPaging: $isLoadingPaging, error: $error, refreshData: $refreshData, searchList: $searchList, categoriesList: $categoriesList, campaniesList: $campaniesList, hasMorePages: $hasMorePages, filterIsReady: $filterIsReady, query: $query, delivery_price_range_from: $delivery_price_range_from, delivery_price_range_to: $delivery_price_range_to, max_distance: $max_distance)';
   }
 
   @override
@@ -1368,17 +1695,20 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
+            (identical(other.categoriesList, categoriesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.categoriesList, categoriesList)) &&
+            (identical(other.campaniesList, campaniesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.campaniesList, campaniesList)) &&
             (identical(other.hasMorePages, hasMorePages) ||
                 const DeepCollectionEquality()
                     .equals(other.hasMorePages, hasMorePages)) &&
+            (identical(other.filterIsReady, filterIsReady) ||
+                const DeepCollectionEquality()
+                    .equals(other.filterIsReady, filterIsReady)) &&
             (identical(other.query, query) ||
                 const DeepCollectionEquality().equals(other.query, query)) &&
-            (identical(other.category_id, category_id) ||
-                const DeepCollectionEquality()
-                    .equals(other.category_id, category_id)) &&
-            (identical(other.company_id, company_id) ||
-                const DeepCollectionEquality()
-                    .equals(other.company_id, company_id)) &&
             (identical(other.delivery_price_range_from,
                     delivery_price_range_from) ||
                 const DeepCollectionEquality().equals(
@@ -1390,10 +1720,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
                     other.delivery_price_range_to, delivery_price_range_to)) &&
             (identical(other.max_distance, max_distance) ||
                 const DeepCollectionEquality()
-                    .equals(other.max_distance, max_distance)) &&
-            (identical(other.address_id, address_id) ||
-                const DeepCollectionEquality()
-                    .equals(other.address_id, address_id)));
+                    .equals(other.max_distance, max_distance)));
   }
 
   @override
@@ -1404,14 +1731,14 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(refreshData) ^
       const DeepCollectionEquality().hash(searchList) ^
+      const DeepCollectionEquality().hash(categoriesList) ^
+      const DeepCollectionEquality().hash(campaniesList) ^
       const DeepCollectionEquality().hash(hasMorePages) ^
+      const DeepCollectionEquality().hash(filterIsReady) ^
       const DeepCollectionEquality().hash(query) ^
-      const DeepCollectionEquality().hash(category_id) ^
-      const DeepCollectionEquality().hash(company_id) ^
       const DeepCollectionEquality().hash(delivery_price_range_from) ^
       const DeepCollectionEquality().hash(delivery_price_range_to) ^
-      const DeepCollectionEquality().hash(max_distance) ^
-      const DeepCollectionEquality().hash(address_id);
+      const DeepCollectionEquality().hash(max_distance);
 
   @JsonKey(ignore: true)
   @override
@@ -1428,14 +1755,14 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
             String error,
             bool refreshData,
             List<MarketPlaceItem> searchList,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
             bool hasMorePages,
+            bool filterIsReady,
             String? query,
-            List<int>? category_id,
-            List<int>? company_id,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)
+            int? max_distance)
         defaultState,
   }) {
     return defaultState(
@@ -1444,14 +1771,14 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
         error,
         refreshData,
         searchList,
+        categoriesList,
+        campaniesList,
         hasMorePages,
+        filterIsReady,
         query,
-        category_id,
-        company_id,
         delivery_price_range_from,
         delivery_price_range_to,
-        max_distance,
-        address_id);
+        max_distance);
   }
 
   @override
@@ -1463,14 +1790,14 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
             String error,
             bool refreshData,
             List<MarketPlaceItem> searchList,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
             bool hasMorePages,
+            bool filterIsReady,
             String? query,
-            List<int>? category_id,
-            List<int>? company_id,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
+            int? max_distance)?
         defaultState,
   }) {
     return defaultState?.call(
@@ -1479,14 +1806,14 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
         error,
         refreshData,
         searchList,
+        categoriesList,
+        campaniesList,
         hasMorePages,
+        filterIsReady,
         query,
-        category_id,
-        company_id,
         delivery_price_range_from,
         delivery_price_range_to,
-        max_distance,
-        address_id);
+        max_distance);
   }
 
   @override
@@ -1498,14 +1825,14 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
             String error,
             bool refreshData,
             List<MarketPlaceItem> searchList,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
             bool hasMorePages,
+            bool filterIsReady,
             String? query,
-            List<int>? category_id,
-            List<int>? company_id,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
-            int? max_distance,
-            int? address_id)?
+            int? max_distance)?
         defaultState,
     required TResult orElse(),
   }) {
@@ -1516,14 +1843,14 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
           error,
           refreshData,
           searchList,
+          categoriesList,
+          campaniesList,
           hasMorePages,
+          filterIsReady,
           query,
-          category_id,
-          company_id,
           delivery_price_range_from,
           delivery_price_range_to,
-          max_distance,
-          address_id);
+          max_distance);
     }
     return orElse();
   }
@@ -1564,14 +1891,14 @@ abstract class SearchBlocStateDefaultState implements SearchBlocState {
       String error,
       bool refreshData,
       List<MarketPlaceItem> searchList,
+      List<CategoryData> categoriesList,
+      List<CompanyItem> campaniesList,
       bool hasMorePages,
+      bool filterIsReady,
       String? query,
-      List<int>? category_id,
-      List<int>? company_id,
       int? delivery_price_range_from,
       int? delivery_price_range_to,
-      int? max_distance,
-      int? address_id]) = _$SearchBlocStateDefaultState;
+      int? max_distance]) = _$SearchBlocStateDefaultState;
 
   @override
   bool get isLoadingFirst => throw _privateConstructorUsedError;
@@ -1584,21 +1911,21 @@ abstract class SearchBlocStateDefaultState implements SearchBlocState {
   @override
   List<MarketPlaceItem> get searchList => throw _privateConstructorUsedError;
   @override
+  List<CategoryData> get categoriesList => throw _privateConstructorUsedError;
+  @override
+  List<CompanyItem> get campaniesList => throw _privateConstructorUsedError;
+  @override
   bool get hasMorePages => throw _privateConstructorUsedError;
   @override
+  bool get filterIsReady => throw _privateConstructorUsedError;
+  @override
   String? get query => throw _privateConstructorUsedError;
-  @override
-  List<int>? get category_id => throw _privateConstructorUsedError;
-  @override
-  List<int>? get company_id => throw _privateConstructorUsedError;
   @override
   int? get delivery_price_range_from => throw _privateConstructorUsedError;
   @override
   int? get delivery_price_range_to => throw _privateConstructorUsedError;
   @override
   int? get max_distance => throw _privateConstructorUsedError;
-  @override
-  int? get address_id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $SearchBlocStateDefaultStateCopyWith<SearchBlocStateDefaultState>

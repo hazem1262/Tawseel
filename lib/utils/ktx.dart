@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_native_image/flutter_native_image.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/globals.dart';
@@ -167,6 +168,34 @@ extension EmailValidator on String? {
 
   String getIosUrlScheme() =>
       SCHEMES_MAP["id" + this!.split("/id")[1].split("?")[0]] ?? this ?? "";
+}
+
+extension categoriesDtx on List<CategoryData> {
+  List<int> getSelectedIdsList() =>
+      List.from(this.where((element) => element.isSelected == true));
+
+  List<CategoryData> selectItemInList(int id) =>
+      this.map((e) => e.id == id ? e.copyWith(isSelected: true) : e).toList();
+
+  List<CategoryData> unSelectItemInList(int id) =>
+      this.map((e) => e.id == id ? e.copyWith(isSelected: false) : e).toList();
+
+  List<CategoryData> resetSelectionInList() =>
+      this.map((e) => e.copyWith(isSelected: false)).toList();
+}
+
+extension companiesDtx on List<CompanyItem> {
+  List<int> getSelectedIdsList() =>
+      List.from(this.where((element) => element.isSelected == true));
+
+  List<CompanyItem> selectItemInList(int id) =>
+      this.map((e) => e.id == id ? e.copyWith(isSelected: true) : e).toList();
+
+  List<CompanyItem> unSelectItemInList(int id) =>
+      this.map((e) => e.id == id ? e.copyWith(isSelected: false) : e).toList();
+
+  List<CompanyItem> resetSelectionInList() =>
+      this.map((e) => e.copyWith(isSelected: false)).toList();
 }
 
 extension MarketPlacesDtx on List<MarketPlaceItem> {

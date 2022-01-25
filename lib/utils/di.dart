@@ -5,6 +5,7 @@ import 'package:tawseel/data/remote/AdsService.dart';
 import 'package:tawseel/data/remote/AppService.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/data/remote/CategoriesService.dart';
+import 'package:tawseel/data/remote/CompaniesService.dart';
 import 'package:tawseel/data/remote/FavoritesService.dart';
 import 'package:tawseel/data/remote/MarketPlaceService.dart';
 import 'package:tawseel/data/remote/NetworkModule.dart';
@@ -21,6 +22,7 @@ import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repositor
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/features/otp/bloc/OtpRepository.dart';
+import 'package:tawseel/features/search/bloc/filter_repository.dart';
 import 'package:tawseel/features/signup/bloc/SignUpRepository.dart';
 import 'package:tawseel/features/support/bloc/SupportRepository.dart';
 import 'package:tawseel/utils/globals.dart';
@@ -117,5 +119,13 @@ Future<void> initAppDependencies() async {
 
   getIt.registerSingleton<IAppRepository>(
     AppRepository(getIt<AppService>()),
+  );
+
+  getIt.registerSingleton<CompaniesService>(
+    CompaniesService(getIt<NetworkModule>().getDio(BaseUrl)),
+  );
+
+  getIt.registerSingleton<IFilterRepository>(
+    FilterRepository(getIt<CategoriesService>(), getIt<CompaniesService>()),
   );
 }

@@ -717,7 +717,8 @@ class _$CompanyItemTearOff {
       String? delivery_cost,
       String? min_order,
       String image,
-      bool is_best) {
+      bool is_best,
+      bool? isSelected) {
     return _CompanyItem(
       id,
       name,
@@ -728,6 +729,7 @@ class _$CompanyItemTearOff {
       min_order,
       image,
       is_best,
+      isSelected,
     );
   }
 
@@ -750,6 +752,7 @@ mixin _$CompanyItem {
   String? get min_order => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   bool get is_best => throw _privateConstructorUsedError;
+  bool? get isSelected => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -771,7 +774,8 @@ abstract class $CompanyItemCopyWith<$Res> {
       String? delivery_cost,
       String? min_order,
       String image,
-      bool is_best});
+      bool is_best,
+      bool? isSelected});
 }
 
 /// @nodoc
@@ -793,6 +797,7 @@ class _$CompanyItemCopyWithImpl<$Res> implements $CompanyItemCopyWith<$Res> {
     Object? min_order = freezed,
     Object? image = freezed,
     Object? is_best = freezed,
+    Object? isSelected = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -831,6 +836,10 @@ class _$CompanyItemCopyWithImpl<$Res> implements $CompanyItemCopyWith<$Res> {
           ? _value.is_best
           : is_best // ignore: cast_nullable_to_non_nullable
               as bool,
+      isSelected: isSelected == freezed
+          ? _value.isSelected
+          : isSelected // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -851,7 +860,8 @@ abstract class _$CompanyItemCopyWith<$Res>
       String? delivery_cost,
       String? min_order,
       String image,
-      bool is_best});
+      bool is_best,
+      bool? isSelected});
 }
 
 /// @nodoc
@@ -875,6 +885,7 @@ class __$CompanyItemCopyWithImpl<$Res> extends _$CompanyItemCopyWithImpl<$Res>
     Object? min_order = freezed,
     Object? image = freezed,
     Object? is_best = freezed,
+    Object? isSelected = freezed,
   }) {
     return _then(_CompanyItem(
       id == freezed
@@ -913,6 +924,10 @@ class __$CompanyItemCopyWithImpl<$Res> extends _$CompanyItemCopyWithImpl<$Res>
           ? _value.is_best
           : is_best // ignore: cast_nullable_to_non_nullable
               as bool,
+      isSelected == freezed
+          ? _value.isSelected
+          : isSelected // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -929,7 +944,8 @@ class _$_CompanyItem implements _CompanyItem {
       this.delivery_cost,
       this.min_order,
       this.image,
-      this.is_best);
+      this.is_best,
+      this.isSelected);
 
   factory _$_CompanyItem.fromJson(Map<String, dynamic> json) =>
       _$$_CompanyItemFromJson(json);
@@ -952,10 +968,12 @@ class _$_CompanyItem implements _CompanyItem {
   final String image;
   @override
   final bool is_best;
+  @override
+  final bool? isSelected;
 
   @override
   String toString() {
-    return 'CompanyItem(id: $id, name: $name, phone: $phone, android_app_link: $android_app_link, ios_app_link: $ios_app_link, delivery_cost: $delivery_cost, min_order: $min_order, image: $image, is_best: $is_best)';
+    return 'CompanyItem(id: $id, name: $name, phone: $phone, android_app_link: $android_app_link, ios_app_link: $ios_app_link, delivery_cost: $delivery_cost, min_order: $min_order, image: $image, is_best: $is_best, isSelected: $isSelected)';
   }
 
   @override
@@ -983,7 +1001,11 @@ class _$_CompanyItem implements _CompanyItem {
             (identical(other.image, image) ||
                 const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.is_best, is_best) ||
-                const DeepCollectionEquality().equals(other.is_best, is_best)));
+                const DeepCollectionEquality()
+                    .equals(other.is_best, is_best)) &&
+            (identical(other.isSelected, isSelected) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSelected, isSelected)));
   }
 
   @override
@@ -997,7 +1019,8 @@ class _$_CompanyItem implements _CompanyItem {
       const DeepCollectionEquality().hash(delivery_cost) ^
       const DeepCollectionEquality().hash(min_order) ^
       const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(is_best);
+      const DeepCollectionEquality().hash(is_best) ^
+      const DeepCollectionEquality().hash(isSelected);
 
   @JsonKey(ignore: true)
   @override
@@ -1020,7 +1043,8 @@ abstract class _CompanyItem implements CompanyItem {
       String? delivery_cost,
       String? min_order,
       String image,
-      bool is_best) = _$_CompanyItem;
+      bool is_best,
+      bool? isSelected) = _$_CompanyItem;
 
   factory _CompanyItem.fromJson(Map<String, dynamic> json) =
       _$_CompanyItem.fromJson;
@@ -1043,6 +1067,8 @@ abstract class _CompanyItem implements CompanyItem {
   String get image => throw _privateConstructorUsedError;
   @override
   bool get is_best => throw _privateConstructorUsedError;
+  @override
+  bool? get isSelected => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CompanyItemCopyWith<_CompanyItem> get copyWith =>

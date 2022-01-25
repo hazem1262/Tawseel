@@ -52,6 +52,7 @@ class CompanyItem with _$CompanyItem {
     String? min_order,
     String image,
     bool is_best,
+    bool? isSelected,
   ) = _CompanyItem;
 
   factory CompanyItem.fromJson(Map<String, dynamic> json) =>

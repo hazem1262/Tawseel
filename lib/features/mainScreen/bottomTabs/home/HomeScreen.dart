@@ -1358,61 +1358,58 @@ Widget searchArea({required Function onClick}) {
     onTap: () {
       onClick();
     },
-    child: Hero(
-      tag: 'search',
-      child: Container(
-        margin: EdgeInsets.only(top: 16),
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.all(18),
-                decoration: BoxDecoration(
-                  color: tm.isDark() ? Colors.black54 : Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      Res.search_icon,
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      LocaleKeys.search_all.tr(),
-                      style: TextStyle(
-                        fontSize: BodySmallTextSize,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Container(
+    child: Container(
+      margin: EdgeInsets.only(top: 16),
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(18),
               decoration: BoxDecoration(
-                  color: ThemeManager.primary,
-                  borderRadius: BorderRadius.circular(10),
-                  shape: BoxShape.rectangle),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset(
-                  Res.settings_icon,
-                  width: 20,
-                  height: 20,
-                ),
+                color: tm.isDark() ? Colors.black54 : Colors.white,
+                borderRadius: BorderRadius.circular(20),
               ),
-            )
-          ],
-        ),
+              child: Row(
+                children: [
+                  Image.asset(
+                    Res.search_icon,
+                    height: 20,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    LocaleKeys.search_all.tr(),
+                    style: TextStyle(
+                      fontSize: BodySmallTextSize,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+            decoration: BoxDecoration(
+                color: ThemeManager.primary,
+                borderRadius: BorderRadius.circular(10),
+                shape: BoxShape.rectangle),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset(
+                Res.settings_icon,
+                width: 20,
+                height: 20,
+              ),
+            ),
+          )
+        ],
       ),
     ),
   );

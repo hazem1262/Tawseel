@@ -77,6 +77,7 @@ _$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) =>
       json['min_order'] as String?,
       json['image'] as String,
       json['is_best'] as bool,
+      json['isSelected'] as bool?,
     );
 
 Map<String, dynamic> _$$_CompanyItemToJson(_$_CompanyItem instance) =>
@@ -90,4 +91,5 @@ Map<String, dynamic> _$$_CompanyItemToJson(_$_CompanyItem instance) =>
       'min_order': instance.min_order,
       'image': instance.image,
       'is_best': instance.is_best,
+      'isSelected': instance.isSelected,
     };
