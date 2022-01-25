@@ -124,7 +124,7 @@ class OffersScreen extends StatelessWidget {
                           },
                           loadingWidget: offersShimmer(context, 1),
                           builder: (offer) {
-                            return marketPlaceItem(context, offer, (item) {
+                            return marketPlaceItem(offer, (item) {
                               showMarketPlaceCompaniesBottomSheet(
                                   item, context, item.companies);
                             }, (item) {

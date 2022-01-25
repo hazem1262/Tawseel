@@ -11,10 +11,12 @@ class SearchField extends StatefulWidget {
   final TextEditingController controller;
   final TextInputAction inputAction;
   final VoidCallback? onSubmitCallback;
+  final Function onSearchIconClicked;
 
   SearchField({
     Key? key,
     required this.controller,
+    required this.onSearchIconClicked,
     this.inputAction = TextInputAction.next,
     this.onSubmitCallback,
   }) : super(key: key);
@@ -46,13 +48,16 @@ class _SearchFieldState extends State<SearchField> {
             textInputAction: widget.inputAction,
             onFieldSubmitted: (value) => {widget.onSubmitCallback?.call()},
             decoration: InputDecoration(
-              prefixIcon: Container(
-                height: 20,
-                width: 20,
-                padding: EdgeInsets.all(14),
-                child: Image.asset(
-                  Res.search_icon,
-                  color: tm.isDark() ? Colors.white : hintColor,
+              prefixIcon: InkWell(
+                onTap: () => {widget.onSearchIconClicked()},
+                child: Container(
+                  height: 20,
+                  width: 20,
+                  padding: EdgeInsets.all(14),
+                  child: Image.asset(
+                    Res.search_icon,
+                    color: tm.isDark() ? Colors.white : hintColor,
+                  ),
                 ),
               ),
               border: InputBorder.none,
@@ -61,36 +66,9 @@ class _SearchFieldState extends State<SearchField> {
                   fontWeight: FontWeight.w500),
               hintText: LocaleKeys.search_all.tr(),
             ),
-            validator: (text) => onTextChange(text),
           ),
         ),
-        errorMessage.isNotEmpty
-            ? Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16),
-                child: Text(
-                  errorMessage,
-                  style: TextStyle(
-                    color: theme.errorColor,
-                    fontSize: ErrorTextSize,
-                  ),
-                ),
-              )
-            : Container()
       ],
     );
   }
-
-  onTextChange(String? text) {
-    errorMessage = SearchValidationError(text);
-    debugPrint(errorMessage);
-
-    setState(() {});
-    return null;
-  }
 }
-
-String SearchValidationError(String? text) => (text == null || text.isEmpty)
-    ? LocaleKeys.full_name_empty_error.tr()
-    : text.length > 100
-        ? LocaleKeys.full_name_validation_error.tr()
-        : "";

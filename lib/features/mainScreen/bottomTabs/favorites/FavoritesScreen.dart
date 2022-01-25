@@ -185,8 +185,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                     RemoveFromFavoriteByDismiss(
                                         favoriteItem.id));
                               },
-                              child: marketPlaceItem(context, favoriteItem,
-                                  (item) {
+                              child: marketPlaceItem(favoriteItem, (item) {
                                 showMarketPlaceCompaniesBottomSheet(
                                   item,
                                   context,

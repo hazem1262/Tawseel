@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class NetworkListener extends StatefulWidget {
   final Widget? onNetworkAvailable;

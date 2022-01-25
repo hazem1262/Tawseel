@@ -195,7 +195,6 @@ class ViewAllMarketPlaces extends StatelessWidget {
             ),
             builder: (item) {
               return marketPlaceItem(
-                blocContext,
                 item,
                 (item) {
                   showMarketPlaceCompaniesBottomSheet(

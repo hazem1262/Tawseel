@@ -18,7 +18,6 @@ import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesR
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
-import 'package:tawseel/features/search/search_screen.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/models/address.dart';
 import 'package:tawseel/navigation/router.gr.dart';
@@ -268,7 +267,6 @@ Widget marketPlaceArea(
                   itemCount: list.length,
                   itemBuilder: (ctx, index) {
                     return marketPlaceItem(
-                      ctx,
                       list[index],
                       (item) {
                         showMarketPlaceCompaniesBottomSheet(
@@ -647,7 +645,6 @@ Widget marketPlaceShimmer([int count = 4]) {
 }
 
 Widget marketPlaceItem(
-    BuildContext context,
     MarketPlaceItem marketPlace,
     Function(MarketPlaceItem item) onClick,
     Function(MarketPlaceItem item) onFavoriteClicked,
@@ -856,7 +853,7 @@ Widget marketPlaceItem(
             ],
           ),
           Positioned.directional(
-            textDirection: Directionality.of(context),
+            textDirection: Directionality.of(appContext),
             top: 10,
             start: 10,
             child: Container(
@@ -874,7 +871,7 @@ Widget marketPlaceItem(
           ),
           if (showFavorite)
             Positioned.directional(
-              textDirection: Directionality.of(context),
+              textDirection: Directionality.of(appContext),
               top: 16,
               end: 16,
               child: Container(
@@ -1361,58 +1358,61 @@ Widget searchArea({required Function onClick}) {
     onTap: () {
       onClick();
     },
-    child: Container(
-      margin: EdgeInsets.only(top: 16),
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(18),
-              decoration: BoxDecoration(
-                color: tm.isDark() ? Colors.black54 : Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    Res.search_icon,
-                    height: 20,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    LocaleKeys.search_all.tr(),
-                    style: TextStyle(
-                      fontSize: BodySmallTextSize,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+    child: Hero(
+      tag: 'search',
+      child: Container(
+        margin: EdgeInsets.only(top: 16),
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(18),
+                decoration: BoxDecoration(
+                  color: tm.isDark() ? Colors.black54 : Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      Res.search_icon,
+                      height: 20,
                     ),
-                  )
-                ],
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      LocaleKeys.search_all.tr(),
+                      style: TextStyle(
+                        fontSize: BodySmallTextSize,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: ThemeManager.primary,
-                borderRadius: BorderRadius.circular(10),
-                shape: BoxShape.rectangle),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset(
-                Res.settings_icon,
-                width: 20,
-                height: 20,
-              ),
+            SizedBox(
+              width: 10,
             ),
-          )
-        ],
+            Container(
+              decoration: BoxDecoration(
+                  color: ThemeManager.primary,
+                  borderRadius: BorderRadius.circular(10),
+                  shape: BoxShape.rectangle),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset(
+                  Res.settings_icon,
+                  width: 20,
+                  height: 20,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     ),
   );

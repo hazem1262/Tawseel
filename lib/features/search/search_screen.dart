@@ -1,7 +1,10 @@
 import 'package:easy_localization/src/public_ext.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/HomeScreen.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/signup/components/searchInputField.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
@@ -10,6 +13,7 @@ import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
+import 'package:tawseel/utils/pagination_list.dart';
 
 class SearchScreen extends StatefulWidget {
   SearchScreen({Key? key}) : super(key: key);
@@ -19,14 +23,72 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  var fullNameController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
+  var searchInputController = TextEditingController();
+  var searchQuery = "";
+  var _page = 1;
+  var hasMorePages = true;
+  var isLoading = false;
+  List<MarketPlaceItem> list = List.empty();
+
+  void reset() {
+    _page = 1;
+    hasMorePages = true;
+    list.clear();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    searchInputController.addListener(() {
+      setState(() {
+        searchQuery = searchInputController.text;
+      });
+    });
+
+    performSearch();
+  }
+
+  @override
+  void dispose() {
+    searchInputController.dispose();
+    super.dispose();
+  }
+
+  void performSearch() {
+    if (!hasMorePages) return;
+    if (_page == 1)
+      setState(() {
+        isLoading = true;
+      });
+
+    getIt
+        .get<IMarketPlaceRepository>()
+        .searchMarketPlaces(query: searchQuery)
+        .then((response) {
+      hasMorePages = response.meta.current_page < response.meta.last_page;
+      setState(() {
+        if (hasMorePages) {
+          _page++;
+        }
+        list = response.data;
+        isLoading = false;
+      });
+    }).catchError((e) {
+      appContext.showError(e.toString());
+      setState(() {
+        isLoading = false;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -35,104 +97,74 @@ class _SearchScreenState extends State<SearchScreen> {
               width: double.infinity,
               child: AppBackButton(),
             ),
-            Form(
-              key: formKey,
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: SearchField(
-                          controller: fullNameController,
-                          inputAction: TextInputAction.next,
-                          onSubmitCallback: () => context.nextFoucs(),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: ThemeManager.primary,
-                            borderRadius: BorderRadius.circular(10),
-                            shape: BoxShape.rectangle),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Image.asset(
-                            Res.settings_icon,
-                            width: 20,
-                            height: 20,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            searchArea(onClick: () {
-              appContext.openIfExist(SearchScreenRoute());
-            }),
-            Center(
-              child: Text("Search"),
-            ),
+            searchWidget(),
+            Expanded(child: pagedList()),
           ],
         ),
       ),
     );
   }
-}
 
-class SearchWidget extends StatefulWidget {
-  SearchWidget({Key? key}) : super(key: key);
-
-  @override
-  _SearchWidgetState createState() => _SearchWidgetState();
-}
-
-class _SearchWidgetState extends State<SearchWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
+  Widget pagedList() {
+    return Container(
+      margin: EdgeInsets.only(top: 8),
+      child: Padding(
+        padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: screenHeight - screenHeight * 0.229,
+          ),
+          child: PaginationList<MarketPlaceItem>(
+            list: [...list],
+            hasMore: hasMorePages,
+            isLoading: isLoading,
+            loadMore: () {
+              performSearch();
+            },
+            onRefresh: () {
+              reset();
+              performSearch();
+            },
+            loadingWidget: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: CupertinoActivityIndicator(),
+            ),
+            builder: (item) {
+              return marketPlaceItem(
+                item,
+                (item) {
+                  showMarketPlaceCompaniesBottomSheet(
+                    item,
+                    context,
+                    item.companies,
+                  );
+                },
+                (item) {
+                  //TODO
+                },
+              );
+            },
+          ),
+        ),
+      ),
+    );
   }
 
-  Widget searchArea({required Function onClick}) {
-    return GestureDetector(
-      onTap: () {
-        onClick();
-      },
-      child: Container(
-        margin: EdgeInsets.only(top: 16),
-        padding: EdgeInsets.symmetric(horizontal: 20),
+  Widget searchWidget() {
+    return Hero(
+      tag: 'search',
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: Container(
-                padding: EdgeInsets.all(18),
-                decoration: BoxDecoration(
-                  color: tm.isDark() ? Colors.black54 : Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      Res.search_icon,
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      LocaleKeys.search_all.tr(),
-                      style: TextStyle(
-                        fontSize: BodySmallTextSize,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
-                      ),
-                    )
-                  ],
-                ),
+              child: SearchField(
+                onSearchIconClicked: () {
+                  performSearch();
+                },
+                controller: searchInputController,
+                inputAction: TextInputAction.search,
+                onSubmitCallback: () => performSearch(),
               ),
             ),
             SizedBox(
