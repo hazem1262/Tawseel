@@ -171,31 +171,59 @@ extension EmailValidator on String? {
 }
 
 extension categoriesDtx on List<CategoryData> {
-  List<int> getSelectedIdsList() =>
-      List.from(this.where((element) => element.isSelected == true));
+  List<int> getSelectedIdsList() {
+    return this
+        .where((element) => element.isSelected == true)
+        .toList()
+        .map((e) => e.id!)
+        .toList();
+  }
 
-  List<CategoryData> selectItemInList(int id) =>
-      this.map((e) => e.id == id ? e.copyWith(isSelected: true) : e).toList();
+  List<CategoryData> selectItemInList(int id) {
+    List<CategoryData> newList = List.from(this);
+    return newList
+        .map((e) => e.id == id ? e.copyWith(isSelected: true) : e)
+        .toList();
+  }
 
-  List<CategoryData> unSelectItemInList(int id) =>
-      this.map((e) => e.id == id ? e.copyWith(isSelected: false) : e).toList();
+  List<CategoryData> unSelectItemInList(int id) {
+    List<CategoryData> newList = List.from(this);
+    return newList
+        .map((e) => e.id == id ? e.copyWith(isSelected: false) : e)
+        .toList();
+  }
 
-  List<CategoryData> resetSelectionInList() =>
-      this.map((e) => e.copyWith(isSelected: false)).toList();
+  List<CategoryData> resetSelectionInList() {
+    List<CategoryData> newList = List.from(this);
+    return newList.map((e) => e.copyWith(isSelected: false)).toList();
+  }
 }
 
 extension companiesDtx on List<CompanyItem> {
-  List<int> getSelectedIdsList() =>
-      List.from(this.where((element) => element.isSelected == true));
+  List<int> getSelectedIdsList() => this
+      .where((element) => element.isSelected == true)
+      .toList()
+      .map((e) => e.id)
+      .toList();
 
-  List<CompanyItem> selectItemInList(int id) =>
-      this.map((e) => e.id == id ? e.copyWith(isSelected: true) : e).toList();
+  List<CompanyItem> selectItemInList(int id) {
+    List<CompanyItem> newList = List.from(this);
+    return newList
+        .map((e) => e.id == id ? e.copyWith(isSelected: true) : e)
+        .toList();
+  }
 
-  List<CompanyItem> unSelectItemInList(int id) =>
-      this.map((e) => e.id == id ? e.copyWith(isSelected: false) : e).toList();
+  List<CompanyItem> unSelectItemInList(int id) {
+    List<CompanyItem> newList = List.from(this);
+    return newList
+        .map((e) => e.id == id ? e.copyWith(isSelected: false) : e)
+        .toList();
+  }
 
-  List<CompanyItem> resetSelectionInList() =>
-      this.map((e) => e.copyWith(isSelected: false)).toList();
+  List<CompanyItem> resetSelectionInList() {
+    List<CompanyItem> newList = List.from(this);
+    return newList.map((e) => e.copyWith(isSelected: false)).toList();
+  }
 }
 
 extension MarketPlacesDtx on List<MarketPlaceItem> {

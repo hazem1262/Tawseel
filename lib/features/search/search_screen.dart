@@ -30,7 +30,9 @@ class SearchScreen extends StatelessWidget {
       create: (context) => SearchBloc(
         getIt.get<IMarketPlaceRepository>(),
         getIt.get<IFilterRepository>(),
-      )..add(GetSearchMarketPlaces()),
+      )
+        ..add(GetSearchMarketPlaces(null))
+        ..add(GetSearchFilterData(false)),
       lazy: false,
       child: Builder(builder: (context) {
         return Scaffold(
@@ -39,8 +41,8 @@ class SearchScreen extends StatelessWidget {
               if (state.error.isNotEmpty) appContext.showError(state.error);
               if (state.refreshData) {
                 BlocProvider.of<SearchBloc>(context)
-                  ..add(GetSearchFilterData())
-                  ..add(GetSearchMarketPlaces());
+                  ..add(GetSearchFilterData(false))
+                  ..add(GetSearchMarketPlaces(null));
               }
             },
             child: SafeArea(
@@ -64,41 +66,21 @@ class SearchScreen extends StatelessWidget {
                       BlocBuilder<SearchBloc, SearchBlocState>(
                         builder: (context, state) {
                           return searchWidget(
+                            state: state,
                             onFilterClicked: () {
                               // if (state.filterIsReady)
                               context.router.push(
                                 FilterScreenRoute(
                                   onApplyFilter: (filterData) {
-                                    print(filterData.toString());
-                                    appContext.showToast(filterData.toString());
-                                    BlocProvider.of<SearchBloc>(context)
-                                      ..add(ApplySearchFilterData(
-                                        query: searchInputController.text,
-                                        categoriesList: filterData.categories,
-                                        campaniesList: filterData.companies,
-                                        delivery_price_range_from: filterData
-                                                    .delivery_price_range_from ==
-                                                0
-                                            ? null
-                                            : filterData
-                                                .delivery_price_range_from,
-                                        delivery_price_range_to: filterData
-                                                    .delivery_price_range_to ==
-                                                0
-                                            ? null
-                                            : filterData
-                                                .delivery_price_range_to,
-                                        max_distance:
-                                            filterData.max_distance == 0
-                                                ? null
-                                                : filterData.max_distance,
-                                      ))
-                                      ..add(GetSearchMarketPlaces());
+                                    doApplyFilter(
+                                      context: context,
+                                      state: state,
+                                      filterData: filterData,
+                                    );
                                   },
                                   onResetFilter: () {
-                                    appContext
-                                        .showToast("onResetFilter returned");
-                                    print("onResetFilter returned");
+                                    // BlocProvider.of<SearchBloc>(context)
+                                    //   ..add(ResetSearchRefreshData());
                                   },
                                   filterDate: FilterDate(
                                     categories: state.categoriesList,
@@ -111,11 +93,14 @@ class SearchScreen extends StatelessWidget {
                                   ),
                                 ),
                               );
-                              // else
-                              //   appContext.showError(
-                              //       "Error happened while loading filter data please close this screen and open it again.");
                             },
-                            onSearchClicked: () {},
+                            onSearchClicked: () {
+                              BlocProvider.of<SearchBloc>(context)
+                                ..add(
+                                  GetSearchMarketPlaces(
+                                      searchInputController.text),
+                                );
+                            },
                           );
                         },
                       ),
@@ -163,7 +148,7 @@ class SearchScreen extends StatelessWidget {
             isLoading: isLoading,
             loadMore: () {
               BlocProvider.of<SearchBloc>(blocContext)
-                ..add(GetSearchMarketPlaces());
+                ..add(GetSearchMarketPlaces(null));
             },
             onRefresh: () {
               BlocProvider.of<SearchBloc>(blocContext)
@@ -199,8 +184,11 @@ class SearchScreen extends StatelessWidget {
   }
 
   Widget searchWidget(
-      {GestureTapCallback? onFilterClicked,
+      {required SearchBlocState state,
+      GestureTapCallback? onFilterClicked,
       GestureTapCallback? onSearchClicked}) {
+    final isDataAva =
+        state.campaniesList.isNotEmpty || state.categoriesList.isNotEmpty;
     return Container(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -221,10 +209,10 @@ class SearchScreen extends StatelessWidget {
               width: 10,
             ),
             InkWell(
-              onTap: onFilterClicked,
+              onTap: isDataAva ? onFilterClicked : null,
               child: Container(
                 decoration: BoxDecoration(
-                    color: ThemeManager.primary,
+                    color: isDataAva ? ThemeManager.primary : Colors.grey[300],
                     borderRadius: BorderRadius.circular(10),
                     shape: BoxShape.rectangle),
                 child: Padding(
@@ -241,5 +229,28 @@ class SearchScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void doApplyFilter(
+      {required BuildContext context,
+      required SearchBlocState state,
+      required FilterDate filterData}) {
+    print(filterData.toString());
+
+    BlocProvider.of<SearchBloc>(context)
+      ..add(ApplySearchFilterData(
+        query: searchInputController.text,
+        categoriesList: filterData.categories,
+        campaniesList: filterData.companies,
+        delivery_price_range_from: filterData.delivery_price_range_from == 0
+            ? null
+            : filterData.delivery_price_range_from,
+        delivery_price_range_to: filterData.delivery_price_range_to == 0
+            ? null
+            : filterData.delivery_price_range_to,
+        max_distance:
+            filterData.max_distance == 0 ? null : filterData.max_distance,
+      ))
+      ..add(GetSearchMarketPlaces(null));
   }
 }

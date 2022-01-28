@@ -12,6 +12,7 @@ class ThemeManager with ChangeNotifier {
   ThemeManager({ThemeMode mode = ThemeMode.light}) : _mode = mode;
 
   static var primary = Color(0xff8e87e5);
+  static var filtercolor = Color(0xff8e87e5);
 
   final subtitleColorLight = Color(0xff8383a1);
   final titlecolorLight = Color(0xff252554);

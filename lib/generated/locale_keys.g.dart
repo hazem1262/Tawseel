@@ -108,5 +108,13 @@ abstract class  LocaleKeys {
   static const related_resuturants = 'related_resuturants';
   static const five_kilo = 'five_kilo';
   static const min_order = 'min_order';
+  static const filter_title = 'filter_title';
+  static const companies_title = 'companies_title';
+  static const delivery_price_range = 'delivery_price_range';
+  static const max_distance = 'max_distance';
+  static const km = 'km';
+  static const apply_filter = 'apply_filter';
+  static const reset = 'reset';
+  static const sar = 'sar';
 
 }

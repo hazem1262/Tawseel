@@ -14,7 +14,8 @@ part 'search_bloc.freezed.dart';
 
 @freezed
 class SearchBlocEvent with _$SearchBlocEvent {
-  const factory SearchBlocEvent.searchMarketPlaces() = GetSearchMarketPlaces;
+  const factory SearchBlocEvent.searchMarketPlaces(String? query) =
+      GetSearchMarketPlaces;
 
   const factory SearchBlocEvent.addMarketPlaceToFavorite(int id) =
       AddMarketPlaceToFavorite;
@@ -23,7 +24,8 @@ class SearchBlocEvent with _$SearchBlocEvent {
       RemoveMarketPlaceFromFavorite;
 
   const factory SearchBlocEvent.reset() = ResetSearchRefreshData;
-  const factory SearchBlocEvent.getSearchFilterDate() = GetSearchFilterData;
+  const factory SearchBlocEvent.getSearchFilterDate(bool? openFilter) =
+      GetSearchFilterData;
   const factory SearchBlocEvent.applyFilterDate({
     String? query,
     required List<CategoryData> categoriesList,
@@ -88,6 +90,10 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
             refreshData: true,
             categoriesList: state.categoriesList.resetSelectionInList(),
             campaniesList: state.campaniesList.resetSelectionInList(),
+            query: state.query,
+            delivery_price_range_from: state.delivery_price_range_from,
+            delivery_price_range_to: state.delivery_price_range_to,
+            max_distance: state.max_distance,
           ),
         );
       }
@@ -107,6 +113,12 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
 
       if (event is GetSearchMarketPlaces) {
         try {
+          //searching with filter or without -> search with keyboard query
+          if (event.query != null) {
+            _page = 1;
+            hasMorePages = true;
+          }
+
           if (!hasMorePages) return;
           if (_page == 1)
             emit(
@@ -114,12 +126,13 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
                 isLoadingFirst: _page == 1 ? true : false,
                 refreshData: false,
                 hasMorePages: hasMorePages,
+                searchList: [],
               ),
             );
 
           var places = await marketPlacesRepo.searchMarketPlaces(
             page: _page,
-            query: state.query,
+            query: event.query ?? state.query ?? "",
             category_id: state.categoriesList.getSelectedIdsList(),
             company_id: state.campaniesList.getSelectedIdsList(),
             delivery_price_range_from: state.delivery_price_range_from,
@@ -134,6 +147,7 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
 
           emit(
             state.copyWith(
+              query: event.query ?? state.query ?? "",
               searchList: state.searchList + places.data,
               hasMorePages: hasMorePages,
               error: "",
