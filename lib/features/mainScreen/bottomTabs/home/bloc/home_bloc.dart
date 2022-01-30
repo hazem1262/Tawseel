@@ -1,13 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/AdsResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
+import 'package:tawseel/features/search/bloc/filter_repository.dart';
 import 'package:tawseel/models/address.dart';
 import 'package:tawseel/utils/ktx.dart';
 
@@ -43,6 +43,7 @@ class HomeBlocState with _$HomeBlocState {
     @Default("") String error,
     @Default(false) bool refreshData,
     @Default([]) List<CategoryData> categories,
+    @Default([]) List<CompanyItem> companies,
     @Default([]) List<AdsItem> adsList,
     @Default([]) List<MarketPlaceItem> nearbyList,
     Address? userAddress,
@@ -50,13 +51,17 @@ class HomeBlocState with _$HomeBlocState {
 }
 
 class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
-  IHomeRepository repo;
   IAdsRepository adsRepo;
   IProfileRepository profileRepo;
   IMarketPlaceRepository marketPlacesRepo;
+  IFilterRepository filterRepo;
 
-  HomeBloc(this.repo, this.adsRepo, this.profileRepo, this.marketPlacesRepo)
-      : super(HomeBlocStateDefaultState()) {
+  HomeBloc(
+    this.adsRepo,
+    this.profileRepo,
+    this.marketPlacesRepo,
+    this.filterRepo,
+  ) : super(HomeBlocStateDefaultState()) {
     on<HomeBlocEvent>((event, emit) async {
       if (event is GetHomeProfile) {
         emit(state.copyWith(profileIsLoading: true, error: ""));
@@ -79,10 +84,13 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
       if (event is GetHomeCategories) {
         emit(state.copyWith(categoriesIsLoading: true, error: ""));
         try {
-          var cats = await repo.getCategories();
-
+          final res = await filterRepo.getCompaniesAndCategories();
           emit(state.copyWith(
-              categoriesIsLoading: false, error: "", categories: cats.data));
+            categoriesIsLoading: false,
+            error: "",
+            categories: res.categories,
+            companies: res.companies,
+          ));
         } catch (e) {
           emit(state.copyWith(categoriesIsLoading: false, error: e.toString()));
           debugPrint('Exception : $e');

@@ -113,7 +113,7 @@ class ViewAllMarketPlaces extends StatelessWidget {
                           margin: EdgeInsets.symmetric(horizontal: 16),
                           color: Colors.transparent,
                           child: SearchButton(() {
-                            appContext.showToast("search");
+                            appContext.openIfExist(SearchScreenRoute());
                           }),
                         ),
                       ],

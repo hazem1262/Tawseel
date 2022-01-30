@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
+import 'package:tawseel/features/search/FilterDate.dart';
 import 'package:tawseel/features/search/bloc/filter_repository.dart';
 import 'package:tawseel/utils/ktx.dart';
 
@@ -24,8 +24,11 @@ class SearchBlocEvent with _$SearchBlocEvent {
       RemoveMarketPlaceFromFavorite;
 
   const factory SearchBlocEvent.reset() = ResetSearchRefreshData;
+  const factory SearchBlocEvent.resetOpenFilterAction() = ResetOpenFilterAction;
   const factory SearchBlocEvent.getSearchFilterDate(bool? openFilter) =
       GetSearchFilterData;
+  const factory SearchBlocEvent.setSearchFilterDate(
+      FilterDate filterDate, bool openFilter) = SetSearchFilterData;
   const factory SearchBlocEvent.applyFilterDate({
     String? query,
     required List<CategoryData> categoriesList,
@@ -48,6 +51,7 @@ class SearchBlocState with _$SearchBlocState {
     @Default([]) List<CompanyItem> campaniesList,
     @Default(false) bool hasMorePages,
     @Default(false) bool filterIsReady,
+    @Default(false) bool openFilterNow,
     String? query,
     int? delivery_price_range_from,
     int? delivery_price_range_to,
@@ -82,6 +86,10 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
         );
       }
 
+      if (event is ResetOpenFilterAction) {
+        emit(state.copyWith(openFilterNow: false));
+      }
+
       if (event is ResetSearchRefreshData) {
         _page = 1;
         hasMorePages = true;
@@ -96,6 +104,23 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
             max_distance: state.max_distance,
           ),
         );
+      }
+
+      if (event is SetSearchFilterData) {
+        try {
+          emit(
+            state.copyWith(
+              campaniesList: event.filterDate.companies,
+              categoriesList: event.filterDate.categories,
+              filterIsReady: event.filterDate.categories.isNotEmpty &&
+                  event.filterDate.companies.isNotEmpty,
+              openFilterNow: event.filterDate.categories.isNotEmpty &&
+                  event.filterDate.companies.isNotEmpty,
+            ),
+          );
+        } catch (e) {
+          emit(state.copyWith(filterIsReady: false));
+        }
       }
 
       if (event is GetSearchFilterData) {

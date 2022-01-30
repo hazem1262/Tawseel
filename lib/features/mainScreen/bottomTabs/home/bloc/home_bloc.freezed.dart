@@ -1198,6 +1198,7 @@ class _$HomeBlocStateTearOff {
       String error = "",
       bool refreshData = false,
       List<CategoryData> categories = const [],
+      List<CompanyItem> companies = const [],
       List<AdsItem> adsList = const [],
       List<MarketPlaceItem> nearbyList = const [],
       Address? userAddress]) {
@@ -1209,6 +1210,7 @@ class _$HomeBlocStateTearOff {
       error,
       refreshData,
       categories,
+      companies,
       adsList,
       nearbyList,
       userAddress,
@@ -1228,6 +1230,7 @@ mixin _$HomeBlocState {
   String get error => throw _privateConstructorUsedError;
   bool get refreshData => throw _privateConstructorUsedError;
   List<CategoryData> get categories => throw _privateConstructorUsedError;
+  List<CompanyItem> get companies => throw _privateConstructorUsedError;
   List<AdsItem> get adsList => throw _privateConstructorUsedError;
   List<MarketPlaceItem> get nearbyList => throw _privateConstructorUsedError;
   Address? get userAddress => throw _privateConstructorUsedError;
@@ -1242,6 +1245,7 @@ mixin _$HomeBlocState {
             String error,
             bool refreshData,
             List<CategoryData> categories,
+            List<CompanyItem> companies,
             List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)
@@ -1258,6 +1262,7 @@ mixin _$HomeBlocState {
             String error,
             bool refreshData,
             List<CategoryData> categories,
+            List<CompanyItem> companies,
             List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)?
@@ -1274,6 +1279,7 @@ mixin _$HomeBlocState {
             String error,
             bool refreshData,
             List<CategoryData> categories,
+            List<CompanyItem> companies,
             List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)?
@@ -1316,6 +1322,7 @@ abstract class $HomeBlocStateCopyWith<$Res> {
       String error,
       bool refreshData,
       List<CategoryData> categories,
+      List<CompanyItem> companies,
       List<AdsItem> adsList,
       List<MarketPlaceItem> nearbyList,
       Address? userAddress});
@@ -1339,6 +1346,7 @@ class _$HomeBlocStateCopyWithImpl<$Res>
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? categories = freezed,
+    Object? companies = freezed,
     Object? adsList = freezed,
     Object? nearbyList = freezed,
     Object? userAddress = freezed,
@@ -1372,6 +1380,10 @@ class _$HomeBlocStateCopyWithImpl<$Res>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
+      companies: companies == freezed
+          ? _value.companies
+          : companies // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
       adsList: adsList == freezed
           ? _value.adsList
           : adsList // ignore: cast_nullable_to_non_nullable
@@ -1403,6 +1415,7 @@ abstract class $HomeBlocStateDefaultStateCopyWith<$Res>
       String error,
       bool refreshData,
       List<CategoryData> categories,
+      List<CompanyItem> companies,
       List<AdsItem> adsList,
       List<MarketPlaceItem> nearbyList,
       Address? userAddress});
@@ -1429,6 +1442,7 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
     Object? error = freezed,
     Object? refreshData = freezed,
     Object? categories = freezed,
+    Object? companies = freezed,
     Object? adsList = freezed,
     Object? nearbyList = freezed,
     Object? userAddress = freezed,
@@ -1462,6 +1476,10 @@ class _$HomeBlocStateDefaultStateCopyWithImpl<$Res>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
+      companies == freezed
+          ? _value.companies
+          : companies // ignore: cast_nullable_to_non_nullable
+              as List<CompanyItem>,
       adsList == freezed
           ? _value.adsList
           : adsList // ignore: cast_nullable_to_non_nullable
@@ -1489,6 +1507,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
       this.error = "",
       this.refreshData = false,
       this.categories = const [],
+      this.companies = const [],
       this.adsList = const [],
       this.nearbyList = const [],
       this.userAddress]);
@@ -1516,6 +1535,9 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   final List<CategoryData> categories;
   @JsonKey(defaultValue: const [])
   @override
+  final List<CompanyItem> companies;
+  @JsonKey(defaultValue: const [])
+  @override
   final List<AdsItem> adsList;
   @JsonKey(defaultValue: const [])
   @override
@@ -1525,7 +1547,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
 
   @override
   String toString() {
-    return 'HomeBlocState.defaultState(adsIsLoading: $adsIsLoading, profileIsLoading: $profileIsLoading, nearbyMarketPlaceIsLoading: $nearbyMarketPlaceIsLoading, categoriesIsLoading: $categoriesIsLoading, error: $error, refreshData: $refreshData, categories: $categories, adsList: $adsList, nearbyList: $nearbyList, userAddress: $userAddress)';
+    return 'HomeBlocState.defaultState(adsIsLoading: $adsIsLoading, profileIsLoading: $profileIsLoading, nearbyMarketPlaceIsLoading: $nearbyMarketPlaceIsLoading, categoriesIsLoading: $categoriesIsLoading, error: $error, refreshData: $refreshData, categories: $categories, companies: $companies, adsList: $adsList, nearbyList: $nearbyList, userAddress: $userAddress)';
   }
 
   @override
@@ -1554,6 +1576,9 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             (identical(other.categories, categories) ||
                 const DeepCollectionEquality()
                     .equals(other.categories, categories)) &&
+            (identical(other.companies, companies) ||
+                const DeepCollectionEquality()
+                    .equals(other.companies, companies)) &&
             (identical(other.adsList, adsList) ||
                 const DeepCollectionEquality()
                     .equals(other.adsList, adsList)) &&
@@ -1575,6 +1600,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
       const DeepCollectionEquality().hash(error) ^
       const DeepCollectionEquality().hash(refreshData) ^
       const DeepCollectionEquality().hash(categories) ^
+      const DeepCollectionEquality().hash(companies) ^
       const DeepCollectionEquality().hash(adsList) ^
       const DeepCollectionEquality().hash(nearbyList) ^
       const DeepCollectionEquality().hash(userAddress);
@@ -1596,6 +1622,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             String error,
             bool refreshData,
             List<CategoryData> categories,
+            List<CompanyItem> companies,
             List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)
@@ -1609,6 +1636,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
         error,
         refreshData,
         categories,
+        companies,
         adsList,
         nearbyList,
         userAddress);
@@ -1625,6 +1653,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             String error,
             bool refreshData,
             List<CategoryData> categories,
+            List<CompanyItem> companies,
             List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)?
@@ -1638,6 +1667,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
         error,
         refreshData,
         categories,
+        companies,
         adsList,
         nearbyList,
         userAddress);
@@ -1654,6 +1684,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             String error,
             bool refreshData,
             List<CategoryData> categories,
+            List<CompanyItem> companies,
             List<AdsItem> adsList,
             List<MarketPlaceItem> nearbyList,
             Address? userAddress)?
@@ -1669,6 +1700,7 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
           error,
           refreshData,
           categories,
+          companies,
           adsList,
           nearbyList,
           userAddress);
@@ -1714,6 +1746,7 @@ abstract class HomeBlocStateDefaultState implements HomeBlocState {
       String error,
       bool refreshData,
       List<CategoryData> categories,
+      List<CompanyItem> companies,
       List<AdsItem> adsList,
       List<MarketPlaceItem> nearbyList,
       Address? userAddress]) = _$HomeBlocStateDefaultState;
@@ -1732,6 +1765,8 @@ abstract class HomeBlocStateDefaultState implements HomeBlocState {
   bool get refreshData => throw _privateConstructorUsedError;
   @override
   List<CategoryData> get categories => throw _privateConstructorUsedError;
+  @override
+  List<CompanyItem> get companies => throw _privateConstructorUsedError;
   @override
   List<AdsItem> get adsList => throw _privateConstructorUsedError;
   @override

@@ -155,7 +155,9 @@ class AppRouter extends _i24.RootStackRouter {
       final args = routeData.argsAs<SearchScreenRouteArgs>(
           orElse: () => const SearchScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i17.SearchScreen(key: args.key));
+          routeData: routeData,
+          child: _i17.SearchScreen(
+              key: args.key, outSideFilterDate: args.outSideFilterDate));
     },
     ViewAllMarketPlacesRoute.name: (routeData) {
       final args = routeData.argsAs<ViewAllMarketPlacesRouteArgs>(
@@ -616,21 +618,25 @@ class AboutUsScreenRouteArgs {
 /// generated route for
 /// [_i17.SearchScreen]
 class SearchScreenRoute extends _i24.PageRouteInfo<SearchScreenRouteArgs> {
-  SearchScreenRoute({_i25.Key? key})
+  SearchScreenRoute({_i25.Key? key, _i28.FilterDate? outSideFilterDate})
       : super(SearchScreenRoute.name,
-            path: '/search-screen', args: SearchScreenRouteArgs(key: key));
+            path: '/search-screen',
+            args: SearchScreenRouteArgs(
+                key: key, outSideFilterDate: outSideFilterDate));
 
   static const String name = 'SearchScreenRoute';
 }
 
 class SearchScreenRouteArgs {
-  const SearchScreenRouteArgs({this.key});
+  const SearchScreenRouteArgs({this.key, this.outSideFilterDate});
 
   final _i25.Key? key;
 
+  final _i28.FilterDate? outSideFilterDate;
+
   @override
   String toString() {
-    return 'SearchScreenRouteArgs{key: $key}';
+    return 'SearchScreenRouteArgs{key: $key, outSideFilterDate: $outSideFilterDate}';
   }
 }
 

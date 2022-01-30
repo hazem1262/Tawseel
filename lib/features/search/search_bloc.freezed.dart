@@ -39,8 +39,20 @@ class _$SearchBlocEventTearOff {
     return const ResetSearchRefreshData();
   }
 
+  ResetOpenFilterAction resetOpenFilterAction() {
+    return const ResetOpenFilterAction();
+  }
+
   GetSearchFilterData getSearchFilterDate(bool? openFilter) {
     return GetSearchFilterData(
+      openFilter,
+    );
+  }
+
+  SetSearchFilterData setSearchFilterDate(
+      FilterDate filterDate, bool openFilter) {
+    return SetSearchFilterData(
+      filterDate,
       openFilter,
     );
   }
@@ -74,7 +86,10 @@ mixin _$SearchBlocEvent {
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
     required TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -91,7 +106,10 @@ mixin _$SearchBlocEvent {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -108,7 +126,10 @@ mixin _$SearchBlocEvent {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -128,7 +149,10 @@ mixin _$SearchBlocEvent {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) =>
       throw _privateConstructorUsedError;
@@ -139,7 +163,9 @@ mixin _$SearchBlocEvent {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) =>
       throw _privateConstructorUsedError;
@@ -150,7 +176,9 @@ mixin _$SearchBlocEvent {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) =>
@@ -244,7 +272,10 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
     required TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -264,7 +295,10 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -284,7 +318,10 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -310,7 +347,10 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return searchMarketPlaces(this);
@@ -324,7 +364,9 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return searchMarketPlaces?.call(this);
@@ -338,7 +380,9 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
@@ -429,7 +473,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
     required TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -449,7 +496,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -469,7 +519,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -495,7 +548,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return addMarketPlaceToFavorite(this);
@@ -509,7 +565,9 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return addMarketPlaceToFavorite?.call(this);
@@ -523,7 +581,9 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
@@ -616,7 +676,10 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
     required TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -636,7 +699,10 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -656,7 +722,10 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -682,7 +751,10 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return removeMarketPlaceToFavorite(this);
@@ -696,7 +768,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return removeMarketPlaceToFavorite?.call(this);
@@ -710,7 +784,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
@@ -775,7 +851,10 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
     required TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -795,7 +874,10 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -815,7 +897,10 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -841,7 +926,10 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return reset(this);
@@ -855,7 +943,9 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return reset?.call(this);
@@ -869,7 +959,9 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
@@ -882,6 +974,175 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
 
 abstract class ResetSearchRefreshData implements SearchBlocEvent {
   const factory ResetSearchRefreshData() = _$ResetSearchRefreshData;
+}
+
+/// @nodoc
+abstract class $ResetOpenFilterActionCopyWith<$Res> {
+  factory $ResetOpenFilterActionCopyWith(ResetOpenFilterAction value,
+          $Res Function(ResetOpenFilterAction) then) =
+      _$ResetOpenFilterActionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ResetOpenFilterActionCopyWithImpl<$Res>
+    extends _$SearchBlocEventCopyWithImpl<$Res>
+    implements $ResetOpenFilterActionCopyWith<$Res> {
+  _$ResetOpenFilterActionCopyWithImpl(
+      ResetOpenFilterAction _value, $Res Function(ResetOpenFilterAction) _then)
+      : super(_value, (v) => _then(v as ResetOpenFilterAction));
+
+  @override
+  ResetOpenFilterAction get _value => super._value as ResetOpenFilterAction;
+}
+
+/// @nodoc
+
+class _$ResetOpenFilterAction implements ResetOpenFilterAction {
+  const _$ResetOpenFilterAction();
+
+  @override
+  String toString() {
+    return 'SearchBlocEvent.resetOpenFilterAction()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ResetOpenFilterAction);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? query) searchMarketPlaces,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
+    required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
+    required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
+  }) {
+    return resetOpenFilterAction();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? query)? searchMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
+    TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
+  }) {
+    return resetOpenFilterAction?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? query)? searchMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
+    TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
+    required TResult orElse(),
+  }) {
+    if (resetOpenFilterAction != null) {
+      return resetOpenFilterAction();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
+    required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
+  }) {
+    return resetOpenFilterAction(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
+  }) {
+    return resetOpenFilterAction?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
+    required TResult orElse(),
+  }) {
+    if (resetOpenFilterAction != null) {
+      return resetOpenFilterAction(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetOpenFilterAction implements SearchBlocEvent {
+  const factory ResetOpenFilterAction() = _$ResetOpenFilterAction;
 }
 
 /// @nodoc
@@ -954,7 +1215,10 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
     required TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -974,7 +1238,10 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -994,7 +1261,10 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -1020,7 +1290,10 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return getSearchFilterDate(this);
@@ -1034,7 +1307,9 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return getSearchFilterDate?.call(this);
@@ -1048,7 +1323,9 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
@@ -1065,6 +1342,229 @@ abstract class GetSearchFilterData implements SearchBlocEvent {
   bool? get openFilter => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GetSearchFilterDataCopyWith<GetSearchFilterData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetSearchFilterDataCopyWith<$Res> {
+  factory $SetSearchFilterDataCopyWith(
+          SetSearchFilterData value, $Res Function(SetSearchFilterData) then) =
+      _$SetSearchFilterDataCopyWithImpl<$Res>;
+  $Res call({FilterDate filterDate, bool openFilter});
+
+  $FilterDateCopyWith<$Res> get filterDate;
+}
+
+/// @nodoc
+class _$SetSearchFilterDataCopyWithImpl<$Res>
+    extends _$SearchBlocEventCopyWithImpl<$Res>
+    implements $SetSearchFilterDataCopyWith<$Res> {
+  _$SetSearchFilterDataCopyWithImpl(
+      SetSearchFilterData _value, $Res Function(SetSearchFilterData) _then)
+      : super(_value, (v) => _then(v as SetSearchFilterData));
+
+  @override
+  SetSearchFilterData get _value => super._value as SetSearchFilterData;
+
+  @override
+  $Res call({
+    Object? filterDate = freezed,
+    Object? openFilter = freezed,
+  }) {
+    return _then(SetSearchFilterData(
+      filterDate == freezed
+          ? _value.filterDate
+          : filterDate // ignore: cast_nullable_to_non_nullable
+              as FilterDate,
+      openFilter == freezed
+          ? _value.openFilter
+          : openFilter // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+
+  @override
+  $FilterDateCopyWith<$Res> get filterDate {
+    return $FilterDateCopyWith<$Res>(_value.filterDate, (value) {
+      return _then(_value.copyWith(filterDate: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SetSearchFilterData implements SetSearchFilterData {
+  const _$SetSearchFilterData(this.filterDate, this.openFilter);
+
+  @override
+  final FilterDate filterDate;
+  @override
+  final bool openFilter;
+
+  @override
+  String toString() {
+    return 'SearchBlocEvent.setSearchFilterDate(filterDate: $filterDate, openFilter: $openFilter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SetSearchFilterData &&
+            (identical(other.filterDate, filterDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.filterDate, filterDate)) &&
+            (identical(other.openFilter, openFilter) ||
+                const DeepCollectionEquality()
+                    .equals(other.openFilter, openFilter)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(filterDate) ^
+      const DeepCollectionEquality().hash(openFilter);
+
+  @JsonKey(ignore: true)
+  @override
+  $SetSearchFilterDataCopyWith<SetSearchFilterData> get copyWith =>
+      _$SetSearchFilterDataCopyWithImpl<SetSearchFilterData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? query) searchMarketPlaces,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
+    required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
+    required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
+    required TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)
+        applyFilterDate,
+  }) {
+    return setSearchFilterDate(filterDate, openFilter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? query)? searchMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
+    TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
+  }) {
+    return setSearchFilterDate?.call(filterDate, openFilter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? query)? searchMarketPlaces,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
+    TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
+    TResult Function(
+            String? query,
+            List<CategoryData> categoriesList,
+            List<CompanyItem> campaniesList,
+            int? delivery_price_range_from,
+            int? delivery_price_range_to,
+            int? max_distance)?
+        applyFilterDate,
+    required TResult orElse(),
+  }) {
+    if (setSearchFilterDate != null) {
+      return setSearchFilterDate(filterDate, openFilter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
+    required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
+    required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
+    required TResult Function(ApplySearchFilterData value) applyFilterDate,
+  }) {
+    return setSearchFilterDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
+  }) {
+    return setSearchFilterDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
+    TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
+    TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
+    TResult Function(ApplySearchFilterData value)? applyFilterDate,
+    required TResult orElse(),
+  }) {
+    if (setSearchFilterDate != null) {
+      return setSearchFilterDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetSearchFilterData implements SearchBlocEvent {
+  const factory SetSearchFilterData(FilterDate filterDate, bool openFilter) =
+      _$SetSearchFilterData;
+
+  FilterDate get filterDate => throw _privateConstructorUsedError;
+  bool get openFilter => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SetSearchFilterDataCopyWith<SetSearchFilterData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1209,7 +1709,10 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     required TResult Function(int id) addMarketPlaceToFavorite,
     required TResult Function(int id) removeMarketPlaceToFavorite,
     required TResult Function() reset,
+    required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
+    required TResult Function(FilterDate filterDate, bool openFilter)
+        setSearchFilterDate,
     required TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -1230,7 +1733,10 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -1251,7 +1757,10 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     TResult Function(int id)? addMarketPlaceToFavorite,
     TResult Function(int id)? removeMarketPlaceToFavorite,
     TResult Function()? reset,
+    TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
+    TResult Function(FilterDate filterDate, bool openFilter)?
+        setSearchFilterDate,
     TResult Function(
             String? query,
             List<CategoryData> categoriesList,
@@ -1278,7 +1787,10 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     required TResult Function(RemoveMarketPlaceFromFavorite value)
         removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
+    required TResult Function(ResetOpenFilterAction value)
+        resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
+    required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
   }) {
     return applyFilterDate(this);
@@ -1292,7 +1804,9 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
   }) {
     return applyFilterDate?.call(this);
@@ -1306,7 +1820,9 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     TResult Function(RemoveMarketPlaceFromFavorite value)?
         removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
+    TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
+    TResult Function(SetSearchFilterData value)? setSearchFilterDate,
     TResult Function(ApplySearchFilterData value)? applyFilterDate,
     required TResult orElse(),
   }) {
@@ -1351,6 +1867,7 @@ class _$SearchBlocStateTearOff {
       List<CompanyItem> campaniesList = const [],
       bool hasMorePages = false,
       bool filterIsReady = false,
+      bool openFilterNow = false,
       String? query,
       int? delivery_price_range_from,
       int? delivery_price_range_to,
@@ -1365,6 +1882,7 @@ class _$SearchBlocStateTearOff {
       campaniesList,
       hasMorePages,
       filterIsReady,
+      openFilterNow,
       query,
       delivery_price_range_from,
       delivery_price_range_to,
@@ -1387,6 +1905,7 @@ mixin _$SearchBlocState {
   List<CompanyItem> get campaniesList => throw _privateConstructorUsedError;
   bool get hasMorePages => throw _privateConstructorUsedError;
   bool get filterIsReady => throw _privateConstructorUsedError;
+  bool get openFilterNow => throw _privateConstructorUsedError;
   String? get query => throw _privateConstructorUsedError;
   int? get delivery_price_range_from => throw _privateConstructorUsedError;
   int? get delivery_price_range_to => throw _privateConstructorUsedError;
@@ -1404,6 +1923,7 @@ mixin _$SearchBlocState {
             List<CompanyItem> campaniesList,
             bool hasMorePages,
             bool filterIsReady,
+            bool openFilterNow,
             String? query,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
@@ -1423,6 +1943,7 @@ mixin _$SearchBlocState {
             List<CompanyItem> campaniesList,
             bool hasMorePages,
             bool filterIsReady,
+            bool openFilterNow,
             String? query,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
@@ -1442,6 +1963,7 @@ mixin _$SearchBlocState {
             List<CompanyItem> campaniesList,
             bool hasMorePages,
             bool filterIsReady,
+            bool openFilterNow,
             String? query,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
@@ -1487,6 +2009,7 @@ abstract class $SearchBlocStateCopyWith<$Res> {
       List<CompanyItem> campaniesList,
       bool hasMorePages,
       bool filterIsReady,
+      bool openFilterNow,
       String? query,
       int? delivery_price_range_from,
       int? delivery_price_range_to,
@@ -1513,6 +2036,7 @@ class _$SearchBlocStateCopyWithImpl<$Res>
     Object? campaniesList = freezed,
     Object? hasMorePages = freezed,
     Object? filterIsReady = freezed,
+    Object? openFilterNow = freezed,
     Object? query = freezed,
     Object? delivery_price_range_from = freezed,
     Object? delivery_price_range_to = freezed,
@@ -1555,6 +2079,10 @@ class _$SearchBlocStateCopyWithImpl<$Res>
           ? _value.filterIsReady
           : filterIsReady // ignore: cast_nullable_to_non_nullable
               as bool,
+      openFilterNow: openFilterNow == freezed
+          ? _value.openFilterNow
+          : openFilterNow // ignore: cast_nullable_to_non_nullable
+              as bool,
       query: query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -1593,6 +2121,7 @@ abstract class $SearchBlocStateDefaultStateCopyWith<$Res>
       List<CompanyItem> campaniesList,
       bool hasMorePages,
       bool filterIsReady,
+      bool openFilterNow,
       String? query,
       int? delivery_price_range_from,
       int? delivery_price_range_to,
@@ -1622,6 +2151,7 @@ class _$SearchBlocStateDefaultStateCopyWithImpl<$Res>
     Object? campaniesList = freezed,
     Object? hasMorePages = freezed,
     Object? filterIsReady = freezed,
+    Object? openFilterNow = freezed,
     Object? query = freezed,
     Object? delivery_price_range_from = freezed,
     Object? delivery_price_range_to = freezed,
@@ -1664,6 +2194,10 @@ class _$SearchBlocStateDefaultStateCopyWithImpl<$Res>
           ? _value.filterIsReady
           : filterIsReady // ignore: cast_nullable_to_non_nullable
               as bool,
+      openFilterNow == freezed
+          ? _value.openFilterNow
+          : openFilterNow // ignore: cast_nullable_to_non_nullable
+              as bool,
       query == freezed
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
@@ -1697,6 +2231,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
       this.campaniesList = const [],
       this.hasMorePages = false,
       this.filterIsReady = false,
+      this.openFilterNow = false,
       this.query,
       this.delivery_price_range_from,
       this.delivery_price_range_to,
@@ -1729,6 +2264,9 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
   @JsonKey(defaultValue: false)
   @override
   final bool filterIsReady;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool openFilterNow;
   @override
   final String? query;
   @override
@@ -1740,7 +2278,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
 
   @override
   String toString() {
-    return 'SearchBlocState.defaultState(isLoadingFirst: $isLoadingFirst, isLoadingPaging: $isLoadingPaging, error: $error, refreshData: $refreshData, searchList: $searchList, categoriesList: $categoriesList, campaniesList: $campaniesList, hasMorePages: $hasMorePages, filterIsReady: $filterIsReady, query: $query, delivery_price_range_from: $delivery_price_range_from, delivery_price_range_to: $delivery_price_range_to, max_distance: $max_distance)';
+    return 'SearchBlocState.defaultState(isLoadingFirst: $isLoadingFirst, isLoadingPaging: $isLoadingPaging, error: $error, refreshData: $refreshData, searchList: $searchList, categoriesList: $categoriesList, campaniesList: $campaniesList, hasMorePages: $hasMorePages, filterIsReady: $filterIsReady, openFilterNow: $openFilterNow, query: $query, delivery_price_range_from: $delivery_price_range_from, delivery_price_range_to: $delivery_price_range_to, max_distance: $max_distance)';
   }
 
   @override
@@ -1773,6 +2311,9 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
             (identical(other.filterIsReady, filterIsReady) ||
                 const DeepCollectionEquality()
                     .equals(other.filterIsReady, filterIsReady)) &&
+            (identical(other.openFilterNow, openFilterNow) ||
+                const DeepCollectionEquality()
+                    .equals(other.openFilterNow, openFilterNow)) &&
             (identical(other.query, query) ||
                 const DeepCollectionEquality().equals(other.query, query)) &&
             (identical(other.delivery_price_range_from,
@@ -1801,6 +2342,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
       const DeepCollectionEquality().hash(campaniesList) ^
       const DeepCollectionEquality().hash(hasMorePages) ^
       const DeepCollectionEquality().hash(filterIsReady) ^
+      const DeepCollectionEquality().hash(openFilterNow) ^
       const DeepCollectionEquality().hash(query) ^
       const DeepCollectionEquality().hash(delivery_price_range_from) ^
       const DeepCollectionEquality().hash(delivery_price_range_to) ^
@@ -1825,6 +2367,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
             List<CompanyItem> campaniesList,
             bool hasMorePages,
             bool filterIsReady,
+            bool openFilterNow,
             String? query,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
@@ -1841,6 +2384,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
         campaniesList,
         hasMorePages,
         filterIsReady,
+        openFilterNow,
         query,
         delivery_price_range_from,
         delivery_price_range_to,
@@ -1860,6 +2404,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
             List<CompanyItem> campaniesList,
             bool hasMorePages,
             bool filterIsReady,
+            bool openFilterNow,
             String? query,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
@@ -1876,6 +2421,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
         campaniesList,
         hasMorePages,
         filterIsReady,
+        openFilterNow,
         query,
         delivery_price_range_from,
         delivery_price_range_to,
@@ -1895,6 +2441,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
             List<CompanyItem> campaniesList,
             bool hasMorePages,
             bool filterIsReady,
+            bool openFilterNow,
             String? query,
             int? delivery_price_range_from,
             int? delivery_price_range_to,
@@ -1913,6 +2460,7 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
           campaniesList,
           hasMorePages,
           filterIsReady,
+          openFilterNow,
           query,
           delivery_price_range_from,
           delivery_price_range_to,
@@ -1961,6 +2509,7 @@ abstract class SearchBlocStateDefaultState implements SearchBlocState {
       List<CompanyItem> campaniesList,
       bool hasMorePages,
       bool filterIsReady,
+      bool openFilterNow,
       String? query,
       int? delivery_price_range_from,
       int? delivery_price_range_to,
@@ -1984,6 +2533,8 @@ abstract class SearchBlocStateDefaultState implements SearchBlocState {
   bool get hasMorePages => throw _privateConstructorUsedError;
   @override
   bool get filterIsReady => throw _privateConstructorUsedError;
+  @override
+  bool get openFilterNow => throw _privateConstructorUsedError;
   @override
   String? get query => throw _privateConstructorUsedError;
   @override

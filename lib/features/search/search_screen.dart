@@ -20,19 +20,34 @@ import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:tawseel/utils/pagination_list.dart';
 
+/**
+ * home (search) -> search -> filter
+ * home (filter) -> search -> filter 
+ */
+
 class SearchScreen extends StatelessWidget {
-  SearchScreen({Key? key}) : super(key: key);
+  SearchScreen({Key? key, this.outSideFilterDate}) : super(key: key);
+  FilterDate? outSideFilterDate;
   var searchInputController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SearchBloc(
-        getIt.get<IMarketPlaceRepository>(),
-        getIt.get<IFilterRepository>(),
-      )
-        ..add(GetSearchMarketPlaces(null))
-        ..add(GetSearchFilterData(false)),
+    return BlocProvider<SearchBloc>(
+      create: (context) {
+        if (outSideFilterDate == null) {
+          return SearchBloc(
+            getIt.get<IMarketPlaceRepository>(),
+            getIt.get<IFilterRepository>(),
+          )..add(GetSearchFilterData(false));
+        } else {
+          return SearchBloc(
+            getIt.get<IMarketPlaceRepository>(),
+            getIt.get<IFilterRepository>(),
+          )
+            ..add(SetSearchFilterData(outSideFilterDate!, true))
+            ..add(ResetOpenFilterAction());
+        }
+      },
       lazy: false,
       child: Builder(builder: (context) {
         return Scaffold(
@@ -43,6 +58,9 @@ class SearchScreen extends StatelessWidget {
                 BlocProvider.of<SearchBloc>(context)
                   ..add(GetSearchFilterData(false))
                   ..add(GetSearchMarketPlaces(null));
+              }
+              if (state.openFilterNow) {
+                openFilterNow(context, state);
               }
             },
             child: SafeArea(
@@ -69,30 +87,7 @@ class SearchScreen extends StatelessWidget {
                             state: state,
                             onFilterClicked: () {
                               // if (state.filterIsReady)
-                              context.router.push(
-                                FilterScreenRoute(
-                                  onApplyFilter: (filterData) {
-                                    doApplyFilter(
-                                      context: context,
-                                      state: state,
-                                      filterData: filterData,
-                                    );
-                                  },
-                                  onResetFilter: () {
-                                    // BlocProvider.of<SearchBloc>(context)
-                                    //   ..add(ResetSearchRefreshData());
-                                  },
-                                  filterDate: FilterDate(
-                                    categories: state.categoriesList,
-                                    companies: state.campaniesList,
-                                    delivery_price_range_from:
-                                        state.delivery_price_range_from ?? 0,
-                                    delivery_price_range_to:
-                                        state.delivery_price_range_to ?? 0,
-                                    max_distance: state.max_distance ?? 0,
-                                  ),
-                                ),
-                              );
+                              openFilterNow(context, state);
                             },
                             onSearchClicked: () {
                               BlocProvider.of<SearchBloc>(context)
@@ -252,5 +247,30 @@ class SearchScreen extends StatelessWidget {
             filterData.max_distance == 0 ? null : filterData.max_distance,
       ))
       ..add(GetSearchMarketPlaces(null));
+  }
+
+  void openFilterNow(BuildContext context, SearchBlocState state) {
+    context.router.push(
+      FilterScreenRoute(
+        onApplyFilter: (filterData) {
+          doApplyFilter(
+            context: context,
+            state: state,
+            filterData: filterData,
+          );
+        },
+        onResetFilter: () {
+          // BlocProvider.of<SearchBloc>(context)
+          //   ..add(ResetSearchRefreshData());
+        },
+        filterDate: FilterDate(
+          categories: state.categoriesList,
+          companies: state.campaniesList,
+          delivery_price_range_from: state.delivery_price_range_from ?? 0,
+          delivery_price_range_to: state.delivery_price_range_to ?? 0,
+          max_distance: state.max_distance ?? 0,
+        ),
+      ),
+    );
   }
 }

@@ -18,6 +18,8 @@ import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesR
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
+import 'package:tawseel/features/search/FilterDate.dart';
+import 'package:tawseel/features/search/bloc/filter_repository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/models/address.dart';
 import 'package:tawseel/navigation/router.gr.dart';
@@ -47,10 +49,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext ctx) {
     return BlocProvider(
       create: (context) => HomeBloc(
-        getIt.get<IHomeRepository>(),
         getIt.get<IAdsRepository>(),
         getIt.get<IProfileRepository>(),
         getIt.get<IMarketPlaceRepository>(),
+        getIt.get<IFilterRepository>(),
       )
         ..add(GetHomeProfile())
         ..add(GetHomeAds())
@@ -96,9 +98,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                     ),
-                    searchArea(onClick: () {
-                      appContext.openIfExist(SearchScreenRoute());
-                    }),
+                    BlocBuilder<HomeBloc, HomeBlocState>(
+                      builder: (context, state) {
+                        return searchArea(
+                            state: state,
+                            onSearchClicked: () {
+                              appContext.openIfExist(SearchScreenRoute());
+                            },
+                            onFilterClicked: () {
+                              appContext.openIfExist(
+                                SearchScreenRoute(
+                                  outSideFilterDate: FilterDate(
+                                    categories: state.categories,
+                                    companies: state.companies,
+                                    delivery_price_range_from: 0,
+                                    delivery_price_range_to: 0,
+                                    max_distance: 0,
+                                  ),
+                                ),
+                              );
+                            });
+                      },
+                    ),
                     BlocBuilder<HomeBloc, HomeBlocState>(
                       builder: (context, state) {
                         return adsArea(state.adsIsLoading, state.adsList);
@@ -1353,18 +1374,21 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
   );
 }
 
-Widget searchArea({required Function onClick}) {
-  return GestureDetector(
-    onTap: () {
-      onClick();
-    },
-    child: Container(
-      margin: EdgeInsets.only(top: 16),
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
+Widget searchArea({
+  required HomeBlocState state,
+  GestureTapCallback? onFilterClicked,
+  GestureTapCallback? onSearchClicked,
+}) {
+  final isDataAva = state.companies.isNotEmpty || state.categories.isNotEmpty;
+  return Container(
+    margin: EdgeInsets.only(top: 16),
+    padding: EdgeInsets.symmetric(horizontal: 20),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: InkWell(
+            onTap: onSearchClicked,
             child: Container(
               padding: EdgeInsets.all(18),
               decoration: BoxDecoration(
@@ -1392,12 +1416,15 @@ Widget searchArea({required Function onClick}) {
               ),
             ),
           ),
-          SizedBox(
-            width: 10,
-          ),
-          Container(
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        InkWell(
+          onTap: isDataAva ? onFilterClicked : null,
+          child: Container(
             decoration: BoxDecoration(
-                color: ThemeManager.primary,
+                color: isDataAva ? ThemeManager.primary : Colors.grey[300],
                 borderRadius: BorderRadius.circular(10),
                 shape: BoxShape.rectangle),
             child: Padding(
@@ -1408,9 +1435,9 @@ Widget searchArea({required Function onClick}) {
                 height: 20,
               ),
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     ),
   );
 }
