@@ -811,7 +811,9 @@ Widget marketPlaceItem(
                                 vertical: 4,
                               ),
                               child: Text(
-                                "${marketPlace.delivery_cost}",
+                                marketPlace.isFreeDelivery()
+                                    ? LocaleKeys.free.tr()
+                                    : "${marketPlace.delivery_cost}",
                                 style: TextStyle(
                                   fontSize: CaptionTextSize,
                                   fontWeight: FontWeight.w500,
@@ -849,9 +851,8 @@ Widget marketPlaceItem(
                                   child: CachedNetworkImage(
                                     fit: BoxFit.fitWidth,
                                     imageUrl: (marketPlace.companies.safeFirst()
-                                                as CompanyItem)
-                                            .image ??
-                                        "",
+                                            as CompanyItem)
+                                        .image,
                                     errorWidget: (context, url, error) =>
                                         Icon(Icons.error),
                                   ),
@@ -1342,7 +1343,9 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
                         color: ThemeManager.primary.withAlpha(30),
                       ),
                       child: Text(
-                        "${item.delivery_cost}",
+                        item.isFreeDelivery()
+                            ? LocaleKeys.free.tr()
+                            : "${item.delivery_cost}",
                         style: Theme.of(context).textTheme.caption!.copyWith(
                               fontSize: CaptionTextSize,
                               color: tm.isDark()

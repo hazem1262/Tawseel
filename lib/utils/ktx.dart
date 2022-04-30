@@ -277,6 +277,11 @@ extension MarketPlaceDtx on MarketPlaceItem {
 
     return cats + (subCats.isNotEmpty ? ", " : "") + subCats;
   }
+
+  bool isFreeDelivery() =>
+      (this.delivery_cost?.contains("0 SAR") ?? false) ||
+      (this.delivery_cost?.contains("٠ ريال") ?? false) ||
+      (this.delivery_cost?.contains("0 ريال") ?? false);
 }
 
 final SCHEMES_MAP = {
