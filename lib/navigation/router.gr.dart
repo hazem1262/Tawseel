@@ -10,6 +10,7 @@
 
 import 'package:auto_route/auto_route.dart' as _i24;
 import 'package:flutter/material.dart' as _i25;
+import 'package:flutter/widgets.dart' as _i26;
 
 import '../features/about/about_us.dart' as _i16;
 import '../features/address/models/AddressDetailsScreen.dart' as _i9;
@@ -18,7 +19,7 @@ import '../features/categoryDetails/CategoryDetailsScreen.dart' as _i14;
 import '../features/changePassword/ChangePasswordScreen.dart' as _i11;
 import '../features/landingScreen/LandingScreen.dart' as _i2;
 import '../features/locationPicker/LocationPickerDialog.dart' as _i8;
-import '../features/locationPicker/user_picked_location.dart' as _i27;
+import '../features/locationPicker/user_picked_location.dart' as _i28;
 import '../features/login/LoginScreen.dart' as _i3;
 import '../features/mainScreen/bottomTabs/favorites/FavoritesScreen.dart'
     as _i22;
@@ -29,11 +30,11 @@ import '../features/mainScreen/bottomTabs/profile/editProfileScreen/EditProfileS
 import '../features/mainScreen/bottomTabs/profile/profileScreen/ProfileScreen.dart'
     as _i23;
 import '../features/mainScreen/MainScreen.dart' as _i6;
-import '../features/otp/models/otp_models.dart' as _i26;
+import '../features/otp/models/otp_models.dart' as _i27;
 import '../features/otp/OtpScreen.dart' as _i5;
 import '../features/phone/SendPhoneScreen.dart' as _i10;
 import '../features/search/filter_screen.dart' as _i19;
-import '../features/search/FilterDate.dart' as _i28;
+import '../features/search/FilterDate.dart' as _i29;
 import '../features/search/search_screen.dart' as _i17;
 import '../features/signup/SignUpScreen.dart' as _i4;
 import '../features/splash/SplashScreen.dart' as _i1;
@@ -250,7 +251,7 @@ class AppRouter extends _i24.RootStackRouter {
 /// generated route for
 /// [_i1.SplashScreen]
 class SplashScreenRoute extends _i24.PageRouteInfo<SplashScreenRouteArgs> {
-  SplashScreenRoute({_i25.Key? key})
+  SplashScreenRoute({_i26.Key? key})
       : super(SplashScreenRoute.name,
             path: '/', args: SplashScreenRouteArgs(key: key));
 
@@ -260,7 +261,7 @@ class SplashScreenRoute extends _i24.PageRouteInfo<SplashScreenRouteArgs> {
 class SplashScreenRouteArgs {
   const SplashScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -289,7 +290,7 @@ class LoginScreenRoute extends _i24.PageRouteInfo<void> {
 /// generated route for
 /// [_i4.SignUpScreen]
 class SignUpScreenRoute extends _i24.PageRouteInfo<SignUpScreenRouteArgs> {
-  SignUpScreenRoute({_i25.Key? key})
+  SignUpScreenRoute({_i26.Key? key})
       : super(SignUpScreenRoute.name,
             path: '/sign-up-screen', args: SignUpScreenRouteArgs(key: key));
 
@@ -299,7 +300,7 @@ class SignUpScreenRoute extends _i24.PageRouteInfo<SignUpScreenRouteArgs> {
 class SignUpScreenRouteArgs {
   const SignUpScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -311,7 +312,7 @@ class SignUpScreenRouteArgs {
 /// [_i5.OtpScreen]
 class OtpScreenRoute extends _i24.PageRouteInfo<OtpScreenRouteArgs> {
   OtpScreenRoute(
-      {_i25.Key? key, required _i26.OTP_TYPE otpType, required String phone})
+      {_i26.Key? key, required _i27.OTP_TYPE otpType, required String phone})
       : super(OtpScreenRoute.name,
             path: '/otp-screen',
             args: OtpScreenRouteArgs(key: key, otpType: otpType, phone: phone));
@@ -323,9 +324,9 @@ class OtpScreenRouteArgs {
   const OtpScreenRouteArgs(
       {this.key, required this.otpType, required this.phone});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
-  final _i26.OTP_TYPE otpType;
+  final _i27.OTP_TYPE otpType;
 
   final String phone;
 
@@ -338,7 +339,7 @@ class OtpScreenRouteArgs {
 /// generated route for
 /// [_i6.MainScreen]
 class MainScreenRoute extends _i24.PageRouteInfo<MainScreenRouteArgs> {
-  MainScreenRoute({_i25.Key? key, List<_i24.PageRouteInfo>? children})
+  MainScreenRoute({_i26.Key? key, List<_i24.PageRouteInfo>? children})
       : super(MainScreenRoute.name,
             path: '/main-screen',
             args: MainScreenRouteArgs(key: key),
@@ -350,7 +351,7 @@ class MainScreenRoute extends _i24.PageRouteInfo<MainScreenRouteArgs> {
 class MainScreenRouteArgs {
   const MainScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -362,7 +363,7 @@ class MainScreenRouteArgs {
 /// [_i7.EditProfileScreen]
 class EditProfileScreenRoute
     extends _i24.PageRouteInfo<EditProfileScreenRouteArgs> {
-  EditProfileScreenRoute({_i25.Key? key})
+  EditProfileScreenRoute({_i26.Key? key})
       : super(EditProfileScreenRoute.name,
             path: '/edit-profile-screen',
             args: EditProfileScreenRouteArgs(key: key));
@@ -373,7 +374,7 @@ class EditProfileScreenRoute
 class EditProfileScreenRouteArgs {
   const EditProfileScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -386,7 +387,7 @@ class EditProfileScreenRouteArgs {
 class LocationPickerDialogRoute
     extends _i24.PageRouteInfo<LocationPickerDialogRouteArgs> {
   LocationPickerDialogRoute(
-      {_i25.Key? key, required bool oppenedFromMyAddresses})
+      {_i26.Key? key, required bool oppenedFromMyAddresses})
       : super(LocationPickerDialogRoute.name,
             path: '/location-picker-dialog',
             args: LocationPickerDialogRouteArgs(
@@ -399,7 +400,7 @@ class LocationPickerDialogRouteArgs {
   const LocationPickerDialogRouteArgs(
       {this.key, required this.oppenedFromMyAddresses});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   final bool oppenedFromMyAddresses;
 
@@ -414,8 +415,8 @@ class LocationPickerDialogRouteArgs {
 class AddressDetailsScreenRoute
     extends _i24.PageRouteInfo<AddressDetailsScreenRouteArgs> {
   AddressDetailsScreenRoute(
-      {_i25.Key? key,
-      required _i27.UserPickedLocation pickedLocation,
+      {_i26.Key? key,
+      required _i28.UserPickedLocation pickedLocation,
       required bool oppenedFromMyAddresses})
       : super(AddressDetailsScreenRoute.name,
             path: '/address-details-screen',
@@ -433,9 +434,9 @@ class AddressDetailsScreenRouteArgs {
       required this.pickedLocation,
       required this.oppenedFromMyAddresses});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
-  final _i27.UserPickedLocation pickedLocation;
+  final _i28.UserPickedLocation pickedLocation;
 
   final bool oppenedFromMyAddresses;
 
@@ -449,7 +450,7 @@ class AddressDetailsScreenRouteArgs {
 /// [_i10.SendPhoneScreen]
 class SendPhoneScreenRoute
     extends _i24.PageRouteInfo<SendPhoneScreenRouteArgs> {
-  SendPhoneScreenRoute({_i25.Key? key, required _i10.Intention intention})
+  SendPhoneScreenRoute({_i26.Key? key, required _i10.Intention intention})
       : super(SendPhoneScreenRoute.name,
             path: '/send-phone-screen',
             args: SendPhoneScreenRouteArgs(key: key, intention: intention));
@@ -460,7 +461,7 @@ class SendPhoneScreenRoute
 class SendPhoneScreenRouteArgs {
   const SendPhoneScreenRouteArgs({this.key, required this.intention});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   final _i10.Intention intention;
 
@@ -475,7 +476,7 @@ class SendPhoneScreenRouteArgs {
 class ChangePasswordScreenRoute
     extends _i24.PageRouteInfo<ChangePasswordScreenRouteArgs> {
   ChangePasswordScreenRoute(
-      {_i25.Key? key, required _i11.ChangePasswordIntention intention})
+      {_i26.Key? key, required _i11.ChangePasswordIntention intention})
       : super(ChangePasswordScreenRoute.name,
             path: '/change-password-screen',
             args:
@@ -487,7 +488,7 @@ class ChangePasswordScreenRoute
 class ChangePasswordScreenRouteArgs {
   const ChangePasswordScreenRouteArgs({this.key, required this.intention});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   final _i11.ChangePasswordIntention intention;
 
@@ -500,7 +501,7 @@ class ChangePasswordScreenRouteArgs {
 /// generated route for
 /// [_i12.SupportScreen]
 class SupportScreenRoute extends _i24.PageRouteInfo<SupportScreenRouteArgs> {
-  SupportScreenRoute({_i25.Key? key})
+  SupportScreenRoute({_i26.Key? key})
       : super(SupportScreenRoute.name,
             path: '/support-screen', args: SupportScreenRouteArgs(key: key));
 
@@ -510,7 +511,7 @@ class SupportScreenRoute extends _i24.PageRouteInfo<SupportScreenRouteArgs> {
 class SupportScreenRouteArgs {
   const SupportScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -522,7 +523,7 @@ class SupportScreenRouteArgs {
 /// [_i13.MyAddressesScreen]
 class MyAddressesScreenRoute
     extends _i24.PageRouteInfo<MyAddressesScreenRouteArgs> {
-  MyAddressesScreenRoute({_i25.Key? key})
+  MyAddressesScreenRoute({_i26.Key? key})
       : super(MyAddressesScreenRoute.name,
             path: '/my-addresses-screen',
             args: MyAddressesScreenRouteArgs(key: key));
@@ -533,7 +534,7 @@ class MyAddressesScreenRoute
 class MyAddressesScreenRouteArgs {
   const MyAddressesScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -546,7 +547,7 @@ class MyAddressesScreenRouteArgs {
 class CategoryDetailsScreenRoute
     extends _i24.PageRouteInfo<CategoryDetailsScreenRouteArgs> {
   CategoryDetailsScreenRoute(
-      {_i25.Key? key, required int categoryId, required String categoryName})
+      {_i26.Key? key, required int categoryId, required String categoryName})
       : super(CategoryDetailsScreenRoute.name,
             path: '/category-details-screen',
             args: CategoryDetailsScreenRouteArgs(
@@ -559,7 +560,7 @@ class CategoryDetailsScreenRouteArgs {
   const CategoryDetailsScreenRouteArgs(
       {this.key, required this.categoryId, required this.categoryName});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   final int categoryId;
 
@@ -575,7 +576,7 @@ class CategoryDetailsScreenRouteArgs {
 /// [_i15.TermsAndConditionsScreen]
 class TermsAndConditionsScreenRoute
     extends _i24.PageRouteInfo<TermsAndConditionsScreenRouteArgs> {
-  TermsAndConditionsScreenRoute({_i25.Key? key})
+  TermsAndConditionsScreenRoute({_i26.Key? key})
       : super(TermsAndConditionsScreenRoute.name,
             path: '/terms-and-conditions-screen',
             args: TermsAndConditionsScreenRouteArgs(key: key));
@@ -586,7 +587,7 @@ class TermsAndConditionsScreenRoute
 class TermsAndConditionsScreenRouteArgs {
   const TermsAndConditionsScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -597,7 +598,7 @@ class TermsAndConditionsScreenRouteArgs {
 /// generated route for
 /// [_i16.AboutUsScreen]
 class AboutUsScreenRoute extends _i24.PageRouteInfo<AboutUsScreenRouteArgs> {
-  AboutUsScreenRoute({_i25.Key? key})
+  AboutUsScreenRoute({_i26.Key? key})
       : super(AboutUsScreenRoute.name,
             path: '/about-us-screen', args: AboutUsScreenRouteArgs(key: key));
 
@@ -607,7 +608,7 @@ class AboutUsScreenRoute extends _i24.PageRouteInfo<AboutUsScreenRouteArgs> {
 class AboutUsScreenRouteArgs {
   const AboutUsScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -618,7 +619,7 @@ class AboutUsScreenRouteArgs {
 /// generated route for
 /// [_i17.SearchScreen]
 class SearchScreenRoute extends _i24.PageRouteInfo<SearchScreenRouteArgs> {
-  SearchScreenRoute({_i25.Key? key, _i28.FilterDate? outSideFilterDate})
+  SearchScreenRoute({_i26.Key? key, _i29.FilterDate? outSideFilterDate})
       : super(SearchScreenRoute.name,
             path: '/search-screen',
             args: SearchScreenRouteArgs(
@@ -630,9 +631,9 @@ class SearchScreenRoute extends _i24.PageRouteInfo<SearchScreenRouteArgs> {
 class SearchScreenRouteArgs {
   const SearchScreenRouteArgs({this.key, this.outSideFilterDate});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
-  final _i28.FilterDate? outSideFilterDate;
+  final _i29.FilterDate? outSideFilterDate;
 
   @override
   String toString() {
@@ -685,10 +686,10 @@ class ViewAllMarketPlacesRouteArgs {
 /// [_i19.FilterScreen]
 class FilterScreenRoute extends _i24.PageRouteInfo<FilterScreenRouteArgs> {
   FilterScreenRoute(
-      {_i25.Key? key,
-      required dynamic Function(_i28.FilterDate) onApplyFilter,
+      {_i26.Key? key,
+      required dynamic Function(_i29.FilterDate) onApplyFilter,
       required void Function() onResetFilter,
-      required _i28.FilterDate filterDate})
+      required _i29.FilterDate filterDate})
       : super(FilterScreenRoute.name,
             path: '/filter-screen',
             args: FilterScreenRouteArgs(
@@ -707,13 +708,13 @@ class FilterScreenRouteArgs {
       required this.onResetFilter,
       required this.filterDate});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
-  final dynamic Function(_i28.FilterDate) onApplyFilter;
+  final dynamic Function(_i29.FilterDate) onApplyFilter;
 
   final void Function() onResetFilter;
 
-  final _i28.FilterDate filterDate;
+  final _i29.FilterDate filterDate;
 
   @override
   String toString() {
@@ -724,7 +725,7 @@ class FilterScreenRouteArgs {
 /// generated route for
 /// [_i20.HomeScreen]
 class HomeScreenRoute extends _i24.PageRouteInfo<HomeScreenRouteArgs> {
-  HomeScreenRoute({_i25.Key? key})
+  HomeScreenRoute({_i26.Key? key})
       : super(HomeScreenRoute.name,
             path: '', args: HomeScreenRouteArgs(key: key));
 
@@ -734,7 +735,7 @@ class HomeScreenRoute extends _i24.PageRouteInfo<HomeScreenRouteArgs> {
 class HomeScreenRouteArgs {
   const HomeScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -745,7 +746,7 @@ class HomeScreenRouteArgs {
 /// generated route for
 /// [_i21.OffersScreen]
 class OffersScreenRoute extends _i24.PageRouteInfo<OffersScreenRouteArgs> {
-  OffersScreenRoute({_i25.Key? key})
+  OffersScreenRoute({_i26.Key? key})
       : super(OffersScreenRoute.name,
             path: 'offers-screen', args: OffersScreenRouteArgs(key: key));
 
@@ -755,7 +756,7 @@ class OffersScreenRoute extends _i24.PageRouteInfo<OffersScreenRouteArgs> {
 class OffersScreenRouteArgs {
   const OffersScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -767,7 +768,7 @@ class OffersScreenRouteArgs {
 /// [_i22.FavoritesScreen]
 class FavoritesScreenRoute
     extends _i24.PageRouteInfo<FavoritesScreenRouteArgs> {
-  FavoritesScreenRoute({_i25.Key? key})
+  FavoritesScreenRoute({_i26.Key? key})
       : super(FavoritesScreenRoute.name,
             path: 'favorites-screen', args: FavoritesScreenRouteArgs(key: key));
 
@@ -777,7 +778,7 @@ class FavoritesScreenRoute
 class FavoritesScreenRouteArgs {
   const FavoritesScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {
@@ -788,7 +789,7 @@ class FavoritesScreenRouteArgs {
 /// generated route for
 /// [_i23.ProfileScreen]
 class ProfileScreenRoute extends _i24.PageRouteInfo<ProfileScreenRouteArgs> {
-  ProfileScreenRoute({_i25.Key? key})
+  ProfileScreenRoute({_i26.Key? key})
       : super(ProfileScreenRoute.name,
             path: 'profile-screen', args: ProfileScreenRouteArgs(key: key));
 
@@ -798,7 +799,7 @@ class ProfileScreenRoute extends _i24.PageRouteInfo<ProfileScreenRouteArgs> {
 class ProfileScreenRouteArgs {
   const ProfileScreenRouteArgs({this.key});
 
-  final _i25.Key? key;
+  final _i26.Key? key;
 
   @override
   String toString() {

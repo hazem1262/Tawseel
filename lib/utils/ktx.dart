@@ -15,8 +15,17 @@ extension ToggleLanguage on BuildContext {
       this.setLocale(Locale('en'));
     else
       this.setLocale(Locale('ar'));
-
     appContext.openOnly(MainScreenRoute());
+  }
+}
+
+extension ListDtx on Iterable<dynamic> {
+  dynamic safeFirst() {
+    try {
+      return this.first;
+    } catch (e) {
+      return null;
+    }
   }
 }
 
@@ -82,10 +91,12 @@ extension AutoRouterNavigationDtx on BuildContext {
 
 extension GeneralDtx on BuildContext {
   void nextFoucs() => FocusScope.of(this).nextFocus();
+
   FocusScopeNode currentFoucs() => FocusScope.of(this);
 }
 
 FocusManager get focusManager => FocusManager.instance;
+
 FocusNode? get currentFocus => FocusManager.instance.primaryFocus;
 
 hideKeyboard() {
@@ -252,7 +263,7 @@ extension MarketPlacesDtx on List<MarketPlaceItem> {
 }
 
 extension MarketPlaceDtx on MarketPlaceItem {
-  CompanyItem getBestDeliveryCompany() =>
+  CompanyItem? getBestDeliveryCompany() =>
       this.companies.firstWhere((element) => element.is_best == true);
 
   String getItemCategories() {
@@ -300,4 +311,9 @@ extension CompaniesDtx on CompanyItem {
   String getIosUrlScheme() =>
       SCHEMES_MAP["id" + this.ios_app_link.split("/id")[1].split("?")[0]] ??=
           this.ios_app_link;
+
+  bool isFreeDelivery() =>
+      (this.delivery_cost?.contains("0 SAR") ?? false) ||
+      (this.delivery_cost?.contains("٠ ريال") ?? false) ||
+      (this.delivery_cost?.contains("0 ريال") ?? false);
 }

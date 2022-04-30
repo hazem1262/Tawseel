@@ -102,8 +102,8 @@
   "remove": "Remove",
   "best_price": "Best Price",
   "offers_empty_title": "No offers available",
-  "offers_empty_subtitle": "There is no offers avaiable yet, but when we add them, they will appear here.",
-  "related_resuturants": "Related Resturants",
+  "offers_empty_subtitle": "There is no offers available yet, but when we add them, they will appear here.",
+  "related_resuturants": "Related Restaurants",
   "five_kilo": "( 5 Kilo )",
   "min_order": "Min Order",
   
@@ -114,5 +114,17 @@
   "km": " KM",
   "apply_filter": "Apply Filter",
   "reset": "Reset",
-  "sar": "SAR"
+  "sar": "SAR",
+
+  "yes":"Change",
+  "no":"Cancel",
+  "language_dialog_title":"Changing the language will restart the app.",
+  "language_dialog_content":"Do you want to continue ?",
+
+  "free":"Free",
+
+  "delete_account_message":"Are you sure you want to Delete your Account?",
+  "delete_account_message2":"You can't undo this action.",
+  "delete_account":"Double Tap to delete account"
+
 }

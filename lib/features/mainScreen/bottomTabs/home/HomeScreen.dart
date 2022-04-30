@@ -618,22 +618,16 @@ Widget adItem(AdsItem ad, Function onClick) {
         width: screenWidth * 0.89,
         decoration: BoxDecoration(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.05),
-              spreadRadius: 1,
-              blurRadius: 2,
-              offset: Offset(0, 3),
-            ),
-          ],
         ),
-        child: CachedNetworkImage(
-          fit: BoxFit.fill,
-          imageUrl: ad.image ?? "",
-          placeholder: (context, url) =>
-              Center(child: CircularProgressIndicator()),
-          errorWidget: (context, url, error) => Icon(Icons.error),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.0),
+          child: CachedNetworkImage(
+            fit: BoxFit.fill,
+            imageUrl: ad.image ?? "",
+            placeholder: (context, url) =>
+                Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) => Icon(Icons.error),
+          ),
         )),
   );
 }
@@ -840,7 +834,7 @@ Widget marketPlaceItem(
                           children: [
                             SizedBox(width: 8),
                             Container(
-                              width: screenWidth * 0.245,
+                              width: screenWidth * 0.235,
                               height: safeHeight * 0.032,
                               decoration: BoxDecoration(
                                 border: Border.all(
@@ -854,9 +848,10 @@ Widget marketPlaceItem(
                                 child: Container(
                                   child: CachedNetworkImage(
                                     fit: BoxFit.fitWidth,
-                                    imageUrl: marketPlace
-                                        .getBestDeliveryCompany()
-                                        .image,
+                                    imageUrl: (marketPlace.companies.safeFirst()
+                                                as CompanyItem)
+                                            .image ??
+                                        "",
                                     errorWidget: (context, url, error) =>
                                         Icon(Icons.error),
                                   ),
@@ -938,8 +933,8 @@ Widget rateWidget(String rating, Color textColor, double textSize) {
     children: [
       Image.asset(
         Res.star_icon,
-        width: safeHeight * 0.02,
-        height: safeHeight * 0.02,
+        width: safeHeight * 0.015,
+        height: safeHeight * 0.015,
       ),
       SizedBox(width: 4),
       Text(
@@ -1016,7 +1011,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                           rateWidget(
                             item.rating ?? "",
                             tm.isDark() ? Colors.white : Colors.grey,
-                            CaptionTextSize,
+                            ErrorTextSize,
                           )
                         ],
                       ),
@@ -1040,7 +1035,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                               fontWeight: FontWeight.w400,
                               color: tm.isDark()
                                   ? Colors.white
-                                  : tm.titlecolorLight,
+                                  : tm.subtitleColorLight,
                             ),
                           ),
                           SizedBox(
@@ -1061,7 +1056,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                               fontWeight: FontWeight.w400,
                               color: tm.isDark()
                                   ? Colors.white
-                                  : tm.titlecolorLight,
+                                  : tm.subtitleColorLight,
                             ),
                           ),
                           SizedBox(width: width * 0.03),
@@ -1073,7 +1068,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                           itemCount: companiesR.length,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
-                            return companiesR[index].is_best
+                            return index == 0
                                 ? bestCompanyWidget(context, companiesR[index],
                                     () {
                                     openApp(companiesR[index]);
@@ -1123,8 +1118,6 @@ Future<void> openApp(CompanyItem item) async {
 
 Widget bestCompanyWidget(
     BuildContext context, CompanyItem item, Function() onTap) {
-  final isBest = item.is_best;
-
   return InkWell(
     onTap: onTap,
     child: ConstrainedBox(
@@ -1136,30 +1129,29 @@ Widget bestCompanyWidget(
         width: screenWidth,
         child: Stack(
           children: [
-            if (isBest)
-              Positioned.directional(
-                textDirection: Directionality.of(context),
-                top: 0,
-                end: 0,
-                child: Container(
-                  height: safeHeight * 0.054,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 10,
+            Positioned.directional(
+              textDirection: Directionality.of(context),
+              top: 0,
+              end: 0,
+              child: Container(
+                height: safeHeight * 0.054,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(8),
+                    topRight: Radius.circular(8),
                   ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(8),
-                      topRight: Radius.circular(8),
-                    ),
-                    color: ThemeManager.primary,
-                  ),
-                  child: Text(
-                    LocaleKeys.best_price.tr(),
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  color: ThemeManager.primary,
+                ),
+                child: Text(
+                  LocaleKeys.best_price.tr(),
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
+            ),
             Positioned.directional(
               textDirection: Directionality.of(context),
               top: 30,
@@ -1238,7 +1230,9 @@ Widget bestCompanyWidget(
                                 color: ThemeManager.primary.withAlpha(30),
                               ),
                               child: Text(
-                                "${item.delivery_cost}",
+                                item.isFreeDelivery()
+                                    ? LocaleKeys.free.tr()
+                                    : "${item.delivery_cost}",
                                 style: Theme.of(context)
                                     .textTheme
                                     .caption!

@@ -73,4 +73,7 @@ abstract class AuthService {
   @POST("supports")
   Future<HttpResponse<String>> sendSupportMessage(
       @Field() String subject, @Field() String text);
+
+  @DELETE("account")
+  Future<HttpResponse<String>> deleteAccount();
 }

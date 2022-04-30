@@ -116,5 +116,13 @@ abstract class  LocaleKeys {
   static const apply_filter = 'apply_filter';
   static const reset = 'reset';
   static const sar = 'sar';
+  static const yes = 'yes';
+  static const no = 'no';
+  static const language_dialog_title = 'language_dialog_title';
+  static const language_dialog_content = 'language_dialog_content';
+  static const free = 'free';
+  static const delete_account_message = 'delete_account_message';
+  static const delete_account_message2 = 'delete_account_message2';
+  static const delete_account = 'delete_account';
 
 }

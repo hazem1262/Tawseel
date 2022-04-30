@@ -20,6 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
+        lazyLoad: false,
         routes: [
           HomeScreenRoute(),
           OffersScreenRoute(),

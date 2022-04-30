@@ -105,7 +105,7 @@
   "offers_empty_subtitle": "لا يوجد عروض الأن عندما يتم اضافة عروض جديده ستظهر هنا.",
   "related_resuturants": "المطاعم ذات الصلة",
   "five_kilo": "( ٥ كيلو )",
-  "min_order": "اقل سعر توصيل",
+  "min_order": "الحد الأدني",
   "filter_title": "تصفية",
   "companies_title": "شركات التوصيل",
   "delivery_price_range": "سعر التوصيل",
@@ -113,5 +113,17 @@
   "km": "كم ",
   "apply_filter": "تطبيق التصفية",
   "reset": "إعادة تعيين",
-  "sar": "ريال"
+  "sar": "ريال",
+
+
+  "yes":"تغيير",
+  "no":"إلغاء",
+  "language_dialog_title":"سوف يقوم البرنامج بإعادة التشغيل اذا قمت بتغيير اللغة",
+  "language_dialog_content":"هل تريد الإستمرار ؟",
+
+  "free":"مجاني",
+
+  "delete_account_message":"هل انت متأكد انك تريد مسح حسابك؟",
+  "delete_account_message2":"لا يمكن إعادة حسابك فيما بعد",
+  "delete_account":"اضغط مرتين لحذف حسابك"
 }

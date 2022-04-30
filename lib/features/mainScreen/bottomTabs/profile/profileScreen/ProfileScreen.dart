@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:tawseel/data/remote/AppService.dart';
+import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/features/changePassword/ChangePasswordScreen.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/phone/SendPhoneScreen.dart';
@@ -14,6 +16,7 @@ import 'package:tawseel/theme/AppColors.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
+import 'package:flutter/cupertino.dart';
 
 enum SelectedLanguage { En, Ar }
 
@@ -76,7 +79,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 titleWidget(),
                 userInfoWidget(),
                 SizedBox(height: height / 50),
-                profileActions()
+                profileActions(),
+                SizedBox(height: height / 50),
+                GestureDetector(
+                  onDoubleTap: () {
+                    showDeleteAccountDialog();
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: width / 20),
+                    child: Text(
+                      LocaleKeys.delete_account.tr(),
+                      style: theme.textTheme.caption!.copyWith(
+                          fontWeight: FontWeight.w300, color: Colors.red),
+                    ),
+                  ),
+                ),
+                SizedBox(height: height / 50),
               ],
             ),
           ),
@@ -379,8 +398,81 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  void showDeleteAccountDialog() {
+    showCupertinoDialog(
+        context: appContext,
+        builder: (context) {
+          return CupertinoAlertDialog(
+              title: Column(
+                children: [
+                  Text(LocaleKeys.delete_account_message.tr()),
+                ],
+              ),
+              content: Column(
+                children: [
+                  Text(LocaleKeys.delete_account_message2.tr()),
+                ],
+              ),
+              actions: [
+                CupertinoDialogAction(
+                  onPressed: () {
+                    deleteAccount();
+                  },
+                  child: Text(LocaleKeys.delete.tr()),
+                  isDefaultAction: true,
+                  isDestructiveAction: true,
+                ),
+
+                // The "No" button
+                CupertinoDialogAction(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(LocaleKeys.no.tr()),
+                  isDefaultAction: false,
+                  isDestructiveAction: false,
+                )
+              ]);
+        });
+  }
+
   void onLanguageChange(int index) {
-    appContext.toggleLanguage();
+    showCupertinoDialog(
+        context: appContext,
+        builder: (context) {
+          return CupertinoAlertDialog(
+              title: Column(
+                children: [
+                  Text(LocaleKeys.language_dialog_title.tr()),
+                ],
+              ),
+              content: Column(
+                children: [
+                  Text(LocaleKeys.language_dialog_content.tr()),
+                ],
+              ),
+              actions: [
+                CupertinoDialogAction(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    appContext.toggleLanguage();
+                  },
+                  child: Text(LocaleKeys.yes.tr()),
+                  isDefaultAction: true,
+                  isDestructiveAction: true,
+                ),
+
+                // The "No" button
+                CupertinoDialogAction(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(LocaleKeys.no.tr()),
+                  isDefaultAction: false,
+                  isDestructiveAction: false,
+                )
+              ]);
+        });
   }
 
   Widget languageToggleWidget(SelectedLanguage selectedLanguage) {
@@ -422,6 +514,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void _onAllowNotificationChange(bool value) {
     setState(() {
       notificationsAllowd = value;
+    });
+  }
+
+  void deleteAccount() {
+    getIt<AuthService>().deleteAccount().then((value) {
+      if (value.response.statusCode == 204) {
+        appState.seLoggedInState(false);
+        appContext.openOnly(LandingScreenRoute());
+      }
+    }).catchError((e) {
+      Navigator.of(context).pop();
+      appContext.showError(LocaleKeys.unknown_error.tr());
     });
   }
 }
