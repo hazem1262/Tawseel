@@ -10,12 +10,14 @@ import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/globals.dart';
 
 extension ToggleLanguage on BuildContext {
-  toggleLanguage() {
+  toggleLanguage([bool inPlace = false]) {
     if (this.locale == Locale('ar'))
       this.setLocale(Locale('en'));
     else
       this.setLocale(Locale('ar'));
-    appContext.openOnly(MainScreenRoute());
+
+    // ignore: unnecessary_statements
+    !inPlace ? appContext.openOnly(MainScreenRoute()) : null;
   }
 }
 

@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: GestureDetector(
                         child: Icon(Icons.language),
                         onTap: () {
-                          context.toggleLanguage();
+                          context.toggleLanguage(true);
                         },
                       ),
                     ),
