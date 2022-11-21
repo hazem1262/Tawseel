@@ -25,6 +25,7 @@ class YourLocationPart extends StatelessWidget {
               //?                                Your location with icon                     ?//
               //?----------------------------------------------------------------------------?//
               Container(
+                margin: EdgeInsets.only(top: 10),
                 width: screenWidth,
                 child: Row(
                   children: [
