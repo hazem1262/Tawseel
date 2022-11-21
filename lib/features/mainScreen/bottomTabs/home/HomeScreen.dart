@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_statements, implementation_imports
 
 import 'dart:ui';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/src/public_ext.dart';
@@ -297,34 +298,27 @@ Widget marketPlaceArea(
 Widget adsArea(bool isLoading, List<AdsItem> ads) {
   return Container(
     margin: EdgeInsets.only(top: 8),
-    child: Column(
-      children: [
-        isLoading
-            ? adsShimmer()
-            : Padding(
-                padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: screenHeight * 0.18,
-                  ),
-                  child: Container(
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: ads.length,
-                      itemBuilder: (ctx, index) {
-                        return adItem(
-                          ads[index],
-                          () {
-                            appContext.showToast("${ads[index].image} clicked");
-                          },
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ),
-      ],
-    ),
+    child: isLoading
+        ? adsShimmer()
+        : CarouselSlider(
+            options: CarouselOptions(
+              height: screenHeight * 0.18,
+              autoPlay: true,
+              viewportFraction: 0.9,
+            ),
+            items: ads.map((ad) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return adItem(
+                    ad,
+                    () {
+                      appContext.showToast("${ad.image} clicked");
+                    },
+                  );
+                },
+              );
+            }).toList(),
+          ),
   );
 }
 
