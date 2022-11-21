@@ -17,8 +17,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   bool _initialized = false;
 
-  late double width = 200;
-  late double height = 200;
+  late double width = 110;
+  late double height = 110;
   late Timer _timer;
 
   _SplashScreenState() {
