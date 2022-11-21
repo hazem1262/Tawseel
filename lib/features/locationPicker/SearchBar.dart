@@ -17,8 +17,7 @@ class SearchBar extends StatefulWidget {
   _SearchBarState createState() => _SearchBarState();
 }
 
-class _SearchBarState extends State<SearchBar>
-    with SingleTickerProviderStateMixin {
+class _SearchBarState extends State<SearchBar> with SingleTickerProviderStateMixin {
   late AnimationController _con;
 
   @override
@@ -82,8 +81,7 @@ class _SearchBarState extends State<SearchBar>
                         child: Container(
                           width: width * 0.8,
                           child: TextFormField(
-                            onFieldSubmitted: (value) =>
-                                {widget.onSubmitCallback?.call()},
+                            onFieldSubmitted: (value) => {widget.onSubmitCallback?.call()},
                             textInputAction: widget.inputAction,
                             controller: widget.controller,
                             cursorRadius: Radius.circular(10),
@@ -91,8 +89,7 @@ class _SearchBarState extends State<SearchBar>
                             cursorWidth: 2,
                             onChanged: widget.onSearchTextChange,
                             decoration: InputDecoration(
-                              floatingLabelBehavior:
-                                  FloatingLabelBehavior.never,
+                              floatingLabelBehavior: FloatingLabelBehavior.never,
                               labelText: "Find your location ",
                               labelStyle: TextStyle(
                                 color: Colors.grey,

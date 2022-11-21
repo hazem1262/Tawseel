@@ -21,8 +21,7 @@ class OtpScreen extends StatelessWidget {
   final String phone;
   final OTP_TYPE otpType;
 
-  OtpScreen({Key? key, required this.otpType, required this.phone})
-      : super(key: key);
+  OtpScreen({Key? key, required this.otpType, required this.phone}) : super(key: key);
 
   late ThemeData theme;
   late double height;
@@ -54,15 +53,13 @@ class OtpScreen extends StatelessWidget {
                       hasError: (error) => context.showError(error),
                       onOtpReceived: (res) {
                         context.showToast(res.otp.toString());
-                        context.read<OtpBloc>().add(
-                            OtpEvents.onOtpChange(textEditingController.text));
+                        context.read<OtpBloc>().add(OtpEvents.onOtpChange(textEditingController.text));
                       },
                       onOtpVerified: (loginResponse) {
                         if (otpType == OTP_TYPE.FORGET_PASSWORD) {
                           // close otp and open change password
                           // so when the user click back return to the phone input again.
-                          appContext.router
-                              .popAndPush(ChangePasswordScreenRoute(
+                          appContext.router.popAndPush(ChangePasswordScreenRoute(
                             intention: ChangePasswordIntention.FORGET_PASSWORD,
                           ));
                         } else if (otpType == OTP_TYPE.CHANGE_PHONE) {
@@ -74,8 +71,7 @@ class OtpScreen extends StatelessWidget {
                           appContext.openOnly(MainScreenRoute());
                         } else if (otpType == OTP_TYPE.AUTH) {
                           if (loginResponse.data.user.address.isEmpty) {
-                            appContext.openOnly(LocationPickerDialogRoute(
-                                oppenedFromMyAddresses: false));
+                            appContext.openOnly(LocationPickerDialogRoute(oppenedFromMyAddresses: false));
                           } else {
                             appContext.openOnly(MainScreenRoute());
                           }
@@ -130,11 +126,8 @@ class OtpScreen extends StatelessWidget {
                                   child: LoadingButton(
                                     text: LocaleKeys.verify_otp.tr(),
                                     onPressed: () => verifyOtp(context),
-                                    isLoading:
-                                        state is OtpIsLoading ? true : false,
-                                    disabled: state is DisableOtpConfirmButton
-                                        ? state.disable
-                                        : false,
+                                    isLoading: state is OtpIsLoading ? true : false,
+                                    disabled: state is DisableOtpConfirmButton ? state.disable : false,
                                   ),
                                 );
                               },
@@ -198,15 +191,11 @@ class OtpScreen extends StatelessWidget {
         enablePinAutofill: true,
         controller: textEditingController,
         onCompleted: (v) {
-          context
-              .read<OtpBloc>()
-              .add(OtpEvents.onOtpChange(textEditingController.text));
+          context.read<OtpBloc>().add(OtpEvents.onOtpChange(textEditingController.text));
           debugPrint("onCompleted Otp : $v");
         },
         onChanged: (value) {
-          context
-              .read<OtpBloc>()
-              .add(OtpEvents.onOtpChange(textEditingController.text));
+          context.read<OtpBloc>().add(OtpEvents.onOtpChange(textEditingController.text));
           debugPrint("onChanged Otp : $value");
         },
         beforeTextPaste: (text) {
@@ -220,11 +209,8 @@ class OtpScreen extends StatelessWidget {
   }
 
   void verifyOtp(BuildContext context) {
-    if (textEditingController.text.isNotEmpty &&
-        textEditingController.text.length == 5)
-      context
-          .read<OtpBloc>()
-          .add(OtpEvents.verifyOtp(phone, textEditingController.text, otpType));
+    if (textEditingController.text.isNotEmpty && textEditingController.text.length == 5)
+      context.read<OtpBloc>().add(OtpEvents.verifyOtp(phone, textEditingController.text, otpType));
   }
 
   Widget resendOtpWidget(BuildContext context) {

@@ -13,8 +13,7 @@ class HomeRepository with NetworkHandler implements IHomeRepository {
   HomeRepository(this.categoriesApi);
 
   @override
-  Future<CategoriesResponse> getCategories() =>
-      networkHandler(() => categoriesApi.getCategories());
+  Future<CategoriesResponse> getCategories() => networkHandler(() => categoriesApi.getCategories());
 
   @override
   Future<CategoriesResponse> getSubCategories(int categoryId) =>

@@ -41,14 +41,12 @@ mixin _$SignUpResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SignUpResponseCopyWith<SignUpResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SignUpResponseCopyWith<SignUpResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SignUpResponseCopyWith<$Res> {
-  factory $SignUpResponseCopyWith(
-          SignUpResponse value, $Res Function(SignUpResponse) then) =
+  factory $SignUpResponseCopyWith(SignUpResponse value, $Res Function(SignUpResponse) then) =
       _$SignUpResponseCopyWithImpl<$Res>;
   $Res call({SignUpDataItem data});
 
@@ -56,8 +54,7 @@ abstract class $SignUpResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignUpResponseCopyWithImpl<$Res>
-    implements $SignUpResponseCopyWith<$Res> {
+class _$SignUpResponseCopyWithImpl<$Res> implements $SignUpResponseCopyWith<$Res> {
   _$SignUpResponseCopyWithImpl(this._value, this._then);
 
   final SignUpResponse _value;
@@ -85,10 +82,8 @@ class _$SignUpResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignUpResponseCopyWith<$Res>
-    implements $SignUpResponseCopyWith<$Res> {
-  factory _$SignUpResponseCopyWith(
-          _SignUpResponse value, $Res Function(_SignUpResponse) then) =
+abstract class _$SignUpResponseCopyWith<$Res> implements $SignUpResponseCopyWith<$Res> {
+  factory _$SignUpResponseCopyWith(_SignUpResponse value, $Res Function(_SignUpResponse) then) =
       __$SignUpResponseCopyWithImpl<$Res>;
   @override
   $Res call({SignUpDataItem data});
@@ -98,11 +93,9 @@ abstract class _$SignUpResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignUpResponseCopyWithImpl<$Res>
-    extends _$SignUpResponseCopyWithImpl<$Res>
+class __$SignUpResponseCopyWithImpl<$Res> extends _$SignUpResponseCopyWithImpl<$Res>
     implements _$SignUpResponseCopyWith<$Res> {
-  __$SignUpResponseCopyWithImpl(
-      _SignUpResponse _value, $Res Function(_SignUpResponse) _then)
+  __$SignUpResponseCopyWithImpl(_SignUpResponse _value, $Res Function(_SignUpResponse) _then)
       : super(_value, (v) => _then(v as _SignUpResponse));
 
   @override
@@ -126,8 +119,7 @@ class __$SignUpResponseCopyWithImpl<$Res>
 class _$_SignUpResponse implements _SignUpResponse {
   const _$_SignUpResponse(this.data);
 
-  factory _$_SignUpResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_SignUpResponseFromJson(json);
+  factory _$_SignUpResponse.fromJson(Map<String, dynamic> json) => _$$_SignUpResponseFromJson(json);
 
   @override
   final SignUpDataItem data;
@@ -141,13 +133,11 @@ class _$_SignUpResponse implements _SignUpResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SignUpResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
@@ -163,15 +153,13 @@ class _$_SignUpResponse implements _SignUpResponse {
 abstract class _SignUpResponse implements SignUpResponse {
   const factory _SignUpResponse(SignUpDataItem data) = _$_SignUpResponse;
 
-  factory _SignUpResponse.fromJson(Map<String, dynamic> json) =
-      _$_SignUpResponse.fromJson;
+  factory _SignUpResponse.fromJson(Map<String, dynamic> json) = _$_SignUpResponse.fromJson;
 
   @override
   SignUpDataItem get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SignUpResponseCopyWith<_SignUpResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$SignUpResponseCopyWith<_SignUpResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 SignUpDataItem _$SignUpDataItemFromJson(Map<String, dynamic> json) {
@@ -202,14 +190,12 @@ mixin _$SignUpDataItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SignUpDataItemCopyWith<SignUpDataItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SignUpDataItemCopyWith<SignUpDataItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SignUpDataItemCopyWith<$Res> {
-  factory $SignUpDataItemCopyWith(
-          SignUpDataItem value, $Res Function(SignUpDataItem) then) =
+  factory $SignUpDataItemCopyWith(SignUpDataItem value, $Res Function(SignUpDataItem) then) =
       _$SignUpDataItemCopyWithImpl<$Res>;
   $Res call({UserItem user});
 
@@ -217,8 +203,7 @@ abstract class $SignUpDataItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignUpDataItemCopyWithImpl<$Res>
-    implements $SignUpDataItemCopyWith<$Res> {
+class _$SignUpDataItemCopyWithImpl<$Res> implements $SignUpDataItemCopyWith<$Res> {
   _$SignUpDataItemCopyWithImpl(this._value, this._then);
 
   final SignUpDataItem _value;
@@ -246,10 +231,8 @@ class _$SignUpDataItemCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignUpDataItemCopyWith<$Res>
-    implements $SignUpDataItemCopyWith<$Res> {
-  factory _$SignUpDataItemCopyWith(
-          _SignUpDataItem value, $Res Function(_SignUpDataItem) then) =
+abstract class _$SignUpDataItemCopyWith<$Res> implements $SignUpDataItemCopyWith<$Res> {
+  factory _$SignUpDataItemCopyWith(_SignUpDataItem value, $Res Function(_SignUpDataItem) then) =
       __$SignUpDataItemCopyWithImpl<$Res>;
   @override
   $Res call({UserItem user});
@@ -259,11 +242,9 @@ abstract class _$SignUpDataItemCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignUpDataItemCopyWithImpl<$Res>
-    extends _$SignUpDataItemCopyWithImpl<$Res>
+class __$SignUpDataItemCopyWithImpl<$Res> extends _$SignUpDataItemCopyWithImpl<$Res>
     implements _$SignUpDataItemCopyWith<$Res> {
-  __$SignUpDataItemCopyWithImpl(
-      _SignUpDataItem _value, $Res Function(_SignUpDataItem) _then)
+  __$SignUpDataItemCopyWithImpl(_SignUpDataItem _value, $Res Function(_SignUpDataItem) _then)
       : super(_value, (v) => _then(v as _SignUpDataItem));
 
   @override
@@ -287,8 +268,7 @@ class __$SignUpDataItemCopyWithImpl<$Res>
 class _$_SignUpDataItem implements _SignUpDataItem {
   const _$_SignUpDataItem(this.user);
 
-  factory _$_SignUpDataItem.fromJson(Map<String, dynamic> json) =>
-      _$$_SignUpDataItemFromJson(json);
+  factory _$_SignUpDataItem.fromJson(Map<String, dynamic> json) => _$$_SignUpDataItemFromJson(json);
 
   @override
   final UserItem user;
@@ -302,13 +282,11 @@ class _$_SignUpDataItem implements _SignUpDataItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SignUpDataItem &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
@@ -324,13 +302,11 @@ class _$_SignUpDataItem implements _SignUpDataItem {
 abstract class _SignUpDataItem implements SignUpDataItem {
   const factory _SignUpDataItem(UserItem user) = _$_SignUpDataItem;
 
-  factory _SignUpDataItem.fromJson(Map<String, dynamic> json) =
-      _$_SignUpDataItem.fromJson;
+  factory _SignUpDataItem.fromJson(Map<String, dynamic> json) = _$_SignUpDataItem.fromJson;
 
   @override
   UserItem get user => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SignUpDataItemCopyWith<_SignUpDataItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$SignUpDataItemCopyWith<_SignUpDataItem> get copyWith => throw _privateConstructorUsedError;
 }

@@ -6,11 +6,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tawseel/features/changePassword/bloc/ChangePasswordRepository.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
-import 'package:tawseel/features/login/LoginScreen.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/features/login/components/PasswordField.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
@@ -46,15 +44,13 @@ class ChangePasswordScreen extends StatelessWidget {
 
     return BlocProvider(
       lazy: false,
-      create: (context) =>
-          ChangePasswordBloc(getIt<IChangePasswordRepository>()),
+      create: (context) => ChangePasswordBloc(getIt<IChangePasswordRepository>()),
       child: BlocListener<ChangePasswordBloc, ChangePasswordState>(
         listener: (context, state) {
           if (state.error.isNotEmpty) appContext.showError(state.error);
           if (state.passwordChangedSuccessfully) {
             if (intention == ChangePasswordIntention.CHANGE_PASSWORD) {
-              appContext
-                  .showToast(LocaleKeys.password_changed_successfully.tr());
+              appContext.showToast(LocaleKeys.password_changed_successfully.tr());
               appContext.router.pop();
             } else if (intention == ChangePasswordIntention.FORGET_PASSWORD) {
               //clear user saved data so he login again
@@ -104,8 +100,7 @@ class ChangePasswordScreen extends StatelessWidget {
                       SizedBox(height: 50),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: BlocBuilder<ChangePasswordBloc,
-                            ChangePasswordState>(
+                        child: BlocBuilder<ChangePasswordBloc, ChangePasswordState>(
                           builder: (context, state) {
                             return Builder(builder: (ctx) {
                               return LoadingButton(
@@ -148,25 +143,20 @@ class ChangePasswordScreen extends StatelessWidget {
     form.validate();
 
     var passwordErrorMessage = passwordValidationError(passwordController.text);
-    var passwordConfirmationErrorMessage =
-        passwordValidationError(passwordConfirmationController.text);
-    var isPasswordMatch = passwordController.text.toString() ==
-        passwordConfirmationController.text.toString();
+    var passwordConfirmationErrorMessage = passwordValidationError(passwordConfirmationController.text);
+    var isPasswordMatch = passwordController.text.toString() == passwordConfirmationController.text.toString();
 
     if (isPasswordMatch.not()) {
       appContext.showError(LocaleKeys.password_doesnt_match.tr());
     }
 
-    var isValid = passwordErrorMessage.isEmpty &&
-        passwordConfirmationErrorMessage.isEmpty &&
-        isPasswordMatch;
+    var isValid = passwordErrorMessage.isEmpty && passwordConfirmationErrorMessage.isEmpty && isPasswordMatch;
 
     return isValid;
   }
 
   void showSuccessDialog(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     var padding = MediaQuery.of(context).padding;
     double newheight = height - padding.top - padding.bottom;
     var theme = Theme.of(context);
@@ -202,8 +192,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   child: Text(
                     LocaleKeys.password_changed_dialog_message.tr(),
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.caption!
-                        .copyWith(fontWeight: FontWeight.w500),
+                    style: theme.textTheme.caption!.copyWith(fontWeight: FontWeight.w500),
                   ),
                 ),
                 Padding(
@@ -227,8 +216,7 @@ class ChangePasswordScreen extends StatelessWidget {
       },
       transitionBuilder: (context, anim1, anim2, child) {
         return SlideTransition(
-          position:
-              Tween(begin: Offset(0, 1), end: Offset(0, 0)).animate(anim1),
+          position: Tween(begin: Offset(0, 1), end: Offset(0, 0)).animate(anim1),
           child: child,
         );
       },

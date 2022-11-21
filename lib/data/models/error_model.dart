@@ -6,6 +6,5 @@ part 'error_model.g.dart';
 @freezed
 abstract class ErrorModel with _$ErrorModel {
   const factory ErrorModel(String message) = _ErrorModel;
-  factory ErrorModel.fromJson(Map<String, dynamic> json) =>
-      _$ErrorModelFromJson(json);
+  factory ErrorModel.fromJson(Map<String, dynamic> json) => _$ErrorModelFromJson(json);
 }

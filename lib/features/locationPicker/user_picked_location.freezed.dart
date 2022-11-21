@@ -17,8 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$UserPickedLocationTearOff {
   const _$UserPickedLocationTearOff();
 
-  _UserPickedLocation call(
-      String? name, String address, double lat, double lng, bool? isDefault) {
+  _UserPickedLocation call(String? name, String address, double lat, double lng, bool? isDefault) {
     return _UserPickedLocation(
       name,
       address,
@@ -41,22 +40,18 @@ mixin _$UserPickedLocation {
   bool? get isDefault => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserPickedLocationCopyWith<UserPickedLocation> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserPickedLocationCopyWith<UserPickedLocation> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserPickedLocationCopyWith<$Res> {
-  factory $UserPickedLocationCopyWith(
-          UserPickedLocation value, $Res Function(UserPickedLocation) then) =
+  factory $UserPickedLocationCopyWith(UserPickedLocation value, $Res Function(UserPickedLocation) then) =
       _$UserPickedLocationCopyWithImpl<$Res>;
-  $Res call(
-      {String? name, String address, double lat, double lng, bool? isDefault});
+  $Res call({String? name, String address, double lat, double lng, bool? isDefault});
 }
 
 /// @nodoc
-class _$UserPickedLocationCopyWithImpl<$Res>
-    implements $UserPickedLocationCopyWith<$Res> {
+class _$UserPickedLocationCopyWithImpl<$Res> implements $UserPickedLocationCopyWith<$Res> {
   _$UserPickedLocationCopyWithImpl(this._value, this._then);
 
   final UserPickedLocation _value;
@@ -97,22 +92,17 @@ class _$UserPickedLocationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UserPickedLocationCopyWith<$Res>
-    implements $UserPickedLocationCopyWith<$Res> {
-  factory _$UserPickedLocationCopyWith(
-          _UserPickedLocation value, $Res Function(_UserPickedLocation) then) =
+abstract class _$UserPickedLocationCopyWith<$Res> implements $UserPickedLocationCopyWith<$Res> {
+  factory _$UserPickedLocationCopyWith(_UserPickedLocation value, $Res Function(_UserPickedLocation) then) =
       __$UserPickedLocationCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String? name, String address, double lat, double lng, bool? isDefault});
+  $Res call({String? name, String address, double lat, double lng, bool? isDefault});
 }
 
 /// @nodoc
-class __$UserPickedLocationCopyWithImpl<$Res>
-    extends _$UserPickedLocationCopyWithImpl<$Res>
+class __$UserPickedLocationCopyWithImpl<$Res> extends _$UserPickedLocationCopyWithImpl<$Res>
     implements _$UserPickedLocationCopyWith<$Res> {
-  __$UserPickedLocationCopyWithImpl(
-      _UserPickedLocation _value, $Res Function(_UserPickedLocation) _then)
+  __$UserPickedLocationCopyWithImpl(_UserPickedLocation _value, $Res Function(_UserPickedLocation) _then)
       : super(_value, (v) => _then(v as _UserPickedLocation));
 
   @override
@@ -154,8 +144,7 @@ class __$UserPickedLocationCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UserPickedLocation implements _UserPickedLocation {
-  const _$_UserPickedLocation(
-      this.name, this.address, this.lat, this.lng, this.isDefault);
+  const _$_UserPickedLocation(this.name, this.address, this.lat, this.lng, this.isDefault);
 
   @override
   final String? name;
@@ -177,18 +166,12 @@ class _$_UserPickedLocation implements _UserPickedLocation {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserPickedLocation &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.lat, lat) ||
-                const DeepCollectionEquality().equals(other.lat, lat)) &&
-            (identical(other.lng, lng) ||
-                const DeepCollectionEquality().equals(other.lng, lng)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)) &&
+            (identical(other.lat, lat) || const DeepCollectionEquality().equals(other.lat, lat)) &&
+            (identical(other.lng, lng) || const DeepCollectionEquality().equals(other.lng, lng)) &&
             (identical(other.isDefault, isDefault) ||
-                const DeepCollectionEquality()
-                    .equals(other.isDefault, isDefault)));
+                const DeepCollectionEquality().equals(other.isDefault, isDefault)));
   }
 
   @override
@@ -207,8 +190,8 @@ class _$_UserPickedLocation implements _UserPickedLocation {
 }
 
 abstract class _UserPickedLocation implements UserPickedLocation {
-  const factory _UserPickedLocation(String? name, String address, double lat,
-      double lng, bool? isDefault) = _$_UserPickedLocation;
+  const factory _UserPickedLocation(String? name, String address, double lat, double lng, bool? isDefault) =
+      _$_UserPickedLocation;
 
   @override
   String? get name => throw _privateConstructorUsedError;
@@ -222,6 +205,5 @@ abstract class _UserPickedLocation implements UserPickedLocation {
   bool? get isDefault => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserPickedLocationCopyWith<_UserPickedLocation> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$UserPickedLocationCopyWith<_UserPickedLocation> get copyWith => throw _privateConstructorUsedError;
 }

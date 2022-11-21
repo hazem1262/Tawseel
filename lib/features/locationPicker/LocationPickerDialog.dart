@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:collection';
 import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -15,10 +16,8 @@ import 'package:tawseel/features/locationPicker/rich_suggestion.dart';
 import 'package:tawseel/features/locationPicker/user_picked_location.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
@@ -29,8 +28,7 @@ import 'models/uuid.dart';
 class LocationPickerDialog extends StatefulWidget {
   final bool oppenedFromMyAddresses;
 
-  LocationPickerDialog({Key? key, required this.oppenedFromMyAddresses})
-      : super(key: key);
+  LocationPickerDialog({Key? key, required this.oppenedFromMyAddresses}) : super(key: key);
 
   @override
   _LocationPickerDialogState createState() => _LocationPickerDialogState();
@@ -68,8 +66,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
   }
 
   void init() async {
-    locationIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration.empty, Res.location_icon);
+    locationIcon = await BitmapDescriptor.fromAssetImage(ImageConfiguration.empty, Res.location_icon);
   }
 
   void getUserLocation() async {
@@ -78,14 +75,11 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
 
     if (enabled && permissionsGranted) {
       var currentLocation = await location.getLocation();
-      if (currentLocation.latitude != null &&
-          currentLocation.longitude != null) {
+      if (currentLocation.latitude != null && currentLocation.longitude != null) {
         setState(() {
-          defaultLocation =
-              LatLng(currentLocation.latitude!, currentLocation.longitude!);
+          defaultLocation = LatLng(currentLocation.latitude!, currentLocation.longitude!);
 
-          getPlaceDetailsFromLatLng(
-              LatLng(currentLocation.latitude!, currentLocation.longitude!));
+          getPlaceDetailsFromLatLng(LatLng(currentLocation.latitude!, currentLocation.longitude!));
         });
       }
     }
@@ -201,8 +195,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
                         color: Colors.transparent,
                         child: Text(
                           LocaleKeys.pick_location.tr(),
-                          style: theme.textTheme.headline6!
-                              .copyWith(fontSize: MeduimTextSize),
+                          style: theme.textTheme.headline6!.copyWith(fontSize: MeduimTextSize),
                         ),
                       ),
                       SizedBox(
@@ -244,8 +237,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
   var searchController = FloatingSearchBarController();
 
   Widget searchWidget() {
-    final isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
     return FloatingSearchBar(
       margins: EdgeInsets.only(top: height / 6),
@@ -357,8 +349,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
 
   var searchIsLoading = false;
 
-  SplayTreeMap suggestionsCache =
-      new SplayTreeMap<String, List<RichSuggestion>>();
+  SplayTreeMap suggestionsCache = new SplayTreeMap<String, List<RichSuggestion>>();
 
   void autoCompleteSearch(String place) async {
     var query = place.replaceAll(" ", "+");
@@ -410,8 +401,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
         });
       }
 
-      if (!suggestionsCache.containsKey(query))
-        suggestionsCache.putIfAbsent(query, () => suggestions);
+      if (!suggestionsCache.containsKey(query)) suggestionsCache.putIfAbsent(query, () => suggestions);
 
       updateSuggestions(suggestions);
     });
@@ -463,9 +453,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
       searchIsLoading = true;
     });
 
-    getIt<PlacesApiService>()
-        .getPlaceDetails(apiKey, currentLocalName, placeId)
-        .then((response) {
+    getIt<PlacesApiService>().getPlaceDetails(apiKey, currentLocalName, placeId).then((response) {
       if (response.result == null) {
         appContext.showToast(LocaleKeys.no_result_fount.tr());
         hideSuggestions();
@@ -515,8 +503,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
     });
 
     getIt<PlacesApiService>()
-        .getPlaceDetailsLatLng(
-            apiKey, "latlng=${point.latitude},${point.longitude}")
+        .getPlaceDetailsLatLng(apiKey, "latlng=${point.latitude},${point.longitude}")
         .then((response) {
       if (response.results == null && response.results.isEmpty) {
         appContext.showToast(LocaleKeys.no_result_fount.tr());
@@ -524,8 +511,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
         final location = response.results.first;
 
         _addMarker(
-          LatLng(
-              location.geometry.location.lat, location.geometry.location.lng),
+          LatLng(location.geometry.location.lat, location.geometry.location.lng),
           location.place_id,
           location.formatted_address,
         );
@@ -533,8 +519,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
         searchController.clear();
         searchController.close();
 
-        placeAddressCache.putIfAbsent("${point.latitude},${point.longitude}",
-            () => response.results.first);
+        placeAddressCache.putIfAbsent("${point.latitude},${point.longitude}", () => response.results.first);
       }
 
       setState(() {

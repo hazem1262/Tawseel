@@ -18,8 +18,7 @@ abstract class AuthService {
 
   @FormUrlEncoded()
   @POST("login")
-  Future<HttpResponse<LoginResponse>> loginWithPhone(
-      @Field() String phone, @Field() String password);
+  Future<HttpResponse<LoginResponse>> loginWithPhone(@Field() String phone, @Field() String password);
 
   @FormUrlEncoded()
   @POST("register")
@@ -32,13 +31,11 @@ abstract class AuthService {
 
   @FormUrlEncoded()
   @POST("send-otp")
-  Future<HttpResponse<OtpResponse>> sendOtp(
-      @Field() String phone, @Field() String type);
+  Future<HttpResponse<OtpResponse>> sendOtp(@Field() String phone, @Field() String type);
 
   @FormUrlEncoded()
   @POST("verify")
-  Future<HttpResponse<LoginResponse>> verifyOtp(
-      @Field() String phone, @Field() String otp, @Field() String type);
+  Future<HttpResponse<LoginResponse>> verifyOtp(@Field() String phone, @Field() String otp, @Field() String type);
 
   @FormUrlEncoded()
   @GET("profile")
@@ -71,8 +68,7 @@ abstract class AuthService {
 
   @FormUrlEncoded()
   @POST("supports")
-  Future<HttpResponse<String>> sendSupportMessage(
-      @Field() String subject, @Field() String text);
+  Future<HttpResponse<String>> sendSupportMessage(@Field() String subject, @Field() String text);
 
   @DELETE("account")
   Future<HttpResponse<String>> deleteAccount();

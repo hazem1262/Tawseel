@@ -7,8 +7,7 @@ part 'ChangePasswordBloc.freezed.dart';
 
 @freezed
 class ChangePasswordEvent with _$ChangePasswordEvent {
-  const factory ChangePasswordEvent.changePassword(
-      String password, String confirmPassword) = ChangePasswordAction;
+  const factory ChangePasswordEvent.changePassword(String password, String confirmPassword) = ChangePasswordAction;
 }
 
 @freezed
@@ -20,8 +19,7 @@ class ChangePasswordState with _$ChangePasswordState {
   ]) = ChangePasswordCurrentState;
 }
 
-class ChangePasswordBloc
-    extends Bloc<ChangePasswordEvent, ChangePasswordState> {
+class ChangePasswordBloc extends Bloc<ChangePasswordEvent, ChangePasswordState> {
   IChangePasswordRepository repo;
 
   ChangePasswordBloc(this.repo) : super(ChangePasswordCurrentState()) {
@@ -29,10 +27,7 @@ class ChangePasswordBloc
       if (event is ChangePasswordAction) {
         try {
           emit(state.copyWith(isLoading: true));
-          var res =
-              await repo.changePassword(event.password, event.confirmPassword);
-          emit(ChangePasswordCurrentState()
-              .copyWith(passwordChangedSuccessfully: true));
+          emit(ChangePasswordCurrentState().copyWith(passwordChangedSuccessfully: true));
         } catch (e, trace) {
           debugPrint('Exception : $e $trace');
           emit(ChangePasswordCurrentState().copyWith(error: e.toString()));

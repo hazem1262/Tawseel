@@ -73,9 +73,7 @@ mixin _$OffersEvent {
 
 /// @nodoc
 abstract class $OffersEventCopyWith<$Res> {
-  factory $OffersEventCopyWith(
-          OffersEvent value, $Res Function(OffersEvent) then) =
-      _$OffersEventCopyWithImpl<$Res>;
+  factory $OffersEventCopyWith(OffersEvent value, $Res Function(OffersEvent) then) = _$OffersEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -89,13 +87,11 @@ class _$OffersEventCopyWithImpl<$Res> implements $OffersEventCopyWith<$Res> {
 
 /// @nodoc
 abstract class $GetOffersCopyWith<$Res> {
-  factory $GetOffersCopyWith(GetOffers value, $Res Function(GetOffers) then) =
-      _$GetOffersCopyWithImpl<$Res>;
+  factory $GetOffersCopyWith(GetOffers value, $Res Function(GetOffers) then) = _$GetOffersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res>
-    implements $GetOffersCopyWith<$Res> {
+class _$GetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res> implements $GetOffersCopyWith<$Res> {
   _$GetOffersCopyWithImpl(GetOffers _value, $Res Function(GetOffers) _then)
       : super(_value, (v) => _then(v as GetOffers));
 
@@ -190,16 +186,12 @@ abstract class GetOffers implements OffersEvent {
 
 /// @nodoc
 abstract class $ResetOffersCopyWith<$Res> {
-  factory $ResetOffersCopyWith(
-          ResetOffers value, $Res Function(ResetOffers) then) =
-      _$ResetOffersCopyWithImpl<$Res>;
+  factory $ResetOffersCopyWith(ResetOffers value, $Res Function(ResetOffers) then) = _$ResetOffersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res>
-    implements $ResetOffersCopyWith<$Res> {
-  _$ResetOffersCopyWithImpl(
-      ResetOffers _value, $Res Function(ResetOffers) _then)
+class _$ResetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res> implements $ResetOffersCopyWith<$Res> {
+  _$ResetOffersCopyWithImpl(ResetOffers _value, $Res Function(ResetOffers) _then)
       : super(_value, (v) => _then(v as ResetOffers));
 
   @override
@@ -323,21 +315,14 @@ mixin _$OffersState {
   bool get hasMorePages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $OffersStateCopyWith<OffersState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $OffersStateCopyWith<OffersState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OffersStateCopyWith<$Res> {
-  factory $OffersStateCopyWith(
-          OffersState value, $Res Function(OffersState) then) =
-      _$OffersStateCopyWithImpl<$Res>;
+  factory $OffersStateCopyWith(OffersState value, $Res Function(OffersState) then) = _$OffersStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isPagingLoading,
-      String error,
-      bool refreshData,
-      List<MarketPlaceItem> offersList,
-      bool hasMorePages});
+      {bool isPagingLoading, String error, bool refreshData, List<MarketPlaceItem> offersList, bool hasMorePages});
 }
 
 /// @nodoc
@@ -382,26 +367,18 @@ class _$OffersStateCopyWithImpl<$Res> implements $OffersStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $OffersDefaultStateCopyWith<$Res>
-    implements $OffersStateCopyWith<$Res> {
-  factory $OffersDefaultStateCopyWith(
-          OffersDefaultState value, $Res Function(OffersDefaultState) then) =
+abstract class $OffersDefaultStateCopyWith<$Res> implements $OffersStateCopyWith<$Res> {
+  factory $OffersDefaultStateCopyWith(OffersDefaultState value, $Res Function(OffersDefaultState) then) =
       _$OffersDefaultStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isPagingLoading,
-      String error,
-      bool refreshData,
-      List<MarketPlaceItem> offersList,
-      bool hasMorePages});
+      {bool isPagingLoading, String error, bool refreshData, List<MarketPlaceItem> offersList, bool hasMorePages});
 }
 
 /// @nodoc
-class _$OffersDefaultStateCopyWithImpl<$Res>
-    extends _$OffersStateCopyWithImpl<$Res>
+class _$OffersDefaultStateCopyWithImpl<$Res> extends _$OffersStateCopyWithImpl<$Res>
     implements $OffersDefaultStateCopyWith<$Res> {
-  _$OffersDefaultStateCopyWithImpl(
-      OffersDefaultState _value, $Res Function(OffersDefaultState) _then)
+  _$OffersDefaultStateCopyWithImpl(OffersDefaultState _value, $Res Function(OffersDefaultState) _then)
       : super(_value, (v) => _then(v as OffersDefaultState));
 
   @override
@@ -476,19 +453,14 @@ class _$OffersDefaultState implements OffersDefaultState {
     return identical(this, other) ||
         (other is OffersDefaultState &&
             (identical(other.isPagingLoading, isPagingLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isPagingLoading, isPagingLoading)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+                const DeepCollectionEquality().equals(other.isPagingLoading, isPagingLoading)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.refreshData, refreshData) ||
-                const DeepCollectionEquality()
-                    .equals(other.refreshData, refreshData)) &&
+                const DeepCollectionEquality().equals(other.refreshData, refreshData)) &&
             (identical(other.offersList, offersList) ||
-                const DeepCollectionEquality()
-                    .equals(other.offersList, offersList)) &&
+                const DeepCollectionEquality().equals(other.offersList, offersList)) &&
             (identical(other.hasMorePages, hasMorePages) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasMorePages, hasMorePages)));
+                const DeepCollectionEquality().equals(other.hasMorePages, hasMorePages)));
   }
 
   @override
@@ -526,6 +498,5 @@ abstract class OffersDefaultState implements OffersState {
   bool get hasMorePages => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $OffersDefaultStateCopyWith<OffersDefaultState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $OffersDefaultStateCopyWith<OffersDefaultState> get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/utils/globals.dart';
 
 class TextBetweenDividers extends StatelessWidget {
@@ -26,8 +25,7 @@ class TextBetweenDividers extends StatelessWidget {
         Text(
           text,
           textAlign: TextAlign.center,
-          style:
-              TextStyle(color: tm.isDark() ? Colors.white : Color(0xfff676767)),
+          style: TextStyle(color: tm.isDark() ? Colors.white : Color(0xfff676767)),
         ),
         Expanded(
           child: new Container(

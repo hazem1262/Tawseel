@@ -41,21 +41,18 @@ mixin _$CompaniesResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CompaniesResponseCopyWith<CompaniesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CompaniesResponseCopyWith<CompaniesResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CompaniesResponseCopyWith<$Res> {
-  factory $CompaniesResponseCopyWith(
-          CompaniesResponse value, $Res Function(CompaniesResponse) then) =
+  factory $CompaniesResponseCopyWith(CompaniesResponse value, $Res Function(CompaniesResponse) then) =
       _$CompaniesResponseCopyWithImpl<$Res>;
   $Res call({List<CompanyItem> data});
 }
 
 /// @nodoc
-class _$CompaniesResponseCopyWithImpl<$Res>
-    implements $CompaniesResponseCopyWith<$Res> {
+class _$CompaniesResponseCopyWithImpl<$Res> implements $CompaniesResponseCopyWith<$Res> {
   _$CompaniesResponseCopyWithImpl(this._value, this._then);
 
   final CompaniesResponse _value;
@@ -76,21 +73,17 @@ class _$CompaniesResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CompaniesResponseCopyWith<$Res>
-    implements $CompaniesResponseCopyWith<$Res> {
-  factory _$CompaniesResponseCopyWith(
-          _CompaniesResponse value, $Res Function(_CompaniesResponse) then) =
+abstract class _$CompaniesResponseCopyWith<$Res> implements $CompaniesResponseCopyWith<$Res> {
+  factory _$CompaniesResponseCopyWith(_CompaniesResponse value, $Res Function(_CompaniesResponse) then) =
       __$CompaniesResponseCopyWithImpl<$Res>;
   @override
   $Res call({List<CompanyItem> data});
 }
 
 /// @nodoc
-class __$CompaniesResponseCopyWithImpl<$Res>
-    extends _$CompaniesResponseCopyWithImpl<$Res>
+class __$CompaniesResponseCopyWithImpl<$Res> extends _$CompaniesResponseCopyWithImpl<$Res>
     implements _$CompaniesResponseCopyWith<$Res> {
-  __$CompaniesResponseCopyWithImpl(
-      _CompaniesResponse _value, $Res Function(_CompaniesResponse) _then)
+  __$CompaniesResponseCopyWithImpl(_CompaniesResponse _value, $Res Function(_CompaniesResponse) _then)
       : super(_value, (v) => _then(v as _CompaniesResponse));
 
   @override
@@ -114,8 +107,7 @@ class __$CompaniesResponseCopyWithImpl<$Res>
 class _$_CompaniesResponse implements _CompaniesResponse {
   const _$_CompaniesResponse(this.data);
 
-  factory _$_CompaniesResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_CompaniesResponseFromJson(json);
+  factory _$_CompaniesResponse.fromJson(Map<String, dynamic> json) => _$$_CompaniesResponseFromJson(json);
 
   @override
   final List<CompanyItem> data;
@@ -129,13 +121,11 @@ class _$_CompaniesResponse implements _CompaniesResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CompaniesResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
@@ -149,26 +139,22 @@ class _$_CompaniesResponse implements _CompaniesResponse {
 }
 
 abstract class _CompaniesResponse implements CompaniesResponse {
-  const factory _CompaniesResponse(List<CompanyItem> data) =
-      _$_CompaniesResponse;
+  const factory _CompaniesResponse(List<CompanyItem> data) = _$_CompaniesResponse;
 
-  factory _CompaniesResponse.fromJson(Map<String, dynamic> json) =
-      _$_CompaniesResponse.fromJson;
+  factory _CompaniesResponse.fromJson(Map<String, dynamic> json) = _$_CompaniesResponse.fromJson;
 
   @override
   List<CompanyItem> get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CompaniesResponseCopyWith<_CompaniesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$CompaniesResponseCopyWith<_CompaniesResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$CompaniesAndCategoriesModelTearOff {
   const _$CompaniesAndCategoriesModelTearOff();
 
-  _CompaniesAndCategoriesModel call(
-      List<CompanyItem> companies, List<CategoryData> categories) {
+  _CompaniesAndCategoriesModel call(List<CompanyItem> companies, List<CategoryData> categories) {
     return _CompaniesAndCategoriesModel(
       companies,
       categories,
@@ -185,22 +171,19 @@ mixin _$CompaniesAndCategoriesModel {
   List<CategoryData> get categories => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CompaniesAndCategoriesModelCopyWith<CompaniesAndCategoriesModel>
-      get copyWith => throw _privateConstructorUsedError;
+  $CompaniesAndCategoriesModelCopyWith<CompaniesAndCategoriesModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CompaniesAndCategoriesModelCopyWith<$Res> {
   factory $CompaniesAndCategoriesModelCopyWith(
-          CompaniesAndCategoriesModel value,
-          $Res Function(CompaniesAndCategoriesModel) then) =
+          CompaniesAndCategoriesModel value, $Res Function(CompaniesAndCategoriesModel) then) =
       _$CompaniesAndCategoriesModelCopyWithImpl<$Res>;
   $Res call({List<CompanyItem> companies, List<CategoryData> categories});
 }
 
 /// @nodoc
-class _$CompaniesAndCategoriesModelCopyWithImpl<$Res>
-    implements $CompaniesAndCategoriesModelCopyWith<$Res> {
+class _$CompaniesAndCategoriesModelCopyWithImpl<$Res> implements $CompaniesAndCategoriesModelCopyWith<$Res> {
   _$CompaniesAndCategoriesModelCopyWithImpl(this._value, this._then);
 
   final CompaniesAndCategoriesModel _value;
@@ -226,28 +209,23 @@ class _$CompaniesAndCategoriesModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CompaniesAndCategoriesModelCopyWith<$Res>
-    implements $CompaniesAndCategoriesModelCopyWith<$Res> {
+abstract class _$CompaniesAndCategoriesModelCopyWith<$Res> implements $CompaniesAndCategoriesModelCopyWith<$Res> {
   factory _$CompaniesAndCategoriesModelCopyWith(
-          _CompaniesAndCategoriesModel value,
-          $Res Function(_CompaniesAndCategoriesModel) then) =
+          _CompaniesAndCategoriesModel value, $Res Function(_CompaniesAndCategoriesModel) then) =
       __$CompaniesAndCategoriesModelCopyWithImpl<$Res>;
   @override
   $Res call({List<CompanyItem> companies, List<CategoryData> categories});
 }
 
 /// @nodoc
-class __$CompaniesAndCategoriesModelCopyWithImpl<$Res>
-    extends _$CompaniesAndCategoriesModelCopyWithImpl<$Res>
+class __$CompaniesAndCategoriesModelCopyWithImpl<$Res> extends _$CompaniesAndCategoriesModelCopyWithImpl<$Res>
     implements _$CompaniesAndCategoriesModelCopyWith<$Res> {
   __$CompaniesAndCategoriesModelCopyWithImpl(
-      _CompaniesAndCategoriesModel _value,
-      $Res Function(_CompaniesAndCategoriesModel) _then)
+      _CompaniesAndCategoriesModel _value, $Res Function(_CompaniesAndCategoriesModel) _then)
       : super(_value, (v) => _then(v as _CompaniesAndCategoriesModel));
 
   @override
-  _CompaniesAndCategoriesModel get _value =>
-      super._value as _CompaniesAndCategoriesModel;
+  _CompaniesAndCategoriesModel get _value => super._value as _CompaniesAndCategoriesModel;
 
   @override
   $Res call({
@@ -287,11 +265,9 @@ class _$_CompaniesAndCategoriesModel implements _CompaniesAndCategoriesModel {
     return identical(this, other) ||
         (other is _CompaniesAndCategoriesModel &&
             (identical(other.companies, companies) ||
-                const DeepCollectionEquality()
-                    .equals(other.companies, companies)) &&
+                const DeepCollectionEquality().equals(other.companies, companies)) &&
             (identical(other.categories, categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.categories, categories)));
+                const DeepCollectionEquality().equals(other.categories, categories)));
   }
 
   @override
@@ -302,15 +278,12 @@ class _$_CompaniesAndCategoriesModel implements _CompaniesAndCategoriesModel {
 
   @JsonKey(ignore: true)
   @override
-  _$CompaniesAndCategoriesModelCopyWith<_CompaniesAndCategoriesModel>
-      get copyWith => __$CompaniesAndCategoriesModelCopyWithImpl<
-          _CompaniesAndCategoriesModel>(this, _$identity);
+  _$CompaniesAndCategoriesModelCopyWith<_CompaniesAndCategoriesModel> get copyWith =>
+      __$CompaniesAndCategoriesModelCopyWithImpl<_CompaniesAndCategoriesModel>(this, _$identity);
 }
 
-abstract class _CompaniesAndCategoriesModel
-    implements CompaniesAndCategoriesModel {
-  const factory _CompaniesAndCategoriesModel(
-          List<CompanyItem> companies, List<CategoryData> categories) =
+abstract class _CompaniesAndCategoriesModel implements CompaniesAndCategoriesModel {
+  const factory _CompaniesAndCategoriesModel(List<CompanyItem> companies, List<CategoryData> categories) =
       _$_CompaniesAndCategoriesModel;
 
   @override
@@ -319,6 +292,6 @@ abstract class _CompaniesAndCategoriesModel
   List<CategoryData> get categories => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CompaniesAndCategoriesModelCopyWith<_CompaniesAndCategoriesModel>
-      get copyWith => throw _privateConstructorUsedError;
+  _$CompaniesAndCategoriesModelCopyWith<_CompaniesAndCategoriesModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:tawseel/data/remote/Logger.dart';
@@ -33,8 +31,7 @@ class NetworkModule {
 
 class KeysInjectionInterceptor extends Interceptor {
   @override
-  Future<void> onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
+  Future<void> onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     options.headers['Accept'] = 'application/json';
     options.headers['Content-Language'] = currentLocalName;
     options.headers['Content-Type'] = "application/json";

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:tawseel/features/mainScreen/bottomTabs/favorites/FavoritesScreen.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/HomeScreen.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
@@ -20,13 +19,11 @@ import 'bloc/offers_bloc.dart';
 
 class OffersScreen extends StatelessWidget {
   OffersScreen({Key? key}) : super(key: key);
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          OffersBloc(getIt.get<IOffersRepository>())..add(GetOffers()),
+      create: (context) => OffersBloc(getIt.get<IOffersRepository>())..add(GetOffers()),
       lazy: false,
       child: Builder(builder: (context) {
         return Scaffold(
@@ -88,9 +85,7 @@ class OffersScreen extends StatelessWidget {
       required bool hasMorePages,
       required List<MarketPlaceItem> offers}) {
     final h = MediaQuery.of(context).size.height;
-    final height = h -
-        MediaQuery.of(context).padding.top -
-        MediaQuery.of(context).padding.bottom;
+    final height = h - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom;
     return offers.isEmpty
         ? emptyOffersWidget(context)
         : Container(
@@ -103,9 +98,7 @@ class OffersScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: isAr
-                          ? EdgeInsets.only(right: 8)
-                          : EdgeInsets.only(left: 8),
+                      padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
                           maxHeight: height - height * 0.229,
@@ -115,18 +108,15 @@ class OffersScreen extends StatelessWidget {
                           hasMore: hasMorePages,
                           isLoading: isPagingLoading,
                           loadMore: () {
-                            BlocProvider.of<OffersBloc>(context)
-                              ..add(GetOffers());
+                            BlocProvider.of<OffersBloc>(context)..add(GetOffers());
                           },
                           onRefresh: () {
-                            BlocProvider.of<OffersBloc>(context)
-                              ..add(ResetOffers());
+                            BlocProvider.of<OffersBloc>(context)..add(ResetOffers());
                           },
                           loadingWidget: offersShimmer(context, 1),
                           builder: (offer) {
                             return marketPlaceItem(offer, (item) {
-                              showMarketPlaceCompaniesBottomSheet(
-                                  item, context, item.companies);
+                              showMarketPlaceCompaniesBottomSheet(item, context, item.companies);
                             }, (item) {
                               // BlocProvider.of<HomeBloc>(blocContext).add(
                               //   item.is_favorite
@@ -147,9 +137,8 @@ class OffersScreen extends StatelessWidget {
 
   Widget offersShimmer(BuildContext context, int count) {
     final screenwidth = MediaQuery.of(context).size.width;
-    final screenheight = MediaQuery.of(context).size.height -
-        MediaQuery.of(context).padding.top -
-        MediaQuery.of(context).padding.bottom;
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom;
     return Padding(
       padding: const EdgeInsets.only(top: 10.0, left: 10, right: 10),
       child: Shimmer.fromColors(
@@ -173,10 +162,7 @@ class OffersScreen extends StatelessWidget {
     );
   }
 
-  Widget offerItem(
-      {required BuildContext context,
-      required OfferItem offer,
-      required Function onClick}) {
+  Widget offerItem({required BuildContext context, required OfferItem offer, required Function onClick}) {
     final screenWidth = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
@@ -233,10 +219,7 @@ Widget emptyOffersWidget(BuildContext context) {
           SizedBox(height: 24),
           Text(
             LocaleKeys.offers_empty_subtitle.tr(),
-            style: Theme.of(context)
-                .textTheme
-                .caption!
-                .copyWith(fontSize: BodyTextSize),
+            style: Theme.of(context).textTheme.caption!.copyWith(fontSize: BodyTextSize),
             textAlign: TextAlign.center,
             softWrap: true,
           )

@@ -41,21 +41,18 @@ mixin _$CategoriesResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CategoriesResponseCopyWith<CategoriesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CategoriesResponseCopyWith<CategoriesResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CategoriesResponseCopyWith<$Res> {
-  factory $CategoriesResponseCopyWith(
-          CategoriesResponse value, $Res Function(CategoriesResponse) then) =
+  factory $CategoriesResponseCopyWith(CategoriesResponse value, $Res Function(CategoriesResponse) then) =
       _$CategoriesResponseCopyWithImpl<$Res>;
   $Res call({List<CategoryData> data});
 }
 
 /// @nodoc
-class _$CategoriesResponseCopyWithImpl<$Res>
-    implements $CategoriesResponseCopyWith<$Res> {
+class _$CategoriesResponseCopyWithImpl<$Res> implements $CategoriesResponseCopyWith<$Res> {
   _$CategoriesResponseCopyWithImpl(this._value, this._then);
 
   final CategoriesResponse _value;
@@ -76,21 +73,17 @@ class _$CategoriesResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CategoriesResponseCopyWith<$Res>
-    implements $CategoriesResponseCopyWith<$Res> {
-  factory _$CategoriesResponseCopyWith(
-          _CategoriesResponse value, $Res Function(_CategoriesResponse) then) =
+abstract class _$CategoriesResponseCopyWith<$Res> implements $CategoriesResponseCopyWith<$Res> {
+  factory _$CategoriesResponseCopyWith(_CategoriesResponse value, $Res Function(_CategoriesResponse) then) =
       __$CategoriesResponseCopyWithImpl<$Res>;
   @override
   $Res call({List<CategoryData> data});
 }
 
 /// @nodoc
-class __$CategoriesResponseCopyWithImpl<$Res>
-    extends _$CategoriesResponseCopyWithImpl<$Res>
+class __$CategoriesResponseCopyWithImpl<$Res> extends _$CategoriesResponseCopyWithImpl<$Res>
     implements _$CategoriesResponseCopyWith<$Res> {
-  __$CategoriesResponseCopyWithImpl(
-      _CategoriesResponse _value, $Res Function(_CategoriesResponse) _then)
+  __$CategoriesResponseCopyWithImpl(_CategoriesResponse _value, $Res Function(_CategoriesResponse) _then)
       : super(_value, (v) => _then(v as _CategoriesResponse));
 
   @override
@@ -114,8 +107,7 @@ class __$CategoriesResponseCopyWithImpl<$Res>
 class _$_CategoriesResponse implements _CategoriesResponse {
   const _$_CategoriesResponse(this.data);
 
-  factory _$_CategoriesResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_CategoriesResponseFromJson(json);
+  factory _$_CategoriesResponse.fromJson(Map<String, dynamic> json) => _$$_CategoriesResponseFromJson(json);
 
   @override
   final List<CategoryData> data;
@@ -129,13 +121,11 @@ class _$_CategoriesResponse implements _CategoriesResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CategoriesResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
@@ -149,18 +139,15 @@ class _$_CategoriesResponse implements _CategoriesResponse {
 }
 
 abstract class _CategoriesResponse implements CategoriesResponse {
-  const factory _CategoriesResponse(List<CategoryData> data) =
-      _$_CategoriesResponse;
+  const factory _CategoriesResponse(List<CategoryData> data) = _$_CategoriesResponse;
 
-  factory _CategoriesResponse.fromJson(Map<String, dynamic> json) =
-      _$_CategoriesResponse.fromJson;
+  factory _CategoriesResponse.fromJson(Map<String, dynamic> json) = _$_CategoriesResponse.fromJson;
 
   @override
   List<CategoryData> get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CategoriesResponseCopyWith<_CategoriesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$CategoriesResponseCopyWith<_CategoriesResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 CategoryData _$CategoryDataFromJson(Map<String, dynamic> json) {
@@ -172,11 +159,7 @@ class _$CategoryDataTearOff {
   const _$CategoryDataTearOff();
 
   _CategoryData call(
-      {int? id,
-      String? name,
-      String? image,
-      List<CategoryData>? sub_categories,
-      bool? isSelected = false}) {
+      {int? id, String? name, String? image, List<CategoryData>? sub_categories, bool? isSelected = false}) {
     return _CategoryData(
       id: id,
       name: name,
@@ -204,21 +187,14 @@ mixin _$CategoryData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CategoryDataCopyWith<CategoryData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CategoryDataCopyWith<CategoryData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CategoryDataCopyWith<$Res> {
-  factory $CategoryDataCopyWith(
-          CategoryData value, $Res Function(CategoryData) then) =
+  factory $CategoryDataCopyWith(CategoryData value, $Res Function(CategoryData) then) =
       _$CategoryDataCopyWithImpl<$Res>;
-  $Res call(
-      {int? id,
-      String? name,
-      String? image,
-      List<CategoryData>? sub_categories,
-      bool? isSelected});
+  $Res call({int? id, String? name, String? image, List<CategoryData>? sub_categories, bool? isSelected});
 }
 
 /// @nodoc
@@ -263,25 +239,17 @@ class _$CategoryDataCopyWithImpl<$Res> implements $CategoryDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CategoryDataCopyWith<$Res>
-    implements $CategoryDataCopyWith<$Res> {
-  factory _$CategoryDataCopyWith(
-          _CategoryData value, $Res Function(_CategoryData) then) =
+abstract class _$CategoryDataCopyWith<$Res> implements $CategoryDataCopyWith<$Res> {
+  factory _$CategoryDataCopyWith(_CategoryData value, $Res Function(_CategoryData) then) =
       __$CategoryDataCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int? id,
-      String? name,
-      String? image,
-      List<CategoryData>? sub_categories,
-      bool? isSelected});
+  $Res call({int? id, String? name, String? image, List<CategoryData>? sub_categories, bool? isSelected});
 }
 
 /// @nodoc
 class __$CategoryDataCopyWithImpl<$Res> extends _$CategoryDataCopyWithImpl<$Res>
     implements _$CategoryDataCopyWith<$Res> {
-  __$CategoryDataCopyWithImpl(
-      _CategoryData _value, $Res Function(_CategoryData) _then)
+  __$CategoryDataCopyWithImpl(_CategoryData _value, $Res Function(_CategoryData) _then)
       : super(_value, (v) => _then(v as _CategoryData));
 
   @override
@@ -323,15 +291,9 @@ class __$CategoryDataCopyWithImpl<$Res> extends _$CategoryDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CategoryData implements _CategoryData {
-  const _$_CategoryData(
-      {this.id,
-      this.name,
-      this.image,
-      this.sub_categories,
-      this.isSelected = false});
+  const _$_CategoryData({this.id, this.name, this.image, this.sub_categories, this.isSelected = false});
 
-  factory _$_CategoryData.fromJson(Map<String, dynamic> json) =>
-      _$$_CategoryDataFromJson(json);
+  factory _$_CategoryData.fromJson(Map<String, dynamic> json) => _$$_CategoryDataFromJson(json);
 
   @override
   final int? id;
@@ -354,18 +316,13 @@ class _$_CategoryData implements _CategoryData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CategoryData &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.sub_categories, sub_categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.sub_categories, sub_categories)) &&
+                const DeepCollectionEquality().equals(other.sub_categories, sub_categories)) &&
             (identical(other.isSelected, isSelected) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSelected, isSelected)));
+                const DeepCollectionEquality().equals(other.isSelected, isSelected)));
   }
 
   @override
@@ -379,8 +336,7 @@ class _$_CategoryData implements _CategoryData {
 
   @JsonKey(ignore: true)
   @override
-  _$CategoryDataCopyWith<_CategoryData> get copyWith =>
-      __$CategoryDataCopyWithImpl<_CategoryData>(this, _$identity);
+  _$CategoryDataCopyWith<_CategoryData> get copyWith => __$CategoryDataCopyWithImpl<_CategoryData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -390,14 +346,9 @@ class _$_CategoryData implements _CategoryData {
 
 abstract class _CategoryData implements CategoryData {
   const factory _CategoryData(
-      {int? id,
-      String? name,
-      String? image,
-      List<CategoryData>? sub_categories,
-      bool? isSelected}) = _$_CategoryData;
+      {int? id, String? name, String? image, List<CategoryData>? sub_categories, bool? isSelected}) = _$_CategoryData;
 
-  factory _CategoryData.fromJson(Map<String, dynamic> json) =
-      _$_CategoryData.fromJson;
+  factory _CategoryData.fromJson(Map<String, dynamic> json) = _$_CategoryData.fromJson;
 
   @override
   int? get id => throw _privateConstructorUsedError;
@@ -411,6 +362,5 @@ abstract class _CategoryData implements CategoryData {
   bool? get isSelected => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CategoryDataCopyWith<_CategoryData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$CategoryDataCopyWith<_CategoryData> get copyWith => throw _privateConstructorUsedError;
 }

@@ -41,15 +41,12 @@ mixin _$OtpResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OtpResponseCopyWith<OtpResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $OtpResponseCopyWith<OtpResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OtpResponseCopyWith<$Res> {
-  factory $OtpResponseCopyWith(
-          OtpResponse value, $Res Function(OtpResponse) then) =
-      _$OtpResponseCopyWithImpl<$Res>;
+  factory $OtpResponseCopyWith(OtpResponse value, $Res Function(OtpResponse) then) = _$OtpResponseCopyWithImpl<$Res>;
   $Res call({int otp});
 }
 
@@ -75,20 +72,16 @@ class _$OtpResponseCopyWithImpl<$Res> implements $OtpResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$OtpResponseCopyWith<$Res>
-    implements $OtpResponseCopyWith<$Res> {
-  factory _$OtpResponseCopyWith(
-          _OtpResponse value, $Res Function(_OtpResponse) then) =
+abstract class _$OtpResponseCopyWith<$Res> implements $OtpResponseCopyWith<$Res> {
+  factory _$OtpResponseCopyWith(_OtpResponse value, $Res Function(_OtpResponse) then) =
       __$OtpResponseCopyWithImpl<$Res>;
   @override
   $Res call({int otp});
 }
 
 /// @nodoc
-class __$OtpResponseCopyWithImpl<$Res> extends _$OtpResponseCopyWithImpl<$Res>
-    implements _$OtpResponseCopyWith<$Res> {
-  __$OtpResponseCopyWithImpl(
-      _OtpResponse _value, $Res Function(_OtpResponse) _then)
+class __$OtpResponseCopyWithImpl<$Res> extends _$OtpResponseCopyWithImpl<$Res> implements _$OtpResponseCopyWith<$Res> {
+  __$OtpResponseCopyWithImpl(_OtpResponse _value, $Res Function(_OtpResponse) _then)
       : super(_value, (v) => _then(v as _OtpResponse));
 
   @override
@@ -112,8 +105,7 @@ class __$OtpResponseCopyWithImpl<$Res> extends _$OtpResponseCopyWithImpl<$Res>
 class _$_OtpResponse implements _OtpResponse {
   const _$_OtpResponse(this.otp);
 
-  factory _$_OtpResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_OtpResponseFromJson(json);
+  factory _$_OtpResponse.fromJson(Map<String, dynamic> json) => _$$_OtpResponseFromJson(json);
 
   @override
   final int otp;
@@ -126,19 +118,15 @@ class _$_OtpResponse implements _OtpResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OtpResponse &&
-            (identical(other.otp, otp) ||
-                const DeepCollectionEquality().equals(other.otp, otp)));
+        (other is _OtpResponse && (identical(other.otp, otp) || const DeepCollectionEquality().equals(other.otp, otp)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(otp);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(otp);
 
   @JsonKey(ignore: true)
   @override
-  _$OtpResponseCopyWith<_OtpResponse> get copyWith =>
-      __$OtpResponseCopyWithImpl<_OtpResponse>(this, _$identity);
+  _$OtpResponseCopyWith<_OtpResponse> get copyWith => __$OtpResponseCopyWithImpl<_OtpResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -149,13 +137,11 @@ class _$_OtpResponse implements _OtpResponse {
 abstract class _OtpResponse implements OtpResponse {
   const factory _OtpResponse(int otp) = _$_OtpResponse;
 
-  factory _OtpResponse.fromJson(Map<String, dynamic> json) =
-      _$_OtpResponse.fromJson;
+  factory _OtpResponse.fromJson(Map<String, dynamic> json) = _$_OtpResponse.fromJson;
 
   @override
   int get otp => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$OtpResponseCopyWith<_OtpResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$OtpResponseCopyWith<_OtpResponse> get copyWith => throw _privateConstructorUsedError;
 }

@@ -41,14 +41,12 @@ mixin _$AddressResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressResponseCopyWith<AddressResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressResponseCopyWith<AddressResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressResponseCopyWith<$Res> {
-  factory $AddressResponseCopyWith(
-          AddressResponse value, $Res Function(AddressResponse) then) =
+  factory $AddressResponseCopyWith(AddressResponse value, $Res Function(AddressResponse) then) =
       _$AddressResponseCopyWithImpl<$Res>;
   $Res call({AddressData data});
 
@@ -56,8 +54,7 @@ abstract class $AddressResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AddressResponseCopyWithImpl<$Res>
-    implements $AddressResponseCopyWith<$Res> {
+class _$AddressResponseCopyWithImpl<$Res> implements $AddressResponseCopyWith<$Res> {
   _$AddressResponseCopyWithImpl(this._value, this._then);
 
   final AddressResponse _value;
@@ -85,10 +82,8 @@ class _$AddressResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AddressResponseCopyWith<$Res>
-    implements $AddressResponseCopyWith<$Res> {
-  factory _$AddressResponseCopyWith(
-          _AddressResponse value, $Res Function(_AddressResponse) then) =
+abstract class _$AddressResponseCopyWith<$Res> implements $AddressResponseCopyWith<$Res> {
+  factory _$AddressResponseCopyWith(_AddressResponse value, $Res Function(_AddressResponse) then) =
       __$AddressResponseCopyWithImpl<$Res>;
   @override
   $Res call({AddressData data});
@@ -98,11 +93,9 @@ abstract class _$AddressResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AddressResponseCopyWithImpl<$Res>
-    extends _$AddressResponseCopyWithImpl<$Res>
+class __$AddressResponseCopyWithImpl<$Res> extends _$AddressResponseCopyWithImpl<$Res>
     implements _$AddressResponseCopyWith<$Res> {
-  __$AddressResponseCopyWithImpl(
-      _AddressResponse _value, $Res Function(_AddressResponse) _then)
+  __$AddressResponseCopyWithImpl(_AddressResponse _value, $Res Function(_AddressResponse) _then)
       : super(_value, (v) => _then(v as _AddressResponse));
 
   @override
@@ -126,8 +119,7 @@ class __$AddressResponseCopyWithImpl<$Res>
 class _$_AddressResponse implements _AddressResponse {
   const _$_AddressResponse(this.data);
 
-  factory _$_AddressResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_AddressResponseFromJson(json);
+  factory _$_AddressResponse.fromJson(Map<String, dynamic> json) => _$$_AddressResponseFromJson(json);
 
   @override
   final AddressData data;
@@ -141,13 +133,11 @@ class _$_AddressResponse implements _AddressResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AddressResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
@@ -163,15 +153,13 @@ class _$_AddressResponse implements _AddressResponse {
 abstract class _AddressResponse implements AddressResponse {
   const factory _AddressResponse(AddressData data) = _$_AddressResponse;
 
-  factory _AddressResponse.fromJson(Map<String, dynamic> json) =
-      _$_AddressResponse.fromJson;
+  factory _AddressResponse.fromJson(Map<String, dynamic> json) = _$_AddressResponse.fromJson;
 
   @override
   AddressData get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AddressResponseCopyWith<_AddressResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AddressResponseCopyWith<_AddressResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 AddressData _$AddressDataFromJson(Map<String, dynamic> json) {
@@ -182,8 +170,7 @@ AddressData _$AddressDataFromJson(Map<String, dynamic> json) {
 class _$AddressDataTearOff {
   const _$AddressDataTearOff();
 
-  _AddressData call(int id, String name, String address, String lat,
-      String long, bool is_default) {
+  _AddressData call(int id, String name, String address, String lat, String long, bool is_default) {
     return _AddressData(
       id,
       name,
@@ -213,22 +200,13 @@ mixin _$AddressData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressDataCopyWith<AddressData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressDataCopyWith<AddressData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressDataCopyWith<$Res> {
-  factory $AddressDataCopyWith(
-          AddressData value, $Res Function(AddressData) then) =
-      _$AddressDataCopyWithImpl<$Res>;
-  $Res call(
-      {int id,
-      String name,
-      String address,
-      String lat,
-      String long,
-      bool is_default});
+  factory $AddressDataCopyWith(AddressData value, $Res Function(AddressData) then) = _$AddressDataCopyWithImpl<$Res>;
+  $Res call({int id, String name, String address, String lat, String long, bool is_default});
 }
 
 /// @nodoc
@@ -278,26 +256,16 @@ class _$AddressDataCopyWithImpl<$Res> implements $AddressDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AddressDataCopyWith<$Res>
-    implements $AddressDataCopyWith<$Res> {
-  factory _$AddressDataCopyWith(
-          _AddressData value, $Res Function(_AddressData) then) =
+abstract class _$AddressDataCopyWith<$Res> implements $AddressDataCopyWith<$Res> {
+  factory _$AddressDataCopyWith(_AddressData value, $Res Function(_AddressData) then) =
       __$AddressDataCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int id,
-      String name,
-      String address,
-      String lat,
-      String long,
-      bool is_default});
+  $Res call({int id, String name, String address, String lat, String long, bool is_default});
 }
 
 /// @nodoc
-class __$AddressDataCopyWithImpl<$Res> extends _$AddressDataCopyWithImpl<$Res>
-    implements _$AddressDataCopyWith<$Res> {
-  __$AddressDataCopyWithImpl(
-      _AddressData _value, $Res Function(_AddressData) _then)
+class __$AddressDataCopyWithImpl<$Res> extends _$AddressDataCopyWithImpl<$Res> implements _$AddressDataCopyWith<$Res> {
+  __$AddressDataCopyWithImpl(_AddressData _value, $Res Function(_AddressData) _then)
       : super(_value, (v) => _then(v as _AddressData));
 
   @override
@@ -344,11 +312,9 @@ class __$AddressDataCopyWithImpl<$Res> extends _$AddressDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AddressData implements _AddressData {
-  const _$_AddressData(
-      this.id, this.name, this.address, this.lat, this.long, this.is_default);
+  const _$_AddressData(this.id, this.name, this.address, this.lat, this.long, this.is_default);
 
-  factory _$_AddressData.fromJson(Map<String, dynamic> json) =>
-      _$$_AddressDataFromJson(json);
+  factory _$_AddressData.fromJson(Map<String, dynamic> json) => _$$_AddressDataFromJson(json);
 
   @override
   final int id;
@@ -372,20 +338,13 @@ class _$_AddressData implements _AddressData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AddressData &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.lat, lat) ||
-                const DeepCollectionEquality().equals(other.lat, lat)) &&
-            (identical(other.long, long) ||
-                const DeepCollectionEquality().equals(other.long, long)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)) &&
+            (identical(other.lat, lat) || const DeepCollectionEquality().equals(other.lat, lat)) &&
+            (identical(other.long, long) || const DeepCollectionEquality().equals(other.long, long)) &&
             (identical(other.is_default, is_default) ||
-                const DeepCollectionEquality()
-                    .equals(other.is_default, is_default)));
+                const DeepCollectionEquality().equals(other.is_default, is_default)));
   }
 
   @override
@@ -400,8 +359,7 @@ class _$_AddressData implements _AddressData {
 
   @JsonKey(ignore: true)
   @override
-  _$AddressDataCopyWith<_AddressData> get copyWith =>
-      __$AddressDataCopyWithImpl<_AddressData>(this, _$identity);
+  _$AddressDataCopyWith<_AddressData> get copyWith => __$AddressDataCopyWithImpl<_AddressData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -410,11 +368,10 @@ class _$_AddressData implements _AddressData {
 }
 
 abstract class _AddressData implements AddressData {
-  const factory _AddressData(int id, String name, String address, String lat,
-      String long, bool is_default) = _$_AddressData;
+  const factory _AddressData(int id, String name, String address, String lat, String long, bool is_default) =
+      _$_AddressData;
 
-  factory _AddressData.fromJson(Map<String, dynamic> json) =
-      _$_AddressData.fromJson;
+  factory _AddressData.fromJson(Map<String, dynamic> json) = _$_AddressData.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -430,6 +387,5 @@ abstract class _AddressData implements AddressData {
   bool get is_default => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AddressDataCopyWith<_AddressData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AddressDataCopyWith<_AddressData> get copyWith => throw _privateConstructorUsedError;
 }

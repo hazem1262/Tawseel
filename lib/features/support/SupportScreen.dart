@@ -75,8 +75,7 @@ class SupportScreen extends StatelessWidget {
                           margin: EdgeInsets.symmetric(horizontal: 16),
                           width: double.infinity,
                           child: Text(LocaleKeys.support_subtitle.tr(),
-                              style: theme.textTheme.caption!
-                                  .copyWith(fontSize: BodyTextSize)),
+                              style: theme.textTheme.caption!.copyWith(fontSize: BodyTextSize)),
                         ),
                         SizedBox(height: height / 50),
                         Form(
@@ -121,8 +120,7 @@ class SupportScreen extends StatelessWidget {
                         BlocBuilder<SupportBloc, SupportState>(
                           builder: (context, state) {
                             return Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: LoadingButton(
                                 text: LocaleKeys.send_message.tr(),
                                 onPressed: () {
@@ -158,8 +156,7 @@ class SupportScreen extends StatelessWidget {
 
   void submitSupportRequest(BuildContext context) {
     if (!isFormValid()) return;
-    context.read<SupportBloc>().add(SupportEvent.sendSupportMessage(
-        subjectController.text, messageController.text));
+    context.read<SupportBloc>().add(SupportEvent.sendSupportMessage(subjectController.text, messageController.text));
   }
 
   String subjectValidator(String? text) {

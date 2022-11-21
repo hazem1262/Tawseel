@@ -16,26 +16,14 @@ class _AddressService implements AddressService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<AddressResponse>> createAddress(
-      name, address, lat, long, is_default) async {
+  Future<HttpResponse<AddressResponse>> createAddress(name, address, lat, long, is_default) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {
-      'name': name,
-      'address': address,
-      'lat': lat,
-      'long': long,
-      'is_default': is_default
-    };
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<AddressResponse>>(Options(
-                method: 'POST',
-                headers: _headers,
-                extra: _extra,
-                contentType: 'application/x-www-form-urlencoded')
-            .compose(_dio.options, 'addresses',
-                queryParameters: queryParameters, data: _data)
+    final _data = {'name': name, 'address': address, 'lat': lat, 'long': long, 'is_default': is_default};
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<HttpResponse<AddressResponse>>(
+        Options(method: 'POST', headers: _headers, extra: _extra, contentType: 'application/x-www-form-urlencoded')
+            .compose(_dio.options, 'addresses', queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = AddressResponse.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
@@ -43,26 +31,14 @@ class _AddressService implements AddressService {
   }
 
   @override
-  Future<HttpResponse<AddressResponse>> updateAddress(
-      id, name, address, lat, long, is_default) async {
+  Future<HttpResponse<AddressResponse>> updateAddress(id, name, address, lat, long, is_default) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {
-      'name': name,
-      'address': address,
-      'lat': lat,
-      'long': long,
-      'is_default': is_default
-    };
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<HttpResponse<AddressResponse>>(Options(
-                method: 'POST',
-                headers: _headers,
-                extra: _extra,
-                contentType: 'application/x-www-form-urlencoded')
-            .compose(_dio.options, 'addresses/$id',
-                queryParameters: queryParameters, data: _data)
+    final _data = {'name': name, 'address': address, 'lat': lat, 'long': long, 'is_default': is_default};
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<HttpResponse<AddressResponse>>(
+        Options(method: 'POST', headers: _headers, extra: _extra, contentType: 'application/x-www-form-urlencoded')
+            .compose(_dio.options, 'addresses/$id', queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = AddressResponse.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
@@ -75,14 +51,9 @@ class _AddressService implements AddressService {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<String>(
-        _setStreamType<HttpResponse<String>>(Options(
-                method: 'DELETE',
-                headers: _headers,
-                extra: _extra,
-                contentType: 'application/x-www-form-urlencoded')
-            .compose(_dio.options, 'addresses/$id',
-                queryParameters: queryParameters, data: _data)
+    final _result = await _dio.fetch<String>(_setStreamType<HttpResponse<String>>(
+        Options(method: 'DELETE', headers: _headers, extra: _extra, contentType: 'application/x-www-form-urlencoded')
+            .compose(_dio.options, 'addresses/$id', queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data!;
     final httpResponse = HttpResponse(value, _result);
@@ -91,8 +62,7 @@ class _AddressService implements AddressService {
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
-        !(requestOptions.responseType == ResponseType.bytes ||
-            requestOptions.responseType == ResponseType.stream)) {
+        !(requestOptions.responseType == ResponseType.bytes || requestOptions.responseType == ResponseType.stream)) {
       if (T == String) {
         requestOptions.responseType = ResponseType.plain;
       } else {

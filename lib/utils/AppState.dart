@@ -37,13 +37,10 @@ class AppState extends ChangeNotifier {
     debugPrint("saveUserEntityFromLogin $res");
     final pref = await SharedPreferences.getInstance();
     seLoggedInState(true);
-    var userEntity =
-        await pref.setString(USER_ENTITY, jsonEncode(res.getUserEntity()));
-    var userToken =
-        await setToken("${res.data.token_type} ${res.data.access_token}");
+    var userEntity = await pref.setString(USER_ENTITY, jsonEncode(res.getUserEntity()));
+    var userToken = await setToken("${res.data.token_type} ${res.data.access_token}");
 
-    var hasAddresses =
-        await setHasAddresses(res.data.user.address.isEmpty ? false : true);
+    var hasAddresses = await setHasAddresses(res.data.user.address.isEmpty ? false : true);
 
     return (userEntity && userToken && hasAddresses);
   }

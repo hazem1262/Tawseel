@@ -11,8 +11,7 @@ part 'OtpBloc.freezed.dart';
 @freezed
 class OtpEvents with _$OtpEvents {
   const factory OtpEvents.sendOtp(String phone, OTP_TYPE type) = SendOtp;
-  const factory OtpEvents.verifyOtp(String phone, String otp, OTP_TYPE type) =
-      VerifyOtp;
+  const factory OtpEvents.verifyOtp(String phone, String otp, OTP_TYPE type) = VerifyOtp;
 
   const factory OtpEvents.onOtpChange(String? otp) = OnOtpChange;
 }
@@ -21,13 +20,10 @@ class OtpEvents with _$OtpEvents {
 class OtpViewState with _$OtpViewState {
   const factory OtpViewState.initialState() = InitialState;
   const factory OtpViewState.isLoading() = OtpIsLoading;
-  const factory OtpViewState.onOtpReceived(OtpResponse otpResponse) =
-      OnOtpReceived;
-  const factory OtpViewState.onOtpVerified(LoginResponse loginResponse) =
-      OnOtpVerified;
+  const factory OtpViewState.onOtpReceived(OtpResponse otpResponse) = OnOtpReceived;
+  const factory OtpViewState.onOtpVerified(LoginResponse loginResponse) = OnOtpVerified;
   const factory OtpViewState.hasError(String error) = _HasError;
-  const factory OtpViewState.disableButton(bool disable) =
-      DisableOtpConfirmButton;
+  const factory OtpViewState.disableButton(bool disable) = DisableOtpConfirmButton;
 }
 
 class OtpBloc extends Bloc<OtpEvents, OtpViewState> {

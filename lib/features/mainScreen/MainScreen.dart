@@ -21,12 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return AutoTabsRouter(
         lazyLoad: false,
-        routes: [
-          HomeScreenRoute(),
-          OffersScreenRoute(),
-          FavoritesScreenRoute(),
-          ProfileScreenRoute()
-        ],
+        routes: [HomeScreenRoute(), OffersScreenRoute(), FavoritesScreenRoute(), ProfileScreenRoute()],
         builder: (context, child, animation) {
           final tabsRouter = AutoTabsRouter.of(context);
 
@@ -54,9 +49,7 @@ class _MainScreenState extends State<MainScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: ImageIcon(
                     AssetImage(Res.home_icon),
-                    color: tabsRouter.activeIndex == _SelectedTab.HOME.index
-                        ? Colors.white
-                        : tm.subtitleColorLight,
+                    color: tabsRouter.activeIndex == _SelectedTab.HOME.index ? Colors.white : tm.subtitleColorLight,
                   ),
                 )),
                 FloatingNavbarItem(
@@ -64,9 +57,7 @@ class _MainScreenState extends State<MainScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: ImageIcon(
                     AssetImage(Res.offers_icon),
-                    color: tabsRouter.activeIndex == _SelectedTab.OFFERS.index
-                        ? Colors.white
-                        : tm.subtitleColorLight,
+                    color: tabsRouter.activeIndex == _SelectedTab.OFFERS.index ? Colors.white : tm.subtitleColorLight,
                   ),
                 )),
                 FloatingNavbarItem(
@@ -75,9 +66,7 @@ class _MainScreenState extends State<MainScreen> {
                   child: ImageIcon(
                     AssetImage(Res.fav_icon),
                     color:
-                        tabsRouter.activeIndex == _SelectedTab.FAVORITES.index
-                            ? Colors.white
-                            : tm.subtitleColorLight,
+                        tabsRouter.activeIndex == _SelectedTab.FAVORITES.index ? Colors.white : tm.subtitleColorLight,
                   ),
                 )),
                 FloatingNavbarItem(
@@ -85,9 +74,7 @@ class _MainScreenState extends State<MainScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: ImageIcon(
                     AssetImage(Res.profile_icon),
-                    color: tabsRouter.activeIndex == _SelectedTab.PROFILE.index
-                        ? Colors.white
-                        : tm.subtitleColorLight,
+                    color: tabsRouter.activeIndex == _SelectedTab.PROFILE.index ? Colors.white : tm.subtitleColorLight,
                   ),
                 )),
               ],

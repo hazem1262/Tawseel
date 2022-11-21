@@ -1,5 +1,4 @@
 import 'package:auto_route/src/router/auto_router_x.dart';
-import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,11 +10,9 @@ import 'package:tawseel/features/search/FilterDate.dart';
 import 'package:tawseel/features/search/bloc/filter_repository.dart';
 import 'package:tawseel/features/search/search_bloc.dart';
 import 'package:tawseel/features/signup/components/searchInputField.dart';
-import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
-import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:tawseel/utils/pagination_list.dart';
@@ -74,8 +71,7 @@ class SearchScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin:
-                            EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                         alignment: AlignmentDirectional.topStart,
                         color: Colors.transparent,
                         width: double.infinity,
@@ -92,8 +88,7 @@ class SearchScreen extends StatelessWidget {
                             onSearchClicked: () {
                               BlocProvider.of<SearchBloc>(context)
                                 ..add(
-                                  GetSearchMarketPlaces(
-                                      searchInputController.text),
+                                  GetSearchMarketPlaces(searchInputController.text),
                                 );
                             },
                           );
@@ -142,12 +137,10 @@ class SearchScreen extends StatelessWidget {
             hasMore: hasMorePages,
             isLoading: isLoading,
             loadMore: () {
-              BlocProvider.of<SearchBloc>(blocContext)
-                ..add(GetSearchMarketPlaces(null));
+              BlocProvider.of<SearchBloc>(blocContext)..add(GetSearchMarketPlaces(null));
             },
             onRefresh: () {
-              BlocProvider.of<SearchBloc>(blocContext)
-                ..add(ResetSearchRefreshData());
+              BlocProvider.of<SearchBloc>(blocContext)..add(ResetSearchRefreshData());
             },
             loadingWidget: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -165,9 +158,7 @@ class SearchScreen extends StatelessWidget {
                 },
                 (item) {
                   BlocProvider.of<SearchBloc>(blocContext).add(
-                    item.is_favorite
-                        ? RemoveMarketPlaceFromFavorite(item.id)
-                        : AddMarketPlaceToFavorite((item.id)),
+                    item.is_favorite ? RemoveMarketPlaceFromFavorite(item.id) : AddMarketPlaceToFavorite((item.id)),
                   );
                 },
               );
@@ -179,11 +170,8 @@ class SearchScreen extends StatelessWidget {
   }
 
   Widget searchWidget(
-      {required SearchBlocState state,
-      GestureTapCallback? onFilterClicked,
-      GestureTapCallback? onSearchClicked}) {
-    final isDataAva =
-        state.campaniesList.isNotEmpty || state.categoriesList.isNotEmpty;
+      {required SearchBlocState state, GestureTapCallback? onFilterClicked, GestureTapCallback? onSearchClicked}) {
+    final isDataAva = state.campaniesList.isNotEmpty || state.categoriesList.isNotEmpty;
     return Container(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -226,10 +214,7 @@ class SearchScreen extends StatelessWidget {
     );
   }
 
-  void doApplyFilter(
-      {required BuildContext context,
-      required SearchBlocState state,
-      required FilterDate filterData}) {
+  void doApplyFilter({required BuildContext context, required SearchBlocState state, required FilterDate filterData}) {
     print(filterData.toString());
 
     BlocProvider.of<SearchBloc>(context)
@@ -237,14 +222,10 @@ class SearchScreen extends StatelessWidget {
         query: searchInputController.text,
         categoriesList: filterData.categories,
         campaniesList: filterData.companies,
-        delivery_price_range_from: filterData.delivery_price_range_from == 0
-            ? null
-            : filterData.delivery_price_range_from,
-        delivery_price_range_to: filterData.delivery_price_range_to == 0
-            ? null
-            : filterData.delivery_price_range_to,
-        max_distance:
-            filterData.max_distance == 0 ? null : filterData.max_distance,
+        delivery_price_range_from:
+            filterData.delivery_price_range_from == 0 ? null : filterData.delivery_price_range_from,
+        delivery_price_range_to: filterData.delivery_price_range_to == 0 ? null : filterData.delivery_price_range_to,
+        max_distance: filterData.max_distance == 0 ? null : filterData.max_distance,
       ))
       ..add(GetSearchMarketPlaces(null));
   }

@@ -9,13 +9,11 @@ part 'companies_response.freezed.dart';
 class CompaniesResponse with _$CompaniesResponse {
   const factory CompaniesResponse(List<CompanyItem> data) = _CompaniesResponse;
 
-  factory CompaniesResponse.fromJson(Map<String, dynamic> json) =>
-      _$CompaniesResponseFromJson(json);
+  factory CompaniesResponse.fromJson(Map<String, dynamic> json) => _$CompaniesResponseFromJson(json);
 }
 
 @freezed
 class CompaniesAndCategoriesModel with _$CompaniesAndCategoriesModel {
-  const factory CompaniesAndCategoriesModel(
-          List<CompanyItem> companies, List<CategoryData> categories) =
+  const factory CompaniesAndCategoriesModel(List<CompanyItem> companies, List<CategoryData> categories) =
       _CompaniesAndCategoriesModel;
 }

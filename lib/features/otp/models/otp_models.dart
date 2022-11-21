@@ -6,8 +6,7 @@ part 'otp_models.g.dart';
 @freezed
 class OtpResponse with _$OtpResponse {
   const factory OtpResponse(int otp) = _OtpResponse;
-  factory OtpResponse.fromJson(Map<String, dynamic> json) =>
-      _$OtpResponseFromJson(json);
+  factory OtpResponse.fromJson(Map<String, dynamic> json) => _$OtpResponseFromJson(json);
 }
 
 // otp confirmation response is the same response as verified login response now

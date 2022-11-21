@@ -73,8 +73,7 @@ mixin _$FavoritesEvent {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
-    required TResult Function(RemoveFromFavoriteByDismiss value)
-        removeFromFavoriteByDismiss,
+    required TResult Function(RemoveFromFavoriteByDismiss value) removeFromFavoriteByDismiss,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,8 +81,7 @@ mixin _$FavoritesEvent {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,8 +89,7 @@ mixin _$FavoritesEvent {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -100,14 +97,12 @@ mixin _$FavoritesEvent {
 
 /// @nodoc
 abstract class $FavoritesEventCopyWith<$Res> {
-  factory $FavoritesEventCopyWith(
-          FavoritesEvent value, $Res Function(FavoritesEvent) then) =
+  factory $FavoritesEventCopyWith(FavoritesEvent value, $Res Function(FavoritesEvent) then) =
       _$FavoritesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FavoritesEventCopyWithImpl<$Res>
-    implements $FavoritesEventCopyWith<$Res> {
+class _$FavoritesEventCopyWithImpl<$Res> implements $FavoritesEventCopyWith<$Res> {
   _$FavoritesEventCopyWithImpl(this._value, this._then);
 
   final FavoritesEvent _value;
@@ -117,17 +112,14 @@ class _$FavoritesEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $GetFavoritesListCopyWith<$Res> {
-  factory $GetFavoritesListCopyWith(
-          GetFavoritesList value, $Res Function(GetFavoritesList) then) =
+  factory $GetFavoritesListCopyWith(GetFavoritesList value, $Res Function(GetFavoritesList) then) =
       _$GetFavoritesListCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetFavoritesListCopyWithImpl<$Res>
-    extends _$FavoritesEventCopyWithImpl<$Res>
+class _$GetFavoritesListCopyWithImpl<$Res> extends _$FavoritesEventCopyWithImpl<$Res>
     implements $GetFavoritesListCopyWith<$Res> {
-  _$GetFavoritesListCopyWithImpl(
-      GetFavoritesList _value, $Res Function(GetFavoritesList) _then)
+  _$GetFavoritesListCopyWithImpl(GetFavoritesList _value, $Res Function(GetFavoritesList) _then)
       : super(_value, (v) => _then(v as GetFavoritesList));
 
   @override
@@ -195,8 +187,7 @@ class _$GetFavoritesList implements GetFavoritesList {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
-    required TResult Function(RemoveFromFavoriteByDismiss value)
-        removeFromFavoriteByDismiss,
+    required TResult Function(RemoveFromFavoriteByDismiss value) removeFromFavoriteByDismiss,
   }) {
     return getFavorites(this);
   }
@@ -207,8 +198,7 @@ class _$GetFavoritesList implements GetFavoritesList {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
   }) {
     return getFavorites?.call(this);
   }
@@ -219,8 +209,7 @@ class _$GetFavoritesList implements GetFavoritesList {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (getFavorites != null) {
@@ -236,17 +225,14 @@ abstract class GetFavoritesList implements FavoritesEvent {
 
 /// @nodoc
 abstract class $ResetFavoritesStateCopyWith<$Res> {
-  factory $ResetFavoritesStateCopyWith(
-          ResetFavoritesState value, $Res Function(ResetFavoritesState) then) =
+  factory $ResetFavoritesStateCopyWith(ResetFavoritesState value, $Res Function(ResetFavoritesState) then) =
       _$ResetFavoritesStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetFavoritesStateCopyWithImpl<$Res>
-    extends _$FavoritesEventCopyWithImpl<$Res>
+class _$ResetFavoritesStateCopyWithImpl<$Res> extends _$FavoritesEventCopyWithImpl<$Res>
     implements $ResetFavoritesStateCopyWith<$Res> {
-  _$ResetFavoritesStateCopyWithImpl(
-      ResetFavoritesState _value, $Res Function(ResetFavoritesState) _then)
+  _$ResetFavoritesStateCopyWithImpl(ResetFavoritesState _value, $Res Function(ResetFavoritesState) _then)
       : super(_value, (v) => _then(v as ResetFavoritesState));
 
   @override
@@ -314,8 +300,7 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
-    required TResult Function(RemoveFromFavoriteByDismiss value)
-        removeFromFavoriteByDismiss,
+    required TResult Function(RemoveFromFavoriteByDismiss value) removeFromFavoriteByDismiss,
   }) {
     return reset(this);
   }
@@ -326,8 +311,7 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
   }) {
     return reset?.call(this);
   }
@@ -338,8 +322,7 @@ class _$ResetFavoritesState implements ResetFavoritesState {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -355,18 +338,15 @@ abstract class ResetFavoritesState implements FavoritesEvent {
 
 /// @nodoc
 abstract class $RemoveFromFavoriteCopyWith<$Res> {
-  factory $RemoveFromFavoriteCopyWith(
-          RemoveFromFavorite value, $Res Function(RemoveFromFavorite) then) =
+  factory $RemoveFromFavoriteCopyWith(RemoveFromFavorite value, $Res Function(RemoveFromFavorite) then) =
       _$RemoveFromFavoriteCopyWithImpl<$Res>;
   $Res call({int id});
 }
 
 /// @nodoc
-class _$RemoveFromFavoriteCopyWithImpl<$Res>
-    extends _$FavoritesEventCopyWithImpl<$Res>
+class _$RemoveFromFavoriteCopyWithImpl<$Res> extends _$FavoritesEventCopyWithImpl<$Res>
     implements $RemoveFromFavoriteCopyWith<$Res> {
-  _$RemoveFromFavoriteCopyWithImpl(
-      RemoveFromFavorite _value, $Res Function(RemoveFromFavorite) _then)
+  _$RemoveFromFavoriteCopyWithImpl(RemoveFromFavorite _value, $Res Function(RemoveFromFavorite) _then)
       : super(_value, (v) => _then(v as RemoveFromFavorite));
 
   @override
@@ -402,13 +382,11 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is RemoveFromFavorite &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
@@ -458,8 +436,7 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
-    required TResult Function(RemoveFromFavoriteByDismiss value)
-        removeFromFavoriteByDismiss,
+    required TResult Function(RemoveFromFavoriteByDismiss value) removeFromFavoriteByDismiss,
   }) {
     return removeFromFavorite(this);
   }
@@ -470,8 +447,7 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
   }) {
     return removeFromFavorite?.call(this);
   }
@@ -482,8 +458,7 @@ class _$RemoveFromFavorite implements RemoveFromFavorite {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (removeFromFavorite != null) {
@@ -498,30 +473,26 @@ abstract class RemoveFromFavorite implements FavoritesEvent {
 
   int get id => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RemoveFromFavoriteCopyWith<RemoveFromFavorite> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RemoveFromFavoriteCopyWith<RemoveFromFavorite> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RemoveFromFavoriteByDismissCopyWith<$Res> {
   factory $RemoveFromFavoriteByDismissCopyWith(
-          RemoveFromFavoriteByDismiss value,
-          $Res Function(RemoveFromFavoriteByDismiss) then) =
+          RemoveFromFavoriteByDismiss value, $Res Function(RemoveFromFavoriteByDismiss) then) =
       _$RemoveFromFavoriteByDismissCopyWithImpl<$Res>;
   $Res call({int id});
 }
 
 /// @nodoc
-class _$RemoveFromFavoriteByDismissCopyWithImpl<$Res>
-    extends _$FavoritesEventCopyWithImpl<$Res>
+class _$RemoveFromFavoriteByDismissCopyWithImpl<$Res> extends _$FavoritesEventCopyWithImpl<$Res>
     implements $RemoveFromFavoriteByDismissCopyWith<$Res> {
-  _$RemoveFromFavoriteByDismissCopyWithImpl(RemoveFromFavoriteByDismiss _value,
-      $Res Function(RemoveFromFavoriteByDismiss) _then)
+  _$RemoveFromFavoriteByDismissCopyWithImpl(
+      RemoveFromFavoriteByDismiss _value, $Res Function(RemoveFromFavoriteByDismiss) _then)
       : super(_value, (v) => _then(v as RemoveFromFavoriteByDismiss));
 
   @override
-  RemoveFromFavoriteByDismiss get _value =>
-      super._value as RemoveFromFavoriteByDismiss;
+  RemoveFromFavoriteByDismiss get _value => super._value as RemoveFromFavoriteByDismiss;
 
   @override
   $Res call({
@@ -553,19 +524,16 @@ class _$RemoveFromFavoriteByDismiss implements RemoveFromFavoriteByDismiss {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is RemoveFromFavoriteByDismiss &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
-  $RemoveFromFavoriteByDismissCopyWith<RemoveFromFavoriteByDismiss>
-      get copyWith => _$RemoveFromFavoriteByDismissCopyWithImpl<
-          RemoveFromFavoriteByDismiss>(this, _$identity);
+  $RemoveFromFavoriteByDismissCopyWith<RemoveFromFavoriteByDismiss> get copyWith =>
+      _$RemoveFromFavoriteByDismissCopyWithImpl<RemoveFromFavoriteByDismiss>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -610,8 +578,7 @@ class _$RemoveFromFavoriteByDismiss implements RemoveFromFavoriteByDismiss {
     required TResult Function(GetFavoritesList value) getFavorites,
     required TResult Function(ResetFavoritesState value) reset,
     required TResult Function(RemoveFromFavorite value) removeFromFavorite,
-    required TResult Function(RemoveFromFavoriteByDismiss value)
-        removeFromFavoriteByDismiss,
+    required TResult Function(RemoveFromFavoriteByDismiss value) removeFromFavoriteByDismiss,
   }) {
     return removeFromFavoriteByDismiss(this);
   }
@@ -622,8 +589,7 @@ class _$RemoveFromFavoriteByDismiss implements RemoveFromFavoriteByDismiss {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
   }) {
     return removeFromFavoriteByDismiss?.call(this);
   }
@@ -634,8 +600,7 @@ class _$RemoveFromFavoriteByDismiss implements RemoveFromFavoriteByDismiss {
     TResult Function(GetFavoritesList value)? getFavorites,
     TResult Function(ResetFavoritesState value)? reset,
     TResult Function(RemoveFromFavorite value)? removeFromFavorite,
-    TResult Function(RemoveFromFavoriteByDismiss value)?
-        removeFromFavoriteByDismiss,
+    TResult Function(RemoveFromFavoriteByDismiss value)? removeFromFavoriteByDismiss,
     required TResult orElse(),
   }) {
     if (removeFromFavoriteByDismiss != null) {
@@ -646,13 +611,11 @@ class _$RemoveFromFavoriteByDismiss implements RemoveFromFavoriteByDismiss {
 }
 
 abstract class RemoveFromFavoriteByDismiss implements FavoritesEvent {
-  const factory RemoveFromFavoriteByDismiss(int id) =
-      _$RemoveFromFavoriteByDismiss;
+  const factory RemoveFromFavoriteByDismiss(int id) = _$RemoveFromFavoriteByDismiss;
 
   int get id => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RemoveFromFavoriteByDismissCopyWith<RemoveFromFavoriteByDismiss>
-      get copyWith => throw _privateConstructorUsedError;
+  $RemoveFromFavoriteByDismissCopyWith<RemoveFromFavoriteByDismiss> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -694,40 +657,22 @@ mixin _$FavoritesState {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            bool actionsIsLoading,
-            bool listIsLoading,
-            bool hasMorePages,
-            bool emptyFirstPage,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> favoritesList)
+    required TResult Function(bool actionsIsLoading, bool listIsLoading, bool hasMorePages, bool emptyFirstPage,
+            String error, bool refreshData, List<MarketPlaceItem> favoritesList)
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            bool actionsIsLoading,
-            bool listIsLoading,
-            bool hasMorePages,
-            bool emptyFirstPage,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> favoritesList)?
+    TResult Function(bool actionsIsLoading, bool listIsLoading, bool hasMorePages, bool emptyFirstPage, String error,
+            bool refreshData, List<MarketPlaceItem> favoritesList)?
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            bool actionsIsLoading,
-            bool listIsLoading,
-            bool hasMorePages,
-            bool emptyFirstPage,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> favoritesList)?
+    TResult Function(bool actionsIsLoading, bool listIsLoading, bool hasMorePages, bool emptyFirstPage, String error,
+            bool refreshData, List<MarketPlaceItem> favoritesList)?
         defaultState,
     required TResult orElse(),
   }) =>
@@ -750,14 +695,12 @@ mixin _$FavoritesState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FavoritesStateCopyWith<FavoritesState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $FavoritesStateCopyWith<FavoritesState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FavoritesStateCopyWith<$Res> {
-  factory $FavoritesStateCopyWith(
-          FavoritesState value, $Res Function(FavoritesState) then) =
+  factory $FavoritesStateCopyWith(FavoritesState value, $Res Function(FavoritesState) then) =
       _$FavoritesStateCopyWithImpl<$Res>;
   $Res call(
       {bool actionsIsLoading,
@@ -770,8 +713,7 @@ abstract class $FavoritesStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FavoritesStateCopyWithImpl<$Res>
-    implements $FavoritesStateCopyWith<$Res> {
+class _$FavoritesStateCopyWithImpl<$Res> implements $FavoritesStateCopyWith<$Res> {
   _$FavoritesStateCopyWithImpl(this._value, this._then);
 
   final FavoritesState _value;
@@ -822,10 +764,8 @@ class _$FavoritesStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $FavoritesDefaultStateCopyWith<$Res>
-    implements $FavoritesStateCopyWith<$Res> {
-  factory $FavoritesDefaultStateCopyWith(FavoritesDefaultState value,
-          $Res Function(FavoritesDefaultState) then) =
+abstract class $FavoritesDefaultStateCopyWith<$Res> implements $FavoritesStateCopyWith<$Res> {
+  factory $FavoritesDefaultStateCopyWith(FavoritesDefaultState value, $Res Function(FavoritesDefaultState) then) =
       _$FavoritesDefaultStateCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -839,11 +779,9 @@ abstract class $FavoritesDefaultStateCopyWith<$Res>
 }
 
 /// @nodoc
-class _$FavoritesDefaultStateCopyWithImpl<$Res>
-    extends _$FavoritesStateCopyWithImpl<$Res>
+class _$FavoritesDefaultStateCopyWithImpl<$Res> extends _$FavoritesStateCopyWithImpl<$Res>
     implements $FavoritesDefaultStateCopyWith<$Res> {
-  _$FavoritesDefaultStateCopyWithImpl(
-      FavoritesDefaultState _value, $Res Function(FavoritesDefaultState) _then)
+  _$FavoritesDefaultStateCopyWithImpl(FavoritesDefaultState _value, $Res Function(FavoritesDefaultState) _then)
       : super(_value, (v) => _then(v as FavoritesDefaultState));
 
   @override
@@ -936,25 +874,18 @@ class _$FavoritesDefaultState implements FavoritesDefaultState {
     return identical(this, other) ||
         (other is FavoritesDefaultState &&
             (identical(other.actionsIsLoading, actionsIsLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.actionsIsLoading, actionsIsLoading)) &&
+                const DeepCollectionEquality().equals(other.actionsIsLoading, actionsIsLoading)) &&
             (identical(other.listIsLoading, listIsLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.listIsLoading, listIsLoading)) &&
+                const DeepCollectionEquality().equals(other.listIsLoading, listIsLoading)) &&
             (identical(other.hasMorePages, hasMorePages) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasMorePages, hasMorePages)) &&
+                const DeepCollectionEquality().equals(other.hasMorePages, hasMorePages)) &&
             (identical(other.emptyFirstPage, emptyFirstPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.emptyFirstPage, emptyFirstPage)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+                const DeepCollectionEquality().equals(other.emptyFirstPage, emptyFirstPage)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.refreshData, refreshData) ||
-                const DeepCollectionEquality()
-                    .equals(other.refreshData, refreshData)) &&
+                const DeepCollectionEquality().equals(other.refreshData, refreshData)) &&
             (identical(other.favoritesList, favoritesList) ||
-                const DeepCollectionEquality()
-                    .equals(other.favoritesList, favoritesList)));
+                const DeepCollectionEquality().equals(other.favoritesList, favoritesList)));
   }
 
   @override
@@ -971,60 +902,41 @@ class _$FavoritesDefaultState implements FavoritesDefaultState {
   @JsonKey(ignore: true)
   @override
   $FavoritesDefaultStateCopyWith<FavoritesDefaultState> get copyWith =>
-      _$FavoritesDefaultStateCopyWithImpl<FavoritesDefaultState>(
-          this, _$identity);
+      _$FavoritesDefaultStateCopyWithImpl<FavoritesDefaultState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            bool actionsIsLoading,
-            bool listIsLoading,
-            bool hasMorePages,
-            bool emptyFirstPage,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> favoritesList)
+    required TResult Function(bool actionsIsLoading, bool listIsLoading, bool hasMorePages, bool emptyFirstPage,
+            String error, bool refreshData, List<MarketPlaceItem> favoritesList)
         defaultState,
   }) {
-    return defaultState(actionsIsLoading, listIsLoading, hasMorePages,
-        emptyFirstPage, error, refreshData, favoritesList);
+    return defaultState(
+        actionsIsLoading, listIsLoading, hasMorePages, emptyFirstPage, error, refreshData, favoritesList);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            bool actionsIsLoading,
-            bool listIsLoading,
-            bool hasMorePages,
-            bool emptyFirstPage,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> favoritesList)?
+    TResult Function(bool actionsIsLoading, bool listIsLoading, bool hasMorePages, bool emptyFirstPage, String error,
+            bool refreshData, List<MarketPlaceItem> favoritesList)?
         defaultState,
   }) {
-    return defaultState?.call(actionsIsLoading, listIsLoading, hasMorePages,
-        emptyFirstPage, error, refreshData, favoritesList);
+    return defaultState?.call(
+        actionsIsLoading, listIsLoading, hasMorePages, emptyFirstPage, error, refreshData, favoritesList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            bool actionsIsLoading,
-            bool listIsLoading,
-            bool hasMorePages,
-            bool emptyFirstPage,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> favoritesList)?
+    TResult Function(bool actionsIsLoading, bool listIsLoading, bool hasMorePages, bool emptyFirstPage, String error,
+            bool refreshData, List<MarketPlaceItem> favoritesList)?
         defaultState,
     required TResult orElse(),
   }) {
     if (defaultState != null) {
-      return defaultState(actionsIsLoading, listIsLoading, hasMorePages,
-          emptyFirstPage, error, refreshData, favoritesList);
+      return defaultState(
+          actionsIsLoading, listIsLoading, hasMorePages, emptyFirstPage, error, refreshData, favoritesList);
     }
     return orElse();
   }
@@ -1084,6 +996,5 @@ abstract class FavoritesDefaultState implements FavoritesState {
   List<MarketPlaceItem> get favoritesList => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $FavoritesDefaultStateCopyWith<FavoritesDefaultState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $FavoritesDefaultStateCopyWith<FavoritesDefaultState> get copyWith => throw _privateConstructorUsedError;
 }

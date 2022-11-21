@@ -23,8 +23,7 @@ class Res {
   static const String pick_image_icon = "assets/pick_image_icon.png";
   static const String pick_image_camera_icon = "assets/camera-icon.png";
 
-  static const String password_changed_image =
-      "assets/password-changed-image.png";
+  static const String password_changed_image = "assets/password-changed-image.png";
 
   static const String about_us_icon = "assets/about-us-icon.png";
   static const String change_phone_icon = "assets/change-phone-icon.png";

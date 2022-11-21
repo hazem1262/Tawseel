@@ -37,20 +37,16 @@ mixin _$NearbyPlace {
 
   /// The icon identifying the kind of place provided. Eg. lodging, chapel,
   /// hospital, etc.
-  String get icon =>
-      throw _privateConstructorUsedError; // Latitude/Longitude of the provided location.
+  String get icon => throw _privateConstructorUsedError; // Latitude/Longitude of the provided location.
   LatLng get latLng => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NearbyPlaceCopyWith<NearbyPlace> get copyWith =>
-      throw _privateConstructorUsedError;
+  $NearbyPlaceCopyWith<NearbyPlace> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NearbyPlaceCopyWith<$Res> {
-  factory $NearbyPlaceCopyWith(
-          NearbyPlace value, $Res Function(NearbyPlace) then) =
-      _$NearbyPlaceCopyWithImpl<$Res>;
+  factory $NearbyPlaceCopyWith(NearbyPlace value, $Res Function(NearbyPlace) then) = _$NearbyPlaceCopyWithImpl<$Res>;
   $Res call({String name, String icon, LatLng latLng});
 }
 
@@ -86,20 +82,16 @@ class _$NearbyPlaceCopyWithImpl<$Res> implements $NearbyPlaceCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$NearbyPlaceCopyWith<$Res>
-    implements $NearbyPlaceCopyWith<$Res> {
-  factory _$NearbyPlaceCopyWith(
-          _NearbyPlace value, $Res Function(_NearbyPlace) then) =
+abstract class _$NearbyPlaceCopyWith<$Res> implements $NearbyPlaceCopyWith<$Res> {
+  factory _$NearbyPlaceCopyWith(_NearbyPlace value, $Res Function(_NearbyPlace) then) =
       __$NearbyPlaceCopyWithImpl<$Res>;
   @override
   $Res call({String name, String icon, LatLng latLng});
 }
 
 /// @nodoc
-class __$NearbyPlaceCopyWithImpl<$Res> extends _$NearbyPlaceCopyWithImpl<$Res>
-    implements _$NearbyPlaceCopyWith<$Res> {
-  __$NearbyPlaceCopyWithImpl(
-      _NearbyPlace _value, $Res Function(_NearbyPlace) _then)
+class __$NearbyPlaceCopyWithImpl<$Res> extends _$NearbyPlaceCopyWithImpl<$Res> implements _$NearbyPlaceCopyWith<$Res> {
+  __$NearbyPlaceCopyWithImpl(_NearbyPlace _value, $Res Function(_NearbyPlace) _then)
       : super(_value, (v) => _then(v as _NearbyPlace));
 
   @override
@@ -155,12 +147,9 @@ class _$_NearbyPlace implements _NearbyPlace {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NearbyPlace &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.icon, icon) ||
-                const DeepCollectionEquality().equals(other.icon, icon)) &&
-            (identical(other.latLng, latLng) ||
-                const DeepCollectionEquality().equals(other.latLng, latLng)));
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.icon, icon) || const DeepCollectionEquality().equals(other.icon, icon)) &&
+            (identical(other.latLng, latLng) || const DeepCollectionEquality().equals(other.latLng, latLng)));
   }
 
   @override
@@ -172,13 +161,11 @@ class _$_NearbyPlace implements _NearbyPlace {
 
   @JsonKey(ignore: true)
   @override
-  _$NearbyPlaceCopyWith<_NearbyPlace> get copyWith =>
-      __$NearbyPlaceCopyWithImpl<_NearbyPlace>(this, _$identity);
+  _$NearbyPlaceCopyWith<_NearbyPlace> get copyWith => __$NearbyPlaceCopyWithImpl<_NearbyPlace>(this, _$identity);
 }
 
 abstract class _NearbyPlace implements NearbyPlace {
-  const factory _NearbyPlace(String name, String icon, LatLng latLng) =
-      _$_NearbyPlace;
+  const factory _NearbyPlace(String name, String icon, LatLng latLng) = _$_NearbyPlace;
 
   @override
 
@@ -194,6 +181,5 @@ abstract class _NearbyPlace implements NearbyPlace {
   LatLng get latLng => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$NearbyPlaceCopyWith<_NearbyPlace> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$NearbyPlaceCopyWith<_NearbyPlace> get copyWith => throw _privateConstructorUsedError;
 }

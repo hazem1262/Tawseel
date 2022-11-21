@@ -7,8 +7,6 @@ part 'favorites_response.g.dart';
 
 @freezed
 class FavoritesResponse with _$FavoritesResponse {
-  const factory FavoritesResponse(
-      List<MarketPlaceItem> data, MetaPagination meta) = _FavoritesResponse;
-  factory FavoritesResponse.fromJson(Map<String, dynamic> json) =>
-      _$FavoritesResponseFromJson(json);
+  const factory FavoritesResponse(List<MarketPlaceItem> data, MetaPagination meta) = _FavoritesResponse;
+  factory FavoritesResponse.fromJson(Map<String, dynamic> json) => _$FavoritesResponseFromJson(json);
 }

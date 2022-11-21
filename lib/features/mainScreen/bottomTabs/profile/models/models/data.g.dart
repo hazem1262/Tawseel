@@ -16,9 +16,7 @@ _$_Data _$$_DataFromJson(Map<String, dynamic> json) => _$_Data(
       phoneVerifiedAt: json['phone_verified_at'] as String?,
       isVerified: json['is_verified'] as bool?,
       canReceiveOffers: json['can_receive_offers'] as bool?,
-      address: (json['address'] as List<dynamic>?)
-          ?.map((e) => Address.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      address: (json['address'] as List<dynamic>?)?.map((e) => Address.fromJson(e as Map<String, dynamic>)).toList(),
     );
 
 Map<String, dynamic> _$$_DataToJson(_$_Data instance) => <String, dynamic>{

@@ -10,9 +10,7 @@ class UserProfileResponse {
 
   factory UserProfileResponse.fromJson(Map<String, dynamic> json) {
     return UserProfileResponse(
-      data: json['data'] == null
-          ? null
-          : Data.fromJson(json['data'] as Map<String, dynamic>),
+      data: json['data'] == null ? null : Data.fromJson(json['data'] as Map<String, dynamic>),
     );
   }
 

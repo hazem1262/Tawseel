@@ -43,15 +43,12 @@ mixin _$AdsResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AdsResponseCopyWith<AdsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AdsResponseCopyWith<AdsResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AdsResponseCopyWith<$Res> {
-  factory $AdsResponseCopyWith(
-          AdsResponse value, $Res Function(AdsResponse) then) =
-      _$AdsResponseCopyWithImpl<$Res>;
+  factory $AdsResponseCopyWith(AdsResponse value, $Res Function(AdsResponse) then) = _$AdsResponseCopyWithImpl<$Res>;
   $Res call({List<AdsItem> data, MetaPagination meta});
 
   $MetaPaginationCopyWith<$Res> get meta;
@@ -91,10 +88,8 @@ class _$AdsResponseCopyWithImpl<$Res> implements $AdsResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AdsResponseCopyWith<$Res>
-    implements $AdsResponseCopyWith<$Res> {
-  factory _$AdsResponseCopyWith(
-          _AdsResponse value, $Res Function(_AdsResponse) then) =
+abstract class _$AdsResponseCopyWith<$Res> implements $AdsResponseCopyWith<$Res> {
+  factory _$AdsResponseCopyWith(_AdsResponse value, $Res Function(_AdsResponse) then) =
       __$AdsResponseCopyWithImpl<$Res>;
   @override
   $Res call({List<AdsItem> data, MetaPagination meta});
@@ -104,10 +99,8 @@ abstract class _$AdsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AdsResponseCopyWithImpl<$Res> extends _$AdsResponseCopyWithImpl<$Res>
-    implements _$AdsResponseCopyWith<$Res> {
-  __$AdsResponseCopyWithImpl(
-      _AdsResponse _value, $Res Function(_AdsResponse) _then)
+class __$AdsResponseCopyWithImpl<$Res> extends _$AdsResponseCopyWithImpl<$Res> implements _$AdsResponseCopyWith<$Res> {
+  __$AdsResponseCopyWithImpl(_AdsResponse _value, $Res Function(_AdsResponse) _then)
       : super(_value, (v) => _then(v as _AdsResponse));
 
   @override
@@ -136,8 +129,7 @@ class __$AdsResponseCopyWithImpl<$Res> extends _$AdsResponseCopyWithImpl<$Res>
 class _$_AdsResponse implements _AdsResponse {
   const _$_AdsResponse(this.data, this.meta);
 
-  factory _$_AdsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_AdsResponseFromJson(json);
+  factory _$_AdsResponse.fromJson(Map<String, dynamic> json) => _$$_AdsResponseFromJson(json);
 
   @override
   final List<AdsItem> data;
@@ -153,22 +145,17 @@ class _$_AdsResponse implements _AdsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AdsResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.meta, meta) ||
-                const DeepCollectionEquality().equals(other.meta, meta)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)) &&
+            (identical(other.meta, meta) || const DeepCollectionEquality().equals(other.meta, meta)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(meta);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data) ^ const DeepCollectionEquality().hash(meta);
 
   @JsonKey(ignore: true)
   @override
-  _$AdsResponseCopyWith<_AdsResponse> get copyWith =>
-      __$AdsResponseCopyWithImpl<_AdsResponse>(this, _$identity);
+  _$AdsResponseCopyWith<_AdsResponse> get copyWith => __$AdsResponseCopyWithImpl<_AdsResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -177,11 +164,9 @@ class _$_AdsResponse implements _AdsResponse {
 }
 
 abstract class _AdsResponse implements AdsResponse {
-  const factory _AdsResponse(List<AdsItem> data, MetaPagination meta) =
-      _$_AdsResponse;
+  const factory _AdsResponse(List<AdsItem> data, MetaPagination meta) = _$_AdsResponse;
 
-  factory _AdsResponse.fromJson(Map<String, dynamic> json) =
-      _$_AdsResponse.fromJson;
+  factory _AdsResponse.fromJson(Map<String, dynamic> json) = _$_AdsResponse.fromJson;
 
   @override
   List<AdsItem> get data => throw _privateConstructorUsedError;
@@ -189,8 +174,7 @@ abstract class _AdsResponse implements AdsResponse {
   MetaPagination get meta => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AdsResponseCopyWith<_AdsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AdsResponseCopyWith<_AdsResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 AdsItem _$AdsItemFromJson(Map<String, dynamic> json) {
@@ -230,8 +214,7 @@ mixin _$AdsItem {
 
 /// @nodoc
 abstract class $AdsItemCopyWith<$Res> {
-  factory $AdsItemCopyWith(AdsItem value, $Res Function(AdsItem) then) =
-      _$AdsItemCopyWithImpl<$Res>;
+  factory $AdsItemCopyWith(AdsItem value, $Res Function(AdsItem) then) = _$AdsItemCopyWithImpl<$Res>;
   $Res call({int id, String? name, String? image});
 }
 
@@ -268,17 +251,14 @@ class _$AdsItemCopyWithImpl<$Res> implements $AdsItemCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$AdsItemCopyWith<$Res> implements $AdsItemCopyWith<$Res> {
-  factory _$AdsItemCopyWith(_AdsItem value, $Res Function(_AdsItem) then) =
-      __$AdsItemCopyWithImpl<$Res>;
+  factory _$AdsItemCopyWith(_AdsItem value, $Res Function(_AdsItem) then) = __$AdsItemCopyWithImpl<$Res>;
   @override
   $Res call({int id, String? name, String? image});
 }
 
 /// @nodoc
-class __$AdsItemCopyWithImpl<$Res> extends _$AdsItemCopyWithImpl<$Res>
-    implements _$AdsItemCopyWith<$Res> {
-  __$AdsItemCopyWithImpl(_AdsItem _value, $Res Function(_AdsItem) _then)
-      : super(_value, (v) => _then(v as _AdsItem));
+class __$AdsItemCopyWithImpl<$Res> extends _$AdsItemCopyWithImpl<$Res> implements _$AdsItemCopyWith<$Res> {
+  __$AdsItemCopyWithImpl(_AdsItem _value, $Res Function(_AdsItem) _then) : super(_value, (v) => _then(v as _AdsItem));
 
   @override
   _AdsItem get _value => super._value as _AdsItem;
@@ -311,8 +291,7 @@ class __$AdsItemCopyWithImpl<$Res> extends _$AdsItemCopyWithImpl<$Res>
 class _$_AdsItem implements _AdsItem {
   const _$_AdsItem({required this.id, this.name, this.image});
 
-  factory _$_AdsItem.fromJson(Map<String, dynamic> json) =>
-      _$$_AdsItemFromJson(json);
+  factory _$_AdsItem.fromJson(Map<String, dynamic> json) => _$$_AdsItemFromJson(json);
 
   @override
   final int id;
@@ -330,12 +309,9 @@ class _$_AdsItem implements _AdsItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AdsItem &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)));
   }
 
   @override
@@ -347,8 +323,7 @@ class _$_AdsItem implements _AdsItem {
 
   @JsonKey(ignore: true)
   @override
-  _$AdsItemCopyWith<_AdsItem> get copyWith =>
-      __$AdsItemCopyWithImpl<_AdsItem>(this, _$identity);
+  _$AdsItemCopyWith<_AdsItem> get copyWith => __$AdsItemCopyWithImpl<_AdsItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -357,8 +332,7 @@ class _$_AdsItem implements _AdsItem {
 }
 
 abstract class _AdsItem implements AdsItem {
-  const factory _AdsItem({required int id, String? name, String? image}) =
-      _$_AdsItem;
+  const factory _AdsItem({required int id, String? name, String? image}) = _$_AdsItem;
 
   factory _AdsItem.fromJson(Map<String, dynamic> json) = _$_AdsItem.fromJson;
 
@@ -370,6 +344,5 @@ abstract class _AdsItem implements AdsItem {
   String? get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AdsItemCopyWith<_AdsItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AdsItemCopyWith<_AdsItem> get copyWith => throw _privateConstructorUsedError;
 }

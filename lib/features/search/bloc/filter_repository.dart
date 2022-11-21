@@ -17,12 +17,10 @@ class FilterRepository with NetworkHandler implements IFilterRepository {
   FilterRepository(this.categoriesApi, this.campaniesApi);
 
   @override
-  Future<CategoriesResponse> getCategories() =>
-      networkHandler(() => categoriesApi.getCategories());
+  Future<CategoriesResponse> getCategories() => networkHandler(() => categoriesApi.getCategories());
 
   @override
-  Future<CompaniesResponse> getCompanies() =>
-      networkHandler(() => campaniesApi.getCompanies());
+  Future<CompaniesResponse> getCompanies() => networkHandler(() => campaniesApi.getCompanies());
 
   @override
   Future<CompaniesAndCategoriesModel> getCompaniesAndCategories() async {

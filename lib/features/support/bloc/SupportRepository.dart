@@ -13,9 +13,7 @@ class SupportRepository with NetworkHandler implements ISupportRepository {
   SupportRepository(this.api);
 
   @override
-  Future<String> sendSupportMessage(
-          {required String subject, required String message}) =>
-      networkHandler(
+  Future<String> sendSupportMessage({required String subject, required String message}) => networkHandler(
         () => api.sendSupportMessage(subject, message),
       );
 }

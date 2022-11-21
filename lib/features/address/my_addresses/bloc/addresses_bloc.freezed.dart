@@ -87,14 +87,12 @@ mixin _$MyAddressesEvent {
 
 /// @nodoc
 abstract class $MyAddressesEventCopyWith<$Res> {
-  factory $MyAddressesEventCopyWith(
-          MyAddressesEvent value, $Res Function(MyAddressesEvent) then) =
+  factory $MyAddressesEventCopyWith(MyAddressesEvent value, $Res Function(MyAddressesEvent) then) =
       _$MyAddressesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MyAddressesEventCopyWithImpl<$Res>
-    implements $MyAddressesEventCopyWith<$Res> {
+class _$MyAddressesEventCopyWithImpl<$Res> implements $MyAddressesEventCopyWith<$Res> {
   _$MyAddressesEventCopyWithImpl(this._value, this._then);
 
   final MyAddressesEvent _value;
@@ -104,17 +102,14 @@ class _$MyAddressesEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $GetAddressesListEventCopyWith<$Res> {
-  factory $GetAddressesListEventCopyWith(GetAddressesListEvent value,
-          $Res Function(GetAddressesListEvent) then) =
+  factory $GetAddressesListEventCopyWith(GetAddressesListEvent value, $Res Function(GetAddressesListEvent) then) =
       _$GetAddressesListEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetAddressesListEventCopyWithImpl<$Res>
-    extends _$MyAddressesEventCopyWithImpl<$Res>
+class _$GetAddressesListEventCopyWithImpl<$Res> extends _$MyAddressesEventCopyWithImpl<$Res>
     implements $GetAddressesListEventCopyWith<$Res> {
-  _$GetAddressesListEventCopyWithImpl(
-      GetAddressesListEvent _value, $Res Function(GetAddressesListEvent) _then)
+  _$GetAddressesListEventCopyWithImpl(GetAddressesListEvent _value, $Res Function(GetAddressesListEvent) _then)
       : super(_value, (v) => _then(v as GetAddressesListEvent));
 
   @override
@@ -214,18 +209,15 @@ abstract class GetAddressesListEvent implements MyAddressesEvent {
 
 /// @nodoc
 abstract class $MakeAddressAsDefaultCopyWith<$Res> {
-  factory $MakeAddressAsDefaultCopyWith(MakeAddressAsDefault value,
-          $Res Function(MakeAddressAsDefault) then) =
+  factory $MakeAddressAsDefaultCopyWith(MakeAddressAsDefault value, $Res Function(MakeAddressAsDefault) then) =
       _$MakeAddressAsDefaultCopyWithImpl<$Res>;
   $Res call({Address address});
 }
 
 /// @nodoc
-class _$MakeAddressAsDefaultCopyWithImpl<$Res>
-    extends _$MyAddressesEventCopyWithImpl<$Res>
+class _$MakeAddressAsDefaultCopyWithImpl<$Res> extends _$MyAddressesEventCopyWithImpl<$Res>
     implements $MakeAddressAsDefaultCopyWith<$Res> {
-  _$MakeAddressAsDefaultCopyWithImpl(
-      MakeAddressAsDefault _value, $Res Function(MakeAddressAsDefault) _then)
+  _$MakeAddressAsDefaultCopyWithImpl(MakeAddressAsDefault _value, $Res Function(MakeAddressAsDefault) _then)
       : super(_value, (v) => _then(v as MakeAddressAsDefault));
 
   @override
@@ -261,19 +253,16 @@ class _$MakeAddressAsDefault implements MakeAddressAsDefault {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is MakeAddressAsDefault &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality().equals(other.address, address)));
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(address);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(address);
 
   @JsonKey(ignore: true)
   @override
   $MakeAddressAsDefaultCopyWith<MakeAddressAsDefault> get copyWith =>
-      _$MakeAddressAsDefaultCopyWithImpl<MakeAddressAsDefault>(
-          this, _$identity);
+      _$MakeAddressAsDefaultCopyWithImpl<MakeAddressAsDefault>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -349,24 +338,20 @@ abstract class MakeAddressAsDefault implements MyAddressesEvent {
 
   Address get address => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MakeAddressAsDefaultCopyWith<MakeAddressAsDefault> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MakeAddressAsDefaultCopyWith<MakeAddressAsDefault> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteAddressCopyWith<$Res> {
-  factory $DeleteAddressCopyWith(
-          DeleteAddress value, $Res Function(DeleteAddress) then) =
+  factory $DeleteAddressCopyWith(DeleteAddress value, $Res Function(DeleteAddress) then) =
       _$DeleteAddressCopyWithImpl<$Res>;
   $Res call({Address address});
 }
 
 /// @nodoc
-class _$DeleteAddressCopyWithImpl<$Res>
-    extends _$MyAddressesEventCopyWithImpl<$Res>
+class _$DeleteAddressCopyWithImpl<$Res> extends _$MyAddressesEventCopyWithImpl<$Res>
     implements $DeleteAddressCopyWith<$Res> {
-  _$DeleteAddressCopyWithImpl(
-      DeleteAddress _value, $Res Function(DeleteAddress) _then)
+  _$DeleteAddressCopyWithImpl(DeleteAddress _value, $Res Function(DeleteAddress) _then)
       : super(_value, (v) => _then(v as DeleteAddress));
 
   @override
@@ -402,18 +387,15 @@ class _$DeleteAddress implements DeleteAddress {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is DeleteAddress &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality().equals(other.address, address)));
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(address);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(address);
 
   @JsonKey(ignore: true)
   @override
-  $DeleteAddressCopyWith<DeleteAddress> get copyWith =>
-      _$DeleteAddressCopyWithImpl<DeleteAddress>(this, _$identity);
+  $DeleteAddressCopyWith<DeleteAddress> get copyWith => _$DeleteAddressCopyWithImpl<DeleteAddress>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -489,8 +471,7 @@ abstract class DeleteAddress implements MyAddressesEvent {
 
   Address get address => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DeleteAddressCopyWith<DeleteAddress> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteAddressCopyWith<DeleteAddress> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -498,10 +479,7 @@ class _$MyAddressesStateTearOff {
   const _$MyAddressesStateTearOff();
 
   MyAddressesStateCurrentState defaultState(
-      [bool isLoading = false,
-      String error = "",
-      bool refreshData = false,
-      List<Address> address = const []]) {
+      [bool isLoading = false, String error = "", bool refreshData = false, List<Address> address = const []]) {
     return MyAddressesStateCurrentState(
       isLoading,
       error,
@@ -523,23 +501,17 @@ mixin _$MyAddressesState {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, String error, bool refreshData,
-            List<Address> address)
-        defaultState,
+    required TResult Function(bool isLoading, String error, bool refreshData, List<Address> address) defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool refreshData,
-            List<Address> address)?
-        defaultState,
+    TResult Function(bool isLoading, String error, bool refreshData, List<Address> address)? defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool refreshData,
-            List<Address> address)?
-        defaultState,
+    TResult Function(bool isLoading, String error, bool refreshData, List<Address> address)? defaultState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -561,22 +533,18 @@ mixin _$MyAddressesState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MyAddressesStateCopyWith<MyAddressesState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MyAddressesStateCopyWith<MyAddressesState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MyAddressesStateCopyWith<$Res> {
-  factory $MyAddressesStateCopyWith(
-          MyAddressesState value, $Res Function(MyAddressesState) then) =
+  factory $MyAddressesStateCopyWith(MyAddressesState value, $Res Function(MyAddressesState) then) =
       _$MyAddressesStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool isLoading, String error, bool refreshData, List<Address> address});
+  $Res call({bool isLoading, String error, bool refreshData, List<Address> address});
 }
 
 /// @nodoc
-class _$MyAddressesStateCopyWithImpl<$Res>
-    implements $MyAddressesStateCopyWith<$Res> {
+class _$MyAddressesStateCopyWithImpl<$Res> implements $MyAddressesStateCopyWith<$Res> {
   _$MyAddressesStateCopyWithImpl(this._value, this._then);
 
   final MyAddressesState _value;
@@ -612,29 +580,23 @@ class _$MyAddressesStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $MyAddressesStateCurrentStateCopyWith<$Res>
-    implements $MyAddressesStateCopyWith<$Res> {
+abstract class $MyAddressesStateCurrentStateCopyWith<$Res> implements $MyAddressesStateCopyWith<$Res> {
   factory $MyAddressesStateCurrentStateCopyWith(
-          MyAddressesStateCurrentState value,
-          $Res Function(MyAddressesStateCurrentState) then) =
+          MyAddressesStateCurrentState value, $Res Function(MyAddressesStateCurrentState) then) =
       _$MyAddressesStateCurrentStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {bool isLoading, String error, bool refreshData, List<Address> address});
+  $Res call({bool isLoading, String error, bool refreshData, List<Address> address});
 }
 
 /// @nodoc
-class _$MyAddressesStateCurrentStateCopyWithImpl<$Res>
-    extends _$MyAddressesStateCopyWithImpl<$Res>
+class _$MyAddressesStateCurrentStateCopyWithImpl<$Res> extends _$MyAddressesStateCopyWithImpl<$Res>
     implements $MyAddressesStateCurrentStateCopyWith<$Res> {
   _$MyAddressesStateCurrentStateCopyWithImpl(
-      MyAddressesStateCurrentState _value,
-      $Res Function(MyAddressesStateCurrentState) _then)
+      MyAddressesStateCurrentState _value, $Res Function(MyAddressesStateCurrentState) _then)
       : super(_value, (v) => _then(v as MyAddressesStateCurrentState));
 
   @override
-  MyAddressesStateCurrentState get _value =>
-      super._value as MyAddressesStateCurrentState;
+  MyAddressesStateCurrentState get _value => super._value as MyAddressesStateCurrentState;
 
   @override
   $Res call({
@@ -668,10 +630,7 @@ class _$MyAddressesStateCurrentStateCopyWithImpl<$Res>
 
 class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
   const _$MyAddressesStateCurrentState(
-      [this.isLoading = false,
-      this.error = "",
-      this.refreshData = false,
-      this.address = const []]);
+      [this.isLoading = false, this.error = "", this.refreshData = false, this.address = const []]);
 
   @JsonKey(defaultValue: false)
   @override
@@ -696,15 +655,11 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
     return identical(this, other) ||
         (other is MyAddressesStateCurrentState &&
             (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+                const DeepCollectionEquality().equals(other.isLoading, isLoading)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.refreshData, refreshData) ||
-                const DeepCollectionEquality()
-                    .equals(other.refreshData, refreshData)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality().equals(other.address, address)));
+                const DeepCollectionEquality().equals(other.refreshData, refreshData)) &&
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)));
   }
 
   @override
@@ -717,16 +672,13 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
 
   @JsonKey(ignore: true)
   @override
-  $MyAddressesStateCurrentStateCopyWith<MyAddressesStateCurrentState>
-      get copyWith => _$MyAddressesStateCurrentStateCopyWithImpl<
-          MyAddressesStateCurrentState>(this, _$identity);
+  $MyAddressesStateCurrentStateCopyWith<MyAddressesStateCurrentState> get copyWith =>
+      _$MyAddressesStateCurrentStateCopyWithImpl<MyAddressesStateCurrentState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, String error, bool refreshData,
-            List<Address> address)
-        defaultState,
+    required TResult Function(bool isLoading, String error, bool refreshData, List<Address> address) defaultState,
   }) {
     return defaultState(isLoading, error, refreshData, address);
   }
@@ -734,9 +686,7 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool refreshData,
-            List<Address> address)?
-        defaultState,
+    TResult Function(bool isLoading, String error, bool refreshData, List<Address> address)? defaultState,
   }) {
     return defaultState?.call(isLoading, error, refreshData, address);
   }
@@ -744,9 +694,7 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool refreshData,
-            List<Address> address)?
-        defaultState,
+    TResult Function(bool isLoading, String error, bool refreshData, List<Address> address)? defaultState,
     required TResult orElse(),
   }) {
     if (defaultState != null) {
@@ -785,11 +733,8 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
 }
 
 abstract class MyAddressesStateCurrentState implements MyAddressesState {
-  const factory MyAddressesStateCurrentState(
-      [bool isLoading,
-      String error,
-      bool refreshData,
-      List<Address> address]) = _$MyAddressesStateCurrentState;
+  const factory MyAddressesStateCurrentState([bool isLoading, String error, bool refreshData, List<Address> address]) =
+      _$MyAddressesStateCurrentState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -801,6 +746,6 @@ abstract class MyAddressesStateCurrentState implements MyAddressesState {
   List<Address> get address => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $MyAddressesStateCurrentStateCopyWith<MyAddressesStateCurrentState>
-      get copyWith => throw _privateConstructorUsedError;
+  $MyAddressesStateCurrentStateCopyWith<MyAddressesStateCurrentState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

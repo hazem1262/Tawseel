@@ -29,9 +29,7 @@ abstract class IMarketPlaceRepository {
   Future<String> removeMarketPlaceFromFavorite(int id);
 }
 
-class MarketPlaceRepository
-    with NetworkHandler
-    implements IMarketPlaceRepository {
+class MarketPlaceRepository with NetworkHandler implements IMarketPlaceRepository {
   MarketPlaceService api;
   FavoritesService favApi;
   MarketPlaceRepository(this.api, this.favApi);

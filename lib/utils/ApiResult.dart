@@ -62,8 +62,7 @@ abstract class ApiResult<S> extends Equatable {
   /// Transforms values of [error] and [data] in new a `ApiResult` type. Only
   /// the matching function to the object type will be executed. For example,
   /// for a `SuccessResult` object only the [fnData] function will be executed.
-  ApiResult<T> either<T>(
-      Failure Function(Failure error) fnFailure, T Function(S data) fnData);
+  ApiResult<T> either<T>(Failure Function(Failure error) fnFailure, T Function(S data) fnData);
 
   /// Transforms value of [data] allowing a new `ApiResult` to be returned.
   /// A `SuccessResult` might return a `FailureResult` and vice versa.
@@ -91,8 +90,7 @@ class _SuccessResult<S> extends ApiResult<S> {
   _SuccessResult(this._value);
 
   @override
-  _SuccessResult<T> either<T>(
-      Failure Function(Failure error) fnFailure, T Function(S data) fnData) {
+  _SuccessResult<T> either<T>(Failure Function(Failure error) fnFailure, T Function(S data) fnData) {
     return _SuccessResult<T>(fnData(_value));
   }
 
@@ -120,8 +118,7 @@ class _FailureResult<S> extends ApiResult<S> {
   _FailureResult(this._value);
 
   @override
-  _FailureResult<T> either<T>(
-      Failure Function(Failure error) fnFailure, T Function(S data) fnData) {
+  _FailureResult<T> either<T>(Failure Function(Failure error) fnFailure, T Function(S data) fnData) {
     return _FailureResult<T>(fnFailure(_value));
   }
 

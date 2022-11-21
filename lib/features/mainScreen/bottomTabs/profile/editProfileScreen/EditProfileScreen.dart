@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,8 +39,7 @@ class EditProfileScreen extends StatelessWidget {
 
     return BlocProvider(
       lazy: false,
-      create: (context) =>
-          EditProfileBloc(getIt<IProfileRepository>())..add(GetProfileEvent()),
+      create: (context) => EditProfileBloc(getIt<IProfileRepository>())..add(GetProfileEvent()),
       child: BlocListener<EditProfileBloc, EditProfileState>(
         listener: (context, state) {
           if (state.error.isNotEmpty) appContext.showError(state.error);
@@ -52,8 +49,7 @@ class EditProfileScreen extends StatelessWidget {
             appState.saveUserEntityFromEditProfile(state.userData!);
             fullNameController.text = state.userData!.name ?? "";
             emailController.text = state.userData!.email ?? "";
-            if (state.isUpdate)
-              appContext.showToast(LocaleKeys.profile_updated_message.tr());
+            if (state.isUpdate) appContext.showToast(LocaleKeys.profile_updated_message.tr());
           }
         },
         child: Scaffold(
@@ -229,8 +225,7 @@ class EditProfileScreen extends StatelessWidget {
                               color: Colors.grey.withOpacity(0.15),
                               spreadRadius: 5,
                               blurRadius: 7,
-                              offset:
-                                  Offset(0, 3), // changes position of shadow
+                              offset: Offset(0, 3), // changes position of shadow
                             ),
                           ],
                           borderRadius: BorderRadius.circular(20),
@@ -290,8 +285,7 @@ class EditProfileScreen extends StatelessWidget {
         ? Icon(Icons.person)
         : Container(
             decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.cover, image: NetworkImage(photoPath)),
+              image: DecorationImage(fit: BoxFit.cover, image: NetworkImage(photoPath)),
               borderRadius: BorderRadius.all(Radius.circular(20)),
               color: Colors.grey,
             ),

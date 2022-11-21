@@ -11,8 +11,7 @@ part 'addresses_bloc.freezed.dart';
 @freezed
 class MyAddressesEvent with _$MyAddressesEvent {
   const factory MyAddressesEvent.getAddressesList() = GetAddressesListEvent;
-  const factory MyAddressesEvent.makeAddressAsDefault(Address address) =
-      MakeAddressAsDefault;
+  const factory MyAddressesEvent.makeAddressAsDefault(Address address) = MakeAddressAsDefault;
   const factory MyAddressesEvent.deleteAddress(Address address) = DeleteAddress;
 }
 
@@ -31,8 +30,7 @@ class MyAddressesState with _$MyAddressesState {
 class MyAddressesBloc extends Bloc<MyAddressesEvent, MyAddressesState> {
   IProfileRepository repo;
   IAddressRepository addressRepo;
-  MyAddressesBloc(this.repo, this.addressRepo)
-      : super(MyAddressesStateCurrentState()) {
+  MyAddressesBloc(this.repo, this.addressRepo) : super(MyAddressesStateCurrentState()) {
     on<MyAddressesEvent>((event, emit) async {
       if (event is GetAddressesListEvent) {
         emit(state.copyWith(isLoading: true));
@@ -47,7 +45,7 @@ class MyAddressesBloc extends Bloc<MyAddressesEvent, MyAddressesState> {
               address: res.data!.address!,
             ));
           }
-        } catch (e, trace) {
+        } catch (e) {
           emit(state.copyWith(
             isLoading: false,
             error: e.toString(),
@@ -64,7 +62,7 @@ class MyAddressesBloc extends Bloc<MyAddressesEvent, MyAddressesState> {
             isLoading: false,
             refreshData: true,
           ));
-        } catch (e, trace) {
+        } catch (e) {
           emit(state.copyWith(
             isLoading: false,
             error: e.toString(),
@@ -75,13 +73,11 @@ class MyAddressesBloc extends Bloc<MyAddressesEvent, MyAddressesState> {
       if (event is DeleteAddress) {
         emit(state.copyWith(isLoading: true));
         try {
-          var res =
-              await addressRepo.deleteAddress(event.address.id.toString());
           emit(state.copyWith(
             isLoading: false,
             refreshData: true,
           ));
-        } catch (e, trace) {
+        } catch (e) {
           emit(state.copyWith(
             isLoading: false,
             error: e.toString(),

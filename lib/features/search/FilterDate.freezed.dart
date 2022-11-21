@@ -45,15 +45,12 @@ mixin _$FilterDate {
   int get max_distance => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FilterDateCopyWith<FilterDate> get copyWith =>
-      throw _privateConstructorUsedError;
+  $FilterDateCopyWith<FilterDate> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FilterDateCopyWith<$Res> {
-  factory $FilterDateCopyWith(
-          FilterDate value, $Res Function(FilterDate) then) =
-      _$FilterDateCopyWithImpl<$Res>;
+  factory $FilterDateCopyWith(FilterDate value, $Res Function(FilterDate) then) = _$FilterDateCopyWithImpl<$Res>;
   $Res call(
       {List<CategoryData> categories,
       List<CompanyItem> companies,
@@ -105,9 +102,7 @@ class _$FilterDateCopyWithImpl<$Res> implements $FilterDateCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$FilterDateCopyWith<$Res> implements $FilterDateCopyWith<$Res> {
-  factory _$FilterDateCopyWith(
-          _FilterDate value, $Res Function(_FilterDate) then) =
-      __$FilterDateCopyWithImpl<$Res>;
+  factory _$FilterDateCopyWith(_FilterDate value, $Res Function(_FilterDate) then) = __$FilterDateCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<CategoryData> categories,
@@ -118,10 +113,8 @@ abstract class _$FilterDateCopyWith<$Res> implements $FilterDateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FilterDateCopyWithImpl<$Res> extends _$FilterDateCopyWithImpl<$Res>
-    implements _$FilterDateCopyWith<$Res> {
-  __$FilterDateCopyWithImpl(
-      _FilterDate _value, $Res Function(_FilterDate) _then)
+class __$FilterDateCopyWithImpl<$Res> extends _$FilterDateCopyWithImpl<$Res> implements _$FilterDateCopyWith<$Res> {
+  __$FilterDateCopyWithImpl(_FilterDate _value, $Res Function(_FilterDate) _then)
       : super(_value, (v) => _then(v as _FilterDate));
 
   @override
@@ -191,23 +184,15 @@ class _$_FilterDate implements _FilterDate {
     return identical(this, other) ||
         (other is _FilterDate &&
             (identical(other.categories, categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.categories, categories)) &&
+                const DeepCollectionEquality().equals(other.categories, categories)) &&
             (identical(other.companies, companies) ||
-                const DeepCollectionEquality()
-                    .equals(other.companies, companies)) &&
-            (identical(other.delivery_price_range_from,
-                    delivery_price_range_from) ||
-                const DeepCollectionEquality().equals(
-                    other.delivery_price_range_from,
-                    delivery_price_range_from)) &&
-            (identical(
-                    other.delivery_price_range_to, delivery_price_range_to) ||
-                const DeepCollectionEquality().equals(
-                    other.delivery_price_range_to, delivery_price_range_to)) &&
+                const DeepCollectionEquality().equals(other.companies, companies)) &&
+            (identical(other.delivery_price_range_from, delivery_price_range_from) ||
+                const DeepCollectionEquality().equals(other.delivery_price_range_from, delivery_price_range_from)) &&
+            (identical(other.delivery_price_range_to, delivery_price_range_to) ||
+                const DeepCollectionEquality().equals(other.delivery_price_range_to, delivery_price_range_to)) &&
             (identical(other.max_distance, max_distance) ||
-                const DeepCollectionEquality()
-                    .equals(other.max_distance, max_distance)));
+                const DeepCollectionEquality().equals(other.max_distance, max_distance)));
   }
 
   @override
@@ -221,8 +206,7 @@ class _$_FilterDate implements _FilterDate {
 
   @JsonKey(ignore: true)
   @override
-  _$FilterDateCopyWith<_FilterDate> get copyWith =>
-      __$FilterDateCopyWithImpl<_FilterDate>(this, _$identity);
+  _$FilterDateCopyWith<_FilterDate> get copyWith => __$FilterDateCopyWithImpl<_FilterDate>(this, _$identity);
 }
 
 abstract class _FilterDate implements FilterDate {
@@ -245,6 +229,5 @@ abstract class _FilterDate implements FilterDate {
   int get max_distance => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FilterDateCopyWith<_FilterDate> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$FilterDateCopyWith<_FilterDate> get copyWith => throw _privateConstructorUsedError;
 }

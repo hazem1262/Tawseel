@@ -43,21 +43,18 @@ mixin _$AddressComponent {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressComponentCopyWith<AddressComponent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressComponentCopyWith<AddressComponent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressComponentCopyWith<$Res> {
-  factory $AddressComponentCopyWith(
-          AddressComponent value, $Res Function(AddressComponent) then) =
+  factory $AddressComponentCopyWith(AddressComponent value, $Res Function(AddressComponent) then) =
       _$AddressComponentCopyWithImpl<$Res>;
   $Res call({String name, String shortName});
 }
 
 /// @nodoc
-class _$AddressComponentCopyWithImpl<$Res>
-    implements $AddressComponentCopyWith<$Res> {
+class _$AddressComponentCopyWithImpl<$Res> implements $AddressComponentCopyWith<$Res> {
   _$AddressComponentCopyWithImpl(this._value, this._then);
 
   final AddressComponent _value;
@@ -83,21 +80,17 @@ class _$AddressComponentCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AddressComponentCopyWith<$Res>
-    implements $AddressComponentCopyWith<$Res> {
-  factory _$AddressComponentCopyWith(
-          _AddressComponent value, $Res Function(_AddressComponent) then) =
+abstract class _$AddressComponentCopyWith<$Res> implements $AddressComponentCopyWith<$Res> {
+  factory _$AddressComponentCopyWith(_AddressComponent value, $Res Function(_AddressComponent) then) =
       __$AddressComponentCopyWithImpl<$Res>;
   @override
   $Res call({String name, String shortName});
 }
 
 /// @nodoc
-class __$AddressComponentCopyWithImpl<$Res>
-    extends _$AddressComponentCopyWithImpl<$Res>
+class __$AddressComponentCopyWithImpl<$Res> extends _$AddressComponentCopyWithImpl<$Res>
     implements _$AddressComponentCopyWith<$Res> {
-  __$AddressComponentCopyWithImpl(
-      _AddressComponent _value, $Res Function(_AddressComponent) _then)
+  __$AddressComponentCopyWithImpl(_AddressComponent _value, $Res Function(_AddressComponent) _then)
       : super(_value, (v) => _then(v as _AddressComponent));
 
   @override
@@ -126,8 +119,7 @@ class __$AddressComponentCopyWithImpl<$Res>
 class _$_AddressComponent implements _AddressComponent {
   const _$_AddressComponent(this.name, this.shortName);
 
-  factory _$_AddressComponent.fromJson(Map<String, dynamic> json) =>
-      _$$_AddressComponentFromJson(json);
+  factory _$_AddressComponent.fromJson(Map<String, dynamic> json) => _$$_AddressComponentFromJson(json);
 
   @override
   final String name;
@@ -143,18 +135,14 @@ class _$_AddressComponent implements _AddressComponent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AddressComponent &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.shortName, shortName) ||
-                const DeepCollectionEquality()
-                    .equals(other.shortName, shortName)));
+                const DeepCollectionEquality().equals(other.shortName, shortName)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(shortName);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name) ^ const DeepCollectionEquality().hash(shortName);
 
   @JsonKey(ignore: true)
   @override
@@ -168,11 +156,9 @@ class _$_AddressComponent implements _AddressComponent {
 }
 
 abstract class _AddressComponent implements AddressComponent {
-  const factory _AddressComponent(String name, String shortName) =
-      _$_AddressComponent;
+  const factory _AddressComponent(String name, String shortName) = _$_AddressComponent;
 
-  factory _AddressComponent.fromJson(Map<String, dynamic> json) =
-      _$_AddressComponent.fromJson;
+  factory _AddressComponent.fromJson(Map<String, dynamic> json) = _$_AddressComponent.fromJson;
 
   @override
   String get name => throw _privateConstructorUsedError;
@@ -180,6 +166,5 @@ abstract class _AddressComponent implements AddressComponent {
   String get shortName => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AddressComponentCopyWith<_AddressComponent> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AddressComponentCopyWith<_AddressComponent> get copyWith => throw _privateConstructorUsedError;
 }

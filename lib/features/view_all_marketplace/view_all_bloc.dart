@@ -10,17 +10,14 @@ part 'view_all_bloc.freezed.dart';
 
 @freezed
 class ViewAllMarketPlaceBlocEvent with _$ViewAllMarketPlaceBlocEvent {
-  const factory ViewAllMarketPlaceBlocEvent.getMarketPlaces(
-      List<int>? category_ids) = GetViewAllMarketPlaceMarketPlaces;
+  const factory ViewAllMarketPlaceBlocEvent.getMarketPlaces(List<int>? category_ids) =
+      GetViewAllMarketPlaceMarketPlaces;
 
-  const factory ViewAllMarketPlaceBlocEvent.addMarketPlaceToFavorite(int id) =
-      AddMarketPlaceToFavorite;
+  const factory ViewAllMarketPlaceBlocEvent.addMarketPlaceToFavorite(int id) = AddMarketPlaceToFavorite;
 
-  const factory ViewAllMarketPlaceBlocEvent.removeMarketPlaceToFavorite(
-      int id) = RemoveMarketPlaceFromFavorite;
+  const factory ViewAllMarketPlaceBlocEvent.removeMarketPlaceToFavorite(int id) = RemoveMarketPlaceFromFavorite;
 
-  const factory ViewAllMarketPlaceBlocEvent.reset() =
-      ResetViewAllMarketPlaceRefreshData;
+  const factory ViewAllMarketPlaceBlocEvent.reset() = ResetViewAllMarketPlaceRefreshData;
 }
 
 @freezed
@@ -34,22 +31,19 @@ class ViewAllMarketPlaceBlocState with _$ViewAllMarketPlaceBlocState {
   ]) = ViewAllMarketPlaceBlocStateDefaultState;
 }
 
-class ViewAllMarketPlaceBloc
-    extends Bloc<ViewAllMarketPlaceBlocEvent, ViewAllMarketPlaceBlocState> {
+class ViewAllMarketPlaceBloc extends Bloc<ViewAllMarketPlaceBlocEvent, ViewAllMarketPlaceBlocState> {
   IHomeRepository repo;
   IMarketPlaceRepository marketPlacesRepo;
 
   var _page = 1;
   var hasMorePages = true;
 
-  ViewAllMarketPlaceBloc(this.repo, this.marketPlacesRepo)
-      : super(ViewAllMarketPlaceBlocStateDefaultState()) {
+  ViewAllMarketPlaceBloc(this.repo, this.marketPlacesRepo) : super(ViewAllMarketPlaceBlocStateDefaultState()) {
     on<ViewAllMarketPlaceBlocEvent>((event, emit) async {
       if (event is ResetViewAllMarketPlaceRefreshData) {
         _page = 1;
         hasMorePages = true;
-        emit(ViewAllMarketPlaceBlocStateDefaultState()
-            .copyWith(refreshData: true));
+        emit(ViewAllMarketPlaceBlocStateDefaultState().copyWith(refreshData: true));
       }
 
       if (event is GetViewAllMarketPlaceMarketPlaces) {
@@ -96,8 +90,7 @@ class ViewAllMarketPlaceBloc
       if (event is AddMarketPlaceToFavorite) {
         emit(
           state.copyWith(
-            nearbyList: state.nearbyList
-                .setFavoriteLoadingFor(id: event.id, isLoading: true),
+            nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isLoading: true),
             nearbyMarketPlaceIsLoading: false,
           ),
         );
@@ -105,14 +98,12 @@ class ViewAllMarketPlaceBloc
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
           emit(
             state.copyWith(
-                nearbyList: state.nearbyList.setFavoriteLoadingFor(
-                    id: event.id, isFavorite: true, isLoading: false),
+                nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
                 nearbyMarketPlaceIsLoading: false),
           );
         } catch (e) {
           emit(state.copyWith(
-              nearbyList: state.nearbyList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: false),
+              nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isLoading: false),
               nearbyMarketPlaceIsLoading: false,
               error: e.toString()));
           debugPrint('Exception : $e');
@@ -122,8 +113,7 @@ class ViewAllMarketPlaceBloc
       if (event is RemoveMarketPlaceFromFavorite) {
         emit(
           state.copyWith(
-            nearbyList: state.nearbyList
-                .setFavoriteLoadingFor(id: event.id, isLoading: true),
+            nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isLoading: true),
             nearbyMarketPlaceIsLoading: false,
           ),
         );
@@ -131,14 +121,12 @@ class ViewAllMarketPlaceBloc
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
           emit(
             state.copyWith(
-                nearbyList: state.nearbyList.setFavoriteLoadingFor(
-                    id: event.id, isFavorite: false, isLoading: false),
+                nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),
                 nearbyMarketPlaceIsLoading: false),
           );
         } catch (e) {
           emit(state.copyWith(
-              nearbyList: state.nearbyList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: false),
+              nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isLoading: false),
               nearbyMarketPlaceIsLoading: false,
               error: e.toString()));
           debugPrint('Exception : $e');

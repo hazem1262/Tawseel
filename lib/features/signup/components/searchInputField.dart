@@ -29,7 +29,6 @@ class _SearchFieldState extends State<SearchField> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -61,9 +60,7 @@ class _SearchFieldState extends State<SearchField> {
                 ),
               ),
               border: InputBorder.none,
-              hintStyle: TextStyle(
-                  color: tm.isDark() ? Colors.white : hintColor,
-                  fontWeight: FontWeight.w500),
+              hintStyle: TextStyle(color: tm.isDark() ? Colors.white : hintColor, fontWeight: FontWeight.w500),
               hintText: LocaleKeys.search_all.tr(),
             ),
           ),

@@ -41,14 +41,12 @@ mixin _$PlaceDetails {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PlaceDetailsCopyWith<PlaceDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PlaceDetailsCopyWith<PlaceDetails> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PlaceDetailsCopyWith<$Res> {
-  factory $PlaceDetailsCopyWith(
-          PlaceDetails value, $Res Function(PlaceDetails) then) =
+  factory $PlaceDetailsCopyWith(PlaceDetails value, $Res Function(PlaceDetails) then) =
       _$PlaceDetailsCopyWithImpl<$Res>;
   $Res call({PlaceResultItem? result});
 
@@ -88,10 +86,8 @@ class _$PlaceDetailsCopyWithImpl<$Res> implements $PlaceDetailsCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PlaceDetailsCopyWith<$Res>
-    implements $PlaceDetailsCopyWith<$Res> {
-  factory _$PlaceDetailsCopyWith(
-          _PlaceDetails value, $Res Function(_PlaceDetails) then) =
+abstract class _$PlaceDetailsCopyWith<$Res> implements $PlaceDetailsCopyWith<$Res> {
+  factory _$PlaceDetailsCopyWith(_PlaceDetails value, $Res Function(_PlaceDetails) then) =
       __$PlaceDetailsCopyWithImpl<$Res>;
   @override
   $Res call({PlaceResultItem? result});
@@ -103,8 +99,7 @@ abstract class _$PlaceDetailsCopyWith<$Res>
 /// @nodoc
 class __$PlaceDetailsCopyWithImpl<$Res> extends _$PlaceDetailsCopyWithImpl<$Res>
     implements _$PlaceDetailsCopyWith<$Res> {
-  __$PlaceDetailsCopyWithImpl(
-      _PlaceDetails _value, $Res Function(_PlaceDetails) _then)
+  __$PlaceDetailsCopyWithImpl(_PlaceDetails _value, $Res Function(_PlaceDetails) _then)
       : super(_value, (v) => _then(v as _PlaceDetails));
 
   @override
@@ -128,8 +123,7 @@ class __$PlaceDetailsCopyWithImpl<$Res> extends _$PlaceDetailsCopyWithImpl<$Res>
 class _$_PlaceDetails implements _PlaceDetails {
   const _$_PlaceDetails(this.result);
 
-  factory _$_PlaceDetails.fromJson(Map<String, dynamic> json) =>
-      _$$_PlaceDetailsFromJson(json);
+  factory _$_PlaceDetails.fromJson(Map<String, dynamic> json) => _$$_PlaceDetailsFromJson(json);
 
   @override
   final PlaceResultItem? result;
@@ -143,18 +137,15 @@ class _$_PlaceDetails implements _PlaceDetails {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PlaceDetails &&
-            (identical(other.result, result) ||
-                const DeepCollectionEquality().equals(other.result, result)));
+            (identical(other.result, result) || const DeepCollectionEquality().equals(other.result, result)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(result);
 
   @JsonKey(ignore: true)
   @override
-  _$PlaceDetailsCopyWith<_PlaceDetails> get copyWith =>
-      __$PlaceDetailsCopyWithImpl<_PlaceDetails>(this, _$identity);
+  _$PlaceDetailsCopyWith<_PlaceDetails> get copyWith => __$PlaceDetailsCopyWithImpl<_PlaceDetails>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -165,15 +156,13 @@ class _$_PlaceDetails implements _PlaceDetails {
 abstract class _PlaceDetails implements PlaceDetails {
   const factory _PlaceDetails(PlaceResultItem? result) = _$_PlaceDetails;
 
-  factory _PlaceDetails.fromJson(Map<String, dynamic> json) =
-      _$_PlaceDetails.fromJson;
+  factory _PlaceDetails.fromJson(Map<String, dynamic> json) = _$_PlaceDetails.fromJson;
 
   @override
   PlaceResultItem? get result => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PlaceDetailsCopyWith<_PlaceDetails> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$PlaceDetailsCopyWith<_PlaceDetails> get copyWith => throw _privateConstructorUsedError;
 }
 
 PlaceResultItem _$PlaceResultItemFromJson(Map<String, dynamic> json) {
@@ -184,8 +173,7 @@ PlaceResultItem _$PlaceResultItemFromJson(Map<String, dynamic> json) {
 class _$PlaceResultItemTearOff {
   const _$PlaceResultItemTearOff();
 
-  _PlaceResultItem call(GeometryItem geometry, String formatted_address,
-      String name, String place_id) {
+  _PlaceResultItem call(GeometryItem geometry, String formatted_address, String name, String place_id) {
     return _PlaceResultItem(
       geometry,
       formatted_address,
@@ -211,27 +199,20 @@ mixin _$PlaceResultItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PlaceResultItemCopyWith<PlaceResultItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PlaceResultItemCopyWith<PlaceResultItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PlaceResultItemCopyWith<$Res> {
-  factory $PlaceResultItemCopyWith(
-          PlaceResultItem value, $Res Function(PlaceResultItem) then) =
+  factory $PlaceResultItemCopyWith(PlaceResultItem value, $Res Function(PlaceResultItem) then) =
       _$PlaceResultItemCopyWithImpl<$Res>;
-  $Res call(
-      {GeometryItem geometry,
-      String formatted_address,
-      String name,
-      String place_id});
+  $Res call({GeometryItem geometry, String formatted_address, String name, String place_id});
 
   $GeometryItemCopyWith<$Res> get geometry;
 }
 
 /// @nodoc
-class _$PlaceResultItemCopyWithImpl<$Res>
-    implements $PlaceResultItemCopyWith<$Res> {
+class _$PlaceResultItemCopyWithImpl<$Res> implements $PlaceResultItemCopyWith<$Res> {
   _$PlaceResultItemCopyWithImpl(this._value, this._then);
 
   final PlaceResultItem _value;
@@ -274,28 +255,20 @@ class _$PlaceResultItemCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PlaceResultItemCopyWith<$Res>
-    implements $PlaceResultItemCopyWith<$Res> {
-  factory _$PlaceResultItemCopyWith(
-          _PlaceResultItem value, $Res Function(_PlaceResultItem) then) =
+abstract class _$PlaceResultItemCopyWith<$Res> implements $PlaceResultItemCopyWith<$Res> {
+  factory _$PlaceResultItemCopyWith(_PlaceResultItem value, $Res Function(_PlaceResultItem) then) =
       __$PlaceResultItemCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {GeometryItem geometry,
-      String formatted_address,
-      String name,
-      String place_id});
+  $Res call({GeometryItem geometry, String formatted_address, String name, String place_id});
 
   @override
   $GeometryItemCopyWith<$Res> get geometry;
 }
 
 /// @nodoc
-class __$PlaceResultItemCopyWithImpl<$Res>
-    extends _$PlaceResultItemCopyWithImpl<$Res>
+class __$PlaceResultItemCopyWithImpl<$Res> extends _$PlaceResultItemCopyWithImpl<$Res>
     implements _$PlaceResultItemCopyWith<$Res> {
-  __$PlaceResultItemCopyWithImpl(
-      _PlaceResultItem _value, $Res Function(_PlaceResultItem) _then)
+  __$PlaceResultItemCopyWithImpl(_PlaceResultItem _value, $Res Function(_PlaceResultItem) _then)
       : super(_value, (v) => _then(v as _PlaceResultItem));
 
   @override
@@ -332,11 +305,9 @@ class __$PlaceResultItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_PlaceResultItem implements _PlaceResultItem {
-  const _$_PlaceResultItem(
-      this.geometry, this.formatted_address, this.name, this.place_id);
+  const _$_PlaceResultItem(this.geometry, this.formatted_address, this.name, this.place_id);
 
-  factory _$_PlaceResultItem.fromJson(Map<String, dynamic> json) =>
-      _$$_PlaceResultItemFromJson(json);
+  factory _$_PlaceResultItem.fromJson(Map<String, dynamic> json) => _$$_PlaceResultItemFromJson(json);
 
   @override
   final GeometryItem geometry;
@@ -356,17 +327,11 @@ class _$_PlaceResultItem implements _PlaceResultItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PlaceResultItem &&
-            (identical(other.geometry, geometry) ||
-                const DeepCollectionEquality()
-                    .equals(other.geometry, geometry)) &&
+            (identical(other.geometry, geometry) || const DeepCollectionEquality().equals(other.geometry, geometry)) &&
             (identical(other.formatted_address, formatted_address) ||
-                const DeepCollectionEquality()
-                    .equals(other.formatted_address, formatted_address)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.place_id, place_id) ||
-                const DeepCollectionEquality()
-                    .equals(other.place_id, place_id)));
+                const DeepCollectionEquality().equals(other.formatted_address, formatted_address)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.place_id, place_id) || const DeepCollectionEquality().equals(other.place_id, place_id)));
   }
 
   @override
@@ -389,14 +354,10 @@ class _$_PlaceResultItem implements _PlaceResultItem {
 }
 
 abstract class _PlaceResultItem implements PlaceResultItem {
-  const factory _PlaceResultItem(
-      GeometryItem geometry,
-      String formatted_address,
-      String name,
-      String place_id) = _$_PlaceResultItem;
+  const factory _PlaceResultItem(GeometryItem geometry, String formatted_address, String name, String place_id) =
+      _$_PlaceResultItem;
 
-  factory _PlaceResultItem.fromJson(Map<String, dynamic> json) =
-      _$_PlaceResultItem.fromJson;
+  factory _PlaceResultItem.fromJson(Map<String, dynamic> json) = _$_PlaceResultItem.fromJson;
 
   @override
   GeometryItem get geometry => throw _privateConstructorUsedError;
@@ -408,8 +369,7 @@ abstract class _PlaceResultItem implements PlaceResultItem {
   String get place_id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PlaceResultItemCopyWith<_PlaceResultItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$PlaceResultItemCopyWith<_PlaceResultItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 GeometryItem _$GeometryItemFromJson(Map<String, dynamic> json) {
@@ -440,14 +400,12 @@ mixin _$GeometryItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GeometryItemCopyWith<GeometryItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GeometryItemCopyWith<GeometryItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GeometryItemCopyWith<$Res> {
-  factory $GeometryItemCopyWith(
-          GeometryItem value, $Res Function(GeometryItem) then) =
+  factory $GeometryItemCopyWith(GeometryItem value, $Res Function(GeometryItem) then) =
       _$GeometryItemCopyWithImpl<$Res>;
   $Res call({GeometryLocationItem location});
 
@@ -483,10 +441,8 @@ class _$GeometryItemCopyWithImpl<$Res> implements $GeometryItemCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GeometryItemCopyWith<$Res>
-    implements $GeometryItemCopyWith<$Res> {
-  factory _$GeometryItemCopyWith(
-          _GeometryItem value, $Res Function(_GeometryItem) then) =
+abstract class _$GeometryItemCopyWith<$Res> implements $GeometryItemCopyWith<$Res> {
+  factory _$GeometryItemCopyWith(_GeometryItem value, $Res Function(_GeometryItem) then) =
       __$GeometryItemCopyWithImpl<$Res>;
   @override
   $Res call({GeometryLocationItem location});
@@ -498,8 +454,7 @@ abstract class _$GeometryItemCopyWith<$Res>
 /// @nodoc
 class __$GeometryItemCopyWithImpl<$Res> extends _$GeometryItemCopyWithImpl<$Res>
     implements _$GeometryItemCopyWith<$Res> {
-  __$GeometryItemCopyWithImpl(
-      _GeometryItem _value, $Res Function(_GeometryItem) _then)
+  __$GeometryItemCopyWithImpl(_GeometryItem _value, $Res Function(_GeometryItem) _then)
       : super(_value, (v) => _then(v as _GeometryItem));
 
   @override
@@ -523,8 +478,7 @@ class __$GeometryItemCopyWithImpl<$Res> extends _$GeometryItemCopyWithImpl<$Res>
 class _$_GeometryItem implements _GeometryItem {
   const _$_GeometryItem(this.location);
 
-  factory _$_GeometryItem.fromJson(Map<String, dynamic> json) =>
-      _$$_GeometryItemFromJson(json);
+  factory _$_GeometryItem.fromJson(Map<String, dynamic> json) => _$$_GeometryItemFromJson(json);
 
   @override
   final GeometryLocationItem location;
@@ -538,19 +492,15 @@ class _$_GeometryItem implements _GeometryItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _GeometryItem &&
-            (identical(other.location, location) ||
-                const DeepCollectionEquality()
-                    .equals(other.location, location)));
+            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(location);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(location);
 
   @JsonKey(ignore: true)
   @override
-  _$GeometryItemCopyWith<_GeometryItem> get copyWith =>
-      __$GeometryItemCopyWithImpl<_GeometryItem>(this, _$identity);
+  _$GeometryItemCopyWith<_GeometryItem> get copyWith => __$GeometryItemCopyWithImpl<_GeometryItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -561,15 +511,13 @@ class _$_GeometryItem implements _GeometryItem {
 abstract class _GeometryItem implements GeometryItem {
   const factory _GeometryItem(GeometryLocationItem location) = _$_GeometryItem;
 
-  factory _GeometryItem.fromJson(Map<String, dynamic> json) =
-      _$_GeometryItem.fromJson;
+  factory _GeometryItem.fromJson(Map<String, dynamic> json) = _$_GeometryItem.fromJson;
 
   @override
   GeometryLocationItem get location => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GeometryItemCopyWith<_GeometryItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$GeometryItemCopyWith<_GeometryItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 GeometryLocationItem _$GeometryLocationItemFromJson(Map<String, dynamic> json) {
@@ -602,21 +550,18 @@ mixin _$GeometryLocationItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GeometryLocationItemCopyWith<GeometryLocationItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GeometryLocationItemCopyWith<GeometryLocationItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GeometryLocationItemCopyWith<$Res> {
-  factory $GeometryLocationItemCopyWith(GeometryLocationItem value,
-          $Res Function(GeometryLocationItem) then) =
+  factory $GeometryLocationItemCopyWith(GeometryLocationItem value, $Res Function(GeometryLocationItem) then) =
       _$GeometryLocationItemCopyWithImpl<$Res>;
   $Res call({double lat, double lng});
 }
 
 /// @nodoc
-class _$GeometryLocationItemCopyWithImpl<$Res>
-    implements $GeometryLocationItemCopyWith<$Res> {
+class _$GeometryLocationItemCopyWithImpl<$Res> implements $GeometryLocationItemCopyWith<$Res> {
   _$GeometryLocationItemCopyWithImpl(this._value, this._then);
 
   final GeometryLocationItem _value;
@@ -642,21 +587,17 @@ class _$GeometryLocationItemCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GeometryLocationItemCopyWith<$Res>
-    implements $GeometryLocationItemCopyWith<$Res> {
-  factory _$GeometryLocationItemCopyWith(_GeometryLocationItem value,
-          $Res Function(_GeometryLocationItem) then) =
+abstract class _$GeometryLocationItemCopyWith<$Res> implements $GeometryLocationItemCopyWith<$Res> {
+  factory _$GeometryLocationItemCopyWith(_GeometryLocationItem value, $Res Function(_GeometryLocationItem) then) =
       __$GeometryLocationItemCopyWithImpl<$Res>;
   @override
   $Res call({double lat, double lng});
 }
 
 /// @nodoc
-class __$GeometryLocationItemCopyWithImpl<$Res>
-    extends _$GeometryLocationItemCopyWithImpl<$Res>
+class __$GeometryLocationItemCopyWithImpl<$Res> extends _$GeometryLocationItemCopyWithImpl<$Res>
     implements _$GeometryLocationItemCopyWith<$Res> {
-  __$GeometryLocationItemCopyWithImpl(
-      _GeometryLocationItem _value, $Res Function(_GeometryLocationItem) _then)
+  __$GeometryLocationItemCopyWithImpl(_GeometryLocationItem _value, $Res Function(_GeometryLocationItem) _then)
       : super(_value, (v) => _then(v as _GeometryLocationItem));
 
   @override
@@ -685,8 +626,7 @@ class __$GeometryLocationItemCopyWithImpl<$Res>
 class _$_GeometryLocationItem implements _GeometryLocationItem {
   const _$_GeometryLocationItem(this.lat, this.lng);
 
-  factory _$_GeometryLocationItem.fromJson(Map<String, dynamic> json) =>
-      _$$_GeometryLocationItemFromJson(json);
+  factory _$_GeometryLocationItem.fromJson(Map<String, dynamic> json) => _$$_GeometryLocationItemFromJson(json);
 
   @override
   final double lat;
@@ -702,23 +642,18 @@ class _$_GeometryLocationItem implements _GeometryLocationItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _GeometryLocationItem &&
-            (identical(other.lat, lat) ||
-                const DeepCollectionEquality().equals(other.lat, lat)) &&
-            (identical(other.lng, lng) ||
-                const DeepCollectionEquality().equals(other.lng, lng)));
+            (identical(other.lat, lat) || const DeepCollectionEquality().equals(other.lat, lat)) &&
+            (identical(other.lng, lng) || const DeepCollectionEquality().equals(other.lng, lng)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(lat) ^
-      const DeepCollectionEquality().hash(lng);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(lat) ^ const DeepCollectionEquality().hash(lng);
 
   @JsonKey(ignore: true)
   @override
   _$GeometryLocationItemCopyWith<_GeometryLocationItem> get copyWith =>
-      __$GeometryLocationItemCopyWithImpl<_GeometryLocationItem>(
-          this, _$identity);
+      __$GeometryLocationItemCopyWithImpl<_GeometryLocationItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -727,11 +662,9 @@ class _$_GeometryLocationItem implements _GeometryLocationItem {
 }
 
 abstract class _GeometryLocationItem implements GeometryLocationItem {
-  const factory _GeometryLocationItem(double lat, double lng) =
-      _$_GeometryLocationItem;
+  const factory _GeometryLocationItem(double lat, double lng) = _$_GeometryLocationItem;
 
-  factory _GeometryLocationItem.fromJson(Map<String, dynamic> json) =
-      _$_GeometryLocationItem.fromJson;
+  factory _GeometryLocationItem.fromJson(Map<String, dynamic> json) = _$_GeometryLocationItem.fromJson;
 
   @override
   double get lat => throw _privateConstructorUsedError;
@@ -739,6 +672,5 @@ abstract class _GeometryLocationItem implements GeometryLocationItem {
   double get lng => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GeometryLocationItemCopyWith<_GeometryLocationItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$GeometryLocationItemCopyWith<_GeometryLocationItem> get copyWith => throw _privateConstructorUsedError;
 }

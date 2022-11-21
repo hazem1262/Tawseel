@@ -20,6 +20,4 @@ bool get isAr => appContext.locale.toString().contains("ar");
 
 final screenWidth = MediaQuery.of(appContext).size.width;
 final screenHeight = MediaQuery.of(appContext).size.height;
-final safeHeight = screenHeight -
-    MediaQuery.of(appContext).padding.top -
-    MediaQuery.of(appContext).padding.bottom;
+final safeHeight = screenHeight - MediaQuery.of(appContext).padding.top - MediaQuery.of(appContext).padding.bottom;

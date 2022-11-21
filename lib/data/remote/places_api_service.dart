@@ -6,8 +6,7 @@ import 'package:tawseel/data/models/places_suggestions_model.dart';
 
 part 'places_api_service.g.dart';
 
-const String PlacesBaseUrl =
-    "https://maps.googleapis.com/maps/api/place/autocomplete/";
+const String PlacesBaseUrl = "https://maps.googleapis.com/maps/api/place/autocomplete/";
 
 @RestApi(baseUrl: PlacesBaseUrl)
 abstract class PlacesApiService {

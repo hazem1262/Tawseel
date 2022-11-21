@@ -21,14 +21,11 @@ class HomeBlocEvent with _$HomeBlocEvent {
 
   const factory HomeBlocEvent.getCategories() = GetHomeCategories;
 
-  const factory HomeBlocEvent.getNearbyMarketPlaces() =
-      GetHomeNearbyMarketPlaces;
+  const factory HomeBlocEvent.getNearbyMarketPlaces() = GetHomeNearbyMarketPlaces;
 
-  const factory HomeBlocEvent.addMarketPlaceToFavorite(int id) =
-      AddMarketPlaceToFavorite;
+  const factory HomeBlocEvent.addMarketPlaceToFavorite(int id) = AddMarketPlaceToFavorite;
 
-  const factory HomeBlocEvent.removeMarketPlaceToFavorite(int id) =
-      RemoveMarketPlaceFromFavorite;
+  const factory HomeBlocEvent.removeMarketPlaceToFavorite(int id) = RemoveMarketPlaceFromFavorite;
 
   const factory HomeBlocEvent.reset() = ResetHomeRefreshData;
 }
@@ -70,8 +67,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
           Address? defaultAddress = profile.data?.address?.firstWhere(
             (element) => element.isDefault == true,
           );
-          emit(state.copyWith(
-              profileIsLoading: false, userAddress: defaultAddress, error: ""));
+          emit(state.copyWith(profileIsLoading: false, userAddress: defaultAddress, error: ""));
         } catch (e) {
           emit(state.copyWith(
             profileIsLoading: false,
@@ -101,8 +97,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
         emit(state.copyWith(adsIsLoading: true, error: ""));
         try {
           var ads = await adsRepo.getAds();
-          emit(state.copyWith(
-              adsIsLoading: false, error: "", adsList: ads.data));
+          emit(state.copyWith(adsIsLoading: false, error: "", adsList: ads.data));
         } catch (e) {
           emit(state.copyWith(adsIsLoading: false, error: e.toString()));
           debugPrint('Exception : $e');
@@ -113,13 +108,9 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
         emit(state.copyWith(nearbyMarketPlaceIsLoading: true, error: ""));
         try {
           var places = await marketPlacesRepo.getMarketPlaces();
-          emit(state.copyWith(
-              nearbyMarketPlaceIsLoading: false,
-              error: "",
-              nearbyList: places.data));
+          emit(state.copyWith(nearbyMarketPlaceIsLoading: false, error: "", nearbyList: places.data));
         } catch (e) {
-          emit(state.copyWith(
-              nearbyMarketPlaceIsLoading: false, error: e.toString()));
+          emit(state.copyWith(nearbyMarketPlaceIsLoading: false, error: e.toString()));
           debugPrint('Exception : $e');
         }
       }
@@ -127,8 +118,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
       if (event is AddMarketPlaceToFavorite) {
         emit(
           state.copyWith(
-              nearbyList: state.nearbyList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: true),
+              nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isLoading: true),
               nearbyMarketPlaceIsLoading: false,
               error: ""),
         );
@@ -136,15 +126,13 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
           emit(
             state.copyWith(
-                nearbyList: state.nearbyList.setFavoriteLoadingFor(
-                    id: event.id, isFavorite: true, isLoading: false),
+                nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
                 nearbyMarketPlaceIsLoading: false,
                 error: ""),
           );
         } catch (e) {
           emit(state.copyWith(
-              nearbyList: state.nearbyList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: false),
+              nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isLoading: false),
               nearbyMarketPlaceIsLoading: false,
               error: e.toString()));
           debugPrint('Exception : $e');
@@ -154,8 +142,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
       if (event is RemoveMarketPlaceFromFavorite) {
         emit(
           state.copyWith(
-              nearbyList: state.nearbyList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: true),
+              nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isLoading: true),
               nearbyMarketPlaceIsLoading: false,
               error: ""),
         );
@@ -163,15 +150,13 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
           emit(
             state.copyWith(
-                nearbyList: state.nearbyList.setFavoriteLoadingFor(
-                    id: event.id, isFavorite: false, isLoading: false),
+                nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),
                 nearbyMarketPlaceIsLoading: false,
                 error: ""),
           );
         } catch (e) {
           emit(state.copyWith(
-              nearbyList: state.nearbyList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: false),
+              nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isLoading: false),
               nearbyMarketPlaceIsLoading: false,
               error: e.toString()));
           debugPrint('Exception : $e');

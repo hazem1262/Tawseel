@@ -15,14 +15,11 @@ import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 class CategoryDetailsScreen extends StatelessWidget {
-  CategoryDetailsScreen(
-      {Key? key, required this.categoryId, required this.categoryName})
-      : super(key: key);
+  CategoryDetailsScreen({Key? key, required this.categoryId, required this.categoryName}) : super(key: key);
 
   final int categoryId;
   final String categoryName;
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   @override
   Widget build(BuildContext ctx) {
@@ -102,22 +99,18 @@ class CategoryDetailsScreen extends StatelessWidget {
                     ),
                     BlocBuilder<CategoryDetailsBloc, CategoryDetailsBlocState>(
                       builder: (context, state) {
-                        return categoriesArea(state.categoriesIsLoading,
-                            state.categories, context, true, (categoryItem) {
+                        return categoriesArea(state.categoriesIsLoading, state.categories, context, true,
+                            (categoryItem) {
                           BlocProvider.of<CategoryDetailsBloc>(context)
-                            ..add(SelectCategoryDetailsSubCategory(
-                                categoryItem.id ?? 0))
-                            ..add(GetCategoryDetailsMarketPlaces(
-                                [categoryItem.id ?? 0]));
+                            ..add(SelectCategoryDetailsSubCategory(categoryItem.id ?? 0))
+                            ..add(GetCategoryDetailsMarketPlaces([categoryItem.id ?? 0]));
                         });
                       },
                     ),
                     BlocBuilder<CategoryDetailsBloc, CategoryDetailsBlocState>(
                       builder: (context, state) {
                         final selectedSubCategory = state.categories.isNotEmpty
-                            ? state.categories
-                                .where((element) => element.isSelected == true)
-                                .toList()
+                            ? state.categories.where((element) => element.isSelected == true).toList()
                             : null;
                         return marketPlaceArea(
                           blocContext: context,
@@ -129,10 +122,8 @@ class CategoryDetailsScreen extends StatelessWidget {
                             appContext.router.push(ViewAllMarketPlacesRoute(
                               categoryId: null,
                               categoryName: categoryName,
-                              subCategoryId:
-                                  getIdOrNull(selectedSubCategory)?.id,
-                              subCategoryName:
-                                  getIdOrNull(selectedSubCategory)?.name,
+                              subCategoryId: getIdOrNull(selectedSubCategory)?.id,
+                              subCategoryName: getIdOrNull(selectedSubCategory)?.name,
                             ));
                           },
                           onFavoriteClicked: (item) {

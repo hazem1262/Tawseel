@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:easy_localization/src/public_ext.dart';
@@ -24,8 +23,7 @@ class FavoritesScreen extends StatefulWidget {
 }
 
 class _FavoritesScreenState extends State<FavoritesScreen> {
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +38,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
             listener: (context, state) {
               if (state.error.isNotEmpty) appContext.showError(state.error);
               if (state.refreshData) {
-                BlocProvider.of<FavoritesBloc>(context)
-                  ..add(GetFavoritesList());
+                BlocProvider.of<FavoritesBloc>(context)..add(GetFavoritesList());
               }
             },
             child: SafeArea(
@@ -49,8 +46,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 controller: _refreshController,
                 enablePullDown: true,
                 onRefresh: () {
-                  BlocProvider.of<FavoritesBloc>(context)
-                    ..add(ResetFavoritesState());
+                  BlocProvider.of<FavoritesBloc>(context)..add(ResetFavoritesState());
                   _refreshController.refreshToIdle();
                 },
                 header: WaterDropHeader(),
@@ -97,9 +93,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       required bool hasMorePages,
       required List<MarketPlaceItem> favoritesList}) {
     final h = MediaQuery.of(context).size.height;
-    final height = h -
-        MediaQuery.of(context).padding.top -
-        MediaQuery.of(context).padding.bottom;
+    final height = h - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom;
     return isPagingLoading
         ? marketPlaceShimmer()
         : Container(
@@ -112,9 +106,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: isAr
-                          ? EdgeInsets.only(right: 8)
-                          : EdgeInsets.only(left: 8),
+                      padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
                           maxHeight: height - height * 0.229,
@@ -124,12 +116,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                           hasMore: hasMorePages,
                           isLoading: isPagingLoading,
                           loadMore: () {
-                            BlocProvider.of<FavoritesBloc>(context)
-                              ..add(GetFavoritesList());
+                            BlocProvider.of<FavoritesBloc>(context)..add(GetFavoritesList());
                           },
                           onRefresh: () {
-                            BlocProvider.of<FavoritesBloc>(context)
-                              ..add(ResetFavoritesState());
+                            BlocProvider.of<FavoritesBloc>(context)..add(ResetFavoritesState());
                           },
                           loadingWidget: Padding(
                             padding: const EdgeInsets.all(16.0),
@@ -141,23 +131,18 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                               //  ValueKey(favoriteItem.id)
                               ,
                               background: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 16),
+                                padding: const EdgeInsets.symmetric(horizontal: 16),
                                 child: Container(
                                   height: double.infinity,
                                   decoration: BoxDecoration(
                                     color: Colors.red,
                                     borderRadius: BorderRadius.circular(20),
                                   ),
-                                  alignment: isAr
-                                      ? Alignment.centerLeft
-                                      : Alignment.centerRight,
+                                  alignment: isAr ? Alignment.centerLeft : Alignment.centerRight,
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20),
+                                    padding: const EdgeInsets.symmetric(horizontal: 20),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Container(
                                             height: 30,
@@ -181,9 +166,8 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                               ),
                               direction: DismissDirection.endToStart,
                               onDismissed: (direction) {
-                                BlocProvider.of<FavoritesBloc>(context).add(
-                                    RemoveFromFavoriteByDismiss(
-                                        favoriteItem.id));
+                                BlocProvider.of<FavoritesBloc>(context)
+                                    .add(RemoveFromFavoriteByDismiss(favoriteItem.id));
                               },
                               child: marketPlaceItem(favoriteItem, (item) {
                                 showMarketPlaceCompaniesBottomSheet(
@@ -192,8 +176,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                   item.companies,
                                 );
                               }, (item) {
-                                BlocProvider.of<FavoritesBloc>(context)
-                                    .add(RemoveFromFavorite(item.id));
+                                BlocProvider.of<FavoritesBloc>(context).add(RemoveFromFavorite(item.id));
                               }),
                             );
                           },
@@ -230,10 +213,7 @@ Widget emptyFavoritesWidget(BuildContext context) {
           SizedBox(height: 24),
           Text(
             LocaleKeys.favorites_empty_subtitle.tr(),
-            style: Theme.of(context)
-                .textTheme
-                .caption!
-                .copyWith(fontSize: BodyTextSize),
+            style: Theme.of(context).textTheme.caption!.copyWith(fontSize: BodyTextSize),
             textAlign: TextAlign.center,
             softWrap: true,
           )

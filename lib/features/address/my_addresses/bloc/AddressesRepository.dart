@@ -13,8 +13,7 @@ class AddressesRepository with NetworkHandler implements IAddressRepository {
   AddressesRepository(this.api);
 
   @override
-  Future<AddressResponse> makeAddressAsDefault(Address address) =>
-      networkHandler(() {
+  Future<AddressResponse> makeAddressAsDefault(Address address) => networkHandler(() {
         return api.updateAddress(
           address.id.toString(),
           address.name.toString(),

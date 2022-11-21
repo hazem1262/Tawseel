@@ -15,8 +15,7 @@ class LoginRepository with NetworkHandler implements ILoginRepository {
   LoginRepository(this.api);
 
   @override
-  Future<LoginResponse> loginWithPhone(String phone, String password) =>
-      networkHandler(
+  Future<LoginResponse> loginWithPhone(String phone, String password) => networkHandler(
         () {
           var response = api.loginWithPhone(phone, password);
           // save User data into prefrences if he is verified

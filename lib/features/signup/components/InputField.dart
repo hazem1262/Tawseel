@@ -73,18 +73,14 @@ class _InputFieldState extends State<InputField> {
               autofillHints: widget.autofillHints,
               onEditingComplete: () => TextInput.finishAutofillContext(),
               controller: widget.controller,
-              inputFormatters: [
-                FilteringTextInputFormatter.singleLineFormatter
-              ],
+              inputFormatters: [FilteringTextInputFormatter.singleLineFormatter],
               keyboardType: widget.keyboardType,
               textInputAction: widget.inputAction,
               onFieldSubmitted: (value) => {widget.onSubmitCallback?.call()},
               decoration: InputDecoration(
                 prefixIcon: widget.prefixIcon,
                 border: InputBorder.none,
-                hintStyle: TextStyle(
-                    color: tm.isDark() ? Colors.white : hintColor,
-                    fontWeight: FontWeight.w500),
+                hintStyle: TextStyle(color: tm.isDark() ? Colors.white : hintColor, fontWeight: FontWeight.w500),
                 hintText: widget.hintText,
               ),
               validator: (text) => onTextChange(text),

@@ -9,8 +9,7 @@ class PlacesSuggestionsResponse with _$PlacesSuggestionsResponse {
     List<Predictions> predictions,
     String status,
   ) = _PlacesSuggestionsResponse;
-  factory PlacesSuggestionsResponse.fromJson(Map<String, dynamic> json) =>
-      _$PlacesSuggestionsResponseFromJson(json);
+  factory PlacesSuggestionsResponse.fromJson(Map<String, dynamic> json) => _$PlacesSuggestionsResponseFromJson(json);
 }
 
 @freezed
@@ -24,8 +23,7 @@ class Predictions with _$Predictions {
     List<Terms> terms,
     List<String> types,
   ) = _Predictions;
-  factory Predictions.fromJson(Map<String, dynamic> json) =>
-      _$PredictionsFromJson(json);
+  factory Predictions.fromJson(Map<String, dynamic> json) => _$PredictionsFromJson(json);
 }
 
 @freezed
@@ -34,8 +32,7 @@ class MatchedSubstring with _$MatchedSubstring {
     int length,
     int offset,
   ) = _MatchedSubstring;
-  factory MatchedSubstring.fromJson(Map<String, dynamic> json) =>
-      _$MatchedSubstringFromJson(json);
+  factory MatchedSubstring.fromJson(Map<String, dynamic> json) => _$MatchedSubstringFromJson(json);
 }
 
 @freezed
@@ -45,8 +42,7 @@ class StructuredFormatting with _$StructuredFormatting {
     List<MatchedSubstring> main_text_matched_substrings,
     String? secondary_text,
   ) = _StructuredFormatting;
-  factory StructuredFormatting.fromJson(Map<String, dynamic> json) =>
-      _$StructuredFormattingFromJson(json);
+  factory StructuredFormatting.fromJson(Map<String, dynamic> json) => _$StructuredFormattingFromJson(json);
 }
 
 @freezed

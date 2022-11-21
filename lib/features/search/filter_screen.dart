@@ -112,8 +112,7 @@ class _FilterScreenState extends State<FilterScreen> {
                               if (isSelected) {
                                 categories = categories.selectItemInList(e.id!);
                               } else {
-                                categories =
-                                    categories.unSelectItemInList(e.id!);
+                                categories = categories.unSelectItemInList(e.id!);
                               }
                             });
                           },
@@ -161,8 +160,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 8),
-                    padding: EdgeInsets.only(
-                        left: isAr ? 0 : 24, right: isAr ? 24 : 8),
+                    padding: EdgeInsets.only(left: isAr ? 0 : 24, right: isAr ? 24 : 8),
                     child: Text(
                       LocaleKeys.delivery_price_range.tr(),
                       style: Theme.of(context).textTheme.headline6!.copyWith(
@@ -174,8 +172,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 ),
                 Container(
                   padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(
-                      left: isAr ? 0 : 24, right: isAr ? 24 : 8),
+                  margin: EdgeInsets.only(left: isAr ? 0 : 24, right: isAr ? 24 : 8),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: Theme.of(context).dividerColor,
@@ -218,8 +215,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 8),
-                    padding: EdgeInsets.only(
-                        left: isAr ? 0 : 24, right: isAr ? 24 : 8),
+                    padding: EdgeInsets.only(left: isAr ? 0 : 24, right: isAr ? 24 : 8),
                     child: Text(
                       LocaleKeys.max_distance.tr(),
                       style: Theme.of(context).textTheme.headline6!.copyWith(
@@ -231,8 +227,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 ),
                 Container(
                   padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(
-                      left: isAr ? 0 : 24, right: isAr ? 24 : 8),
+                  margin: EdgeInsets.only(left: isAr ? 0 : 24, right: isAr ? 24 : 8),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: Theme.of(context).dividerColor,
@@ -302,9 +297,7 @@ class _FilterScreenState extends State<FilterScreen> {
         onSelected: (d) {
           onSelected(d);
         },
-        selectedColor: tm.isDark()
-            ? Colors.black45
-            : ThemeManager.filtercolor.withAlpha(60),
+        selectedColor: tm.isDark() ? Colors.black45 : ThemeManager.filtercolor.withAlpha(60),
         elevation: tm.isDark() ? 0 : 0,
         selectedShadowColor: Colors.white,
         backgroundColor: ThemeManager.filtercolor.withAlpha(20),
@@ -320,22 +313,17 @@ class _FilterScreenState extends State<FilterScreen> {
       padding: EdgeInsets.all(16),
       width: double.infinity,
       child: ElevatedButton.icon(
-        icon: Container(
-            height: 20, width: 20, child: Image.asset(Res.settings_icon)),
+        icon: Container(height: 20, width: 20, child: Image.asset(Res.settings_icon)),
         style: ElevatedButton.styleFrom(
             elevation: 0.1,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             padding: const EdgeInsets.all(16.0)),
         onPressed: () {
           onApplyFilter();
         },
         label: Text(
           LocaleKeys.apply_filter.tr(),
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: BodySmallTextSize,
-              fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white, fontSize: BodySmallTextSize, fontWeight: FontWeight.bold),
         ),
       ),
     );
@@ -357,9 +345,7 @@ class _FilterScreenState extends State<FilterScreen> {
           LocaleKeys.reset.tr(),
           style: Theme.of(context).textTheme.headline6!.copyWith(
                 fontSize: BodySmallTextSize,
-                color: tm.isDark()
-                    ? TitleDarkColor_Dark
-                    : ProfileActionsColor_Light,
+                color: tm.isDark() ? TitleDarkColor_Dark : ProfileActionsColor_Light,
                 fontWeight: FontWeight.w600,
               ),
         ),

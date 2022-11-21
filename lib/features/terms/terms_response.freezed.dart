@@ -41,14 +41,12 @@ mixin _$TermsResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TermsResponseCopyWith<TermsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TermsResponseCopyWith<TermsResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TermsResponseCopyWith<$Res> {
-  factory $TermsResponseCopyWith(
-          TermsResponse value, $Res Function(TermsResponse) then) =
+  factory $TermsResponseCopyWith(TermsResponse value, $Res Function(TermsResponse) then) =
       _$TermsResponseCopyWithImpl<$Res>;
   $Res call({TermsData data});
 
@@ -56,8 +54,7 @@ abstract class $TermsResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TermsResponseCopyWithImpl<$Res>
-    implements $TermsResponseCopyWith<$Res> {
+class _$TermsResponseCopyWithImpl<$Res> implements $TermsResponseCopyWith<$Res> {
   _$TermsResponseCopyWithImpl(this._value, this._then);
 
   final TermsResponse _value;
@@ -85,10 +82,8 @@ class _$TermsResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TermsResponseCopyWith<$Res>
-    implements $TermsResponseCopyWith<$Res> {
-  factory _$TermsResponseCopyWith(
-          _TermsResponse value, $Res Function(_TermsResponse) then) =
+abstract class _$TermsResponseCopyWith<$Res> implements $TermsResponseCopyWith<$Res> {
+  factory _$TermsResponseCopyWith(_TermsResponse value, $Res Function(_TermsResponse) then) =
       __$TermsResponseCopyWithImpl<$Res>;
   @override
   $Res call({TermsData data});
@@ -98,11 +93,9 @@ abstract class _$TermsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TermsResponseCopyWithImpl<$Res>
-    extends _$TermsResponseCopyWithImpl<$Res>
+class __$TermsResponseCopyWithImpl<$Res> extends _$TermsResponseCopyWithImpl<$Res>
     implements _$TermsResponseCopyWith<$Res> {
-  __$TermsResponseCopyWithImpl(
-      _TermsResponse _value, $Res Function(_TermsResponse) _then)
+  __$TermsResponseCopyWithImpl(_TermsResponse _value, $Res Function(_TermsResponse) _then)
       : super(_value, (v) => _then(v as _TermsResponse));
 
   @override
@@ -126,8 +119,7 @@ class __$TermsResponseCopyWithImpl<$Res>
 class _$_TermsResponse implements _TermsResponse {
   _$_TermsResponse(this.data);
 
-  factory _$_TermsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_TermsResponseFromJson(json);
+  factory _$_TermsResponse.fromJson(Map<String, dynamic> json) => _$$_TermsResponseFromJson(json);
 
   @override
   final TermsData data;
@@ -141,13 +133,11 @@ class _$_TermsResponse implements _TermsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TermsResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
@@ -163,15 +153,13 @@ class _$_TermsResponse implements _TermsResponse {
 abstract class _TermsResponse implements TermsResponse {
   factory _TermsResponse(TermsData data) = _$_TermsResponse;
 
-  factory _TermsResponse.fromJson(Map<String, dynamic> json) =
-      _$_TermsResponse.fromJson;
+  factory _TermsResponse.fromJson(Map<String, dynamic> json) = _$_TermsResponse.fromJson;
 
   @override
   TermsData get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TermsResponseCopyWith<_TermsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$TermsResponseCopyWith<_TermsResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 TermsData _$TermsDataFromJson(Map<String, dynamic> json) {
@@ -208,14 +196,12 @@ mixin _$TermsData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TermsDataCopyWith<TermsData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TermsDataCopyWith<TermsData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TermsDataCopyWith<$Res> {
-  factory $TermsDataCopyWith(TermsData value, $Res Function(TermsData) then) =
-      _$TermsDataCopyWithImpl<$Res>;
+  factory $TermsDataCopyWith(TermsData value, $Res Function(TermsData) then) = _$TermsDataCopyWithImpl<$Res>;
   $Res call({int id, String? title, String? slug, String? content});
 }
 
@@ -257,16 +243,13 @@ class _$TermsDataCopyWithImpl<$Res> implements $TermsDataCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$TermsDataCopyWith<$Res> implements $TermsDataCopyWith<$Res> {
-  factory _$TermsDataCopyWith(
-          _TermsData value, $Res Function(_TermsData) then) =
-      __$TermsDataCopyWithImpl<$Res>;
+  factory _$TermsDataCopyWith(_TermsData value, $Res Function(_TermsData) then) = __$TermsDataCopyWithImpl<$Res>;
   @override
   $Res call({int id, String? title, String? slug, String? content});
 }
 
 /// @nodoc
-class __$TermsDataCopyWithImpl<$Res> extends _$TermsDataCopyWithImpl<$Res>
-    implements _$TermsDataCopyWith<$Res> {
+class __$TermsDataCopyWithImpl<$Res> extends _$TermsDataCopyWithImpl<$Res> implements _$TermsDataCopyWith<$Res> {
   __$TermsDataCopyWithImpl(_TermsData _value, $Res Function(_TermsData) _then)
       : super(_value, (v) => _then(v as _TermsData));
 
@@ -306,8 +289,7 @@ class __$TermsDataCopyWithImpl<$Res> extends _$TermsDataCopyWithImpl<$Res>
 class _$_TermsData implements _TermsData {
   _$_TermsData(this.id, this.title, this.slug, this.content);
 
-  factory _$_TermsData.fromJson(Map<String, dynamic> json) =>
-      _$$_TermsDataFromJson(json);
+  factory _$_TermsData.fromJson(Map<String, dynamic> json) => _$$_TermsDataFromJson(json);
 
   @override
   final int id;
@@ -327,14 +309,10 @@ class _$_TermsData implements _TermsData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TermsData &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.slug, slug) ||
-                const DeepCollectionEquality().equals(other.slug, slug)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality().equals(other.content, content)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.slug, slug) || const DeepCollectionEquality().equals(other.slug, slug)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)));
   }
 
   @override
@@ -347,8 +325,7 @@ class _$_TermsData implements _TermsData {
 
   @JsonKey(ignore: true)
   @override
-  _$TermsDataCopyWith<_TermsData> get copyWith =>
-      __$TermsDataCopyWithImpl<_TermsData>(this, _$identity);
+  _$TermsDataCopyWith<_TermsData> get copyWith => __$TermsDataCopyWithImpl<_TermsData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -357,11 +334,9 @@ class _$_TermsData implements _TermsData {
 }
 
 abstract class _TermsData implements TermsData {
-  factory _TermsData(int id, String? title, String? slug, String? content) =
-      _$_TermsData;
+  factory _TermsData(int id, String? title, String? slug, String? content) = _$_TermsData;
 
-  factory _TermsData.fromJson(Map<String, dynamic> json) =
-      _$_TermsData.fromJson;
+  factory _TermsData.fromJson(Map<String, dynamic> json) = _$_TermsData.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -373,6 +348,5 @@ abstract class _TermsData implements TermsData {
   String? get content => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TermsDataCopyWith<_TermsData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$TermsDataCopyWith<_TermsData> get copyWith => throw _privateConstructorUsedError;
 }

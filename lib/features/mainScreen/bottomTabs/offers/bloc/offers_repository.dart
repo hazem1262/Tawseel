@@ -11,6 +11,5 @@ class OffersRepository with NetworkHandler implements IOffersRepository {
   OffersRepository(this.offersApi);
 
   @override
-  Future<OffersResponse> getOffers([int page = 1]) =>
-      networkHandler(() => offersApi.getOffers(page));
+  Future<OffersResponse> getOffers([int page = 1]) => networkHandler(() => offersApi.getOffers(page));
 }

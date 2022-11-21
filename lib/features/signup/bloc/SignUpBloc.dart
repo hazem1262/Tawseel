@@ -26,8 +26,8 @@ extension CAN_RECEIVE_OFFERS_DTX on CAN_RECEIVE_OFFERS {
 class SignUpEvents with _$SignUpEvents {
   const factory SignUpEvents.signUpWithGoogle() = SignUpWithGoogle;
   const factory SignUpEvents.signUpWithApple() = SignUpWithApple;
-  const factory SignUpEvents.signUpWithPhone(String fullName, String phone,
-      String password, CAN_RECEIVE_OFFERS can_receive_offers) = SignUpWithPhone;
+  const factory SignUpEvents.signUpWithPhone(
+      String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers) = SignUpWithPhone;
 }
 
 @freezed
@@ -35,8 +35,7 @@ class SignUpState with _$SignUpState {
   const factory SignUpState.initialState() = SignUpInitialState;
   const factory SignUpState.isLoading() = SignUpIsLoading;
   const factory SignUpState.hassError(String error) = _HasError;
-  const factory SignUpState.signedUpWithPhoneSuccessfully(
-      SignUpResponse response) = SignedUpWithPhoneSuccessfully;
+  const factory SignUpState.signedUpWithPhoneSuccessfully(SignUpResponse response) = SignedUpWithPhoneSuccessfully;
 }
 
 class SignUpBloc extends Bloc<SignUpEvents, SignUpState> {

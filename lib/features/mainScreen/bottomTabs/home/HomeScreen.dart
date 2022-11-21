@@ -30,7 +30,6 @@ import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:auto_route/src/router/auto_router_x.dart';
 import 'bloc/home_bloc.dart';
-import 'bloc/home_repository.dart';
 import 'components/YourLocationPart.dart';
 import 'models/AdsResponse.dart';
 
@@ -42,8 +41,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   @override
   Widget build(BuildContext ctx) {
@@ -127,12 +125,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     BlocBuilder<HomeBloc, HomeBlocState>(
                       builder: (context, state) {
-                        return categoriesArea(state.categoriesIsLoading,
-                            state.categories, context, false, (categoryItem) {
+                        return categoriesArea(state.categoriesIsLoading, state.categories, context, false,
+                            (categoryItem) {
                           appContext.router.push(
                             CategoryDetailsScreenRoute(
-                                categoryId: categoryItem.id ?? 0,
-                                categoryName: categoryItem.name ?? ""),
+                                categoryId: categoryItem.id ?? 0, categoryName: categoryItem.name ?? ""),
                           );
                         });
                       },
@@ -146,8 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             isDetails: false,
                             isInViewAll: false,
                             onViewAllClick: () {
-                              appContext.router
-                                  .push(ViewAllMarketPlacesRoute());
+                              appContext.router.push(ViewAllMarketPlacesRoute());
                             },
                             onFavoriteClicked: (item) {
                               BlocProvider.of<HomeBloc>(context).add(
@@ -269,18 +265,14 @@ Widget marketPlaceArea(
         isInViewAll
             ? Container()
             : SectionWithViewAll(
-                title: isDetails
-                    ? LocaleKeys.related_resuturants.tr()
-                    : LocaleKeys.nearby_word.tr(),
+                title: isDetails ? LocaleKeys.related_resuturants.tr() : LocaleKeys.nearby_word.tr(),
                 onViewAllClick: onViewAllClick,
-                moreInfoWidget:
-                    isDetails ? Container() : Text(LocaleKeys.five_kilo).tr(),
+                moreInfoWidget: isDetails ? Container() : Text(LocaleKeys.five_kilo).tr(),
               ),
         isLoading
             ? marketPlaceShimmer()
             : Padding(
-                padding:
-                    isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+                padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
                 child: ListView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
@@ -290,8 +282,7 @@ Widget marketPlaceArea(
                     return marketPlaceItem(
                       list[index],
                       (item) {
-                        showMarketPlaceCompaniesBottomSheet(
-                            item, ctx, item.companies);
+                        showMarketPlaceCompaniesBottomSheet(item, ctx, item.companies);
                       },
                       onFavoriteClicked,
                     );
@@ -311,8 +302,7 @@ Widget adsArea(bool isLoading, List<AdsItem> ads) {
         isLoading
             ? adsShimmer()
             : Padding(
-                padding:
-                    isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+                padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
                     maxHeight: screenHeight * 0.18,
@@ -338,20 +328,14 @@ Widget adsArea(bool isLoading, List<AdsItem> ads) {
   );
 }
 
-Widget categoriesArea(
-    bool isLoading,
-    List<CategoryData> categories,
-    BuildContext context,
-    bool isDetails,
+Widget categoriesArea(bool isLoading, List<CategoryData> categories, BuildContext context, bool isDetails,
     Function(CategoryData category) onCategoryClick) {
   return Container(
     margin: EdgeInsets.only(top: 8),
     child: Column(
       children: [
         SectionWithViewAll(
-          title: isDetails
-              ? LocaleKeys.sub_categories_title.tr()
-              : LocaleKeys.categories_title.tr(),
+          title: isDetails ? LocaleKeys.sub_categories_title.tr() : LocaleKeys.categories_title.tr(),
           onViewAllClick: () {
             showCategoriesBottomSheet(categories, context, (item) {
               onCategoryClick(item);
@@ -362,8 +346,7 @@ Widget categoriesArea(
         isLoading
             ? categoriesShimmer()
             : Padding(
-                padding:
-                    isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+                padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
                     maxHeight: MediaQuery.of(context).size.height * 0.065,
@@ -390,8 +373,8 @@ Widget categoriesArea(
   );
 }
 
-Future<dynamic> showCategoriesBottomSheet(List<CategoryData> categories,
-    BuildContext context, Function(CategoryData item) onTap) {
+Future<dynamic> showCategoriesBottomSheet(
+    List<CategoryData> categories, BuildContext context, Function(CategoryData item) onTap) {
   return showCupertinoModalBottomSheet(
     bounce: true,
     backgroundColor: Colors.transparent,
@@ -438,9 +421,7 @@ Future<dynamic> showCategoriesBottomSheet(List<CategoryData> categories,
                             child: Container(
                               padding: EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: (categories[index].isSelected ?? false)
-                                    ? ThemeManager.primary
-                                    : creamyWhite,
+                                color: (categories[index].isSelected ?? false) ? ThemeManager.primary : creamyWhite,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Row(
@@ -455,10 +436,8 @@ Future<dynamic> showCategoriesBottomSheet(List<CategoryData> categories,
                                     child: CachedNetworkImage(
                                       imageUrl: categories[index].image ?? "",
                                       fit: BoxFit.contain,
-                                      placeholder: (context, url) => Center(
-                                          child: CircularProgressIndicator()),
-                                      errorWidget: (context, url, error) =>
-                                          Icon(Icons.error),
+                                      placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                                      errorWidget: (context, url, error) => Icon(Icons.error),
                                     ),
                                   ),
                                   SizedBox(
@@ -468,16 +447,11 @@ Future<dynamic> showCategoriesBottomSheet(List<CategoryData> categories,
                                     flex: 1,
                                     child: Text(
                                       "${categories[index].name}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .caption!
-                                          .copyWith(
+                                      style: Theme.of(context).textTheme.caption!.copyWith(
                                             fontSize: CaptionTextSize,
-                                            color:
-                                                (categories[index].isSelected ??
-                                                        false)
-                                                    ? Colors.white
-                                                    : ProfileActionsColor_Light,
+                                            color: (categories[index].isSelected ?? false)
+                                                ? Colors.white
+                                                : ProfileActionsColor_Light,
                                             fontWeight: FontWeight.w600,
                                           ),
                                       overflow: TextOverflow.ellipsis,
@@ -552,8 +526,7 @@ Widget adsShimmer() {
   );
 }
 
-Widget categoryItem(
-    BuildContext context, CategoryData category, Function onClick) {
+Widget categoryItem(BuildContext context, CategoryData category, Function onClick) {
   return GestureDetector(
     onTap: () {
       onClick();
@@ -561,9 +534,7 @@ Widget categoryItem(
     child: Container(
       margin: EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
-          color: (category.isSelected ?? false)
-              ? ThemeManager.primary
-              : Colors.white,
+          color: (category.isSelected ?? false) ? ThemeManager.primary : Colors.white,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
@@ -593,9 +564,7 @@ Widget categoryItem(
             "${category.name}",
             style: Theme.of(context).textTheme.caption!.copyWith(
                   fontSize: CaptionTextSize,
-                  color: (category.isSelected ?? false)
-                      ? Colors.white
-                      : ProfileActionsColor_Light,
+                  color: (category.isSelected ?? false) ? Colors.white : ProfileActionsColor_Light,
                   fontWeight: FontWeight.w600,
                 ),
           ),
@@ -624,8 +593,7 @@ Widget adItem(AdsItem ad, Function onClick) {
           child: CachedNetworkImage(
             fit: BoxFit.fill,
             imageUrl: ad.image ?? "",
-            placeholder: (context, url) =>
-                Center(child: CircularProgressIndicator()),
+            placeholder: (context, url) => Center(child: CircularProgressIndicator()),
             errorWidget: (context, url, error) => Icon(Icons.error),
           ),
         )),
@@ -659,9 +627,7 @@ Widget marketPlaceShimmer([int count = 4]) {
   );
 }
 
-Widget marketPlaceItem(
-    MarketPlaceItem marketPlace,
-    Function(MarketPlaceItem item) onClick,
+Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem item) onClick,
     Function(MarketPlaceItem item) onFavoriteClicked,
     [bool showFavorite = true]) {
   final itemHeight = screenHeight * 0.35;
@@ -697,8 +663,7 @@ Widget marketPlaceItem(
                   fit: BoxFit.fill,
                   width: double.infinity,
                   height: itemHeight * 0.6,
-                  placeholder: (context, url) =>
-                      Center(child: CircularProgressIndicator()),
+                  placeholder: (context, url) => Center(child: CircularProgressIndicator()),
                   errorWidget: (context, url, error) => Container(
                     width: double.infinity,
                     color: Colors.grey,
@@ -736,8 +701,7 @@ Widget marketPlaceItem(
                             color: tawseelDarkGrey,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: rateWidget(marketPlace.rating ?? "",
-                              Colors.white, CaptionTextSize),
+                          child: rateWidget(marketPlace.rating ?? "", Colors.white, CaptionTextSize),
                         ),
                       ],
                     ),
@@ -811,9 +775,7 @@ Widget marketPlaceItem(
                                 vertical: 4,
                               ),
                               child: Text(
-                                marketPlace.isFreeDelivery()
-                                    ? LocaleKeys.free.tr()
-                                    : "${marketPlace.delivery_cost}",
+                                marketPlace.isFreeDelivery() ? LocaleKeys.free.tr() : "${marketPlace.delivery_cost}",
                                 style: TextStyle(
                                   fontSize: CaptionTextSize,
                                   fontWeight: FontWeight.w500,
@@ -850,11 +812,8 @@ Widget marketPlaceItem(
                                 child: Container(
                                   child: CachedNetworkImage(
                                     fit: BoxFit.fitWidth,
-                                    imageUrl: (marketPlace.companies.safeFirst()
-                                            as CompanyItem)
-                                        .image,
-                                    errorWidget: (context, url, error) =>
-                                        Icon(Icons.error),
+                                    imageUrl: (marketPlace.companies.safeFirst() as CompanyItem).image,
+                                    errorWidget: (context, url, error) => Icon(Icons.error),
                                   ),
                                 ),
                               ),
@@ -907,12 +866,8 @@ Widget marketPlaceItem(
                         icon: (marketPlace.is_loading ?? false)
                             ? CupertinoActivityIndicator()
                             : Icon(
-                                !marketPlace.is_favorite
-                                    ? Icons.favorite_border
-                                    : Icons.favorite,
-                                color: !marketPlace.is_favorite
-                                    ? Colors.white
-                                    : Colors.red,
+                                !marketPlace.is_favorite ? Icons.favorite_border : Icons.favorite,
+                                color: !marketPlace.is_favorite ? Colors.white : Colors.red,
                               ),
                         onPressed: () {
                           onFavoriteClicked(marketPlace);
@@ -962,9 +917,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
     context: context,
     builder: (context) => Theme(
       data: Theme.of(context).copyWith(
-          canvasColor: Colors.transparent,
-          bottomSheetTheme:
-              BottomSheetThemeData(backgroundColor: Colors.black54)),
+          canvasColor: Colors.transparent, bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black54)),
       child: Container(
         margin: EdgeInsets.only(top: height * 0.05),
         child: Material(
@@ -980,9 +933,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: tm.isDark()
-                            ? Colors.black.withOpacity(0.3)
-                            : Colors.grey.withOpacity(0.1),
+                        color: tm.isDark() ? Colors.black.withOpacity(0.3) : Colors.grey.withOpacity(0.1),
                         blurRadius: 12,
                         offset: Offset(0, 5),
                         spreadRadius: 10,
@@ -1003,9 +954,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                             style: TextStyle(
                               fontSize: SmallTitleTextSize,
                               fontWeight: FontWeight.w600,
-                              color: tm.isDark()
-                                  ? Colors.white
-                                  : tm.titlecolorLight,
+                              color: tm.isDark() ? Colors.white : tm.titlecolorLight,
                             ),
                           ),
                           SizedBox(width: width * 0.03),
@@ -1034,9 +983,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                             style: TextStyle(
                               fontSize: BodySmallTextSize,
                               fontWeight: FontWeight.w400,
-                              color: tm.isDark()
-                                  ? Colors.white
-                                  : tm.subtitleColorLight,
+                              color: tm.isDark() ? Colors.white : tm.subtitleColorLight,
                             ),
                           ),
                           SizedBox(
@@ -1055,9 +1002,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                             style: TextStyle(
                               fontSize: BodySmallTextSize,
                               fontWeight: FontWeight.w400,
-                              color: tm.isDark()
-                                  ? Colors.white
-                                  : tm.subtitleColorLight,
+                              color: tm.isDark() ? Colors.white : tm.subtitleColorLight,
                             ),
                           ),
                           SizedBox(width: width * 0.03),
@@ -1070,8 +1015,7 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
                             return index == 0
-                                ? bestCompanyWidget(context, companiesR[index],
-                                    () {
+                                ? bestCompanyWidget(context, companiesR[index], () {
                                     openApp(companiesR[index]);
                                   })
                                 : companyWidget(context, companiesR[index], () {
@@ -1117,8 +1061,7 @@ Future<void> openApp(CompanyItem item) async {
   );
 }
 
-Widget bestCompanyWidget(
-    BuildContext context, CompanyItem item, Function() onTap) {
+Widget bestCompanyWidget(BuildContext context, CompanyItem item, Function() onTap) {
   return InkWell(
     onTap: onTap,
     child: ConstrainedBox(
@@ -1187,10 +1130,8 @@ Widget bestCompanyWidget(
                               width: double.infinity,
                               imageUrl: item.image,
                               fit: BoxFit.fitWidth,
-                              placeholder: (context, url) =>
-                                  Center(child: CircularProgressIndicator()),
-                              errorWidget: (context, url, error) =>
-                                  Icon(Icons.error),
+                              placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                              errorWidget: (context, url, error) => Icon(Icons.error),
                             ),
                           ),
                           SizedBox(
@@ -1201,14 +1142,9 @@ Widget bestCompanyWidget(
                             child: item.min_order != null
                                 ? Text(
                                     "${item.min_order ?? ''}\n${LocaleKeys.min_order.tr()}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .caption!
-                                        .copyWith(
+                                    style: Theme.of(context).textTheme.caption!.copyWith(
                                           fontSize: ErrorTextSize,
-                                          color: tm.isDark()
-                                              ? Colors.white
-                                              : ProfileActionsColor_Light,
+                                          color: tm.isDark() ? Colors.white : ProfileActionsColor_Light,
                                           fontWeight: FontWeight.w600,
                                         ),
                                     overflow: TextOverflow.ellipsis,
@@ -1231,17 +1167,10 @@ Widget bestCompanyWidget(
                                 color: ThemeManager.primary.withAlpha(30),
                               ),
                               child: Text(
-                                item.isFreeDelivery()
-                                    ? LocaleKeys.free.tr()
-                                    : "${item.delivery_cost}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .caption!
-                                    .copyWith(
+                                item.isFreeDelivery() ? LocaleKeys.free.tr() : "${item.delivery_cost}",
+                                style: Theme.of(context).textTheme.caption!.copyWith(
                                       fontSize: CaptionTextSize,
-                                      color: tm.isDark()
-                                          ? Colors.white
-                                          : ThemeManager.primary,
+                                      color: tm.isDark() ? Colors.white : ThemeManager.primary,
                                       fontWeight: FontWeight.w600,
                                     ),
                                 overflow: TextOverflow.ellipsis,
@@ -1274,9 +1203,7 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: item.is_best.not()
-                    ? Colors.transparent
-                    : ThemeManager.primary,
+                color: item.is_best.not() ? Colors.transparent : ThemeManager.primary,
                 width: 2,
               ),
             ),
@@ -1315,14 +1242,11 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
                     child: item.min_order != null
                         ? Text(
                             "${item.min_order ?? ''}\n${LocaleKeys.min_order.tr()}",
-                            style:
-                                Theme.of(context).textTheme.caption!.copyWith(
-                                      fontSize: ErrorTextSize,
-                                      color: tm.isDark()
-                                          ? Colors.white
-                                          : ProfileActionsColor_Light,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                            style: Theme.of(context).textTheme.caption!.copyWith(
+                                  fontSize: ErrorTextSize,
+                                  color: tm.isDark() ? Colors.white : ProfileActionsColor_Light,
+                                  fontWeight: FontWeight.w600,
+                                ),
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
                           )
@@ -1343,14 +1267,10 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
                         color: ThemeManager.primary.withAlpha(30),
                       ),
                       child: Text(
-                        item.isFreeDelivery()
-                            ? LocaleKeys.free.tr()
-                            : "${item.delivery_cost}",
+                        item.isFreeDelivery() ? LocaleKeys.free.tr() : "${item.delivery_cost}",
                         style: Theme.of(context).textTheme.caption!.copyWith(
                               fontSize: CaptionTextSize,
-                              color: tm.isDark()
-                                  ? Colors.white
-                                  : ThemeManager.primary,
+                              color: tm.isDark() ? Colors.white : ThemeManager.primary,
                               fontWeight: FontWeight.w600,
                             ),
                         overflow: TextOverflow.ellipsis,

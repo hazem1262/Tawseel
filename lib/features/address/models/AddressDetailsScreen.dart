@@ -35,10 +35,7 @@ class AddressDetailsScreen extends StatefulWidget {
   final UserPickedLocation pickedLocation;
   final bool oppenedFromMyAddresses;
 
-  AddressDetailsScreen(
-      {Key? key,
-      required this.pickedLocation,
-      required this.oppenedFromMyAddresses})
+  AddressDetailsScreen({Key? key, required this.pickedLocation, required this.oppenedFromMyAddresses})
       : super(key: key);
 
   @override
@@ -52,9 +49,6 @@ class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    var padding = MediaQuery.of(context).padding;
-    double newheight = height - padding.top - padding.bottom;
-    var theme = Theme.of(context);
 
     return Scaffold(
         body: SingleChildScrollView(
@@ -104,20 +98,15 @@ class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
               children: [
                 Container(
                   width: double.infinity,
-                  padding: EdgeInsets.only(
-                      top: height / 5, bottom: 8, left: 16, right: 16),
+                  padding: EdgeInsets.only(top: height / 5, bottom: 8, left: 16, right: 16),
                   child: Text(LocaleKeys.location_category.tr(),
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 ),
                 addressNameField(),
                 Container(
                   width: double.infinity,
-                  padding:
-                      EdgeInsets.only(top: 16, bottom: 8, left: 16, right: 16),
-                  child: Text(LocaleKeys.address.tr(),
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                  padding: EdgeInsets.only(top: 16, bottom: 8, left: 16, right: 16),
+                  child: Text(LocaleKeys.address.tr(), style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -145,8 +134,7 @@ class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
                     Checkbox(
                       value: context.watch<AddressProvider>().isDefault,
                       onChanged: (bool? v) {
-                        if (v != null)
-                          context.read<AddressProvider>().changeIsDefault(v);
+                        if (v != null) context.read<AddressProvider>().changeIsDefault(v);
                       },
                     ),
                     SizedBox(
@@ -159,8 +147,7 @@ class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
                   ],
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 50),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 50),
                   child: Consumer<AddressProvider>(builder: (context, pr, ss) {
                     return LoadingButton(
                         text: LocaleKeys.save_location.tr(),
@@ -185,14 +172,11 @@ class _AddressDetailsScreenState extends State<AddressDetailsScreen> {
       alignment: Alignment.center,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(width: 0.1, style: BorderStyle.solid)),
+            borderRadius: BorderRadius.circular(10), border: Border.all(width: 0.1, style: BorderStyle.solid)),
         child: TextField(
           controller: cn,
           decoration: InputDecoration(
-              hintText: LocaleKeys.category_hint.tr(),
-              contentPadding: EdgeInsets.all(15),
-              border: InputBorder.none),
+              hintText: LocaleKeys.category_hint.tr(), contentPadding: EdgeInsets.all(15), border: InputBorder.none),
         ),
       ),
     );
@@ -269,8 +253,7 @@ class _DropDownMenuFromListState extends State<DropDownMenuFromList> {
         }).toList(),
         hint: Text(
           LocaleKeys.choose_category.tr(),
-          style: TextStyle(
-              color: Colors.black, fontSize: 16, fontWeight: FontWeight.w600),
+          style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w600),
         ),
         onChanged: (String? value) {
           if (value != null) widget.callback.call(value);

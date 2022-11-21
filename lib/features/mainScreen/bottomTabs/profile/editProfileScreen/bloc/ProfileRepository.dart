@@ -1,7 +1,4 @@
 import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_native_image/flutter_native_image.dart';
 import 'package:tawseel/base/NetworkHandler.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/models/user_profile_response.dart';
@@ -39,12 +36,10 @@ class ProfileRepository with NetworkHandler implements IProfileRepository {
       );
 
   @override
-  Future<UserProfileResponse> removeAvatar() =>
-      networkHandler(() => api.removeAvatar());
+  Future<UserProfileResponse> removeAvatar() => networkHandler(() => api.removeAvatar());
 
   @override
-  Future<UserProfileResponse> updateAvatar(File file) =>
-      networkHandler(() async {
+  Future<UserProfileResponse> updateAvatar(File file) => networkHandler(() async {
         File fileToUpload = file;
         // if file size is bigger than 2MB compress it
         if (await file.length() > 2000000) {

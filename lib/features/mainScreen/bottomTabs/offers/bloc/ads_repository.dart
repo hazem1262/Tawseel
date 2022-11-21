@@ -12,6 +12,5 @@ class AdsRepository with NetworkHandler implements IAdsRepository {
   AdsRepository(this.adsApi);
 
   @override
-  Future<AdsResponse> getAds([int page = 1]) =>
-      networkHandler(() => adsApi.getAds(page));
+  Future<AdsResponse> getAds([int page = 1]) => networkHandler(() => adsApi.getAds(page));
 }

@@ -4,18 +4,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:tawseel/features/login/components/AuthButton.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
 import 'package:tawseel/features/login/components/PasswordField.dart';
 import 'package:tawseel/features/login/components/PhoneNumberField.dart';
-import 'package:tawseel/features/login/components/TextBetweenDividers.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
-import 'package:tawseel/res.dart';
 import 'package:tawseel/utils/globals.dart';
-import '../../main.dart';
 import 'bloc/SignUpBloc.dart';
 import 'bloc/SignUpRepository.dart';
 import 'package:tawseel/utils/ktx.dart';
@@ -180,15 +175,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     FullNameField(
                                       controller: fullNameController,
                                       inputAction: TextInputAction.next,
-                                      onSubmitCallback: () =>
-                                          context.nextFoucs(),
+                                      onSubmitCallback: () => context.nextFoucs(),
                                     ),
                                     SizedBox(height: 8),
                                     PhoneNumberField(
                                       controller: phoneController,
                                       inputAction: TextInputAction.next,
-                                      onSubmitCallback: () =>
-                                          context.nextFoucs(),
+                                      onSubmitCallback: () => context.nextFoucs(),
                                     ),
                                     SizedBox(height: 8),
                                     Builder(
@@ -196,8 +189,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         return PasswordField(
                                           controller: passwordController,
                                           inputAction: TextInputAction.done,
-                                          onSubmitCallback: () =>
-                                              doSignUpByPhone(newContext),
+                                          onSubmitCallback: () => doSignUpByPhone(newContext),
                                         );
                                       },
                                     ),
@@ -210,8 +202,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                               CheckboxListTile(
                                 activeColor: theme.primaryColor,
-                                contentPadding:
-                                    EdgeInsets.symmetric(horizontal: 3),
+                                contentPadding: EdgeInsets.symmetric(horizontal: 3),
                                 title: Text(
                                   LocaleKeys.receive_offers,
                                   style: theme.textTheme.bodyText1!.copyWith(
@@ -225,8 +216,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     receive_offers = newValue ?? true;
                                   });
                                 },
-                                controlAffinity: ListTileControlAffinity
-                                    .leading, //  <-- leading Checkbox
+                                controlAffinity: ListTileControlAffinity.leading, //  <-- leading Checkbox
                               ),
                             ],
                           ),
@@ -239,15 +229,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         BlocBuilder<SignUpBloc, SignUpState>(
                           builder: (context, state) {
                             return Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: LoadingButton(
                                   text: LocaleKeys.sign_up_word.tr(),
                                   onPressed: () {
                                     doSignUpByPhone(context);
                                   },
-                                  isLoading:
-                                      state is SignUpIsLoading ? true : false),
+                                  isLoading: state is SignUpIsLoading ? true : false),
                             );
                           },
                         ),
@@ -261,19 +249,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             style: theme.textTheme.caption,
                             children: [
                               TextSpan(
-                                text: LocaleKeys
-                                    .sign_up_acceptance_of_terms_message
-                                    .tr(),
+                                text: LocaleKeys.sign_up_acceptance_of_terms_message.tr(),
                                 style: theme.textTheme.caption!.copyWith(
-                                  color: tm.isDark()
-                                      ? Colors.white54
-                                      : Colors.grey.shade700,
+                                  color: tm.isDark() ? Colors.white54 : Colors.grey.shade700,
                                 ),
                               ),
                               TextSpan(text: "\n"),
                               TextSpan(
-                                text:
-                                    LocaleKeys.terms_and_condition_phrase.tr(),
+                                text: LocaleKeys.terms_and_condition_phrase.tr(),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     openTermsAndConditions();
@@ -300,9 +283,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 style: theme.textTheme.bodyText2!.copyWith(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
-                                  color: tm.isDark()
-                                      ? Colors.white54
-                                      : Colors.grey.shade700,
+                                  color: tm.isDark() ? Colors.white54 : Colors.grey.shade700,
                                 ),
                               ),
                               TextSpan(text: " "),
@@ -352,9 +333,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     var fullNameErrorMessage = fullNameValidationError(fullNameController.text);
     var passwordErrorMessage = passwordValidationError(passwordController.text);
     var phoneErrorMessage = phoneValidationError(phoneController.text);
-    var isValid = passwordErrorMessage.isEmpty &&
-        phoneErrorMessage.isEmpty &&
-        fullNameErrorMessage.isEmpty;
+    var isValid = passwordErrorMessage.isEmpty && phoneErrorMessage.isEmpty && fullNameErrorMessage.isEmpty;
     debugPrint("form validation is : $isValid");
     return isValid;
   }
@@ -368,13 +347,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     if (isFormValid()) {
       debugPrint("form is valid");
       context.read<SignUpBloc>().add(
-            SignUpEvents.signUpWithPhone(
-                fullNameController.text.trim(),
-                phoneController.text.trim(),
-                passwordController.text.trim(),
-                receive_offers
-                    ? CAN_RECEIVE_OFFERS.CAN
-                    : CAN_RECEIVE_OFFERS.CANOT),
+            SignUpEvents.signUpWithPhone(fullNameController.text.trim(), phoneController.text.trim(),
+                passwordController.text.trim(), receive_offers ? CAN_RECEIVE_OFFERS.CAN : CAN_RECEIVE_OFFERS.CANOT),
           );
     } else
       debugPrint("form is not valid");

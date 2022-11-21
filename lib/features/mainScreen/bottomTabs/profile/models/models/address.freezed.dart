@@ -63,8 +63,7 @@ mixin _$Address {
 
 /// @nodoc
 abstract class $AddressCopyWith<$Res> {
-  factory $AddressCopyWith(Address value, $Res Function(Address) then) =
-      _$AddressCopyWithImpl<$Res>;
+  factory $AddressCopyWith(Address value, $Res Function(Address) then) = _$AddressCopyWithImpl<$Res>;
   $Res call(
       {int? id,
       String? name,
@@ -122,8 +121,7 @@ class _$AddressCopyWithImpl<$Res> implements $AddressCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
-  factory _$AddressCopyWith(_Address value, $Res Function(_Address) then) =
-      __$AddressCopyWithImpl<$Res>;
+  factory _$AddressCopyWith(_Address value, $Res Function(_Address) then) = __$AddressCopyWithImpl<$Res>;
   @override
   $Res call(
       {int? id,
@@ -135,10 +133,8 @@ abstract class _$AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AddressCopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res>
-    implements _$AddressCopyWith<$Res> {
-  __$AddressCopyWithImpl(_Address _value, $Res Function(_Address) _then)
-      : super(_value, (v) => _then(v as _Address));
+class __$AddressCopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res> implements _$AddressCopyWith<$Res> {
+  __$AddressCopyWithImpl(_Address _value, $Res Function(_Address) _then) : super(_value, (v) => _then(v as _Address));
 
   @override
   _Address get _value => super._value as _Address;
@@ -184,16 +180,9 @@ class __$AddressCopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Address implements _Address {
-  _$_Address(
-      {this.id,
-      this.name,
-      this.address,
-      this.lat,
-      this.long,
-      @JsonKey(name: 'is_default') this.isDefault});
+  _$_Address({this.id, this.name, this.address, this.lat, this.long, @JsonKey(name: 'is_default') this.isDefault});
 
-  factory _$_Address.fromJson(Map<String, dynamic> json) =>
-      _$$_AddressFromJson(json);
+  factory _$_Address.fromJson(Map<String, dynamic> json) => _$$_AddressFromJson(json);
 
   @override
   final int? id;
@@ -218,20 +207,13 @@ class _$_Address implements _Address {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Address &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.lat, lat) ||
-                const DeepCollectionEquality().equals(other.lat, lat)) &&
-            (identical(other.long, long) ||
-                const DeepCollectionEquality().equals(other.long, long)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)) &&
+            (identical(other.lat, lat) || const DeepCollectionEquality().equals(other.lat, lat)) &&
+            (identical(other.long, long) || const DeepCollectionEquality().equals(other.long, long)) &&
             (identical(other.isDefault, isDefault) ||
-                const DeepCollectionEquality()
-                    .equals(other.isDefault, isDefault)));
+                const DeepCollectionEquality().equals(other.isDefault, isDefault)));
   }
 
   @override
@@ -246,8 +228,7 @@ class _$_Address implements _Address {
 
   @JsonKey(ignore: true)
   @override
-  _$AddressCopyWith<_Address> get copyWith =>
-      __$AddressCopyWithImpl<_Address>(this, _$identity);
+  _$AddressCopyWith<_Address> get copyWith => __$AddressCopyWithImpl<_Address>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -281,6 +262,5 @@ abstract class _Address implements Address {
   bool? get isDefault => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AddressCopyWith<_Address> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AddressCopyWith<_Address> get copyWith => throw _privateConstructorUsedError;
 }

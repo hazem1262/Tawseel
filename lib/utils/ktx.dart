@@ -106,21 +106,16 @@ hideKeyboard() {
 }
 
 extension MessagesDtx on BuildContext {
-  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showError(
-      String error) {
-    return _snackBar(
-        message: error, isError: true, backgroundColor: Colors.red);
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showError(String error) {
+    return _snackBar(message: error, isError: true, backgroundColor: Colors.red);
   }
 
-  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast(
-      String message) {
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast(String message) {
     return _snackBar(message: message, isError: false);
   }
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> _snackBar(
-      {required String message,
-      bool isError = false,
-      Color backgroundColor = Colors.green}) {
+      {required String message, bool isError = false, Color backgroundColor = Colors.green}) {
     ScaffoldMessenger.of(this).hideCurrentSnackBar();
     return ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
@@ -141,14 +136,12 @@ extension MessagesDtx on BuildContext {
 extension FilesDtx on File {
   Future<File> compressFile({int quality = 90, int targetWidth = 600}) async {
     debugPrint("before compressing : ${await this.length()}");
-    ImageProperties properties =
-        await FlutterNativeImage.getImageProperties(this.path);
+    ImageProperties properties = await FlutterNativeImage.getImageProperties(this.path);
     final compressed = await FlutterNativeImage.compressImage(
       this.path,
       quality: quality,
       targetWidth: targetWidth,
-      targetHeight:
-          (properties.height! * targetWidth / properties.width!).round(),
+      targetHeight: (properties.height! * targetWidth / properties.width!).round(),
     );
     debugPrint("after compressing : ${await compressed.length()}");
     return compressed;
@@ -179,31 +172,22 @@ extension EmailValidator on String? {
     return this == null ? "" : this!.split("=")[1].split("&")[0];
   }
 
-  String getIosUrlScheme() =>
-      SCHEMES_MAP["id" + this!.split("/id")[1].split("?")[0]] ?? this ?? "";
+  String getIosUrlScheme() => SCHEMES_MAP["id" + this!.split("/id")[1].split("?")[0]] ?? this ?? "";
 }
 
 extension categoriesDtx on List<CategoryData> {
   List<int> getSelectedIdsList() {
-    return this
-        .where((element) => element.isSelected == true)
-        .toList()
-        .map((e) => e.id!)
-        .toList();
+    return this.where((element) => element.isSelected == true).toList().map((e) => e.id!).toList();
   }
 
   List<CategoryData> selectItemInList(int id) {
     List<CategoryData> newList = List.from(this);
-    return newList
-        .map((e) => e.id == id ? e.copyWith(isSelected: true) : e)
-        .toList();
+    return newList.map((e) => e.id == id ? e.copyWith(isSelected: true) : e).toList();
   }
 
   List<CategoryData> unSelectItemInList(int id) {
     List<CategoryData> newList = List.from(this);
-    return newList
-        .map((e) => e.id == id ? e.copyWith(isSelected: false) : e)
-        .toList();
+    return newList.map((e) => e.id == id ? e.copyWith(isSelected: false) : e).toList();
   }
 
   List<CategoryData> resetSelectionInList() {
@@ -213,24 +197,17 @@ extension categoriesDtx on List<CategoryData> {
 }
 
 extension companiesDtx on List<CompanyItem> {
-  List<int> getSelectedIdsList() => this
-      .where((element) => element.isSelected == true)
-      .toList()
-      .map((e) => e.id)
-      .toList();
+  List<int> getSelectedIdsList() =>
+      this.where((element) => element.isSelected == true).toList().map((e) => e.id).toList();
 
   List<CompanyItem> selectItemInList(int id) {
     List<CompanyItem> newList = List.from(this);
-    return newList
-        .map((e) => e.id == id ? e.copyWith(isSelected: true) : e)
-        .toList();
+    return newList.map((e) => e.id == id ? e.copyWith(isSelected: true) : e).toList();
   }
 
   List<CompanyItem> unSelectItemInList(int id) {
     List<CompanyItem> newList = List.from(this);
-    return newList
-        .map((e) => e.id == id ? e.copyWith(isSelected: false) : e)
-        .toList();
+    return newList.map((e) => e.id == id ? e.copyWith(isSelected: false) : e).toList();
   }
 
   List<CompanyItem> resetSelectionInList() {
@@ -240,15 +217,9 @@ extension companiesDtx on List<CompanyItem> {
 }
 
 extension MarketPlacesDtx on List<MarketPlaceItem> {
-  List<MarketPlaceItem> setFavoriteLoadingFor(
-          {required int id, bool? isFavorite, bool? isLoading}) =>
-      this
-          .map((e) => e.id == id
-              ? e.copyWith(
-                  is_favorite: isFavorite ?? e.is_favorite,
-                  is_loading: isLoading)
-              : e)
-          .toList();
+  List<MarketPlaceItem> setFavoriteLoadingFor({required int id, bool? isFavorite, bool? isLoading}) => this
+      .map((e) => e.id == id ? e.copyWith(is_favorite: isFavorite ?? e.is_favorite, is_loading: isLoading) : e)
+      .toList();
 
   List<MarketPlaceItem> removeItem({required int id}) {
     final temp = this.toList();
@@ -256,8 +227,7 @@ extension MarketPlacesDtx on List<MarketPlaceItem> {
     return temp;
   }
 
-  List<MarketPlaceItem> addItemAtIndex(
-      {required int index, required MarketPlaceItem item}) {
+  List<MarketPlaceItem> addItemAtIndex({required int index, required MarketPlaceItem item}) {
     final temp = this.toList();
     temp.insert(index, item);
     return temp;
@@ -265,17 +235,13 @@ extension MarketPlacesDtx on List<MarketPlaceItem> {
 }
 
 extension MarketPlaceDtx on MarketPlaceItem {
-  CompanyItem? getBestDeliveryCompany() =>
-      this.companies.firstWhere((element) => element.is_best == true);
+  CompanyItem? getBestDeliveryCompany() => this.companies.firstWhere((element) => element.is_best == true);
 
   String getItemCategories() {
-    final cats = this.parent_categories.isNotEmpty
-        ? this.parent_categories.map((element) => element.name).join(", ")
-        : "";
+    final cats =
+        this.parent_categories.isNotEmpty ? this.parent_categories.map((element) => element.name).join(", ") : "";
 
-    final subCats = this.sub_categories.isNotEmpty
-        ? this.sub_categories.map((element) => element.name).join(", ")
-        : "";
+    final subCats = this.sub_categories.isNotEmpty ? this.sub_categories.map((element) => element.name).join(", ") : "";
 
     return cats + (subCats.isNotEmpty ? ", " : "") + subCats;
   }
@@ -315,9 +281,7 @@ extension CompaniesDtx on CompanyItem {
 // toyou:toyou://
 // Wssel:com.w99l.customer.payments://
 
-  String getIosUrlScheme() =>
-      SCHEMES_MAP["id" + this.ios_app_link.split("/id")[1].split("?")[0]] ??=
-          this.ios_app_link;
+  String getIosUrlScheme() => SCHEMES_MAP["id" + this.ios_app_link.split("/id")[1].split("?")[0]] ??= this.ios_app_link;
 
   bool isFreeDelivery() =>
       (this.delivery_cost?.contains("0 SAR") ?? false) ||

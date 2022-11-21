@@ -12,8 +12,7 @@ abstract class MarketPlaceService {
   }
 
   @GET("marketplaces")
-  Future<HttpResponse<MarketPlacesResponse>> getMarketPlaces(
-      @Queries() Map<String, dynamic> queries);
+  Future<HttpResponse<MarketPlacesResponse>> getMarketPlaces(@Queries() Map<String, dynamic> queries);
 
   @POST("favorites/{id}")
   Future<HttpResponse<String>> addMarketPlaceToFavorite(@Path("id") int id);

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/utils/globals.dart';
 
 class AuthButton extends StatelessWidget {
@@ -12,11 +11,7 @@ class AuthButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    List<Widget> enWidgets = [
-      icon,
-      SizedBox(width: 8),
-      Text(title, style: theme.textTheme.bodyText1)
-    ];
+    List<Widget> enWidgets = [icon, SizedBox(width: 8), Text(title, style: theme.textTheme.bodyText1)];
 
     List<Widget> arWidgets = [
       Text(title, style: theme.textTheme.bodyText1),

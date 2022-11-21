@@ -63,24 +63,20 @@ mixin _$LocationResult {
   String get formattedAddress => throw _privateConstructorUsedError;
   AddressComponent get country => throw _privateConstructorUsedError;
   AddressComponent get city => throw _privateConstructorUsedError;
-  AddressComponent get administrativeAreaLevel1 =>
-      throw _privateConstructorUsedError;
-  AddressComponent get administrativeAreaLevel2 =>
-      throw _privateConstructorUsedError;
+  AddressComponent get administrativeAreaLevel1 => throw _privateConstructorUsedError;
+  AddressComponent get administrativeAreaLevel2 => throw _privateConstructorUsedError;
   AddressComponent get subLocalityLevel1 => throw _privateConstructorUsedError;
   AddressComponent get subLocalityLevel2 => throw _privateConstructorUsedError;
   String get postalCode => throw _privateConstructorUsedError;
   String get placeId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LocationResultCopyWith<LocationResult> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LocationResultCopyWith<LocationResult> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocationResultCopyWith<$Res> {
-  factory $LocationResultCopyWith(
-          LocationResult value, $Res Function(LocationResult) then) =
+  factory $LocationResultCopyWith(LocationResult value, $Res Function(LocationResult) then) =
       _$LocationResultCopyWithImpl<$Res>;
   $Res call(
       {String name,
@@ -105,8 +101,7 @@ abstract class $LocationResultCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LocationResultCopyWithImpl<$Res>
-    implements $LocationResultCopyWith<$Res> {
+class _$LocationResultCopyWithImpl<$Res> implements $LocationResultCopyWith<$Res> {
   _$LocationResultCopyWithImpl(this._value, this._then);
 
   final LocationResult _value;
@@ -196,16 +191,14 @@ class _$LocationResultCopyWithImpl<$Res>
 
   @override
   $AddressComponentCopyWith<$Res> get administrativeAreaLevel1 {
-    return $AddressComponentCopyWith<$Res>(_value.administrativeAreaLevel1,
-        (value) {
+    return $AddressComponentCopyWith<$Res>(_value.administrativeAreaLevel1, (value) {
       return _then(_value.copyWith(administrativeAreaLevel1: value));
     });
   }
 
   @override
   $AddressComponentCopyWith<$Res> get administrativeAreaLevel2 {
-    return $AddressComponentCopyWith<$Res>(_value.administrativeAreaLevel2,
-        (value) {
+    return $AddressComponentCopyWith<$Res>(_value.administrativeAreaLevel2, (value) {
       return _then(_value.copyWith(administrativeAreaLevel2: value));
     });
   }
@@ -226,10 +219,8 @@ class _$LocationResultCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LocationResultCopyWith<$Res>
-    implements $LocationResultCopyWith<$Res> {
-  factory _$LocationResultCopyWith(
-          _LocationResult value, $Res Function(_LocationResult) then) =
+abstract class _$LocationResultCopyWith<$Res> implements $LocationResultCopyWith<$Res> {
+  factory _$LocationResultCopyWith(_LocationResult value, $Res Function(_LocationResult) then) =
       __$LocationResultCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -261,11 +252,9 @@ abstract class _$LocationResultCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LocationResultCopyWithImpl<$Res>
-    extends _$LocationResultCopyWithImpl<$Res>
+class __$LocationResultCopyWithImpl<$Res> extends _$LocationResultCopyWithImpl<$Res>
     implements _$LocationResultCopyWith<$Res> {
-  __$LocationResultCopyWithImpl(
-      _LocationResult _value, $Res Function(_LocationResult) _then)
+  __$LocationResultCopyWithImpl(_LocationResult _value, $Res Function(_LocationResult) _then)
       : super(_value, (v) => _then(v as _LocationResult));
 
   @override
@@ -395,42 +384,24 @@ class _$_LocationResult implements _LocationResult {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LocationResult &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.locality, locality) ||
-                const DeepCollectionEquality()
-                    .equals(other.locality, locality)) &&
-            (identical(other.latLng, latLng) ||
-                const DeepCollectionEquality().equals(other.latLng, latLng)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.locality, locality) || const DeepCollectionEquality().equals(other.locality, locality)) &&
+            (identical(other.latLng, latLng) || const DeepCollectionEquality().equals(other.latLng, latLng)) &&
             (identical(other.formattedAddress, formattedAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.formattedAddress, formattedAddress)) &&
-            (identical(other.country, country) ||
-                const DeepCollectionEquality()
-                    .equals(other.country, country)) &&
-            (identical(other.city, city) ||
-                const DeepCollectionEquality().equals(other.city, city)) &&
-            (identical(
-                    other.administrativeAreaLevel1, administrativeAreaLevel1) ||
-                const DeepCollectionEquality().equals(
-                    other.administrativeAreaLevel1,
-                    administrativeAreaLevel1)) &&
-            (identical(
-                    other.administrativeAreaLevel2, administrativeAreaLevel2) ||
-                const DeepCollectionEquality().equals(
-                    other.administrativeAreaLevel2,
-                    administrativeAreaLevel2)) &&
+                const DeepCollectionEquality().equals(other.formattedAddress, formattedAddress)) &&
+            (identical(other.country, country) || const DeepCollectionEquality().equals(other.country, country)) &&
+            (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
+            (identical(other.administrativeAreaLevel1, administrativeAreaLevel1) ||
+                const DeepCollectionEquality().equals(other.administrativeAreaLevel1, administrativeAreaLevel1)) &&
+            (identical(other.administrativeAreaLevel2, administrativeAreaLevel2) ||
+                const DeepCollectionEquality().equals(other.administrativeAreaLevel2, administrativeAreaLevel2)) &&
             (identical(other.subLocalityLevel1, subLocalityLevel1) ||
-                const DeepCollectionEquality()
-                    .equals(other.subLocalityLevel1, subLocalityLevel1)) &&
+                const DeepCollectionEquality().equals(other.subLocalityLevel1, subLocalityLevel1)) &&
             (identical(other.subLocalityLevel2, subLocalityLevel2) ||
-                const DeepCollectionEquality()
-                    .equals(other.subLocalityLevel2, subLocalityLevel2)) &&
+                const DeepCollectionEquality().equals(other.subLocalityLevel2, subLocalityLevel2)) &&
             (identical(other.postalCode, postalCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.postalCode, postalCode)) &&
-            (identical(other.placeId, placeId) ||
-                const DeepCollectionEquality().equals(other.placeId, placeId)));
+                const DeepCollectionEquality().equals(other.postalCode, postalCode)) &&
+            (identical(other.placeId, placeId) || const DeepCollectionEquality().equals(other.placeId, placeId)));
   }
 
   @override
@@ -488,11 +459,9 @@ abstract class _LocationResult implements LocationResult {
   @override
   AddressComponent get city => throw _privateConstructorUsedError;
   @override
-  AddressComponent get administrativeAreaLevel1 =>
-      throw _privateConstructorUsedError;
+  AddressComponent get administrativeAreaLevel1 => throw _privateConstructorUsedError;
   @override
-  AddressComponent get administrativeAreaLevel2 =>
-      throw _privateConstructorUsedError;
+  AddressComponent get administrativeAreaLevel2 => throw _privateConstructorUsedError;
   @override
   AddressComponent get subLocalityLevel1 => throw _privateConstructorUsedError;
   @override
@@ -503,6 +472,5 @@ abstract class _LocationResult implements LocationResult {
   String get placeId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LocationResultCopyWith<_LocationResult> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$LocationResultCopyWith<_LocationResult> get copyWith => throw _privateConstructorUsedError;
 }

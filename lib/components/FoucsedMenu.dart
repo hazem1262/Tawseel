@@ -8,12 +8,7 @@ class FoucsedMenu extends StatelessWidget {
   final Function onPressed;
   final List<FocusedMenuItem> menuItems;
 
-  FoucsedMenu(
-      {Key? key,
-      required this.child,
-      required this.onPressed,
-      required this.menuItems})
-      : super(key: key);
+  FoucsedMenu({Key? key, required this.child, required this.onPressed, required this.menuItems}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +16,7 @@ class FoucsedMenu extends StatelessWidget {
       openWithTap: true,
       onPressed: onPressed,
       menuItemExtent: 40,
-      blurBackgroundColor:
-          tm.isDark() ? Colors.black.withAlpha(10) : Colors.white.withAlpha(10),
+      blurBackgroundColor: tm.isDark() ? Colors.black.withAlpha(10) : Colors.white.withAlpha(10),
       child: child,
       menuOffset: 10,
       animateMenuItems: true,

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/favorites/bloc/bloc/favorites_repo.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 part 'favorites_bloc.freezed.dart';
@@ -13,8 +12,7 @@ class FavoritesEvent with _$FavoritesEvent {
   const factory FavoritesEvent.getFavorites() = GetFavoritesList;
   const factory FavoritesEvent.reset() = ResetFavoritesState;
   const factory FavoritesEvent.removeFromFavorite(int id) = RemoveFromFavorite;
-  const factory FavoritesEvent.removeFromFavoriteByDismiss(int id) =
-      RemoveFromFavoriteByDismiss;
+  const factory FavoritesEvent.removeFromFavoriteByDismiss(int id) = RemoveFromFavoriteByDismiss;
 }
 
 @freezed
@@ -90,9 +88,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
 
       if (event is RemoveFromFavorite) {
         emit(
-          state.copyWith(
-              favoritesList: state.favoritesList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: true)),
+          state.copyWith(favoritesList: state.favoritesList.setFavoriteLoadingFor(id: event.id, isLoading: true)),
         );
         try {
           await repo.removeFromFavorites(event.id);
@@ -105,8 +101,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
         } catch (e) {
           emit(
             state.copyWith(
-                favoritesList: state.favoritesList
-                    .setFavoriteLoadingFor(id: event.id, isLoading: false),
+                favoritesList: state.favoritesList.setFavoriteLoadingFor(id: event.id, isLoading: false),
                 error: e.toString()),
           );
         }
@@ -139,9 +134,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
         } catch (e) {
           emit(
             state.copyWith(
-                favoritesList: state.favoritesList
-                    .addItemAtIndex(index: index, item: item),
-                error: e.toString()),
+                favoritesList: state.favoritesList.addItemAtIndex(index: index, item: item), error: e.toString()),
           );
         }
       }

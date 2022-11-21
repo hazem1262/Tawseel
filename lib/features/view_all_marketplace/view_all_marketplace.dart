@@ -1,18 +1,14 @@
-import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:tawseel/components/SectionWithViewAll.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/HomeScreen.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_repository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
-import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/features/view_all_marketplace/view_all_bloc.dart';
-import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
@@ -48,8 +44,7 @@ class ViewAllMarketPlaces extends StatelessWidget {
   String? subCategoryName;
   int? subCategoryId;
 
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   List<int>? getIdsList() {
     List<int> list = [];
@@ -75,13 +70,11 @@ class ViewAllMarketPlaces extends StatelessWidget {
       lazy: false,
       child: Builder(builder: (context) {
         return Scaffold(
-            body: BlocListener<ViewAllMarketPlaceBloc,
-                ViewAllMarketPlaceBlocState>(
+            body: BlocListener<ViewAllMarketPlaceBloc, ViewAllMarketPlaceBlocState>(
           listener: (context, state) {
             if (state.error.isNotEmpty) appContext.showError(state.error);
             if (state.refreshData) {
-              BlocProvider.of<ViewAllMarketPlaceBloc>(context)
-                ..add(GetViewAllMarketPlaceMarketPlaces(getIdsList()));
+              BlocProvider.of<ViewAllMarketPlaceBloc>(context)..add(GetViewAllMarketPlaceMarketPlaces(getIdsList()));
             }
           },
           child: SafeArea(
@@ -89,8 +82,7 @@ class ViewAllMarketPlaces extends StatelessWidget {
               controller: _refreshController,
               enablePullDown: true,
               onRefresh: () {
-                BlocProvider.of<ViewAllMarketPlaceBloc>(context)
-                  ..add(GetViewAllMarketPlaceMarketPlaces(getIdsList()));
+                BlocProvider.of<ViewAllMarketPlaceBloc>(context)..add(GetViewAllMarketPlaceMarketPlaces(getIdsList()));
                 _refreshController.refreshToIdle();
               },
               header: WaterDropHeader(),
@@ -131,8 +123,7 @@ class ViewAllMarketPlaces extends StatelessWidget {
                             ).tr(),
                           )
                         : Container(),
-                    BlocBuilder<ViewAllMarketPlaceBloc,
-                        ViewAllMarketPlaceBlocState>(
+                    BlocBuilder<ViewAllMarketPlaceBloc, ViewAllMarketPlaceBlocState>(
                       builder: (context, state) {
                         return state.nearbyMarketPlaceIsLoading
                             ? marketPlaceShimmer()
@@ -142,9 +133,7 @@ class ViewAllMarketPlaces extends StatelessWidget {
                                 list: state.nearbyList,
                                 hasMorePages: state.hasMorePages,
                                 onFavoriteClicked: (item) {
-                                  BlocProvider.of<ViewAllMarketPlaceBloc>(
-                                          context)
-                                      .add(
+                                  BlocProvider.of<ViewAllMarketPlaceBloc>(context).add(
                                     item.is_favorite
                                         ? RemoveMarketPlaceFromFavorite(item.id)
                                         : AddMarketPlaceToFavorite((item.id)),
@@ -186,8 +175,7 @@ class ViewAllMarketPlaces extends StatelessWidget {
                 ..add(GetViewAllMarketPlaceMarketPlaces(getIdsList()));
             },
             onRefresh: () {
-              BlocProvider.of<ViewAllMarketPlaceBloc>(blocContext)
-                ..add(ResetViewAllMarketPlaceRefreshData());
+              BlocProvider.of<ViewAllMarketPlaceBloc>(blocContext)..add(ResetViewAllMarketPlaceRefreshData());
             },
             loadingWidget: Padding(
               padding: const EdgeInsets.all(16.0),

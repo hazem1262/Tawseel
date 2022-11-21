@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:tawseel/data/remote/AppService.dart';
 import 'package:tawseel/data/remote/AuthService.dart';
 import 'package:tawseel/features/changePassword/ChangePasswordScreen.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
@@ -12,11 +11,9 @@ import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/models/user_entity.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
-import 'package:tawseel/theme/AppColors.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
-import 'package:flutter/cupertino.dart';
 
 enum SelectedLanguage { En, Ar }
 
@@ -29,8 +26,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   UserEntity? user;
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   late ThemeData theme;
   late double height;
@@ -90,8 +86,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     margin: EdgeInsets.symmetric(horizontal: width / 20),
                     child: Text(
                       LocaleKeys.delete_account.tr(),
-                      style: theme.textTheme.caption!.copyWith(
-                          fontWeight: FontWeight.w300, color: Colors.red),
+                      style: theme.textTheme.caption!.copyWith(fontWeight: FontWeight.w300, color: Colors.red),
                     ),
                   ),
                 ),
@@ -114,8 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             margin: EdgeInsets.symmetric(horizontal: 8),
             child: Text(
               LocaleKeys.profile_title.tr(),
-              style: theme.textTheme.headline6!
-                  .copyWith(fontWeight: FontWeight.w600),
+              style: theme.textTheme.headline6!.copyWith(fontWeight: FontWeight.w600),
             ),
           ),
           Container(
@@ -158,9 +152,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ? Icon(Icons.person)
                   : Container(
                       decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(user!.image)),
+                        image: DecorationImage(fit: BoxFit.cover, image: NetworkImage(user!.image)),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: tm.isDark() ? Colors.white : Colors.grey,
                       ),
@@ -173,8 +165,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Text(
                     user?.name ?? "",
-                    style: theme.textTheme.headline5!
-                        .copyWith(fontSize: SmallTitleTextSize),
+                    style: theme.textTheme.headline5!.copyWith(fontSize: SmallTitleTextSize),
                   ),
                   Text(
                     user?.phone ?? "",
@@ -220,8 +211,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               padding: const EdgeInsets.only(top: 16.0),
               child: profileActionItem(
                 text: LocaleKeys.languages.tr(),
-                icon: ImageIcon(AssetImage(Res.language_icon),
-                    color: tm.isDark() ? Colors.white : creamyGrey),
+                icon: ImageIcon(AssetImage(Res.language_icon), color: tm.isDark() ? Colors.white : creamyGrey),
                 onPressed: () => {},
                 actionWidget: languageToggleWidget(selectedLanguage),
               ),
@@ -235,12 +225,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             //?----------------------------------------------------------------------------?//
             profileActionItem(
               text: LocaleKeys.dark_mode.tr(),
-              icon: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode,
-                  size: 24),
+              icon: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode, size: 24),
               onPressed: null,
               actionWidget: GestureDetector(
-                child:
-                    Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode),
+                child: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode),
                 onTap: () {
                   tm.toggleMode();
                   appContext.openOnly(MainScreenRoute());
@@ -278,8 +266,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             profileActionItem(
               text: LocaleKeys.my_address.tr(),
               padding: 10,
-              icon: ImageIcon(AssetImage(Res.address_icon),
-                  size: 28, color: tm.isDark() ? Colors.white : creamyGrey),
+              icon: ImageIcon(AssetImage(Res.address_icon), size: 28, color: tm.isDark() ? Colors.white : creamyGrey),
               onPressed: () {
                 appContext.openIfExist(MyAddressesScreenRoute());
               },
@@ -293,8 +280,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             //?----------------------------------------------------------------------------?//
             profileActionItem(
               text: LocaleKeys.edit_profile_title.tr(),
-              icon: ImageIcon(AssetImage(Res.edit_icon),
-                  size: 22, color: tm.isDark() ? Colors.white : creamyGrey),
+              icon: ImageIcon(AssetImage(Res.edit_icon), size: 22, color: tm.isDark() ? Colors.white : creamyGrey),
               onPressed: () {
                 context.openIfExist(EditProfileScreenRoute());
               },
@@ -314,8 +300,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 color: tm.isDark() ? Colors.white : creamyGrey,
               ),
               onPressed: () {
-                context.openIfExist(
-                    SendPhoneScreenRoute(intention: Intention.CHANGE_PHONE));
+                context.openIfExist(SendPhoneScreenRoute(intention: Intention.CHANGE_PHONE));
               },
             ),
             Padding(
@@ -334,8 +319,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               onPressed: () {
                 context.openIfExist(
-                  ChangePasswordScreenRoute(
-                      intention: ChangePasswordIntention.CHANGE_PASSWORD),
+                  ChangePasswordScreenRoute(intention: ChangePasswordIntention.CHANGE_PASSWORD),
                 );
               },
             ),
@@ -499,10 +483,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           height: newheight * 0.062,
           borderRadius: 15,
           selectedIndex: selectedLanguage.index,
-          selectedTextStyle: TextStyle(
-              color: Colors.white, fontSize: 19, fontWeight: FontWeight.w500),
-          unSelectedTextStyle: TextStyle(
-              color: Colors.black54, fontSize: 16, fontWeight: FontWeight.w500),
+          selectedTextStyle: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.w500),
+          unSelectedTextStyle: TextStyle(color: Colors.black54, fontSize: 16, fontWeight: FontWeight.w500),
           labels: ["En", "Ar"],
           selectedLabelIndex: (index) {
             onLanguageChange(index);
@@ -511,11 +493,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   bool notificationsAllowd = false;
-  void _onAllowNotificationChange(bool value) {
-    setState(() {
-      notificationsAllowd = value;
-    });
-  }
 
   void deleteAccount() {
     getIt<AuthService>().deleteAccount().then((value) {
@@ -570,16 +547,12 @@ class profileActionItem extends StatelessWidget {
                     text,
                     style: theme.textTheme.headline5!.copyWith(
                         fontSize: SmallTitleTextSize,
-                        color: tm.isDark()
-                            ? ProfileActionsColor_Dark
-                            : ProfileActionsColor_Light),
+                        color: tm.isDark() ? ProfileActionsColor_Dark : ProfileActionsColor_Light),
                   ),
                 ),
               ],
             ),
-            actionWidget ??
-                Icon(Icons.arrow_forward_ios,
-                    size: 20, color: tm.isDark() ? Colors.white : Colors.grey)
+            actionWidget ?? Icon(Icons.arrow_forward_ios, size: 20, color: tm.isDark() ? Colors.white : Colors.grey)
           ],
         ),
       ),

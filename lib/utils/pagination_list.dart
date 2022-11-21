@@ -31,8 +31,7 @@ class _PaginationListState<T> extends State<PaginationList<T>> {
   void initState() {
     super.initState();
     scrollController.addListener(() {
-      if (scrollController.position.maxScrollExtent ==
-          scrollController.offset) {
+      if (scrollController.position.maxScrollExtent == scrollController.offset) {
         if (widget.hasMore && !isLoadingMore) {
           isLoadingMore = true;
           widget.loadMore();

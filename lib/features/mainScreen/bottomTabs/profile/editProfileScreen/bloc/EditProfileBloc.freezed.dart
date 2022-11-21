@@ -98,14 +98,12 @@ mixin _$EditProfileEvent {
 
 /// @nodoc
 abstract class $EditProfileEventCopyWith<$Res> {
-  factory $EditProfileEventCopyWith(
-          EditProfileEvent value, $Res Function(EditProfileEvent) then) =
+  factory $EditProfileEventCopyWith(EditProfileEvent value, $Res Function(EditProfileEvent) then) =
       _$EditProfileEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$EditProfileEventCopyWithImpl<$Res>
-    implements $EditProfileEventCopyWith<$Res> {
+class _$EditProfileEventCopyWithImpl<$Res> implements $EditProfileEventCopyWith<$Res> {
   _$EditProfileEventCopyWithImpl(this._value, this._then);
 
   final EditProfileEvent _value;
@@ -115,18 +113,15 @@ class _$EditProfileEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $UpdateAvatarCopyWith<$Res> {
-  factory $UpdateAvatarCopyWith(
-          UpdateAvatar value, $Res Function(UpdateAvatar) then) =
+  factory $UpdateAvatarCopyWith(UpdateAvatar value, $Res Function(UpdateAvatar) then) =
       _$UpdateAvatarCopyWithImpl<$Res>;
   $Res call({XFile photo});
 }
 
 /// @nodoc
-class _$UpdateAvatarCopyWithImpl<$Res>
-    extends _$EditProfileEventCopyWithImpl<$Res>
+class _$UpdateAvatarCopyWithImpl<$Res> extends _$EditProfileEventCopyWithImpl<$Res>
     implements $UpdateAvatarCopyWith<$Res> {
-  _$UpdateAvatarCopyWithImpl(
-      UpdateAvatar _value, $Res Function(UpdateAvatar) _then)
+  _$UpdateAvatarCopyWithImpl(UpdateAvatar _value, $Res Function(UpdateAvatar) _then)
       : super(_value, (v) => _then(v as UpdateAvatar));
 
   @override
@@ -170,18 +165,15 @@ class _$UpdateAvatar with DiagnosticableTreeMixin implements UpdateAvatar {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is UpdateAvatar &&
-            (identical(other.photo, photo) ||
-                const DeepCollectionEquality().equals(other.photo, photo)));
+            (identical(other.photo, photo) || const DeepCollectionEquality().equals(other.photo, photo)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(photo);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(photo);
 
   @JsonKey(ignore: true)
   @override
-  $UpdateAvatarCopyWith<UpdateAvatar> get copyWith =>
-      _$UpdateAvatarCopyWithImpl<UpdateAvatar>(this, _$identity);
+  $UpdateAvatarCopyWith<UpdateAvatar> get copyWith => _$UpdateAvatarCopyWithImpl<UpdateAvatar>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -263,23 +255,19 @@ abstract class UpdateAvatar implements EditProfileEvent {
 
   XFile get photo => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UpdateAvatarCopyWith<UpdateAvatar> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdateAvatarCopyWith<UpdateAvatar> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RemoveAvatarCopyWith<$Res> {
-  factory $RemoveAvatarCopyWith(
-          RemoveAvatar value, $Res Function(RemoveAvatar) then) =
+  factory $RemoveAvatarCopyWith(RemoveAvatar value, $Res Function(RemoveAvatar) then) =
       _$RemoveAvatarCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RemoveAvatarCopyWithImpl<$Res>
-    extends _$EditProfileEventCopyWithImpl<$Res>
+class _$RemoveAvatarCopyWithImpl<$Res> extends _$EditProfileEventCopyWithImpl<$Res>
     implements $RemoveAvatarCopyWith<$Res> {
-  _$RemoveAvatarCopyWithImpl(
-      RemoveAvatar _value, $Res Function(RemoveAvatar) _then)
+  _$RemoveAvatarCopyWithImpl(RemoveAvatar _value, $Res Function(RemoveAvatar) _then)
       : super(_value, (v) => _then(v as RemoveAvatar));
 
   @override
@@ -299,8 +287,7 @@ class _$RemoveAvatar with DiagnosticableTreeMixin implements RemoveAvatar {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'EditProfileEvent.removeAvatar'));
+    properties..add(DiagnosticsProperty('type', 'EditProfileEvent.removeAvatar'));
   }
 
   @override
@@ -392,18 +379,15 @@ abstract class RemoveAvatar implements EditProfileEvent {
 
 /// @nodoc
 abstract class $SubmitEditProfileEventCopyWith<$Res> {
-  factory $SubmitEditProfileEventCopyWith(SubmitEditProfileEvent value,
-          $Res Function(SubmitEditProfileEvent) then) =
+  factory $SubmitEditProfileEventCopyWith(SubmitEditProfileEvent value, $Res Function(SubmitEditProfileEvent) then) =
       _$SubmitEditProfileEventCopyWithImpl<$Res>;
   $Res call({String? fullname, String? email});
 }
 
 /// @nodoc
-class _$SubmitEditProfileEventCopyWithImpl<$Res>
-    extends _$EditProfileEventCopyWithImpl<$Res>
+class _$SubmitEditProfileEventCopyWithImpl<$Res> extends _$EditProfileEventCopyWithImpl<$Res>
     implements $SubmitEditProfileEventCopyWith<$Res> {
-  _$SubmitEditProfileEventCopyWithImpl(SubmitEditProfileEvent _value,
-      $Res Function(SubmitEditProfileEvent) _then)
+  _$SubmitEditProfileEventCopyWithImpl(SubmitEditProfileEvent _value, $Res Function(SubmitEditProfileEvent) _then)
       : super(_value, (v) => _then(v as SubmitEditProfileEvent));
 
   @override
@@ -429,9 +413,7 @@ class _$SubmitEditProfileEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SubmitEditProfileEvent
-    with DiagnosticableTreeMixin
-    implements SubmitEditProfileEvent {
+class _$SubmitEditProfileEvent with DiagnosticableTreeMixin implements SubmitEditProfileEvent {
   const _$SubmitEditProfileEvent(this.fullname, this.email);
 
   @override
@@ -457,24 +439,18 @@ class _$SubmitEditProfileEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SubmitEditProfileEvent &&
-            (identical(other.fullname, fullname) ||
-                const DeepCollectionEquality()
-                    .equals(other.fullname, fullname)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+            (identical(other.fullname, fullname) || const DeepCollectionEquality().equals(other.fullname, fullname)) &&
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(fullname) ^
-      const DeepCollectionEquality().hash(email);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(fullname) ^ const DeepCollectionEquality().hash(email);
 
   @JsonKey(ignore: true)
   @override
   $SubmitEditProfileEventCopyWith<SubmitEditProfileEvent> get copyWith =>
-      _$SubmitEditProfileEventCopyWithImpl<SubmitEditProfileEvent>(
-          this, _$identity);
+      _$SubmitEditProfileEventCopyWithImpl<SubmitEditProfileEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -552,29 +528,24 @@ class _$SubmitEditProfileEvent
 }
 
 abstract class SubmitEditProfileEvent implements EditProfileEvent {
-  const factory SubmitEditProfileEvent(String? fullname, String? email) =
-      _$SubmitEditProfileEvent;
+  const factory SubmitEditProfileEvent(String? fullname, String? email) = _$SubmitEditProfileEvent;
 
   String? get fullname => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubmitEditProfileEventCopyWith<SubmitEditProfileEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SubmitEditProfileEventCopyWith<SubmitEditProfileEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetProfileEventCopyWith<$Res> {
-  factory $GetProfileEventCopyWith(
-          GetProfileEvent value, $Res Function(GetProfileEvent) then) =
+  factory $GetProfileEventCopyWith(GetProfileEvent value, $Res Function(GetProfileEvent) then) =
       _$GetProfileEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetProfileEventCopyWithImpl<$Res>
-    extends _$EditProfileEventCopyWithImpl<$Res>
+class _$GetProfileEventCopyWithImpl<$Res> extends _$EditProfileEventCopyWithImpl<$Res>
     implements $GetProfileEventCopyWith<$Res> {
-  _$GetProfileEventCopyWithImpl(
-      GetProfileEvent _value, $Res Function(GetProfileEvent) _then)
+  _$GetProfileEventCopyWithImpl(GetProfileEvent _value, $Res Function(GetProfileEvent) _then)
       : super(_value, (v) => _then(v as GetProfileEvent));
 
   @override
@@ -583,9 +554,7 @@ class _$GetProfileEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetProfileEvent
-    with DiagnosticableTreeMixin
-    implements GetProfileEvent {
+class _$GetProfileEvent with DiagnosticableTreeMixin implements GetProfileEvent {
   const _$GetProfileEvent();
 
   @override
@@ -691,11 +660,7 @@ class _$EditProfileStateTearOff {
   const _$EditProfileStateTearOff();
 
   EditProfileCurrentState defaultState(
-      [bool isLoading = false,
-      String error = "",
-      bool showChooser = false,
-      bool isUpdate = false,
-      Data? userData]) {
+      [bool isLoading = false, String error = "", bool showChooser = false, bool isUpdate = false, Data? userData]) {
     return EditProfileCurrentState(
       isLoading,
       error,
@@ -719,23 +684,18 @@ mixin _$EditProfileState {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, String error, bool showChooser,
-            bool isUpdate, Data? userData)
+    required TResult Function(bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData)
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool showChooser,
-            bool isUpdate, Data? userData)?
-        defaultState,
+    TResult Function(bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData)? defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool showChooser,
-            bool isUpdate, Data? userData)?
-        defaultState,
+    TResult Function(bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData)? defaultState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -757,26 +717,18 @@ mixin _$EditProfileState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $EditProfileStateCopyWith<EditProfileState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $EditProfileStateCopyWith<EditProfileState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EditProfileStateCopyWith<$Res> {
-  factory $EditProfileStateCopyWith(
-          EditProfileState value, $Res Function(EditProfileState) then) =
+  factory $EditProfileStateCopyWith(EditProfileState value, $Res Function(EditProfileState) then) =
       _$EditProfileStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool isLoading,
-      String error,
-      bool showChooser,
-      bool isUpdate,
-      Data? userData});
+  $Res call({bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData});
 }
 
 /// @nodoc
-class _$EditProfileStateCopyWithImpl<$Res>
-    implements $EditProfileStateCopyWith<$Res> {
+class _$EditProfileStateCopyWithImpl<$Res> implements $EditProfileStateCopyWith<$Res> {
   _$EditProfileStateCopyWithImpl(this._value, this._then);
 
   final EditProfileState _value;
@@ -817,26 +769,17 @@ class _$EditProfileStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $EditProfileCurrentStateCopyWith<$Res>
-    implements $EditProfileStateCopyWith<$Res> {
-  factory $EditProfileCurrentStateCopyWith(EditProfileCurrentState value,
-          $Res Function(EditProfileCurrentState) then) =
+abstract class $EditProfileCurrentStateCopyWith<$Res> implements $EditProfileStateCopyWith<$Res> {
+  factory $EditProfileCurrentStateCopyWith(EditProfileCurrentState value, $Res Function(EditProfileCurrentState) then) =
       _$EditProfileCurrentStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {bool isLoading,
-      String error,
-      bool showChooser,
-      bool isUpdate,
-      Data? userData});
+  $Res call({bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData});
 }
 
 /// @nodoc
-class _$EditProfileCurrentStateCopyWithImpl<$Res>
-    extends _$EditProfileStateCopyWithImpl<$Res>
+class _$EditProfileCurrentStateCopyWithImpl<$Res> extends _$EditProfileStateCopyWithImpl<$Res>
     implements $EditProfileCurrentStateCopyWith<$Res> {
-  _$EditProfileCurrentStateCopyWithImpl(EditProfileCurrentState _value,
-      $Res Function(EditProfileCurrentState) _then)
+  _$EditProfileCurrentStateCopyWithImpl(EditProfileCurrentState _value, $Res Function(EditProfileCurrentState) _then)
       : super(_value, (v) => _then(v as EditProfileCurrentState));
 
   @override
@@ -877,15 +820,9 @@ class _$EditProfileCurrentStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EditProfileCurrentState
-    with DiagnosticableTreeMixin
-    implements EditProfileCurrentState {
+class _$EditProfileCurrentState with DiagnosticableTreeMixin implements EditProfileCurrentState {
   const _$EditProfileCurrentState(
-      [this.isLoading = false,
-      this.error = "",
-      this.showChooser = false,
-      this.isUpdate = false,
-      this.userData]);
+      [this.isLoading = false, this.error = "", this.showChooser = false, this.isUpdate = false, this.userData]);
 
   @JsonKey(defaultValue: false)
   @override
@@ -924,19 +861,12 @@ class _$EditProfileCurrentState
     return identical(this, other) ||
         (other is EditProfileCurrentState &&
             (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+                const DeepCollectionEquality().equals(other.isLoading, isLoading)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.showChooser, showChooser) ||
-                const DeepCollectionEquality()
-                    .equals(other.showChooser, showChooser)) &&
-            (identical(other.isUpdate, isUpdate) ||
-                const DeepCollectionEquality()
-                    .equals(other.isUpdate, isUpdate)) &&
-            (identical(other.userData, userData) ||
-                const DeepCollectionEquality()
-                    .equals(other.userData, userData)));
+                const DeepCollectionEquality().equals(other.showChooser, showChooser)) &&
+            (identical(other.isUpdate, isUpdate) || const DeepCollectionEquality().equals(other.isUpdate, isUpdate)) &&
+            (identical(other.userData, userData) || const DeepCollectionEquality().equals(other.userData, userData)));
   }
 
   @override
@@ -951,14 +881,12 @@ class _$EditProfileCurrentState
   @JsonKey(ignore: true)
   @override
   $EditProfileCurrentStateCopyWith<EditProfileCurrentState> get copyWith =>
-      _$EditProfileCurrentStateCopyWithImpl<EditProfileCurrentState>(
-          this, _$identity);
+      _$EditProfileCurrentStateCopyWithImpl<EditProfileCurrentState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, String error, bool showChooser,
-            bool isUpdate, Data? userData)
+    required TResult Function(bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData)
         defaultState,
   }) {
     return defaultState(isLoading, error, showChooser, isUpdate, userData);
@@ -967,20 +895,15 @@ class _$EditProfileCurrentState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool showChooser,
-            bool isUpdate, Data? userData)?
-        defaultState,
+    TResult Function(bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData)? defaultState,
   }) {
-    return defaultState?.call(
-        isLoading, error, showChooser, isUpdate, userData);
+    return defaultState?.call(isLoading, error, showChooser, isUpdate, userData);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool showChooser,
-            bool isUpdate, Data? userData)?
-        defaultState,
+    TResult Function(bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData)? defaultState,
     required TResult orElse(),
   }) {
     if (defaultState != null) {
@@ -1020,11 +943,7 @@ class _$EditProfileCurrentState
 
 abstract class EditProfileCurrentState implements EditProfileState {
   const factory EditProfileCurrentState(
-      [bool isLoading,
-      String error,
-      bool showChooser,
-      bool isUpdate,
-      Data? userData]) = _$EditProfileCurrentState;
+      [bool isLoading, String error, bool showChooser, bool isUpdate, Data? userData]) = _$EditProfileCurrentState;
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
@@ -1038,6 +957,5 @@ abstract class EditProfileCurrentState implements EditProfileState {
   Data? get userData => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $EditProfileCurrentStateCopyWith<EditProfileCurrentState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $EditProfileCurrentStateCopyWith<EditProfileCurrentState> get copyWith => throw _privateConstructorUsedError;
 }

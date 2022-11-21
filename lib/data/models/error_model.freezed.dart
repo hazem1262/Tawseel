@@ -41,15 +41,12 @@ mixin _$ErrorModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ErrorModelCopyWith<ErrorModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ErrorModelCopyWith<ErrorModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ErrorModelCopyWith<$Res> {
-  factory $ErrorModelCopyWith(
-          ErrorModel value, $Res Function(ErrorModel) then) =
-      _$ErrorModelCopyWithImpl<$Res>;
+  factory $ErrorModelCopyWith(ErrorModel value, $Res Function(ErrorModel) then) = _$ErrorModelCopyWithImpl<$Res>;
   $Res call({String message});
 }
 
@@ -76,18 +73,14 @@ class _$ErrorModelCopyWithImpl<$Res> implements $ErrorModelCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ErrorModelCopyWith<$Res> implements $ErrorModelCopyWith<$Res> {
-  factory _$ErrorModelCopyWith(
-          _ErrorModel value, $Res Function(_ErrorModel) then) =
-      __$ErrorModelCopyWithImpl<$Res>;
+  factory _$ErrorModelCopyWith(_ErrorModel value, $Res Function(_ErrorModel) then) = __$ErrorModelCopyWithImpl<$Res>;
   @override
   $Res call({String message});
 }
 
 /// @nodoc
-class __$ErrorModelCopyWithImpl<$Res> extends _$ErrorModelCopyWithImpl<$Res>
-    implements _$ErrorModelCopyWith<$Res> {
-  __$ErrorModelCopyWithImpl(
-      _ErrorModel _value, $Res Function(_ErrorModel) _then)
+class __$ErrorModelCopyWithImpl<$Res> extends _$ErrorModelCopyWithImpl<$Res> implements _$ErrorModelCopyWith<$Res> {
+  __$ErrorModelCopyWithImpl(_ErrorModel _value, $Res Function(_ErrorModel) _then)
       : super(_value, (v) => _then(v as _ErrorModel));
 
   @override
@@ -111,8 +104,7 @@ class __$ErrorModelCopyWithImpl<$Res> extends _$ErrorModelCopyWithImpl<$Res>
 class _$_ErrorModel implements _ErrorModel {
   const _$_ErrorModel(this.message);
 
-  factory _$_ErrorModel.fromJson(Map<String, dynamic> json) =>
-      _$$_ErrorModelFromJson(json);
+  factory _$_ErrorModel.fromJson(Map<String, dynamic> json) => _$$_ErrorModelFromJson(json);
 
   @override
   final String message;
@@ -126,18 +118,15 @@ class _$_ErrorModel implements _ErrorModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ErrorModel &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+            (identical(other.message, message) || const DeepCollectionEquality().equals(other.message, message)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorModelCopyWith<_ErrorModel> get copyWith =>
-      __$ErrorModelCopyWithImpl<_ErrorModel>(this, _$identity);
+  _$ErrorModelCopyWith<_ErrorModel> get copyWith => __$ErrorModelCopyWithImpl<_ErrorModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -148,13 +137,11 @@ class _$_ErrorModel implements _ErrorModel {
 abstract class _ErrorModel implements ErrorModel {
   const factory _ErrorModel(String message) = _$_ErrorModel;
 
-  factory _ErrorModel.fromJson(Map<String, dynamic> json) =
-      _$_ErrorModel.fromJson;
+  factory _ErrorModel.fromJson(Map<String, dynamic> json) = _$_ErrorModel.fromJson;
 
   @override
   String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ErrorModelCopyWith<_ErrorModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ErrorModelCopyWith<_ErrorModel> get copyWith => throw _privateConstructorUsedError;
 }

@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tawseel/models/data.dart';
-import 'package:flutter_native_image/flutter_native_image.dart';
 
 import 'ProfileRepository.dart';
 
@@ -19,8 +18,7 @@ class EditProfileEvent with _$EditProfileEvent {
 
   const factory EditProfileEvent.removeAvatar() = RemoveAvatar;
 
-  const factory EditProfileEvent.editProfile(String? fullname, String? email) =
-      SubmitEditProfileEvent;
+  const factory EditProfileEvent.editProfile(String? fullname, String? email) = SubmitEditProfileEvent;
 
   const factory EditProfileEvent.getProfile() = GetProfileEvent;
 }
@@ -44,8 +42,7 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
         try {
           emit(state.copyWith(isLoading: true));
           final res = await repo.updateAvatar(File(event.photo.path));
-          emit(EditProfileState.defaultState()
-              .copyWith(userData: res.data, isUpdate: true));
+          emit(EditProfileState.defaultState().copyWith(userData: res.data, isUpdate: true));
         } catch (e, trace) {
           debugPrint('Exception : $e $trace');
           emit(state.copyWith(error: e.toString(), isLoading: false));
@@ -56,8 +53,7 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
         try {
           emit(state.copyWith(isLoading: true));
           final res = await repo.removeAvatar();
-          emit(EditProfileState.defaultState()
-              .copyWith(userData: res.data, isUpdate: true));
+          emit(EditProfileState.defaultState().copyWith(userData: res.data, isUpdate: true));
         } catch (e, trace) {
           debugPrint('Exception : $e $trace');
           emit(state.copyWith(error: e.toString(), isLoading: false));
@@ -70,8 +66,7 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
             name: event.fullname,
             email: event.email,
           );
-          emit(EditProfileState.defaultState()
-              .copyWith(userData: res.data, isUpdate: true));
+          emit(EditProfileState.defaultState().copyWith(userData: res.data, isUpdate: true));
         } catch (e, trace) {
           debugPrint('Exception : $e $trace');
           emit(state.copyWith(error: e.toString(), isLoading: false));
@@ -82,8 +77,7 @@ class EditProfileBloc extends Bloc<EditProfileEvent, EditProfileState> {
         try {
           emit(state.copyWith(isLoading: true));
           final res = await repo.getProfile();
-          emit(EditProfileState.defaultState()
-              .copyWith(userData: res.data, isUpdate: false));
+          emit(EditProfileState.defaultState().copyWith(userData: res.data, isUpdate: false));
         } catch (e, trace) {
           debugPrint('Exception : $e $trace');
           emit(state.copyWith(error: e.toString(), isLoading: false));

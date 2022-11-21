@@ -45,21 +45,18 @@ mixin _$AutoCompleteItem {
   int get length => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AutoCompleteItemCopyWith<AutoCompleteItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AutoCompleteItemCopyWith<AutoCompleteItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AutoCompleteItemCopyWith<$Res> {
-  factory $AutoCompleteItemCopyWith(
-          AutoCompleteItem value, $Res Function(AutoCompleteItem) then) =
+  factory $AutoCompleteItemCopyWith(AutoCompleteItem value, $Res Function(AutoCompleteItem) then) =
       _$AutoCompleteItemCopyWithImpl<$Res>;
   $Res call({String id, String text, int offset, int length});
 }
 
 /// @nodoc
-class _$AutoCompleteItemCopyWithImpl<$Res>
-    implements $AutoCompleteItemCopyWith<$Res> {
+class _$AutoCompleteItemCopyWithImpl<$Res> implements $AutoCompleteItemCopyWith<$Res> {
   _$AutoCompleteItemCopyWithImpl(this._value, this._then);
 
   final AutoCompleteItem _value;
@@ -95,21 +92,17 @@ class _$AutoCompleteItemCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AutoCompleteItemCopyWith<$Res>
-    implements $AutoCompleteItemCopyWith<$Res> {
-  factory _$AutoCompleteItemCopyWith(
-          _AutoCompleteItem value, $Res Function(_AutoCompleteItem) then) =
+abstract class _$AutoCompleteItemCopyWith<$Res> implements $AutoCompleteItemCopyWith<$Res> {
+  factory _$AutoCompleteItemCopyWith(_AutoCompleteItem value, $Res Function(_AutoCompleteItem) then) =
       __$AutoCompleteItemCopyWithImpl<$Res>;
   @override
   $Res call({String id, String text, int offset, int length});
 }
 
 /// @nodoc
-class __$AutoCompleteItemCopyWithImpl<$Res>
-    extends _$AutoCompleteItemCopyWithImpl<$Res>
+class __$AutoCompleteItemCopyWithImpl<$Res> extends _$AutoCompleteItemCopyWithImpl<$Res>
     implements _$AutoCompleteItemCopyWith<$Res> {
-  __$AutoCompleteItemCopyWithImpl(
-      _AutoCompleteItem _value, $Res Function(_AutoCompleteItem) _then)
+  __$AutoCompleteItemCopyWithImpl(_AutoCompleteItem _value, $Res Function(_AutoCompleteItem) _then)
       : super(_value, (v) => _then(v as _AutoCompleteItem));
 
   @override
@@ -173,14 +166,10 @@ class _$_AutoCompleteItem implements _AutoCompleteItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AutoCompleteItem &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.offset, offset) ||
-                const DeepCollectionEquality().equals(other.offset, offset)) &&
-            (identical(other.length, length) ||
-                const DeepCollectionEquality().equals(other.length, length)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.text, text) || const DeepCollectionEquality().equals(other.text, text)) &&
+            (identical(other.offset, offset) || const DeepCollectionEquality().equals(other.offset, offset)) &&
+            (identical(other.length, length) || const DeepCollectionEquality().equals(other.length, length)));
   }
 
   @override
@@ -198,8 +187,7 @@ class _$_AutoCompleteItem implements _AutoCompleteItem {
 }
 
 abstract class _AutoCompleteItem implements AutoCompleteItem {
-  const factory _AutoCompleteItem(
-      String id, String text, int offset, int length) = _$_AutoCompleteItem;
+  const factory _AutoCompleteItem(String id, String text, int offset, int length) = _$_AutoCompleteItem;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -218,6 +206,5 @@ abstract class _AutoCompleteItem implements AutoCompleteItem {
   int get length => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AutoCompleteItemCopyWith<_AutoCompleteItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AutoCompleteItemCopyWith<_AutoCompleteItem> get copyWith => throw _privateConstructorUsedError;
 }

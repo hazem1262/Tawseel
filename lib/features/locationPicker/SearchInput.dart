@@ -48,8 +48,7 @@ class SearchInputState extends State<SearchInput> {
     }
 
     this.debouncer = Timer(Duration(milliseconds: 500), () {
-      if (editController.text.isNotEmpty)
-        widget.onSearchInput(this.editController.text);
+      if (editController.text.isNotEmpty) widget.onSearchInput(this.editController.text);
     });
   }
 
@@ -59,8 +58,7 @@ class SearchInputState extends State<SearchInput> {
       padding: EdgeInsets.symmetric(horizontal: 8),
       child: Row(
         children: <Widget>[
-          Icon(Icons.search,
-              color: Theme.of(context).textTheme.bodyText2?.color),
+          Icon(Icons.search, color: Theme.of(context).textTheme.bodyText2?.color),
           SizedBox(width: 8),
           Expanded(
             child: TextField(

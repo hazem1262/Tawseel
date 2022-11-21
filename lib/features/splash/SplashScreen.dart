@@ -75,8 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
             if (hasAddress) {
               appContext.openOnly(MainScreenRoute());
             } else {
-              appContext.openOnly(
-                  LocationPickerDialogRoute(oppenedFromMyAddresses: false));
+              appContext.openOnly(LocationPickerDialogRoute(oppenedFromMyAddresses: false));
             }
           });
         } else {

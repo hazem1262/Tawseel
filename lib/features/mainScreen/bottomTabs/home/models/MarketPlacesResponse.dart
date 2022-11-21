@@ -9,11 +9,9 @@ part 'MarketPlacesResponse.freezed.dart';
 
 @freezed
 class MarketPlacesResponse with _$MarketPlacesResponse {
-  const factory MarketPlacesResponse(
-      List<MarketPlaceItem> data, MetaPagination meta) = _MarketPlacesResponse;
+  const factory MarketPlacesResponse(List<MarketPlaceItem> data, MetaPagination meta) = _MarketPlacesResponse;
 
-  factory MarketPlacesResponse.fromJson(Map<String, dynamic> json) =>
-      _$MarketPlacesResponseFromJson(json);
+  factory MarketPlacesResponse.fromJson(Map<String, dynamic> json) => _$MarketPlacesResponseFromJson(json);
 }
 
 @freezed
@@ -36,8 +34,7 @@ class MarketPlaceItem with _$MarketPlaceItem {
     List<CategoryData> sub_categories,
   ) = _MarketPlaceItem;
 
-  factory MarketPlaceItem.fromJson(Map<String, dynamic> json) =>
-      _$MarketPlaceItemFromJson(json);
+  factory MarketPlaceItem.fromJson(Map<String, dynamic> json) => _$MarketPlaceItemFromJson(json);
 }
 
 @freezed
@@ -55,6 +52,5 @@ class CompanyItem with _$CompanyItem {
     bool? isSelected,
   ) = _CompanyItem;
 
-  factory CompanyItem.fromJson(Map<String, dynamic> json) =>
-      _$CompanyItemFromJson(json);
+  factory CompanyItem.fromJson(Map<String, dynamic> json) => _$CompanyItemFromJson(json);
 }

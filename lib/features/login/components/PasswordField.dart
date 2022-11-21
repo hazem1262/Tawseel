@@ -55,9 +55,7 @@ class _PasswordFieldState extends State<PasswordField> {
                 color: tm.isDark() ? Colors.white : hintColor,
               ),
               border: InputBorder.none,
-              hintStyle: TextStyle(
-                  color: tm.isDark() ? Colors.white : hintColor,
-                  fontWeight: FontWeight.w500),
+              hintStyle: TextStyle(color: tm.isDark() ? Colors.white : hintColor, fontWeight: FontWeight.w500),
               hintText: LocaleKeys.password_hint.tr(),
               suffixIcon: IconButton(
                 onPressed: toggleVisibilty,

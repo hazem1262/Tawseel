@@ -78,8 +78,7 @@ mixin _$Data {
 
 /// @nodoc
 abstract class $DataCopyWith<$Res> {
-  factory $DataCopyWith(Data value, $Res Function(Data) then) =
-      _$DataCopyWithImpl<$Res>;
+  factory $DataCopyWith(Data value, $Res Function(Data) then) = _$DataCopyWithImpl<$Res>;
   $Res call(
       {int? id,
       String? name,
@@ -161,8 +160,7 @@ class _$DataCopyWithImpl<$Res> implements $DataCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$DataCopyWith<$Res> implements $DataCopyWith<$Res> {
-  factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
-      __$DataCopyWithImpl<$Res>;
+  factory _$DataCopyWith(_Data value, $Res Function(_Data) then) = __$DataCopyWithImpl<$Res>;
   @override
   $Res call(
       {int? id,
@@ -178,10 +176,8 @@ abstract class _$DataCopyWith<$Res> implements $DataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res>
-    implements _$DataCopyWith<$Res> {
-  __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then)
-      : super(_value, (v) => _then(v as _Data));
+class __$DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res> implements _$DataCopyWith<$Res> {
+  __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then) : super(_value, (v) => _then(v as _Data));
 
   @override
   _Data get _value => super._value as _Data;
@@ -295,30 +291,19 @@ class _$_Data implements _Data {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Data &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.phone, phone) ||
-                const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.isSocial, isSocial) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSocial, isSocial)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.phone, phone) || const DeepCollectionEquality().equals(other.phone, phone)) &&
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.isSocial, isSocial) || const DeepCollectionEquality().equals(other.isSocial, isSocial)) &&
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.phoneVerifiedAt, phoneVerifiedAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.phoneVerifiedAt, phoneVerifiedAt)) &&
+                const DeepCollectionEquality().equals(other.phoneVerifiedAt, phoneVerifiedAt)) &&
             (identical(other.isVerified, isVerified) ||
-                const DeepCollectionEquality()
-                    .equals(other.isVerified, isVerified)) &&
+                const DeepCollectionEquality().equals(other.isVerified, isVerified)) &&
             (identical(other.canReceiveOffers, canReceiveOffers) ||
-                const DeepCollectionEquality()
-                    .equals(other.canReceiveOffers, canReceiveOffers)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality().equals(other.address, address)));
+                const DeepCollectionEquality().equals(other.canReceiveOffers, canReceiveOffers)) &&
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)));
   }
 
   @override
@@ -337,8 +322,7 @@ class _$_Data implements _Data {
 
   @JsonKey(ignore: true)
   @override
-  _$DataCopyWith<_Data> get copyWith =>
-      __$DataCopyWithImpl<_Data>(this, _$identity);
+  _$DataCopyWith<_Data> get copyWith => __$DataCopyWithImpl<_Data>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

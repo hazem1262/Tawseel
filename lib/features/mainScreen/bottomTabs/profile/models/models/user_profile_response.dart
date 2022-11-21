@@ -11,6 +11,5 @@ class UserProfileResponse with _$UserProfileResponse {
     Data? data,
   }) = _UserProfileResponse;
 
-  factory UserProfileResponse.fromJson(Map<String, dynamic> json) =>
-      _$UserProfileResponseFromJson(json);
+  factory UserProfileResponse.fromJson(Map<String, dynamic> json) => _$UserProfileResponseFromJson(json);
 }

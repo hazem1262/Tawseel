@@ -13,10 +13,8 @@ class FavoritesRepository with NetworkHandler implements IFavoritesRepository {
   FavoritesRepository(this.api);
 
   @override
-  Future<FavoritesResponse> getFavorites([int page = 1]) =>
-      networkHandler(() => api.getFavorites(page));
+  Future<FavoritesResponse> getFavorites([int page = 1]) => networkHandler(() => api.getFavorites(page));
 
   @override
-  Future<String> removeFromFavorites(int id) =>
-      networkHandler(() => api.removeFromFavorites(id));
+  Future<String> removeFromFavorites(int id) => networkHandler(() => api.removeFromFavorites(id));
 }

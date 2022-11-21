@@ -2,7 +2,6 @@
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tawseel/data/remote/AppService.dart';
 import 'package:tawseel/data/remote/app_repo.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -60,8 +59,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
               response_text.isNotEmpty
                   ? Container(
                       margin: EdgeInsets.symmetric(horizontal: 16),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
                       decoration: BoxDecoration(
                         color: tm.isDark() ? Colors.black87 : Colors.white,
                         borderRadius: BorderRadius.circular(25),
@@ -76,10 +74,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                       child: Text(
                         response_text,
                         style: theme.textTheme.headline5!.copyWith(
-                            fontSize: SmallTitleTextSize,
-                            color: tm.isDark()
-                                ? ProfileActionsColor_Dark
-                                : textColor),
+                            fontSize: SmallTitleTextSize, color: tm.isDark() ? ProfileActionsColor_Dark : textColor),
                       ),
                     )
                   : Center(child: CupertinoActivityIndicator()),

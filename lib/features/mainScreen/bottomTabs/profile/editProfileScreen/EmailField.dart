@@ -55,9 +55,7 @@ class _EmailFieldState extends State<EmailField> {
                 color: tm.isDark() ? Colors.white : hintColor,
               ),
               border: InputBorder.none,
-              hintStyle: TextStyle(
-                  color: tm.isDark() ? Colors.white : hintColor,
-                  fontWeight: FontWeight.w500),
+              hintStyle: TextStyle(color: tm.isDark() ? Colors.white : hintColor, fontWeight: FontWeight.w500),
               hintText: LocaleKeys.email_hint.tr(),
             ),
             validator: (text) => onTextChange(text),

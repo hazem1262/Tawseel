@@ -87,8 +87,7 @@ mixin NetworkHandler {
       // remove last space casued by \n with the join
       return errors.substring(0, errors.length - 1);
     } catch (e) {
-      debugPrint(
-          "-------------------> error happened while getting the detailed field errors :\n $e");
+      debugPrint("-------------------> error happened while getting the detailed field errors :\n $e");
       return '';
     }
   }

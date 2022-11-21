@@ -6,24 +6,17 @@ part of 'MarketPlacesResponse.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MarketPlacesResponse _$$_MarketPlacesResponseFromJson(
-        Map<String, dynamic> json) =>
-    _$_MarketPlacesResponse(
-      (json['data'] as List<dynamic>)
-          .map((e) => MarketPlaceItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
+_$_MarketPlacesResponse _$$_MarketPlacesResponseFromJson(Map<String, dynamic> json) => _$_MarketPlacesResponse(
+      (json['data'] as List<dynamic>).map((e) => MarketPlaceItem.fromJson(e as Map<String, dynamic>)).toList(),
       MetaPagination.fromJson(json['meta'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MarketPlacesResponseToJson(
-        _$_MarketPlacesResponse instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_MarketPlacesResponseToJson(_$_MarketPlacesResponse instance) => <String, dynamic>{
       'data': instance.data,
       'meta': instance.meta,
     };
 
-_$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) =>
-    _$_MarketPlaceItem(
+_$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) => _$_MarketPlaceItem(
       json['id'] as int,
       json['name'] as String?,
       json['description'] as String?,
@@ -36,19 +29,14 @@ _$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) =>
       json['distance'] as String?,
       json['is_favorite'] as bool,
       json['is_loading'] as bool?,
-      (json['companies'] as List<dynamic>)
-          .map((e) => CompanyItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      (json['companies'] as List<dynamic>).map((e) => CompanyItem.fromJson(e as Map<String, dynamic>)).toList(),
       (json['parent_categories'] as List<dynamic>)
           .map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
           .toList(),
-      (json['sub_categories'] as List<dynamic>)
-          .map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      (json['sub_categories'] as List<dynamic>).map((e) => CategoryData.fromJson(e as Map<String, dynamic>)).toList(),
     );
 
-Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
@@ -66,8 +54,7 @@ Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) =>
       'sub_categories': instance.sub_categories,
     };
 
-_$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) =>
-    _$_CompanyItem(
+_$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) => _$_CompanyItem(
       json['id'] as int,
       json['name'] as String,
       json['phone'] as String,
@@ -80,8 +67,7 @@ _$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) =>
       json['isSelected'] as bool?,
     );
 
-Map<String, dynamic> _$$_CompanyItemToJson(_$_CompanyItem instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_CompanyItemToJson(_$_CompanyItem instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'phone': instance.phone,

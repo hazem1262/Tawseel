@@ -48,14 +48,12 @@ mixin _$LocalizationItem {
   String get tapToSelectLocation => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LocalizationItemCopyWith<LocalizationItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LocalizationItemCopyWith<LocalizationItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocalizationItemCopyWith<$Res> {
-  factory $LocalizationItemCopyWith(
-          LocalizationItem value, $Res Function(LocalizationItem) then) =
+  factory $LocalizationItemCopyWith(LocalizationItem value, $Res Function(LocalizationItem) then) =
       _$LocalizationItemCopyWithImpl<$Res>;
   $Res call(
       {String languageCode,
@@ -67,8 +65,7 @@ abstract class $LocalizationItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LocalizationItemCopyWithImpl<$Res>
-    implements $LocalizationItemCopyWith<$Res> {
+class _$LocalizationItemCopyWithImpl<$Res> implements $LocalizationItemCopyWith<$Res> {
   _$LocalizationItemCopyWithImpl(this._value, this._then);
 
   final LocalizationItem _value;
@@ -114,10 +111,8 @@ class _$LocalizationItemCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LocalizationItemCopyWith<$Res>
-    implements $LocalizationItemCopyWith<$Res> {
-  factory _$LocalizationItemCopyWith(
-          _LocalizationItem value, $Res Function(_LocalizationItem) then) =
+abstract class _$LocalizationItemCopyWith<$Res> implements $LocalizationItemCopyWith<$Res> {
+  factory _$LocalizationItemCopyWith(_LocalizationItem value, $Res Function(_LocalizationItem) then) =
       __$LocalizationItemCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -130,11 +125,9 @@ abstract class _$LocalizationItemCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LocalizationItemCopyWithImpl<$Res>
-    extends _$LocalizationItemCopyWithImpl<$Res>
+class __$LocalizationItemCopyWithImpl<$Res> extends _$LocalizationItemCopyWithImpl<$Res>
     implements _$LocalizationItemCopyWith<$Res> {
-  __$LocalizationItemCopyWithImpl(
-      _LocalizationItem _value, $Res Function(_LocalizationItem) _then)
+  __$LocalizationItemCopyWithImpl(_LocalizationItem _value, $Res Function(_LocalizationItem) _then)
       : super(_value, (v) => _then(v as _LocalizationItem));
 
   @override
@@ -218,22 +211,16 @@ class _$_LocalizationItem implements _LocalizationItem {
     return identical(this, other) ||
         (other is _LocalizationItem &&
             (identical(other.languageCode, languageCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.languageCode, languageCode)) &&
-            (identical(other.nearBy, nearBy) ||
-                const DeepCollectionEquality().equals(other.nearBy, nearBy)) &&
+                const DeepCollectionEquality().equals(other.languageCode, languageCode)) &&
+            (identical(other.nearBy, nearBy) || const DeepCollectionEquality().equals(other.nearBy, nearBy)) &&
             (identical(other.findingPlace, findingPlace) ||
-                const DeepCollectionEquality()
-                    .equals(other.findingPlace, findingPlace)) &&
+                const DeepCollectionEquality().equals(other.findingPlace, findingPlace)) &&
             (identical(other.noResultsFound, noResultsFound) ||
-                const DeepCollectionEquality()
-                    .equals(other.noResultsFound, noResultsFound)) &&
+                const DeepCollectionEquality().equals(other.noResultsFound, noResultsFound)) &&
             (identical(other.unnamedLocation, unnamedLocation) ||
-                const DeepCollectionEquality()
-                    .equals(other.unnamedLocation, unnamedLocation)) &&
+                const DeepCollectionEquality().equals(other.unnamedLocation, unnamedLocation)) &&
             (identical(other.tapToSelectLocation, tapToSelectLocation) ||
-                const DeepCollectionEquality()
-                    .equals(other.tapToSelectLocation, tapToSelectLocation)));
+                const DeepCollectionEquality().equals(other.tapToSelectLocation, tapToSelectLocation)));
   }
 
   @override
@@ -275,6 +262,5 @@ abstract class _LocalizationItem implements LocalizationItem {
   String get tapToSelectLocation => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LocalizationItemCopyWith<_LocalizationItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$LocalizationItemCopyWith<_LocalizationItem> get copyWith => throw _privateConstructorUsedError;
 }

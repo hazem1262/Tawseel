@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tawseel/main.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/theme/style.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -52,9 +51,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
                 color: tm.isDark() ? Colors.white : hintColor,
               ),
               border: InputBorder.none,
-              hintStyle: TextStyle(
-                  color: tm.isDark() ? Colors.white : hintColor,
-                  fontWeight: FontWeight.w500),
+              hintStyle: TextStyle(color: tm.isDark() ? Colors.white : hintColor, fontWeight: FontWeight.w500),
               hintText: LocaleKeys.phone_number_hint.tr(),
             ),
             validator: (phone) => onPhoneChange(phone),
@@ -92,5 +89,4 @@ String phoneValidationError(String? phone) => (phone == null || phone.isEmpty)
         : "";
 
 const saudiPhoneRegex = "^(05)(5|0|3|6|4|9|1|8|7)([0-9]{7})\$";
-var phoneRegx =
-    new RegExp(saudiPhoneRegex, caseSensitive: false, multiLine: false);
+var phoneRegx = new RegExp(saudiPhoneRegex, caseSensitive: false, multiLine: false);

@@ -43,14 +43,12 @@ mixin _$MarketPlacesResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MarketPlacesResponseCopyWith<MarketPlacesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MarketPlacesResponseCopyWith<MarketPlacesResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MarketPlacesResponseCopyWith<$Res> {
-  factory $MarketPlacesResponseCopyWith(MarketPlacesResponse value,
-          $Res Function(MarketPlacesResponse) then) =
+  factory $MarketPlacesResponseCopyWith(MarketPlacesResponse value, $Res Function(MarketPlacesResponse) then) =
       _$MarketPlacesResponseCopyWithImpl<$Res>;
   $Res call({List<MarketPlaceItem> data, MetaPagination meta});
 
@@ -58,8 +56,7 @@ abstract class $MarketPlacesResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MarketPlacesResponseCopyWithImpl<$Res>
-    implements $MarketPlacesResponseCopyWith<$Res> {
+class _$MarketPlacesResponseCopyWithImpl<$Res> implements $MarketPlacesResponseCopyWith<$Res> {
   _$MarketPlacesResponseCopyWithImpl(this._value, this._then);
 
   final MarketPlacesResponse _value;
@@ -92,10 +89,8 @@ class _$MarketPlacesResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$MarketPlacesResponseCopyWith<$Res>
-    implements $MarketPlacesResponseCopyWith<$Res> {
-  factory _$MarketPlacesResponseCopyWith(_MarketPlacesResponse value,
-          $Res Function(_MarketPlacesResponse) then) =
+abstract class _$MarketPlacesResponseCopyWith<$Res> implements $MarketPlacesResponseCopyWith<$Res> {
+  factory _$MarketPlacesResponseCopyWith(_MarketPlacesResponse value, $Res Function(_MarketPlacesResponse) then) =
       __$MarketPlacesResponseCopyWithImpl<$Res>;
   @override
   $Res call({List<MarketPlaceItem> data, MetaPagination meta});
@@ -105,11 +100,9 @@ abstract class _$MarketPlacesResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$MarketPlacesResponseCopyWithImpl<$Res>
-    extends _$MarketPlacesResponseCopyWithImpl<$Res>
+class __$MarketPlacesResponseCopyWithImpl<$Res> extends _$MarketPlacesResponseCopyWithImpl<$Res>
     implements _$MarketPlacesResponseCopyWith<$Res> {
-  __$MarketPlacesResponseCopyWithImpl(
-      _MarketPlacesResponse _value, $Res Function(_MarketPlacesResponse) _then)
+  __$MarketPlacesResponseCopyWithImpl(_MarketPlacesResponse _value, $Res Function(_MarketPlacesResponse) _then)
       : super(_value, (v) => _then(v as _MarketPlacesResponse));
 
   @override
@@ -138,8 +131,7 @@ class __$MarketPlacesResponseCopyWithImpl<$Res>
 class _$_MarketPlacesResponse implements _MarketPlacesResponse {
   const _$_MarketPlacesResponse(this.data, this.meta);
 
-  factory _$_MarketPlacesResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_MarketPlacesResponseFromJson(json);
+  factory _$_MarketPlacesResponse.fromJson(Map<String, dynamic> json) => _$$_MarketPlacesResponseFromJson(json);
 
   @override
   final List<MarketPlaceItem> data;
@@ -155,23 +147,18 @@ class _$_MarketPlacesResponse implements _MarketPlacesResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MarketPlacesResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.meta, meta) ||
-                const DeepCollectionEquality().equals(other.meta, meta)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)) &&
+            (identical(other.meta, meta) || const DeepCollectionEquality().equals(other.meta, meta)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(meta);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data) ^ const DeepCollectionEquality().hash(meta);
 
   @JsonKey(ignore: true)
   @override
   _$MarketPlacesResponseCopyWith<_MarketPlacesResponse> get copyWith =>
-      __$MarketPlacesResponseCopyWithImpl<_MarketPlacesResponse>(
-          this, _$identity);
+      __$MarketPlacesResponseCopyWithImpl<_MarketPlacesResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -180,12 +167,9 @@ class _$_MarketPlacesResponse implements _MarketPlacesResponse {
 }
 
 abstract class _MarketPlacesResponse implements MarketPlacesResponse {
-  const factory _MarketPlacesResponse(
-          List<MarketPlaceItem> data, MetaPagination meta) =
-      _$_MarketPlacesResponse;
+  const factory _MarketPlacesResponse(List<MarketPlaceItem> data, MetaPagination meta) = _$_MarketPlacesResponse;
 
-  factory _MarketPlacesResponse.fromJson(Map<String, dynamic> json) =
-      _$_MarketPlacesResponse.fromJson;
+  factory _MarketPlacesResponse.fromJson(Map<String, dynamic> json) = _$_MarketPlacesResponse.fromJson;
 
   @override
   List<MarketPlaceItem> get data => throw _privateConstructorUsedError;
@@ -193,8 +177,7 @@ abstract class _MarketPlacesResponse implements MarketPlacesResponse {
   MetaPagination get meta => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MarketPlacesResponseCopyWith<_MarketPlacesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$MarketPlacesResponseCopyWith<_MarketPlacesResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 MarketPlaceItem _$MarketPlaceItemFromJson(Map<String, dynamic> json) {
@@ -263,20 +246,17 @@ mixin _$MarketPlaceItem {
   bool get is_favorite => throw _privateConstructorUsedError;
   bool? get is_loading => throw _privateConstructorUsedError;
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
-  List<CategoryData> get parent_categories =>
-      throw _privateConstructorUsedError;
+  List<CategoryData> get parent_categories => throw _privateConstructorUsedError;
   List<CategoryData> get sub_categories => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MarketPlaceItemCopyWith<MarketPlaceItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MarketPlaceItemCopyWith<MarketPlaceItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MarketPlaceItemCopyWith<$Res> {
-  factory $MarketPlaceItemCopyWith(
-          MarketPlaceItem value, $Res Function(MarketPlaceItem) then) =
+  factory $MarketPlaceItemCopyWith(MarketPlaceItem value, $Res Function(MarketPlaceItem) then) =
       _$MarketPlaceItemCopyWithImpl<$Res>;
   $Res call(
       {int id,
@@ -297,8 +277,7 @@ abstract class $MarketPlaceItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MarketPlaceItemCopyWithImpl<$Res>
-    implements $MarketPlaceItemCopyWith<$Res> {
+class _$MarketPlaceItemCopyWithImpl<$Res> implements $MarketPlaceItemCopyWith<$Res> {
   _$MarketPlaceItemCopyWithImpl(this._value, this._then);
 
   final MarketPlaceItem _value;
@@ -389,10 +368,8 @@ class _$MarketPlaceItemCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$MarketPlaceItemCopyWith<$Res>
-    implements $MarketPlaceItemCopyWith<$Res> {
-  factory _$MarketPlaceItemCopyWith(
-          _MarketPlaceItem value, $Res Function(_MarketPlaceItem) then) =
+abstract class _$MarketPlaceItemCopyWith<$Res> implements $MarketPlaceItemCopyWith<$Res> {
+  factory _$MarketPlaceItemCopyWith(_MarketPlaceItem value, $Res Function(_MarketPlaceItem) then) =
       __$MarketPlaceItemCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -414,11 +391,9 @@ abstract class _$MarketPlaceItemCopyWith<$Res>
 }
 
 /// @nodoc
-class __$MarketPlaceItemCopyWithImpl<$Res>
-    extends _$MarketPlaceItemCopyWithImpl<$Res>
+class __$MarketPlaceItemCopyWithImpl<$Res> extends _$MarketPlaceItemCopyWithImpl<$Res>
     implements _$MarketPlaceItemCopyWith<$Res> {
-  __$MarketPlaceItemCopyWithImpl(
-      _MarketPlaceItem _value, $Res Function(_MarketPlaceItem) _then)
+  __$MarketPlaceItemCopyWithImpl(_MarketPlaceItem _value, $Res Function(_MarketPlaceItem) _then)
       : super(_value, (v) => _then(v as _MarketPlaceItem));
 
   @override
@@ -527,8 +502,7 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       this.parent_categories,
       this.sub_categories);
 
-  factory _$_MarketPlaceItem.fromJson(Map<String, dynamic> json) =>
-      _$$_MarketPlaceItemFromJson(json);
+  factory _$_MarketPlaceItem.fromJson(Map<String, dynamic> json) => _$$_MarketPlaceItemFromJson(json);
 
   @override
   final int id;
@@ -570,46 +544,30 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MarketPlaceItem &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.min_order, min_order) ||
-                const DeepCollectionEquality()
-                    .equals(other.min_order, min_order)) &&
+                const DeepCollectionEquality().equals(other.min_order, min_order)) &&
             (identical(other.delivery_time, delivery_time) ||
-                const DeepCollectionEquality()
-                    .equals(other.delivery_time, delivery_time)) &&
+                const DeepCollectionEquality().equals(other.delivery_time, delivery_time)) &&
             (identical(other.delivery_cost, delivery_cost) ||
-                const DeepCollectionEquality()
-                    .equals(other.delivery_cost, delivery_cost)) &&
-            (identical(other.rating, rating) ||
-                const DeepCollectionEquality().equals(other.rating, rating)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.logo, logo) ||
-                const DeepCollectionEquality().equals(other.logo, logo)) &&
-            (identical(other.distance, distance) ||
-                const DeepCollectionEquality()
-                    .equals(other.distance, distance)) &&
+                const DeepCollectionEquality().equals(other.delivery_cost, delivery_cost)) &&
+            (identical(other.rating, rating) || const DeepCollectionEquality().equals(other.rating, rating)) &&
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.logo, logo) || const DeepCollectionEquality().equals(other.logo, logo)) &&
+            (identical(other.distance, distance) || const DeepCollectionEquality().equals(other.distance, distance)) &&
             (identical(other.is_favorite, is_favorite) ||
-                const DeepCollectionEquality()
-                    .equals(other.is_favorite, is_favorite)) &&
+                const DeepCollectionEquality().equals(other.is_favorite, is_favorite)) &&
             (identical(other.is_loading, is_loading) ||
-                const DeepCollectionEquality()
-                    .equals(other.is_loading, is_loading)) &&
+                const DeepCollectionEquality().equals(other.is_loading, is_loading)) &&
             (identical(other.companies, companies) ||
-                const DeepCollectionEquality()
-                    .equals(other.companies, companies)) &&
+                const DeepCollectionEquality().equals(other.companies, companies)) &&
             (identical(other.parent_categories, parent_categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.parent_categories, parent_categories)) &&
+                const DeepCollectionEquality().equals(other.parent_categories, parent_categories)) &&
             (identical(other.sub_categories, sub_categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.sub_categories, sub_categories)));
+                const DeepCollectionEquality().equals(other.sub_categories, sub_categories)));
   }
 
   @override
@@ -660,8 +618,7 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
       List<CategoryData> parent_categories,
       List<CategoryData> sub_categories) = _$_MarketPlaceItem;
 
-  factory _MarketPlaceItem.fromJson(Map<String, dynamic> json) =
-      _$_MarketPlaceItem.fromJson;
+  factory _MarketPlaceItem.fromJson(Map<String, dynamic> json) = _$_MarketPlaceItem.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -690,14 +647,12 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
   @override
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
   @override
-  List<CategoryData> get parent_categories =>
-      throw _privateConstructorUsedError;
+  List<CategoryData> get parent_categories => throw _privateConstructorUsedError;
   @override
   List<CategoryData> get sub_categories => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MarketPlaceItemCopyWith<_MarketPlaceItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$MarketPlaceItemCopyWith<_MarketPlaceItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 CompanyItem _$CompanyItemFromJson(Map<String, dynamic> json) {
@@ -708,17 +663,8 @@ CompanyItem _$CompanyItemFromJson(Map<String, dynamic> json) {
 class _$CompanyItemTearOff {
   const _$CompanyItemTearOff();
 
-  _CompanyItem call(
-      int id,
-      String name,
-      String phone,
-      String android_app_link,
-      String ios_app_link,
-      String? delivery_cost,
-      String? min_order,
-      String image,
-      bool is_best,
-      bool? isSelected) {
+  _CompanyItem call(int id, String name, String phone, String android_app_link, String ios_app_link,
+      String? delivery_cost, String? min_order, String image, bool is_best, bool? isSelected) {
     return _CompanyItem(
       id,
       name,
@@ -756,15 +702,12 @@ mixin _$CompanyItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CompanyItemCopyWith<CompanyItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CompanyItemCopyWith<CompanyItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CompanyItemCopyWith<$Res> {
-  factory $CompanyItemCopyWith(
-          CompanyItem value, $Res Function(CompanyItem) then) =
-      _$CompanyItemCopyWithImpl<$Res>;
+  factory $CompanyItemCopyWith(CompanyItem value, $Res Function(CompanyItem) then) = _$CompanyItemCopyWithImpl<$Res>;
   $Res call(
       {int id,
       String name,
@@ -845,10 +788,8 @@ class _$CompanyItemCopyWithImpl<$Res> implements $CompanyItemCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CompanyItemCopyWith<$Res>
-    implements $CompanyItemCopyWith<$Res> {
-  factory _$CompanyItemCopyWith(
-          _CompanyItem value, $Res Function(_CompanyItem) then) =
+abstract class _$CompanyItemCopyWith<$Res> implements $CompanyItemCopyWith<$Res> {
+  factory _$CompanyItemCopyWith(_CompanyItem value, $Res Function(_CompanyItem) then) =
       __$CompanyItemCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -865,10 +806,8 @@ abstract class _$CompanyItemCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CompanyItemCopyWithImpl<$Res> extends _$CompanyItemCopyWithImpl<$Res>
-    implements _$CompanyItemCopyWith<$Res> {
-  __$CompanyItemCopyWithImpl(
-      _CompanyItem _value, $Res Function(_CompanyItem) _then)
+class __$CompanyItemCopyWithImpl<$Res> extends _$CompanyItemCopyWithImpl<$Res> implements _$CompanyItemCopyWith<$Res> {
+  __$CompanyItemCopyWithImpl(_CompanyItem _value, $Res Function(_CompanyItem) _then)
       : super(_value, (v) => _then(v as _CompanyItem));
 
   @override
@@ -935,20 +874,10 @@ class __$CompanyItemCopyWithImpl<$Res> extends _$CompanyItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CompanyItem implements _CompanyItem {
-  const _$_CompanyItem(
-      this.id,
-      this.name,
-      this.phone,
-      this.android_app_link,
-      this.ios_app_link,
-      this.delivery_cost,
-      this.min_order,
-      this.image,
-      this.is_best,
-      this.isSelected);
+  const _$_CompanyItem(this.id, this.name, this.phone, this.android_app_link, this.ios_app_link, this.delivery_cost,
+      this.min_order, this.image, this.is_best, this.isSelected);
 
-  factory _$_CompanyItem.fromJson(Map<String, dynamic> json) =>
-      _$$_CompanyItemFromJson(json);
+  factory _$_CompanyItem.fromJson(Map<String, dynamic> json) => _$$_CompanyItemFromJson(json);
 
   @override
   final int id;
@@ -980,32 +909,21 @@ class _$_CompanyItem implements _CompanyItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CompanyItem &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.phone, phone) ||
-                const DeepCollectionEquality().equals(other.phone, phone)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.phone, phone) || const DeepCollectionEquality().equals(other.phone, phone)) &&
             (identical(other.android_app_link, android_app_link) ||
-                const DeepCollectionEquality()
-                    .equals(other.android_app_link, android_app_link)) &&
+                const DeepCollectionEquality().equals(other.android_app_link, android_app_link)) &&
             (identical(other.ios_app_link, ios_app_link) ||
-                const DeepCollectionEquality()
-                    .equals(other.ios_app_link, ios_app_link)) &&
+                const DeepCollectionEquality().equals(other.ios_app_link, ios_app_link)) &&
             (identical(other.delivery_cost, delivery_cost) ||
-                const DeepCollectionEquality()
-                    .equals(other.delivery_cost, delivery_cost)) &&
+                const DeepCollectionEquality().equals(other.delivery_cost, delivery_cost)) &&
             (identical(other.min_order, min_order) ||
-                const DeepCollectionEquality()
-                    .equals(other.min_order, min_order)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.is_best, is_best) ||
-                const DeepCollectionEquality()
-                    .equals(other.is_best, is_best)) &&
+                const DeepCollectionEquality().equals(other.min_order, min_order)) &&
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.is_best, is_best) || const DeepCollectionEquality().equals(other.is_best, is_best)) &&
             (identical(other.isSelected, isSelected) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSelected, isSelected)));
+                const DeepCollectionEquality().equals(other.isSelected, isSelected)));
   }
 
   @override
@@ -1024,8 +942,7 @@ class _$_CompanyItem implements _CompanyItem {
 
   @JsonKey(ignore: true)
   @override
-  _$CompanyItemCopyWith<_CompanyItem> get copyWith =>
-      __$CompanyItemCopyWithImpl<_CompanyItem>(this, _$identity);
+  _$CompanyItemCopyWith<_CompanyItem> get copyWith => __$CompanyItemCopyWithImpl<_CompanyItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1034,20 +951,10 @@ class _$_CompanyItem implements _CompanyItem {
 }
 
 abstract class _CompanyItem implements CompanyItem {
-  const factory _CompanyItem(
-      int id,
-      String name,
-      String phone,
-      String android_app_link,
-      String ios_app_link,
-      String? delivery_cost,
-      String? min_order,
-      String image,
-      bool is_best,
-      bool? isSelected) = _$_CompanyItem;
+  const factory _CompanyItem(int id, String name, String phone, String android_app_link, String ios_app_link,
+      String? delivery_cost, String? min_order, String image, bool is_best, bool? isSelected) = _$_CompanyItem;
 
-  factory _CompanyItem.fromJson(Map<String, dynamic> json) =
-      _$_CompanyItem.fromJson;
+  factory _CompanyItem.fromJson(Map<String, dynamic> json) = _$_CompanyItem.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -1071,6 +978,5 @@ abstract class _CompanyItem implements CompanyItem {
   bool? get isSelected => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CompanyItemCopyWith<_CompanyItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$CompanyItemCopyWith<_CompanyItem> get copyWith => throw _privateConstructorUsedError;
 }

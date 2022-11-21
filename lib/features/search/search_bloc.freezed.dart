@@ -49,8 +49,7 @@ class _$SearchBlocEventTearOff {
     );
   }
 
-  SetSearchFilterData setSearchFilterDate(
-      FilterDate filterDate, bool openFilter) {
+  SetSearchFilterData setSearchFilterDate(FilterDate filterDate, bool openFilter) {
     return SetSearchFilterData(
       filterDate,
       openFilter,
@@ -88,15 +87,9 @@ mixin _$SearchBlocEvent {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) =>
       throw _privateConstructorUsedError;
@@ -108,15 +101,9 @@ mixin _$SearchBlocEvent {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) =>
       throw _privateConstructorUsedError;
@@ -128,15 +115,9 @@ mixin _$SearchBlocEvent {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) =>
@@ -144,13 +125,10 @@ mixin _$SearchBlocEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -160,8 +138,7 @@ mixin _$SearchBlocEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -173,8 +150,7 @@ mixin _$SearchBlocEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -187,14 +163,12 @@ mixin _$SearchBlocEvent {
 
 /// @nodoc
 abstract class $SearchBlocEventCopyWith<$Res> {
-  factory $SearchBlocEventCopyWith(
-          SearchBlocEvent value, $Res Function(SearchBlocEvent) then) =
+  factory $SearchBlocEventCopyWith(SearchBlocEvent value, $Res Function(SearchBlocEvent) then) =
       _$SearchBlocEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SearchBlocEventCopyWithImpl<$Res>
-    implements $SearchBlocEventCopyWith<$Res> {
+class _$SearchBlocEventCopyWithImpl<$Res> implements $SearchBlocEventCopyWith<$Res> {
   _$SearchBlocEventCopyWithImpl(this._value, this._then);
 
   final SearchBlocEvent _value;
@@ -204,18 +178,15 @@ class _$SearchBlocEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $GetSearchMarketPlacesCopyWith<$Res> {
-  factory $GetSearchMarketPlacesCopyWith(GetSearchMarketPlaces value,
-          $Res Function(GetSearchMarketPlaces) then) =
+  factory $GetSearchMarketPlacesCopyWith(GetSearchMarketPlaces value, $Res Function(GetSearchMarketPlaces) then) =
       _$GetSearchMarketPlacesCopyWithImpl<$Res>;
   $Res call({String? query});
 }
 
 /// @nodoc
-class _$GetSearchMarketPlacesCopyWithImpl<$Res>
-    extends _$SearchBlocEventCopyWithImpl<$Res>
+class _$GetSearchMarketPlacesCopyWithImpl<$Res> extends _$SearchBlocEventCopyWithImpl<$Res>
     implements $GetSearchMarketPlacesCopyWith<$Res> {
-  _$GetSearchMarketPlacesCopyWithImpl(
-      GetSearchMarketPlaces _value, $Res Function(GetSearchMarketPlaces) _then)
+  _$GetSearchMarketPlacesCopyWithImpl(GetSearchMarketPlaces _value, $Res Function(GetSearchMarketPlaces) _then)
       : super(_value, (v) => _then(v as GetSearchMarketPlaces));
 
   @override
@@ -251,19 +222,16 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetSearchMarketPlaces &&
-            (identical(other.query, query) ||
-                const DeepCollectionEquality().equals(other.query, query)));
+            (identical(other.query, query) || const DeepCollectionEquality().equals(other.query, query)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
 
   @JsonKey(ignore: true)
   @override
   $GetSearchMarketPlacesCopyWith<GetSearchMarketPlaces> get copyWith =>
-      _$GetSearchMarketPlacesCopyWithImpl<GetSearchMarketPlaces>(
-          this, _$identity);
+      _$GetSearchMarketPlacesCopyWithImpl<GetSearchMarketPlaces>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -274,15 +242,9 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) {
     return searchMarketPlaces(query);
@@ -297,15 +259,9 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) {
     return searchMarketPlaces?.call(query);
@@ -320,15 +276,9 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) {
@@ -342,13 +292,10 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -361,8 +308,7 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -377,8 +323,7 @@ class _$GetSearchMarketPlaces implements GetSearchMarketPlaces {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -398,29 +343,25 @@ abstract class GetSearchMarketPlaces implements SearchBlocEvent {
 
   String? get query => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetSearchMarketPlacesCopyWith<GetSearchMarketPlaces> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetSearchMarketPlacesCopyWith<GetSearchMarketPlaces> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddMarketPlaceToFavoriteCopyWith<$Res> {
-  factory $AddMarketPlaceToFavoriteCopyWith(AddMarketPlaceToFavorite value,
-          $Res Function(AddMarketPlaceToFavorite) then) =
+  factory $AddMarketPlaceToFavoriteCopyWith(
+          AddMarketPlaceToFavorite value, $Res Function(AddMarketPlaceToFavorite) then) =
       _$AddMarketPlaceToFavoriteCopyWithImpl<$Res>;
   $Res call({int id});
 }
 
 /// @nodoc
-class _$AddMarketPlaceToFavoriteCopyWithImpl<$Res>
-    extends _$SearchBlocEventCopyWithImpl<$Res>
+class _$AddMarketPlaceToFavoriteCopyWithImpl<$Res> extends _$SearchBlocEventCopyWithImpl<$Res>
     implements $AddMarketPlaceToFavoriteCopyWith<$Res> {
-  _$AddMarketPlaceToFavoriteCopyWithImpl(AddMarketPlaceToFavorite _value,
-      $Res Function(AddMarketPlaceToFavorite) _then)
+  _$AddMarketPlaceToFavoriteCopyWithImpl(AddMarketPlaceToFavorite _value, $Res Function(AddMarketPlaceToFavorite) _then)
       : super(_value, (v) => _then(v as AddMarketPlaceToFavorite));
 
   @override
-  AddMarketPlaceToFavorite get _value =>
-      super._value as AddMarketPlaceToFavorite;
+  AddMarketPlaceToFavorite get _value => super._value as AddMarketPlaceToFavorite;
 
   @override
   $Res call({
@@ -452,19 +393,16 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is AddMarketPlaceToFavorite &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
   $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith =>
-      _$AddMarketPlaceToFavoriteCopyWithImpl<AddMarketPlaceToFavorite>(
-          this, _$identity);
+      _$AddMarketPlaceToFavoriteCopyWithImpl<AddMarketPlaceToFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -475,15 +413,9 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) {
     return addMarketPlaceToFavorite(id);
@@ -498,15 +430,9 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) {
     return addMarketPlaceToFavorite?.call(id);
@@ -521,15 +447,9 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) {
@@ -543,13 +463,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -562,8 +479,7 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -578,8 +494,7 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -599,31 +514,26 @@ abstract class AddMarketPlaceToFavorite implements SearchBlocEvent {
 
   int get id => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   factory $RemoveMarketPlaceFromFavoriteCopyWith(
-          RemoveMarketPlaceFromFavorite value,
-          $Res Function(RemoveMarketPlaceFromFavorite) then) =
+          RemoveMarketPlaceFromFavorite value, $Res Function(RemoveMarketPlaceFromFavorite) then) =
       _$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>;
   $Res call({int id});
 }
 
 /// @nodoc
-class _$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>
-    extends _$SearchBlocEventCopyWithImpl<$Res>
+class _$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res> extends _$SearchBlocEventCopyWithImpl<$Res>
     implements $RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   _$RemoveMarketPlaceFromFavoriteCopyWithImpl(
-      RemoveMarketPlaceFromFavorite _value,
-      $Res Function(RemoveMarketPlaceFromFavorite) _then)
+      RemoveMarketPlaceFromFavorite _value, $Res Function(RemoveMarketPlaceFromFavorite) _then)
       : super(_value, (v) => _then(v as RemoveMarketPlaceFromFavorite));
 
   @override
-  RemoveMarketPlaceFromFavorite get _value =>
-      super._value as RemoveMarketPlaceFromFavorite;
+  RemoveMarketPlaceFromFavorite get _value => super._value as RemoveMarketPlaceFromFavorite;
 
   @override
   $Res call({
@@ -655,19 +565,16 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is RemoveMarketPlaceFromFavorite &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
-  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite>
-      get copyWith => _$RemoveMarketPlaceFromFavoriteCopyWithImpl<
-          RemoveMarketPlaceFromFavorite>(this, _$identity);
+  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite> get copyWith =>
+      _$RemoveMarketPlaceFromFavoriteCopyWithImpl<RemoveMarketPlaceFromFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -678,15 +585,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) {
     return removeMarketPlaceToFavorite(id);
@@ -701,15 +602,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) {
     return removeMarketPlaceToFavorite?.call(id);
@@ -724,15 +619,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) {
@@ -746,13 +635,10 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -765,8 +651,7 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -781,8 +666,7 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -798,28 +682,24 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
 }
 
 abstract class RemoveMarketPlaceFromFavorite implements SearchBlocEvent {
-  const factory RemoveMarketPlaceFromFavorite(int id) =
-      _$RemoveMarketPlaceFromFavorite;
+  const factory RemoveMarketPlaceFromFavorite(int id) = _$RemoveMarketPlaceFromFavorite;
 
   int get id => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite>
-      get copyWith => throw _privateConstructorUsedError;
+  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResetSearchRefreshDataCopyWith<$Res> {
-  factory $ResetSearchRefreshDataCopyWith(ResetSearchRefreshData value,
-          $Res Function(ResetSearchRefreshData) then) =
+  factory $ResetSearchRefreshDataCopyWith(ResetSearchRefreshData value, $Res Function(ResetSearchRefreshData) then) =
       _$ResetSearchRefreshDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetSearchRefreshDataCopyWithImpl<$Res>
-    extends _$SearchBlocEventCopyWithImpl<$Res>
+class _$ResetSearchRefreshDataCopyWithImpl<$Res> extends _$SearchBlocEventCopyWithImpl<$Res>
     implements $ResetSearchRefreshDataCopyWith<$Res> {
-  _$ResetSearchRefreshDataCopyWithImpl(ResetSearchRefreshData _value,
-      $Res Function(ResetSearchRefreshData) _then)
+  _$ResetSearchRefreshDataCopyWithImpl(ResetSearchRefreshData _value, $Res Function(ResetSearchRefreshData) _then)
       : super(_value, (v) => _then(v as ResetSearchRefreshData));
 
   @override
@@ -853,15 +733,9 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) {
     return reset();
@@ -876,15 +750,9 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) {
     return reset?.call();
@@ -899,15 +767,9 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) {
@@ -921,13 +783,10 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -940,8 +799,7 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -956,8 +814,7 @@ class _$ResetSearchRefreshData implements ResetSearchRefreshData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -978,17 +835,14 @@ abstract class ResetSearchRefreshData implements SearchBlocEvent {
 
 /// @nodoc
 abstract class $ResetOpenFilterActionCopyWith<$Res> {
-  factory $ResetOpenFilterActionCopyWith(ResetOpenFilterAction value,
-          $Res Function(ResetOpenFilterAction) then) =
+  factory $ResetOpenFilterActionCopyWith(ResetOpenFilterAction value, $Res Function(ResetOpenFilterAction) then) =
       _$ResetOpenFilterActionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetOpenFilterActionCopyWithImpl<$Res>
-    extends _$SearchBlocEventCopyWithImpl<$Res>
+class _$ResetOpenFilterActionCopyWithImpl<$Res> extends _$SearchBlocEventCopyWithImpl<$Res>
     implements $ResetOpenFilterActionCopyWith<$Res> {
-  _$ResetOpenFilterActionCopyWithImpl(
-      ResetOpenFilterAction _value, $Res Function(ResetOpenFilterAction) _then)
+  _$ResetOpenFilterActionCopyWithImpl(ResetOpenFilterAction _value, $Res Function(ResetOpenFilterAction) _then)
       : super(_value, (v) => _then(v as ResetOpenFilterAction));
 
   @override
@@ -1022,15 +876,9 @@ class _$ResetOpenFilterAction implements ResetOpenFilterAction {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) {
     return resetOpenFilterAction();
@@ -1045,15 +893,9 @@ class _$ResetOpenFilterAction implements ResetOpenFilterAction {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) {
     return resetOpenFilterAction?.call();
@@ -1068,15 +910,9 @@ class _$ResetOpenFilterAction implements ResetOpenFilterAction {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) {
@@ -1090,13 +926,10 @@ class _$ResetOpenFilterAction implements ResetOpenFilterAction {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -1109,8 +942,7 @@ class _$ResetOpenFilterAction implements ResetOpenFilterAction {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -1125,8 +957,7 @@ class _$ResetOpenFilterAction implements ResetOpenFilterAction {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -1147,18 +978,15 @@ abstract class ResetOpenFilterAction implements SearchBlocEvent {
 
 /// @nodoc
 abstract class $GetSearchFilterDataCopyWith<$Res> {
-  factory $GetSearchFilterDataCopyWith(
-          GetSearchFilterData value, $Res Function(GetSearchFilterData) then) =
+  factory $GetSearchFilterDataCopyWith(GetSearchFilterData value, $Res Function(GetSearchFilterData) then) =
       _$GetSearchFilterDataCopyWithImpl<$Res>;
   $Res call({bool? openFilter});
 }
 
 /// @nodoc
-class _$GetSearchFilterDataCopyWithImpl<$Res>
-    extends _$SearchBlocEventCopyWithImpl<$Res>
+class _$GetSearchFilterDataCopyWithImpl<$Res> extends _$SearchBlocEventCopyWithImpl<$Res>
     implements $GetSearchFilterDataCopyWith<$Res> {
-  _$GetSearchFilterDataCopyWithImpl(
-      GetSearchFilterData _value, $Res Function(GetSearchFilterData) _then)
+  _$GetSearchFilterDataCopyWithImpl(GetSearchFilterData _value, $Res Function(GetSearchFilterData) _then)
       : super(_value, (v) => _then(v as GetSearchFilterData));
 
   @override
@@ -1195,13 +1023,11 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     return identical(this, other) ||
         (other is GetSearchFilterData &&
             (identical(other.openFilter, openFilter) ||
-                const DeepCollectionEquality()
-                    .equals(other.openFilter, openFilter)));
+                const DeepCollectionEquality().equals(other.openFilter, openFilter)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(openFilter);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(openFilter);
 
   @JsonKey(ignore: true)
   @override
@@ -1217,15 +1043,9 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) {
     return getSearchFilterDate(openFilter);
@@ -1240,15 +1060,9 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) {
     return getSearchFilterDate?.call(openFilter);
@@ -1263,15 +1077,9 @@ class _$GetSearchFilterData implements GetSearchFilterData {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) {
@@ -1285,13 +1093,10 @@ class _$GetSearchFilterData implements GetSearchFilterData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -1304,8 +1109,7 @@ class _$GetSearchFilterData implements GetSearchFilterData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -1320,8 +1124,7 @@ class _$GetSearchFilterData implements GetSearchFilterData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -1341,14 +1144,12 @@ abstract class GetSearchFilterData implements SearchBlocEvent {
 
   bool? get openFilter => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetSearchFilterDataCopyWith<GetSearchFilterData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetSearchFilterDataCopyWith<GetSearchFilterData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetSearchFilterDataCopyWith<$Res> {
-  factory $SetSearchFilterDataCopyWith(
-          SetSearchFilterData value, $Res Function(SetSearchFilterData) then) =
+  factory $SetSearchFilterDataCopyWith(SetSearchFilterData value, $Res Function(SetSearchFilterData) then) =
       _$SetSearchFilterDataCopyWithImpl<$Res>;
   $Res call({FilterDate filterDate, bool openFilter});
 
@@ -1356,11 +1157,9 @@ abstract class $SetSearchFilterDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SetSearchFilterDataCopyWithImpl<$Res>
-    extends _$SearchBlocEventCopyWithImpl<$Res>
+class _$SetSearchFilterDataCopyWithImpl<$Res> extends _$SearchBlocEventCopyWithImpl<$Res>
     implements $SetSearchFilterDataCopyWith<$Res> {
-  _$SetSearchFilterDataCopyWithImpl(
-      SetSearchFilterData _value, $Res Function(SetSearchFilterData) _then)
+  _$SetSearchFilterDataCopyWithImpl(SetSearchFilterData _value, $Res Function(SetSearchFilterData) _then)
       : super(_value, (v) => _then(v as SetSearchFilterData));
 
   @override
@@ -1411,11 +1210,9 @@ class _$SetSearchFilterData implements SetSearchFilterData {
     return identical(this, other) ||
         (other is SetSearchFilterData &&
             (identical(other.filterDate, filterDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.filterDate, filterDate)) &&
+                const DeepCollectionEquality().equals(other.filterDate, filterDate)) &&
             (identical(other.openFilter, openFilter) ||
-                const DeepCollectionEquality()
-                    .equals(other.openFilter, openFilter)));
+                const DeepCollectionEquality().equals(other.openFilter, openFilter)));
   }
 
   @override
@@ -1438,15 +1235,9 @@ class _$SetSearchFilterData implements SetSearchFilterData {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) {
     return setSearchFilterDate(filterDate, openFilter);
@@ -1461,15 +1252,9 @@ class _$SetSearchFilterData implements SetSearchFilterData {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) {
     return setSearchFilterDate?.call(filterDate, openFilter);
@@ -1484,15 +1269,9 @@ class _$SetSearchFilterData implements SetSearchFilterData {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) {
@@ -1506,13 +1285,10 @@ class _$SetSearchFilterData implements SetSearchFilterData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -1525,8 +1301,7 @@ class _$SetSearchFilterData implements SetSearchFilterData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -1541,8 +1316,7 @@ class _$SetSearchFilterData implements SetSearchFilterData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -1558,20 +1332,17 @@ class _$SetSearchFilterData implements SetSearchFilterData {
 }
 
 abstract class SetSearchFilterData implements SearchBlocEvent {
-  const factory SetSearchFilterData(FilterDate filterDate, bool openFilter) =
-      _$SetSearchFilterData;
+  const factory SetSearchFilterData(FilterDate filterDate, bool openFilter) = _$SetSearchFilterData;
 
   FilterDate get filterDate => throw _privateConstructorUsedError;
   bool get openFilter => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SetSearchFilterDataCopyWith<SetSearchFilterData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetSearchFilterDataCopyWith<SetSearchFilterData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ApplySearchFilterDataCopyWith<$Res> {
-  factory $ApplySearchFilterDataCopyWith(ApplySearchFilterData value,
-          $Res Function(ApplySearchFilterData) then) =
+  factory $ApplySearchFilterDataCopyWith(ApplySearchFilterData value, $Res Function(ApplySearchFilterData) then) =
       _$ApplySearchFilterDataCopyWithImpl<$Res>;
   $Res call(
       {String? query,
@@ -1583,11 +1354,9 @@ abstract class $ApplySearchFilterDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ApplySearchFilterDataCopyWithImpl<$Res>
-    extends _$SearchBlocEventCopyWithImpl<$Res>
+class _$ApplySearchFilterDataCopyWithImpl<$Res> extends _$SearchBlocEventCopyWithImpl<$Res>
     implements $ApplySearchFilterDataCopyWith<$Res> {
-  _$ApplySearchFilterDataCopyWithImpl(
-      ApplySearchFilterData _value, $Res Function(ApplySearchFilterData) _then)
+  _$ApplySearchFilterDataCopyWithImpl(ApplySearchFilterData _value, $Res Function(ApplySearchFilterData) _then)
       : super(_value, (v) => _then(v as ApplySearchFilterData));
 
   @override
@@ -1664,26 +1433,17 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is ApplySearchFilterData &&
-            (identical(other.query, query) ||
-                const DeepCollectionEquality().equals(other.query, query)) &&
+            (identical(other.query, query) || const DeepCollectionEquality().equals(other.query, query)) &&
             (identical(other.categoriesList, categoriesList) ||
-                const DeepCollectionEquality()
-                    .equals(other.categoriesList, categoriesList)) &&
+                const DeepCollectionEquality().equals(other.categoriesList, categoriesList)) &&
             (identical(other.campaniesList, campaniesList) ||
-                const DeepCollectionEquality()
-                    .equals(other.campaniesList, campaniesList)) &&
-            (identical(other.delivery_price_range_from,
-                    delivery_price_range_from) ||
-                const DeepCollectionEquality().equals(
-                    other.delivery_price_range_from,
-                    delivery_price_range_from)) &&
-            (identical(
-                    other.delivery_price_range_to, delivery_price_range_to) ||
-                const DeepCollectionEquality().equals(
-                    other.delivery_price_range_to, delivery_price_range_to)) &&
+                const DeepCollectionEquality().equals(other.campaniesList, campaniesList)) &&
+            (identical(other.delivery_price_range_from, delivery_price_range_from) ||
+                const DeepCollectionEquality().equals(other.delivery_price_range_from, delivery_price_range_from)) &&
+            (identical(other.delivery_price_range_to, delivery_price_range_to) ||
+                const DeepCollectionEquality().equals(other.delivery_price_range_to, delivery_price_range_to)) &&
             (identical(other.max_distance, max_distance) ||
-                const DeepCollectionEquality()
-                    .equals(other.max_distance, max_distance)));
+                const DeepCollectionEquality().equals(other.max_distance, max_distance)));
   }
 
   @override
@@ -1699,8 +1459,7 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
   @JsonKey(ignore: true)
   @override
   $ApplySearchFilterDataCopyWith<ApplySearchFilterData> get copyWith =>
-      _$ApplySearchFilterDataCopyWithImpl<ApplySearchFilterData>(
-          this, _$identity);
+      _$ApplySearchFilterDataCopyWithImpl<ApplySearchFilterData>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1711,19 +1470,13 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     required TResult Function() reset,
     required TResult Function() resetOpenFilterAction,
     required TResult Function(bool? openFilter) getSearchFilterDate,
-    required TResult Function(FilterDate filterDate, bool openFilter)
-        setSearchFilterDate,
-    required TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)
+    required TResult Function(FilterDate filterDate, bool openFilter) setSearchFilterDate,
+    required TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)
         applyFilterDate,
   }) {
-    return applyFilterDate(query, categoriesList, campaniesList,
-        delivery_price_range_from, delivery_price_range_to, max_distance);
+    return applyFilterDate(
+        query, categoriesList, campaniesList, delivery_price_range_from, delivery_price_range_to, max_distance);
   }
 
   @override
@@ -1735,19 +1488,13 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
   }) {
-    return applyFilterDate?.call(query, categoriesList, campaniesList,
-        delivery_price_range_from, delivery_price_range_to, max_distance);
+    return applyFilterDate?.call(
+        query, categoriesList, campaniesList, delivery_price_range_from, delivery_price_range_to, max_distance);
   }
 
   @override
@@ -1759,21 +1506,15 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
     TResult Function()? reset,
     TResult Function()? resetOpenFilterAction,
     TResult Function(bool? openFilter)? getSearchFilterDate,
-    TResult Function(FilterDate filterDate, bool openFilter)?
-        setSearchFilterDate,
-    TResult Function(
-            String? query,
-            List<CategoryData> categoriesList,
-            List<CompanyItem> campaniesList,
-            int? delivery_price_range_from,
-            int? delivery_price_range_to,
-            int? max_distance)?
+    TResult Function(FilterDate filterDate, bool openFilter)? setSearchFilterDate,
+    TResult Function(String? query, List<CategoryData> categoriesList, List<CompanyItem> campaniesList,
+            int? delivery_price_range_from, int? delivery_price_range_to, int? max_distance)?
         applyFilterDate,
     required TResult orElse(),
   }) {
     if (applyFilterDate != null) {
-      return applyFilterDate(query, categoriesList, campaniesList,
-          delivery_price_range_from, delivery_price_range_to, max_distance);
+      return applyFilterDate(
+          query, categoriesList, campaniesList, delivery_price_range_from, delivery_price_range_to, max_distance);
     }
     return orElse();
   }
@@ -1782,13 +1523,10 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSearchMarketPlaces value) searchMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetSearchRefreshData value) reset,
-    required TResult Function(ResetOpenFilterAction value)
-        resetOpenFilterAction,
+    required TResult Function(ResetOpenFilterAction value) resetOpenFilterAction,
     required TResult Function(GetSearchFilterData value) getSearchFilterDate,
     required TResult Function(SetSearchFilterData value) setSearchFilterDate,
     required TResult Function(ApplySearchFilterData value) applyFilterDate,
@@ -1801,8 +1539,7 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -1817,8 +1554,7 @@ class _$ApplySearchFilterData implements ApplySearchFilterData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSearchMarketPlaces value)? searchMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetSearchRefreshData value)? reset,
     TResult Function(ResetOpenFilterAction value)? resetOpenFilterAction,
     TResult Function(GetSearchFilterData value)? getSearchFilterDate,
@@ -1849,8 +1585,7 @@ abstract class ApplySearchFilterData implements SearchBlocEvent {
   int? get delivery_price_range_to => throw _privateConstructorUsedError;
   int? get max_distance => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApplySearchFilterDataCopyWith<ApplySearchFilterData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ApplySearchFilterDataCopyWith<ApplySearchFilterData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1990,14 +1725,12 @@ mixin _$SearchBlocState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SearchBlocStateCopyWith<SearchBlocState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SearchBlocStateCopyWith<SearchBlocState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SearchBlocStateCopyWith<$Res> {
-  factory $SearchBlocStateCopyWith(
-          SearchBlocState value, $Res Function(SearchBlocState) then) =
+  factory $SearchBlocStateCopyWith(SearchBlocState value, $Res Function(SearchBlocState) then) =
       _$SearchBlocStateCopyWithImpl<$Res>;
   $Res call(
       {bool isLoadingFirst,
@@ -2017,8 +1750,7 @@ abstract class $SearchBlocStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SearchBlocStateCopyWithImpl<$Res>
-    implements $SearchBlocStateCopyWith<$Res> {
+class _$SearchBlocStateCopyWithImpl<$Res> implements $SearchBlocStateCopyWith<$Res> {
   _$SearchBlocStateCopyWithImpl(this._value, this._then);
 
   final SearchBlocState _value;
@@ -2104,11 +1836,9 @@ class _$SearchBlocStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $SearchBlocStateDefaultStateCopyWith<$Res>
-    implements $SearchBlocStateCopyWith<$Res> {
+abstract class $SearchBlocStateDefaultStateCopyWith<$Res> implements $SearchBlocStateCopyWith<$Res> {
   factory $SearchBlocStateDefaultStateCopyWith(
-          SearchBlocStateDefaultState value,
-          $Res Function(SearchBlocStateDefaultState) then) =
+          SearchBlocStateDefaultState value, $Res Function(SearchBlocStateDefaultState) then) =
       _$SearchBlocStateDefaultStateCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -2129,16 +1859,14 @@ abstract class $SearchBlocStateDefaultStateCopyWith<$Res>
 }
 
 /// @nodoc
-class _$SearchBlocStateDefaultStateCopyWithImpl<$Res>
-    extends _$SearchBlocStateCopyWithImpl<$Res>
+class _$SearchBlocStateDefaultStateCopyWithImpl<$Res> extends _$SearchBlocStateCopyWithImpl<$Res>
     implements $SearchBlocStateDefaultStateCopyWith<$Res> {
-  _$SearchBlocStateDefaultStateCopyWithImpl(SearchBlocStateDefaultState _value,
-      $Res Function(SearchBlocStateDefaultState) _then)
+  _$SearchBlocStateDefaultStateCopyWithImpl(
+      SearchBlocStateDefaultState _value, $Res Function(SearchBlocStateDefaultState) _then)
       : super(_value, (v) => _then(v as SearchBlocStateDefaultState));
 
   @override
-  SearchBlocStateDefaultState get _value =>
-      super._value as SearchBlocStateDefaultState;
+  SearchBlocStateDefaultState get _value => super._value as SearchBlocStateDefaultState;
 
   @override
   $Res call({
@@ -2286,48 +2014,31 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
     return identical(this, other) ||
         (other is SearchBlocStateDefaultState &&
             (identical(other.isLoadingFirst, isLoadingFirst) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoadingFirst, isLoadingFirst)) &&
+                const DeepCollectionEquality().equals(other.isLoadingFirst, isLoadingFirst)) &&
             (identical(other.isLoadingPaging, isLoadingPaging) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoadingPaging, isLoadingPaging)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+                const DeepCollectionEquality().equals(other.isLoadingPaging, isLoadingPaging)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.refreshData, refreshData) ||
-                const DeepCollectionEquality()
-                    .equals(other.refreshData, refreshData)) &&
+                const DeepCollectionEquality().equals(other.refreshData, refreshData)) &&
             (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
+                const DeepCollectionEquality().equals(other.searchList, searchList)) &&
             (identical(other.categoriesList, categoriesList) ||
-                const DeepCollectionEquality()
-                    .equals(other.categoriesList, categoriesList)) &&
+                const DeepCollectionEquality().equals(other.categoriesList, categoriesList)) &&
             (identical(other.campaniesList, campaniesList) ||
-                const DeepCollectionEquality()
-                    .equals(other.campaniesList, campaniesList)) &&
+                const DeepCollectionEquality().equals(other.campaniesList, campaniesList)) &&
             (identical(other.hasMorePages, hasMorePages) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasMorePages, hasMorePages)) &&
+                const DeepCollectionEquality().equals(other.hasMorePages, hasMorePages)) &&
             (identical(other.filterIsReady, filterIsReady) ||
-                const DeepCollectionEquality()
-                    .equals(other.filterIsReady, filterIsReady)) &&
+                const DeepCollectionEquality().equals(other.filterIsReady, filterIsReady)) &&
             (identical(other.openFilterNow, openFilterNow) ||
-                const DeepCollectionEquality()
-                    .equals(other.openFilterNow, openFilterNow)) &&
-            (identical(other.query, query) ||
-                const DeepCollectionEquality().equals(other.query, query)) &&
-            (identical(other.delivery_price_range_from,
-                    delivery_price_range_from) ||
-                const DeepCollectionEquality().equals(
-                    other.delivery_price_range_from,
-                    delivery_price_range_from)) &&
-            (identical(
-                    other.delivery_price_range_to, delivery_price_range_to) ||
-                const DeepCollectionEquality().equals(
-                    other.delivery_price_range_to, delivery_price_range_to)) &&
+                const DeepCollectionEquality().equals(other.openFilterNow, openFilterNow)) &&
+            (identical(other.query, query) || const DeepCollectionEquality().equals(other.query, query)) &&
+            (identical(other.delivery_price_range_from, delivery_price_range_from) ||
+                const DeepCollectionEquality().equals(other.delivery_price_range_from, delivery_price_range_from)) &&
+            (identical(other.delivery_price_range_to, delivery_price_range_to) ||
+                const DeepCollectionEquality().equals(other.delivery_price_range_to, delivery_price_range_to)) &&
             (identical(other.max_distance, max_distance) ||
-                const DeepCollectionEquality()
-                    .equals(other.max_distance, max_distance)));
+                const DeepCollectionEquality().equals(other.max_distance, max_distance)));
   }
 
   @override
@@ -2350,9 +2061,8 @@ class _$SearchBlocStateDefaultState implements SearchBlocStateDefaultState {
 
   @JsonKey(ignore: true)
   @override
-  $SearchBlocStateDefaultStateCopyWith<SearchBlocStateDefaultState>
-      get copyWith => _$SearchBlocStateDefaultStateCopyWithImpl<
-          SearchBlocStateDefaultState>(this, _$identity);
+  $SearchBlocStateDefaultStateCopyWith<SearchBlocStateDefaultState> get copyWith =>
+      _$SearchBlocStateDefaultStateCopyWithImpl<SearchBlocStateDefaultState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2545,6 +2255,5 @@ abstract class SearchBlocStateDefaultState implements SearchBlocState {
   int? get max_distance => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $SearchBlocStateDefaultStateCopyWith<SearchBlocStateDefaultState>
-      get copyWith => throw _privateConstructorUsedError;
+  $SearchBlocStateDefaultStateCopyWith<SearchBlocStateDefaultState> get copyWith => throw _privateConstructorUsedError;
 }

@@ -7,13 +7,11 @@ part 'signup_response.freezed.dart';
 @freezed
 class SignUpResponse with _$SignUpResponse {
   const factory SignUpResponse(SignUpDataItem data) = _SignUpResponse;
-  factory SignUpResponse.fromJson(Map<String, dynamic> json) =>
-      _$SignUpResponseFromJson(json);
+  factory SignUpResponse.fromJson(Map<String, dynamic> json) => _$SignUpResponseFromJson(json);
 }
 
 @freezed
 class SignUpDataItem with _$SignUpDataItem {
   const factory SignUpDataItem(UserItem user) = _SignUpDataItem;
-  factory SignUpDataItem.fromJson(Map<String, dynamic> json) =>
-      _$SignUpDataItemFromJson(json);
+  factory SignUpDataItem.fromJson(Map<String, dynamic> json) => _$SignUpDataItemFromJson(json);
 }

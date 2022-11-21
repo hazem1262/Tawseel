@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
 import 'package:tawseel/features/login/components/LoadingButton.dart';
-import 'package:tawseel/features/login/components/PasswordField.dart';
 import 'package:tawseel/features/login/components/PhoneNumberField.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
@@ -34,12 +33,6 @@ class _SendPhoneScreenState extends State<SendPhoneScreen> {
   late double newheight;
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    var padding = MediaQuery.of(context).padding;
-    double newheight = height - padding.top - padding.bottom;
-    var theme = Theme.of(context);
-
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -108,13 +101,11 @@ class _SendPhoneScreenState extends State<SendPhoneScreen> {
 
     if (widget.intention == Intention.CHANGE_PHONE) {
       context.openIfExist(
-        OtpScreenRoute(
-            otpType: OTP_TYPE.CHANGE_PHONE, phone: phoneController.text),
+        OtpScreenRoute(otpType: OTP_TYPE.CHANGE_PHONE, phone: phoneController.text),
       );
     } else if (widget.intention == Intention.FORGET_PASSWORD) {
       context.openIfExist(
-        OtpScreenRoute(
-            otpType: OTP_TYPE.FORGET_PASSWORD, phone: phoneController.text),
+        OtpScreenRoute(otpType: OTP_TYPE.FORGET_PASSWORD, phone: phoneController.text),
       );
     }
   }

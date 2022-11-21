@@ -29,8 +29,7 @@ class SupportBloc extends Bloc<SupportEvent, SupportState> {
       if (event is SendSupportMessage) {
         try {
           emit(state.copyWith(isLoading: true));
-          await repo.sendSupportMessage(
-              subject: event.subject, message: event.message);
+          await repo.sendSupportMessage(subject: event.subject, message: event.message);
           emit(SupportDefaultState().copyWith(messageSentSuccessfully: true));
         } catch (e) {
           emit(SupportDefaultState().copyWith(error: e.toString()));

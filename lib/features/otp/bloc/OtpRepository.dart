@@ -14,12 +14,10 @@ class OtpRepository with NetworkHandler implements IOtpRepository {
   OtpRepository(this.api);
 
   @override
-  Future<OtpResponse> sendOtp(String phone, String type) =>
-      networkHandler(() => api.sendOtp(phone, type));
+  Future<OtpResponse> sendOtp(String phone, String type) => networkHandler(() => api.sendOtp(phone, type));
 
   @override
-  Future<LoginResponse> verifyOtp(String phone, String otp, String type) =>
-      networkHandler(
+  Future<LoginResponse> verifyOtp(String phone, String otp, String type) => networkHandler(
         () async {
           var response = await api.verifyOtp(phone, otp, type);
           // save User data into prefrences if he is verified

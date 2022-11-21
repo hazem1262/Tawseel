@@ -25,6 +25,5 @@ class SignUpRepository with NetworkHandler implements ISignUpRepository {
           String password,
           // ignore: non_constant_identifier_names
           CAN_RECEIVE_OFFERS can_receive_offers) =>
-      networkHandler(() => api.signUpWithPhone(
-          name, phone, password, can_receive_offers.apiValue));
+      networkHandler(() => api.signUpWithPhone(name, phone, password, can_receive_offers.apiValue));
 }

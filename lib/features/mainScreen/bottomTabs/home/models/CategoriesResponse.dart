@@ -4,10 +4,8 @@ part 'CategoriesResponse.g.dart';
 
 @freezed
 class CategoriesResponse with _$CategoriesResponse {
-  const factory CategoriesResponse(List<CategoryData> data) =
-      _CategoriesResponse;
-  factory CategoriesResponse.fromJson(Map<String, dynamic> json) =>
-      _$CategoriesResponseFromJson(json);
+  const factory CategoriesResponse(List<CategoryData> data) = _CategoriesResponse;
+  factory CategoriesResponse.fromJson(Map<String, dynamic> json) => _$CategoriesResponseFromJson(json);
 }
 
 @freezed
@@ -19,6 +17,5 @@ class CategoryData with _$CategoryData {
     List<CategoryData>? sub_categories,
     @Default(false) bool? isSelected,
   }) = _CategoryData;
-  factory CategoryData.fromJson(Map<String, dynamic> json) =>
-      _$CategoryDataFromJson(json);
+  factory CategoryData.fromJson(Map<String, dynamic> json) => _$CategoryDataFromJson(json);
 }

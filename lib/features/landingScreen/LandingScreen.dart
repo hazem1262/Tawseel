@@ -60,8 +60,7 @@ class LandingScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14,
-                      color:
-                          !tm.isDark() ? tm.subtitleColorLight : Colors.white,
+                      color: !tm.isDark() ? tm.subtitleColorLight : Colors.white,
                     ),
                   ).tr(),
                   SizedBox(height: 34),
@@ -73,17 +72,13 @@ class LandingScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             primary: Color(0xff8e87e5),
                             elevation: 0.1,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                             padding: const EdgeInsets.all(16.0)),
                         onPressed: () {
                           appContext.pushRoute(SignUpScreenRoute());
                         },
                         child: Text(LocaleKeys.create_an_account,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold))
+                                style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold))
                             .tr(),
                       ),
                     ),
@@ -97,18 +92,14 @@ class LandingScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                               primary: Color(0xffedeffd),
                               elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15)),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                               padding: const EdgeInsets.all(16.0)),
                           onPressed: () {
                             appContext.pushRoute(LoginScreenRoute());
                           },
                           child: Text(
                             LocaleKeys.login,
-                            style: TextStyle(
-                                color: ThemeManager.primary,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: ThemeManager.primary, fontSize: 14, fontWeight: FontWeight.bold),
                           ).tr(),
                         )),
                   ),

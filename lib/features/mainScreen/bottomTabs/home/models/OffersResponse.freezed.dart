@@ -43,14 +43,12 @@ mixin _$OffersResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OffersResponseCopyWith<OffersResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $OffersResponseCopyWith<OffersResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OffersResponseCopyWith<$Res> {
-  factory $OffersResponseCopyWith(
-          OffersResponse value, $Res Function(OffersResponse) then) =
+  factory $OffersResponseCopyWith(OffersResponse value, $Res Function(OffersResponse) then) =
       _$OffersResponseCopyWithImpl<$Res>;
   $Res call({List<MarketPlaceItem> data, MetaPagination meta});
 
@@ -58,8 +56,7 @@ abstract class $OffersResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OffersResponseCopyWithImpl<$Res>
-    implements $OffersResponseCopyWith<$Res> {
+class _$OffersResponseCopyWithImpl<$Res> implements $OffersResponseCopyWith<$Res> {
   _$OffersResponseCopyWithImpl(this._value, this._then);
 
   final OffersResponse _value;
@@ -92,10 +89,8 @@ class _$OffersResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$OffersResponseCopyWith<$Res>
-    implements $OffersResponseCopyWith<$Res> {
-  factory _$OffersResponseCopyWith(
-          _OffersResponse value, $Res Function(_OffersResponse) then) =
+abstract class _$OffersResponseCopyWith<$Res> implements $OffersResponseCopyWith<$Res> {
+  factory _$OffersResponseCopyWith(_OffersResponse value, $Res Function(_OffersResponse) then) =
       __$OffersResponseCopyWithImpl<$Res>;
   @override
   $Res call({List<MarketPlaceItem> data, MetaPagination meta});
@@ -105,11 +100,9 @@ abstract class _$OffersResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$OffersResponseCopyWithImpl<$Res>
-    extends _$OffersResponseCopyWithImpl<$Res>
+class __$OffersResponseCopyWithImpl<$Res> extends _$OffersResponseCopyWithImpl<$Res>
     implements _$OffersResponseCopyWith<$Res> {
-  __$OffersResponseCopyWithImpl(
-      _OffersResponse _value, $Res Function(_OffersResponse) _then)
+  __$OffersResponseCopyWithImpl(_OffersResponse _value, $Res Function(_OffersResponse) _then)
       : super(_value, (v) => _then(v as _OffersResponse));
 
   @override
@@ -138,8 +131,7 @@ class __$OffersResponseCopyWithImpl<$Res>
 class _$_OffersResponse implements _OffersResponse {
   const _$_OffersResponse(this.data, this.meta);
 
-  factory _$_OffersResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_OffersResponseFromJson(json);
+  factory _$_OffersResponse.fromJson(Map<String, dynamic> json) => _$$_OffersResponseFromJson(json);
 
   @override
   final List<MarketPlaceItem> data;
@@ -155,17 +147,13 @@ class _$_OffersResponse implements _OffersResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OffersResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.meta, meta) ||
-                const DeepCollectionEquality().equals(other.meta, meta)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)) &&
+            (identical(other.meta, meta) || const DeepCollectionEquality().equals(other.meta, meta)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(meta);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data) ^ const DeepCollectionEquality().hash(meta);
 
   @JsonKey(ignore: true)
   @override
@@ -179,11 +167,9 @@ class _$_OffersResponse implements _OffersResponse {
 }
 
 abstract class _OffersResponse implements OffersResponse {
-  const factory _OffersResponse(
-      List<MarketPlaceItem> data, MetaPagination meta) = _$_OffersResponse;
+  const factory _OffersResponse(List<MarketPlaceItem> data, MetaPagination meta) = _$_OffersResponse;
 
-  factory _OffersResponse.fromJson(Map<String, dynamic> json) =
-      _$_OffersResponse.fromJson;
+  factory _OffersResponse.fromJson(Map<String, dynamic> json) = _$_OffersResponse.fromJson;
 
   @override
   List<MarketPlaceItem> get data => throw _privateConstructorUsedError;
@@ -191,8 +177,7 @@ abstract class _OffersResponse implements OffersResponse {
   MetaPagination get meta => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$OffersResponseCopyWith<_OffersResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$OffersResponseCopyWith<_OffersResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 OfferItem _$OfferItemFromJson(Map<String, dynamic> json) {
@@ -203,18 +188,8 @@ OfferItem _$OfferItemFromJson(Map<String, dynamic> json) {
 class _$OfferItemTearOff {
   const _$OfferItemTearOff();
 
-  _OfferItem call(
-      int id,
-      String name,
-      String description,
-      String min_order,
-      String delivery_time,
-      String delivery_cost,
-      String? rating,
-      String image,
-      String logo,
-      bool is_favorite,
-      List<CompanyItem> companies) {
+  _OfferItem call(int id, String name, String description, String min_order, String delivery_time, String delivery_cost,
+      String? rating, String image, String logo, bool is_favorite, List<CompanyItem> companies) {
     return _OfferItem(
       id,
       name,
@@ -254,14 +229,12 @@ mixin _$OfferItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OfferItemCopyWith<OfferItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $OfferItemCopyWith<OfferItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OfferItemCopyWith<$Res> {
-  factory $OfferItemCopyWith(OfferItem value, $Res Function(OfferItem) then) =
-      _$OfferItemCopyWithImpl<$Res>;
+  factory $OfferItemCopyWith(OfferItem value, $Res Function(OfferItem) then) = _$OfferItemCopyWithImpl<$Res>;
   $Res call(
       {int id,
       String name,
@@ -349,9 +322,7 @@ class _$OfferItemCopyWithImpl<$Res> implements $OfferItemCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$OfferItemCopyWith<$Res> implements $OfferItemCopyWith<$Res> {
-  factory _$OfferItemCopyWith(
-          _OfferItem value, $Res Function(_OfferItem) then) =
-      __$OfferItemCopyWithImpl<$Res>;
+  factory _$OfferItemCopyWith(_OfferItem value, $Res Function(_OfferItem) then) = __$OfferItemCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -368,8 +339,7 @@ abstract class _$OfferItemCopyWith<$Res> implements $OfferItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res>
-    implements _$OfferItemCopyWith<$Res> {
+class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res> implements _$OfferItemCopyWith<$Res> {
   __$OfferItemCopyWithImpl(_OfferItem _value, $Res Function(_OfferItem) _then)
       : super(_value, (v) => _then(v as _OfferItem));
 
@@ -442,21 +412,10 @@ class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_OfferItem implements _OfferItem {
-  const _$_OfferItem(
-      this.id,
-      this.name,
-      this.description,
-      this.min_order,
-      this.delivery_time,
-      this.delivery_cost,
-      this.rating,
-      this.image,
-      this.logo,
-      this.is_favorite,
-      this.companies);
+  const _$_OfferItem(this.id, this.name, this.description, this.min_order, this.delivery_time, this.delivery_cost,
+      this.rating, this.image, this.logo, this.is_favorite, this.companies);
 
-  factory _$_OfferItem.fromJson(Map<String, dynamic> json) =>
-      _$$_OfferItemFromJson(json);
+  factory _$_OfferItem.fromJson(Map<String, dynamic> json) => _$$_OfferItemFromJson(json);
 
   @override
   final int id;
@@ -490,34 +449,23 @@ class _$_OfferItem implements _OfferItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OfferItem &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.min_order, min_order) ||
-                const DeepCollectionEquality()
-                    .equals(other.min_order, min_order)) &&
+                const DeepCollectionEquality().equals(other.min_order, min_order)) &&
             (identical(other.delivery_time, delivery_time) ||
-                const DeepCollectionEquality()
-                    .equals(other.delivery_time, delivery_time)) &&
+                const DeepCollectionEquality().equals(other.delivery_time, delivery_time)) &&
             (identical(other.delivery_cost, delivery_cost) ||
-                const DeepCollectionEquality()
-                    .equals(other.delivery_cost, delivery_cost)) &&
-            (identical(other.rating, rating) ||
-                const DeepCollectionEquality().equals(other.rating, rating)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.logo, logo) ||
-                const DeepCollectionEquality().equals(other.logo, logo)) &&
+                const DeepCollectionEquality().equals(other.delivery_cost, delivery_cost)) &&
+            (identical(other.rating, rating) || const DeepCollectionEquality().equals(other.rating, rating)) &&
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.logo, logo) || const DeepCollectionEquality().equals(other.logo, logo)) &&
             (identical(other.is_favorite, is_favorite) ||
-                const DeepCollectionEquality()
-                    .equals(other.is_favorite, is_favorite)) &&
+                const DeepCollectionEquality().equals(other.is_favorite, is_favorite)) &&
             (identical(other.companies, companies) ||
-                const DeepCollectionEquality()
-                    .equals(other.companies, companies)));
+                const DeepCollectionEquality().equals(other.companies, companies)));
   }
 
   @override
@@ -537,8 +485,7 @@ class _$_OfferItem implements _OfferItem {
 
   @JsonKey(ignore: true)
   @override
-  _$OfferItemCopyWith<_OfferItem> get copyWith =>
-      __$OfferItemCopyWithImpl<_OfferItem>(this, _$identity);
+  _$OfferItemCopyWith<_OfferItem> get copyWith => __$OfferItemCopyWithImpl<_OfferItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -560,8 +507,7 @@ abstract class _OfferItem implements OfferItem {
       bool is_favorite,
       List<CompanyItem> companies) = _$_OfferItem;
 
-  factory _OfferItem.fromJson(Map<String, dynamic> json) =
-      _$_OfferItem.fromJson;
+  factory _OfferItem.fromJson(Map<String, dynamic> json) = _$_OfferItem.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -587,8 +533,7 @@ abstract class _OfferItem implements OfferItem {
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$OfferItemCopyWith<_OfferItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$OfferItemCopyWith<_OfferItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 MetaPagination _$MetaPaginationFromJson(Map<String, dynamic> json) {
@@ -599,8 +544,7 @@ MetaPagination _$MetaPaginationFromJson(Map<String, dynamic> json) {
 class _$MetaPaginationTearOff {
   const _$MetaPaginationTearOff();
 
-  _MetaPagination call(
-      int current_page, int last_page, int total, int per_page) {
+  _MetaPagination call(int current_page, int last_page, int total, int per_page) {
     return _MetaPagination(
       current_page,
       last_page,
@@ -626,21 +570,18 @@ mixin _$MetaPagination {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MetaPaginationCopyWith<MetaPagination> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MetaPaginationCopyWith<MetaPagination> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MetaPaginationCopyWith<$Res> {
-  factory $MetaPaginationCopyWith(
-          MetaPagination value, $Res Function(MetaPagination) then) =
+  factory $MetaPaginationCopyWith(MetaPagination value, $Res Function(MetaPagination) then) =
       _$MetaPaginationCopyWithImpl<$Res>;
   $Res call({int current_page, int last_page, int total, int per_page});
 }
 
 /// @nodoc
-class _$MetaPaginationCopyWithImpl<$Res>
-    implements $MetaPaginationCopyWith<$Res> {
+class _$MetaPaginationCopyWithImpl<$Res> implements $MetaPaginationCopyWith<$Res> {
   _$MetaPaginationCopyWithImpl(this._value, this._then);
 
   final MetaPagination _value;
@@ -676,21 +617,17 @@ class _$MetaPaginationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$MetaPaginationCopyWith<$Res>
-    implements $MetaPaginationCopyWith<$Res> {
-  factory _$MetaPaginationCopyWith(
-          _MetaPagination value, $Res Function(_MetaPagination) then) =
+abstract class _$MetaPaginationCopyWith<$Res> implements $MetaPaginationCopyWith<$Res> {
+  factory _$MetaPaginationCopyWith(_MetaPagination value, $Res Function(_MetaPagination) then) =
       __$MetaPaginationCopyWithImpl<$Res>;
   @override
   $Res call({int current_page, int last_page, int total, int per_page});
 }
 
 /// @nodoc
-class __$MetaPaginationCopyWithImpl<$Res>
-    extends _$MetaPaginationCopyWithImpl<$Res>
+class __$MetaPaginationCopyWithImpl<$Res> extends _$MetaPaginationCopyWithImpl<$Res>
     implements _$MetaPaginationCopyWith<$Res> {
-  __$MetaPaginationCopyWithImpl(
-      _MetaPagination _value, $Res Function(_MetaPagination) _then)
+  __$MetaPaginationCopyWithImpl(_MetaPagination _value, $Res Function(_MetaPagination) _then)
       : super(_value, (v) => _then(v as _MetaPagination));
 
   @override
@@ -727,11 +664,9 @@ class __$MetaPaginationCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_MetaPagination implements _MetaPagination {
-  const _$_MetaPagination(
-      this.current_page, this.last_page, this.total, this.per_page);
+  const _$_MetaPagination(this.current_page, this.last_page, this.total, this.per_page);
 
-  factory _$_MetaPagination.fromJson(Map<String, dynamic> json) =>
-      _$$_MetaPaginationFromJson(json);
+  factory _$_MetaPagination.fromJson(Map<String, dynamic> json) => _$$_MetaPaginationFromJson(json);
 
   @override
   final int current_page;
@@ -752,16 +687,11 @@ class _$_MetaPagination implements _MetaPagination {
     return identical(this, other) ||
         (other is _MetaPagination &&
             (identical(other.current_page, current_page) ||
-                const DeepCollectionEquality()
-                    .equals(other.current_page, current_page)) &&
+                const DeepCollectionEquality().equals(other.current_page, current_page)) &&
             (identical(other.last_page, last_page) ||
-                const DeepCollectionEquality()
-                    .equals(other.last_page, last_page)) &&
-            (identical(other.total, total) ||
-                const DeepCollectionEquality().equals(other.total, total)) &&
-            (identical(other.per_page, per_page) ||
-                const DeepCollectionEquality()
-                    .equals(other.per_page, per_page)));
+                const DeepCollectionEquality().equals(other.last_page, last_page)) &&
+            (identical(other.total, total) || const DeepCollectionEquality().equals(other.total, total)) &&
+            (identical(other.per_page, per_page) || const DeepCollectionEquality().equals(other.per_page, per_page)));
   }
 
   @override
@@ -784,12 +714,9 @@ class _$_MetaPagination implements _MetaPagination {
 }
 
 abstract class _MetaPagination implements MetaPagination {
-  const factory _MetaPagination(
-          int current_page, int last_page, int total, int per_page) =
-      _$_MetaPagination;
+  const factory _MetaPagination(int current_page, int last_page, int total, int per_page) = _$_MetaPagination;
 
-  factory _MetaPagination.fromJson(Map<String, dynamic> json) =
-      _$_MetaPagination.fromJson;
+  factory _MetaPagination.fromJson(Map<String, dynamic> json) = _$_MetaPagination.fromJson;
 
   @override
   int get current_page => throw _privateConstructorUsedError;
@@ -801,6 +728,5 @@ abstract class _MetaPagination implements MetaPagination {
   int get per_page => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MetaPaginationCopyWith<_MetaPagination> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$MetaPaginationCopyWith<_MetaPagination> get copyWith => throw _privateConstructorUsedError;
 }

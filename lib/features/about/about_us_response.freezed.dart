@@ -41,14 +41,12 @@ mixin _$AboutUsResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AboutUsResponseCopyWith<AboutUsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AboutUsResponseCopyWith<AboutUsResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AboutUsResponseCopyWith<$Res> {
-  factory $AboutUsResponseCopyWith(
-          AboutUsResponse value, $Res Function(AboutUsResponse) then) =
+  factory $AboutUsResponseCopyWith(AboutUsResponse value, $Res Function(AboutUsResponse) then) =
       _$AboutUsResponseCopyWithImpl<$Res>;
   $Res call({AboutUsData data});
 
@@ -56,8 +54,7 @@ abstract class $AboutUsResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AboutUsResponseCopyWithImpl<$Res>
-    implements $AboutUsResponseCopyWith<$Res> {
+class _$AboutUsResponseCopyWithImpl<$Res> implements $AboutUsResponseCopyWith<$Res> {
   _$AboutUsResponseCopyWithImpl(this._value, this._then);
 
   final AboutUsResponse _value;
@@ -85,10 +82,8 @@ class _$AboutUsResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AboutUsResponseCopyWith<$Res>
-    implements $AboutUsResponseCopyWith<$Res> {
-  factory _$AboutUsResponseCopyWith(
-          _AboutUsResponse value, $Res Function(_AboutUsResponse) then) =
+abstract class _$AboutUsResponseCopyWith<$Res> implements $AboutUsResponseCopyWith<$Res> {
+  factory _$AboutUsResponseCopyWith(_AboutUsResponse value, $Res Function(_AboutUsResponse) then) =
       __$AboutUsResponseCopyWithImpl<$Res>;
   @override
   $Res call({AboutUsData data});
@@ -98,11 +93,9 @@ abstract class _$AboutUsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AboutUsResponseCopyWithImpl<$Res>
-    extends _$AboutUsResponseCopyWithImpl<$Res>
+class __$AboutUsResponseCopyWithImpl<$Res> extends _$AboutUsResponseCopyWithImpl<$Res>
     implements _$AboutUsResponseCopyWith<$Res> {
-  __$AboutUsResponseCopyWithImpl(
-      _AboutUsResponse _value, $Res Function(_AboutUsResponse) _then)
+  __$AboutUsResponseCopyWithImpl(_AboutUsResponse _value, $Res Function(_AboutUsResponse) _then)
       : super(_value, (v) => _then(v as _AboutUsResponse));
 
   @override
@@ -126,8 +119,7 @@ class __$AboutUsResponseCopyWithImpl<$Res>
 class _$_AboutUsResponse implements _AboutUsResponse {
   _$_AboutUsResponse(this.data);
 
-  factory _$_AboutUsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_AboutUsResponseFromJson(json);
+  factory _$_AboutUsResponse.fromJson(Map<String, dynamic> json) => _$$_AboutUsResponseFromJson(json);
 
   @override
   final AboutUsData data;
@@ -141,13 +133,11 @@ class _$_AboutUsResponse implements _AboutUsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AboutUsResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
@@ -163,15 +153,13 @@ class _$_AboutUsResponse implements _AboutUsResponse {
 abstract class _AboutUsResponse implements AboutUsResponse {
   factory _AboutUsResponse(AboutUsData data) = _$_AboutUsResponse;
 
-  factory _AboutUsResponse.fromJson(Map<String, dynamic> json) =
-      _$_AboutUsResponse.fromJson;
+  factory _AboutUsResponse.fromJson(Map<String, dynamic> json) = _$_AboutUsResponse.fromJson;
 
   @override
   AboutUsData get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AboutUsResponseCopyWith<_AboutUsResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AboutUsResponseCopyWith<_AboutUsResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 AboutUsData _$AboutUsDataFromJson(Map<String, dynamic> json) {
@@ -208,15 +196,12 @@ mixin _$AboutUsData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AboutUsDataCopyWith<AboutUsData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AboutUsDataCopyWith<AboutUsData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AboutUsDataCopyWith<$Res> {
-  factory $AboutUsDataCopyWith(
-          AboutUsData value, $Res Function(AboutUsData) then) =
-      _$AboutUsDataCopyWithImpl<$Res>;
+  factory $AboutUsDataCopyWith(AboutUsData value, $Res Function(AboutUsData) then) = _$AboutUsDataCopyWithImpl<$Res>;
   $Res call({int id, String? title, String? slug, String? content});
 }
 
@@ -257,20 +242,16 @@ class _$AboutUsDataCopyWithImpl<$Res> implements $AboutUsDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AboutUsDataCopyWith<$Res>
-    implements $AboutUsDataCopyWith<$Res> {
-  factory _$AboutUsDataCopyWith(
-          _AboutUsData value, $Res Function(_AboutUsData) then) =
+abstract class _$AboutUsDataCopyWith<$Res> implements $AboutUsDataCopyWith<$Res> {
+  factory _$AboutUsDataCopyWith(_AboutUsData value, $Res Function(_AboutUsData) then) =
       __$AboutUsDataCopyWithImpl<$Res>;
   @override
   $Res call({int id, String? title, String? slug, String? content});
 }
 
 /// @nodoc
-class __$AboutUsDataCopyWithImpl<$Res> extends _$AboutUsDataCopyWithImpl<$Res>
-    implements _$AboutUsDataCopyWith<$Res> {
-  __$AboutUsDataCopyWithImpl(
-      _AboutUsData _value, $Res Function(_AboutUsData) _then)
+class __$AboutUsDataCopyWithImpl<$Res> extends _$AboutUsDataCopyWithImpl<$Res> implements _$AboutUsDataCopyWith<$Res> {
+  __$AboutUsDataCopyWithImpl(_AboutUsData _value, $Res Function(_AboutUsData) _then)
       : super(_value, (v) => _then(v as _AboutUsData));
 
   @override
@@ -309,8 +290,7 @@ class __$AboutUsDataCopyWithImpl<$Res> extends _$AboutUsDataCopyWithImpl<$Res>
 class _$_AboutUsData implements _AboutUsData {
   _$_AboutUsData(this.id, this.title, this.slug, this.content);
 
-  factory _$_AboutUsData.fromJson(Map<String, dynamic> json) =>
-      _$$_AboutUsDataFromJson(json);
+  factory _$_AboutUsData.fromJson(Map<String, dynamic> json) => _$$_AboutUsDataFromJson(json);
 
   @override
   final int id;
@@ -330,14 +310,10 @@ class _$_AboutUsData implements _AboutUsData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AboutUsData &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.slug, slug) ||
-                const DeepCollectionEquality().equals(other.slug, slug)) &&
-            (identical(other.content, content) ||
-                const DeepCollectionEquality().equals(other.content, content)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.slug, slug) || const DeepCollectionEquality().equals(other.slug, slug)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)));
   }
 
   @override
@@ -350,8 +326,7 @@ class _$_AboutUsData implements _AboutUsData {
 
   @JsonKey(ignore: true)
   @override
-  _$AboutUsDataCopyWith<_AboutUsData> get copyWith =>
-      __$AboutUsDataCopyWithImpl<_AboutUsData>(this, _$identity);
+  _$AboutUsDataCopyWith<_AboutUsData> get copyWith => __$AboutUsDataCopyWithImpl<_AboutUsData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -360,11 +335,9 @@ class _$_AboutUsData implements _AboutUsData {
 }
 
 abstract class _AboutUsData implements AboutUsData {
-  factory _AboutUsData(int id, String? title, String? slug, String? content) =
-      _$_AboutUsData;
+  factory _AboutUsData(int id, String? title, String? slug, String? content) = _$_AboutUsData;
 
-  factory _AboutUsData.fromJson(Map<String, dynamic> json) =
-      _$_AboutUsData.fromJson;
+  factory _AboutUsData.fromJson(Map<String, dynamic> json) = _$_AboutUsData.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -376,6 +349,5 @@ abstract class _AboutUsData implements AboutUsData {
   String? get content => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AboutUsDataCopyWith<_AboutUsData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AboutUsDataCopyWith<_AboutUsData> get copyWith => throw _privateConstructorUsedError;
 }

@@ -14,6 +14,5 @@ class Address with _$Address {
     @JsonKey(name: 'is_default') bool? isDefault,
   }) = _Address;
 
-  factory Address.fromJson(Map<String, dynamic> json) =>
-      _$AddressFromJson(json);
+  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
 }

@@ -6,10 +6,8 @@ part 'OffersResponse.freezed.dart';
 
 @freezed
 class OffersResponse with _$OffersResponse {
-  const factory OffersResponse(
-      List<MarketPlaceItem> data, MetaPagination meta) = _OffersResponse;
-  factory OffersResponse.fromJson(Map<String, dynamic> json) =>
-      _$OffersResponseFromJson(json);
+  const factory OffersResponse(List<MarketPlaceItem> data, MetaPagination meta) = _OffersResponse;
+  factory OffersResponse.fromJson(Map<String, dynamic> json) => _$OffersResponseFromJson(json);
 }
 
 @freezed
@@ -27,8 +25,7 @@ class OfferItem with _$OfferItem {
     bool is_favorite,
     List<CompanyItem> companies,
   ) = _OfferItem;
-  factory OfferItem.fromJson(Map<String, dynamic> json) =>
-      _$OfferItemFromJson(json);
+  factory OfferItem.fromJson(Map<String, dynamic> json) => _$OfferItemFromJson(json);
 }
 
 @freezed
@@ -39,6 +36,5 @@ class MetaPagination with _$MetaPagination {
     int total,
     int per_page,
   ) = _MetaPagination;
-  factory MetaPagination.fromJson(Map<String, dynamic> json) =>
-      _$MetaPaginationFromJson(json);
+  factory MetaPagination.fromJson(Map<String, dynamic> json) => _$MetaPaginationFromJson(json);
 }

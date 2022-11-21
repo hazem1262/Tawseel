@@ -41,14 +41,12 @@ mixin _$LoginResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoginResponseCopyWith<LoginResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginResponseCopyWith<LoginResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginResponseCopyWith<$Res> {
-  factory $LoginResponseCopyWith(
-          LoginResponse value, $Res Function(LoginResponse) then) =
+  factory $LoginResponseCopyWith(LoginResponse value, $Res Function(LoginResponse) then) =
       _$LoginResponseCopyWithImpl<$Res>;
   $Res call({LoginDataItem data});
 
@@ -56,8 +54,7 @@ abstract class $LoginResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoginResponseCopyWithImpl<$Res>
-    implements $LoginResponseCopyWith<$Res> {
+class _$LoginResponseCopyWithImpl<$Res> implements $LoginResponseCopyWith<$Res> {
   _$LoginResponseCopyWithImpl(this._value, this._then);
 
   final LoginResponse _value;
@@ -85,10 +82,8 @@ class _$LoginResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LoginResponseCopyWith<$Res>
-    implements $LoginResponseCopyWith<$Res> {
-  factory _$LoginResponseCopyWith(
-          _LoginResponse value, $Res Function(_LoginResponse) then) =
+abstract class _$LoginResponseCopyWith<$Res> implements $LoginResponseCopyWith<$Res> {
+  factory _$LoginResponseCopyWith(_LoginResponse value, $Res Function(_LoginResponse) then) =
       __$LoginResponseCopyWithImpl<$Res>;
   @override
   $Res call({LoginDataItem data});
@@ -98,11 +93,9 @@ abstract class _$LoginResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LoginResponseCopyWithImpl<$Res>
-    extends _$LoginResponseCopyWithImpl<$Res>
+class __$LoginResponseCopyWithImpl<$Res> extends _$LoginResponseCopyWithImpl<$Res>
     implements _$LoginResponseCopyWith<$Res> {
-  __$LoginResponseCopyWithImpl(
-      _LoginResponse _value, $Res Function(_LoginResponse) _then)
+  __$LoginResponseCopyWithImpl(_LoginResponse _value, $Res Function(_LoginResponse) _then)
       : super(_value, (v) => _then(v as _LoginResponse));
 
   @override
@@ -126,8 +119,7 @@ class __$LoginResponseCopyWithImpl<$Res>
 class _$_LoginResponse implements _LoginResponse {
   const _$_LoginResponse(this.data);
 
-  factory _$_LoginResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_LoginResponseFromJson(json);
+  factory _$_LoginResponse.fromJson(Map<String, dynamic> json) => _$$_LoginResponseFromJson(json);
 
   @override
   final LoginDataItem data;
@@ -141,13 +133,11 @@ class _$_LoginResponse implements _LoginResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoginResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
@@ -163,15 +153,13 @@ class _$_LoginResponse implements _LoginResponse {
 abstract class _LoginResponse implements LoginResponse {
   const factory _LoginResponse(LoginDataItem data) = _$_LoginResponse;
 
-  factory _LoginResponse.fromJson(Map<String, dynamic> json) =
-      _$_LoginResponse.fromJson;
+  factory _LoginResponse.fromJson(Map<String, dynamic> json) = _$_LoginResponse.fromJson;
 
   @override
   LoginDataItem get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LoginResponseCopyWith<_LoginResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$LoginResponseCopyWith<_LoginResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 LoginDataItem _$LoginDataItemFromJson(Map<String, dynamic> json) {
@@ -206,14 +194,12 @@ mixin _$LoginDataItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoginDataItemCopyWith<LoginDataItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginDataItemCopyWith<LoginDataItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginDataItemCopyWith<$Res> {
-  factory $LoginDataItemCopyWith(
-          LoginDataItem value, $Res Function(LoginDataItem) then) =
+  factory $LoginDataItemCopyWith(LoginDataItem value, $Res Function(LoginDataItem) then) =
       _$LoginDataItemCopyWithImpl<$Res>;
   $Res call({UserItem user, String? access_token, String? token_type});
 
@@ -221,8 +207,7 @@ abstract class $LoginDataItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoginDataItemCopyWithImpl<$Res>
-    implements $LoginDataItemCopyWith<$Res> {
+class _$LoginDataItemCopyWithImpl<$Res> implements $LoginDataItemCopyWith<$Res> {
   _$LoginDataItemCopyWithImpl(this._value, this._then);
 
   final LoginDataItem _value;
@@ -260,10 +245,8 @@ class _$LoginDataItemCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LoginDataItemCopyWith<$Res>
-    implements $LoginDataItemCopyWith<$Res> {
-  factory _$LoginDataItemCopyWith(
-          _LoginDataItem value, $Res Function(_LoginDataItem) then) =
+abstract class _$LoginDataItemCopyWith<$Res> implements $LoginDataItemCopyWith<$Res> {
+  factory _$LoginDataItemCopyWith(_LoginDataItem value, $Res Function(_LoginDataItem) then) =
       __$LoginDataItemCopyWithImpl<$Res>;
   @override
   $Res call({UserItem user, String? access_token, String? token_type});
@@ -273,11 +256,9 @@ abstract class _$LoginDataItemCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LoginDataItemCopyWithImpl<$Res>
-    extends _$LoginDataItemCopyWithImpl<$Res>
+class __$LoginDataItemCopyWithImpl<$Res> extends _$LoginDataItemCopyWithImpl<$Res>
     implements _$LoginDataItemCopyWith<$Res> {
-  __$LoginDataItemCopyWithImpl(
-      _LoginDataItem _value, $Res Function(_LoginDataItem) _then)
+  __$LoginDataItemCopyWithImpl(_LoginDataItem _value, $Res Function(_LoginDataItem) _then)
       : super(_value, (v) => _then(v as _LoginDataItem));
 
   @override
@@ -311,8 +292,7 @@ class __$LoginDataItemCopyWithImpl<$Res>
 class _$_LoginDataItem implements _LoginDataItem {
   const _$_LoginDataItem(this.user, this.access_token, this.token_type);
 
-  factory _$_LoginDataItem.fromJson(Map<String, dynamic> json) =>
-      _$$_LoginDataItemFromJson(json);
+  factory _$_LoginDataItem.fromJson(Map<String, dynamic> json) => _$$_LoginDataItemFromJson(json);
 
   @override
   final UserItem user;
@@ -330,14 +310,11 @@ class _$_LoginDataItem implements _LoginDataItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoginDataItem &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.access_token, access_token) ||
-                const DeepCollectionEquality()
-                    .equals(other.access_token, access_token)) &&
+                const DeepCollectionEquality().equals(other.access_token, access_token)) &&
             (identical(other.token_type, token_type) ||
-                const DeepCollectionEquality()
-                    .equals(other.token_type, token_type)));
+                const DeepCollectionEquality().equals(other.token_type, token_type)));
   }
 
   @override
@@ -359,12 +336,9 @@ class _$_LoginDataItem implements _LoginDataItem {
 }
 
 abstract class _LoginDataItem implements LoginDataItem {
-  const factory _LoginDataItem(
-          UserItem user, String? access_token, String? token_type) =
-      _$_LoginDataItem;
+  const factory _LoginDataItem(UserItem user, String? access_token, String? token_type) = _$_LoginDataItem;
 
-  factory _LoginDataItem.fromJson(Map<String, dynamic> json) =
-      _$_LoginDataItem.fromJson;
+  factory _LoginDataItem.fromJson(Map<String, dynamic> json) = _$_LoginDataItem.fromJson;
 
   @override
   UserItem get user => throw _privateConstructorUsedError;
@@ -374,8 +348,7 @@ abstract class _LoginDataItem implements LoginDataItem {
   String? get token_type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LoginDataItemCopyWith<_LoginDataItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$LoginDataItemCopyWith<_LoginDataItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 UserItem _$UserItemFromJson(Map<String, dynamic> json) {
@@ -386,17 +359,8 @@ UserItem _$UserItemFromJson(Map<String, dynamic> json) {
 class _$UserItemTearOff {
   const _$UserItemTearOff();
 
-  _UserItem call(
-      int id,
-      String name,
-      String phone,
-      String? image,
-      String? email,
-      bool is_social,
-      String? phone_verified_at,
-      bool is_verified,
-      bool can_receive_offers,
-      List<AddressItem> address) {
+  _UserItem call(int id, String name, String phone, String? image, String? email, bool is_social,
+      String? phone_verified_at, bool is_verified, bool can_receive_offers, List<AddressItem> address) {
     return _UserItem(
       id,
       name,
@@ -434,14 +398,12 @@ mixin _$UserItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserItemCopyWith<UserItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserItemCopyWith<UserItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserItemCopyWith<$Res> {
-  factory $UserItemCopyWith(UserItem value, $Res Function(UserItem) then) =
-      _$UserItemCopyWithImpl<$Res>;
+  factory $UserItemCopyWith(UserItem value, $Res Function(UserItem) then) = _$UserItemCopyWithImpl<$Res>;
   $Res call(
       {int id,
       String name,
@@ -523,8 +485,7 @@ class _$UserItemCopyWithImpl<$Res> implements $UserItemCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$UserItemCopyWith<$Res> implements $UserItemCopyWith<$Res> {
-  factory _$UserItemCopyWith(_UserItem value, $Res Function(_UserItem) then) =
-      __$UserItemCopyWithImpl<$Res>;
+  factory _$UserItemCopyWith(_UserItem value, $Res Function(_UserItem) then) = __$UserItemCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -540,8 +501,7 @@ abstract class _$UserItemCopyWith<$Res> implements $UserItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
-    implements _$UserItemCopyWith<$Res> {
+class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res> implements _$UserItemCopyWith<$Res> {
   __$UserItemCopyWithImpl(_UserItem _value, $Res Function(_UserItem) _then)
       : super(_value, (v) => _then(v as _UserItem));
 
@@ -609,20 +569,10 @@ class __$UserItemCopyWithImpl<$Res> extends _$UserItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UserItem implements _UserItem {
-  const _$_UserItem(
-      this.id,
-      this.name,
-      this.phone,
-      this.image,
-      this.email,
-      this.is_social,
-      this.phone_verified_at,
-      this.is_verified,
-      this.can_receive_offers,
-      this.address);
+  const _$_UserItem(this.id, this.name, this.phone, this.image, this.email, this.is_social, this.phone_verified_at,
+      this.is_verified, this.can_receive_offers, this.address);
 
-  factory _$_UserItem.fromJson(Map<String, dynamic> json) =>
-      _$$_UserItemFromJson(json);
+  factory _$_UserItem.fromJson(Map<String, dynamic> json) => _$$_UserItemFromJson(json);
 
   @override
   final int id;
@@ -654,30 +604,20 @@ class _$_UserItem implements _UserItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserItem &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.phone, phone) ||
-                const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.phone, phone) || const DeepCollectionEquality().equals(other.phone, phone)) &&
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.is_social, is_social) ||
-                const DeepCollectionEquality()
-                    .equals(other.is_social, is_social)) &&
+                const DeepCollectionEquality().equals(other.is_social, is_social)) &&
             (identical(other.phone_verified_at, phone_verified_at) ||
-                const DeepCollectionEquality()
-                    .equals(other.phone_verified_at, phone_verified_at)) &&
+                const DeepCollectionEquality().equals(other.phone_verified_at, phone_verified_at)) &&
             (identical(other.is_verified, is_verified) ||
-                const DeepCollectionEquality()
-                    .equals(other.is_verified, is_verified)) &&
+                const DeepCollectionEquality().equals(other.is_verified, is_verified)) &&
             (identical(other.can_receive_offers, can_receive_offers) ||
-                const DeepCollectionEquality()
-                    .equals(other.can_receive_offers, can_receive_offers)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality().equals(other.address, address)));
+                const DeepCollectionEquality().equals(other.can_receive_offers, can_receive_offers)) &&
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)));
   }
 
   @override
@@ -696,8 +636,7 @@ class _$_UserItem implements _UserItem {
 
   @JsonKey(ignore: true)
   @override
-  _$UserItemCopyWith<_UserItem> get copyWith =>
-      __$UserItemCopyWithImpl<_UserItem>(this, _$identity);
+  _$UserItemCopyWith<_UserItem> get copyWith => __$UserItemCopyWithImpl<_UserItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -706,17 +645,8 @@ class _$_UserItem implements _UserItem {
 }
 
 abstract class _UserItem implements UserItem {
-  const factory _UserItem(
-      int id,
-      String name,
-      String phone,
-      String? image,
-      String? email,
-      bool is_social,
-      String? phone_verified_at,
-      bool is_verified,
-      bool can_receive_offers,
-      List<AddressItem> address) = _$_UserItem;
+  const factory _UserItem(int id, String name, String phone, String? image, String? email, bool is_social,
+      String? phone_verified_at, bool is_verified, bool can_receive_offers, List<AddressItem> address) = _$_UserItem;
 
   factory _UserItem.fromJson(Map<String, dynamic> json) = _$_UserItem.fromJson;
 
@@ -742,8 +672,7 @@ abstract class _UserItem implements UserItem {
   List<AddressItem> get address => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserItemCopyWith<_UserItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$UserItemCopyWith<_UserItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 AddressItem _$AddressItemFromJson(Map<String, dynamic> json) {
@@ -754,8 +683,7 @@ AddressItem _$AddressItemFromJson(Map<String, dynamic> json) {
 class _$AddressItemTearOff {
   const _$AddressItemTearOff();
 
-  _AddressItem call(int id, String name, String address, String lat,
-      String long, bool is_default) {
+  _AddressItem call(int id, String name, String address, String lat, String long, bool is_default) {
     return _AddressItem(
       id,
       name,
@@ -785,22 +713,13 @@ mixin _$AddressItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressItemCopyWith<AddressItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressItemCopyWith<AddressItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressItemCopyWith<$Res> {
-  factory $AddressItemCopyWith(
-          AddressItem value, $Res Function(AddressItem) then) =
-      _$AddressItemCopyWithImpl<$Res>;
-  $Res call(
-      {int id,
-      String name,
-      String address,
-      String lat,
-      String long,
-      bool is_default});
+  factory $AddressItemCopyWith(AddressItem value, $Res Function(AddressItem) then) = _$AddressItemCopyWithImpl<$Res>;
+  $Res call({int id, String name, String address, String lat, String long, bool is_default});
 }
 
 /// @nodoc
@@ -850,26 +769,16 @@ class _$AddressItemCopyWithImpl<$Res> implements $AddressItemCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AddressItemCopyWith<$Res>
-    implements $AddressItemCopyWith<$Res> {
-  factory _$AddressItemCopyWith(
-          _AddressItem value, $Res Function(_AddressItem) then) =
+abstract class _$AddressItemCopyWith<$Res> implements $AddressItemCopyWith<$Res> {
+  factory _$AddressItemCopyWith(_AddressItem value, $Res Function(_AddressItem) then) =
       __$AddressItemCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int id,
-      String name,
-      String address,
-      String lat,
-      String long,
-      bool is_default});
+  $Res call({int id, String name, String address, String lat, String long, bool is_default});
 }
 
 /// @nodoc
-class __$AddressItemCopyWithImpl<$Res> extends _$AddressItemCopyWithImpl<$Res>
-    implements _$AddressItemCopyWith<$Res> {
-  __$AddressItemCopyWithImpl(
-      _AddressItem _value, $Res Function(_AddressItem) _then)
+class __$AddressItemCopyWithImpl<$Res> extends _$AddressItemCopyWithImpl<$Res> implements _$AddressItemCopyWith<$Res> {
+  __$AddressItemCopyWithImpl(_AddressItem _value, $Res Function(_AddressItem) _then)
       : super(_value, (v) => _then(v as _AddressItem));
 
   @override
@@ -916,11 +825,9 @@ class __$AddressItemCopyWithImpl<$Res> extends _$AddressItemCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AddressItem implements _AddressItem {
-  const _$_AddressItem(
-      this.id, this.name, this.address, this.lat, this.long, this.is_default);
+  const _$_AddressItem(this.id, this.name, this.address, this.lat, this.long, this.is_default);
 
-  factory _$_AddressItem.fromJson(Map<String, dynamic> json) =>
-      _$$_AddressItemFromJson(json);
+  factory _$_AddressItem.fromJson(Map<String, dynamic> json) => _$$_AddressItemFromJson(json);
 
   @override
   final int id;
@@ -944,20 +851,13 @@ class _$_AddressItem implements _AddressItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AddressItem &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.address, address) ||
-                const DeepCollectionEquality()
-                    .equals(other.address, address)) &&
-            (identical(other.lat, lat) ||
-                const DeepCollectionEquality().equals(other.lat, lat)) &&
-            (identical(other.long, long) ||
-                const DeepCollectionEquality().equals(other.long, long)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)) &&
+            (identical(other.lat, lat) || const DeepCollectionEquality().equals(other.lat, lat)) &&
+            (identical(other.long, long) || const DeepCollectionEquality().equals(other.long, long)) &&
             (identical(other.is_default, is_default) ||
-                const DeepCollectionEquality()
-                    .equals(other.is_default, is_default)));
+                const DeepCollectionEquality().equals(other.is_default, is_default)));
   }
 
   @override
@@ -972,8 +872,7 @@ class _$_AddressItem implements _AddressItem {
 
   @JsonKey(ignore: true)
   @override
-  _$AddressItemCopyWith<_AddressItem> get copyWith =>
-      __$AddressItemCopyWithImpl<_AddressItem>(this, _$identity);
+  _$AddressItemCopyWith<_AddressItem> get copyWith => __$AddressItemCopyWithImpl<_AddressItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -982,11 +881,10 @@ class _$_AddressItem implements _AddressItem {
 }
 
 abstract class _AddressItem implements AddressItem {
-  const factory _AddressItem(int id, String name, String address, String lat,
-      String long, bool is_default) = _$_AddressItem;
+  const factory _AddressItem(int id, String name, String address, String lat, String long, bool is_default) =
+      _$_AddressItem;
 
-  factory _AddressItem.fromJson(Map<String, dynamic> json) =
-      _$_AddressItem.fromJson;
+  factory _AddressItem.fromJson(Map<String, dynamic> json) = _$_AddressItem.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -1002,6 +900,5 @@ abstract class _AddressItem implements AddressItem {
   bool get is_default => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AddressItemCopyWith<_AddressItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AddressItemCopyWith<_AddressItem> get copyWith => throw _privateConstructorUsedError;
 }

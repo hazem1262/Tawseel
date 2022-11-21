@@ -41,14 +41,12 @@ mixin _$UserProfileResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserProfileResponseCopyWith<UserProfileResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserProfileResponseCopyWith<UserProfileResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserProfileResponseCopyWith<$Res> {
-  factory $UserProfileResponseCopyWith(
-          UserProfileResponse value, $Res Function(UserProfileResponse) then) =
+  factory $UserProfileResponseCopyWith(UserProfileResponse value, $Res Function(UserProfileResponse) then) =
       _$UserProfileResponseCopyWithImpl<$Res>;
   $Res call({Data? data});
 
@@ -56,8 +54,7 @@ abstract class $UserProfileResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserProfileResponseCopyWithImpl<$Res>
-    implements $UserProfileResponseCopyWith<$Res> {
+class _$UserProfileResponseCopyWithImpl<$Res> implements $UserProfileResponseCopyWith<$Res> {
   _$UserProfileResponseCopyWithImpl(this._value, this._then);
 
   final UserProfileResponse _value;
@@ -89,10 +86,8 @@ class _$UserProfileResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UserProfileResponseCopyWith<$Res>
-    implements $UserProfileResponseCopyWith<$Res> {
-  factory _$UserProfileResponseCopyWith(_UserProfileResponse value,
-          $Res Function(_UserProfileResponse) then) =
+abstract class _$UserProfileResponseCopyWith<$Res> implements $UserProfileResponseCopyWith<$Res> {
+  factory _$UserProfileResponseCopyWith(_UserProfileResponse value, $Res Function(_UserProfileResponse) then) =
       __$UserProfileResponseCopyWithImpl<$Res>;
   @override
   $Res call({Data? data});
@@ -102,11 +97,9 @@ abstract class _$UserProfileResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UserProfileResponseCopyWithImpl<$Res>
-    extends _$UserProfileResponseCopyWithImpl<$Res>
+class __$UserProfileResponseCopyWithImpl<$Res> extends _$UserProfileResponseCopyWithImpl<$Res>
     implements _$UserProfileResponseCopyWith<$Res> {
-  __$UserProfileResponseCopyWithImpl(
-      _UserProfileResponse _value, $Res Function(_UserProfileResponse) _then)
+  __$UserProfileResponseCopyWithImpl(_UserProfileResponse _value, $Res Function(_UserProfileResponse) _then)
       : super(_value, (v) => _then(v as _UserProfileResponse));
 
   @override
@@ -130,8 +123,7 @@ class __$UserProfileResponseCopyWithImpl<$Res>
 class _$_UserProfileResponse implements _UserProfileResponse {
   _$_UserProfileResponse({this.data});
 
-  factory _$_UserProfileResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_UserProfileResponseFromJson(json);
+  factory _$_UserProfileResponse.fromJson(Map<String, dynamic> json) => _$$_UserProfileResponseFromJson(json);
 
   @override
   final Data? data;
@@ -145,19 +137,16 @@ class _$_UserProfileResponse implements _UserProfileResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserProfileResponse &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
+            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
   _$UserProfileResponseCopyWith<_UserProfileResponse> get copyWith =>
-      __$UserProfileResponseCopyWithImpl<_UserProfileResponse>(
-          this, _$identity);
+      __$UserProfileResponseCopyWithImpl<_UserProfileResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -168,13 +157,11 @@ class _$_UserProfileResponse implements _UserProfileResponse {
 abstract class _UserProfileResponse implements UserProfileResponse {
   factory _UserProfileResponse({Data? data}) = _$_UserProfileResponse;
 
-  factory _UserProfileResponse.fromJson(Map<String, dynamic> json) =
-      _$_UserProfileResponse.fromJson;
+  factory _UserProfileResponse.fromJson(Map<String, dynamic> json) = _$_UserProfileResponse.fromJson;
 
   @override
   Data? get data => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserProfileResponseCopyWith<_UserProfileResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$UserProfileResponseCopyWith<_UserProfileResponse> get copyWith => throw _privateConstructorUsedError;
 }

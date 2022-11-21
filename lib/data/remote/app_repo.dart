@@ -16,6 +16,5 @@ class AppRepository with NetworkHandler implements IAppRepository {
   Future<AboutUsResponse> getAbout() => networkHandler(() => api.getAbout());
 
   @override
-  Future<TermsResponse> getTerms() =>
-      networkHandler(() => api.getTermsAndConditions());
+  Future<TermsResponse> getTerms() => networkHandler(() => api.getTermsAndConditions());
 }

@@ -72,12 +72,9 @@ mixin _$ViewAllMarketPlaceBlocEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetViewAllMarketPlaceMarketPlaces value)
-        getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(GetViewAllMarketPlaceMarketPlaces value) getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetViewAllMarketPlaceRefreshData value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -85,8 +82,7 @@ mixin _$ViewAllMarketPlaceBlocEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -94,8 +90,7 @@ mixin _$ViewAllMarketPlaceBlocEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
     required TResult orElse(),
   }) =>
@@ -105,14 +100,12 @@ mixin _$ViewAllMarketPlaceBlocEvent {
 /// @nodoc
 abstract class $ViewAllMarketPlaceBlocEventCopyWith<$Res> {
   factory $ViewAllMarketPlaceBlocEventCopyWith(
-          ViewAllMarketPlaceBlocEvent value,
-          $Res Function(ViewAllMarketPlaceBlocEvent) then) =
+          ViewAllMarketPlaceBlocEvent value, $Res Function(ViewAllMarketPlaceBlocEvent) then) =
       _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
-    implements $ViewAllMarketPlaceBlocEventCopyWith<$Res> {
+class _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res> implements $ViewAllMarketPlaceBlocEventCopyWith<$Res> {
   _$ViewAllMarketPlaceBlocEventCopyWithImpl(this._value, this._then);
 
   final ViewAllMarketPlaceBlocEvent _value;
@@ -123,24 +116,20 @@ class _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
 /// @nodoc
 abstract class $GetViewAllMarketPlaceMarketPlacesCopyWith<$Res> {
   factory $GetViewAllMarketPlaceMarketPlacesCopyWith(
-          GetViewAllMarketPlaceMarketPlaces value,
-          $Res Function(GetViewAllMarketPlaceMarketPlaces) then) =
+          GetViewAllMarketPlaceMarketPlaces value, $Res Function(GetViewAllMarketPlaceMarketPlaces) then) =
       _$GetViewAllMarketPlaceMarketPlacesCopyWithImpl<$Res>;
   $Res call({List<int>? category_ids});
 }
 
 /// @nodoc
-class _$GetViewAllMarketPlaceMarketPlacesCopyWithImpl<$Res>
-    extends _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
+class _$GetViewAllMarketPlaceMarketPlacesCopyWithImpl<$Res> extends _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
     implements $GetViewAllMarketPlaceMarketPlacesCopyWith<$Res> {
   _$GetViewAllMarketPlaceMarketPlacesCopyWithImpl(
-      GetViewAllMarketPlaceMarketPlaces _value,
-      $Res Function(GetViewAllMarketPlaceMarketPlaces) _then)
+      GetViewAllMarketPlaceMarketPlaces _value, $Res Function(GetViewAllMarketPlaceMarketPlaces) _then)
       : super(_value, (v) => _then(v as GetViewAllMarketPlaceMarketPlaces));
 
   @override
-  GetViewAllMarketPlaceMarketPlaces get _value =>
-      super._value as GetViewAllMarketPlaceMarketPlaces;
+  GetViewAllMarketPlaceMarketPlaces get _value => super._value as GetViewAllMarketPlaceMarketPlaces;
 
   @override
   $Res call({
@@ -157,8 +146,7 @@ class _$GetViewAllMarketPlaceMarketPlacesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetViewAllMarketPlaceMarketPlaces
-    implements GetViewAllMarketPlaceMarketPlaces {
+class _$GetViewAllMarketPlaceMarketPlaces implements GetViewAllMarketPlaceMarketPlaces {
   const _$GetViewAllMarketPlaceMarketPlaces(this.category_ids);
 
   @override
@@ -174,19 +162,16 @@ class _$GetViewAllMarketPlaceMarketPlaces
     return identical(this, other) ||
         (other is GetViewAllMarketPlaceMarketPlaces &&
             (identical(other.category_ids, category_ids) ||
-                const DeepCollectionEquality()
-                    .equals(other.category_ids, category_ids)));
+                const DeepCollectionEquality().equals(other.category_ids, category_ids)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(category_ids);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(category_ids);
 
   @JsonKey(ignore: true)
   @override
-  $GetViewAllMarketPlaceMarketPlacesCopyWith<GetViewAllMarketPlaceMarketPlaces>
-      get copyWith => _$GetViewAllMarketPlaceMarketPlacesCopyWithImpl<
-          GetViewAllMarketPlaceMarketPlaces>(this, _$identity);
+  $GetViewAllMarketPlaceMarketPlacesCopyWith<GetViewAllMarketPlaceMarketPlaces> get copyWith =>
+      _$GetViewAllMarketPlaceMarketPlacesCopyWithImpl<GetViewAllMarketPlaceMarketPlaces>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -228,12 +213,9 @@ class _$GetViewAllMarketPlaceMarketPlaces
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetViewAllMarketPlaceMarketPlaces value)
-        getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(GetViewAllMarketPlaceMarketPlaces value) getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetViewAllMarketPlaceRefreshData value) reset,
   }) {
     return getMarketPlaces(this);
@@ -244,8 +226,7 @@ class _$GetViewAllMarketPlaceMarketPlaces
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
   }) {
     return getMarketPlaces?.call(this);
@@ -256,8 +237,7 @@ class _$GetViewAllMarketPlaceMarketPlaces
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -268,36 +248,31 @@ class _$GetViewAllMarketPlaceMarketPlaces
   }
 }
 
-abstract class GetViewAllMarketPlaceMarketPlaces
-    implements ViewAllMarketPlaceBlocEvent {
-  const factory GetViewAllMarketPlaceMarketPlaces(List<int>? category_ids) =
-      _$GetViewAllMarketPlaceMarketPlaces;
+abstract class GetViewAllMarketPlaceMarketPlaces implements ViewAllMarketPlaceBlocEvent {
+  const factory GetViewAllMarketPlaceMarketPlaces(List<int>? category_ids) = _$GetViewAllMarketPlaceMarketPlaces;
 
   List<int>? get category_ids => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetViewAllMarketPlaceMarketPlacesCopyWith<GetViewAllMarketPlaceMarketPlaces>
-      get copyWith => throw _privateConstructorUsedError;
+  $GetViewAllMarketPlaceMarketPlacesCopyWith<GetViewAllMarketPlaceMarketPlaces> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddMarketPlaceToFavoriteCopyWith<$Res> {
-  factory $AddMarketPlaceToFavoriteCopyWith(AddMarketPlaceToFavorite value,
-          $Res Function(AddMarketPlaceToFavorite) then) =
+  factory $AddMarketPlaceToFavoriteCopyWith(
+          AddMarketPlaceToFavorite value, $Res Function(AddMarketPlaceToFavorite) then) =
       _$AddMarketPlaceToFavoriteCopyWithImpl<$Res>;
   $Res call({int id});
 }
 
 /// @nodoc
-class _$AddMarketPlaceToFavoriteCopyWithImpl<$Res>
-    extends _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
+class _$AddMarketPlaceToFavoriteCopyWithImpl<$Res> extends _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
     implements $AddMarketPlaceToFavoriteCopyWith<$Res> {
-  _$AddMarketPlaceToFavoriteCopyWithImpl(AddMarketPlaceToFavorite _value,
-      $Res Function(AddMarketPlaceToFavorite) _then)
+  _$AddMarketPlaceToFavoriteCopyWithImpl(AddMarketPlaceToFavorite _value, $Res Function(AddMarketPlaceToFavorite) _then)
       : super(_value, (v) => _then(v as AddMarketPlaceToFavorite));
 
   @override
-  AddMarketPlaceToFavorite get _value =>
-      super._value as AddMarketPlaceToFavorite;
+  AddMarketPlaceToFavorite get _value => super._value as AddMarketPlaceToFavorite;
 
   @override
   $Res call({
@@ -329,19 +304,16 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is AddMarketPlaceToFavorite &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
   $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith =>
-      _$AddMarketPlaceToFavoriteCopyWithImpl<AddMarketPlaceToFavorite>(
-          this, _$identity);
+      _$AddMarketPlaceToFavoriteCopyWithImpl<AddMarketPlaceToFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -383,12 +355,9 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetViewAllMarketPlaceMarketPlaces value)
-        getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(GetViewAllMarketPlaceMarketPlaces value) getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetViewAllMarketPlaceRefreshData value) reset,
   }) {
     return addMarketPlaceToFavorite(this);
@@ -399,8 +368,7 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
   }) {
     return addMarketPlaceToFavorite?.call(this);
@@ -411,8 +379,7 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -428,31 +395,26 @@ abstract class AddMarketPlaceToFavorite implements ViewAllMarketPlaceBlocEvent {
 
   int get id => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddMarketPlaceToFavoriteCopyWith<AddMarketPlaceToFavorite> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   factory $RemoveMarketPlaceFromFavoriteCopyWith(
-          RemoveMarketPlaceFromFavorite value,
-          $Res Function(RemoveMarketPlaceFromFavorite) then) =
+          RemoveMarketPlaceFromFavorite value, $Res Function(RemoveMarketPlaceFromFavorite) then) =
       _$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>;
   $Res call({int id});
 }
 
 /// @nodoc
-class _$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>
-    extends _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
+class _$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res> extends _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
     implements $RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   _$RemoveMarketPlaceFromFavoriteCopyWithImpl(
-      RemoveMarketPlaceFromFavorite _value,
-      $Res Function(RemoveMarketPlaceFromFavorite) _then)
+      RemoveMarketPlaceFromFavorite _value, $Res Function(RemoveMarketPlaceFromFavorite) _then)
       : super(_value, (v) => _then(v as RemoveMarketPlaceFromFavorite));
 
   @override
-  RemoveMarketPlaceFromFavorite get _value =>
-      super._value as RemoveMarketPlaceFromFavorite;
+  RemoveMarketPlaceFromFavorite get _value => super._value as RemoveMarketPlaceFromFavorite;
 
   @override
   $Res call({
@@ -484,19 +446,16 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is RemoveMarketPlaceFromFavorite &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
 
   @JsonKey(ignore: true)
   @override
-  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite>
-      get copyWith => _$RemoveMarketPlaceFromFavoriteCopyWithImpl<
-          RemoveMarketPlaceFromFavorite>(this, _$identity);
+  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite> get copyWith =>
+      _$RemoveMarketPlaceFromFavoriteCopyWithImpl<RemoveMarketPlaceFromFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -538,12 +497,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetViewAllMarketPlaceMarketPlaces value)
-        getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(GetViewAllMarketPlaceMarketPlaces value) getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetViewAllMarketPlaceRefreshData value) reset,
   }) {
     return removeMarketPlaceToFavorite(this);
@@ -554,8 +510,7 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
   }) {
     return removeMarketPlaceToFavorite?.call(this);
@@ -566,8 +521,7 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -578,43 +532,36 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   }
 }
 
-abstract class RemoveMarketPlaceFromFavorite
-    implements ViewAllMarketPlaceBlocEvent {
-  const factory RemoveMarketPlaceFromFavorite(int id) =
-      _$RemoveMarketPlaceFromFavorite;
+abstract class RemoveMarketPlaceFromFavorite implements ViewAllMarketPlaceBlocEvent {
+  const factory RemoveMarketPlaceFromFavorite(int id) = _$RemoveMarketPlaceFromFavorite;
 
   int get id => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite>
-      get copyWith => throw _privateConstructorUsedError;
+  $RemoveMarketPlaceFromFavoriteCopyWith<RemoveMarketPlaceFromFavorite> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResetViewAllMarketPlaceRefreshDataCopyWith<$Res> {
   factory $ResetViewAllMarketPlaceRefreshDataCopyWith(
-          ResetViewAllMarketPlaceRefreshData value,
-          $Res Function(ResetViewAllMarketPlaceRefreshData) then) =
+          ResetViewAllMarketPlaceRefreshData value, $Res Function(ResetViewAllMarketPlaceRefreshData) then) =
       _$ResetViewAllMarketPlaceRefreshDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetViewAllMarketPlaceRefreshDataCopyWithImpl<$Res>
-    extends _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
+class _$ResetViewAllMarketPlaceRefreshDataCopyWithImpl<$Res> extends _$ViewAllMarketPlaceBlocEventCopyWithImpl<$Res>
     implements $ResetViewAllMarketPlaceRefreshDataCopyWith<$Res> {
   _$ResetViewAllMarketPlaceRefreshDataCopyWithImpl(
-      ResetViewAllMarketPlaceRefreshData _value,
-      $Res Function(ResetViewAllMarketPlaceRefreshData) _then)
+      ResetViewAllMarketPlaceRefreshData _value, $Res Function(ResetViewAllMarketPlaceRefreshData) _then)
       : super(_value, (v) => _then(v as ResetViewAllMarketPlaceRefreshData));
 
   @override
-  ResetViewAllMarketPlaceRefreshData get _value =>
-      super._value as ResetViewAllMarketPlaceRefreshData;
+  ResetViewAllMarketPlaceRefreshData get _value => super._value as ResetViewAllMarketPlaceRefreshData;
 }
 
 /// @nodoc
 
-class _$ResetViewAllMarketPlaceRefreshData
-    implements ResetViewAllMarketPlaceRefreshData {
+class _$ResetViewAllMarketPlaceRefreshData implements ResetViewAllMarketPlaceRefreshData {
   const _$ResetViewAllMarketPlaceRefreshData();
 
   @override
@@ -624,8 +571,7 @@ class _$ResetViewAllMarketPlaceRefreshData
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is ResetViewAllMarketPlaceRefreshData);
+    return identical(this, other) || (other is ResetViewAllMarketPlaceRefreshData);
   }
 
   @override
@@ -671,12 +617,9 @@ class _$ResetViewAllMarketPlaceRefreshData
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetViewAllMarketPlaceMarketPlaces value)
-        getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value)
-        addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value)
-        removeMarketPlaceToFavorite,
+    required TResult Function(GetViewAllMarketPlaceMarketPlaces value) getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
     required TResult Function(ResetViewAllMarketPlaceRefreshData value) reset,
   }) {
     return reset(this);
@@ -687,8 +630,7 @@ class _$ResetViewAllMarketPlaceRefreshData
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
   }) {
     return reset?.call(this);
@@ -699,8 +641,7 @@ class _$ResetViewAllMarketPlaceRefreshData
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetViewAllMarketPlaceMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)?
-        removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     TResult Function(ResetViewAllMarketPlaceRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -711,10 +652,8 @@ class _$ResetViewAllMarketPlaceRefreshData
   }
 }
 
-abstract class ResetViewAllMarketPlaceRefreshData
-    implements ViewAllMarketPlaceBlocEvent {
-  const factory ResetViewAllMarketPlaceRefreshData() =
-      _$ResetViewAllMarketPlaceRefreshData;
+abstract class ResetViewAllMarketPlaceRefreshData implements ViewAllMarketPlaceBlocEvent {
+  const factory ResetViewAllMarketPlaceRefreshData() = _$ResetViewAllMarketPlaceRefreshData;
 }
 
 /// @nodoc
@@ -750,33 +689,21 @@ mixin _$ViewAllMarketPlaceBlocState {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            bool nearbyMarketPlaceIsLoading,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> nearbyList,
-            bool hasMorePages)
+    required TResult Function(bool nearbyMarketPlaceIsLoading, String error, bool refreshData,
+            List<MarketPlaceItem> nearbyList, bool hasMorePages)
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            bool nearbyMarketPlaceIsLoading,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> nearbyList,
+    TResult Function(bool nearbyMarketPlaceIsLoading, String error, bool refreshData, List<MarketPlaceItem> nearbyList,
             bool hasMorePages)?
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            bool nearbyMarketPlaceIsLoading,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> nearbyList,
+    TResult Function(bool nearbyMarketPlaceIsLoading, String error, bool refreshData, List<MarketPlaceItem> nearbyList,
             bool hasMorePages)?
         defaultState,
     required TResult orElse(),
@@ -784,34 +711,29 @@ mixin _$ViewAllMarketPlaceBlocState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)
-        defaultState,
+    required TResult Function(ViewAllMarketPlaceBlocStateDefaultState value) defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)?
-        defaultState,
+    TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)? defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)?
-        defaultState,
+    TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)? defaultState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ViewAllMarketPlaceBlocStateCopyWith<ViewAllMarketPlaceBlocState>
-      get copyWith => throw _privateConstructorUsedError;
+  $ViewAllMarketPlaceBlocStateCopyWith<ViewAllMarketPlaceBlocState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ViewAllMarketPlaceBlocStateCopyWith<$Res> {
   factory $ViewAllMarketPlaceBlocStateCopyWith(
-          ViewAllMarketPlaceBlocState value,
-          $Res Function(ViewAllMarketPlaceBlocState) then) =
+          ViewAllMarketPlaceBlocState value, $Res Function(ViewAllMarketPlaceBlocState) then) =
       _$ViewAllMarketPlaceBlocStateCopyWithImpl<$Res>;
   $Res call(
       {bool nearbyMarketPlaceIsLoading,
@@ -822,8 +744,7 @@ abstract class $ViewAllMarketPlaceBlocStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ViewAllMarketPlaceBlocStateCopyWithImpl<$Res>
-    implements $ViewAllMarketPlaceBlocStateCopyWith<$Res> {
+class _$ViewAllMarketPlaceBlocStateCopyWithImpl<$Res> implements $ViewAllMarketPlaceBlocStateCopyWith<$Res> {
   _$ViewAllMarketPlaceBlocStateCopyWithImpl(this._value, this._then);
 
   final ViewAllMarketPlaceBlocState _value;
@@ -867,8 +788,7 @@ class _$ViewAllMarketPlaceBlocStateCopyWithImpl<$Res>
 abstract class $ViewAllMarketPlaceBlocStateDefaultStateCopyWith<$Res>
     implements $ViewAllMarketPlaceBlocStateCopyWith<$Res> {
   factory $ViewAllMarketPlaceBlocStateDefaultStateCopyWith(
-          ViewAllMarketPlaceBlocStateDefaultState value,
-          $Res Function(ViewAllMarketPlaceBlocStateDefaultState) then) =
+          ViewAllMarketPlaceBlocStateDefaultState value, $Res Function(ViewAllMarketPlaceBlocStateDefaultState) then) =
       _$ViewAllMarketPlaceBlocStateDefaultStateCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -884,14 +804,11 @@ class _$ViewAllMarketPlaceBlocStateDefaultStateCopyWithImpl<$Res>
     extends _$ViewAllMarketPlaceBlocStateCopyWithImpl<$Res>
     implements $ViewAllMarketPlaceBlocStateDefaultStateCopyWith<$Res> {
   _$ViewAllMarketPlaceBlocStateDefaultStateCopyWithImpl(
-      ViewAllMarketPlaceBlocStateDefaultState _value,
-      $Res Function(ViewAllMarketPlaceBlocStateDefaultState) _then)
-      : super(
-            _value, (v) => _then(v as ViewAllMarketPlaceBlocStateDefaultState));
+      ViewAllMarketPlaceBlocStateDefaultState _value, $Res Function(ViewAllMarketPlaceBlocStateDefaultState) _then)
+      : super(_value, (v) => _then(v as ViewAllMarketPlaceBlocStateDefaultState));
 
   @override
-  ViewAllMarketPlaceBlocStateDefaultState get _value =>
-      super._value as ViewAllMarketPlaceBlocStateDefaultState;
+  ViewAllMarketPlaceBlocStateDefaultState get _value => super._value as ViewAllMarketPlaceBlocStateDefaultState;
 
   @override
   $Res call({
@@ -928,8 +845,7 @@ class _$ViewAllMarketPlaceBlocStateDefaultStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ViewAllMarketPlaceBlocStateDefaultState
-    implements ViewAllMarketPlaceBlocStateDefaultState {
+class _$ViewAllMarketPlaceBlocStateDefaultState implements ViewAllMarketPlaceBlocStateDefaultState {
   const _$ViewAllMarketPlaceBlocStateDefaultState(
       [this.nearbyMarketPlaceIsLoading = false,
       this.error = "",
@@ -962,22 +878,15 @@ class _$ViewAllMarketPlaceBlocStateDefaultState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is ViewAllMarketPlaceBlocStateDefaultState &&
-            (identical(other.nearbyMarketPlaceIsLoading,
-                    nearbyMarketPlaceIsLoading) ||
-                const DeepCollectionEquality().equals(
-                    other.nearbyMarketPlaceIsLoading,
-                    nearbyMarketPlaceIsLoading)) &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.nearbyMarketPlaceIsLoading, nearbyMarketPlaceIsLoading) ||
+                const DeepCollectionEquality().equals(other.nearbyMarketPlaceIsLoading, nearbyMarketPlaceIsLoading)) &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
             (identical(other.refreshData, refreshData) ||
-                const DeepCollectionEquality()
-                    .equals(other.refreshData, refreshData)) &&
+                const DeepCollectionEquality().equals(other.refreshData, refreshData)) &&
             (identical(other.nearbyList, nearbyList) ||
-                const DeepCollectionEquality()
-                    .equals(other.nearbyList, nearbyList)) &&
+                const DeepCollectionEquality().equals(other.nearbyList, nearbyList)) &&
             (identical(other.hasMorePages, hasMorePages) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasMorePages, hasMorePages)));
+                const DeepCollectionEquality().equals(other.hasMorePages, hasMorePages)));
   }
 
   @override
@@ -991,56 +900,39 @@ class _$ViewAllMarketPlaceBlocStateDefaultState
 
   @JsonKey(ignore: true)
   @override
-  $ViewAllMarketPlaceBlocStateDefaultStateCopyWith<
-          ViewAllMarketPlaceBlocStateDefaultState>
-      get copyWith => _$ViewAllMarketPlaceBlocStateDefaultStateCopyWithImpl<
-          ViewAllMarketPlaceBlocStateDefaultState>(this, _$identity);
+  $ViewAllMarketPlaceBlocStateDefaultStateCopyWith<ViewAllMarketPlaceBlocStateDefaultState> get copyWith =>
+      _$ViewAllMarketPlaceBlocStateDefaultStateCopyWithImpl<ViewAllMarketPlaceBlocStateDefaultState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            bool nearbyMarketPlaceIsLoading,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> nearbyList,
-            bool hasMorePages)
+    required TResult Function(bool nearbyMarketPlaceIsLoading, String error, bool refreshData,
+            List<MarketPlaceItem> nearbyList, bool hasMorePages)
         defaultState,
   }) {
-    return defaultState(nearbyMarketPlaceIsLoading, error, refreshData,
-        nearbyList, hasMorePages);
+    return defaultState(nearbyMarketPlaceIsLoading, error, refreshData, nearbyList, hasMorePages);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            bool nearbyMarketPlaceIsLoading,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> nearbyList,
+    TResult Function(bool nearbyMarketPlaceIsLoading, String error, bool refreshData, List<MarketPlaceItem> nearbyList,
             bool hasMorePages)?
         defaultState,
   }) {
-    return defaultState?.call(nearbyMarketPlaceIsLoading, error, refreshData,
-        nearbyList, hasMorePages);
+    return defaultState?.call(nearbyMarketPlaceIsLoading, error, refreshData, nearbyList, hasMorePages);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            bool nearbyMarketPlaceIsLoading,
-            String error,
-            bool refreshData,
-            List<MarketPlaceItem> nearbyList,
+    TResult Function(bool nearbyMarketPlaceIsLoading, String error, bool refreshData, List<MarketPlaceItem> nearbyList,
             bool hasMorePages)?
         defaultState,
     required TResult orElse(),
   }) {
     if (defaultState != null) {
-      return defaultState(nearbyMarketPlaceIsLoading, error, refreshData,
-          nearbyList, hasMorePages);
+      return defaultState(nearbyMarketPlaceIsLoading, error, refreshData, nearbyList, hasMorePages);
     }
     return orElse();
   }
@@ -1048,8 +940,7 @@ class _$ViewAllMarketPlaceBlocStateDefaultState
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)
-        defaultState,
+    required TResult Function(ViewAllMarketPlaceBlocStateDefaultState value) defaultState,
   }) {
     return defaultState(this);
   }
@@ -1057,8 +948,7 @@ class _$ViewAllMarketPlaceBlocStateDefaultState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)?
-        defaultState,
+    TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)? defaultState,
   }) {
     return defaultState?.call(this);
   }
@@ -1066,8 +956,7 @@ class _$ViewAllMarketPlaceBlocStateDefaultState
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)?
-        defaultState,
+    TResult Function(ViewAllMarketPlaceBlocStateDefaultState value)? defaultState,
     required TResult orElse(),
   }) {
     if (defaultState != null) {
@@ -1077,8 +966,7 @@ class _$ViewAllMarketPlaceBlocStateDefaultState
   }
 }
 
-abstract class ViewAllMarketPlaceBlocStateDefaultState
-    implements ViewAllMarketPlaceBlocState {
+abstract class ViewAllMarketPlaceBlocStateDefaultState implements ViewAllMarketPlaceBlocState {
   const factory ViewAllMarketPlaceBlocStateDefaultState(
       [bool nearbyMarketPlaceIsLoading,
       String error,
@@ -1098,7 +986,6 @@ abstract class ViewAllMarketPlaceBlocStateDefaultState
   bool get hasMorePages => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $ViewAllMarketPlaceBlocStateDefaultStateCopyWith<
-          ViewAllMarketPlaceBlocStateDefaultState>
-      get copyWith => throw _privateConstructorUsedError;
+  $ViewAllMarketPlaceBlocStateDefaultStateCopyWith<ViewAllMarketPlaceBlocStateDefaultState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

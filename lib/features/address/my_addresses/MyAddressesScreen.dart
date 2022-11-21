@@ -20,15 +20,12 @@ import 'package:tawseel/utils/ktx.dart';
 class MyAddressesScreen extends StatelessWidget {
   MyAddressesScreen({Key? key}) : super(key: key);
 
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    var padding = MediaQuery.of(context).padding;
-    double newheight = height - padding.top - padding.bottom;
     var theme = Theme.of(context);
 
     return BlocProvider(
@@ -42,9 +39,7 @@ class MyAddressesScreen extends StatelessWidget {
           body: BlocListener<MyAddressesBloc, MyAddressesState>(
             listener: (context, state) {
               if (state.error.isNotEmpty) appContext.showError(state.error);
-              if (state.refreshData)
-                BlocProvider.of<MyAddressesBloc>(context)
-                    .add(GetAddressesListEvent());
+              if (state.refreshData) BlocProvider.of<MyAddressesBloc>(context).add(GetAddressesListEvent());
             },
             child: Stack(
               children: [
@@ -53,8 +48,7 @@ class MyAddressesScreen extends StatelessWidget {
                     controller: _refreshController,
                     enablePullDown: true,
                     onRefresh: () {
-                      BlocProvider.of<MyAddressesBloc>(context)
-                          .add(GetAddressesListEvent());
+                      BlocProvider.of<MyAddressesBloc>(context).add(GetAddressesListEvent());
                       _refreshController.refreshToIdle();
                     },
                     header: WaterDropHeader(),
@@ -62,16 +56,14 @@ class MyAddressesScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 20),
+                            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
                             alignment: AlignmentDirectional.topStart,
                             color: Colors.transparent,
                             width: double.infinity,
                             child: AppBackButton(),
                           ),
                           Container(
-                            margin:
-                                EdgeInsets.symmetric(horizontal: width / 24),
+                            margin: EdgeInsets.symmetric(horizontal: width / 24),
                             width: double.infinity,
                             child: Text(
                               LocaleKeys.my_address,
@@ -105,8 +97,7 @@ class MyAddressesScreen extends StatelessWidget {
                               addNewAddress(context);
                             },
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: DottedBorder(
                                 borderType: BorderType.RRect,
                                 radius: Radius.circular(12),
@@ -114,13 +105,11 @@ class MyAddressesScreen extends StatelessWidget {
                                 strokeWidth: 2,
                                 dashPattern: [20, 5],
                                 child: ClipRRect(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
+                                  borderRadius: BorderRadius.all(Radius.circular(20)),
                                   child: Container(
                                     margin: EdgeInsets.symmetric(vertical: 20),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         IconButton(
                                           icon: Icon(
@@ -133,8 +122,7 @@ class MyAddressesScreen extends StatelessWidget {
                                         ),
                                         Text(
                                           LocaleKeys.add_new_address.tr(),
-                                          style: TextStyle(
-                                              color: ThemeManager.primary),
+                                          style: TextStyle(color: ThemeManager.primary),
                                         ),
                                       ],
                                     ),
@@ -255,9 +243,7 @@ class MyAddressesScreen extends StatelessWidget {
                             CupertinoContextMenuAction(
                               child: const Text(LocaleKeys.delete).tr(),
                               onPressed: () {
-                                context
-                                    .read<MyAddressesBloc>()
-                                    .add(DeleteAddress(address));
+                                context.read<MyAddressesBloc>().add(DeleteAddress(address));
                                 Navigator.pop(context);
                               },
                             ),
@@ -271,9 +257,7 @@ class MyAddressesScreen extends StatelessWidget {
                       SizedBox(height: height / 20),
                       GestureDetector(
                         onTap: () {
-                          context
-                              .read<MyAddressesBloc>()
-                              .add(MakeAddressAsDefault(address));
+                          context.read<MyAddressesBloc>().add(MakeAddressAsDefault(address));
                         },
                         child: radioButton(address.isDefault ?? false),
                       ),
@@ -294,8 +278,7 @@ class MyAddressesScreen extends StatelessWidget {
         .openIfExist(
           LocationPickerDialogRoute(oppenedFromMyAddresses: true),
         )
-        .then((value) =>
-            {context.read<MyAddressesBloc>().add(GetAddressesListEvent())});
+        .then((value) => {context.read<MyAddressesBloc>().add(GetAddressesListEvent())});
   }
 }
 
@@ -332,15 +315,13 @@ Widget radioButton(bool isSelected) {
     padding: EdgeInsets.all(2.0),
     decoration: BoxDecoration(
       shape: BoxShape.circle,
-      border: Border.all(
-          width: 2.0, color: isSelected ? ThemeManager.primary : Colors.grey),
+      border: Border.all(width: 2.0, color: isSelected ? ThemeManager.primary : Colors.grey),
     ),
     child: isSelected
         ? Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle, color: ThemeManager.primary),
+            decoration: BoxDecoration(shape: BoxShape.circle, color: ThemeManager.primary),
           )
         : Container(),
   );

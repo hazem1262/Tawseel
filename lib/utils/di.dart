@@ -105,8 +105,7 @@ Future<void> initAppDependencies() async {
   );
 
   getIt.registerSingleton<IMarketPlaceRepository>(
-    MarketPlaceRepository(
-        getIt<MarketPlaceService>(), getIt<FavoritesService>()),
+    MarketPlaceRepository(getIt<MarketPlaceService>(), getIt<FavoritesService>()),
   );
 
   getIt.registerSingleton<IFavoritesRepository>(

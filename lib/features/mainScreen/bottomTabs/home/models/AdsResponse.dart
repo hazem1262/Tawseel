@@ -8,18 +8,14 @@ part 'AdsResponse.freezed.dart';
 
 @freezed
 class AdsResponse with _$AdsResponse {
-  const factory AdsResponse(List<AdsItem> data, MetaPagination meta) =
-      _AdsResponse;
+  const factory AdsResponse(List<AdsItem> data, MetaPagination meta) = _AdsResponse;
 
-  factory AdsResponse.fromJson(Map<String, dynamic> json) =>
-      _$AdsResponseFromJson(json);
+  factory AdsResponse.fromJson(Map<String, dynamic> json) => _$AdsResponseFromJson(json);
 }
 
 @freezed
 class AdsItem with _$AdsItem {
-  const factory AdsItem({required int id, String? name, String? image}) =
-      _AdsItem;
+  const factory AdsItem({required int id, String? name, String? image}) = _AdsItem;
 
-  factory AdsItem.fromJson(Map<String, dynamic> json) =>
-      _$AdsItemFromJson(json);
+  factory AdsItem.fromJson(Map<String, dynamic> json) => _$AdsItemFromJson(json);
 }

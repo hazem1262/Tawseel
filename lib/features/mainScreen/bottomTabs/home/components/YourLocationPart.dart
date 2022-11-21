@@ -32,9 +32,7 @@ class YourLocationPart extends StatelessWidget {
                       Res.home_location_icon,
                       width: 20,
                       height: 20,
-                      color: liveTm.isDark()
-                          ? Colors.white
-                          : ProfileActionsColor_Light,
+                      color: liveTm.isDark() ? Colors.white : ProfileActionsColor_Light,
                     ),
                     SizedBox(width: 4),
                     Text(
@@ -42,9 +40,7 @@ class YourLocationPart extends StatelessWidget {
                       style: TextStyle(
                         fontSize: BodyTextSize,
                         fontWeight: FontWeight.w300,
-                        color: liveTm.isDark()
-                            ? Colors.white
-                            : ProfileActionsColor_Light,
+                        color: liveTm.isDark() ? Colors.white : ProfileActionsColor_Light,
                       ),
                     ),
                   ],
@@ -63,10 +59,9 @@ class YourLocationPart extends StatelessWidget {
                         flex: 1,
                         child: Text(
                           addressText,
-                          style:
-                              Theme.of(context).textTheme.headline5!.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                          style: Theme.of(context).textTheme.headline5!.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ),

@@ -14,8 +14,7 @@ class NetworkListener extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _NetworkListenerState createState() =>
-      _NetworkListenerState(this.onNetworkAvailable, this.onNetworkFailure);
+  _NetworkListenerState createState() => _NetworkListenerState(this.onNetworkAvailable, this.onNetworkFailure);
 }
 
 class _NetworkListenerState extends State<NetworkListener> {
@@ -119,8 +118,7 @@ Widget noInternetWidget() {
               onPressed: () => {},
               child: Text(
                 "Retry",
-                style:
-                    TextStyle(color: Colors.grey, fontWeight: FontWeight.w900),
+                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w900),
               ),
             ),
             SizedBox(

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:tawseel/features/login/LoginBloc.dart';
 import 'package:tawseel/features/otp/models/otp_models.dart';
 import 'package:tawseel/features/phone/SendPhoneScreen.dart';
@@ -14,13 +13,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:auto_route/auto_route.dart';
-import '../../res.dart';
 import 'LoginRepository.dart';
 import 'components/LoadingButton.dart';
 import 'components/PasswordField.dart';
-import 'components/AuthButton.dart';
 import 'components/PhoneNumberField.dart';
-import 'components/TextBetweenDividers.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -68,10 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       if (response.data.user.is_verified)
                         {
                           if (response.data.user.address.isEmpty)
-                            {
-                              appContext.openOnly(LocationPickerDialogRoute(
-                                  oppenedFromMyAddresses: false))
-                            }
+                            {appContext.openOnly(LocationPickerDialogRoute(oppenedFromMyAddresses: false))}
                           else
                             {appContext.openOnly(MainScreenRoute())}
                         }
@@ -105,9 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       top: height / 15,
                       right: width / 15,
                       child: GestureDetector(
-                        child: Icon(liveTm.isDark()
-                            ? Icons.light_mode
-                            : Icons.dark_mode),
+                        child: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode),
                         onTap: () {
                           tm.toggleMode();
                         },
@@ -196,8 +187,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     PhoneNumberField(
                                       controller: phoneController,
                                       inputAction: TextInputAction.next,
-                                      onSubmitCallback: () =>
-                                          context.nextFoucs(),
+                                      onSubmitCallback: () => context.nextFoucs(),
                                     ),
                                     SizedBox(height: 8),
                                     Builder(builder: (nctx) {
@@ -219,18 +209,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 width: double.infinity,
                                 child: TextButton(
                                     onPressed: () => {
-                                          context.openIfExist(
-                                              SendPhoneScreenRoute(
-                                                  intention: Intention
-                                                      .FORGET_PASSWORD))
+                                          context
+                                              .openIfExist(SendPhoneScreenRoute(intention: Intention.FORGET_PASSWORD))
                                         },
                                     child: Container(
                                       width: double.infinity,
                                       child: Text(
                                         LocaleKeys.forgot_password.tr(),
-                                        style: theme.textTheme.bodyText1!
-                                            .copyWith(
-                                                fontWeight: FontWeight.w700),
+                                        style: theme.textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w700),
                                         textAlign: TextAlign.end,
                                       ),
                                     )),
@@ -246,15 +232,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         BlocBuilder<LoginBloc, LoginViewState>(
                           builder: (context, state) {
                             return Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: LoadingButton(
                                   text: LocaleKeys.login_title.tr(),
                                   onPressed: () {
                                     doLoginByPhone(context);
                                   },
-                                  isLoading:
-                                      state is LoginIsLoading ? true : false),
+                                  isLoading: state is LoginIsLoading ? true : false),
                             );
                           },
                         ),
@@ -320,8 +304,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (isFormValid()) {
       debugPrint("form is valid");
-      context.read<LoginBloc>().add(LoginEvent.loginWithPhone(
-          phoneController.text.trim(), passwordController.text.trim()));
+      context
+          .read<LoginBloc>()
+          .add(LoginEvent.loginWithPhone(phoneController.text.trim(), passwordController.text.trim()));
     } else
       debugPrint("form is not valid");
   }

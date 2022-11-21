@@ -14,21 +14,16 @@ part 'search_bloc.freezed.dart';
 
 @freezed
 class SearchBlocEvent with _$SearchBlocEvent {
-  const factory SearchBlocEvent.searchMarketPlaces(String? query) =
-      GetSearchMarketPlaces;
+  const factory SearchBlocEvent.searchMarketPlaces(String? query) = GetSearchMarketPlaces;
 
-  const factory SearchBlocEvent.addMarketPlaceToFavorite(int id) =
-      AddMarketPlaceToFavorite;
+  const factory SearchBlocEvent.addMarketPlaceToFavorite(int id) = AddMarketPlaceToFavorite;
 
-  const factory SearchBlocEvent.removeMarketPlaceToFavorite(int id) =
-      RemoveMarketPlaceFromFavorite;
+  const factory SearchBlocEvent.removeMarketPlaceToFavorite(int id) = RemoveMarketPlaceFromFavorite;
 
   const factory SearchBlocEvent.reset() = ResetSearchRefreshData;
   const factory SearchBlocEvent.resetOpenFilterAction() = ResetOpenFilterAction;
-  const factory SearchBlocEvent.getSearchFilterDate(bool? openFilter) =
-      GetSearchFilterData;
-  const factory SearchBlocEvent.setSearchFilterDate(
-      FilterDate filterDate, bool openFilter) = SetSearchFilterData;
+  const factory SearchBlocEvent.getSearchFilterDate(bool? openFilter) = GetSearchFilterData;
+  const factory SearchBlocEvent.setSearchFilterDate(FilterDate filterDate, bool openFilter) = SetSearchFilterData;
   const factory SearchBlocEvent.applyFilterDate({
     String? query,
     required List<CategoryData> categoriesList,
@@ -68,8 +63,7 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
   var _page = 1;
   var hasMorePages = true;
 
-  SearchBloc(this.marketPlacesRepo, this.filterRepo)
-      : super(SearchBlocStateDefaultState()) {
+  SearchBloc(this.marketPlacesRepo, this.filterRepo) : super(SearchBlocStateDefaultState()) {
     on<SearchBlocEvent>((event, emit) async {
       if (event is ApplySearchFilterData) {
         _page = 1;
@@ -112,10 +106,8 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
             state.copyWith(
               campaniesList: event.filterDate.companies,
               categoriesList: event.filterDate.categories,
-              filterIsReady: event.filterDate.categories.isNotEmpty &&
-                  event.filterDate.companies.isNotEmpty,
-              openFilterNow: event.filterDate.categories.isNotEmpty &&
-                  event.filterDate.companies.isNotEmpty,
+              filterIsReady: event.filterDate.categories.isNotEmpty && event.filterDate.companies.isNotEmpty,
+              openFilterNow: event.filterDate.categories.isNotEmpty && event.filterDate.companies.isNotEmpty,
             ),
           );
         } catch (e) {
@@ -129,8 +121,7 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
           emit(state.copyWith(
               campaniesList: res.companies,
               categoriesList: res.categories,
-              filterIsReady:
-                  res.categories.isNotEmpty && res.companies.isNotEmpty));
+              filterIsReady: res.categories.isNotEmpty && res.companies.isNotEmpty));
         } catch (e) {
           emit(state.copyWith(filterIsReady: false));
         }
@@ -196,8 +187,7 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
       if (event is AddMarketPlaceToFavorite) {
         emit(
           state.copyWith(
-              searchList: state.searchList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: true),
+              searchList: state.searchList.setFavoriteLoadingFor(id: event.id, isLoading: true),
               isLoadingFirst: false,
               isLoadingPaging: false),
         );
@@ -205,15 +195,13 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
           emit(
             state.copyWith(
-                searchList: state.searchList.setFavoriteLoadingFor(
-                    id: event.id, isFavorite: true, isLoading: false),
+                searchList: state.searchList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
                 isLoadingFirst: false,
                 isLoadingPaging: false),
           );
         } catch (e) {
           emit(state.copyWith(
-              searchList: state.searchList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: false),
+              searchList: state.searchList.setFavoriteLoadingFor(id: event.id, isLoading: false),
               isLoadingFirst: false,
               isLoadingPaging: false,
               error: e.toString()));
@@ -224,8 +212,7 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
       if (event is RemoveMarketPlaceFromFavorite) {
         emit(
           state.copyWith(
-            searchList: state.searchList
-                .setFavoriteLoadingFor(id: event.id, isLoading: true),
+            searchList: state.searchList.setFavoriteLoadingFor(id: event.id, isLoading: true),
             isLoadingFirst: false,
             isLoadingPaging: false,
           ),
@@ -234,15 +221,13 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
           emit(
             state.copyWith(
-                searchList: state.searchList.setFavoriteLoadingFor(
-                    id: event.id, isFavorite: false, isLoading: false),
+                searchList: state.searchList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),
                 isLoadingFirst: false,
                 isLoadingPaging: false),
           );
         } catch (e) {
           emit(state.copyWith(
-              searchList: state.searchList
-                  .setFavoriteLoadingFor(id: event.id, isLoading: false),
+              searchList: state.searchList.setFavoriteLoadingFor(id: event.id, isLoading: false),
               isLoadingFirst: false,
               isLoadingPaging: false,
               error: e.toString()));
