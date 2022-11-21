@@ -84,7 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: GestureDetector(
                         child: Icon(Icons.language),
                         onTap: () {
-                          context.toggleLanguage();
+                          context.toggleLanguage(true);
                         },
                       ),
                     ),
