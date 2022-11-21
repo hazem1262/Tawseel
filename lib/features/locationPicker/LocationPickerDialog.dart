@@ -99,9 +99,9 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
 
   Future<bool> requestPermissions() async {
     var permissionsGrantedStatus = await location.hasPermission();
-    if (permissionsGrantedStatus == PermissionStatus.granted) {
+    if (permissionsGrantedStatus == PermissionStatus.denied) {
       permissionsGrantedStatus = await location.requestPermission();
-      if (permissionsGrantedStatus == PermissionStatus.granted) {
+      if (permissionsGrantedStatus != PermissionStatus.granted) {
         permissionsGranted = false;
         return false;
       }
@@ -210,7 +210,7 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
           //?                             Confirm  location button                       ?//
           //?----------------------------------------------------------------------------?//
           Positioned(
-            bottom: height / 20,
+            bottom: height / 10,
             left: width / 10,
             right: width / 10,
             child: Padding(
