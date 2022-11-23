@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
+import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
@@ -45,6 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // final height = size.width * (size.width / size.height);
 
     return Scaffold(
+      backgroundColor: ThemeManager.primary,
       body: SafeArea(
         child: Center(
           child: AnimatedContainer(
