@@ -15,7 +15,7 @@ void main() async {
     EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'resources/langs',
-      startLocale: Locale('en'),
+      startLocale: Locale('ar'),
       fallbackLocale: Locale('en'),
       saveLocale: true,
       child: MultiProvider(
