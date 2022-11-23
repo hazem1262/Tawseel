@@ -1060,34 +1060,37 @@ Widget bestCompanyWidget(BuildContext context, CompanyItem item, Function() onTa
     onTap: onTap,
     child: ConstrainedBox(
       constraints: BoxConstraints(
-        minHeight: safeHeight * 0.16,
-        maxHeight: safeHeight * 0.17,
+        minHeight: safeHeight * 0.17,
+        maxHeight: safeHeight * 0.18,
       ),
       child: Container(
         width: screenWidth,
         child: Stack(
           children: [
-            Positioned.directional(
-              textDirection: Directionality.of(context),
-              top: 0,
-              end: 0,
-              child: Container(
-                height: safeHeight * 0.054,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(8),
-                    topRight: Radius.circular(8),
+            Container(
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: safeHeight * 0.054,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 10,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(8),
+                        topRight: Radius.circular(8),
+                      ),
+                      color: ThemeManager.primary,
+                    ),
+                    child: Text(
+                      LocaleKeys.best_price.tr(),
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
-                  color: ThemeManager.primary,
-                ),
-                child: Text(
-                  LocaleKeys.best_price.tr(),
-                  style: TextStyle(color: Colors.white),
-                ),
+                ],
               ),
             ),
             Positioned.directional(
