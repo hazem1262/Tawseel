@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'SignUpBloc.dart';
@@ -11,33 +12,7 @@ part of 'SignUpBloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SignUpEventsTearOff {
-  const _$SignUpEventsTearOff();
-
-  SignUpWithGoogle signUpWithGoogle() {
-    return const SignUpWithGoogle();
-  }
-
-  SignUpWithApple signUpWithApple() {
-    return const SignUpWithApple();
-  }
-
-  SignUpWithPhone signUpWithPhone(
-      String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers) {
-    return SignUpWithPhone(
-      fullName,
-      phone,
-      password,
-      can_receive_offers,
-    );
-  }
-}
-
-/// @nodoc
-const $SignUpEvents = _$SignUpEventsTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SignUpEvents {
@@ -51,9 +26,9 @@ mixin _$SignUpEvents {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signUpWithGoogle,
-    TResult Function()? signUpWithApple,
-    TResult Function(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers)?
+    TResult? Function()? signUpWithGoogle,
+    TResult? Function()? signUpWithApple,
+    TResult? Function(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers)?
         signUpWithPhone,
   }) =>
       throw _privateConstructorUsedError;
@@ -75,9 +50,9 @@ mixin _$SignUpEvents {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(SignUpWithApple value)? signUpWithApple,
-    TResult Function(SignUpWithPhone value)? signUpWithPhone,
+    TResult? Function(SignUpWithGoogle value)? signUpWithGoogle,
+    TResult? Function(SignUpWithApple value)? signUpWithApple,
+    TResult? Function(SignUpWithPhone value)? signUpWithPhone,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,32 +68,30 @@ mixin _$SignUpEvents {
 /// @nodoc
 abstract class $SignUpEventsCopyWith<$Res> {
   factory $SignUpEventsCopyWith(SignUpEvents value, $Res Function(SignUpEvents) then) =
-      _$SignUpEventsCopyWithImpl<$Res>;
+      _$SignUpEventsCopyWithImpl<$Res, SignUpEvents>;
 }
 
 /// @nodoc
-class _$SignUpEventsCopyWithImpl<$Res> implements $SignUpEventsCopyWith<$Res> {
+class _$SignUpEventsCopyWithImpl<$Res, $Val extends SignUpEvents> implements $SignUpEventsCopyWith<$Res> {
   _$SignUpEventsCopyWithImpl(this._value, this._then);
 
-  final SignUpEvents _value;
   // ignore: unused_field
-  final $Res Function(SignUpEvents) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $SignUpWithGoogleCopyWith<$Res> {
-  factory $SignUpWithGoogleCopyWith(SignUpWithGoogle value, $Res Function(SignUpWithGoogle) then) =
-      _$SignUpWithGoogleCopyWithImpl<$Res>;
+abstract class _$$SignUpWithGoogleCopyWith<$Res> {
+  factory _$$SignUpWithGoogleCopyWith(_$SignUpWithGoogle value, $Res Function(_$SignUpWithGoogle) then) =
+      __$$SignUpWithGoogleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignUpWithGoogleCopyWithImpl<$Res> extends _$SignUpEventsCopyWithImpl<$Res>
-    implements $SignUpWithGoogleCopyWith<$Res> {
-  _$SignUpWithGoogleCopyWithImpl(SignUpWithGoogle _value, $Res Function(SignUpWithGoogle) _then)
-      : super(_value, (v) => _then(v as SignUpWithGoogle));
-
-  @override
-  SignUpWithGoogle get _value => super._value as SignUpWithGoogle;
+class __$$SignUpWithGoogleCopyWithImpl<$Res> extends _$SignUpEventsCopyWithImpl<$Res, _$SignUpWithGoogle>
+    implements _$$SignUpWithGoogleCopyWith<$Res> {
+  __$$SignUpWithGoogleCopyWithImpl(_$SignUpWithGoogle _value, $Res Function(_$SignUpWithGoogle) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -134,12 +107,12 @@ class _$SignUpWithGoogle with DiagnosticableTreeMixin implements SignUpWithGoogl
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SignUpEvents.signUpWithGoogle'));
+    properties.add(DiagnosticsProperty('type', 'SignUpEvents.signUpWithGoogle'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignUpWithGoogle);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SignUpWithGoogle);
   }
 
   @override
@@ -159,9 +132,9 @@ class _$SignUpWithGoogle with DiagnosticableTreeMixin implements SignUpWithGoogl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signUpWithGoogle,
-    TResult Function()? signUpWithApple,
-    TResult Function(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers)?
+    TResult? Function()? signUpWithGoogle,
+    TResult? Function()? signUpWithApple,
+    TResult? Function(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers)?
         signUpWithPhone,
   }) {
     return signUpWithGoogle?.call();
@@ -195,9 +168,9 @@ class _$SignUpWithGoogle with DiagnosticableTreeMixin implements SignUpWithGoogl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(SignUpWithApple value)? signUpWithApple,
-    TResult Function(SignUpWithPhone value)? signUpWithPhone,
+    TResult? Function(SignUpWithGoogle value)? signUpWithGoogle,
+    TResult? Function(SignUpWithApple value)? signUpWithApple,
+    TResult? Function(SignUpWithPhone value)? signUpWithPhone,
   }) {
     return signUpWithGoogle?.call(this);
   }
@@ -222,19 +195,16 @@ abstract class SignUpWithGoogle implements SignUpEvents {
 }
 
 /// @nodoc
-abstract class $SignUpWithAppleCopyWith<$Res> {
-  factory $SignUpWithAppleCopyWith(SignUpWithApple value, $Res Function(SignUpWithApple) then) =
-      _$SignUpWithAppleCopyWithImpl<$Res>;
+abstract class _$$SignUpWithAppleCopyWith<$Res> {
+  factory _$$SignUpWithAppleCopyWith(_$SignUpWithApple value, $Res Function(_$SignUpWithApple) then) =
+      __$$SignUpWithAppleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignUpWithAppleCopyWithImpl<$Res> extends _$SignUpEventsCopyWithImpl<$Res>
-    implements $SignUpWithAppleCopyWith<$Res> {
-  _$SignUpWithAppleCopyWithImpl(SignUpWithApple _value, $Res Function(SignUpWithApple) _then)
-      : super(_value, (v) => _then(v as SignUpWithApple));
-
-  @override
-  SignUpWithApple get _value => super._value as SignUpWithApple;
+class __$$SignUpWithAppleCopyWithImpl<$Res> extends _$SignUpEventsCopyWithImpl<$Res, _$SignUpWithApple>
+    implements _$$SignUpWithAppleCopyWith<$Res> {
+  __$$SignUpWithAppleCopyWithImpl(_$SignUpWithApple _value, $Res Function(_$SignUpWithApple) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -250,12 +220,12 @@ class _$SignUpWithApple with DiagnosticableTreeMixin implements SignUpWithApple 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SignUpEvents.signUpWithApple'));
+    properties.add(DiagnosticsProperty('type', 'SignUpEvents.signUpWithApple'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignUpWithApple);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SignUpWithApple);
   }
 
   @override
@@ -275,9 +245,9 @@ class _$SignUpWithApple with DiagnosticableTreeMixin implements SignUpWithApple 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signUpWithGoogle,
-    TResult Function()? signUpWithApple,
-    TResult Function(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers)?
+    TResult? Function()? signUpWithGoogle,
+    TResult? Function()? signUpWithApple,
+    TResult? Function(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers)?
         signUpWithPhone,
   }) {
     return signUpWithApple?.call();
@@ -311,9 +281,9 @@ class _$SignUpWithApple with DiagnosticableTreeMixin implements SignUpWithApple 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(SignUpWithApple value)? signUpWithApple,
-    TResult Function(SignUpWithPhone value)? signUpWithPhone,
+    TResult? Function(SignUpWithGoogle value)? signUpWithGoogle,
+    TResult? Function(SignUpWithApple value)? signUpWithApple,
+    TResult? Function(SignUpWithPhone value)? signUpWithPhone,
   }) {
     return signUpWithApple?.call(this);
   }
@@ -338,42 +308,41 @@ abstract class SignUpWithApple implements SignUpEvents {
 }
 
 /// @nodoc
-abstract class $SignUpWithPhoneCopyWith<$Res> {
-  factory $SignUpWithPhoneCopyWith(SignUpWithPhone value, $Res Function(SignUpWithPhone) then) =
-      _$SignUpWithPhoneCopyWithImpl<$Res>;
+abstract class _$$SignUpWithPhoneCopyWith<$Res> {
+  factory _$$SignUpWithPhoneCopyWith(_$SignUpWithPhone value, $Res Function(_$SignUpWithPhone) then) =
+      __$$SignUpWithPhoneCopyWithImpl<$Res>;
+  @useResult
   $Res call({String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers});
 }
 
 /// @nodoc
-class _$SignUpWithPhoneCopyWithImpl<$Res> extends _$SignUpEventsCopyWithImpl<$Res>
-    implements $SignUpWithPhoneCopyWith<$Res> {
-  _$SignUpWithPhoneCopyWithImpl(SignUpWithPhone _value, $Res Function(SignUpWithPhone) _then)
-      : super(_value, (v) => _then(v as SignUpWithPhone));
+class __$$SignUpWithPhoneCopyWithImpl<$Res> extends _$SignUpEventsCopyWithImpl<$Res, _$SignUpWithPhone>
+    implements _$$SignUpWithPhoneCopyWith<$Res> {
+  __$$SignUpWithPhoneCopyWithImpl(_$SignUpWithPhone _value, $Res Function(_$SignUpWithPhone) _then)
+      : super(_value, _then);
 
-  @override
-  SignUpWithPhone get _value => super._value as SignUpWithPhone;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fullName = freezed,
-    Object? phone = freezed,
-    Object? password = freezed,
-    Object? can_receive_offers = freezed,
+    Object? fullName = null,
+    Object? phone = null,
+    Object? password = null,
+    Object? can_receive_offers = null,
   }) {
-    return _then(SignUpWithPhone(
-      fullName == freezed
+    return _then(_$SignUpWithPhone(
+      null == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String,
-      phone == freezed
+      null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      password == freezed
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      can_receive_offers == freezed
+      null == can_receive_offers
           ? _value.can_receive_offers
           : can_receive_offers // ignore: cast_nullable_to_non_nullable
               as CAN_RECEIVE_OFFERS,
@@ -414,26 +383,23 @@ class _$SignUpWithPhone with DiagnosticableTreeMixin implements SignUpWithPhone 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SignUpWithPhone &&
-            (identical(other.fullName, fullName) || const DeepCollectionEquality().equals(other.fullName, fullName)) &&
-            (identical(other.phone, phone) || const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$SignUpWithPhone &&
+            (identical(other.fullName, fullName) || other.fullName == fullName) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.password, password) || other.password == password) &&
             (identical(other.can_receive_offers, can_receive_offers) ||
-                const DeepCollectionEquality().equals(other.can_receive_offers, can_receive_offers)));
+                other.can_receive_offers == can_receive_offers));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(fullName) ^
-      const DeepCollectionEquality().hash(phone) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(can_receive_offers);
+  int get hashCode => Object.hash(runtimeType, fullName, phone, password, can_receive_offers);
 
   @JsonKey(ignore: true)
   @override
-  $SignUpWithPhoneCopyWith<SignUpWithPhone> get copyWith =>
-      _$SignUpWithPhoneCopyWithImpl<SignUpWithPhone>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignUpWithPhoneCopyWith<_$SignUpWithPhone> get copyWith =>
+      __$$SignUpWithPhoneCopyWithImpl<_$SignUpWithPhone>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -449,9 +415,9 @@ class _$SignUpWithPhone with DiagnosticableTreeMixin implements SignUpWithPhone 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signUpWithGoogle,
-    TResult Function()? signUpWithApple,
-    TResult Function(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers)?
+    TResult? Function()? signUpWithGoogle,
+    TResult? Function()? signUpWithApple,
+    TResult? Function(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers)?
         signUpWithPhone,
   }) {
     return signUpWithPhone?.call(fullName, phone, password, can_receive_offers);
@@ -485,9 +451,9 @@ class _$SignUpWithPhone with DiagnosticableTreeMixin implements SignUpWithPhone 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(SignUpWithApple value)? signUpWithApple,
-    TResult Function(SignUpWithPhone value)? signUpWithPhone,
+    TResult? Function(SignUpWithGoogle value)? signUpWithGoogle,
+    TResult? Function(SignUpWithApple value)? signUpWithApple,
+    TResult? Function(SignUpWithPhone value)? signUpWithPhone,
   }) {
     return signUpWithPhone?.call(this);
   }
@@ -508,44 +474,16 @@ class _$SignUpWithPhone with DiagnosticableTreeMixin implements SignUpWithPhone 
 }
 
 abstract class SignUpWithPhone implements SignUpEvents {
-  const factory SignUpWithPhone(String fullName, String phone, String password, CAN_RECEIVE_OFFERS can_receive_offers) =
-      _$SignUpWithPhone;
+  const factory SignUpWithPhone(final String fullName, final String phone, final String password,
+      final CAN_RECEIVE_OFFERS can_receive_offers) = _$SignUpWithPhone;
 
-  String get fullName => throw _privateConstructorUsedError;
-  String get phone => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
-  CAN_RECEIVE_OFFERS get can_receive_offers => throw _privateConstructorUsedError;
+  String get fullName;
+  String get phone;
+  String get password;
+  CAN_RECEIVE_OFFERS get can_receive_offers;
   @JsonKey(ignore: true)
-  $SignUpWithPhoneCopyWith<SignUpWithPhone> get copyWith => throw _privateConstructorUsedError;
+  _$$SignUpWithPhoneCopyWith<_$SignUpWithPhone> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignUpStateTearOff {
-  const _$SignUpStateTearOff();
-
-  SignUpInitialState initialState() {
-    return const SignUpInitialState();
-  }
-
-  SignUpIsLoading isLoading() {
-    return const SignUpIsLoading();
-  }
-
-  _HasError hassError(String error) {
-    return _HasError(
-      error,
-    );
-  }
-
-  SignedUpWithPhoneSuccessfully signedUpWithPhoneSuccessfully(SignUpResponse response) {
-    return SignedUpWithPhoneSuccessfully(
-      response,
-    );
-  }
-}
-
-/// @nodoc
-const $SignUpState = _$SignUpStateTearOff();
 
 /// @nodoc
 mixin _$SignUpState {
@@ -559,10 +497,10 @@ mixin _$SignUpState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(String error)? hassError,
-    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(String error)? hassError,
+    TResult? Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -584,10 +522,10 @@ mixin _$SignUpState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpInitialState value)? initialState,
-    TResult Function(SignUpIsLoading value)? isLoading,
-    TResult Function(_HasError value)? hassError,
-    TResult Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
+    TResult? Function(SignUpInitialState value)? initialState,
+    TResult? Function(SignUpIsLoading value)? isLoading,
+    TResult? Function(_HasError value)? hassError,
+    TResult? Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -603,32 +541,31 @@ mixin _$SignUpState {
 
 /// @nodoc
 abstract class $SignUpStateCopyWith<$Res> {
-  factory $SignUpStateCopyWith(SignUpState value, $Res Function(SignUpState) then) = _$SignUpStateCopyWithImpl<$Res>;
+  factory $SignUpStateCopyWith(SignUpState value, $Res Function(SignUpState) then) =
+      _$SignUpStateCopyWithImpl<$Res, SignUpState>;
 }
 
 /// @nodoc
-class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
+class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState> implements $SignUpStateCopyWith<$Res> {
   _$SignUpStateCopyWithImpl(this._value, this._then);
 
-  final SignUpState _value;
   // ignore: unused_field
-  final $Res Function(SignUpState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $SignUpInitialStateCopyWith<$Res> {
-  factory $SignUpInitialStateCopyWith(SignUpInitialState value, $Res Function(SignUpInitialState) then) =
-      _$SignUpInitialStateCopyWithImpl<$Res>;
+abstract class _$$SignUpInitialStateCopyWith<$Res> {
+  factory _$$SignUpInitialStateCopyWith(_$SignUpInitialState value, $Res Function(_$SignUpInitialState) then) =
+      __$$SignUpInitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignUpInitialStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
-    implements $SignUpInitialStateCopyWith<$Res> {
-  _$SignUpInitialStateCopyWithImpl(SignUpInitialState _value, $Res Function(SignUpInitialState) _then)
-      : super(_value, (v) => _then(v as SignUpInitialState));
-
-  @override
-  SignUpInitialState get _value => super._value as SignUpInitialState;
+class __$$SignUpInitialStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res, _$SignUpInitialState>
+    implements _$$SignUpInitialStateCopyWith<$Res> {
+  __$$SignUpInitialStateCopyWithImpl(_$SignUpInitialState _value, $Res Function(_$SignUpInitialState) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -644,12 +581,12 @@ class _$SignUpInitialState with DiagnosticableTreeMixin implements SignUpInitial
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SignUpState.initialState'));
+    properties.add(DiagnosticsProperty('type', 'SignUpState.initialState'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignUpInitialState);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SignUpInitialState);
   }
 
   @override
@@ -669,10 +606,10 @@ class _$SignUpInitialState with DiagnosticableTreeMixin implements SignUpInitial
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(String error)? hassError,
-    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(String error)? hassError,
+    TResult? Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
   }) {
     return initialState?.call();
   }
@@ -706,10 +643,10 @@ class _$SignUpInitialState with DiagnosticableTreeMixin implements SignUpInitial
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpInitialState value)? initialState,
-    TResult Function(SignUpIsLoading value)? isLoading,
-    TResult Function(_HasError value)? hassError,
-    TResult Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
+    TResult? Function(SignUpInitialState value)? initialState,
+    TResult? Function(SignUpIsLoading value)? isLoading,
+    TResult? Function(_HasError value)? hassError,
+    TResult? Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
   }) {
     return initialState?.call(this);
   }
@@ -735,19 +672,16 @@ abstract class SignUpInitialState implements SignUpState {
 }
 
 /// @nodoc
-abstract class $SignUpIsLoadingCopyWith<$Res> {
-  factory $SignUpIsLoadingCopyWith(SignUpIsLoading value, $Res Function(SignUpIsLoading) then) =
-      _$SignUpIsLoadingCopyWithImpl<$Res>;
+abstract class _$$SignUpIsLoadingCopyWith<$Res> {
+  factory _$$SignUpIsLoadingCopyWith(_$SignUpIsLoading value, $Res Function(_$SignUpIsLoading) then) =
+      __$$SignUpIsLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignUpIsLoadingCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
-    implements $SignUpIsLoadingCopyWith<$Res> {
-  _$SignUpIsLoadingCopyWithImpl(SignUpIsLoading _value, $Res Function(SignUpIsLoading) _then)
-      : super(_value, (v) => _then(v as SignUpIsLoading));
-
-  @override
-  SignUpIsLoading get _value => super._value as SignUpIsLoading;
+class __$$SignUpIsLoadingCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res, _$SignUpIsLoading>
+    implements _$$SignUpIsLoadingCopyWith<$Res> {
+  __$$SignUpIsLoadingCopyWithImpl(_$SignUpIsLoading _value, $Res Function(_$SignUpIsLoading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -763,12 +697,12 @@ class _$SignUpIsLoading with DiagnosticableTreeMixin implements SignUpIsLoading 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SignUpState.isLoading'));
+    properties.add(DiagnosticsProperty('type', 'SignUpState.isLoading'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignUpIsLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SignUpIsLoading);
   }
 
   @override
@@ -788,10 +722,10 @@ class _$SignUpIsLoading with DiagnosticableTreeMixin implements SignUpIsLoading 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(String error)? hassError,
-    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(String error)? hassError,
+    TResult? Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
   }) {
     return isLoading?.call();
   }
@@ -825,10 +759,10 @@ class _$SignUpIsLoading with DiagnosticableTreeMixin implements SignUpIsLoading 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpInitialState value)? initialState,
-    TResult Function(SignUpIsLoading value)? isLoading,
-    TResult Function(_HasError value)? hassError,
-    TResult Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
+    TResult? Function(SignUpInitialState value)? initialState,
+    TResult? Function(SignUpIsLoading value)? isLoading,
+    TResult? Function(_HasError value)? hassError,
+    TResult? Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
   }) {
     return isLoading?.call(this);
   }
@@ -854,25 +788,24 @@ abstract class SignUpIsLoading implements SignUpState {
 }
 
 /// @nodoc
-abstract class _$HasErrorCopyWith<$Res> {
-  factory _$HasErrorCopyWith(_HasError value, $Res Function(_HasError) then) = __$HasErrorCopyWithImpl<$Res>;
+abstract class _$$_HasErrorCopyWith<$Res> {
+  factory _$$_HasErrorCopyWith(_$_HasError value, $Res Function(_$_HasError) then) = __$$_HasErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$HasErrorCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res> implements _$HasErrorCopyWith<$Res> {
-  __$HasErrorCopyWithImpl(_HasError _value, $Res Function(_HasError) _then)
-      : super(_value, (v) => _then(v as _HasError));
+class __$$_HasErrorCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res, _$_HasError>
+    implements _$$_HasErrorCopyWith<$Res> {
+  __$$_HasErrorCopyWithImpl(_$_HasError _value, $Res Function(_$_HasError) _then) : super(_value, _then);
 
-  @override
-  _HasError get _value => super._value as _HasError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
-    return _then(_HasError(
-      error == freezed
+    return _then(_$_HasError(
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
@@ -904,16 +837,18 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HasError &&
-            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
+        (other.runtimeType == runtimeType &&
+            other is _$_HasError &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
-  _$HasErrorCopyWith<_HasError> get copyWith => __$HasErrorCopyWithImpl<_HasError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_HasErrorCopyWith<_$_HasError> get copyWith => __$$_HasErrorCopyWithImpl<_$_HasError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -929,10 +864,10 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(String error)? hassError,
-    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(String error)? hassError,
+    TResult? Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
   }) {
     return hassError?.call(error);
   }
@@ -966,10 +901,10 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpInitialState value)? initialState,
-    TResult Function(SignUpIsLoading value)? isLoading,
-    TResult Function(_HasError value)? hassError,
-    TResult Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
+    TResult? Function(SignUpInitialState value)? initialState,
+    TResult? Function(SignUpIsLoading value)? isLoading,
+    TResult? Function(_HasError value)? hassError,
+    TResult? Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
   }) {
     return hassError?.call(this);
   }
@@ -991,39 +926,39 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
 }
 
 abstract class _HasError implements SignUpState {
-  const factory _HasError(String error) = _$_HasError;
+  const factory _HasError(final String error) = _$_HasError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
-  _$HasErrorCopyWith<_HasError> get copyWith => throw _privateConstructorUsedError;
+  _$$_HasErrorCopyWith<_$_HasError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignedUpWithPhoneSuccessfullyCopyWith<$Res> {
-  factory $SignedUpWithPhoneSuccessfullyCopyWith(
-          SignedUpWithPhoneSuccessfully value, $Res Function(SignedUpWithPhoneSuccessfully) then) =
-      _$SignedUpWithPhoneSuccessfullyCopyWithImpl<$Res>;
+abstract class _$$SignedUpWithPhoneSuccessfullyCopyWith<$Res> {
+  factory _$$SignedUpWithPhoneSuccessfullyCopyWith(
+          _$SignedUpWithPhoneSuccessfully value, $Res Function(_$SignedUpWithPhoneSuccessfully) then) =
+      __$$SignedUpWithPhoneSuccessfullyCopyWithImpl<$Res>;
+  @useResult
   $Res call({SignUpResponse response});
 
   $SignUpResponseCopyWith<$Res> get response;
 }
 
 /// @nodoc
-class _$SignedUpWithPhoneSuccessfullyCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
-    implements $SignedUpWithPhoneSuccessfullyCopyWith<$Res> {
-  _$SignedUpWithPhoneSuccessfullyCopyWithImpl(
-      SignedUpWithPhoneSuccessfully _value, $Res Function(SignedUpWithPhoneSuccessfully) _then)
-      : super(_value, (v) => _then(v as SignedUpWithPhoneSuccessfully));
+class __$$SignedUpWithPhoneSuccessfullyCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$SignedUpWithPhoneSuccessfully>
+    implements _$$SignedUpWithPhoneSuccessfullyCopyWith<$Res> {
+  __$$SignedUpWithPhoneSuccessfullyCopyWithImpl(
+      _$SignedUpWithPhoneSuccessfully _value, $Res Function(_$SignedUpWithPhoneSuccessfully) _then)
+      : super(_value, _then);
 
-  @override
-  SignedUpWithPhoneSuccessfully get _value => super._value as SignedUpWithPhoneSuccessfully;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? response = freezed,
+    Object? response = null,
   }) {
-    return _then(SignedUpWithPhoneSuccessfully(
-      response == freezed
+    return _then(_$SignedUpWithPhoneSuccessfully(
+      null == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
               as SignUpResponse,
@@ -1031,6 +966,7 @@ class _$SignedUpWithPhoneSuccessfullyCopyWithImpl<$Res> extends _$SignUpStateCop
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SignUpResponseCopyWith<$Res> get response {
     return $SignUpResponseCopyWith<$Res>(_value.response, (value) {
       return _then(_value.copyWith(response: value));
@@ -1062,17 +998,19 @@ class _$SignedUpWithPhoneSuccessfully with DiagnosticableTreeMixin implements Si
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SignedUpWithPhoneSuccessfully &&
-            (identical(other.response, response) || const DeepCollectionEquality().equals(other.response, response)));
+        (other.runtimeType == runtimeType &&
+            other is _$SignedUpWithPhoneSuccessfully &&
+            (identical(other.response, response) || other.response == response));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(response);
+  int get hashCode => Object.hash(runtimeType, response);
 
   @JsonKey(ignore: true)
   @override
-  $SignedUpWithPhoneSuccessfullyCopyWith<SignedUpWithPhoneSuccessfully> get copyWith =>
-      _$SignedUpWithPhoneSuccessfullyCopyWithImpl<SignedUpWithPhoneSuccessfully>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignedUpWithPhoneSuccessfullyCopyWith<_$SignedUpWithPhoneSuccessfully> get copyWith =>
+      __$$SignedUpWithPhoneSuccessfullyCopyWithImpl<_$SignedUpWithPhoneSuccessfully>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1088,10 +1026,10 @@ class _$SignedUpWithPhoneSuccessfully with DiagnosticableTreeMixin implements Si
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(String error)? hassError,
-    TResult Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(String error)? hassError,
+    TResult? Function(SignUpResponse response)? signedUpWithPhoneSuccessfully,
   }) {
     return signedUpWithPhoneSuccessfully?.call(response);
   }
@@ -1125,10 +1063,10 @@ class _$SignedUpWithPhoneSuccessfully with DiagnosticableTreeMixin implements Si
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignUpInitialState value)? initialState,
-    TResult Function(SignUpIsLoading value)? isLoading,
-    TResult Function(_HasError value)? hassError,
-    TResult Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
+    TResult? Function(SignUpInitialState value)? initialState,
+    TResult? Function(SignUpIsLoading value)? isLoading,
+    TResult? Function(_HasError value)? hassError,
+    TResult? Function(SignedUpWithPhoneSuccessfully value)? signedUpWithPhoneSuccessfully,
   }) {
     return signedUpWithPhoneSuccessfully?.call(this);
   }
@@ -1150,10 +1088,10 @@ class _$SignedUpWithPhoneSuccessfully with DiagnosticableTreeMixin implements Si
 }
 
 abstract class SignedUpWithPhoneSuccessfully implements SignUpState {
-  const factory SignedUpWithPhoneSuccessfully(SignUpResponse response) = _$SignedUpWithPhoneSuccessfully;
+  const factory SignedUpWithPhoneSuccessfully(final SignUpResponse response) = _$SignedUpWithPhoneSuccessfully;
 
-  SignUpResponse get response => throw _privateConstructorUsedError;
+  SignUpResponse get response;
   @JsonKey(ignore: true)
-  $SignedUpWithPhoneSuccessfullyCopyWith<SignedUpWithPhoneSuccessfully> get copyWith =>
+  _$$SignedUpWithPhoneSuccessfullyCopyWith<_$SignedUpWithPhoneSuccessfully> get copyWith =>
       throw _privateConstructorUsedError;
 }

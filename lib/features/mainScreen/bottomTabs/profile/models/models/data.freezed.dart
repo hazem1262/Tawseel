@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'data.dart';
@@ -11,48 +12,11 @@ part of 'data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Data _$DataFromJson(Map<String, dynamic> json) {
   return _Data.fromJson(json);
 }
-
-/// @nodoc
-class _$DataTearOff {
-  const _$DataTearOff();
-
-  _Data call(
-      {int? id,
-      String? name,
-      String? phone,
-      String? email,
-      @JsonKey(name: 'is_social') bool? isSocial,
-      String? image,
-      @JsonKey(name: 'phone_verified_at') String? phoneVerifiedAt,
-      @JsonKey(name: 'is_verified') bool? isVerified,
-      @JsonKey(name: 'can_receive_offers') bool? canReceiveOffers,
-      List<Address>? address}) {
-    return _Data(
-      id: id,
-      name: name,
-      phone: phone,
-      email: email,
-      isSocial: isSocial,
-      image: image,
-      phoneVerifiedAt: phoneVerifiedAt,
-      isVerified: isVerified,
-      canReceiveOffers: canReceiveOffers,
-      address: address,
-    );
-  }
-
-  Data fromJson(Map<String, Object> json) {
-    return Data.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Data = _$DataTearOff();
 
 /// @nodoc
 mixin _$Data {
@@ -78,7 +42,8 @@ mixin _$Data {
 
 /// @nodoc
 abstract class $DataCopyWith<$Res> {
-  factory $DataCopyWith(Data value, $Res Function(Data) then) = _$DataCopyWithImpl<$Res>;
+  factory $DataCopyWith(Data value, $Res Function(Data) then) = _$DataCopyWithImpl<$Res, Data>;
+  @useResult
   $Res call(
       {int? id,
       String? name,
@@ -93,13 +58,15 @@ abstract class $DataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DataCopyWithImpl<$Res> implements $DataCopyWith<$Res> {
+class _$DataCopyWithImpl<$Res, $Val extends Data> implements $DataCopyWith<$Res> {
   _$DataCopyWithImpl(this._value, this._then);
 
-  final Data _value;
   // ignore: unused_field
-  final $Res Function(Data) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -114,54 +81,55 @@ class _$DataCopyWithImpl<$Res> implements $DataCopyWith<$Res> {
     Object? address = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      phone: phone == freezed
+      phone: freezed == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      isSocial: isSocial == freezed
+      isSocial: freezed == isSocial
           ? _value.isSocial
           : isSocial // ignore: cast_nullable_to_non_nullable
               as bool?,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneVerifiedAt: phoneVerifiedAt == freezed
+      phoneVerifiedAt: freezed == phoneVerifiedAt
           ? _value.phoneVerifiedAt
           : phoneVerifiedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      isVerified: isVerified == freezed
+      isVerified: freezed == isVerified
           ? _value.isVerified
           : isVerified // ignore: cast_nullable_to_non_nullable
               as bool?,
-      canReceiveOffers: canReceiveOffers == freezed
+      canReceiveOffers: freezed == canReceiveOffers
           ? _value.canReceiveOffers
           : canReceiveOffers // ignore: cast_nullable_to_non_nullable
               as bool?,
-      address: address == freezed
+      address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as List<Address>?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DataCopyWith<$Res> implements $DataCopyWith<$Res> {
-  factory _$DataCopyWith(_Data value, $Res Function(_Data) then) = __$DataCopyWithImpl<$Res>;
+abstract class _$$_DataCopyWith<$Res> implements $DataCopyWith<$Res> {
+  factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) = __$$_DataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int? id,
       String? name,
@@ -176,12 +144,10 @@ abstract class _$DataCopyWith<$Res> implements $DataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res> implements _$DataCopyWith<$Res> {
-  __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then) : super(_value, (v) => _then(v as _Data));
+class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data> implements _$$_DataCopyWith<$Res> {
+  __$$_DataCopyWithImpl(_$_Data _value, $Res Function(_$_Data) _then) : super(_value, _then);
 
-  @override
-  _Data get _value => super._value as _Data;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -195,45 +161,45 @@ class __$DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res> implements _$Da
     Object? canReceiveOffers = freezed,
     Object? address = freezed,
   }) {
-    return _then(_Data(
-      id: id == freezed
+    return _then(_$_Data(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      phone: phone == freezed
+      phone: freezed == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      isSocial: isSocial == freezed
+      isSocial: freezed == isSocial
           ? _value.isSocial
           : isSocial // ignore: cast_nullable_to_non_nullable
               as bool?,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneVerifiedAt: phoneVerifiedAt == freezed
+      phoneVerifiedAt: freezed == phoneVerifiedAt
           ? _value.phoneVerifiedAt
           : phoneVerifiedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      isVerified: isVerified == freezed
+      isVerified: freezed == isVerified
           ? _value.isVerified
           : isVerified // ignore: cast_nullable_to_non_nullable
               as bool?,
-      canReceiveOffers: canReceiveOffers == freezed
+      canReceiveOffers: freezed == canReceiveOffers
           ? _value.canReceiveOffers
           : canReceiveOffers // ignore: cast_nullable_to_non_nullable
               as bool?,
-      address: address == freezed
-          ? _value.address
+      address: freezed == address
+          ? _value._address
           : address // ignore: cast_nullable_to_non_nullable
               as List<Address>?,
     ));
@@ -253,7 +219,8 @@ class _$_Data implements _Data {
       @JsonKey(name: 'phone_verified_at') this.phoneVerifiedAt,
       @JsonKey(name: 'is_verified') this.isVerified,
       @JsonKey(name: 'can_receive_offers') this.canReceiveOffers,
-      this.address});
+      final List<Address>? address})
+      : _address = address;
 
   factory _$_Data.fromJson(Map<String, dynamic> json) => _$$_DataFromJson(json);
 
@@ -279,8 +246,14 @@ class _$_Data implements _Data {
   @override
   @JsonKey(name: 'can_receive_offers')
   final bool? canReceiveOffers;
+  final List<Address>? _address;
   @override
-  final List<Address>? address;
+  List<Address>? get address {
+    final value = _address;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -290,86 +263,78 @@ class _$_Data implements _Data {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Data &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.phone, phone) || const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.isSocial, isSocial) || const DeepCollectionEquality().equals(other.isSocial, isSocial)) &&
-            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.phoneVerifiedAt, phoneVerifiedAt) ||
-                const DeepCollectionEquality().equals(other.phoneVerifiedAt, phoneVerifiedAt)) &&
-            (identical(other.isVerified, isVerified) ||
-                const DeepCollectionEquality().equals(other.isVerified, isVerified)) &&
-            (identical(other.canReceiveOffers, canReceiveOffers) ||
-                const DeepCollectionEquality().equals(other.canReceiveOffers, canReceiveOffers)) &&
-            (identical(other.address, address) || const DeepCollectionEquality().equals(other.address, address)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Data &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.isSocial, isSocial) || other.isSocial == isSocial) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.phoneVerifiedAt, phoneVerifiedAt) || other.phoneVerifiedAt == phoneVerifiedAt) &&
+            (identical(other.isVerified, isVerified) || other.isVerified == isVerified) &&
+            (identical(other.canReceiveOffers, canReceiveOffers) || other.canReceiveOffers == canReceiveOffers) &&
+            const DeepCollectionEquality().equals(other._address, _address));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(phone) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(isSocial) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(phoneVerifiedAt) ^
-      const DeepCollectionEquality().hash(isVerified) ^
-      const DeepCollectionEquality().hash(canReceiveOffers) ^
-      const DeepCollectionEquality().hash(address);
 
   @JsonKey(ignore: true)
   @override
-  _$DataCopyWith<_Data> get copyWith => __$DataCopyWithImpl<_Data>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, name, phone, email, isSocial, image, phoneVerifiedAt, isVerified,
+      canReceiveOffers, const DeepCollectionEquality().hash(_address));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DataCopyWith<_$_Data> get copyWith => __$$_DataCopyWithImpl<_$_Data>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DataToJson(this);
+    return _$$_DataToJson(
+      this,
+    );
   }
 }
 
 abstract class _Data implements Data {
   factory _Data(
-      {int? id,
-      String? name,
-      String? phone,
-      String? email,
-      @JsonKey(name: 'is_social') bool? isSocial,
-      String? image,
-      @JsonKey(name: 'phone_verified_at') String? phoneVerifiedAt,
-      @JsonKey(name: 'is_verified') bool? isVerified,
-      @JsonKey(name: 'can_receive_offers') bool? canReceiveOffers,
-      List<Address>? address}) = _$_Data;
+      {final int? id,
+      final String? name,
+      final String? phone,
+      final String? email,
+      @JsonKey(name: 'is_social') final bool? isSocial,
+      final String? image,
+      @JsonKey(name: 'phone_verified_at') final String? phoneVerifiedAt,
+      @JsonKey(name: 'is_verified') final bool? isVerified,
+      @JsonKey(name: 'can_receive_offers') final bool? canReceiveOffers,
+      final List<Address>? address}) = _$_Data;
 
   factory _Data.fromJson(Map<String, dynamic> json) = _$_Data.fromJson;
 
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  String? get name => throw _privateConstructorUsedError;
+  String? get name;
   @override
-  String? get phone => throw _privateConstructorUsedError;
+  String? get phone;
   @override
-  String? get email => throw _privateConstructorUsedError;
+  String? get email;
   @override
   @JsonKey(name: 'is_social')
-  bool? get isSocial => throw _privateConstructorUsedError;
+  bool? get isSocial;
   @override
-  String? get image => throw _privateConstructorUsedError;
+  String? get image;
   @override
   @JsonKey(name: 'phone_verified_at')
-  String? get phoneVerifiedAt => throw _privateConstructorUsedError;
+  String? get phoneVerifiedAt;
   @override
   @JsonKey(name: 'is_verified')
-  bool? get isVerified => throw _privateConstructorUsedError;
+  bool? get isVerified;
   @override
   @JsonKey(name: 'can_receive_offers')
-  bool? get canReceiveOffers => throw _privateConstructorUsedError;
+  bool? get canReceiveOffers;
   @override
-  List<Address>? get address => throw _privateConstructorUsedError;
+  List<Address>? get address;
   @override
   @JsonKey(ignore: true)
-  _$DataCopyWith<_Data> get copyWith => throw _privateConstructorUsedError;
+  _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
 }

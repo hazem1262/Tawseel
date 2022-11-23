@@ -31,53 +31,57 @@ class _MainScreenState extends State<MainScreen> {
               child: child,
             ),
             extendBody: true,
-            bottomNavigationBar: FloatingNavbar(
-              borderRadius: 20,
-              itemBorderRadius: 15,
-              iconSize: 30,
-              unselectedItemColor: tm.subtitleColorLight,
-              backgroundColor: Colors.white,
-              selectedBackgroundColor: ThemeManager.primary,
-              selectedItemColor: Colors.white,
-              onTap: (index) {
-                tabsRouter.setActiveIndex(index);
-              },
-              currentIndex: tabsRouter.activeIndex,
-              items: [
-                FloatingNavbarItem(
-                    customWidget: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ImageIcon(
-                    AssetImage(Res.home_icon),
-                    color: tabsRouter.activeIndex == _SelectedTab.HOME.index ? Colors.white : tm.subtitleColorLight,
-                  ),
-                )),
-                FloatingNavbarItem(
-                    customWidget: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ImageIcon(
-                    AssetImage(Res.offers_icon),
-                    color: tabsRouter.activeIndex == _SelectedTab.OFFERS.index ? Colors.white : tm.subtitleColorLight,
-                  ),
-                )),
-                FloatingNavbarItem(
-                    customWidget: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ImageIcon(
-                    AssetImage(Res.fav_icon),
-                    color:
-                        tabsRouter.activeIndex == _SelectedTab.FAVORITES.index ? Colors.white : tm.subtitleColorLight,
-                  ),
-                )),
-                FloatingNavbarItem(
-                    customWidget: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ImageIcon(
-                    AssetImage(Res.profile_icon),
-                    color: tabsRouter.activeIndex == _SelectedTab.PROFILE.index ? Colors.white : tm.subtitleColorLight,
-                  ),
-                )),
-              ],
+            bottomNavigationBar: Container(
+              color: Colors.white,
+              child: FloatingNavbar(
+                borderRadius: 20,
+                itemBorderRadius: 15,
+                iconSize: 30,
+                unselectedItemColor: tm.subtitleColorLight,
+                backgroundColor: Colors.white,
+                selectedBackgroundColor: ThemeManager.primary,
+                selectedItemColor: Colors.white,
+                onTap: (index) {
+                  tabsRouter.setActiveIndex(index);
+                },
+                currentIndex: tabsRouter.activeIndex,
+                items: [
+                  FloatingNavbarItem(
+                      customWidget: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ImageIcon(
+                      AssetImage(Res.home_icon),
+                      color: tabsRouter.activeIndex == _SelectedTab.HOME.index ? Colors.white : tm.subtitleColorLight,
+                    ),
+                  )),
+                  FloatingNavbarItem(
+                      customWidget: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ImageIcon(
+                      AssetImage(Res.offers_icon),
+                      color: tabsRouter.activeIndex == _SelectedTab.OFFERS.index ? Colors.white : tm.subtitleColorLight,
+                    ),
+                  )),
+                  FloatingNavbarItem(
+                      customWidget: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ImageIcon(
+                      AssetImage(Res.fav_icon),
+                      color:
+                          tabsRouter.activeIndex == _SelectedTab.FAVORITES.index ? Colors.white : tm.subtitleColorLight,
+                    ),
+                  )),
+                  FloatingNavbarItem(
+                      customWidget: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ImageIcon(
+                      AssetImage(Res.profile_icon),
+                      color:
+                          tabsRouter.activeIndex == _SelectedTab.PROFILE.index ? Colors.white : tm.subtitleColorLight,
+                    ),
+                  )),
+                ],
+              ),
             ),
           );
         });

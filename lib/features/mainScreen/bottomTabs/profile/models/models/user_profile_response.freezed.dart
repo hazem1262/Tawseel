@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_profile_response.dart';
@@ -11,29 +12,11 @@ part of 'user_profile_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 UserProfileResponse _$UserProfileResponseFromJson(Map<String, dynamic> json) {
   return _UserProfileResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$UserProfileResponseTearOff {
-  const _$UserProfileResponseTearOff();
-
-  _UserProfileResponse call({Data? data}) {
-    return _UserProfileResponse(
-      data: data,
-    );
-  }
-
-  UserProfileResponse fromJson(Map<String, Object> json) {
-    return UserProfileResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UserProfileResponse = _$UserProfileResponseTearOff();
 
 /// @nodoc
 mixin _$UserProfileResponse {
@@ -47,49 +30,55 @@ mixin _$UserProfileResponse {
 /// @nodoc
 abstract class $UserProfileResponseCopyWith<$Res> {
   factory $UserProfileResponseCopyWith(UserProfileResponse value, $Res Function(UserProfileResponse) then) =
-      _$UserProfileResponseCopyWithImpl<$Res>;
+      _$UserProfileResponseCopyWithImpl<$Res, UserProfileResponse>;
+  @useResult
   $Res call({Data? data});
 
   $DataCopyWith<$Res>? get data;
 }
 
 /// @nodoc
-class _$UserProfileResponseCopyWithImpl<$Res> implements $UserProfileResponseCopyWith<$Res> {
+class _$UserProfileResponseCopyWithImpl<$Res, $Val extends UserProfileResponse>
+    implements $UserProfileResponseCopyWith<$Res> {
   _$UserProfileResponseCopyWithImpl(this._value, this._then);
 
-  final UserProfileResponse _value;
   // ignore: unused_field
-  final $Res Function(UserProfileResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Data?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DataCopyWith<$Res>? get data {
     if (_value.data == null) {
       return null;
     }
 
     return $DataCopyWith<$Res>(_value.data!, (value) {
-      return _then(_value.copyWith(data: value));
+      return _then(_value.copyWith(data: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$UserProfileResponseCopyWith<$Res> implements $UserProfileResponseCopyWith<$Res> {
-  factory _$UserProfileResponseCopyWith(_UserProfileResponse value, $Res Function(_UserProfileResponse) then) =
-      __$UserProfileResponseCopyWithImpl<$Res>;
+abstract class _$$_UserProfileResponseCopyWith<$Res> implements $UserProfileResponseCopyWith<$Res> {
+  factory _$$_UserProfileResponseCopyWith(_$_UserProfileResponse value, $Res Function(_$_UserProfileResponse) then) =
+      __$$_UserProfileResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Data? data});
 
   @override
@@ -97,20 +86,18 @@ abstract class _$UserProfileResponseCopyWith<$Res> implements $UserProfileRespon
 }
 
 /// @nodoc
-class __$UserProfileResponseCopyWithImpl<$Res> extends _$UserProfileResponseCopyWithImpl<$Res>
-    implements _$UserProfileResponseCopyWith<$Res> {
-  __$UserProfileResponseCopyWithImpl(_UserProfileResponse _value, $Res Function(_UserProfileResponse) _then)
-      : super(_value, (v) => _then(v as _UserProfileResponse));
+class __$$_UserProfileResponseCopyWithImpl<$Res> extends _$UserProfileResponseCopyWithImpl<$Res, _$_UserProfileResponse>
+    implements _$$_UserProfileResponseCopyWith<$Res> {
+  __$$_UserProfileResponseCopyWithImpl(_$_UserProfileResponse _value, $Res Function(_$_UserProfileResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _UserProfileResponse get _value => super._value as _UserProfileResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_UserProfileResponse(
-      data: data == freezed
+    return _then(_$_UserProfileResponse(
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Data?,
@@ -136,32 +123,37 @@ class _$_UserProfileResponse implements _UserProfileResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserProfileResponse &&
-            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _$_UserProfileResponse &&
+            (identical(other.data, data) || other.data == data));
   }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
-  _$UserProfileResponseCopyWith<_UserProfileResponse> get copyWith =>
-      __$UserProfileResponseCopyWithImpl<_UserProfileResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UserProfileResponseCopyWith<_$_UserProfileResponse> get copyWith =>
+      __$$_UserProfileResponseCopyWithImpl<_$_UserProfileResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserProfileResponseToJson(this);
+    return _$$_UserProfileResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _UserProfileResponse implements UserProfileResponse {
-  factory _UserProfileResponse({Data? data}) = _$_UserProfileResponse;
+  factory _UserProfileResponse({final Data? data}) = _$_UserProfileResponse;
 
   factory _UserProfileResponse.fromJson(Map<String, dynamic> json) = _$_UserProfileResponse.fromJson;
 
   @override
-  Data? get data => throw _privateConstructorUsedError;
+  Data? get data;
   @override
   @JsonKey(ignore: true)
-  _$UserProfileResponseCopyWith<_UserProfileResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_UserProfileResponseCopyWith<_$_UserProfileResponse> get copyWith => throw _privateConstructorUsedError;
 }

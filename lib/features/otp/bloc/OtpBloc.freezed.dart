@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'OtpBloc.dart';
@@ -11,36 +12,7 @@ part of 'OtpBloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$OtpEventsTearOff {
-  const _$OtpEventsTearOff();
-
-  SendOtp sendOtp(String phone, OTP_TYPE type) {
-    return SendOtp(
-      phone,
-      type,
-    );
-  }
-
-  VerifyOtp verifyOtp(String phone, String otp, OTP_TYPE type) {
-    return VerifyOtp(
-      phone,
-      otp,
-      type,
-    );
-  }
-
-  OnOtpChange onOtpChange(String? otp) {
-    return OnOtpChange(
-      otp,
-    );
-  }
-}
-
-/// @nodoc
-const $OtpEvents = _$OtpEventsTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$OtpEvents {
@@ -53,9 +25,9 @@ mixin _$OtpEvents {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String phone, OTP_TYPE type)? sendOtp,
-    TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
-    TResult Function(String? otp)? onOtpChange,
+    TResult? Function(String phone, OTP_TYPE type)? sendOtp,
+    TResult? Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
+    TResult? Function(String? otp)? onOtpChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,9 +47,9 @@ mixin _$OtpEvents {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SendOtp value)? sendOtp,
-    TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(OnOtpChange value)? onOtpChange,
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(OnOtpChange value)? onOtpChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,42 +64,43 @@ mixin _$OtpEvents {
 
 /// @nodoc
 abstract class $OtpEventsCopyWith<$Res> {
-  factory $OtpEventsCopyWith(OtpEvents value, $Res Function(OtpEvents) then) = _$OtpEventsCopyWithImpl<$Res>;
+  factory $OtpEventsCopyWith(OtpEvents value, $Res Function(OtpEvents) then) = _$OtpEventsCopyWithImpl<$Res, OtpEvents>;
 }
 
 /// @nodoc
-class _$OtpEventsCopyWithImpl<$Res> implements $OtpEventsCopyWith<$Res> {
+class _$OtpEventsCopyWithImpl<$Res, $Val extends OtpEvents> implements $OtpEventsCopyWith<$Res> {
   _$OtpEventsCopyWithImpl(this._value, this._then);
 
-  final OtpEvents _value;
   // ignore: unused_field
-  final $Res Function(OtpEvents) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $SendOtpCopyWith<$Res> {
-  factory $SendOtpCopyWith(SendOtp value, $Res Function(SendOtp) then) = _$SendOtpCopyWithImpl<$Res>;
+abstract class _$$SendOtpCopyWith<$Res> {
+  factory _$$SendOtpCopyWith(_$SendOtp value, $Res Function(_$SendOtp) then) = __$$SendOtpCopyWithImpl<$Res>;
+  @useResult
   $Res call({String phone, OTP_TYPE type});
 }
 
 /// @nodoc
-class _$SendOtpCopyWithImpl<$Res> extends _$OtpEventsCopyWithImpl<$Res> implements $SendOtpCopyWith<$Res> {
-  _$SendOtpCopyWithImpl(SendOtp _value, $Res Function(SendOtp) _then) : super(_value, (v) => _then(v as SendOtp));
+class __$$SendOtpCopyWithImpl<$Res> extends _$OtpEventsCopyWithImpl<$Res, _$SendOtp>
+    implements _$$SendOtpCopyWith<$Res> {
+  __$$SendOtpCopyWithImpl(_$SendOtp _value, $Res Function(_$SendOtp) _then) : super(_value, _then);
 
-  @override
-  SendOtp get _value => super._value as SendOtp;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phone = freezed,
-    Object? type = freezed,
+    Object? phone = null,
+    Object? type = null,
   }) {
-    return _then(SendOtp(
-      phone == freezed
+    return _then(_$SendOtp(
+      null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      type == freezed
+      null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as OTP_TYPE,
@@ -162,18 +135,19 @@ class _$SendOtp with DiagnosticableTreeMixin implements SendOtp {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SendOtp &&
-            (identical(other.phone, phone) || const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is _$SendOtp &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(phone) ^ const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(runtimeType, phone, type);
 
   @JsonKey(ignore: true)
   @override
-  $SendOtpCopyWith<SendOtp> get copyWith => _$SendOtpCopyWithImpl<SendOtp>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SendOtpCopyWith<_$SendOtp> get copyWith => __$$SendOtpCopyWithImpl<_$SendOtp>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -188,9 +162,9 @@ class _$SendOtp with DiagnosticableTreeMixin implements SendOtp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String phone, OTP_TYPE type)? sendOtp,
-    TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
-    TResult Function(String? otp)? onOtpChange,
+    TResult? Function(String phone, OTP_TYPE type)? sendOtp,
+    TResult? Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
+    TResult? Function(String? otp)? onOtpChange,
   }) {
     return sendOtp?.call(phone, type);
   }
@@ -222,9 +196,9 @@ class _$SendOtp with DiagnosticableTreeMixin implements SendOtp {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SendOtp value)? sendOtp,
-    TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(OnOtpChange value)? onOtpChange,
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(OnOtpChange value)? onOtpChange,
   }) {
     return sendOtp?.call(this);
   }
@@ -245,44 +219,43 @@ class _$SendOtp with DiagnosticableTreeMixin implements SendOtp {
 }
 
 abstract class SendOtp implements OtpEvents {
-  const factory SendOtp(String phone, OTP_TYPE type) = _$SendOtp;
+  const factory SendOtp(final String phone, final OTP_TYPE type) = _$SendOtp;
 
-  String get phone => throw _privateConstructorUsedError;
-  OTP_TYPE get type => throw _privateConstructorUsedError;
+  String get phone;
+  OTP_TYPE get type;
   @JsonKey(ignore: true)
-  $SendOtpCopyWith<SendOtp> get copyWith => throw _privateConstructorUsedError;
+  _$$SendOtpCopyWith<_$SendOtp> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VerifyOtpCopyWith<$Res> {
-  factory $VerifyOtpCopyWith(VerifyOtp value, $Res Function(VerifyOtp) then) = _$VerifyOtpCopyWithImpl<$Res>;
+abstract class _$$VerifyOtpCopyWith<$Res> {
+  factory _$$VerifyOtpCopyWith(_$VerifyOtp value, $Res Function(_$VerifyOtp) then) = __$$VerifyOtpCopyWithImpl<$Res>;
+  @useResult
   $Res call({String phone, String otp, OTP_TYPE type});
 }
 
 /// @nodoc
-class _$VerifyOtpCopyWithImpl<$Res> extends _$OtpEventsCopyWithImpl<$Res> implements $VerifyOtpCopyWith<$Res> {
-  _$VerifyOtpCopyWithImpl(VerifyOtp _value, $Res Function(VerifyOtp) _then)
-      : super(_value, (v) => _then(v as VerifyOtp));
+class __$$VerifyOtpCopyWithImpl<$Res> extends _$OtpEventsCopyWithImpl<$Res, _$VerifyOtp>
+    implements _$$VerifyOtpCopyWith<$Res> {
+  __$$VerifyOtpCopyWithImpl(_$VerifyOtp _value, $Res Function(_$VerifyOtp) _then) : super(_value, _then);
 
-  @override
-  VerifyOtp get _value => super._value as VerifyOtp;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phone = freezed,
-    Object? otp = freezed,
-    Object? type = freezed,
+    Object? phone = null,
+    Object? otp = null,
+    Object? type = null,
   }) {
-    return _then(VerifyOtp(
-      phone == freezed
+    return _then(_$VerifyOtp(
+      null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
-      otp == freezed
+      null == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as String,
-      type == freezed
+      null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as OTP_TYPE,
@@ -320,22 +293,20 @@ class _$VerifyOtp with DiagnosticableTreeMixin implements VerifyOtp {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is VerifyOtp &&
-            (identical(other.phone, phone) || const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.otp, otp) || const DeepCollectionEquality().equals(other.otp, otp)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyOtp &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.otp, otp) || other.otp == otp) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(phone) ^
-      const DeepCollectionEquality().hash(otp) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(runtimeType, phone, otp, type);
 
   @JsonKey(ignore: true)
   @override
-  $VerifyOtpCopyWith<VerifyOtp> get copyWith => _$VerifyOtpCopyWithImpl<VerifyOtp>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$VerifyOtpCopyWith<_$VerifyOtp> get copyWith => __$$VerifyOtpCopyWithImpl<_$VerifyOtp>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -350,9 +321,9 @@ class _$VerifyOtp with DiagnosticableTreeMixin implements VerifyOtp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String phone, OTP_TYPE type)? sendOtp,
-    TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
-    TResult Function(String? otp)? onOtpChange,
+    TResult? Function(String phone, OTP_TYPE type)? sendOtp,
+    TResult? Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
+    TResult? Function(String? otp)? onOtpChange,
   }) {
     return verifyOtp?.call(phone, otp, type);
   }
@@ -384,9 +355,9 @@ class _$VerifyOtp with DiagnosticableTreeMixin implements VerifyOtp {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SendOtp value)? sendOtp,
-    TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(OnOtpChange value)? onOtpChange,
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(OnOtpChange value)? onOtpChange,
   }) {
     return verifyOtp?.call(this);
   }
@@ -407,35 +378,35 @@ class _$VerifyOtp with DiagnosticableTreeMixin implements VerifyOtp {
 }
 
 abstract class VerifyOtp implements OtpEvents {
-  const factory VerifyOtp(String phone, String otp, OTP_TYPE type) = _$VerifyOtp;
+  const factory VerifyOtp(final String phone, final String otp, final OTP_TYPE type) = _$VerifyOtp;
 
-  String get phone => throw _privateConstructorUsedError;
-  String get otp => throw _privateConstructorUsedError;
-  OTP_TYPE get type => throw _privateConstructorUsedError;
+  String get phone;
+  String get otp;
+  OTP_TYPE get type;
   @JsonKey(ignore: true)
-  $VerifyOtpCopyWith<VerifyOtp> get copyWith => throw _privateConstructorUsedError;
+  _$$VerifyOtpCopyWith<_$VerifyOtp> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OnOtpChangeCopyWith<$Res> {
-  factory $OnOtpChangeCopyWith(OnOtpChange value, $Res Function(OnOtpChange) then) = _$OnOtpChangeCopyWithImpl<$Res>;
+abstract class _$$OnOtpChangeCopyWith<$Res> {
+  factory _$$OnOtpChangeCopyWith(_$OnOtpChange value, $Res Function(_$OnOtpChange) then) =
+      __$$OnOtpChangeCopyWithImpl<$Res>;
+  @useResult
   $Res call({String? otp});
 }
 
 /// @nodoc
-class _$OnOtpChangeCopyWithImpl<$Res> extends _$OtpEventsCopyWithImpl<$Res> implements $OnOtpChangeCopyWith<$Res> {
-  _$OnOtpChangeCopyWithImpl(OnOtpChange _value, $Res Function(OnOtpChange) _then)
-      : super(_value, (v) => _then(v as OnOtpChange));
+class __$$OnOtpChangeCopyWithImpl<$Res> extends _$OtpEventsCopyWithImpl<$Res, _$OnOtpChange>
+    implements _$$OnOtpChangeCopyWith<$Res> {
+  __$$OnOtpChangeCopyWithImpl(_$OnOtpChange _value, $Res Function(_$OnOtpChange) _then) : super(_value, _then);
 
-  @override
-  OnOtpChange get _value => super._value as OnOtpChange;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? otp = freezed,
   }) {
-    return _then(OnOtpChange(
-      otp == freezed
+    return _then(_$OnOtpChange(
+      freezed == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -467,15 +438,16 @@ class _$OnOtpChange with DiagnosticableTreeMixin implements OnOtpChange {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is OnOtpChange && (identical(other.otp, otp) || const DeepCollectionEquality().equals(other.otp, otp)));
+        (other.runtimeType == runtimeType && other is _$OnOtpChange && (identical(other.otp, otp) || other.otp == otp));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(otp);
+  int get hashCode => Object.hash(runtimeType, otp);
 
   @JsonKey(ignore: true)
   @override
-  $OnOtpChangeCopyWith<OnOtpChange> get copyWith => _$OnOtpChangeCopyWithImpl<OnOtpChange>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$OnOtpChangeCopyWith<_$OnOtpChange> get copyWith => __$$OnOtpChangeCopyWithImpl<_$OnOtpChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -490,9 +462,9 @@ class _$OnOtpChange with DiagnosticableTreeMixin implements OnOtpChange {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String phone, OTP_TYPE type)? sendOtp,
-    TResult Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
-    TResult Function(String? otp)? onOtpChange,
+    TResult? Function(String phone, OTP_TYPE type)? sendOtp,
+    TResult? Function(String phone, String otp, OTP_TYPE type)? verifyOtp,
+    TResult? Function(String? otp)? onOtpChange,
   }) {
     return onOtpChange?.call(otp);
   }
@@ -524,9 +496,9 @@ class _$OnOtpChange with DiagnosticableTreeMixin implements OnOtpChange {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SendOtp value)? sendOtp,
-    TResult Function(VerifyOtp value)? verifyOtp,
-    TResult Function(OnOtpChange value)? onOtpChange,
+    TResult? Function(SendOtp value)? sendOtp,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(OnOtpChange value)? onOtpChange,
   }) {
     return onOtpChange?.call(this);
   }
@@ -547,52 +519,12 @@ class _$OnOtpChange with DiagnosticableTreeMixin implements OnOtpChange {
 }
 
 abstract class OnOtpChange implements OtpEvents {
-  const factory OnOtpChange(String? otp) = _$OnOtpChange;
+  const factory OnOtpChange(final String? otp) = _$OnOtpChange;
 
-  String? get otp => throw _privateConstructorUsedError;
+  String? get otp;
   @JsonKey(ignore: true)
-  $OnOtpChangeCopyWith<OnOtpChange> get copyWith => throw _privateConstructorUsedError;
+  _$$OnOtpChangeCopyWith<_$OnOtpChange> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$OtpViewStateTearOff {
-  const _$OtpViewStateTearOff();
-
-  InitialState initialState() {
-    return const InitialState();
-  }
-
-  OtpIsLoading isLoading() {
-    return const OtpIsLoading();
-  }
-
-  OnOtpReceived onOtpReceived(OtpResponse otpResponse) {
-    return OnOtpReceived(
-      otpResponse,
-    );
-  }
-
-  OnOtpVerified onOtpVerified(LoginResponse loginResponse) {
-    return OnOtpVerified(
-      loginResponse,
-    );
-  }
-
-  _HasError hasError(String error) {
-    return _HasError(
-      error,
-    );
-  }
-
-  DisableOtpConfirmButton disableButton(bool disable) {
-    return DisableOtpConfirmButton(
-      disable,
-    );
-  }
-}
-
-/// @nodoc
-const $OtpViewState = _$OtpViewStateTearOff();
 
 /// @nodoc
 mixin _$OtpViewState {
@@ -608,12 +540,12 @@ mixin _$OtpViewState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(OtpResponse otpResponse)? onOtpReceived,
-    TResult Function(LoginResponse loginResponse)? onOtpVerified,
-    TResult Function(String error)? hasError,
-    TResult Function(bool disable)? disableButton,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult? Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult? Function(String error)? hasError,
+    TResult? Function(bool disable)? disableButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -639,12 +571,12 @@ mixin _$OtpViewState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialState value)? initialState,
-    TResult Function(OtpIsLoading value)? isLoading,
-    TResult Function(OnOtpReceived value)? onOtpReceived,
-    TResult Function(OnOtpVerified value)? onOtpVerified,
-    TResult Function(_HasError value)? hasError,
-    TResult Function(DisableOtpConfirmButton value)? disableButton,
+    TResult? Function(InitialState value)? initialState,
+    TResult? Function(OtpIsLoading value)? isLoading,
+    TResult? Function(OnOtpReceived value)? onOtpReceived,
+    TResult? Function(OnOtpVerified value)? onOtpVerified,
+    TResult? Function(_HasError value)? hasError,
+    TResult? Function(DisableOtpConfirmButton value)? disableButton,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -663,31 +595,29 @@ mixin _$OtpViewState {
 /// @nodoc
 abstract class $OtpViewStateCopyWith<$Res> {
   factory $OtpViewStateCopyWith(OtpViewState value, $Res Function(OtpViewState) then) =
-      _$OtpViewStateCopyWithImpl<$Res>;
+      _$OtpViewStateCopyWithImpl<$Res, OtpViewState>;
 }
 
 /// @nodoc
-class _$OtpViewStateCopyWithImpl<$Res> implements $OtpViewStateCopyWith<$Res> {
+class _$OtpViewStateCopyWithImpl<$Res, $Val extends OtpViewState> implements $OtpViewStateCopyWith<$Res> {
   _$OtpViewStateCopyWithImpl(this._value, this._then);
 
-  final OtpViewState _value;
   // ignore: unused_field
-  final $Res Function(OtpViewState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $InitialStateCopyWith<$Res> {
-  factory $InitialStateCopyWith(InitialState value, $Res Function(InitialState) then) =
-      _$InitialStateCopyWithImpl<$Res>;
+abstract class _$$InitialStateCopyWith<$Res> {
+  factory _$$InitialStateCopyWith(_$InitialState value, $Res Function(_$InitialState) then) =
+      __$$InitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitialStateCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res> implements $InitialStateCopyWith<$Res> {
-  _$InitialStateCopyWithImpl(InitialState _value, $Res Function(InitialState) _then)
-      : super(_value, (v) => _then(v as InitialState));
-
-  @override
-  InitialState get _value => super._value as InitialState;
+class __$$InitialStateCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res, _$InitialState>
+    implements _$$InitialStateCopyWith<$Res> {
+  __$$InitialStateCopyWithImpl(_$InitialState _value, $Res Function(_$InitialState) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -703,12 +633,12 @@ class _$InitialState with DiagnosticableTreeMixin implements InitialState {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OtpViewState.initialState'));
+    properties.add(DiagnosticsProperty('type', 'OtpViewState.initialState'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitialState);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitialState);
   }
 
   @override
@@ -730,12 +660,12 @@ class _$InitialState with DiagnosticableTreeMixin implements InitialState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(OtpResponse otpResponse)? onOtpReceived,
-    TResult Function(LoginResponse loginResponse)? onOtpVerified,
-    TResult Function(String error)? hasError,
-    TResult Function(bool disable)? disableButton,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult? Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult? Function(String error)? hasError,
+    TResult? Function(bool disable)? disableButton,
   }) {
     return initialState?.call();
   }
@@ -773,12 +703,12 @@ class _$InitialState with DiagnosticableTreeMixin implements InitialState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialState value)? initialState,
-    TResult Function(OtpIsLoading value)? isLoading,
-    TResult Function(OnOtpReceived value)? onOtpReceived,
-    TResult Function(OnOtpVerified value)? onOtpVerified,
-    TResult Function(_HasError value)? hasError,
-    TResult Function(DisableOtpConfirmButton value)? disableButton,
+    TResult? Function(InitialState value)? initialState,
+    TResult? Function(OtpIsLoading value)? isLoading,
+    TResult? Function(OnOtpReceived value)? onOtpReceived,
+    TResult? Function(OnOtpVerified value)? onOtpVerified,
+    TResult? Function(_HasError value)? hasError,
+    TResult? Function(DisableOtpConfirmButton value)? disableButton,
   }) {
     return initialState?.call(this);
   }
@@ -806,18 +736,15 @@ abstract class InitialState implements OtpViewState {
 }
 
 /// @nodoc
-abstract class $OtpIsLoadingCopyWith<$Res> {
-  factory $OtpIsLoadingCopyWith(OtpIsLoading value, $Res Function(OtpIsLoading) then) =
-      _$OtpIsLoadingCopyWithImpl<$Res>;
+abstract class _$$OtpIsLoadingCopyWith<$Res> {
+  factory _$$OtpIsLoadingCopyWith(_$OtpIsLoading value, $Res Function(_$OtpIsLoading) then) =
+      __$$OtpIsLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$OtpIsLoadingCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res> implements $OtpIsLoadingCopyWith<$Res> {
-  _$OtpIsLoadingCopyWithImpl(OtpIsLoading _value, $Res Function(OtpIsLoading) _then)
-      : super(_value, (v) => _then(v as OtpIsLoading));
-
-  @override
-  OtpIsLoading get _value => super._value as OtpIsLoading;
+class __$$OtpIsLoadingCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res, _$OtpIsLoading>
+    implements _$$OtpIsLoadingCopyWith<$Res> {
+  __$$OtpIsLoadingCopyWithImpl(_$OtpIsLoading _value, $Res Function(_$OtpIsLoading) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -833,12 +760,12 @@ class _$OtpIsLoading with DiagnosticableTreeMixin implements OtpIsLoading {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OtpViewState.isLoading'));
+    properties.add(DiagnosticsProperty('type', 'OtpViewState.isLoading'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is OtpIsLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$OtpIsLoading);
   }
 
   @override
@@ -860,12 +787,12 @@ class _$OtpIsLoading with DiagnosticableTreeMixin implements OtpIsLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(OtpResponse otpResponse)? onOtpReceived,
-    TResult Function(LoginResponse loginResponse)? onOtpVerified,
-    TResult Function(String error)? hasError,
-    TResult Function(bool disable)? disableButton,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult? Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult? Function(String error)? hasError,
+    TResult? Function(bool disable)? disableButton,
   }) {
     return isLoading?.call();
   }
@@ -903,12 +830,12 @@ class _$OtpIsLoading with DiagnosticableTreeMixin implements OtpIsLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialState value)? initialState,
-    TResult Function(OtpIsLoading value)? isLoading,
-    TResult Function(OnOtpReceived value)? onOtpReceived,
-    TResult Function(OnOtpVerified value)? onOtpVerified,
-    TResult Function(_HasError value)? hasError,
-    TResult Function(DisableOtpConfirmButton value)? disableButton,
+    TResult? Function(InitialState value)? initialState,
+    TResult? Function(OtpIsLoading value)? isLoading,
+    TResult? Function(OnOtpReceived value)? onOtpReceived,
+    TResult? Function(OnOtpVerified value)? onOtpVerified,
+    TResult? Function(_HasError value)? hasError,
+    TResult? Function(DisableOtpConfirmButton value)? disableButton,
   }) {
     return isLoading?.call(this);
   }
@@ -936,29 +863,27 @@ abstract class OtpIsLoading implements OtpViewState {
 }
 
 /// @nodoc
-abstract class $OnOtpReceivedCopyWith<$Res> {
-  factory $OnOtpReceivedCopyWith(OnOtpReceived value, $Res Function(OnOtpReceived) then) =
-      _$OnOtpReceivedCopyWithImpl<$Res>;
+abstract class _$$OnOtpReceivedCopyWith<$Res> {
+  factory _$$OnOtpReceivedCopyWith(_$OnOtpReceived value, $Res Function(_$OnOtpReceived) then) =
+      __$$OnOtpReceivedCopyWithImpl<$Res>;
+  @useResult
   $Res call({OtpResponse otpResponse});
 
   $OtpResponseCopyWith<$Res> get otpResponse;
 }
 
 /// @nodoc
-class _$OnOtpReceivedCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res>
-    implements $OnOtpReceivedCopyWith<$Res> {
-  _$OnOtpReceivedCopyWithImpl(OnOtpReceived _value, $Res Function(OnOtpReceived) _then)
-      : super(_value, (v) => _then(v as OnOtpReceived));
+class __$$OnOtpReceivedCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res, _$OnOtpReceived>
+    implements _$$OnOtpReceivedCopyWith<$Res> {
+  __$$OnOtpReceivedCopyWithImpl(_$OnOtpReceived _value, $Res Function(_$OnOtpReceived) _then) : super(_value, _then);
 
-  @override
-  OnOtpReceived get _value => super._value as OnOtpReceived;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? otpResponse = freezed,
+    Object? otpResponse = null,
   }) {
-    return _then(OnOtpReceived(
-      otpResponse == freezed
+    return _then(_$OnOtpReceived(
+      null == otpResponse
           ? _value.otpResponse
           : otpResponse // ignore: cast_nullable_to_non_nullable
               as OtpResponse,
@@ -966,6 +891,7 @@ class _$OnOtpReceivedCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $OtpResponseCopyWith<$Res> get otpResponse {
     return $OtpResponseCopyWith<$Res>(_value.otpResponse, (value) {
       return _then(_value.copyWith(otpResponse: value));
@@ -997,17 +923,19 @@ class _$OnOtpReceived with DiagnosticableTreeMixin implements OnOtpReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is OnOtpReceived &&
-            (identical(other.otpResponse, otpResponse) ||
-                const DeepCollectionEquality().equals(other.otpResponse, otpResponse)));
+        (other.runtimeType == runtimeType &&
+            other is _$OnOtpReceived &&
+            (identical(other.otpResponse, otpResponse) || other.otpResponse == otpResponse));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(otpResponse);
+  int get hashCode => Object.hash(runtimeType, otpResponse);
 
   @JsonKey(ignore: true)
   @override
-  $OnOtpReceivedCopyWith<OnOtpReceived> get copyWith => _$OnOtpReceivedCopyWithImpl<OnOtpReceived>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$OnOtpReceivedCopyWith<_$OnOtpReceived> get copyWith =>
+      __$$OnOtpReceivedCopyWithImpl<_$OnOtpReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1025,12 +953,12 @@ class _$OnOtpReceived with DiagnosticableTreeMixin implements OnOtpReceived {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(OtpResponse otpResponse)? onOtpReceived,
-    TResult Function(LoginResponse loginResponse)? onOtpVerified,
-    TResult Function(String error)? hasError,
-    TResult Function(bool disable)? disableButton,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult? Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult? Function(String error)? hasError,
+    TResult? Function(bool disable)? disableButton,
   }) {
     return onOtpReceived?.call(otpResponse);
   }
@@ -1068,12 +996,12 @@ class _$OnOtpReceived with DiagnosticableTreeMixin implements OnOtpReceived {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialState value)? initialState,
-    TResult Function(OtpIsLoading value)? isLoading,
-    TResult Function(OnOtpReceived value)? onOtpReceived,
-    TResult Function(OnOtpVerified value)? onOtpVerified,
-    TResult Function(_HasError value)? hasError,
-    TResult Function(DisableOtpConfirmButton value)? disableButton,
+    TResult? Function(InitialState value)? initialState,
+    TResult? Function(OtpIsLoading value)? isLoading,
+    TResult? Function(OnOtpReceived value)? onOtpReceived,
+    TResult? Function(OnOtpVerified value)? onOtpVerified,
+    TResult? Function(_HasError value)? hasError,
+    TResult? Function(DisableOtpConfirmButton value)? disableButton,
   }) {
     return onOtpReceived?.call(this);
   }
@@ -1097,37 +1025,35 @@ class _$OnOtpReceived with DiagnosticableTreeMixin implements OnOtpReceived {
 }
 
 abstract class OnOtpReceived implements OtpViewState {
-  const factory OnOtpReceived(OtpResponse otpResponse) = _$OnOtpReceived;
+  const factory OnOtpReceived(final OtpResponse otpResponse) = _$OnOtpReceived;
 
-  OtpResponse get otpResponse => throw _privateConstructorUsedError;
+  OtpResponse get otpResponse;
   @JsonKey(ignore: true)
-  $OnOtpReceivedCopyWith<OnOtpReceived> get copyWith => throw _privateConstructorUsedError;
+  _$$OnOtpReceivedCopyWith<_$OnOtpReceived> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OnOtpVerifiedCopyWith<$Res> {
-  factory $OnOtpVerifiedCopyWith(OnOtpVerified value, $Res Function(OnOtpVerified) then) =
-      _$OnOtpVerifiedCopyWithImpl<$Res>;
+abstract class _$$OnOtpVerifiedCopyWith<$Res> {
+  factory _$$OnOtpVerifiedCopyWith(_$OnOtpVerified value, $Res Function(_$OnOtpVerified) then) =
+      __$$OnOtpVerifiedCopyWithImpl<$Res>;
+  @useResult
   $Res call({LoginResponse loginResponse});
 
   $LoginResponseCopyWith<$Res> get loginResponse;
 }
 
 /// @nodoc
-class _$OnOtpVerifiedCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res>
-    implements $OnOtpVerifiedCopyWith<$Res> {
-  _$OnOtpVerifiedCopyWithImpl(OnOtpVerified _value, $Res Function(OnOtpVerified) _then)
-      : super(_value, (v) => _then(v as OnOtpVerified));
+class __$$OnOtpVerifiedCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res, _$OnOtpVerified>
+    implements _$$OnOtpVerifiedCopyWith<$Res> {
+  __$$OnOtpVerifiedCopyWithImpl(_$OnOtpVerified _value, $Res Function(_$OnOtpVerified) _then) : super(_value, _then);
 
-  @override
-  OnOtpVerified get _value => super._value as OnOtpVerified;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? loginResponse = freezed,
+    Object? loginResponse = null,
   }) {
-    return _then(OnOtpVerified(
-      loginResponse == freezed
+    return _then(_$OnOtpVerified(
+      null == loginResponse
           ? _value.loginResponse
           : loginResponse // ignore: cast_nullable_to_non_nullable
               as LoginResponse,
@@ -1135,6 +1061,7 @@ class _$OnOtpVerifiedCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $LoginResponseCopyWith<$Res> get loginResponse {
     return $LoginResponseCopyWith<$Res>(_value.loginResponse, (value) {
       return _then(_value.copyWith(loginResponse: value));
@@ -1166,17 +1093,19 @@ class _$OnOtpVerified with DiagnosticableTreeMixin implements OnOtpVerified {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is OnOtpVerified &&
-            (identical(other.loginResponse, loginResponse) ||
-                const DeepCollectionEquality().equals(other.loginResponse, loginResponse)));
+        (other.runtimeType == runtimeType &&
+            other is _$OnOtpVerified &&
+            (identical(other.loginResponse, loginResponse) || other.loginResponse == loginResponse));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(loginResponse);
+  int get hashCode => Object.hash(runtimeType, loginResponse);
 
   @JsonKey(ignore: true)
   @override
-  $OnOtpVerifiedCopyWith<OnOtpVerified> get copyWith => _$OnOtpVerifiedCopyWithImpl<OnOtpVerified>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$OnOtpVerifiedCopyWith<_$OnOtpVerified> get copyWith =>
+      __$$OnOtpVerifiedCopyWithImpl<_$OnOtpVerified>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1194,12 +1123,12 @@ class _$OnOtpVerified with DiagnosticableTreeMixin implements OnOtpVerified {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(OtpResponse otpResponse)? onOtpReceived,
-    TResult Function(LoginResponse loginResponse)? onOtpVerified,
-    TResult Function(String error)? hasError,
-    TResult Function(bool disable)? disableButton,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult? Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult? Function(String error)? hasError,
+    TResult? Function(bool disable)? disableButton,
   }) {
     return onOtpVerified?.call(loginResponse);
   }
@@ -1237,12 +1166,12 @@ class _$OnOtpVerified with DiagnosticableTreeMixin implements OnOtpVerified {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialState value)? initialState,
-    TResult Function(OtpIsLoading value)? isLoading,
-    TResult Function(OnOtpReceived value)? onOtpReceived,
-    TResult Function(OnOtpVerified value)? onOtpVerified,
-    TResult Function(_HasError value)? hasError,
-    TResult Function(DisableOtpConfirmButton value)? disableButton,
+    TResult? Function(InitialState value)? initialState,
+    TResult? Function(OtpIsLoading value)? isLoading,
+    TResult? Function(OnOtpReceived value)? onOtpReceived,
+    TResult? Function(OnOtpVerified value)? onOtpVerified,
+    TResult? Function(_HasError value)? hasError,
+    TResult? Function(DisableOtpConfirmButton value)? disableButton,
   }) {
     return onOtpVerified?.call(this);
   }
@@ -1266,33 +1195,32 @@ class _$OnOtpVerified with DiagnosticableTreeMixin implements OnOtpVerified {
 }
 
 abstract class OnOtpVerified implements OtpViewState {
-  const factory OnOtpVerified(LoginResponse loginResponse) = _$OnOtpVerified;
+  const factory OnOtpVerified(final LoginResponse loginResponse) = _$OnOtpVerified;
 
-  LoginResponse get loginResponse => throw _privateConstructorUsedError;
+  LoginResponse get loginResponse;
   @JsonKey(ignore: true)
-  $OnOtpVerifiedCopyWith<OnOtpVerified> get copyWith => throw _privateConstructorUsedError;
+  _$$OnOtpVerifiedCopyWith<_$OnOtpVerified> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$HasErrorCopyWith<$Res> {
-  factory _$HasErrorCopyWith(_HasError value, $Res Function(_HasError) then) = __$HasErrorCopyWithImpl<$Res>;
+abstract class _$$_HasErrorCopyWith<$Res> {
+  factory _$$_HasErrorCopyWith(_$_HasError value, $Res Function(_$_HasError) then) = __$$_HasErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$HasErrorCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res> implements _$HasErrorCopyWith<$Res> {
-  __$HasErrorCopyWithImpl(_HasError _value, $Res Function(_HasError) _then)
-      : super(_value, (v) => _then(v as _HasError));
+class __$$_HasErrorCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res, _$_HasError>
+    implements _$$_HasErrorCopyWith<$Res> {
+  __$$_HasErrorCopyWithImpl(_$_HasError _value, $Res Function(_$_HasError) _then) : super(_value, _then);
 
-  @override
-  _HasError get _value => super._value as _HasError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
-    return _then(_HasError(
-      error == freezed
+    return _then(_$_HasError(
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1324,16 +1252,18 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HasError &&
-            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
+        (other.runtimeType == runtimeType &&
+            other is _$_HasError &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
-  _$HasErrorCopyWith<_HasError> get copyWith => __$HasErrorCopyWithImpl<_HasError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_HasErrorCopyWith<_$_HasError> get copyWith => __$$_HasErrorCopyWithImpl<_$_HasError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1351,12 +1281,12 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(OtpResponse otpResponse)? onOtpReceived,
-    TResult Function(LoginResponse loginResponse)? onOtpVerified,
-    TResult Function(String error)? hasError,
-    TResult Function(bool disable)? disableButton,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult? Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult? Function(String error)? hasError,
+    TResult? Function(bool disable)? disableButton,
   }) {
     return hasError?.call(error);
   }
@@ -1394,12 +1324,12 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialState value)? initialState,
-    TResult Function(OtpIsLoading value)? isLoading,
-    TResult Function(OnOtpReceived value)? onOtpReceived,
-    TResult Function(OnOtpVerified value)? onOtpVerified,
-    TResult Function(_HasError value)? hasError,
-    TResult Function(DisableOtpConfirmButton value)? disableButton,
+    TResult? Function(InitialState value)? initialState,
+    TResult? Function(OtpIsLoading value)? isLoading,
+    TResult? Function(OnOtpReceived value)? onOtpReceived,
+    TResult? Function(OnOtpVerified value)? onOtpVerified,
+    TResult? Function(_HasError value)? hasError,
+    TResult? Function(DisableOtpConfirmButton value)? disableButton,
   }) {
     return hasError?.call(this);
   }
@@ -1423,35 +1353,36 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
 }
 
 abstract class _HasError implements OtpViewState {
-  const factory _HasError(String error) = _$_HasError;
+  const factory _HasError(final String error) = _$_HasError;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
-  _$HasErrorCopyWith<_HasError> get copyWith => throw _privateConstructorUsedError;
+  _$$_HasErrorCopyWith<_$_HasError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DisableOtpConfirmButtonCopyWith<$Res> {
-  factory $DisableOtpConfirmButtonCopyWith(DisableOtpConfirmButton value, $Res Function(DisableOtpConfirmButton) then) =
-      _$DisableOtpConfirmButtonCopyWithImpl<$Res>;
+abstract class _$$DisableOtpConfirmButtonCopyWith<$Res> {
+  factory _$$DisableOtpConfirmButtonCopyWith(
+          _$DisableOtpConfirmButton value, $Res Function(_$DisableOtpConfirmButton) then) =
+      __$$DisableOtpConfirmButtonCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool disable});
 }
 
 /// @nodoc
-class _$DisableOtpConfirmButtonCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res>
-    implements $DisableOtpConfirmButtonCopyWith<$Res> {
-  _$DisableOtpConfirmButtonCopyWithImpl(DisableOtpConfirmButton _value, $Res Function(DisableOtpConfirmButton) _then)
-      : super(_value, (v) => _then(v as DisableOtpConfirmButton));
+class __$$DisableOtpConfirmButtonCopyWithImpl<$Res> extends _$OtpViewStateCopyWithImpl<$Res, _$DisableOtpConfirmButton>
+    implements _$$DisableOtpConfirmButtonCopyWith<$Res> {
+  __$$DisableOtpConfirmButtonCopyWithImpl(
+      _$DisableOtpConfirmButton _value, $Res Function(_$DisableOtpConfirmButton) _then)
+      : super(_value, _then);
 
-  @override
-  DisableOtpConfirmButton get _value => super._value as DisableOtpConfirmButton;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? disable = freezed,
+    Object? disable = null,
   }) {
-    return _then(DisableOtpConfirmButton(
-      disable == freezed
+    return _then(_$DisableOtpConfirmButton(
+      null == disable
           ? _value.disable
           : disable // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1483,17 +1414,19 @@ class _$DisableOtpConfirmButton with DiagnosticableTreeMixin implements DisableO
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DisableOtpConfirmButton &&
-            (identical(other.disable, disable) || const DeepCollectionEquality().equals(other.disable, disable)));
+        (other.runtimeType == runtimeType &&
+            other is _$DisableOtpConfirmButton &&
+            (identical(other.disable, disable) || other.disable == disable));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(disable);
+  int get hashCode => Object.hash(runtimeType, disable);
 
   @JsonKey(ignore: true)
   @override
-  $DisableOtpConfirmButtonCopyWith<DisableOtpConfirmButton> get copyWith =>
-      _$DisableOtpConfirmButtonCopyWithImpl<DisableOtpConfirmButton>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DisableOtpConfirmButtonCopyWith<_$DisableOtpConfirmButton> get copyWith =>
+      __$$DisableOtpConfirmButtonCopyWithImpl<_$DisableOtpConfirmButton>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1511,12 +1444,12 @@ class _$DisableOtpConfirmButton with DiagnosticableTreeMixin implements DisableO
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialState,
-    TResult Function()? isLoading,
-    TResult Function(OtpResponse otpResponse)? onOtpReceived,
-    TResult Function(LoginResponse loginResponse)? onOtpVerified,
-    TResult Function(String error)? hasError,
-    TResult Function(bool disable)? disableButton,
+    TResult? Function()? initialState,
+    TResult? Function()? isLoading,
+    TResult? Function(OtpResponse otpResponse)? onOtpReceived,
+    TResult? Function(LoginResponse loginResponse)? onOtpVerified,
+    TResult? Function(String error)? hasError,
+    TResult? Function(bool disable)? disableButton,
   }) {
     return disableButton?.call(disable);
   }
@@ -1554,12 +1487,12 @@ class _$DisableOtpConfirmButton with DiagnosticableTreeMixin implements DisableO
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialState value)? initialState,
-    TResult Function(OtpIsLoading value)? isLoading,
-    TResult Function(OnOtpReceived value)? onOtpReceived,
-    TResult Function(OnOtpVerified value)? onOtpVerified,
-    TResult Function(_HasError value)? hasError,
-    TResult Function(DisableOtpConfirmButton value)? disableButton,
+    TResult? Function(InitialState value)? initialState,
+    TResult? Function(OtpIsLoading value)? isLoading,
+    TResult? Function(OnOtpReceived value)? onOtpReceived,
+    TResult? Function(OnOtpVerified value)? onOtpVerified,
+    TResult? Function(_HasError value)? hasError,
+    TResult? Function(DisableOtpConfirmButton value)? disableButton,
   }) {
     return disableButton?.call(this);
   }
@@ -1583,9 +1516,9 @@ class _$DisableOtpConfirmButton with DiagnosticableTreeMixin implements DisableO
 }
 
 abstract class DisableOtpConfirmButton implements OtpViewState {
-  const factory DisableOtpConfirmButton(bool disable) = _$DisableOtpConfirmButton;
+  const factory DisableOtpConfirmButton(final bool disable) = _$DisableOtpConfirmButton;
 
-  bool get disable => throw _privateConstructorUsedError;
+  bool get disable;
   @JsonKey(ignore: true)
-  $DisableOtpConfirmButtonCopyWith<DisableOtpConfirmButton> get copyWith => throw _privateConstructorUsedError;
+  _$$DisableOtpConfirmButtonCopyWith<_$DisableOtpConfirmButton> get copyWith => throw _privateConstructorUsedError;
 }

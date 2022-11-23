@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'places_suggestions_model.dart';
@@ -11,30 +12,11 @@ part of 'places_suggestions_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PlacesSuggestionsResponse _$PlacesSuggestionsResponseFromJson(Map<String, dynamic> json) {
   return _PlacesSuggestionsResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$PlacesSuggestionsResponseTearOff {
-  const _$PlacesSuggestionsResponseTearOff();
-
-  _PlacesSuggestionsResponse call(List<Predictions> predictions, String status) {
-    return _PlacesSuggestionsResponse(
-      predictions,
-      status,
-    );
-  }
-
-  PlacesSuggestionsResponse fromJson(Map<String, Object> json) {
-    return PlacesSuggestionsResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PlacesSuggestionsResponse = _$PlacesSuggestionsResponseTearOff();
 
 /// @nodoc
 mixin _$PlacesSuggestionsResponse {
@@ -50,66 +32,70 @@ mixin _$PlacesSuggestionsResponse {
 abstract class $PlacesSuggestionsResponseCopyWith<$Res> {
   factory $PlacesSuggestionsResponseCopyWith(
           PlacesSuggestionsResponse value, $Res Function(PlacesSuggestionsResponse) then) =
-      _$PlacesSuggestionsResponseCopyWithImpl<$Res>;
+      _$PlacesSuggestionsResponseCopyWithImpl<$Res, PlacesSuggestionsResponse>;
+  @useResult
   $Res call({List<Predictions> predictions, String status});
 }
 
 /// @nodoc
-class _$PlacesSuggestionsResponseCopyWithImpl<$Res> implements $PlacesSuggestionsResponseCopyWith<$Res> {
+class _$PlacesSuggestionsResponseCopyWithImpl<$Res, $Val extends PlacesSuggestionsResponse>
+    implements $PlacesSuggestionsResponseCopyWith<$Res> {
   _$PlacesSuggestionsResponseCopyWithImpl(this._value, this._then);
 
-  final PlacesSuggestionsResponse _value;
   // ignore: unused_field
-  final $Res Function(PlacesSuggestionsResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? predictions = freezed,
-    Object? status = freezed,
+    Object? predictions = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
-      predictions: predictions == freezed
+      predictions: null == predictions
           ? _value.predictions
           : predictions // ignore: cast_nullable_to_non_nullable
               as List<Predictions>,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PlacesSuggestionsResponseCopyWith<$Res> implements $PlacesSuggestionsResponseCopyWith<$Res> {
-  factory _$PlacesSuggestionsResponseCopyWith(
-          _PlacesSuggestionsResponse value, $Res Function(_PlacesSuggestionsResponse) then) =
-      __$PlacesSuggestionsResponseCopyWithImpl<$Res>;
+abstract class _$$_PlacesSuggestionsResponseCopyWith<$Res> implements $PlacesSuggestionsResponseCopyWith<$Res> {
+  factory _$$_PlacesSuggestionsResponseCopyWith(
+          _$_PlacesSuggestionsResponse value, $Res Function(_$_PlacesSuggestionsResponse) then) =
+      __$$_PlacesSuggestionsResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<Predictions> predictions, String status});
 }
 
 /// @nodoc
-class __$PlacesSuggestionsResponseCopyWithImpl<$Res> extends _$PlacesSuggestionsResponseCopyWithImpl<$Res>
-    implements _$PlacesSuggestionsResponseCopyWith<$Res> {
-  __$PlacesSuggestionsResponseCopyWithImpl(
-      _PlacesSuggestionsResponse _value, $Res Function(_PlacesSuggestionsResponse) _then)
-      : super(_value, (v) => _then(v as _PlacesSuggestionsResponse));
+class __$$_PlacesSuggestionsResponseCopyWithImpl<$Res>
+    extends _$PlacesSuggestionsResponseCopyWithImpl<$Res, _$_PlacesSuggestionsResponse>
+    implements _$$_PlacesSuggestionsResponseCopyWith<$Res> {
+  __$$_PlacesSuggestionsResponseCopyWithImpl(
+      _$_PlacesSuggestionsResponse _value, $Res Function(_$_PlacesSuggestionsResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _PlacesSuggestionsResponse get _value => super._value as _PlacesSuggestionsResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? predictions = freezed,
-    Object? status = freezed,
+    Object? predictions = null,
+    Object? status = null,
   }) {
-    return _then(_PlacesSuggestionsResponse(
-      predictions == freezed
-          ? _value.predictions
+    return _then(_$_PlacesSuggestionsResponse(
+      null == predictions
+          ? _value._predictions
           : predictions // ignore: cast_nullable_to_non_nullable
               as List<Predictions>,
-      status == freezed
+      null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
@@ -120,13 +106,18 @@ class __$PlacesSuggestionsResponseCopyWithImpl<$Res> extends _$PlacesSuggestions
 /// @nodoc
 @JsonSerializable()
 class _$_PlacesSuggestionsResponse implements _PlacesSuggestionsResponse {
-  const _$_PlacesSuggestionsResponse(this.predictions, this.status);
+  const _$_PlacesSuggestionsResponse(final List<Predictions> predictions, this.status) : _predictions = predictions;
 
   factory _$_PlacesSuggestionsResponse.fromJson(Map<String, dynamic> json) =>
       _$$_PlacesSuggestionsResponseFromJson(json);
 
+  final List<Predictions> _predictions;
   @override
-  final List<Predictions> predictions;
+  List<Predictions> get predictions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_predictions);
+  }
+
   @override
   final String status;
 
@@ -138,71 +129,49 @@ class _$_PlacesSuggestionsResponse implements _PlacesSuggestionsResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PlacesSuggestionsResponse &&
-            (identical(other.predictions, predictions) ||
-                const DeepCollectionEquality().equals(other.predictions, predictions)) &&
-            (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)));
+        (other.runtimeType == runtimeType &&
+            other is _$_PlacesSuggestionsResponse &&
+            const DeepCollectionEquality().equals(other._predictions, _predictions) &&
+            (identical(other.status, status) || other.status == status));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(predictions) ^
-      const DeepCollectionEquality().hash(status);
 
   @JsonKey(ignore: true)
   @override
-  _$PlacesSuggestionsResponseCopyWith<_PlacesSuggestionsResponse> get copyWith =>
-      __$PlacesSuggestionsResponseCopyWithImpl<_PlacesSuggestionsResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_predictions), status);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PlacesSuggestionsResponseCopyWith<_$_PlacesSuggestionsResponse> get copyWith =>
+      __$$_PlacesSuggestionsResponseCopyWithImpl<_$_PlacesSuggestionsResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PlacesSuggestionsResponseToJson(this);
+    return _$$_PlacesSuggestionsResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _PlacesSuggestionsResponse implements PlacesSuggestionsResponse {
-  const factory _PlacesSuggestionsResponse(List<Predictions> predictions, String status) = _$_PlacesSuggestionsResponse;
+  const factory _PlacesSuggestionsResponse(final List<Predictions> predictions, final String status) =
+      _$_PlacesSuggestionsResponse;
 
   factory _PlacesSuggestionsResponse.fromJson(Map<String, dynamic> json) = _$_PlacesSuggestionsResponse.fromJson;
 
   @override
-  List<Predictions> get predictions => throw _privateConstructorUsedError;
+  List<Predictions> get predictions;
   @override
-  String get status => throw _privateConstructorUsedError;
+  String get status;
   @override
   @JsonKey(ignore: true)
-  _$PlacesSuggestionsResponseCopyWith<_PlacesSuggestionsResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_PlacesSuggestionsResponseCopyWith<_$_PlacesSuggestionsResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Predictions _$PredictionsFromJson(Map<String, dynamic> json) {
   return _Predictions.fromJson(json);
 }
-
-/// @nodoc
-class _$PredictionsTearOff {
-  const _$PredictionsTearOff();
-
-  _Predictions call(String description, List<MatchedSubstring> matched_substrings, String place_id, String reference,
-      StructuredFormatting structured_formatting, List<Terms> terms, List<String> types) {
-    return _Predictions(
-      description,
-      matched_substrings,
-      place_id,
-      reference,
-      structured_formatting,
-      terms,
-      types,
-    );
-  }
-
-  Predictions fromJson(Map<String, Object> json) {
-    return Predictions.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Predictions = _$PredictionsTearOff();
 
 /// @nodoc
 mixin _$Predictions {
@@ -221,7 +190,9 @@ mixin _$Predictions {
 
 /// @nodoc
 abstract class $PredictionsCopyWith<$Res> {
-  factory $PredictionsCopyWith(Predictions value, $Res Function(Predictions) then) = _$PredictionsCopyWithImpl<$Res>;
+  factory $PredictionsCopyWith(Predictions value, $Res Function(Predictions) then) =
+      _$PredictionsCopyWithImpl<$Res, Predictions>;
+  @useResult
   $Res call(
       {String description,
       List<MatchedSubstring> matched_substrings,
@@ -235,68 +206,72 @@ abstract class $PredictionsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PredictionsCopyWithImpl<$Res> implements $PredictionsCopyWith<$Res> {
+class _$PredictionsCopyWithImpl<$Res, $Val extends Predictions> implements $PredictionsCopyWith<$Res> {
   _$PredictionsCopyWithImpl(this._value, this._then);
 
-  final Predictions _value;
   // ignore: unused_field
-  final $Res Function(Predictions) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
-    Object? matched_substrings = freezed,
-    Object? place_id = freezed,
-    Object? reference = freezed,
-    Object? structured_formatting = freezed,
-    Object? terms = freezed,
-    Object? types = freezed,
+    Object? description = null,
+    Object? matched_substrings = null,
+    Object? place_id = null,
+    Object? reference = null,
+    Object? structured_formatting = null,
+    Object? terms = null,
+    Object? types = null,
   }) {
     return _then(_value.copyWith(
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      matched_substrings: matched_substrings == freezed
+      matched_substrings: null == matched_substrings
           ? _value.matched_substrings
           : matched_substrings // ignore: cast_nullable_to_non_nullable
               as List<MatchedSubstring>,
-      place_id: place_id == freezed
+      place_id: null == place_id
           ? _value.place_id
           : place_id // ignore: cast_nullable_to_non_nullable
               as String,
-      reference: reference == freezed
+      reference: null == reference
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as String,
-      structured_formatting: structured_formatting == freezed
+      structured_formatting: null == structured_formatting
           ? _value.structured_formatting
           : structured_formatting // ignore: cast_nullable_to_non_nullable
               as StructuredFormatting,
-      terms: terms == freezed
+      terms: null == terms
           ? _value.terms
           : terms // ignore: cast_nullable_to_non_nullable
               as List<Terms>,
-      types: types == freezed
+      types: null == types
           ? _value.types
           : types // ignore: cast_nullable_to_non_nullable
               as List<String>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $StructuredFormattingCopyWith<$Res> get structured_formatting {
     return $StructuredFormattingCopyWith<$Res>(_value.structured_formatting, (value) {
-      return _then(_value.copyWith(structured_formatting: value));
+      return _then(_value.copyWith(structured_formatting: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PredictionsCopyWith<$Res> implements $PredictionsCopyWith<$Res> {
-  factory _$PredictionsCopyWith(_Predictions value, $Res Function(_Predictions) then) =
-      __$PredictionsCopyWithImpl<$Res>;
+abstract class _$$_PredictionsCopyWith<$Res> implements $PredictionsCopyWith<$Res> {
+  factory _$$_PredictionsCopyWith(_$_Predictions value, $Res Function(_$_Predictions) then) =
+      __$$_PredictionsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String description,
       List<MatchedSubstring> matched_substrings,
@@ -311,50 +286,48 @@ abstract class _$PredictionsCopyWith<$Res> implements $PredictionsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PredictionsCopyWithImpl<$Res> extends _$PredictionsCopyWithImpl<$Res> implements _$PredictionsCopyWith<$Res> {
-  __$PredictionsCopyWithImpl(_Predictions _value, $Res Function(_Predictions) _then)
-      : super(_value, (v) => _then(v as _Predictions));
+class __$$_PredictionsCopyWithImpl<$Res> extends _$PredictionsCopyWithImpl<$Res, _$_Predictions>
+    implements _$$_PredictionsCopyWith<$Res> {
+  __$$_PredictionsCopyWithImpl(_$_Predictions _value, $Res Function(_$_Predictions) _then) : super(_value, _then);
 
-  @override
-  _Predictions get _value => super._value as _Predictions;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
-    Object? matched_substrings = freezed,
-    Object? place_id = freezed,
-    Object? reference = freezed,
-    Object? structured_formatting = freezed,
-    Object? terms = freezed,
-    Object? types = freezed,
+    Object? description = null,
+    Object? matched_substrings = null,
+    Object? place_id = null,
+    Object? reference = null,
+    Object? structured_formatting = null,
+    Object? terms = null,
+    Object? types = null,
   }) {
-    return _then(_Predictions(
-      description == freezed
+    return _then(_$_Predictions(
+      null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      matched_substrings == freezed
-          ? _value.matched_substrings
+      null == matched_substrings
+          ? _value._matched_substrings
           : matched_substrings // ignore: cast_nullable_to_non_nullable
               as List<MatchedSubstring>,
-      place_id == freezed
+      null == place_id
           ? _value.place_id
           : place_id // ignore: cast_nullable_to_non_nullable
               as String,
-      reference == freezed
+      null == reference
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as String,
-      structured_formatting == freezed
+      null == structured_formatting
           ? _value.structured_formatting
           : structured_formatting // ignore: cast_nullable_to_non_nullable
               as StructuredFormatting,
-      terms == freezed
-          ? _value.terms
+      null == terms
+          ? _value._terms
           : terms // ignore: cast_nullable_to_non_nullable
               as List<Terms>,
-      types == freezed
-          ? _value.types
+      null == types
+          ? _value._types
           : types // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -364,25 +337,42 @@ class __$PredictionsCopyWithImpl<$Res> extends _$PredictionsCopyWithImpl<$Res> i
 /// @nodoc
 @JsonSerializable()
 class _$_Predictions implements _Predictions {
-  const _$_Predictions(this.description, this.matched_substrings, this.place_id, this.reference,
-      this.structured_formatting, this.terms, this.types);
+  const _$_Predictions(this.description, final List<MatchedSubstring> matched_substrings, this.place_id, this.reference,
+      this.structured_formatting, final List<Terms> terms, final List<String> types)
+      : _matched_substrings = matched_substrings,
+        _terms = terms,
+        _types = types;
 
   factory _$_Predictions.fromJson(Map<String, dynamic> json) => _$$_PredictionsFromJson(json);
 
   @override
   final String description;
+  final List<MatchedSubstring> _matched_substrings;
   @override
-  final List<MatchedSubstring> matched_substrings;
+  List<MatchedSubstring> get matched_substrings {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_matched_substrings);
+  }
+
   @override
   final String place_id;
   @override
   final String reference;
   @override
   final StructuredFormatting structured_formatting;
+  final List<Terms> _terms;
   @override
-  final List<Terms> terms;
+  List<Terms> get terms {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_terms);
+  }
+
+  final List<String> _types;
   @override
-  final List<String> types;
+  List<String> get types {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_types);
+  }
 
   @override
   String toString() {
@@ -392,94 +382,78 @@ class _$_Predictions implements _Predictions {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Predictions &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.matched_substrings, matched_substrings) ||
-                const DeepCollectionEquality().equals(other.matched_substrings, matched_substrings)) &&
-            (identical(other.place_id, place_id) || const DeepCollectionEquality().equals(other.place_id, place_id)) &&
-            (identical(other.reference, reference) ||
-                const DeepCollectionEquality().equals(other.reference, reference)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Predictions &&
+            (identical(other.description, description) || other.description == description) &&
+            const DeepCollectionEquality().equals(other._matched_substrings, _matched_substrings) &&
+            (identical(other.place_id, place_id) || other.place_id == place_id) &&
+            (identical(other.reference, reference) || other.reference == reference) &&
             (identical(other.structured_formatting, structured_formatting) ||
-                const DeepCollectionEquality().equals(other.structured_formatting, structured_formatting)) &&
-            (identical(other.terms, terms) || const DeepCollectionEquality().equals(other.terms, terms)) &&
-            (identical(other.types, types) || const DeepCollectionEquality().equals(other.types, types)));
+                other.structured_formatting == structured_formatting) &&
+            const DeepCollectionEquality().equals(other._terms, _terms) &&
+            const DeepCollectionEquality().equals(other._types, _types));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(matched_substrings) ^
-      const DeepCollectionEquality().hash(place_id) ^
-      const DeepCollectionEquality().hash(reference) ^
-      const DeepCollectionEquality().hash(structured_formatting) ^
-      const DeepCollectionEquality().hash(terms) ^
-      const DeepCollectionEquality().hash(types);
 
   @JsonKey(ignore: true)
   @override
-  _$PredictionsCopyWith<_Predictions> get copyWith => __$PredictionsCopyWithImpl<_Predictions>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      description,
+      const DeepCollectionEquality().hash(_matched_substrings),
+      place_id,
+      reference,
+      structured_formatting,
+      const DeepCollectionEquality().hash(_terms),
+      const DeepCollectionEquality().hash(_types));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PredictionsCopyWith<_$_Predictions> get copyWith =>
+      __$$_PredictionsCopyWithImpl<_$_Predictions>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PredictionsToJson(this);
+    return _$$_PredictionsToJson(
+      this,
+    );
   }
 }
 
 abstract class _Predictions implements Predictions {
   const factory _Predictions(
-      String description,
-      List<MatchedSubstring> matched_substrings,
-      String place_id,
-      String reference,
-      StructuredFormatting structured_formatting,
-      List<Terms> terms,
-      List<String> types) = _$_Predictions;
+      final String description,
+      final List<MatchedSubstring> matched_substrings,
+      final String place_id,
+      final String reference,
+      final StructuredFormatting structured_formatting,
+      final List<Terms> terms,
+      final List<String> types) = _$_Predictions;
 
   factory _Predictions.fromJson(Map<String, dynamic> json) = _$_Predictions.fromJson;
 
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  List<MatchedSubstring> get matched_substrings => throw _privateConstructorUsedError;
+  List<MatchedSubstring> get matched_substrings;
   @override
-  String get place_id => throw _privateConstructorUsedError;
+  String get place_id;
   @override
-  String get reference => throw _privateConstructorUsedError;
+  String get reference;
   @override
-  StructuredFormatting get structured_formatting => throw _privateConstructorUsedError;
+  StructuredFormatting get structured_formatting;
   @override
-  List<Terms> get terms => throw _privateConstructorUsedError;
+  List<Terms> get terms;
   @override
-  List<String> get types => throw _privateConstructorUsedError;
+  List<String> get types;
   @override
   @JsonKey(ignore: true)
-  _$PredictionsCopyWith<_Predictions> get copyWith => throw _privateConstructorUsedError;
+  _$$_PredictionsCopyWith<_$_Predictions> get copyWith => throw _privateConstructorUsedError;
 }
 
 MatchedSubstring _$MatchedSubstringFromJson(Map<String, dynamic> json) {
   return _MatchedSubstring.fromJson(json);
 }
-
-/// @nodoc
-class _$MatchedSubstringTearOff {
-  const _$MatchedSubstringTearOff();
-
-  _MatchedSubstring call(int length, int offset) {
-    return _MatchedSubstring(
-      length,
-      offset,
-    );
-  }
-
-  MatchedSubstring fromJson(Map<String, Object> json) {
-    return MatchedSubstring.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $MatchedSubstring = _$MatchedSubstringTearOff();
 
 /// @nodoc
 mixin _$MatchedSubstring {
@@ -494,64 +468,66 @@ mixin _$MatchedSubstring {
 /// @nodoc
 abstract class $MatchedSubstringCopyWith<$Res> {
   factory $MatchedSubstringCopyWith(MatchedSubstring value, $Res Function(MatchedSubstring) then) =
-      _$MatchedSubstringCopyWithImpl<$Res>;
+      _$MatchedSubstringCopyWithImpl<$Res, MatchedSubstring>;
+  @useResult
   $Res call({int length, int offset});
 }
 
 /// @nodoc
-class _$MatchedSubstringCopyWithImpl<$Res> implements $MatchedSubstringCopyWith<$Res> {
+class _$MatchedSubstringCopyWithImpl<$Res, $Val extends MatchedSubstring> implements $MatchedSubstringCopyWith<$Res> {
   _$MatchedSubstringCopyWithImpl(this._value, this._then);
 
-  final MatchedSubstring _value;
   // ignore: unused_field
-  final $Res Function(MatchedSubstring) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? length = freezed,
-    Object? offset = freezed,
+    Object? length = null,
+    Object? offset = null,
   }) {
     return _then(_value.copyWith(
-      length: length == freezed
+      length: null == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int,
-      offset: offset == freezed
+      offset: null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$MatchedSubstringCopyWith<$Res> implements $MatchedSubstringCopyWith<$Res> {
-  factory _$MatchedSubstringCopyWith(_MatchedSubstring value, $Res Function(_MatchedSubstring) then) =
-      __$MatchedSubstringCopyWithImpl<$Res>;
+abstract class _$$_MatchedSubstringCopyWith<$Res> implements $MatchedSubstringCopyWith<$Res> {
+  factory _$$_MatchedSubstringCopyWith(_$_MatchedSubstring value, $Res Function(_$_MatchedSubstring) then) =
+      __$$_MatchedSubstringCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int length, int offset});
 }
 
 /// @nodoc
-class __$MatchedSubstringCopyWithImpl<$Res> extends _$MatchedSubstringCopyWithImpl<$Res>
-    implements _$MatchedSubstringCopyWith<$Res> {
-  __$MatchedSubstringCopyWithImpl(_MatchedSubstring _value, $Res Function(_MatchedSubstring) _then)
-      : super(_value, (v) => _then(v as _MatchedSubstring));
+class __$$_MatchedSubstringCopyWithImpl<$Res> extends _$MatchedSubstringCopyWithImpl<$Res, _$_MatchedSubstring>
+    implements _$$_MatchedSubstringCopyWith<$Res> {
+  __$$_MatchedSubstringCopyWithImpl(_$_MatchedSubstring _value, $Res Function(_$_MatchedSubstring) _then)
+      : super(_value, _then);
 
-  @override
-  _MatchedSubstring get _value => super._value as _MatchedSubstring;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? length = freezed,
-    Object? offset = freezed,
+    Object? length = null,
+    Object? offset = null,
   }) {
-    return _then(_MatchedSubstring(
-      length == freezed
+    return _then(_$_MatchedSubstring(
+      null == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int,
-      offset == freezed
+      null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int,
@@ -579,64 +555,47 @@ class _$_MatchedSubstring implements _MatchedSubstring {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MatchedSubstring &&
-            (identical(other.length, length) || const DeepCollectionEquality().equals(other.length, length)) &&
-            (identical(other.offset, offset) || const DeepCollectionEquality().equals(other.offset, offset)));
+        (other.runtimeType == runtimeType &&
+            other is _$_MatchedSubstring &&
+            (identical(other.length, length) || other.length == length) &&
+            (identical(other.offset, offset) || other.offset == offset));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(length) ^ const DeepCollectionEquality().hash(offset);
 
   @JsonKey(ignore: true)
   @override
-  _$MatchedSubstringCopyWith<_MatchedSubstring> get copyWith =>
-      __$MatchedSubstringCopyWithImpl<_MatchedSubstring>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, length, offset);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MatchedSubstringCopyWith<_$_MatchedSubstring> get copyWith =>
+      __$$_MatchedSubstringCopyWithImpl<_$_MatchedSubstring>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MatchedSubstringToJson(this);
+    return _$$_MatchedSubstringToJson(
+      this,
+    );
   }
 }
 
 abstract class _MatchedSubstring implements MatchedSubstring {
-  const factory _MatchedSubstring(int length, int offset) = _$_MatchedSubstring;
+  const factory _MatchedSubstring(final int length, final int offset) = _$_MatchedSubstring;
 
   factory _MatchedSubstring.fromJson(Map<String, dynamic> json) = _$_MatchedSubstring.fromJson;
 
   @override
-  int get length => throw _privateConstructorUsedError;
+  int get length;
   @override
-  int get offset => throw _privateConstructorUsedError;
+  int get offset;
   @override
   @JsonKey(ignore: true)
-  _$MatchedSubstringCopyWith<_MatchedSubstring> get copyWith => throw _privateConstructorUsedError;
+  _$$_MatchedSubstringCopyWith<_$_MatchedSubstring> get copyWith => throw _privateConstructorUsedError;
 }
 
 StructuredFormatting _$StructuredFormattingFromJson(Map<String, dynamic> json) {
   return _StructuredFormatting.fromJson(json);
 }
-
-/// @nodoc
-class _$StructuredFormattingTearOff {
-  const _$StructuredFormattingTearOff();
-
-  _StructuredFormatting call(
-      String main_text, List<MatchedSubstring> main_text_matched_substrings, String? secondary_text) {
-    return _StructuredFormatting(
-      main_text,
-      main_text_matched_substrings,
-      secondary_text,
-    );
-  }
-
-  StructuredFormatting fromJson(Map<String, Object> json) {
-    return StructuredFormatting.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $StructuredFormatting = _$StructuredFormattingTearOff();
 
 /// @nodoc
 mixin _$StructuredFormatting {
@@ -652,74 +611,78 @@ mixin _$StructuredFormatting {
 /// @nodoc
 abstract class $StructuredFormattingCopyWith<$Res> {
   factory $StructuredFormattingCopyWith(StructuredFormatting value, $Res Function(StructuredFormatting) then) =
-      _$StructuredFormattingCopyWithImpl<$Res>;
+      _$StructuredFormattingCopyWithImpl<$Res, StructuredFormatting>;
+  @useResult
   $Res call({String main_text, List<MatchedSubstring> main_text_matched_substrings, String? secondary_text});
 }
 
 /// @nodoc
-class _$StructuredFormattingCopyWithImpl<$Res> implements $StructuredFormattingCopyWith<$Res> {
+class _$StructuredFormattingCopyWithImpl<$Res, $Val extends StructuredFormatting>
+    implements $StructuredFormattingCopyWith<$Res> {
   _$StructuredFormattingCopyWithImpl(this._value, this._then);
 
-  final StructuredFormatting _value;
   // ignore: unused_field
-  final $Res Function(StructuredFormatting) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? main_text = freezed,
-    Object? main_text_matched_substrings = freezed,
+    Object? main_text = null,
+    Object? main_text_matched_substrings = null,
     Object? secondary_text = freezed,
   }) {
     return _then(_value.copyWith(
-      main_text: main_text == freezed
+      main_text: null == main_text
           ? _value.main_text
           : main_text // ignore: cast_nullable_to_non_nullable
               as String,
-      main_text_matched_substrings: main_text_matched_substrings == freezed
+      main_text_matched_substrings: null == main_text_matched_substrings
           ? _value.main_text_matched_substrings
           : main_text_matched_substrings // ignore: cast_nullable_to_non_nullable
               as List<MatchedSubstring>,
-      secondary_text: secondary_text == freezed
+      secondary_text: freezed == secondary_text
           ? _value.secondary_text
           : secondary_text // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$StructuredFormattingCopyWith<$Res> implements $StructuredFormattingCopyWith<$Res> {
-  factory _$StructuredFormattingCopyWith(_StructuredFormatting value, $Res Function(_StructuredFormatting) then) =
-      __$StructuredFormattingCopyWithImpl<$Res>;
+abstract class _$$_StructuredFormattingCopyWith<$Res> implements $StructuredFormattingCopyWith<$Res> {
+  factory _$$_StructuredFormattingCopyWith(_$_StructuredFormatting value, $Res Function(_$_StructuredFormatting) then) =
+      __$$_StructuredFormattingCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String main_text, List<MatchedSubstring> main_text_matched_substrings, String? secondary_text});
 }
 
 /// @nodoc
-class __$StructuredFormattingCopyWithImpl<$Res> extends _$StructuredFormattingCopyWithImpl<$Res>
-    implements _$StructuredFormattingCopyWith<$Res> {
-  __$StructuredFormattingCopyWithImpl(_StructuredFormatting _value, $Res Function(_StructuredFormatting) _then)
-      : super(_value, (v) => _then(v as _StructuredFormatting));
+class __$$_StructuredFormattingCopyWithImpl<$Res>
+    extends _$StructuredFormattingCopyWithImpl<$Res, _$_StructuredFormatting>
+    implements _$$_StructuredFormattingCopyWith<$Res> {
+  __$$_StructuredFormattingCopyWithImpl(_$_StructuredFormatting _value, $Res Function(_$_StructuredFormatting) _then)
+      : super(_value, _then);
 
-  @override
-  _StructuredFormatting get _value => super._value as _StructuredFormatting;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? main_text = freezed,
-    Object? main_text_matched_substrings = freezed,
+    Object? main_text = null,
+    Object? main_text_matched_substrings = null,
     Object? secondary_text = freezed,
   }) {
-    return _then(_StructuredFormatting(
-      main_text == freezed
+    return _then(_$_StructuredFormatting(
+      null == main_text
           ? _value.main_text
           : main_text // ignore: cast_nullable_to_non_nullable
               as String,
-      main_text_matched_substrings == freezed
-          ? _value.main_text_matched_substrings
+      null == main_text_matched_substrings
+          ? _value._main_text_matched_substrings
           : main_text_matched_substrings // ignore: cast_nullable_to_non_nullable
               as List<MatchedSubstring>,
-      secondary_text == freezed
+      freezed == secondary_text
           ? _value.secondary_text
           : secondary_text // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -730,14 +693,21 @@ class __$StructuredFormattingCopyWithImpl<$Res> extends _$StructuredFormattingCo
 /// @nodoc
 @JsonSerializable()
 class _$_StructuredFormatting implements _StructuredFormatting {
-  const _$_StructuredFormatting(this.main_text, this.main_text_matched_substrings, this.secondary_text);
+  const _$_StructuredFormatting(
+      this.main_text, final List<MatchedSubstring> main_text_matched_substrings, this.secondary_text)
+      : _main_text_matched_substrings = main_text_matched_substrings;
 
   factory _$_StructuredFormatting.fromJson(Map<String, dynamic> json) => _$$_StructuredFormattingFromJson(json);
 
   @override
   final String main_text;
+  final List<MatchedSubstring> _main_text_matched_substrings;
   @override
-  final List<MatchedSubstring> main_text_matched_substrings;
+  List<MatchedSubstring> get main_text_matched_substrings {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_main_text_matched_substrings);
+  }
+
   @override
   final String? secondary_text;
 
@@ -749,74 +719,52 @@ class _$_StructuredFormatting implements _StructuredFormatting {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _StructuredFormatting &&
-            (identical(other.main_text, main_text) ||
-                const DeepCollectionEquality().equals(other.main_text, main_text)) &&
-            (identical(other.main_text_matched_substrings, main_text_matched_substrings) ||
-                const DeepCollectionEquality()
-                    .equals(other.main_text_matched_substrings, main_text_matched_substrings)) &&
-            (identical(other.secondary_text, secondary_text) ||
-                const DeepCollectionEquality().equals(other.secondary_text, secondary_text)));
+        (other.runtimeType == runtimeType &&
+            other is _$_StructuredFormatting &&
+            (identical(other.main_text, main_text) || other.main_text == main_text) &&
+            const DeepCollectionEquality().equals(other._main_text_matched_substrings, _main_text_matched_substrings) &&
+            (identical(other.secondary_text, secondary_text) || other.secondary_text == secondary_text));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(main_text) ^
-      const DeepCollectionEquality().hash(main_text_matched_substrings) ^
-      const DeepCollectionEquality().hash(secondary_text);
 
   @JsonKey(ignore: true)
   @override
-  _$StructuredFormattingCopyWith<_StructuredFormatting> get copyWith =>
-      __$StructuredFormattingCopyWithImpl<_StructuredFormatting>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, main_text, const DeepCollectionEquality().hash(_main_text_matched_substrings), secondary_text);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_StructuredFormattingCopyWith<_$_StructuredFormatting> get copyWith =>
+      __$$_StructuredFormattingCopyWithImpl<_$_StructuredFormatting>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StructuredFormattingToJson(this);
+    return _$$_StructuredFormattingToJson(
+      this,
+    );
   }
 }
 
 abstract class _StructuredFormatting implements StructuredFormatting {
-  const factory _StructuredFormatting(
-          String main_text, List<MatchedSubstring> main_text_matched_substrings, String? secondary_text) =
-      _$_StructuredFormatting;
+  const factory _StructuredFormatting(final String main_text, final List<MatchedSubstring> main_text_matched_substrings,
+      final String? secondary_text) = _$_StructuredFormatting;
 
   factory _StructuredFormatting.fromJson(Map<String, dynamic> json) = _$_StructuredFormatting.fromJson;
 
   @override
-  String get main_text => throw _privateConstructorUsedError;
+  String get main_text;
   @override
-  List<MatchedSubstring> get main_text_matched_substrings => throw _privateConstructorUsedError;
+  List<MatchedSubstring> get main_text_matched_substrings;
   @override
-  String? get secondary_text => throw _privateConstructorUsedError;
+  String? get secondary_text;
   @override
   @JsonKey(ignore: true)
-  _$StructuredFormattingCopyWith<_StructuredFormatting> get copyWith => throw _privateConstructorUsedError;
+  _$$_StructuredFormattingCopyWith<_$_StructuredFormatting> get copyWith => throw _privateConstructorUsedError;
 }
 
 Terms _$TermsFromJson(Map<String, dynamic> json) {
   return _Terms.fromJson(json);
 }
-
-/// @nodoc
-class _$TermsTearOff {
-  const _$TermsTearOff();
-
-  _Terms call(int offset, String value) {
-    return _Terms(
-      offset,
-      value,
-    );
-  }
-
-  Terms fromJson(Map<String, Object> json) {
-    return Terms.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Terms = _$TermsTearOff();
 
 /// @nodoc
 mixin _$Terms {
@@ -830,61 +778,63 @@ mixin _$Terms {
 
 /// @nodoc
 abstract class $TermsCopyWith<$Res> {
-  factory $TermsCopyWith(Terms value, $Res Function(Terms) then) = _$TermsCopyWithImpl<$Res>;
+  factory $TermsCopyWith(Terms value, $Res Function(Terms) then) = _$TermsCopyWithImpl<$Res, Terms>;
+  @useResult
   $Res call({int offset, String value});
 }
 
 /// @nodoc
-class _$TermsCopyWithImpl<$Res> implements $TermsCopyWith<$Res> {
+class _$TermsCopyWithImpl<$Res, $Val extends Terms> implements $TermsCopyWith<$Res> {
   _$TermsCopyWithImpl(this._value, this._then);
 
-  final Terms _value;
   // ignore: unused_field
-  final $Res Function(Terms) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? offset = freezed,
-    Object? value = freezed,
+    Object? offset = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      offset: offset == freezed
+      offset: null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TermsCopyWith<$Res> implements $TermsCopyWith<$Res> {
-  factory _$TermsCopyWith(_Terms value, $Res Function(_Terms) then) = __$TermsCopyWithImpl<$Res>;
+abstract class _$$_TermsCopyWith<$Res> implements $TermsCopyWith<$Res> {
+  factory _$$_TermsCopyWith(_$_Terms value, $Res Function(_$_Terms) then) = __$$_TermsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int offset, String value});
 }
 
 /// @nodoc
-class __$TermsCopyWithImpl<$Res> extends _$TermsCopyWithImpl<$Res> implements _$TermsCopyWith<$Res> {
-  __$TermsCopyWithImpl(_Terms _value, $Res Function(_Terms) _then) : super(_value, (v) => _then(v as _Terms));
+class __$$_TermsCopyWithImpl<$Res> extends _$TermsCopyWithImpl<$Res, _$_Terms> implements _$$_TermsCopyWith<$Res> {
+  __$$_TermsCopyWithImpl(_$_Terms _value, $Res Function(_$_Terms) _then) : super(_value, _then);
 
-  @override
-  _Terms get _value => super._value as _Terms;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? offset = freezed,
-    Object? value = freezed,
+    Object? offset = null,
+    Object? value = null,
   }) {
-    return _then(_Terms(
-      offset == freezed
+    return _then(_$_Terms(
+      null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int,
-      value == freezed
+      null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
@@ -912,35 +862,39 @@ class _$_Terms implements _Terms {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Terms &&
-            (identical(other.offset, offset) || const DeepCollectionEquality().equals(other.offset, offset)) &&
-            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Terms &&
+            (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.value, value) || other.value == value));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(offset) ^ const DeepCollectionEquality().hash(value);
 
   @JsonKey(ignore: true)
   @override
-  _$TermsCopyWith<_Terms> get copyWith => __$TermsCopyWithImpl<_Terms>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, offset, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TermsCopyWith<_$_Terms> get copyWith => __$$_TermsCopyWithImpl<_$_Terms>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TermsToJson(this);
+    return _$$_TermsToJson(
+      this,
+    );
   }
 }
 
 abstract class _Terms implements Terms {
-  const factory _Terms(int offset, String value) = _$_Terms;
+  const factory _Terms(final int offset, final String value) = _$_Terms;
 
   factory _Terms.fromJson(Map<String, dynamic> json) = _$_Terms.fromJson;
 
   @override
-  int get offset => throw _privateConstructorUsedError;
+  int get offset;
   @override
-  String get value => throw _privateConstructorUsedError;
+  String get value;
   @override
   @JsonKey(ignore: true)
-  _$TermsCopyWith<_Terms> get copyWith => throw _privateConstructorUsedError;
+  _$$_TermsCopyWith<_$_Terms> get copyWith => throw _privateConstructorUsedError;
 }

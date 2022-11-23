@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'FilterDate.dart';
@@ -11,30 +12,7 @@ part of 'FilterDate.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FilterDateTearOff {
-  const _$FilterDateTearOff();
-
-  _FilterDate call(
-      {required List<CategoryData> categories,
-      required List<CompanyItem> companies,
-      required int delivery_price_range_from,
-      required int delivery_price_range_to,
-      required int max_distance}) {
-    return _FilterDate(
-      categories: categories,
-      companies: companies,
-      delivery_price_range_from: delivery_price_range_from,
-      delivery_price_range_to: delivery_price_range_to,
-      max_distance: max_distance,
-    );
-  }
-}
-
-/// @nodoc
-const $FilterDate = _$FilterDateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FilterDate {
@@ -50,7 +28,9 @@ mixin _$FilterDate {
 
 /// @nodoc
 abstract class $FilterDateCopyWith<$Res> {
-  factory $FilterDateCopyWith(FilterDate value, $Res Function(FilterDate) then) = _$FilterDateCopyWithImpl<$Res>;
+  factory $FilterDateCopyWith(FilterDate value, $Res Function(FilterDate) then) =
+      _$FilterDateCopyWithImpl<$Res, FilterDate>;
+  @useResult
   $Res call(
       {List<CategoryData> categories,
       List<CompanyItem> companies,
@@ -60,50 +40,54 @@ abstract class $FilterDateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FilterDateCopyWithImpl<$Res> implements $FilterDateCopyWith<$Res> {
+class _$FilterDateCopyWithImpl<$Res, $Val extends FilterDate> implements $FilterDateCopyWith<$Res> {
   _$FilterDateCopyWithImpl(this._value, this._then);
 
-  final FilterDate _value;
   // ignore: unused_field
-  final $Res Function(FilterDate) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = freezed,
-    Object? companies = freezed,
-    Object? delivery_price_range_from = freezed,
-    Object? delivery_price_range_to = freezed,
-    Object? max_distance = freezed,
+    Object? categories = null,
+    Object? companies = null,
+    Object? delivery_price_range_from = null,
+    Object? delivery_price_range_to = null,
+    Object? max_distance = null,
   }) {
     return _then(_value.copyWith(
-      categories: categories == freezed
+      categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
-      companies: companies == freezed
+      companies: null == companies
           ? _value.companies
           : companies // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
-      delivery_price_range_from: delivery_price_range_from == freezed
+      delivery_price_range_from: null == delivery_price_range_from
           ? _value.delivery_price_range_from
           : delivery_price_range_from // ignore: cast_nullable_to_non_nullable
               as int,
-      delivery_price_range_to: delivery_price_range_to == freezed
+      delivery_price_range_to: null == delivery_price_range_to
           ? _value.delivery_price_range_to
           : delivery_price_range_to // ignore: cast_nullable_to_non_nullable
               as int,
-      max_distance: max_distance == freezed
+      max_distance: null == max_distance
           ? _value.max_distance
           : max_distance // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$FilterDateCopyWith<$Res> implements $FilterDateCopyWith<$Res> {
-  factory _$FilterDateCopyWith(_FilterDate value, $Res Function(_FilterDate) then) = __$FilterDateCopyWithImpl<$Res>;
+abstract class _$$_FilterDateCopyWith<$Res> implements $FilterDateCopyWith<$Res> {
+  factory _$$_FilterDateCopyWith(_$_FilterDate value, $Res Function(_$_FilterDate) then) =
+      __$$_FilterDateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<CategoryData> categories,
       List<CompanyItem> companies,
@@ -113,39 +97,37 @@ abstract class _$FilterDateCopyWith<$Res> implements $FilterDateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FilterDateCopyWithImpl<$Res> extends _$FilterDateCopyWithImpl<$Res> implements _$FilterDateCopyWith<$Res> {
-  __$FilterDateCopyWithImpl(_FilterDate _value, $Res Function(_FilterDate) _then)
-      : super(_value, (v) => _then(v as _FilterDate));
+class __$$_FilterDateCopyWithImpl<$Res> extends _$FilterDateCopyWithImpl<$Res, _$_FilterDate>
+    implements _$$_FilterDateCopyWith<$Res> {
+  __$$_FilterDateCopyWithImpl(_$_FilterDate _value, $Res Function(_$_FilterDate) _then) : super(_value, _then);
 
-  @override
-  _FilterDate get _value => super._value as _FilterDate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = freezed,
-    Object? companies = freezed,
-    Object? delivery_price_range_from = freezed,
-    Object? delivery_price_range_to = freezed,
-    Object? max_distance = freezed,
+    Object? categories = null,
+    Object? companies = null,
+    Object? delivery_price_range_from = null,
+    Object? delivery_price_range_to = null,
+    Object? max_distance = null,
   }) {
-    return _then(_FilterDate(
-      categories: categories == freezed
-          ? _value.categories
+    return _then(_$_FilterDate(
+      categories: null == categories
+          ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
-      companies: companies == freezed
-          ? _value.companies
+      companies: null == companies
+          ? _value._companies
           : companies // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
-      delivery_price_range_from: delivery_price_range_from == freezed
+      delivery_price_range_from: null == delivery_price_range_from
           ? _value.delivery_price_range_from
           : delivery_price_range_from // ignore: cast_nullable_to_non_nullable
               as int,
-      delivery_price_range_to: delivery_price_range_to == freezed
+      delivery_price_range_to: null == delivery_price_range_to
           ? _value.delivery_price_range_to
           : delivery_price_range_to // ignore: cast_nullable_to_non_nullable
               as int,
-      max_distance: max_distance == freezed
+      max_distance: null == max_distance
           ? _value.max_distance
           : max_distance // ignore: cast_nullable_to_non_nullable
               as int,
@@ -157,16 +139,28 @@ class __$FilterDateCopyWithImpl<$Res> extends _$FilterDateCopyWithImpl<$Res> imp
 
 class _$_FilterDate implements _FilterDate {
   const _$_FilterDate(
-      {required this.categories,
-      required this.companies,
+      {required final List<CategoryData> categories,
+      required final List<CompanyItem> companies,
       required this.delivery_price_range_from,
       required this.delivery_price_range_to,
-      required this.max_distance});
+      required this.max_distance})
+      : _categories = categories,
+        _companies = companies;
 
+  final List<CategoryData> _categories;
   @override
-  final List<CategoryData> categories;
+  List<CategoryData> get categories {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
+  final List<CompanyItem> _companies;
   @override
-  final List<CompanyItem> companies;
+  List<CompanyItem> get companies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_companies);
+  }
+
   @override
   final int delivery_price_range_from;
   @override
@@ -182,52 +176,51 @@ class _$_FilterDate implements _FilterDate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FilterDate &&
-            (identical(other.categories, categories) ||
-                const DeepCollectionEquality().equals(other.categories, categories)) &&
-            (identical(other.companies, companies) ||
-                const DeepCollectionEquality().equals(other.companies, companies)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_FilterDate &&
+            const DeepCollectionEquality().equals(other._categories, _categories) &&
+            const DeepCollectionEquality().equals(other._companies, _companies) &&
             (identical(other.delivery_price_range_from, delivery_price_range_from) ||
-                const DeepCollectionEquality().equals(other.delivery_price_range_from, delivery_price_range_from)) &&
+                other.delivery_price_range_from == delivery_price_range_from) &&
             (identical(other.delivery_price_range_to, delivery_price_range_to) ||
-                const DeepCollectionEquality().equals(other.delivery_price_range_to, delivery_price_range_to)) &&
-            (identical(other.max_distance, max_distance) ||
-                const DeepCollectionEquality().equals(other.max_distance, max_distance)));
+                other.delivery_price_range_to == delivery_price_range_to) &&
+            (identical(other.max_distance, max_distance) || other.max_distance == max_distance));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(categories) ^
-      const DeepCollectionEquality().hash(companies) ^
-      const DeepCollectionEquality().hash(delivery_price_range_from) ^
-      const DeepCollectionEquality().hash(delivery_price_range_to) ^
-      const DeepCollectionEquality().hash(max_distance);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_categories),
+      const DeepCollectionEquality().hash(_companies),
+      delivery_price_range_from,
+      delivery_price_range_to,
+      max_distance);
 
   @JsonKey(ignore: true)
   @override
-  _$FilterDateCopyWith<_FilterDate> get copyWith => __$FilterDateCopyWithImpl<_FilterDate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_FilterDateCopyWith<_$_FilterDate> get copyWith => __$$_FilterDateCopyWithImpl<_$_FilterDate>(this, _$identity);
 }
 
 abstract class _FilterDate implements FilterDate {
   const factory _FilterDate(
-      {required List<CategoryData> categories,
-      required List<CompanyItem> companies,
-      required int delivery_price_range_from,
-      required int delivery_price_range_to,
-      required int max_distance}) = _$_FilterDate;
+      {required final List<CategoryData> categories,
+      required final List<CompanyItem> companies,
+      required final int delivery_price_range_from,
+      required final int delivery_price_range_to,
+      required final int max_distance}) = _$_FilterDate;
 
   @override
-  List<CategoryData> get categories => throw _privateConstructorUsedError;
+  List<CategoryData> get categories;
   @override
-  List<CompanyItem> get companies => throw _privateConstructorUsedError;
+  List<CompanyItem> get companies;
   @override
-  int get delivery_price_range_from => throw _privateConstructorUsedError;
+  int get delivery_price_range_from;
   @override
-  int get delivery_price_range_to => throw _privateConstructorUsedError;
+  int get delivery_price_range_to;
   @override
-  int get max_distance => throw _privateConstructorUsedError;
+  int get max_distance;
   @override
   @JsonKey(ignore: true)
-  _$FilterDateCopyWith<_FilterDate> get copyWith => throw _privateConstructorUsedError;
+  _$$_FilterDateCopyWith<_$_FilterDate> get copyWith => throw _privateConstructorUsedError;
 }

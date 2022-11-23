@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:tawseel/common/widgets/MarketPlaceShimmer.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/HomeScreen.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/OffersResponse.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/res.dart';
@@ -23,7 +25,8 @@ class OffersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => OffersBloc(getIt.get<IOffersRepository>())..add(GetOffers()),
+      create: (context) =>
+          OffersBloc(getIt.get<IOffersRepository>(), getIt.get<IMarketPlaceRepository>())..add(GetOffers()),
       lazy: false,
       child: Builder(builder: (context) {
         return Scaffold(
@@ -61,11 +64,11 @@ class OffersScreen extends StatelessWidget {
                       child: BlocBuilder<OffersBloc, OffersState>(
                         builder: (context, state) {
                           return offersArea(
-                            context: context,
-                            isPagingLoading: state.isPagingLoading,
-                            hasMorePages: state.hasMorePages,
-                            offers: state.offersList,
-                          );
+                              context: context,
+                              isPagingLoading: state.isPagingLoading,
+                              hasMorePages: state.hasMorePages,
+                              offers: state.offersList,
+                              isLoading: state.isOffersListLoading);
                         },
                       ),
                     ),
@@ -83,53 +86,56 @@ class OffersScreen extends StatelessWidget {
       {required BuildContext context,
       required bool isPagingLoading,
       required bool hasMorePages,
-      required List<MarketPlaceItem> offers}) {
+      required List<MarketPlaceItem> offers,
+      required bool isLoading}) {
     final h = MediaQuery.of(context).size.height;
     final height = h - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom;
-    return offers.isEmpty
+    return offers.isEmpty && !isLoading
         ? emptyOffersWidget(context)
         : Container(
             margin: EdgeInsets.only(top: 8),
             child: Wrap(
               children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(
-                          maxHeight: height - height * 0.229,
-                        ),
-                        child: PaginationList<MarketPlaceItem>(
-                          list: [...offers],
-                          hasMore: hasMorePages,
-                          isLoading: isPagingLoading,
-                          loadMore: () {
-                            BlocProvider.of<OffersBloc>(context)..add(GetOffers());
-                          },
-                          onRefresh: () {
-                            BlocProvider.of<OffersBloc>(context)..add(ResetOffers());
-                          },
-                          loadingWidget: offersShimmer(context, 1),
-                          builder: (offer) {
-                            return marketPlaceItem(offer, (item) {
-                              showMarketPlaceCompaniesBottomSheet(item, context, item.companies);
-                            }, (item) {
-                              // BlocProvider.of<HomeBloc>(blocContext).add(
-                              //   item.is_favorite
-                              //       ? RemoveMarketPlaceFromFavorite(item.id)
-                              //       : AddMarketPlaceToFavorite((item.id)),
-                              // );
-                            }, false);
-                          },
-                        ),
+                isLoading
+                    ? marketPlaceShimmer()
+                    : Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: isAr ? EdgeInsets.only(right: 8) : EdgeInsets.only(left: 8),
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                maxHeight: height - height * 0.229,
+                              ),
+                              child: PaginationList<MarketPlaceItem>(
+                                list: [...offers],
+                                hasMore: hasMorePages,
+                                isLoading: isPagingLoading,
+                                loadMore: () {
+                                  BlocProvider.of<OffersBloc>(context)..add(GetOffers());
+                                },
+                                onRefresh: () {
+                                  BlocProvider.of<OffersBloc>(context)..add(ResetOffers());
+                                },
+                                loadingWidget: offersShimmer(context, 1),
+                                builder: (offer) {
+                                  return marketPlaceItem(offer, (item) {
+                                    showMarketPlaceCompaniesBottomSheet(item, context, item.companies);
+                                  }, (item) {
+                                    BlocProvider.of<OffersBloc>(context).add(
+                                      item.is_favorite
+                                          ? RemoveMarketPlaceFromFavorite(item.id)
+                                          : AddMarketPlaceToFavorite((item.id)),
+                                    );
+                                  }, true);
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
               ],
             ),
           );

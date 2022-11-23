@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'OffersResponse.dart';
@@ -11,30 +12,11 @@ part of 'OffersResponse.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 OffersResponse _$OffersResponseFromJson(Map<String, dynamic> json) {
   return _OffersResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$OffersResponseTearOff {
-  const _$OffersResponseTearOff();
-
-  _OffersResponse call(List<MarketPlaceItem> data, MetaPagination meta) {
-    return _OffersResponse(
-      data,
-      meta,
-    );
-  }
-
-  OffersResponse fromJson(Map<String, Object> json) {
-    return OffersResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $OffersResponse = _$OffersResponseTearOff();
 
 /// @nodoc
 mixin _$OffersResponse {
@@ -49,50 +31,55 @@ mixin _$OffersResponse {
 /// @nodoc
 abstract class $OffersResponseCopyWith<$Res> {
   factory $OffersResponseCopyWith(OffersResponse value, $Res Function(OffersResponse) then) =
-      _$OffersResponseCopyWithImpl<$Res>;
+      _$OffersResponseCopyWithImpl<$Res, OffersResponse>;
+  @useResult
   $Res call({List<MarketPlaceItem> data, MetaPagination meta});
 
   $MetaPaginationCopyWith<$Res> get meta;
 }
 
 /// @nodoc
-class _$OffersResponseCopyWithImpl<$Res> implements $OffersResponseCopyWith<$Res> {
+class _$OffersResponseCopyWithImpl<$Res, $Val extends OffersResponse> implements $OffersResponseCopyWith<$Res> {
   _$OffersResponseCopyWithImpl(this._value, this._then);
 
-  final OffersResponse _value;
   // ignore: unused_field
-  final $Res Function(OffersResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
-    Object? meta = freezed,
+    Object? data = null,
+    Object? meta = null,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as List<MarketPlaceItem>,
-      meta: meta == freezed
+      meta: null == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as MetaPagination,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MetaPaginationCopyWith<$Res> get meta {
     return $MetaPaginationCopyWith<$Res>(_value.meta, (value) {
-      return _then(_value.copyWith(meta: value));
+      return _then(_value.copyWith(meta: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$OffersResponseCopyWith<$Res> implements $OffersResponseCopyWith<$Res> {
-  factory _$OffersResponseCopyWith(_OffersResponse value, $Res Function(_OffersResponse) then) =
-      __$OffersResponseCopyWithImpl<$Res>;
+abstract class _$$_OffersResponseCopyWith<$Res> implements $OffersResponseCopyWith<$Res> {
+  factory _$$_OffersResponseCopyWith(_$_OffersResponse value, $Res Function(_$_OffersResponse) then) =
+      __$$_OffersResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<MarketPlaceItem> data, MetaPagination meta});
 
   @override
@@ -100,25 +87,23 @@ abstract class _$OffersResponseCopyWith<$Res> implements $OffersResponseCopyWith
 }
 
 /// @nodoc
-class __$OffersResponseCopyWithImpl<$Res> extends _$OffersResponseCopyWithImpl<$Res>
-    implements _$OffersResponseCopyWith<$Res> {
-  __$OffersResponseCopyWithImpl(_OffersResponse _value, $Res Function(_OffersResponse) _then)
-      : super(_value, (v) => _then(v as _OffersResponse));
+class __$$_OffersResponseCopyWithImpl<$Res> extends _$OffersResponseCopyWithImpl<$Res, _$_OffersResponse>
+    implements _$$_OffersResponseCopyWith<$Res> {
+  __$$_OffersResponseCopyWithImpl(_$_OffersResponse _value, $Res Function(_$_OffersResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _OffersResponse get _value => super._value as _OffersResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
-    Object? meta = freezed,
+    Object? data = null,
+    Object? meta = null,
   }) {
-    return _then(_OffersResponse(
-      data == freezed
-          ? _value.data
+    return _then(_$_OffersResponse(
+      null == data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<MarketPlaceItem>,
-      meta == freezed
+      null == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
               as MetaPagination,
@@ -129,12 +114,17 @@ class __$OffersResponseCopyWithImpl<$Res> extends _$OffersResponseCopyWithImpl<$
 /// @nodoc
 @JsonSerializable()
 class _$_OffersResponse implements _OffersResponse {
-  const _$_OffersResponse(this.data, this.meta);
+  const _$_OffersResponse(final List<MarketPlaceItem> data, this.meta) : _data = data;
 
   factory _$_OffersResponse.fromJson(Map<String, dynamic> json) => _$$_OffersResponseFromJson(json);
 
+  final List<MarketPlaceItem> _data;
   @override
-  final List<MarketPlaceItem> data;
+  List<MarketPlaceItem> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
   @override
   final MetaPagination meta;
 
@@ -146,72 +136,47 @@ class _$_OffersResponse implements _OffersResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OffersResponse &&
-            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.meta, meta) || const DeepCollectionEquality().equals(other.meta, meta)));
+        (other.runtimeType == runtimeType &&
+            other is _$_OffersResponse &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.meta, meta) || other.meta == meta));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data) ^ const DeepCollectionEquality().hash(meta);
 
   @JsonKey(ignore: true)
   @override
-  _$OffersResponseCopyWith<_OffersResponse> get copyWith =>
-      __$OffersResponseCopyWithImpl<_OffersResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_data), meta);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OffersResponseCopyWith<_$_OffersResponse> get copyWith =>
+      __$$_OffersResponseCopyWithImpl<_$_OffersResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OffersResponseToJson(this);
+    return _$$_OffersResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _OffersResponse implements OffersResponse {
-  const factory _OffersResponse(List<MarketPlaceItem> data, MetaPagination meta) = _$_OffersResponse;
+  const factory _OffersResponse(final List<MarketPlaceItem> data, final MetaPagination meta) = _$_OffersResponse;
 
   factory _OffersResponse.fromJson(Map<String, dynamic> json) = _$_OffersResponse.fromJson;
 
   @override
-  List<MarketPlaceItem> get data => throw _privateConstructorUsedError;
+  List<MarketPlaceItem> get data;
   @override
-  MetaPagination get meta => throw _privateConstructorUsedError;
+  MetaPagination get meta;
   @override
   @JsonKey(ignore: true)
-  _$OffersResponseCopyWith<_OffersResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_OffersResponseCopyWith<_$_OffersResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 OfferItem _$OfferItemFromJson(Map<String, dynamic> json) {
   return _OfferItem.fromJson(json);
 }
-
-/// @nodoc
-class _$OfferItemTearOff {
-  const _$OfferItemTearOff();
-
-  _OfferItem call(int id, String name, String description, String min_order, String delivery_time, String delivery_cost,
-      String? rating, String image, String logo, bool is_favorite, List<CompanyItem> companies) {
-    return _OfferItem(
-      id,
-      name,
-      description,
-      min_order,
-      delivery_time,
-      delivery_cost,
-      rating,
-      image,
-      logo,
-      is_favorite,
-      companies,
-    );
-  }
-
-  OfferItem fromJson(Map<String, Object> json) {
-    return OfferItem.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $OfferItem = _$OfferItemTearOff();
 
 /// @nodoc
 mixin _$OfferItem {
@@ -234,7 +199,8 @@ mixin _$OfferItem {
 
 /// @nodoc
 abstract class $OfferItemCopyWith<$Res> {
-  factory $OfferItemCopyWith(OfferItem value, $Res Function(OfferItem) then) = _$OfferItemCopyWithImpl<$Res>;
+  factory $OfferItemCopyWith(OfferItem value, $Res Function(OfferItem) then) = _$OfferItemCopyWithImpl<$Res, OfferItem>;
+  @useResult
   $Res call(
       {int id,
       String name,
@@ -250,80 +216,84 @@ abstract class $OfferItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OfferItemCopyWithImpl<$Res> implements $OfferItemCopyWith<$Res> {
+class _$OfferItemCopyWithImpl<$Res, $Val extends OfferItem> implements $OfferItemCopyWith<$Res> {
   _$OfferItemCopyWithImpl(this._value, this._then);
 
-  final OfferItem _value;
   // ignore: unused_field
-  final $Res Function(OfferItem) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? min_order = freezed,
-    Object? delivery_time = freezed,
-    Object? delivery_cost = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? description = null,
+    Object? min_order = null,
+    Object? delivery_time = null,
+    Object? delivery_cost = null,
     Object? rating = freezed,
-    Object? image = freezed,
-    Object? logo = freezed,
-    Object? is_favorite = freezed,
-    Object? companies = freezed,
+    Object? image = null,
+    Object? logo = null,
+    Object? is_favorite = null,
+    Object? companies = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      min_order: min_order == freezed
+      min_order: null == min_order
           ? _value.min_order
           : min_order // ignore: cast_nullable_to_non_nullable
               as String,
-      delivery_time: delivery_time == freezed
+      delivery_time: null == delivery_time
           ? _value.delivery_time
           : delivery_time // ignore: cast_nullable_to_non_nullable
               as String,
-      delivery_cost: delivery_cost == freezed
+      delivery_cost: null == delivery_cost
           ? _value.delivery_cost
           : delivery_cost // ignore: cast_nullable_to_non_nullable
               as String,
-      rating: rating == freezed
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      logo: logo == freezed
+      logo: null == logo
           ? _value.logo
           : logo // ignore: cast_nullable_to_non_nullable
               as String,
-      is_favorite: is_favorite == freezed
+      is_favorite: null == is_favorite
           ? _value.is_favorite
           : is_favorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      companies: companies == freezed
+      companies: null == companies
           ? _value.companies
           : companies // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$OfferItemCopyWith<$Res> implements $OfferItemCopyWith<$Res> {
-  factory _$OfferItemCopyWith(_OfferItem value, $Res Function(_OfferItem) then) = __$OfferItemCopyWithImpl<$Res>;
+abstract class _$$_OfferItemCopyWith<$Res> implements $OfferItemCopyWith<$Res> {
+  factory _$$_OfferItemCopyWith(_$_OfferItem value, $Res Function(_$_OfferItem) then) =
+      __$$_OfferItemCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       String name,
@@ -339,70 +309,68 @@ abstract class _$OfferItemCopyWith<$Res> implements $OfferItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res> implements _$OfferItemCopyWith<$Res> {
-  __$OfferItemCopyWithImpl(_OfferItem _value, $Res Function(_OfferItem) _then)
-      : super(_value, (v) => _then(v as _OfferItem));
+class __$$_OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res, _$_OfferItem>
+    implements _$$_OfferItemCopyWith<$Res> {
+  __$$_OfferItemCopyWithImpl(_$_OfferItem _value, $Res Function(_$_OfferItem) _then) : super(_value, _then);
 
-  @override
-  _OfferItem get _value => super._value as _OfferItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? min_order = freezed,
-    Object? delivery_time = freezed,
-    Object? delivery_cost = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? description = null,
+    Object? min_order = null,
+    Object? delivery_time = null,
+    Object? delivery_cost = null,
     Object? rating = freezed,
-    Object? image = freezed,
-    Object? logo = freezed,
-    Object? is_favorite = freezed,
-    Object? companies = freezed,
+    Object? image = null,
+    Object? logo = null,
+    Object? is_favorite = null,
+    Object? companies = null,
   }) {
-    return _then(_OfferItem(
-      id == freezed
+    return _then(_$_OfferItem(
+      null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name == freezed
+      null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description == freezed
+      null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      min_order == freezed
+      null == min_order
           ? _value.min_order
           : min_order // ignore: cast_nullable_to_non_nullable
               as String,
-      delivery_time == freezed
+      null == delivery_time
           ? _value.delivery_time
           : delivery_time // ignore: cast_nullable_to_non_nullable
               as String,
-      delivery_cost == freezed
+      null == delivery_cost
           ? _value.delivery_cost
           : delivery_cost // ignore: cast_nullable_to_non_nullable
               as String,
-      rating == freezed
+      freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as String?,
-      image == freezed
+      null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      logo == freezed
+      null == logo
           ? _value.logo
           : logo // ignore: cast_nullable_to_non_nullable
               as String,
-      is_favorite == freezed
+      null == is_favorite
           ? _value.is_favorite
           : is_favorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      companies == freezed
-          ? _value.companies
+      null == companies
+          ? _value._companies
           : companies // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
     ));
@@ -413,7 +381,8 @@ class __$OfferItemCopyWithImpl<$Res> extends _$OfferItemCopyWithImpl<$Res> imple
 @JsonSerializable()
 class _$_OfferItem implements _OfferItem {
   const _$_OfferItem(this.id, this.name, this.description, this.min_order, this.delivery_time, this.delivery_cost,
-      this.rating, this.image, this.logo, this.is_favorite, this.companies);
+      this.rating, this.image, this.logo, this.is_favorite, final List<CompanyItem> companies)
+      : _companies = companies;
 
   factory _$_OfferItem.fromJson(Map<String, dynamic> json) => _$$_OfferItemFromJson(json);
 
@@ -437,8 +406,12 @@ class _$_OfferItem implements _OfferItem {
   final String logo;
   @override
   final bool is_favorite;
+  final List<CompanyItem> _companies;
   @override
-  final List<CompanyItem> companies;
+  List<CompanyItem> get companies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_companies);
+  }
 
   @override
   String toString() {
@@ -448,118 +421,85 @@ class _$_OfferItem implements _OfferItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OfferItem &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.min_order, min_order) ||
-                const DeepCollectionEquality().equals(other.min_order, min_order)) &&
-            (identical(other.delivery_time, delivery_time) ||
-                const DeepCollectionEquality().equals(other.delivery_time, delivery_time)) &&
-            (identical(other.delivery_cost, delivery_cost) ||
-                const DeepCollectionEquality().equals(other.delivery_cost, delivery_cost)) &&
-            (identical(other.rating, rating) || const DeepCollectionEquality().equals(other.rating, rating)) &&
-            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.logo, logo) || const DeepCollectionEquality().equals(other.logo, logo)) &&
-            (identical(other.is_favorite, is_favorite) ||
-                const DeepCollectionEquality().equals(other.is_favorite, is_favorite)) &&
-            (identical(other.companies, companies) ||
-                const DeepCollectionEquality().equals(other.companies, companies)));
+        (other.runtimeType == runtimeType &&
+            other is _$_OfferItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) || other.description == description) &&
+            (identical(other.min_order, min_order) || other.min_order == min_order) &&
+            (identical(other.delivery_time, delivery_time) || other.delivery_time == delivery_time) &&
+            (identical(other.delivery_cost, delivery_cost) || other.delivery_cost == delivery_cost) &&
+            (identical(other.rating, rating) || other.rating == rating) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.logo, logo) || other.logo == logo) &&
+            (identical(other.is_favorite, is_favorite) || other.is_favorite == is_favorite) &&
+            const DeepCollectionEquality().equals(other._companies, _companies));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(min_order) ^
-      const DeepCollectionEquality().hash(delivery_time) ^
-      const DeepCollectionEquality().hash(delivery_cost) ^
-      const DeepCollectionEquality().hash(rating) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(logo) ^
-      const DeepCollectionEquality().hash(is_favorite) ^
-      const DeepCollectionEquality().hash(companies);
 
   @JsonKey(ignore: true)
   @override
-  _$OfferItemCopyWith<_OfferItem> get copyWith => __$OfferItemCopyWithImpl<_OfferItem>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, name, description, min_order, delivery_time, delivery_cost, rating,
+      image, logo, is_favorite, const DeepCollectionEquality().hash(_companies));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OfferItemCopyWith<_$_OfferItem> get copyWith => __$$_OfferItemCopyWithImpl<_$_OfferItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OfferItemToJson(this);
+    return _$$_OfferItemToJson(
+      this,
+    );
   }
 }
 
 abstract class _OfferItem implements OfferItem {
   const factory _OfferItem(
-      int id,
-      String name,
-      String description,
-      String min_order,
-      String delivery_time,
-      String delivery_cost,
-      String? rating,
-      String image,
-      String logo,
-      bool is_favorite,
-      List<CompanyItem> companies) = _$_OfferItem;
+      final int id,
+      final String name,
+      final String description,
+      final String min_order,
+      final String delivery_time,
+      final String delivery_cost,
+      final String? rating,
+      final String image,
+      final String logo,
+      final bool is_favorite,
+      final List<CompanyItem> companies) = _$_OfferItem;
 
   factory _OfferItem.fromJson(Map<String, dynamic> json) = _$_OfferItem.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get min_order => throw _privateConstructorUsedError;
+  String get min_order;
   @override
-  String get delivery_time => throw _privateConstructorUsedError;
+  String get delivery_time;
   @override
-  String get delivery_cost => throw _privateConstructorUsedError;
+  String get delivery_cost;
   @override
-  String? get rating => throw _privateConstructorUsedError;
+  String? get rating;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  String get logo => throw _privateConstructorUsedError;
+  String get logo;
   @override
-  bool get is_favorite => throw _privateConstructorUsedError;
+  bool get is_favorite;
   @override
-  List<CompanyItem> get companies => throw _privateConstructorUsedError;
+  List<CompanyItem> get companies;
   @override
   @JsonKey(ignore: true)
-  _$OfferItemCopyWith<_OfferItem> get copyWith => throw _privateConstructorUsedError;
+  _$$_OfferItemCopyWith<_$_OfferItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 MetaPagination _$MetaPaginationFromJson(Map<String, dynamic> json) {
   return _MetaPagination.fromJson(json);
 }
-
-/// @nodoc
-class _$MetaPaginationTearOff {
-  const _$MetaPaginationTearOff();
-
-  _MetaPagination call(int current_page, int last_page, int total, int per_page) {
-    return _MetaPagination(
-      current_page,
-      last_page,
-      total,
-      per_page,
-    );
-  }
-
-  MetaPagination fromJson(Map<String, Object> json) {
-    return MetaPagination.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $MetaPagination = _$MetaPaginationTearOff();
 
 /// @nodoc
 mixin _$MetaPagination {
@@ -576,84 +516,86 @@ mixin _$MetaPagination {
 /// @nodoc
 abstract class $MetaPaginationCopyWith<$Res> {
   factory $MetaPaginationCopyWith(MetaPagination value, $Res Function(MetaPagination) then) =
-      _$MetaPaginationCopyWithImpl<$Res>;
+      _$MetaPaginationCopyWithImpl<$Res, MetaPagination>;
+  @useResult
   $Res call({int current_page, int last_page, int total, int per_page});
 }
 
 /// @nodoc
-class _$MetaPaginationCopyWithImpl<$Res> implements $MetaPaginationCopyWith<$Res> {
+class _$MetaPaginationCopyWithImpl<$Res, $Val extends MetaPagination> implements $MetaPaginationCopyWith<$Res> {
   _$MetaPaginationCopyWithImpl(this._value, this._then);
 
-  final MetaPagination _value;
   // ignore: unused_field
-  final $Res Function(MetaPagination) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? current_page = freezed,
-    Object? last_page = freezed,
-    Object? total = freezed,
-    Object? per_page = freezed,
+    Object? current_page = null,
+    Object? last_page = null,
+    Object? total = null,
+    Object? per_page = null,
   }) {
     return _then(_value.copyWith(
-      current_page: current_page == freezed
+      current_page: null == current_page
           ? _value.current_page
           : current_page // ignore: cast_nullable_to_non_nullable
               as int,
-      last_page: last_page == freezed
+      last_page: null == last_page
           ? _value.last_page
           : last_page // ignore: cast_nullable_to_non_nullable
               as int,
-      total: total == freezed
+      total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
               as int,
-      per_page: per_page == freezed
+      per_page: null == per_page
           ? _value.per_page
           : per_page // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$MetaPaginationCopyWith<$Res> implements $MetaPaginationCopyWith<$Res> {
-  factory _$MetaPaginationCopyWith(_MetaPagination value, $Res Function(_MetaPagination) then) =
-      __$MetaPaginationCopyWithImpl<$Res>;
+abstract class _$$_MetaPaginationCopyWith<$Res> implements $MetaPaginationCopyWith<$Res> {
+  factory _$$_MetaPaginationCopyWith(_$_MetaPagination value, $Res Function(_$_MetaPagination) then) =
+      __$$_MetaPaginationCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int current_page, int last_page, int total, int per_page});
 }
 
 /// @nodoc
-class __$MetaPaginationCopyWithImpl<$Res> extends _$MetaPaginationCopyWithImpl<$Res>
-    implements _$MetaPaginationCopyWith<$Res> {
-  __$MetaPaginationCopyWithImpl(_MetaPagination _value, $Res Function(_MetaPagination) _then)
-      : super(_value, (v) => _then(v as _MetaPagination));
+class __$$_MetaPaginationCopyWithImpl<$Res> extends _$MetaPaginationCopyWithImpl<$Res, _$_MetaPagination>
+    implements _$$_MetaPaginationCopyWith<$Res> {
+  __$$_MetaPaginationCopyWithImpl(_$_MetaPagination _value, $Res Function(_$_MetaPagination) _then)
+      : super(_value, _then);
 
-  @override
-  _MetaPagination get _value => super._value as _MetaPagination;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? current_page = freezed,
-    Object? last_page = freezed,
-    Object? total = freezed,
-    Object? per_page = freezed,
+    Object? current_page = null,
+    Object? last_page = null,
+    Object? total = null,
+    Object? per_page = null,
   }) {
-    return _then(_MetaPagination(
-      current_page == freezed
+    return _then(_$_MetaPagination(
+      null == current_page
           ? _value.current_page
           : current_page // ignore: cast_nullable_to_non_nullable
               as int,
-      last_page == freezed
+      null == last_page
           ? _value.last_page
           : last_page // ignore: cast_nullable_to_non_nullable
               as int,
-      total == freezed
+      null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
               as int,
-      per_page == freezed
+      null == per_page
           ? _value.per_page
           : per_page // ignore: cast_nullable_to_non_nullable
               as int,
@@ -685,48 +627,47 @@ class _$_MetaPagination implements _MetaPagination {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MetaPagination &&
-            (identical(other.current_page, current_page) ||
-                const DeepCollectionEquality().equals(other.current_page, current_page)) &&
-            (identical(other.last_page, last_page) ||
-                const DeepCollectionEquality().equals(other.last_page, last_page)) &&
-            (identical(other.total, total) || const DeepCollectionEquality().equals(other.total, total)) &&
-            (identical(other.per_page, per_page) || const DeepCollectionEquality().equals(other.per_page, per_page)));
+        (other.runtimeType == runtimeType &&
+            other is _$_MetaPagination &&
+            (identical(other.current_page, current_page) || other.current_page == current_page) &&
+            (identical(other.last_page, last_page) || other.last_page == last_page) &&
+            (identical(other.total, total) || other.total == total) &&
+            (identical(other.per_page, per_page) || other.per_page == per_page));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(current_page) ^
-      const DeepCollectionEquality().hash(last_page) ^
-      const DeepCollectionEquality().hash(total) ^
-      const DeepCollectionEquality().hash(per_page);
 
   @JsonKey(ignore: true)
   @override
-  _$MetaPaginationCopyWith<_MetaPagination> get copyWith =>
-      __$MetaPaginationCopyWithImpl<_MetaPagination>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, current_page, last_page, total, per_page);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MetaPaginationCopyWith<_$_MetaPagination> get copyWith =>
+      __$$_MetaPaginationCopyWithImpl<_$_MetaPagination>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaPaginationToJson(this);
+    return _$$_MetaPaginationToJson(
+      this,
+    );
   }
 }
 
 abstract class _MetaPagination implements MetaPagination {
-  const factory _MetaPagination(int current_page, int last_page, int total, int per_page) = _$_MetaPagination;
+  const factory _MetaPagination(final int current_page, final int last_page, final int total, final int per_page) =
+      _$_MetaPagination;
 
   factory _MetaPagination.fromJson(Map<String, dynamic> json) = _$_MetaPagination.fromJson;
 
   @override
-  int get current_page => throw _privateConstructorUsedError;
+  int get current_page;
   @override
-  int get last_page => throw _privateConstructorUsedError;
+  int get last_page;
   @override
-  int get total => throw _privateConstructorUsedError;
+  int get total;
   @override
-  int get per_page => throw _privateConstructorUsedError;
+  int get per_page;
   @override
   @JsonKey(ignore: true)
-  _$MetaPaginationCopyWith<_MetaPagination> get copyWith => throw _privateConstructorUsedError;
+  _$$_MetaPaginationCopyWith<_$_MetaPagination> get copyWith => throw _privateConstructorUsedError;
 }

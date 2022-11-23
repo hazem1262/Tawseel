@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'companies_response.dart';
@@ -11,29 +12,11 @@ part of 'companies_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 CompaniesResponse _$CompaniesResponseFromJson(Map<String, dynamic> json) {
   return _CompaniesResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$CompaniesResponseTearOff {
-  const _$CompaniesResponseTearOff();
-
-  _CompaniesResponse call(List<CompanyItem> data) {
-    return _CompaniesResponse(
-      data,
-    );
-  }
-
-  CompaniesResponse fromJson(Map<String, Object> json) {
-    return CompaniesResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $CompaniesResponse = _$CompaniesResponseTearOff();
 
 /// @nodoc
 mixin _$CompaniesResponse {
@@ -47,55 +30,58 @@ mixin _$CompaniesResponse {
 /// @nodoc
 abstract class $CompaniesResponseCopyWith<$Res> {
   factory $CompaniesResponseCopyWith(CompaniesResponse value, $Res Function(CompaniesResponse) then) =
-      _$CompaniesResponseCopyWithImpl<$Res>;
+      _$CompaniesResponseCopyWithImpl<$Res, CompaniesResponse>;
+  @useResult
   $Res call({List<CompanyItem> data});
 }
 
 /// @nodoc
-class _$CompaniesResponseCopyWithImpl<$Res> implements $CompaniesResponseCopyWith<$Res> {
+class _$CompaniesResponseCopyWithImpl<$Res, $Val extends CompaniesResponse>
+    implements $CompaniesResponseCopyWith<$Res> {
   _$CompaniesResponseCopyWithImpl(this._value, this._then);
 
-  final CompaniesResponse _value;
   // ignore: unused_field
-  final $Res Function(CompaniesResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CompaniesResponseCopyWith<$Res> implements $CompaniesResponseCopyWith<$Res> {
-  factory _$CompaniesResponseCopyWith(_CompaniesResponse value, $Res Function(_CompaniesResponse) then) =
-      __$CompaniesResponseCopyWithImpl<$Res>;
+abstract class _$$_CompaniesResponseCopyWith<$Res> implements $CompaniesResponseCopyWith<$Res> {
+  factory _$$_CompaniesResponseCopyWith(_$_CompaniesResponse value, $Res Function(_$_CompaniesResponse) then) =
+      __$$_CompaniesResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<CompanyItem> data});
 }
 
 /// @nodoc
-class __$CompaniesResponseCopyWithImpl<$Res> extends _$CompaniesResponseCopyWithImpl<$Res>
-    implements _$CompaniesResponseCopyWith<$Res> {
-  __$CompaniesResponseCopyWithImpl(_CompaniesResponse _value, $Res Function(_CompaniesResponse) _then)
-      : super(_value, (v) => _then(v as _CompaniesResponse));
+class __$$_CompaniesResponseCopyWithImpl<$Res> extends _$CompaniesResponseCopyWithImpl<$Res, _$_CompaniesResponse>
+    implements _$$_CompaniesResponseCopyWith<$Res> {
+  __$$_CompaniesResponseCopyWithImpl(_$_CompaniesResponse _value, $Res Function(_$_CompaniesResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _CompaniesResponse get _value => super._value as _CompaniesResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_CompaniesResponse(
-      data == freezed
-          ? _value.data
+    return _then(_$_CompaniesResponse(
+      null == data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
     ));
@@ -105,12 +91,16 @@ class __$CompaniesResponseCopyWithImpl<$Res> extends _$CompaniesResponseCopyWith
 /// @nodoc
 @JsonSerializable()
 class _$_CompaniesResponse implements _CompaniesResponse {
-  const _$_CompaniesResponse(this.data);
+  const _$_CompaniesResponse(final List<CompanyItem> data) : _data = data;
 
   factory _$_CompaniesResponse.fromJson(Map<String, dynamic> json) => _$$_CompaniesResponseFromJson(json);
 
+  final List<CompanyItem> _data;
   @override
-  final List<CompanyItem> data;
+  List<CompanyItem> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString() {
@@ -120,50 +110,40 @@ class _$_CompaniesResponse implements _CompaniesResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CompaniesResponse &&
-            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _$_CompaniesResponse &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
-  _$CompaniesResponseCopyWith<_CompaniesResponse> get copyWith =>
-      __$CompaniesResponseCopyWithImpl<_CompaniesResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CompaniesResponseCopyWith<_$_CompaniesResponse> get copyWith =>
+      __$$_CompaniesResponseCopyWithImpl<_$_CompaniesResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CompaniesResponseToJson(this);
-  }
-}
-
-abstract class _CompaniesResponse implements CompaniesResponse {
-  const factory _CompaniesResponse(List<CompanyItem> data) = _$_CompaniesResponse;
-
-  factory _CompaniesResponse.fromJson(Map<String, dynamic> json) = _$_CompaniesResponse.fromJson;
-
-  @override
-  List<CompanyItem> get data => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$CompaniesResponseCopyWith<_CompaniesResponse> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-class _$CompaniesAndCategoriesModelTearOff {
-  const _$CompaniesAndCategoriesModelTearOff();
-
-  _CompaniesAndCategoriesModel call(List<CompanyItem> companies, List<CategoryData> categories) {
-    return _CompaniesAndCategoriesModel(
-      companies,
-      categories,
+    return _$$_CompaniesResponseToJson(
+      this,
     );
   }
 }
 
-/// @nodoc
-const $CompaniesAndCategoriesModel = _$CompaniesAndCategoriesModelTearOff();
+abstract class _CompaniesResponse implements CompaniesResponse {
+  const factory _CompaniesResponse(final List<CompanyItem> data) = _$_CompaniesResponse;
+
+  factory _CompaniesResponse.fromJson(Map<String, dynamic> json) = _$_CompaniesResponse.fromJson;
+
+  @override
+  List<CompanyItem> get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CompaniesResponseCopyWith<_$_CompaniesResponse> get copyWith => throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 mixin _$CompaniesAndCategoriesModel {
@@ -178,67 +158,71 @@ mixin _$CompaniesAndCategoriesModel {
 abstract class $CompaniesAndCategoriesModelCopyWith<$Res> {
   factory $CompaniesAndCategoriesModelCopyWith(
           CompaniesAndCategoriesModel value, $Res Function(CompaniesAndCategoriesModel) then) =
-      _$CompaniesAndCategoriesModelCopyWithImpl<$Res>;
+      _$CompaniesAndCategoriesModelCopyWithImpl<$Res, CompaniesAndCategoriesModel>;
+  @useResult
   $Res call({List<CompanyItem> companies, List<CategoryData> categories});
 }
 
 /// @nodoc
-class _$CompaniesAndCategoriesModelCopyWithImpl<$Res> implements $CompaniesAndCategoriesModelCopyWith<$Res> {
+class _$CompaniesAndCategoriesModelCopyWithImpl<$Res, $Val extends CompaniesAndCategoriesModel>
+    implements $CompaniesAndCategoriesModelCopyWith<$Res> {
   _$CompaniesAndCategoriesModelCopyWithImpl(this._value, this._then);
 
-  final CompaniesAndCategoriesModel _value;
   // ignore: unused_field
-  final $Res Function(CompaniesAndCategoriesModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? companies = freezed,
-    Object? categories = freezed,
+    Object? companies = null,
+    Object? categories = null,
   }) {
     return _then(_value.copyWith(
-      companies: companies == freezed
+      companies: null == companies
           ? _value.companies
           : companies // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
-      categories: categories == freezed
+      categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CompaniesAndCategoriesModelCopyWith<$Res> implements $CompaniesAndCategoriesModelCopyWith<$Res> {
-  factory _$CompaniesAndCategoriesModelCopyWith(
-          _CompaniesAndCategoriesModel value, $Res Function(_CompaniesAndCategoriesModel) then) =
-      __$CompaniesAndCategoriesModelCopyWithImpl<$Res>;
+abstract class _$$_CompaniesAndCategoriesModelCopyWith<$Res> implements $CompaniesAndCategoriesModelCopyWith<$Res> {
+  factory _$$_CompaniesAndCategoriesModelCopyWith(
+          _$_CompaniesAndCategoriesModel value, $Res Function(_$_CompaniesAndCategoriesModel) then) =
+      __$$_CompaniesAndCategoriesModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<CompanyItem> companies, List<CategoryData> categories});
 }
 
 /// @nodoc
-class __$CompaniesAndCategoriesModelCopyWithImpl<$Res> extends _$CompaniesAndCategoriesModelCopyWithImpl<$Res>
-    implements _$CompaniesAndCategoriesModelCopyWith<$Res> {
-  __$CompaniesAndCategoriesModelCopyWithImpl(
-      _CompaniesAndCategoriesModel _value, $Res Function(_CompaniesAndCategoriesModel) _then)
-      : super(_value, (v) => _then(v as _CompaniesAndCategoriesModel));
+class __$$_CompaniesAndCategoriesModelCopyWithImpl<$Res>
+    extends _$CompaniesAndCategoriesModelCopyWithImpl<$Res, _$_CompaniesAndCategoriesModel>
+    implements _$$_CompaniesAndCategoriesModelCopyWith<$Res> {
+  __$$_CompaniesAndCategoriesModelCopyWithImpl(
+      _$_CompaniesAndCategoriesModel _value, $Res Function(_$_CompaniesAndCategoriesModel) _then)
+      : super(_value, _then);
 
-  @override
-  _CompaniesAndCategoriesModel get _value => super._value as _CompaniesAndCategoriesModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? companies = freezed,
-    Object? categories = freezed,
+    Object? companies = null,
+    Object? categories = null,
   }) {
-    return _then(_CompaniesAndCategoriesModel(
-      companies == freezed
-          ? _value.companies
+    return _then(_$_CompaniesAndCategoriesModel(
+      null == companies
+          ? _value._companies
           : companies // ignore: cast_nullable_to_non_nullable
               as List<CompanyItem>,
-      categories == freezed
-          ? _value.categories
+      null == categories
+          ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
     ));
@@ -248,12 +232,23 @@ class __$CompaniesAndCategoriesModelCopyWithImpl<$Res> extends _$CompaniesAndCat
 /// @nodoc
 
 class _$_CompaniesAndCategoriesModel implements _CompaniesAndCategoriesModel {
-  const _$_CompaniesAndCategoriesModel(this.companies, this.categories);
+  const _$_CompaniesAndCategoriesModel(final List<CompanyItem> companies, final List<CategoryData> categories)
+      : _companies = companies,
+        _categories = categories;
 
+  final List<CompanyItem> _companies;
   @override
-  final List<CompanyItem> companies;
+  List<CompanyItem> get companies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_companies);
+  }
+
+  final List<CategoryData> _categories;
   @override
-  final List<CategoryData> categories;
+  List<CategoryData> get categories {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
 
   @override
   String toString() {
@@ -263,35 +258,33 @@ class _$_CompaniesAndCategoriesModel implements _CompaniesAndCategoriesModel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CompaniesAndCategoriesModel &&
-            (identical(other.companies, companies) ||
-                const DeepCollectionEquality().equals(other.companies, companies)) &&
-            (identical(other.categories, categories) ||
-                const DeepCollectionEquality().equals(other.categories, categories)));
+        (other.runtimeType == runtimeType &&
+            other is _$_CompaniesAndCategoriesModel &&
+            const DeepCollectionEquality().equals(other._companies, _companies) &&
+            const DeepCollectionEquality().equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(companies) ^
-      const DeepCollectionEquality().hash(categories);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_companies), const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
   @override
-  _$CompaniesAndCategoriesModelCopyWith<_CompaniesAndCategoriesModel> get copyWith =>
-      __$CompaniesAndCategoriesModelCopyWithImpl<_CompaniesAndCategoriesModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CompaniesAndCategoriesModelCopyWith<_$_CompaniesAndCategoriesModel> get copyWith =>
+      __$$_CompaniesAndCategoriesModelCopyWithImpl<_$_CompaniesAndCategoriesModel>(this, _$identity);
 }
 
 abstract class _CompaniesAndCategoriesModel implements CompaniesAndCategoriesModel {
-  const factory _CompaniesAndCategoriesModel(List<CompanyItem> companies, List<CategoryData> categories) =
+  const factory _CompaniesAndCategoriesModel(final List<CompanyItem> companies, final List<CategoryData> categories) =
       _$_CompaniesAndCategoriesModel;
 
   @override
-  List<CompanyItem> get companies => throw _privateConstructorUsedError;
+  List<CompanyItem> get companies;
   @override
-  List<CategoryData> get categories => throw _privateConstructorUsedError;
+  List<CategoryData> get categories;
   @override
   @JsonKey(ignore: true)
-  _$CompaniesAndCategoriesModelCopyWith<_CompaniesAndCategoriesModel> get copyWith =>
+  _$$_CompaniesAndCategoriesModelCopyWith<_$_CompaniesAndCategoriesModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

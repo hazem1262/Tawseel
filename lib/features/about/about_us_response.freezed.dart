@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'about_us_response.dart';
@@ -11,29 +12,11 @@ part of 'about_us_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AboutUsResponse _$AboutUsResponseFromJson(Map<String, dynamic> json) {
   return _AboutUsResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$AboutUsResponseTearOff {
-  const _$AboutUsResponseTearOff();
-
-  _AboutUsResponse call(AboutUsData data) {
-    return _AboutUsResponse(
-      data,
-    );
-  }
-
-  AboutUsResponse fromJson(Map<String, Object> json) {
-    return AboutUsResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AboutUsResponse = _$AboutUsResponseTearOff();
 
 /// @nodoc
 mixin _$AboutUsResponse {
@@ -47,45 +30,50 @@ mixin _$AboutUsResponse {
 /// @nodoc
 abstract class $AboutUsResponseCopyWith<$Res> {
   factory $AboutUsResponseCopyWith(AboutUsResponse value, $Res Function(AboutUsResponse) then) =
-      _$AboutUsResponseCopyWithImpl<$Res>;
+      _$AboutUsResponseCopyWithImpl<$Res, AboutUsResponse>;
+  @useResult
   $Res call({AboutUsData data});
 
   $AboutUsDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$AboutUsResponseCopyWithImpl<$Res> implements $AboutUsResponseCopyWith<$Res> {
+class _$AboutUsResponseCopyWithImpl<$Res, $Val extends AboutUsResponse> implements $AboutUsResponseCopyWith<$Res> {
   _$AboutUsResponseCopyWithImpl(this._value, this._then);
 
-  final AboutUsResponse _value;
   // ignore: unused_field
-  final $Res Function(AboutUsResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as AboutUsData,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AboutUsDataCopyWith<$Res> get data {
     return $AboutUsDataCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
+      return _then(_value.copyWith(data: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$AboutUsResponseCopyWith<$Res> implements $AboutUsResponseCopyWith<$Res> {
-  factory _$AboutUsResponseCopyWith(_AboutUsResponse value, $Res Function(_AboutUsResponse) then) =
-      __$AboutUsResponseCopyWithImpl<$Res>;
+abstract class _$$_AboutUsResponseCopyWith<$Res> implements $AboutUsResponseCopyWith<$Res> {
+  factory _$$_AboutUsResponseCopyWith(_$_AboutUsResponse value, $Res Function(_$_AboutUsResponse) then) =
+      __$$_AboutUsResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({AboutUsData data});
 
   @override
@@ -93,20 +81,18 @@ abstract class _$AboutUsResponseCopyWith<$Res> implements $AboutUsResponseCopyWi
 }
 
 /// @nodoc
-class __$AboutUsResponseCopyWithImpl<$Res> extends _$AboutUsResponseCopyWithImpl<$Res>
-    implements _$AboutUsResponseCopyWith<$Res> {
-  __$AboutUsResponseCopyWithImpl(_AboutUsResponse _value, $Res Function(_AboutUsResponse) _then)
-      : super(_value, (v) => _then(v as _AboutUsResponse));
+class __$$_AboutUsResponseCopyWithImpl<$Res> extends _$AboutUsResponseCopyWithImpl<$Res, _$_AboutUsResponse>
+    implements _$$_AboutUsResponseCopyWith<$Res> {
+  __$$_AboutUsResponseCopyWithImpl(_$_AboutUsResponse _value, $Res Function(_$_AboutUsResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _AboutUsResponse get _value => super._value as _AboutUsResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_AboutUsResponse(
-      data == freezed
+    return _then(_$_AboutUsResponse(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as AboutUsData,
@@ -132,60 +118,44 @@ class _$_AboutUsResponse implements _AboutUsResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AboutUsResponse &&
-            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AboutUsResponse &&
+            (identical(other.data, data) || other.data == data));
   }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
-  _$AboutUsResponseCopyWith<_AboutUsResponse> get copyWith =>
-      __$AboutUsResponseCopyWithImpl<_AboutUsResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AboutUsResponseCopyWith<_$_AboutUsResponse> get copyWith =>
+      __$$_AboutUsResponseCopyWithImpl<_$_AboutUsResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AboutUsResponseToJson(this);
+    return _$$_AboutUsResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _AboutUsResponse implements AboutUsResponse {
-  factory _AboutUsResponse(AboutUsData data) = _$_AboutUsResponse;
+  factory _AboutUsResponse(final AboutUsData data) = _$_AboutUsResponse;
 
   factory _AboutUsResponse.fromJson(Map<String, dynamic> json) = _$_AboutUsResponse.fromJson;
 
   @override
-  AboutUsData get data => throw _privateConstructorUsedError;
+  AboutUsData get data;
   @override
   @JsonKey(ignore: true)
-  _$AboutUsResponseCopyWith<_AboutUsResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_AboutUsResponseCopyWith<_$_AboutUsResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 AboutUsData _$AboutUsDataFromJson(Map<String, dynamic> json) {
   return _AboutUsData.fromJson(json);
 }
-
-/// @nodoc
-class _$AboutUsDataTearOff {
-  const _$AboutUsDataTearOff();
-
-  _AboutUsData call(int id, String? title, String? slug, String? content) {
-    return _AboutUsData(
-      id,
-      title,
-      slug,
-      content,
-    );
-  }
-
-  AboutUsData fromJson(Map<String, Object> json) {
-    return AboutUsData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AboutUsData = _$AboutUsDataTearOff();
 
 /// @nodoc
 mixin _$AboutUsData {
@@ -201,83 +171,86 @@ mixin _$AboutUsData {
 
 /// @nodoc
 abstract class $AboutUsDataCopyWith<$Res> {
-  factory $AboutUsDataCopyWith(AboutUsData value, $Res Function(AboutUsData) then) = _$AboutUsDataCopyWithImpl<$Res>;
+  factory $AboutUsDataCopyWith(AboutUsData value, $Res Function(AboutUsData) then) =
+      _$AboutUsDataCopyWithImpl<$Res, AboutUsData>;
+  @useResult
   $Res call({int id, String? title, String? slug, String? content});
 }
 
 /// @nodoc
-class _$AboutUsDataCopyWithImpl<$Res> implements $AboutUsDataCopyWith<$Res> {
+class _$AboutUsDataCopyWithImpl<$Res, $Val extends AboutUsData> implements $AboutUsDataCopyWith<$Res> {
   _$AboutUsDataCopyWithImpl(this._value, this._then);
 
-  final AboutUsData _value;
   // ignore: unused_field
-  final $Res Function(AboutUsData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? title = freezed,
     Object? slug = freezed,
     Object? content = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      slug: slug == freezed
+      slug: freezed == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String?,
-      content: content == freezed
+      content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$AboutUsDataCopyWith<$Res> implements $AboutUsDataCopyWith<$Res> {
-  factory _$AboutUsDataCopyWith(_AboutUsData value, $Res Function(_AboutUsData) then) =
-      __$AboutUsDataCopyWithImpl<$Res>;
+abstract class _$$_AboutUsDataCopyWith<$Res> implements $AboutUsDataCopyWith<$Res> {
+  factory _$$_AboutUsDataCopyWith(_$_AboutUsData value, $Res Function(_$_AboutUsData) then) =
+      __$$_AboutUsDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int id, String? title, String? slug, String? content});
 }
 
 /// @nodoc
-class __$AboutUsDataCopyWithImpl<$Res> extends _$AboutUsDataCopyWithImpl<$Res> implements _$AboutUsDataCopyWith<$Res> {
-  __$AboutUsDataCopyWithImpl(_AboutUsData _value, $Res Function(_AboutUsData) _then)
-      : super(_value, (v) => _then(v as _AboutUsData));
+class __$$_AboutUsDataCopyWithImpl<$Res> extends _$AboutUsDataCopyWithImpl<$Res, _$_AboutUsData>
+    implements _$$_AboutUsDataCopyWith<$Res> {
+  __$$_AboutUsDataCopyWithImpl(_$_AboutUsData _value, $Res Function(_$_AboutUsData) _then) : super(_value, _then);
 
-  @override
-  _AboutUsData get _value => super._value as _AboutUsData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? title = freezed,
     Object? slug = freezed,
     Object? content = freezed,
   }) {
-    return _then(_AboutUsData(
-      id == freezed
+    return _then(_$_AboutUsData(
+      null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title == freezed
+      freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      slug == freezed
+      freezed == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String?,
-      content == freezed
+      freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -309,45 +282,46 @@ class _$_AboutUsData implements _AboutUsData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AboutUsData &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.slug, slug) || const DeepCollectionEquality().equals(other.slug, slug)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AboutUsData &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
+            (identical(other.content, content) || other.content == content));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(slug) ^
-      const DeepCollectionEquality().hash(content);
 
   @JsonKey(ignore: true)
   @override
-  _$AboutUsDataCopyWith<_AboutUsData> get copyWith => __$AboutUsDataCopyWithImpl<_AboutUsData>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, title, slug, content);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AboutUsDataCopyWith<_$_AboutUsData> get copyWith =>
+      __$$_AboutUsDataCopyWithImpl<_$_AboutUsData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AboutUsDataToJson(this);
+    return _$$_AboutUsDataToJson(
+      this,
+    );
   }
 }
 
 abstract class _AboutUsData implements AboutUsData {
-  factory _AboutUsData(int id, String? title, String? slug, String? content) = _$_AboutUsData;
+  factory _AboutUsData(final int id, final String? title, final String? slug, final String? content) = _$_AboutUsData;
 
   factory _AboutUsData.fromJson(Map<String, dynamic> json) = _$_AboutUsData.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @override
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
-  String? get slug => throw _privateConstructorUsedError;
+  String? get slug;
   @override
-  String? get content => throw _privateConstructorUsedError;
+  String? get content;
   @override
   @JsonKey(ignore: true)
-  _$AboutUsDataCopyWith<_AboutUsData> get copyWith => throw _privateConstructorUsedError;
+  _$$_AboutUsDataCopyWith<_$_AboutUsData> get copyWith => throw _privateConstructorUsedError;
 }

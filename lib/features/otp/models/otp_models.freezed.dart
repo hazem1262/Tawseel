@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'otp_models.dart';
@@ -11,29 +12,11 @@ part of 'otp_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 OtpResponse _$OtpResponseFromJson(Map<String, dynamic> json) {
   return _OtpResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$OtpResponseTearOff {
-  const _$OtpResponseTearOff();
-
-  _OtpResponse call(int otp) {
-    return _OtpResponse(
-      otp,
-    );
-  }
-
-  OtpResponse fromJson(Map<String, Object> json) {
-    return OtpResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $OtpResponse = _$OtpResponseTearOff();
 
 /// @nodoc
 mixin _$OtpResponse {
@@ -46,53 +29,56 @@ mixin _$OtpResponse {
 
 /// @nodoc
 abstract class $OtpResponseCopyWith<$Res> {
-  factory $OtpResponseCopyWith(OtpResponse value, $Res Function(OtpResponse) then) = _$OtpResponseCopyWithImpl<$Res>;
+  factory $OtpResponseCopyWith(OtpResponse value, $Res Function(OtpResponse) then) =
+      _$OtpResponseCopyWithImpl<$Res, OtpResponse>;
+  @useResult
   $Res call({int otp});
 }
 
 /// @nodoc
-class _$OtpResponseCopyWithImpl<$Res> implements $OtpResponseCopyWith<$Res> {
+class _$OtpResponseCopyWithImpl<$Res, $Val extends OtpResponse> implements $OtpResponseCopyWith<$Res> {
   _$OtpResponseCopyWithImpl(this._value, this._then);
 
-  final OtpResponse _value;
   // ignore: unused_field
-  final $Res Function(OtpResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? otp = freezed,
+    Object? otp = null,
   }) {
     return _then(_value.copyWith(
-      otp: otp == freezed
+      otp: null == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$OtpResponseCopyWith<$Res> implements $OtpResponseCopyWith<$Res> {
-  factory _$OtpResponseCopyWith(_OtpResponse value, $Res Function(_OtpResponse) then) =
-      __$OtpResponseCopyWithImpl<$Res>;
+abstract class _$$_OtpResponseCopyWith<$Res> implements $OtpResponseCopyWith<$Res> {
+  factory _$$_OtpResponseCopyWith(_$_OtpResponse value, $Res Function(_$_OtpResponse) then) =
+      __$$_OtpResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int otp});
 }
 
 /// @nodoc
-class __$OtpResponseCopyWithImpl<$Res> extends _$OtpResponseCopyWithImpl<$Res> implements _$OtpResponseCopyWith<$Res> {
-  __$OtpResponseCopyWithImpl(_OtpResponse _value, $Res Function(_OtpResponse) _then)
-      : super(_value, (v) => _then(v as _OtpResponse));
+class __$$_OtpResponseCopyWithImpl<$Res> extends _$OtpResponseCopyWithImpl<$Res, _$_OtpResponse>
+    implements _$$_OtpResponseCopyWith<$Res> {
+  __$$_OtpResponseCopyWithImpl(_$_OtpResponse _value, $Res Function(_$_OtpResponse) _then) : super(_value, _then);
 
-  @override
-  _OtpResponse get _value => super._value as _OtpResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? otp = freezed,
+    Object? otp = null,
   }) {
-    return _then(_OtpResponse(
-      otp == freezed
+    return _then(_$_OtpResponse(
+      null == otp
           ? _value.otp
           : otp // ignore: cast_nullable_to_non_nullable
               as int,
@@ -118,30 +104,37 @@ class _$_OtpResponse implements _OtpResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OtpResponse && (identical(other.otp, otp) || const DeepCollectionEquality().equals(other.otp, otp)));
+        (other.runtimeType == runtimeType &&
+            other is _$_OtpResponse &&
+            (identical(other.otp, otp) || other.otp == otp));
   }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(otp);
 
   @JsonKey(ignore: true)
   @override
-  _$OtpResponseCopyWith<_OtpResponse> get copyWith => __$OtpResponseCopyWithImpl<_OtpResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, otp);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OtpResponseCopyWith<_$_OtpResponse> get copyWith =>
+      __$$_OtpResponseCopyWithImpl<_$_OtpResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OtpResponseToJson(this);
+    return _$$_OtpResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _OtpResponse implements OtpResponse {
-  const factory _OtpResponse(int otp) = _$_OtpResponse;
+  const factory _OtpResponse(final int otp) = _$_OtpResponse;
 
   factory _OtpResponse.fromJson(Map<String, dynamic> json) = _$_OtpResponse.fromJson;
 
   @override
-  int get otp => throw _privateConstructorUsedError;
+  int get otp;
   @override
   @JsonKey(ignore: true)
-  _$OtpResponseCopyWith<_OtpResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_OtpResponseCopyWith<_$_OtpResponse> get copyWith => throw _privateConstructorUsedError;
 }

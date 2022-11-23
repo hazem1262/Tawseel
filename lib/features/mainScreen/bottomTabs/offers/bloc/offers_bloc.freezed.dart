@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'offers_bloc.dart';
@@ -11,23 +12,7 @@ part of 'offers_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$OffersEventTearOff {
-  const _$OffersEventTearOff();
-
-  GetOffers getOffers() {
-    return const GetOffers();
-  }
-
-  ResetOffers resetOffers() {
-    return const ResetOffers();
-  }
-}
-
-/// @nodoc
-const $OffersEvent = _$OffersEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$OffersEvent {
@@ -35,18 +20,24 @@ mixin _$OffersEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getOffers,
     required TResult Function() resetOffers,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getOffers,
-    TResult Function()? resetOffers,
+    TResult? Function()? getOffers,
+    TResult? Function()? resetOffers,
+    TResult? Function(int id)? addMarketPlaceToFavorite,
+    TResult? Function(int id)? removeMarketPlaceToFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getOffers,
     TResult Function()? resetOffers,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,18 +45,24 @@ mixin _$OffersEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetOffers value)? getOffers,
-    TResult Function(ResetOffers value)? resetOffers,
+    TResult? Function(GetOffers value)? getOffers,
+    TResult? Function(ResetOffers value)? resetOffers,
+    TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetOffers value)? getOffers,
     TResult Function(ResetOffers value)? resetOffers,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,30 +70,29 @@ mixin _$OffersEvent {
 
 /// @nodoc
 abstract class $OffersEventCopyWith<$Res> {
-  factory $OffersEventCopyWith(OffersEvent value, $Res Function(OffersEvent) then) = _$OffersEventCopyWithImpl<$Res>;
+  factory $OffersEventCopyWith(OffersEvent value, $Res Function(OffersEvent) then) =
+      _$OffersEventCopyWithImpl<$Res, OffersEvent>;
 }
 
 /// @nodoc
-class _$OffersEventCopyWithImpl<$Res> implements $OffersEventCopyWith<$Res> {
+class _$OffersEventCopyWithImpl<$Res, $Val extends OffersEvent> implements $OffersEventCopyWith<$Res> {
   _$OffersEventCopyWithImpl(this._value, this._then);
 
-  final OffersEvent _value;
   // ignore: unused_field
-  final $Res Function(OffersEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $GetOffersCopyWith<$Res> {
-  factory $GetOffersCopyWith(GetOffers value, $Res Function(GetOffers) then) = _$GetOffersCopyWithImpl<$Res>;
+abstract class _$$GetOffersCopyWith<$Res> {
+  factory _$$GetOffersCopyWith(_$GetOffers value, $Res Function(_$GetOffers) then) = __$$GetOffersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res> implements $GetOffersCopyWith<$Res> {
-  _$GetOffersCopyWithImpl(GetOffers _value, $Res Function(GetOffers) _then)
-      : super(_value, (v) => _then(v as GetOffers));
-
-  @override
-  GetOffers get _value => super._value as GetOffers;
+class __$$GetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res, _$GetOffers>
+    implements _$$GetOffersCopyWith<$Res> {
+  __$$GetOffersCopyWithImpl(_$GetOffers _value, $Res Function(_$GetOffers) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -111,7 +107,7 @@ class _$GetOffers implements GetOffers {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetOffers);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetOffers);
   }
 
   @override
@@ -122,6 +118,8 @@ class _$GetOffers implements GetOffers {
   TResult when<TResult extends Object?>({
     required TResult Function() getOffers,
     required TResult Function() resetOffers,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
   }) {
     return getOffers();
   }
@@ -129,8 +127,10 @@ class _$GetOffers implements GetOffers {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getOffers,
-    TResult Function()? resetOffers,
+    TResult? Function()? getOffers,
+    TResult? Function()? resetOffers,
+    TResult? Function(int id)? addMarketPlaceToFavorite,
+    TResult? Function(int id)? removeMarketPlaceToFavorite,
   }) {
     return getOffers?.call();
   }
@@ -140,6 +140,8 @@ class _$GetOffers implements GetOffers {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getOffers,
     TResult Function()? resetOffers,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) {
     if (getOffers != null) {
@@ -153,6 +155,8 @@ class _$GetOffers implements GetOffers {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
   }) {
     return getOffers(this);
   }
@@ -160,8 +164,10 @@ class _$GetOffers implements GetOffers {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetOffers value)? getOffers,
-    TResult Function(ResetOffers value)? resetOffers,
+    TResult? Function(GetOffers value)? getOffers,
+    TResult? Function(ResetOffers value)? resetOffers,
+    TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
   }) {
     return getOffers?.call(this);
   }
@@ -171,6 +177,8 @@ class _$GetOffers implements GetOffers {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetOffers value)? getOffers,
     TResult Function(ResetOffers value)? resetOffers,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) {
     if (getOffers != null) {
@@ -185,17 +193,15 @@ abstract class GetOffers implements OffersEvent {
 }
 
 /// @nodoc
-abstract class $ResetOffersCopyWith<$Res> {
-  factory $ResetOffersCopyWith(ResetOffers value, $Res Function(ResetOffers) then) = _$ResetOffersCopyWithImpl<$Res>;
+abstract class _$$ResetOffersCopyWith<$Res> {
+  factory _$$ResetOffersCopyWith(_$ResetOffers value, $Res Function(_$ResetOffers) then) =
+      __$$ResetOffersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res> implements $ResetOffersCopyWith<$Res> {
-  _$ResetOffersCopyWithImpl(ResetOffers _value, $Res Function(ResetOffers) _then)
-      : super(_value, (v) => _then(v as ResetOffers));
-
-  @override
-  ResetOffers get _value => super._value as ResetOffers;
+class __$$ResetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res, _$ResetOffers>
+    implements _$$ResetOffersCopyWith<$Res> {
+  __$$ResetOffersCopyWithImpl(_$ResetOffers _value, $Res Function(_$ResetOffers) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -210,7 +216,7 @@ class _$ResetOffers implements ResetOffers {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ResetOffers);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ResetOffers);
   }
 
   @override
@@ -221,6 +227,8 @@ class _$ResetOffers implements ResetOffers {
   TResult when<TResult extends Object?>({
     required TResult Function() getOffers,
     required TResult Function() resetOffers,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
   }) {
     return resetOffers();
   }
@@ -228,8 +236,10 @@ class _$ResetOffers implements ResetOffers {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getOffers,
-    TResult Function()? resetOffers,
+    TResult? Function()? getOffers,
+    TResult? Function()? resetOffers,
+    TResult? Function(int id)? addMarketPlaceToFavorite,
+    TResult? Function(int id)? removeMarketPlaceToFavorite,
   }) {
     return resetOffers?.call();
   }
@@ -239,6 +249,8 @@ class _$ResetOffers implements ResetOffers {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getOffers,
     TResult Function()? resetOffers,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) {
     if (resetOffers != null) {
@@ -252,6 +264,8 @@ class _$ResetOffers implements ResetOffers {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
   }) {
     return resetOffers(this);
   }
@@ -259,8 +273,10 @@ class _$ResetOffers implements ResetOffers {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetOffers value)? getOffers,
-    TResult Function(ResetOffers value)? resetOffers,
+    TResult? Function(GetOffers value)? getOffers,
+    TResult? Function(ResetOffers value)? resetOffers,
+    TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
   }) {
     return resetOffers?.call(this);
   }
@@ -270,6 +286,8 @@ class _$ResetOffers implements ResetOffers {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetOffers value)? getOffers,
     TResult Function(ResetOffers value)? resetOffers,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) {
     if (resetOffers != null) {
@@ -284,31 +302,297 @@ abstract class ResetOffers implements OffersEvent {
 }
 
 /// @nodoc
-class _$OffersStateTearOff {
-  const _$OffersStateTearOff();
+abstract class _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
+  factory _$$AddMarketPlaceToFavoriteCopyWith(
+          _$AddMarketPlaceToFavorite value, $Res Function(_$AddMarketPlaceToFavorite) then) =
+      __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
 
-  OffersDefaultState call(
-      [bool isPagingLoading = false,
-      String error = "",
-      bool refreshData = false,
-      List<MarketPlaceItem> offersList = const [],
-      bool hasMorePages = false]) {
-    return OffersDefaultState(
-      isPagingLoading,
-      error,
-      refreshData,
-      offersList,
-      hasMorePages,
-    );
+/// @nodoc
+class __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res, _$AddMarketPlaceToFavorite>
+    implements _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
+  __$$AddMarketPlaceToFavoriteCopyWithImpl(
+      _$AddMarketPlaceToFavorite _value, $Res Function(_$AddMarketPlaceToFavorite) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$AddMarketPlaceToFavorite(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
 /// @nodoc
-const $OffersState = _$OffersStateTearOff();
+
+class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
+  const _$AddMarketPlaceToFavorite(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'OffersEvent.addMarketPlaceToFavorite(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddMarketPlaceToFavorite &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite> get copyWith =>
+      __$$AddMarketPlaceToFavoriteCopyWithImpl<_$AddMarketPlaceToFavorite>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getOffers,
+    required TResult Function() resetOffers,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
+  }) {
+    return addMarketPlaceToFavorite(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getOffers,
+    TResult? Function()? resetOffers,
+    TResult? Function(int id)? addMarketPlaceToFavorite,
+    TResult? Function(int id)? removeMarketPlaceToFavorite,
+  }) {
+    return addMarketPlaceToFavorite?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getOffers,
+    TResult Function()? resetOffers,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    required TResult orElse(),
+  }) {
+    if (addMarketPlaceToFavorite != null) {
+      return addMarketPlaceToFavorite(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetOffers value) getOffers,
+    required TResult Function(ResetOffers value) resetOffers,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+  }) {
+    return addMarketPlaceToFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetOffers value)? getOffers,
+    TResult? Function(ResetOffers value)? resetOffers,
+    TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+  }) {
+    return addMarketPlaceToFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetOffers value)? getOffers,
+    TResult Function(ResetOffers value)? resetOffers,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    required TResult orElse(),
+  }) {
+    if (addMarketPlaceToFavorite != null) {
+      return addMarketPlaceToFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddMarketPlaceToFavorite implements OffersEvent {
+  const factory AddMarketPlaceToFavorite(final int id) = _$AddMarketPlaceToFavorite;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
+  factory _$$RemoveMarketPlaceFromFavoriteCopyWith(
+          _$RemoveMarketPlaceFromFavorite value, $Res Function(_$RemoveMarketPlaceFromFavorite) then) =
+      __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>
+    extends _$OffersEventCopyWithImpl<$Res, _$RemoveMarketPlaceFromFavorite>
+    implements _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
+  __$$RemoveMarketPlaceFromFavoriteCopyWithImpl(
+      _$RemoveMarketPlaceFromFavorite _value, $Res Function(_$RemoveMarketPlaceFromFavorite) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$RemoveMarketPlaceFromFavorite(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
+  const _$RemoveMarketPlaceFromFavorite(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'OffersEvent.removeMarketPlaceToFavorite(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveMarketPlaceFromFavorite &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite> get copyWith =>
+      __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<_$RemoveMarketPlaceFromFavorite>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getOffers,
+    required TResult Function() resetOffers,
+    required TResult Function(int id) addMarketPlaceToFavorite,
+    required TResult Function(int id) removeMarketPlaceToFavorite,
+  }) {
+    return removeMarketPlaceToFavorite(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getOffers,
+    TResult? Function()? resetOffers,
+    TResult? Function(int id)? addMarketPlaceToFavorite,
+    TResult? Function(int id)? removeMarketPlaceToFavorite,
+  }) {
+    return removeMarketPlaceToFavorite?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getOffers,
+    TResult Function()? resetOffers,
+    TResult Function(int id)? addMarketPlaceToFavorite,
+    TResult Function(int id)? removeMarketPlaceToFavorite,
+    required TResult orElse(),
+  }) {
+    if (removeMarketPlaceToFavorite != null) {
+      return removeMarketPlaceToFavorite(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetOffers value) getOffers,
+    required TResult Function(ResetOffers value) resetOffers,
+    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+  }) {
+    return removeMarketPlaceToFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetOffers value)? getOffers,
+    TResult? Function(ResetOffers value)? resetOffers,
+    TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+  }) {
+    return removeMarketPlaceToFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetOffers value)? getOffers,
+    TResult Function(ResetOffers value)? resetOffers,
+    TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    required TResult orElse(),
+  }) {
+    if (removeMarketPlaceToFavorite != null) {
+      return removeMarketPlaceToFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveMarketPlaceFromFavorite implements OffersEvent {
+  const factory RemoveMarketPlaceFromFavorite(final int id) = _$RemoveMarketPlaceFromFavorite;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 mixin _$OffersState {
   bool get isPagingLoading => throw _privateConstructorUsedError;
+  bool get isOffersListLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get refreshData => throw _privateConstructorUsedError;
   List<MarketPlaceItem> get offersList => throw _privateConstructorUsedError;
@@ -320,96 +604,119 @@ mixin _$OffersState {
 
 /// @nodoc
 abstract class $OffersStateCopyWith<$Res> {
-  factory $OffersStateCopyWith(OffersState value, $Res Function(OffersState) then) = _$OffersStateCopyWithImpl<$Res>;
+  factory $OffersStateCopyWith(OffersState value, $Res Function(OffersState) then) =
+      _$OffersStateCopyWithImpl<$Res, OffersState>;
+  @useResult
   $Res call(
-      {bool isPagingLoading, String error, bool refreshData, List<MarketPlaceItem> offersList, bool hasMorePages});
+      {bool isPagingLoading,
+      bool isOffersListLoading,
+      String error,
+      bool refreshData,
+      List<MarketPlaceItem> offersList,
+      bool hasMorePages});
 }
 
 /// @nodoc
-class _$OffersStateCopyWithImpl<$Res> implements $OffersStateCopyWith<$Res> {
+class _$OffersStateCopyWithImpl<$Res, $Val extends OffersState> implements $OffersStateCopyWith<$Res> {
   _$OffersStateCopyWithImpl(this._value, this._then);
 
-  final OffersState _value;
   // ignore: unused_field
-  final $Res Function(OffersState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isPagingLoading = freezed,
-    Object? error = freezed,
-    Object? refreshData = freezed,
-    Object? offersList = freezed,
-    Object? hasMorePages = freezed,
+    Object? isPagingLoading = null,
+    Object? isOffersListLoading = null,
+    Object? error = null,
+    Object? refreshData = null,
+    Object? offersList = null,
+    Object? hasMorePages = null,
   }) {
     return _then(_value.copyWith(
-      isPagingLoading: isPagingLoading == freezed
+      isPagingLoading: null == isPagingLoading
           ? _value.isPagingLoading
           : isPagingLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      error: error == freezed
+      isOffersListLoading: null == isOffersListLoading
+          ? _value.isOffersListLoading
+          : isOffersListLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
-      refreshData: refreshData == freezed
+      refreshData: null == refreshData
           ? _value.refreshData
           : refreshData // ignore: cast_nullable_to_non_nullable
               as bool,
-      offersList: offersList == freezed
+      offersList: null == offersList
           ? _value.offersList
           : offersList // ignore: cast_nullable_to_non_nullable
               as List<MarketPlaceItem>,
-      hasMorePages: hasMorePages == freezed
+      hasMorePages: null == hasMorePages
           ? _value.hasMorePages
           : hasMorePages // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $OffersDefaultStateCopyWith<$Res> implements $OffersStateCopyWith<$Res> {
-  factory $OffersDefaultStateCopyWith(OffersDefaultState value, $Res Function(OffersDefaultState) then) =
-      _$OffersDefaultStateCopyWithImpl<$Res>;
+abstract class _$$OffersDefaultStateCopyWith<$Res> implements $OffersStateCopyWith<$Res> {
+  factory _$$OffersDefaultStateCopyWith(_$OffersDefaultState value, $Res Function(_$OffersDefaultState) then) =
+      __$$OffersDefaultStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {bool isPagingLoading, String error, bool refreshData, List<MarketPlaceItem> offersList, bool hasMorePages});
+      {bool isPagingLoading,
+      bool isOffersListLoading,
+      String error,
+      bool refreshData,
+      List<MarketPlaceItem> offersList,
+      bool hasMorePages});
 }
 
 /// @nodoc
-class _$OffersDefaultStateCopyWithImpl<$Res> extends _$OffersStateCopyWithImpl<$Res>
-    implements $OffersDefaultStateCopyWith<$Res> {
-  _$OffersDefaultStateCopyWithImpl(OffersDefaultState _value, $Res Function(OffersDefaultState) _then)
-      : super(_value, (v) => _then(v as OffersDefaultState));
+class __$$OffersDefaultStateCopyWithImpl<$Res> extends _$OffersStateCopyWithImpl<$Res, _$OffersDefaultState>
+    implements _$$OffersDefaultStateCopyWith<$Res> {
+  __$$OffersDefaultStateCopyWithImpl(_$OffersDefaultState _value, $Res Function(_$OffersDefaultState) _then)
+      : super(_value, _then);
 
-  @override
-  OffersDefaultState get _value => super._value as OffersDefaultState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isPagingLoading = freezed,
-    Object? error = freezed,
-    Object? refreshData = freezed,
-    Object? offersList = freezed,
-    Object? hasMorePages = freezed,
+    Object? isPagingLoading = null,
+    Object? isOffersListLoading = null,
+    Object? error = null,
+    Object? refreshData = null,
+    Object? offersList = null,
+    Object? hasMorePages = null,
   }) {
-    return _then(OffersDefaultState(
-      isPagingLoading == freezed
+    return _then(_$OffersDefaultState(
+      null == isPagingLoading
           ? _value.isPagingLoading
           : isPagingLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      error == freezed
+      null == isOffersListLoading
+          ? _value.isOffersListLoading
+          : isOffersListLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
-      refreshData == freezed
+      null == refreshData
           ? _value.refreshData
           : refreshData // ignore: cast_nullable_to_non_nullable
               as bool,
-      offersList == freezed
-          ? _value.offersList
+      null == offersList
+          ? _value._offersList
           : offersList // ignore: cast_nullable_to_non_nullable
               as List<MarketPlaceItem>,
-      hasMorePages == freezed
+      null == hasMorePages
           ? _value.hasMorePages
           : hasMorePages // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -422,81 +729,89 @@ class _$OffersDefaultStateCopyWithImpl<$Res> extends _$OffersStateCopyWithImpl<$
 class _$OffersDefaultState implements OffersDefaultState {
   const _$OffersDefaultState(
       [this.isPagingLoading = false,
+      this.isOffersListLoading = false,
       this.error = "",
       this.refreshData = false,
-      this.offersList = const [],
-      this.hasMorePages = false]);
+      final List<MarketPlaceItem> offersList = const [],
+      this.hasMorePages = false])
+      : _offersList = offersList;
 
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool isPagingLoading;
-  @JsonKey(defaultValue: "")
   @override
+  @JsonKey()
+  final bool isOffersListLoading;
+  @override
+  @JsonKey()
   final String error;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool refreshData;
-  @JsonKey(defaultValue: const [])
+  final List<MarketPlaceItem> _offersList;
   @override
-  final List<MarketPlaceItem> offersList;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
+  List<MarketPlaceItem> get offersList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_offersList);
+  }
+
   @override
+  @JsonKey()
   final bool hasMorePages;
 
   @override
   String toString() {
-    return 'OffersState(isPagingLoading: $isPagingLoading, error: $error, refreshData: $refreshData, offersList: $offersList, hasMorePages: $hasMorePages)';
+    return 'OffersState(isPagingLoading: $isPagingLoading, isOffersListLoading: $isOffersListLoading, error: $error, refreshData: $refreshData, offersList: $offersList, hasMorePages: $hasMorePages)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is OffersDefaultState &&
-            (identical(other.isPagingLoading, isPagingLoading) ||
-                const DeepCollectionEquality().equals(other.isPagingLoading, isPagingLoading)) &&
-            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
-            (identical(other.refreshData, refreshData) ||
-                const DeepCollectionEquality().equals(other.refreshData, refreshData)) &&
-            (identical(other.offersList, offersList) ||
-                const DeepCollectionEquality().equals(other.offersList, offersList)) &&
-            (identical(other.hasMorePages, hasMorePages) ||
-                const DeepCollectionEquality().equals(other.hasMorePages, hasMorePages)));
+        (other.runtimeType == runtimeType &&
+            other is _$OffersDefaultState &&
+            (identical(other.isPagingLoading, isPagingLoading) || other.isPagingLoading == isPagingLoading) &&
+            (identical(other.isOffersListLoading, isOffersListLoading) ||
+                other.isOffersListLoading == isOffersListLoading) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.refreshData, refreshData) || other.refreshData == refreshData) &&
+            const DeepCollectionEquality().equals(other._offersList, _offersList) &&
+            (identical(other.hasMorePages, hasMorePages) || other.hasMorePages == hasMorePages));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isPagingLoading) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(refreshData) ^
-      const DeepCollectionEquality().hash(offersList) ^
-      const DeepCollectionEquality().hash(hasMorePages);
+  int get hashCode => Object.hash(runtimeType, isPagingLoading, isOffersListLoading, error, refreshData,
+      const DeepCollectionEquality().hash(_offersList), hasMorePages);
 
   @JsonKey(ignore: true)
   @override
-  $OffersDefaultStateCopyWith<OffersDefaultState> get copyWith =>
-      _$OffersDefaultStateCopyWithImpl<OffersDefaultState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$OffersDefaultStateCopyWith<_$OffersDefaultState> get copyWith =>
+      __$$OffersDefaultStateCopyWithImpl<_$OffersDefaultState>(this, _$identity);
 }
 
 abstract class OffersDefaultState implements OffersState {
   const factory OffersDefaultState(
-      [bool isPagingLoading,
-      String error,
-      bool refreshData,
-      List<MarketPlaceItem> offersList,
-      bool hasMorePages]) = _$OffersDefaultState;
+      [final bool isPagingLoading,
+      final bool isOffersListLoading,
+      final String error,
+      final bool refreshData,
+      final List<MarketPlaceItem> offersList,
+      final bool hasMorePages]) = _$OffersDefaultState;
 
   @override
-  bool get isPagingLoading => throw _privateConstructorUsedError;
+  bool get isPagingLoading;
   @override
-  String get error => throw _privateConstructorUsedError;
+  bool get isOffersListLoading;
   @override
-  bool get refreshData => throw _privateConstructorUsedError;
+  String get error;
   @override
-  List<MarketPlaceItem> get offersList => throw _privateConstructorUsedError;
+  bool get refreshData;
   @override
-  bool get hasMorePages => throw _privateConstructorUsedError;
+  List<MarketPlaceItem> get offersList;
+  @override
+  bool get hasMorePages;
   @override
   @JsonKey(ignore: true)
-  $OffersDefaultStateCopyWith<OffersDefaultState> get copyWith => throw _privateConstructorUsedError;
+  _$$OffersDefaultStateCopyWith<_$OffersDefaultState> get copyWith => throw _privateConstructorUsedError;
 }

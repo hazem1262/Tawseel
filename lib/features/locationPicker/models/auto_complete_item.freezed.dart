@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auto_complete_item.dart';
@@ -11,24 +12,7 @@ part of 'auto_complete_item.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AutoCompleteItemTearOff {
-  const _$AutoCompleteItemTearOff();
-
-  _AutoCompleteItem call(String id, String text, int offset, int length) {
-    return _AutoCompleteItem(
-      id,
-      text,
-      offset,
-      length,
-    );
-  }
-}
-
-/// @nodoc
-const $AutoCompleteItem = _$AutoCompleteItemTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AutoCompleteItem {
@@ -51,84 +35,86 @@ mixin _$AutoCompleteItem {
 /// @nodoc
 abstract class $AutoCompleteItemCopyWith<$Res> {
   factory $AutoCompleteItemCopyWith(AutoCompleteItem value, $Res Function(AutoCompleteItem) then) =
-      _$AutoCompleteItemCopyWithImpl<$Res>;
+      _$AutoCompleteItemCopyWithImpl<$Res, AutoCompleteItem>;
+  @useResult
   $Res call({String id, String text, int offset, int length});
 }
 
 /// @nodoc
-class _$AutoCompleteItemCopyWithImpl<$Res> implements $AutoCompleteItemCopyWith<$Res> {
+class _$AutoCompleteItemCopyWithImpl<$Res, $Val extends AutoCompleteItem> implements $AutoCompleteItemCopyWith<$Res> {
   _$AutoCompleteItemCopyWithImpl(this._value, this._then);
 
-  final AutoCompleteItem _value;
   // ignore: unused_field
-  final $Res Function(AutoCompleteItem) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? text = freezed,
-    Object? offset = freezed,
-    Object? length = freezed,
+    Object? id = null,
+    Object? text = null,
+    Object? offset = null,
+    Object? length = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      offset: offset == freezed
+      offset: null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int,
-      length: length == freezed
+      length: null == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$AutoCompleteItemCopyWith<$Res> implements $AutoCompleteItemCopyWith<$Res> {
-  factory _$AutoCompleteItemCopyWith(_AutoCompleteItem value, $Res Function(_AutoCompleteItem) then) =
-      __$AutoCompleteItemCopyWithImpl<$Res>;
+abstract class _$$_AutoCompleteItemCopyWith<$Res> implements $AutoCompleteItemCopyWith<$Res> {
+  factory _$$_AutoCompleteItemCopyWith(_$_AutoCompleteItem value, $Res Function(_$_AutoCompleteItem) then) =
+      __$$_AutoCompleteItemCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String text, int offset, int length});
 }
 
 /// @nodoc
-class __$AutoCompleteItemCopyWithImpl<$Res> extends _$AutoCompleteItemCopyWithImpl<$Res>
-    implements _$AutoCompleteItemCopyWith<$Res> {
-  __$AutoCompleteItemCopyWithImpl(_AutoCompleteItem _value, $Res Function(_AutoCompleteItem) _then)
-      : super(_value, (v) => _then(v as _AutoCompleteItem));
+class __$$_AutoCompleteItemCopyWithImpl<$Res> extends _$AutoCompleteItemCopyWithImpl<$Res, _$_AutoCompleteItem>
+    implements _$$_AutoCompleteItemCopyWith<$Res> {
+  __$$_AutoCompleteItemCopyWithImpl(_$_AutoCompleteItem _value, $Res Function(_$_AutoCompleteItem) _then)
+      : super(_value, _then);
 
-  @override
-  _AutoCompleteItem get _value => super._value as _AutoCompleteItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? text = freezed,
-    Object? offset = freezed,
-    Object? length = freezed,
+    Object? id = null,
+    Object? text = null,
+    Object? offset = null,
+    Object? length = null,
   }) {
-    return _then(_AutoCompleteItem(
-      id == freezed
+    return _then(_$_AutoCompleteItem(
+      null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      text == freezed
+      null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      offset == freezed
+      null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int,
-      length == freezed
+      null == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int,
@@ -143,18 +129,18 @@ class _$_AutoCompleteItem implements _AutoCompleteItem {
 
   @override
   final String id;
-  @override
 
   /// The text (name of place) displayed in the autocomplete suggestions list.
-  final String text;
   @override
+  final String text;
 
   /// Assistive index to begin highlight of matched part of the [text] with
   /// the original query
-  final int offset;
   @override
+  final int offset;
 
   /// Length of matched part of the [text]
+  @override
   final int length;
 
   @override
@@ -165,46 +151,44 @@ class _$_AutoCompleteItem implements _AutoCompleteItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AutoCompleteItem &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.text, text) || const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.offset, offset) || const DeepCollectionEquality().equals(other.offset, offset)) &&
-            (identical(other.length, length) || const DeepCollectionEquality().equals(other.length, length)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AutoCompleteItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.offset, offset) || other.offset == offset) &&
+            (identical(other.length, length) || other.length == length));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(offset) ^
-      const DeepCollectionEquality().hash(length);
+  int get hashCode => Object.hash(runtimeType, id, text, offset, length);
 
   @JsonKey(ignore: true)
   @override
-  _$AutoCompleteItemCopyWith<_AutoCompleteItem> get copyWith =>
-      __$AutoCompleteItemCopyWithImpl<_AutoCompleteItem>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_AutoCompleteItemCopyWith<_$_AutoCompleteItem> get copyWith =>
+      __$$_AutoCompleteItemCopyWithImpl<_$_AutoCompleteItem>(this, _$identity);
 }
 
 abstract class _AutoCompleteItem implements AutoCompleteItem {
-  const factory _AutoCompleteItem(String id, String text, int offset, int length) = _$_AutoCompleteItem;
+  const factory _AutoCompleteItem(final String id, final String text, final int offset, final int length) =
+      _$_AutoCompleteItem;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
 
   /// The text (name of place) displayed in the autocomplete suggestions list.
-  String get text => throw _privateConstructorUsedError;
+  String get text;
   @override
 
   /// Assistive index to begin highlight of matched part of the [text] with
   /// the original query
-  int get offset => throw _privateConstructorUsedError;
+  int get offset;
   @override
 
   /// Length of matched part of the [text]
-  int get length => throw _privateConstructorUsedError;
+  int get length;
   @override
   @JsonKey(ignore: true)
-  _$AutoCompleteItemCopyWith<_AutoCompleteItem> get copyWith => throw _privateConstructorUsedError;
+  _$$_AutoCompleteItemCopyWith<_$_AutoCompleteItem> get copyWith => throw _privateConstructorUsedError;
 }

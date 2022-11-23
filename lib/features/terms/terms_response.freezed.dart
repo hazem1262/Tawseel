@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'terms_response.dart';
@@ -11,29 +12,11 @@ part of 'terms_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 TermsResponse _$TermsResponseFromJson(Map<String, dynamic> json) {
   return _TermsResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$TermsResponseTearOff {
-  const _$TermsResponseTearOff();
-
-  _TermsResponse call(TermsData data) {
-    return _TermsResponse(
-      data,
-    );
-  }
-
-  TermsResponse fromJson(Map<String, Object> json) {
-    return TermsResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TermsResponse = _$TermsResponseTearOff();
 
 /// @nodoc
 mixin _$TermsResponse {
@@ -47,45 +30,50 @@ mixin _$TermsResponse {
 /// @nodoc
 abstract class $TermsResponseCopyWith<$Res> {
   factory $TermsResponseCopyWith(TermsResponse value, $Res Function(TermsResponse) then) =
-      _$TermsResponseCopyWithImpl<$Res>;
+      _$TermsResponseCopyWithImpl<$Res, TermsResponse>;
+  @useResult
   $Res call({TermsData data});
 
   $TermsDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$TermsResponseCopyWithImpl<$Res> implements $TermsResponseCopyWith<$Res> {
+class _$TermsResponseCopyWithImpl<$Res, $Val extends TermsResponse> implements $TermsResponseCopyWith<$Res> {
   _$TermsResponseCopyWithImpl(this._value, this._then);
 
-  final TermsResponse _value;
   // ignore: unused_field
-  final $Res Function(TermsResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TermsData,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TermsDataCopyWith<$Res> get data {
     return $TermsDataCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
+      return _then(_value.copyWith(data: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$TermsResponseCopyWith<$Res> implements $TermsResponseCopyWith<$Res> {
-  factory _$TermsResponseCopyWith(_TermsResponse value, $Res Function(_TermsResponse) then) =
-      __$TermsResponseCopyWithImpl<$Res>;
+abstract class _$$_TermsResponseCopyWith<$Res> implements $TermsResponseCopyWith<$Res> {
+  factory _$$_TermsResponseCopyWith(_$_TermsResponse value, $Res Function(_$_TermsResponse) then) =
+      __$$_TermsResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({TermsData data});
 
   @override
@@ -93,20 +81,17 @@ abstract class _$TermsResponseCopyWith<$Res> implements $TermsResponseCopyWith<$
 }
 
 /// @nodoc
-class __$TermsResponseCopyWithImpl<$Res> extends _$TermsResponseCopyWithImpl<$Res>
-    implements _$TermsResponseCopyWith<$Res> {
-  __$TermsResponseCopyWithImpl(_TermsResponse _value, $Res Function(_TermsResponse) _then)
-      : super(_value, (v) => _then(v as _TermsResponse));
+class __$$_TermsResponseCopyWithImpl<$Res> extends _$TermsResponseCopyWithImpl<$Res, _$_TermsResponse>
+    implements _$$_TermsResponseCopyWith<$Res> {
+  __$$_TermsResponseCopyWithImpl(_$_TermsResponse _value, $Res Function(_$_TermsResponse) _then) : super(_value, _then);
 
-  @override
-  _TermsResponse get _value => super._value as _TermsResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_TermsResponse(
-      data == freezed
+    return _then(_$_TermsResponse(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as TermsData,
@@ -132,60 +117,44 @@ class _$_TermsResponse implements _TermsResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TermsResponse &&
-            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TermsResponse &&
+            (identical(other.data, data) || other.data == data));
   }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
-  _$TermsResponseCopyWith<_TermsResponse> get copyWith =>
-      __$TermsResponseCopyWithImpl<_TermsResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TermsResponseCopyWith<_$_TermsResponse> get copyWith =>
+      __$$_TermsResponseCopyWithImpl<_$_TermsResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TermsResponseToJson(this);
+    return _$$_TermsResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _TermsResponse implements TermsResponse {
-  factory _TermsResponse(TermsData data) = _$_TermsResponse;
+  factory _TermsResponse(final TermsData data) = _$_TermsResponse;
 
   factory _TermsResponse.fromJson(Map<String, dynamic> json) = _$_TermsResponse.fromJson;
 
   @override
-  TermsData get data => throw _privateConstructorUsedError;
+  TermsData get data;
   @override
   @JsonKey(ignore: true)
-  _$TermsResponseCopyWith<_TermsResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_TermsResponseCopyWith<_$_TermsResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 TermsData _$TermsDataFromJson(Map<String, dynamic> json) {
   return _TermsData.fromJson(json);
 }
-
-/// @nodoc
-class _$TermsDataTearOff {
-  const _$TermsDataTearOff();
-
-  _TermsData call(int id, String? title, String? slug, String? content) {
-    return _TermsData(
-      id,
-      title,
-      slug,
-      content,
-    );
-  }
-
-  TermsData fromJson(Map<String, Object> json) {
-    return TermsData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TermsData = _$TermsDataTearOff();
 
 /// @nodoc
 mixin _$TermsData {
@@ -201,82 +170,85 @@ mixin _$TermsData {
 
 /// @nodoc
 abstract class $TermsDataCopyWith<$Res> {
-  factory $TermsDataCopyWith(TermsData value, $Res Function(TermsData) then) = _$TermsDataCopyWithImpl<$Res>;
+  factory $TermsDataCopyWith(TermsData value, $Res Function(TermsData) then) = _$TermsDataCopyWithImpl<$Res, TermsData>;
+  @useResult
   $Res call({int id, String? title, String? slug, String? content});
 }
 
 /// @nodoc
-class _$TermsDataCopyWithImpl<$Res> implements $TermsDataCopyWith<$Res> {
+class _$TermsDataCopyWithImpl<$Res, $Val extends TermsData> implements $TermsDataCopyWith<$Res> {
   _$TermsDataCopyWithImpl(this._value, this._then);
 
-  final TermsData _value;
   // ignore: unused_field
-  final $Res Function(TermsData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? title = freezed,
     Object? slug = freezed,
     Object? content = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      slug: slug == freezed
+      slug: freezed == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String?,
-      content: content == freezed
+      content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TermsDataCopyWith<$Res> implements $TermsDataCopyWith<$Res> {
-  factory _$TermsDataCopyWith(_TermsData value, $Res Function(_TermsData) then) = __$TermsDataCopyWithImpl<$Res>;
+abstract class _$$_TermsDataCopyWith<$Res> implements $TermsDataCopyWith<$Res> {
+  factory _$$_TermsDataCopyWith(_$_TermsData value, $Res Function(_$_TermsData) then) =
+      __$$_TermsDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int id, String? title, String? slug, String? content});
 }
 
 /// @nodoc
-class __$TermsDataCopyWithImpl<$Res> extends _$TermsDataCopyWithImpl<$Res> implements _$TermsDataCopyWith<$Res> {
-  __$TermsDataCopyWithImpl(_TermsData _value, $Res Function(_TermsData) _then)
-      : super(_value, (v) => _then(v as _TermsData));
+class __$$_TermsDataCopyWithImpl<$Res> extends _$TermsDataCopyWithImpl<$Res, _$_TermsData>
+    implements _$$_TermsDataCopyWith<$Res> {
+  __$$_TermsDataCopyWithImpl(_$_TermsData _value, $Res Function(_$_TermsData) _then) : super(_value, _then);
 
-  @override
-  _TermsData get _value => super._value as _TermsData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? title = freezed,
     Object? slug = freezed,
     Object? content = freezed,
   }) {
-    return _then(_TermsData(
-      id == freezed
+    return _then(_$_TermsData(
+      null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title == freezed
+      freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      slug == freezed
+      freezed == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String?,
-      content == freezed
+      freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -308,45 +280,45 @@ class _$_TermsData implements _TermsData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TermsData &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.slug, slug) || const DeepCollectionEquality().equals(other.slug, slug)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TermsData &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
+            (identical(other.content, content) || other.content == content));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(slug) ^
-      const DeepCollectionEquality().hash(content);
 
   @JsonKey(ignore: true)
   @override
-  _$TermsDataCopyWith<_TermsData> get copyWith => __$TermsDataCopyWithImpl<_TermsData>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, title, slug, content);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TermsDataCopyWith<_$_TermsData> get copyWith => __$$_TermsDataCopyWithImpl<_$_TermsData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TermsDataToJson(this);
+    return _$$_TermsDataToJson(
+      this,
+    );
   }
 }
 
 abstract class _TermsData implements TermsData {
-  factory _TermsData(int id, String? title, String? slug, String? content) = _$_TermsData;
+  factory _TermsData(final int id, final String? title, final String? slug, final String? content) = _$_TermsData;
 
   factory _TermsData.fromJson(Map<String, dynamic> json) = _$_TermsData.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @override
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
-  String? get slug => throw _privateConstructorUsedError;
+  String? get slug;
   @override
-  String? get content => throw _privateConstructorUsedError;
+  String? get content;
   @override
   @JsonKey(ignore: true)
-  _$TermsDataCopyWith<_TermsData> get copyWith => throw _privateConstructorUsedError;
+  _$$_TermsDataCopyWith<_$_TermsData> get copyWith => throw _privateConstructorUsedError;
 }

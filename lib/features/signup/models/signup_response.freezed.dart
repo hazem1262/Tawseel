@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'signup_response.dart';
@@ -11,29 +12,11 @@ part of 'signup_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) {
   return _SignUpResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$SignUpResponseTearOff {
-  const _$SignUpResponseTearOff();
-
-  _SignUpResponse call(SignUpDataItem data) {
-    return _SignUpResponse(
-      data,
-    );
-  }
-
-  SignUpResponse fromJson(Map<String, Object> json) {
-    return SignUpResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SignUpResponse = _$SignUpResponseTearOff();
 
 /// @nodoc
 mixin _$SignUpResponse {
@@ -47,45 +30,50 @@ mixin _$SignUpResponse {
 /// @nodoc
 abstract class $SignUpResponseCopyWith<$Res> {
   factory $SignUpResponseCopyWith(SignUpResponse value, $Res Function(SignUpResponse) then) =
-      _$SignUpResponseCopyWithImpl<$Res>;
+      _$SignUpResponseCopyWithImpl<$Res, SignUpResponse>;
+  @useResult
   $Res call({SignUpDataItem data});
 
   $SignUpDataItemCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class _$SignUpResponseCopyWithImpl<$Res> implements $SignUpResponseCopyWith<$Res> {
+class _$SignUpResponseCopyWithImpl<$Res, $Val extends SignUpResponse> implements $SignUpResponseCopyWith<$Res> {
   _$SignUpResponseCopyWithImpl(this._value, this._then);
 
-  final SignUpResponse _value;
   // ignore: unused_field
-  final $Res Function(SignUpResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as SignUpDataItem,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SignUpDataItemCopyWith<$Res> get data {
     return $SignUpDataItemCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
+      return _then(_value.copyWith(data: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$SignUpResponseCopyWith<$Res> implements $SignUpResponseCopyWith<$Res> {
-  factory _$SignUpResponseCopyWith(_SignUpResponse value, $Res Function(_SignUpResponse) then) =
-      __$SignUpResponseCopyWithImpl<$Res>;
+abstract class _$$_SignUpResponseCopyWith<$Res> implements $SignUpResponseCopyWith<$Res> {
+  factory _$$_SignUpResponseCopyWith(_$_SignUpResponse value, $Res Function(_$_SignUpResponse) then) =
+      __$$_SignUpResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({SignUpDataItem data});
 
   @override
@@ -93,20 +81,18 @@ abstract class _$SignUpResponseCopyWith<$Res> implements $SignUpResponseCopyWith
 }
 
 /// @nodoc
-class __$SignUpResponseCopyWithImpl<$Res> extends _$SignUpResponseCopyWithImpl<$Res>
-    implements _$SignUpResponseCopyWith<$Res> {
-  __$SignUpResponseCopyWithImpl(_SignUpResponse _value, $Res Function(_SignUpResponse) _then)
-      : super(_value, (v) => _then(v as _SignUpResponse));
+class __$$_SignUpResponseCopyWithImpl<$Res> extends _$SignUpResponseCopyWithImpl<$Res, _$_SignUpResponse>
+    implements _$$_SignUpResponseCopyWith<$Res> {
+  __$$_SignUpResponseCopyWithImpl(_$_SignUpResponse _value, $Res Function(_$_SignUpResponse) _then)
+      : super(_value, _then);
 
-  @override
-  _SignUpResponse get _value => super._value as _SignUpResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_SignUpResponse(
-      data == freezed
+    return _then(_$_SignUpResponse(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as SignUpDataItem,
@@ -132,57 +118,44 @@ class _$_SignUpResponse implements _SignUpResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SignUpResponse &&
-            (identical(other.data, data) || const DeepCollectionEquality().equals(other.data, data)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SignUpResponse &&
+            (identical(other.data, data) || other.data == data));
   }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
 
   @JsonKey(ignore: true)
   @override
-  _$SignUpResponseCopyWith<_SignUpResponse> get copyWith =>
-      __$SignUpResponseCopyWithImpl<_SignUpResponse>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SignUpResponseCopyWith<_$_SignUpResponse> get copyWith =>
+      __$$_SignUpResponseCopyWithImpl<_$_SignUpResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SignUpResponseToJson(this);
+    return _$$_SignUpResponseToJson(
+      this,
+    );
   }
 }
 
 abstract class _SignUpResponse implements SignUpResponse {
-  const factory _SignUpResponse(SignUpDataItem data) = _$_SignUpResponse;
+  const factory _SignUpResponse(final SignUpDataItem data) = _$_SignUpResponse;
 
   factory _SignUpResponse.fromJson(Map<String, dynamic> json) = _$_SignUpResponse.fromJson;
 
   @override
-  SignUpDataItem get data => throw _privateConstructorUsedError;
+  SignUpDataItem get data;
   @override
   @JsonKey(ignore: true)
-  _$SignUpResponseCopyWith<_SignUpResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_SignUpResponseCopyWith<_$_SignUpResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 SignUpDataItem _$SignUpDataItemFromJson(Map<String, dynamic> json) {
   return _SignUpDataItem.fromJson(json);
 }
-
-/// @nodoc
-class _$SignUpDataItemTearOff {
-  const _$SignUpDataItemTearOff();
-
-  _SignUpDataItem call(UserItem user) {
-    return _SignUpDataItem(
-      user,
-    );
-  }
-
-  SignUpDataItem fromJson(Map<String, Object> json) {
-    return SignUpDataItem.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SignUpDataItem = _$SignUpDataItemTearOff();
 
 /// @nodoc
 mixin _$SignUpDataItem {
@@ -196,45 +169,50 @@ mixin _$SignUpDataItem {
 /// @nodoc
 abstract class $SignUpDataItemCopyWith<$Res> {
   factory $SignUpDataItemCopyWith(SignUpDataItem value, $Res Function(SignUpDataItem) then) =
-      _$SignUpDataItemCopyWithImpl<$Res>;
+      _$SignUpDataItemCopyWithImpl<$Res, SignUpDataItem>;
+  @useResult
   $Res call({UserItem user});
 
   $UserItemCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$SignUpDataItemCopyWithImpl<$Res> implements $SignUpDataItemCopyWith<$Res> {
+class _$SignUpDataItemCopyWithImpl<$Res, $Val extends SignUpDataItem> implements $SignUpDataItemCopyWith<$Res> {
   _$SignUpDataItemCopyWithImpl(this._value, this._then);
 
-  final SignUpDataItem _value;
   // ignore: unused_field
-  final $Res Function(SignUpDataItem) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_value.copyWith(
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserItem,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserItemCopyWith<$Res> get user {
     return $UserItemCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$SignUpDataItemCopyWith<$Res> implements $SignUpDataItemCopyWith<$Res> {
-  factory _$SignUpDataItemCopyWith(_SignUpDataItem value, $Res Function(_SignUpDataItem) then) =
-      __$SignUpDataItemCopyWithImpl<$Res>;
+abstract class _$$_SignUpDataItemCopyWith<$Res> implements $SignUpDataItemCopyWith<$Res> {
+  factory _$$_SignUpDataItemCopyWith(_$_SignUpDataItem value, $Res Function(_$_SignUpDataItem) then) =
+      __$$_SignUpDataItemCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({UserItem user});
 
   @override
@@ -242,20 +220,18 @@ abstract class _$SignUpDataItemCopyWith<$Res> implements $SignUpDataItemCopyWith
 }
 
 /// @nodoc
-class __$SignUpDataItemCopyWithImpl<$Res> extends _$SignUpDataItemCopyWithImpl<$Res>
-    implements _$SignUpDataItemCopyWith<$Res> {
-  __$SignUpDataItemCopyWithImpl(_SignUpDataItem _value, $Res Function(_SignUpDataItem) _then)
-      : super(_value, (v) => _then(v as _SignUpDataItem));
+class __$$_SignUpDataItemCopyWithImpl<$Res> extends _$SignUpDataItemCopyWithImpl<$Res, _$_SignUpDataItem>
+    implements _$$_SignUpDataItemCopyWith<$Res> {
+  __$$_SignUpDataItemCopyWithImpl(_$_SignUpDataItem _value, $Res Function(_$_SignUpDataItem) _then)
+      : super(_value, _then);
 
-  @override
-  _SignUpDataItem get _value => super._value as _SignUpDataItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
-    return _then(_SignUpDataItem(
-      user == freezed
+    return _then(_$_SignUpDataItem(
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserItem,
@@ -281,32 +257,37 @@ class _$_SignUpDataItem implements _SignUpDataItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SignUpDataItem &&
-            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _$_SignUpDataItem &&
+            (identical(other.user, user) || other.user == user));
   }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
-  _$SignUpDataItemCopyWith<_SignUpDataItem> get copyWith =>
-      __$SignUpDataItemCopyWithImpl<_SignUpDataItem>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SignUpDataItemCopyWith<_$_SignUpDataItem> get copyWith =>
+      __$$_SignUpDataItemCopyWithImpl<_$_SignUpDataItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SignUpDataItemToJson(this);
+    return _$$_SignUpDataItemToJson(
+      this,
+    );
   }
 }
 
 abstract class _SignUpDataItem implements SignUpDataItem {
-  const factory _SignUpDataItem(UserItem user) = _$_SignUpDataItem;
+  const factory _SignUpDataItem(final UserItem user) = _$_SignUpDataItem;
 
   factory _SignUpDataItem.fromJson(Map<String, dynamic> json) = _$_SignUpDataItem.fromJson;
 
   @override
-  UserItem get user => throw _privateConstructorUsedError;
+  UserItem get user;
   @override
   @JsonKey(ignore: true)
-  _$SignUpDataItemCopyWith<_SignUpDataItem> get copyWith => throw _privateConstructorUsedError;
+  _$$_SignUpDataItemCopyWith<_$_SignUpDataItem> get copyWith => throw _privateConstructorUsedError;
 }

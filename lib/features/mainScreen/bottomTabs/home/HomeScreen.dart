@@ -12,6 +12,7 @@ import 'package:focused_menu/modals.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:tawseel/common/widgets/MarketPlaceShimmer.dart';
 import 'package:tawseel/components/FoucsedMenu.dart';
 import 'package:tawseel/components/SectionWithViewAll.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
@@ -92,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       builder: (context, state) {
                         return yourLocation(
                           context,
-                          state.profileIsLoading,
+                          state.nearbyMarketPlaceIsLoading,
                           state.userAddress,
                         );
                       },
@@ -591,33 +592,6 @@ Widget adItem(AdsItem ad, Function onClick) {
             errorWidget: (context, url, error) => Icon(Icons.error),
           ),
         )),
-  );
-}
-
-Widget marketPlaceShimmer([int count = 4]) {
-  return Padding(
-    padding: const EdgeInsets.only(top: 8.0, left: 16, right: 16),
-    child: Container(
-      constraints: BoxConstraints(
-        minHeight: screenHeight * 0.2,
-      ),
-      child: Column(
-          children: List.generate(
-              count,
-              (index) => Shimmer.fromColors(
-                    baseColor: Colors.grey.shade200,
-                    highlightColor: ThemeManager.primary,
-                    child: Container(
-                      margin: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      width: screenWidth,
-                      height: screenHeight * 0.2,
-                    ),
-                  )).toList()),
-    ),
   );
 }
 

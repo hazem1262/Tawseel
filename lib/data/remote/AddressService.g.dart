@@ -6,8 +6,13 @@ part of 'AddressService.dart';
 // RetrofitGenerator
 // **************************************************************************
 
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+
 class _AddressService implements AddressService {
-  _AddressService(this._dio, {this.baseUrl}) {
+  _AddressService(
+    this._dio, {
+    this.baseUrl,
+  }) {
     baseUrl ??= 'https://tawseelclub.com/api/';
   }
 
@@ -16,30 +21,73 @@ class _AddressService implements AddressService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<AddressResponse>> createAddress(name, address, lat, long, is_default) async {
+  Future<HttpResponse<AddressResponse>> createAddress(
+    name,
+    address,
+    lat,
+    long,
+    is_default,
+  ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {'name': name, 'address': address, 'lat': lat, 'long': long, 'is_default': is_default};
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<HttpResponse<AddressResponse>>(
-        Options(method: 'POST', headers: _headers, extra: _extra, contentType: 'application/x-www-form-urlencoded')
-            .compose(_dio.options, 'addresses', queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final _data = {
+      'name': name,
+      'address': address,
+      'lat': lat,
+      'long': long,
+      'is_default': is_default,
+    };
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<HttpResponse<AddressResponse>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+        .compose(
+          _dio.options,
+          'addresses',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = AddressResponse.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
   }
 
   @override
-  Future<HttpResponse<AddressResponse>> updateAddress(id, name, address, lat, long, is_default) async {
+  Future<HttpResponse<AddressResponse>> updateAddress(
+    id,
+    name,
+    address,
+    lat,
+    long,
+    is_default,
+  ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {'name': name, 'address': address, 'lat': lat, 'long': long, 'is_default': is_default};
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<HttpResponse<AddressResponse>>(
-        Options(method: 'POST', headers: _headers, extra: _extra, contentType: 'application/x-www-form-urlencoded')
-            .compose(_dio.options, 'addresses/$id', queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final _data = {
+      'name': name,
+      'address': address,
+      'lat': lat,
+      'long': long,
+      'is_default': is_default,
+    };
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<HttpResponse<AddressResponse>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+        .compose(
+          _dio.options,
+          'addresses/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = AddressResponse.fromJson(_result.data!);
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
@@ -51,10 +99,19 @@ class _AddressService implements AddressService {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<String>(_setStreamType<HttpResponse<String>>(
-        Options(method: 'DELETE', headers: _headers, extra: _extra, contentType: 'application/x-www-form-urlencoded')
-            .compose(_dio.options, 'addresses/$id', queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final _result = await _dio.fetch<String>(_setStreamType<HttpResponse<String>>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+        .compose(
+          _dio.options,
+          'addresses/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data!;
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;

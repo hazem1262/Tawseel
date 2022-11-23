@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'SupportBloc.dart';
@@ -11,28 +12,12 @@ part of 'SupportBloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SupportEventTearOff {
-  const _$SupportEventTearOff();
-
-  SendSupportMessage sendSupportMessage(String subject, String message) {
-    return SendSupportMessage(
-      subject,
-      message,
-    );
-  }
-}
-
-/// @nodoc
-const $SupportEvent = _$SupportEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SupportEvent {
   String get subject => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String subject, String message) sendSupportMessage,
@@ -40,7 +25,7 @@ mixin _$SupportEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String subject, String message)? sendSupportMessage,
+    TResult? Function(String subject, String message)? sendSupportMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,7 +41,7 @@ mixin _$SupportEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SendSupportMessage value)? sendSupportMessage,
+    TResult? Function(SendSupportMessage value)? sendSupportMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,64 +58,66 @@ mixin _$SupportEvent {
 /// @nodoc
 abstract class $SupportEventCopyWith<$Res> {
   factory $SupportEventCopyWith(SupportEvent value, $Res Function(SupportEvent) then) =
-      _$SupportEventCopyWithImpl<$Res>;
+      _$SupportEventCopyWithImpl<$Res, SupportEvent>;
+  @useResult
   $Res call({String subject, String message});
 }
 
 /// @nodoc
-class _$SupportEventCopyWithImpl<$Res> implements $SupportEventCopyWith<$Res> {
+class _$SupportEventCopyWithImpl<$Res, $Val extends SupportEvent> implements $SupportEventCopyWith<$Res> {
   _$SupportEventCopyWithImpl(this._value, this._then);
 
-  final SupportEvent _value;
   // ignore: unused_field
-  final $Res Function(SupportEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? subject = freezed,
-    Object? message = freezed,
+    Object? subject = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      subject: subject == freezed
+      subject: null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String,
-      message: message == freezed
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $SendSupportMessageCopyWith<$Res> implements $SupportEventCopyWith<$Res> {
-  factory $SendSupportMessageCopyWith(SendSupportMessage value, $Res Function(SendSupportMessage) then) =
-      _$SendSupportMessageCopyWithImpl<$Res>;
+abstract class _$$SendSupportMessageCopyWith<$Res> implements $SupportEventCopyWith<$Res> {
+  factory _$$SendSupportMessageCopyWith(_$SendSupportMessage value, $Res Function(_$SendSupportMessage) then) =
+      __$$SendSupportMessageCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String subject, String message});
 }
 
 /// @nodoc
-class _$SendSupportMessageCopyWithImpl<$Res> extends _$SupportEventCopyWithImpl<$Res>
-    implements $SendSupportMessageCopyWith<$Res> {
-  _$SendSupportMessageCopyWithImpl(SendSupportMessage _value, $Res Function(SendSupportMessage) _then)
-      : super(_value, (v) => _then(v as SendSupportMessage));
+class __$$SendSupportMessageCopyWithImpl<$Res> extends _$SupportEventCopyWithImpl<$Res, _$SendSupportMessage>
+    implements _$$SendSupportMessageCopyWith<$Res> {
+  __$$SendSupportMessageCopyWithImpl(_$SendSupportMessage _value, $Res Function(_$SendSupportMessage) _then)
+      : super(_value, _then);
 
-  @override
-  SendSupportMessage get _value => super._value as SendSupportMessage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? subject = freezed,
-    Object? message = freezed,
+    Object? subject = null,
+    Object? message = null,
   }) {
-    return _then(SendSupportMessage(
-      subject == freezed
+    return _then(_$SendSupportMessage(
+      null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String,
-      message == freezed
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -156,21 +143,20 @@ class _$SendSupportMessage implements SendSupportMessage {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SendSupportMessage &&
-            (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)) &&
-            (identical(other.message, message) || const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _$SendSupportMessage &&
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(subject) ^
-      const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, subject, message);
 
   @JsonKey(ignore: true)
   @override
-  $SendSupportMessageCopyWith<SendSupportMessage> get copyWith =>
-      _$SendSupportMessageCopyWithImpl<SendSupportMessage>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SendSupportMessageCopyWith<_$SendSupportMessage> get copyWith =>
+      __$$SendSupportMessageCopyWithImpl<_$SendSupportMessage>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -183,7 +169,7 @@ class _$SendSupportMessage implements SendSupportMessage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String subject, String message)? sendSupportMessage,
+    TResult? Function(String subject, String message)? sendSupportMessage,
   }) {
     return sendSupportMessage?.call(subject, message);
   }
@@ -211,7 +197,7 @@ class _$SendSupportMessage implements SendSupportMessage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SendSupportMessage value)? sendSupportMessage,
+    TResult? Function(SendSupportMessage value)? sendSupportMessage,
   }) {
     return sendSupportMessage?.call(this);
   }
@@ -230,32 +216,16 @@ class _$SendSupportMessage implements SendSupportMessage {
 }
 
 abstract class SendSupportMessage implements SupportEvent {
-  const factory SendSupportMessage(String subject, String message) = _$SendSupportMessage;
+  const factory SendSupportMessage(final String subject, final String message) = _$SendSupportMessage;
 
   @override
-  String get subject => throw _privateConstructorUsedError;
+  String get subject;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
-  $SendSupportMessageCopyWith<SendSupportMessage> get copyWith => throw _privateConstructorUsedError;
+  _$$SendSupportMessageCopyWith<_$SendSupportMessage> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SupportStateTearOff {
-  const _$SupportStateTearOff();
-
-  SupportDefaultState call([bool isLoading = false, String error = "", bool messageSentSuccessfully = false]) {
-    return SupportDefaultState(
-      isLoading,
-      error,
-      messageSentSuccessfully,
-    );
-  }
-}
-
-/// @nodoc
-const $SupportState = _$SupportStateTearOff();
 
 /// @nodoc
 mixin _$SupportState {
@@ -270,74 +240,76 @@ mixin _$SupportState {
 /// @nodoc
 abstract class $SupportStateCopyWith<$Res> {
   factory $SupportStateCopyWith(SupportState value, $Res Function(SupportState) then) =
-      _$SupportStateCopyWithImpl<$Res>;
+      _$SupportStateCopyWithImpl<$Res, SupportState>;
+  @useResult
   $Res call({bool isLoading, String error, bool messageSentSuccessfully});
 }
 
 /// @nodoc
-class _$SupportStateCopyWithImpl<$Res> implements $SupportStateCopyWith<$Res> {
+class _$SupportStateCopyWithImpl<$Res, $Val extends SupportState> implements $SupportStateCopyWith<$Res> {
   _$SupportStateCopyWithImpl(this._value, this._then);
 
-  final SupportState _value;
   // ignore: unused_field
-  final $Res Function(SupportState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
-    Object? error = freezed,
-    Object? messageSentSuccessfully = freezed,
+    Object? isLoading = null,
+    Object? error = null,
+    Object? messageSentSuccessfully = null,
   }) {
     return _then(_value.copyWith(
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
-      messageSentSuccessfully: messageSentSuccessfully == freezed
+      messageSentSuccessfully: null == messageSentSuccessfully
           ? _value.messageSentSuccessfully
           : messageSentSuccessfully // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $SupportDefaultStateCopyWith<$Res> implements $SupportStateCopyWith<$Res> {
-  factory $SupportDefaultStateCopyWith(SupportDefaultState value, $Res Function(SupportDefaultState) then) =
-      _$SupportDefaultStateCopyWithImpl<$Res>;
+abstract class _$$SupportDefaultStateCopyWith<$Res> implements $SupportStateCopyWith<$Res> {
+  factory _$$SupportDefaultStateCopyWith(_$SupportDefaultState value, $Res Function(_$SupportDefaultState) then) =
+      __$$SupportDefaultStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool isLoading, String error, bool messageSentSuccessfully});
 }
 
 /// @nodoc
-class _$SupportDefaultStateCopyWithImpl<$Res> extends _$SupportStateCopyWithImpl<$Res>
-    implements $SupportDefaultStateCopyWith<$Res> {
-  _$SupportDefaultStateCopyWithImpl(SupportDefaultState _value, $Res Function(SupportDefaultState) _then)
-      : super(_value, (v) => _then(v as SupportDefaultState));
+class __$$SupportDefaultStateCopyWithImpl<$Res> extends _$SupportStateCopyWithImpl<$Res, _$SupportDefaultState>
+    implements _$$SupportDefaultStateCopyWith<$Res> {
+  __$$SupportDefaultStateCopyWithImpl(_$SupportDefaultState _value, $Res Function(_$SupportDefaultState) _then)
+      : super(_value, _then);
 
-  @override
-  SupportDefaultState get _value => super._value as SupportDefaultState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
-    Object? error = freezed,
-    Object? messageSentSuccessfully = freezed,
+    Object? isLoading = null,
+    Object? error = null,
+    Object? messageSentSuccessfully = null,
   }) {
-    return _then(SupportDefaultState(
-      isLoading == freezed
+    return _then(_$SupportDefaultState(
+      null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      error == freezed
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
-      messageSentSuccessfully == freezed
+      null == messageSentSuccessfully
           ? _value.messageSentSuccessfully
           : messageSentSuccessfully // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -350,14 +322,14 @@ class _$SupportDefaultStateCopyWithImpl<$Res> extends _$SupportStateCopyWithImpl
 class _$SupportDefaultState implements SupportDefaultState {
   const _$SupportDefaultState([this.isLoading = false, this.error = "", this.messageSentSuccessfully = false]);
 
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey(defaultValue: "")
   @override
+  @JsonKey()
   final String error;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool messageSentSuccessfully;
 
   @override
@@ -368,38 +340,35 @@ class _$SupportDefaultState implements SupportDefaultState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SupportDefaultState &&
-            (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality().equals(other.isLoading, isLoading)) &&
-            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$SupportDefaultState &&
+            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
+            (identical(other.error, error) || other.error == error) &&
             (identical(other.messageSentSuccessfully, messageSentSuccessfully) ||
-                const DeepCollectionEquality().equals(other.messageSentSuccessfully, messageSentSuccessfully)));
+                other.messageSentSuccessfully == messageSentSuccessfully));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(messageSentSuccessfully);
+  int get hashCode => Object.hash(runtimeType, isLoading, error, messageSentSuccessfully);
 
   @JsonKey(ignore: true)
   @override
-  $SupportDefaultStateCopyWith<SupportDefaultState> get copyWith =>
-      _$SupportDefaultStateCopyWithImpl<SupportDefaultState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SupportDefaultStateCopyWith<_$SupportDefaultState> get copyWith =>
+      __$$SupportDefaultStateCopyWithImpl<_$SupportDefaultState>(this, _$identity);
 }
 
 abstract class SupportDefaultState implements SupportState {
-  const factory SupportDefaultState([bool isLoading, String error, bool messageSentSuccessfully]) =
+  const factory SupportDefaultState([final bool isLoading, final String error, final bool messageSentSuccessfully]) =
       _$SupportDefaultState;
 
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @override
-  bool get messageSentSuccessfully => throw _privateConstructorUsedError;
+  bool get messageSentSuccessfully;
   @override
   @JsonKey(ignore: true)
-  $SupportDefaultStateCopyWith<SupportDefaultState> get copyWith => throw _privateConstructorUsedError;
+  _$$SupportDefaultStateCopyWith<_$SupportDefaultState> get copyWith => throw _privateConstructorUsedError;
 }
