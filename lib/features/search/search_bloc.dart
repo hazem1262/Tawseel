@@ -8,6 +8,7 @@ import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesR
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRepository.dart';
 import 'package:tawseel/features/search/FilterDate.dart';
 import 'package:tawseel/features/search/bloc/filter_repository.dart';
+import 'package:tawseel/utils/FavouriteManager.dart';
 import 'package:tawseel/utils/ktx.dart';
 
 part 'search_bloc.freezed.dart';
@@ -55,6 +56,7 @@ class SearchBlocState with _$SearchBlocState {
 }
 
 class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
+  static final blocTag = "SearchBloc";
   IMarketPlaceRepository marketPlacesRepo;
   IFilterRepository filterRepo;
 
@@ -193,6 +195,7 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
         );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
+          FavouriteManager.notify();
           emit(
             state.copyWith(
                 searchList: state.searchList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
@@ -219,6 +222,7 @@ class SearchBloc extends Bloc<SearchBlocEvent, SearchBlocState> {
         );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
+          FavouriteManager.notify();
           emit(
             state.copyWith(
                 searchList: state.searchList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),

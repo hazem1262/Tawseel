@@ -95,7 +95,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> implements Favo
         );
         try {
           await repo.removeFromFavorites(event.id);
-          FavouriteManager.notify(blocTag);
+          FavouriteManager.notify(tag: blocTag);
           emit(state.copyWith(
             favoritesList: state.favoritesList.removeItem(id: event.id),
             emptyFirstPage: state.favoritesList.isEmpty,
@@ -127,7 +127,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> implements Favo
         );
         try {
           await repo.removeFromFavorites(event.id);
-          FavouriteManager.notify(blocTag);
+          FavouriteManager.notify(tag: blocTag);
           emit(
             state.copyWith(
               favoritesList: state.favoritesList,

@@ -127,7 +127,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> implements FavouriteOb
         );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
-          FavouriteManager.notify(blocTag);
+          FavouriteManager.notify(tag: blocTag);
           emit(
             state.copyWith(
                 nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
@@ -152,7 +152,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> implements FavouriteOb
         );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
-          FavouriteManager.notify(blocTag);
+          FavouriteManager.notify(tag: blocTag);
           emit(
             state.copyWith(
                 nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),

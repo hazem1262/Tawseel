@@ -15,7 +15,7 @@ class FavouriteManager {
     observerList.remove(observer);
   }
 
-  static void notify(String tag) {
+  static void notify({String? tag}) {
     for (var element in observerList) {
       if (element.tag != tag) {
         element.update();

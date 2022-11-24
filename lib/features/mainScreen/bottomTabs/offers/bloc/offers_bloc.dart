@@ -86,7 +86,7 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> implements FavouriteObse
         );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
-          FavouriteManager.notify(blocTag);
+          FavouriteManager.notify(tag: blocTag);
           emit(
             state.copyWith(
                 offersList: state.offersList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
@@ -111,7 +111,7 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> implements FavouriteObse
         );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
-          FavouriteManager.notify(blocTag);
+          FavouriteManager.notify(tag: blocTag);
           emit(
             state.copyWith(
                 offersList: state.offersList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),
