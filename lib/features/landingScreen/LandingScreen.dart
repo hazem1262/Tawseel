@@ -6,6 +6,7 @@ import 'package:tawseel/theme/ThemeManager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:tawseel/utils/globals.dart';
+import 'package:tawseel/utils/ktx.dart';
 
 class LandingScreen extends StatelessWidget {
   @override
@@ -22,6 +23,16 @@ class LandingScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Center(
             child: Stack(children: [
+              Positioned(
+                top: height / 40,
+                right: width / 6,
+                child: GestureDetector(
+                  child: Icon(Icons.language),
+                  onTap: () {
+                    context.toggleLanguage(true);
+                  },
+                ),
+              ),
               Positioned(
                 top: height / 40,
                 right: width / 15,
