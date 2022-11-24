@@ -25,10 +25,7 @@ class CategoryDetailsScreen extends StatelessWidget {
   Widget build(BuildContext ctx) {
     return BlocProvider(
       create: (context) => CategoryDetailsBloc(
-        getIt.get<IHomeRepository>(),
-        getIt.get<IAdsRepository>(),
-        getIt.get<IMarketPlaceRepository>(),
-      )
+          getIt.get<IHomeRepository>(), getIt.get<IAdsRepository>(), getIt.get<IMarketPlaceRepository>(), categoryId)
         ..add(GetCategoryDetailsAds())
         ..add(GetCategoryDetailsSubCategories(categoryId))
         ..add(GetCategoryDetailsMarketPlaces([categoryId])),

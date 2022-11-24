@@ -30,7 +30,8 @@ class OffersState with _$OffersState {
   ]) = OffersDefaultState;
 }
 
-class OffersBloc extends Bloc<OffersEvent, OffersState> {
+class OffersBloc extends Bloc<OffersEvent, OffersState> implements FavouriteObserver {
+  static final blocTag = "OffersBloc";
   var _page = 1;
   var hasMorePages = true;
 
@@ -38,6 +39,7 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
   IMarketPlaceRepository marketPlacesRepo;
 
   OffersBloc(this.offersRepo, this.marketPlacesRepo) : super(OffersDefaultState()) {
+    FavouriteManager.subscribe(this);
     on<OffersEvent>((event, emit) async {
       if (event is ResetOffers) {
         _page = 1;
@@ -84,7 +86,7 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
         );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
-          FavouriteManager.notify();
+          FavouriteManager.notify(blocTag);
           emit(
             state.copyWith(
                 offersList: state.offersList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
@@ -109,7 +111,7 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
         );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
-          FavouriteManager.notify();
+          FavouriteManager.notify(blocTag);
           emit(
             state.copyWith(
                 offersList: state.offersList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),
@@ -125,5 +127,19 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
         }
       }
     });
+  }
+
+  @override
+  String? tag = blocTag;
+
+  @override
+  void update() {
+    add(ResetOffers());
+  }
+
+  @override
+  Future<void> close() {
+    FavouriteManager.unSubscribe(this);
+    return super.close();
   }
 }

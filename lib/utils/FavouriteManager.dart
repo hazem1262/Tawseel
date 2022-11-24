@@ -15,9 +15,11 @@ class FavouriteManager {
     observerList.remove(observer);
   }
 
-  static void notify() {
+  static void notify(String tag) {
     for (var element in observerList) {
-      element.update();
+      if (element.tag != tag) {
+        element.update();
+      }
     }
   }
 }

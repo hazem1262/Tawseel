@@ -9,6 +9,8 @@ import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/MarketPlaceRe
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/ads_repository.dart';
 import 'package:tawseel/utils/ktx.dart';
 
+import '../../../utils/FavouriteManager.dart';
+
 part 'category_details_bloc.freezed.dart';
 
 @freezed
@@ -42,12 +44,17 @@ class CategoryDetailsBlocState with _$CategoryDetailsBlocState {
   ]) = CategoryDetailsBlocStateDefaultState;
 }
 
-class CategoryDetailsBloc extends Bloc<CategoryDetailsBlocEvent, CategoryDetailsBlocState> {
+class CategoryDetailsBloc extends Bloc<CategoryDetailsBlocEvent, CategoryDetailsBlocState>
+    implements FavouriteObserver {
+  static final blocTag = "CategoryDetailsBloc";
   IHomeRepository repo;
   IAdsRepository adsRepo;
   IMarketPlaceRepository marketPlacesRepo;
+  int? categoryId;
 
-  CategoryDetailsBloc(this.repo, this.adsRepo, this.marketPlacesRepo) : super(CategoryDetailsBlocStateDefaultState()) {
+  CategoryDetailsBloc(this.repo, this.adsRepo, this.marketPlacesRepo, this.categoryId)
+      : super(CategoryDetailsBlocStateDefaultState()) {
+    FavouriteManager.subscribe(this);
     on<CategoryDetailsBlocEvent>((event, emit) async {
       if (event is GetCategoryDetailsSubCategories) {
         emit(state.copyWith(categoriesIsLoading: true, error: ""));
@@ -100,6 +107,7 @@ class CategoryDetailsBloc extends Bloc<CategoryDetailsBlocEvent, CategoryDetails
             1,
             event.category_ids,
           );
+          categoryId = event.category_ids?.first;
           emit(state.copyWith(nearbyMarketPlaceIsLoading: false, error: "", nearbyList: places.data));
         } catch (e) {
           emit(state.copyWith(nearbyMarketPlaceIsLoading: false, error: e.toString()));
@@ -116,6 +124,7 @@ class CategoryDetailsBloc extends Bloc<CategoryDetailsBlocEvent, CategoryDetails
         );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
+          FavouriteManager.notify(blocTag);
           emit(
             state.copyWith(
                 nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
@@ -140,6 +149,7 @@ class CategoryDetailsBloc extends Bloc<CategoryDetailsBlocEvent, CategoryDetails
         );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
+          FavouriteManager.notify(blocTag);
           emit(
             state.copyWith(
                 nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),
@@ -159,5 +169,21 @@ class CategoryDetailsBloc extends Bloc<CategoryDetailsBlocEvent, CategoryDetails
         emit(state.copyWith(refreshData: false, error: ""));
       }
     });
+  }
+
+  @override
+  String? tag = blocTag;
+
+  @override
+  void update() {
+    if (categoryId != null) {
+      add(GetCategoryDetailsMarketPlaces([categoryId!]));
+    }
+  }
+
+  @override
+  Future<void> close() {
+    FavouriteManager.unSubscribe(this);
+    return super.close();
   }
 }

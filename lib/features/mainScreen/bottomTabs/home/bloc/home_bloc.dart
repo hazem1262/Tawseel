@@ -48,7 +48,8 @@ class HomeBlocState with _$HomeBlocState {
   ]) = HomeBlocStateDefaultState;
 }
 
-class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
+class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> implements FavouriteObserver {
+  static final blocTag = "HomeBloc";
   IAdsRepository adsRepo;
   IProfileRepository profileRepo;
   IMarketPlaceRepository marketPlacesRepo;
@@ -60,6 +61,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
     this.marketPlacesRepo,
     this.filterRepo,
   ) : super(HomeBlocStateDefaultState()) {
+    FavouriteManager.subscribe(this);
     on<HomeBlocEvent>((event, emit) async {
       if (event is GetHomeProfile) {
         emit(state.copyWith(profileIsLoading: true, error: ""));
@@ -125,7 +127,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
         );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
-          FavouriteManager.notify();
+          FavouriteManager.notify(blocTag);
           emit(
             state.copyWith(
                 nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
@@ -150,7 +152,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
         );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
-          FavouriteManager.notify();
+          FavouriteManager.notify(blocTag);
           emit(
             state.copyWith(
                 nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),
@@ -171,5 +173,19 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
         emit(state.copyWith(refreshData: false, error: ""));
       }
     });
+  }
+
+  @override
+  String? tag = blocTag;
+
+  @override
+  void update() {
+    add(GetHomeNearbyMarketPlaces());
+  }
+
+  @override
+  Future<void> close() {
+    FavouriteManager.unSubscribe(this);
+    return super.close();
   }
 }

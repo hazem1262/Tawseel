@@ -30,6 +30,7 @@ class FavoritesState with _$FavoritesState {
 }
 
 class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> implements FavouriteObserver {
+  static final blocTag = "FavoritesBloc";
   var _page = 1;
   var hasMorePages = true;
 
@@ -94,7 +95,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> implements Favo
         );
         try {
           await repo.removeFromFavorites(event.id);
-
+          FavouriteManager.notify(blocTag);
           emit(state.copyWith(
             favoritesList: state.favoritesList.removeItem(id: event.id),
             emptyFirstPage: state.favoritesList.isEmpty,
@@ -126,6 +127,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> implements Favo
         );
         try {
           await repo.removeFromFavorites(event.id);
+          FavouriteManager.notify(blocTag);
           emit(
             state.copyWith(
               favoritesList: state.favoritesList,
@@ -155,5 +157,5 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> implements Favo
   }
 
   @override
-  String? tag = "FavoritesBloc";
+  String? tag = blocTag;
 }
