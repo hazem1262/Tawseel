@@ -55,9 +55,12 @@ mixin _$HomeBlocEvent {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
-    required TResult Function(GetHomeNearbyMarketPlaces value) getNearbyMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,7 +71,8 @@ mixin _$HomeBlocEvent {
     TResult? Function(GetHomeCategories value)? getCategories,
     TResult? Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetHomeRefreshData value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -79,7 +83,8 @@ mixin _$HomeBlocEvent {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) =>
@@ -88,12 +93,14 @@ mixin _$HomeBlocEvent {
 
 /// @nodoc
 abstract class $HomeBlocEventCopyWith<$Res> {
-  factory $HomeBlocEventCopyWith(HomeBlocEvent value, $Res Function(HomeBlocEvent) then) =
+  factory $HomeBlocEventCopyWith(
+          HomeBlocEvent value, $Res Function(HomeBlocEvent) then) =
       _$HomeBlocEventCopyWithImpl<$Res, HomeBlocEvent>;
 }
 
 /// @nodoc
-class _$HomeBlocEventCopyWithImpl<$Res, $Val extends HomeBlocEvent> implements $HomeBlocEventCopyWith<$Res> {
+class _$HomeBlocEventCopyWithImpl<$Res, $Val extends HomeBlocEvent>
+    implements $HomeBlocEventCopyWith<$Res> {
   _$HomeBlocEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -104,14 +111,18 @@ class _$HomeBlocEventCopyWithImpl<$Res, $Val extends HomeBlocEvent> implements $
 
 /// @nodoc
 abstract class _$$GetHomeProfileCopyWith<$Res> {
-  factory _$$GetHomeProfileCopyWith(_$GetHomeProfile value, $Res Function(_$GetHomeProfile) then) =
+  factory _$$GetHomeProfileCopyWith(
+          _$GetHomeProfile value, $Res Function(_$GetHomeProfile) then) =
       __$$GetHomeProfileCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetHomeProfileCopyWithImpl<$Res> extends _$HomeBlocEventCopyWithImpl<$Res, _$GetHomeProfile>
+class __$$GetHomeProfileCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res, _$GetHomeProfile>
     implements _$$GetHomeProfileCopyWith<$Res> {
-  __$$GetHomeProfileCopyWithImpl(_$GetHomeProfile _value, $Res Function(_$GetHomeProfile) _then) : super(_value, _then);
+  __$$GetHomeProfileCopyWithImpl(
+      _$GetHomeProfile _value, $Res Function(_$GetHomeProfile) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -126,7 +137,8 @@ class _$GetHomeProfile implements GetHomeProfile {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetHomeProfile);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetHomeProfile);
   }
 
   @override
@@ -184,9 +196,12 @@ class _$GetHomeProfile implements GetHomeProfile {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
-    required TResult Function(GetHomeNearbyMarketPlaces value) getNearbyMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getProfile(this);
@@ -200,7 +215,8 @@ class _$GetHomeProfile implements GetHomeProfile {
     TResult? Function(GetHomeCategories value)? getCategories,
     TResult? Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetHomeRefreshData value)? reset,
   }) {
     return getProfile?.call(this);
@@ -214,7 +230,8 @@ class _$GetHomeProfile implements GetHomeProfile {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -231,14 +248,18 @@ abstract class GetHomeProfile implements HomeBlocEvent {
 
 /// @nodoc
 abstract class _$$GetHomeAdsCopyWith<$Res> {
-  factory _$$GetHomeAdsCopyWith(_$GetHomeAds value, $Res Function(_$GetHomeAds) then) =
+  factory _$$GetHomeAdsCopyWith(
+          _$GetHomeAds value, $Res Function(_$GetHomeAds) then) =
       __$$GetHomeAdsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetHomeAdsCopyWithImpl<$Res> extends _$HomeBlocEventCopyWithImpl<$Res, _$GetHomeAds>
+class __$$GetHomeAdsCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res, _$GetHomeAds>
     implements _$$GetHomeAdsCopyWith<$Res> {
-  __$$GetHomeAdsCopyWithImpl(_$GetHomeAds _value, $Res Function(_$GetHomeAds) _then) : super(_value, _then);
+  __$$GetHomeAdsCopyWithImpl(
+      _$GetHomeAds _value, $Res Function(_$GetHomeAds) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -253,7 +274,8 @@ class _$GetHomeAds implements GetHomeAds {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetHomeAds);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetHomeAds);
   }
 
   @override
@@ -311,9 +333,12 @@ class _$GetHomeAds implements GetHomeAds {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
-    required TResult Function(GetHomeNearbyMarketPlaces value) getNearbyMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getAds(this);
@@ -327,7 +352,8 @@ class _$GetHomeAds implements GetHomeAds {
     TResult? Function(GetHomeCategories value)? getCategories,
     TResult? Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetHomeRefreshData value)? reset,
   }) {
     return getAds?.call(this);
@@ -341,7 +367,8 @@ class _$GetHomeAds implements GetHomeAds {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -358,14 +385,17 @@ abstract class GetHomeAds implements HomeBlocEvent {
 
 /// @nodoc
 abstract class _$$GetHomeCategoriesCopyWith<$Res> {
-  factory _$$GetHomeCategoriesCopyWith(_$GetHomeCategories value, $Res Function(_$GetHomeCategories) then) =
+  factory _$$GetHomeCategoriesCopyWith(
+          _$GetHomeCategories value, $Res Function(_$GetHomeCategories) then) =
       __$$GetHomeCategoriesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetHomeCategoriesCopyWithImpl<$Res> extends _$HomeBlocEventCopyWithImpl<$Res, _$GetHomeCategories>
+class __$$GetHomeCategoriesCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res, _$GetHomeCategories>
     implements _$$GetHomeCategoriesCopyWith<$Res> {
-  __$$GetHomeCategoriesCopyWithImpl(_$GetHomeCategories _value, $Res Function(_$GetHomeCategories) _then)
+  __$$GetHomeCategoriesCopyWithImpl(
+      _$GetHomeCategories _value, $Res Function(_$GetHomeCategories) _then)
       : super(_value, _then);
 }
 
@@ -381,7 +411,8 @@ class _$GetHomeCategories implements GetHomeCategories {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetHomeCategories);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetHomeCategories);
   }
 
   @override
@@ -439,9 +470,12 @@ class _$GetHomeCategories implements GetHomeCategories {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
-    required TResult Function(GetHomeNearbyMarketPlaces value) getNearbyMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getCategories(this);
@@ -455,7 +489,8 @@ class _$GetHomeCategories implements GetHomeCategories {
     TResult? Function(GetHomeCategories value)? getCategories,
     TResult? Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetHomeRefreshData value)? reset,
   }) {
     return getCategories?.call(this);
@@ -469,7 +504,8 @@ class _$GetHomeCategories implements GetHomeCategories {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -487,7 +523,8 @@ abstract class GetHomeCategories implements HomeBlocEvent {
 /// @nodoc
 abstract class _$$GetHomeNearbyMarketPlacesCopyWith<$Res> {
   factory _$$GetHomeNearbyMarketPlacesCopyWith(
-          _$GetHomeNearbyMarketPlaces value, $Res Function(_$GetHomeNearbyMarketPlaces) then) =
+          _$GetHomeNearbyMarketPlaces value,
+          $Res Function(_$GetHomeNearbyMarketPlaces) then) =
       __$$GetHomeNearbyMarketPlacesCopyWithImpl<$Res>;
 }
 
@@ -495,8 +532,8 @@ abstract class _$$GetHomeNearbyMarketPlacesCopyWith<$Res> {
 class __$$GetHomeNearbyMarketPlacesCopyWithImpl<$Res>
     extends _$HomeBlocEventCopyWithImpl<$Res, _$GetHomeNearbyMarketPlaces>
     implements _$$GetHomeNearbyMarketPlacesCopyWith<$Res> {
-  __$$GetHomeNearbyMarketPlacesCopyWithImpl(
-      _$GetHomeNearbyMarketPlaces _value, $Res Function(_$GetHomeNearbyMarketPlaces) _then)
+  __$$GetHomeNearbyMarketPlacesCopyWithImpl(_$GetHomeNearbyMarketPlaces _value,
+      $Res Function(_$GetHomeNearbyMarketPlaces) _then)
       : super(_value, _then);
 }
 
@@ -512,7 +549,9 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetHomeNearbyMarketPlaces);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetHomeNearbyMarketPlaces);
   }
 
   @override
@@ -570,9 +609,12 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
-    required TResult Function(GetHomeNearbyMarketPlaces value) getNearbyMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return getNearbyMarketPlaces(this);
@@ -586,7 +628,8 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
     TResult? Function(GetHomeCategories value)? getCategories,
     TResult? Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetHomeRefreshData value)? reset,
   }) {
     return getNearbyMarketPlaces?.call(this);
@@ -600,7 +643,8 @@ class _$GetHomeNearbyMarketPlaces implements GetHomeNearbyMarketPlaces {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -617,8 +661,8 @@ abstract class GetHomeNearbyMarketPlaces implements HomeBlocEvent {
 
 /// @nodoc
 abstract class _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
-  factory _$$AddMarketPlaceToFavoriteCopyWith(
-          _$AddMarketPlaceToFavorite value, $Res Function(_$AddMarketPlaceToFavorite) then) =
+  factory _$$AddMarketPlaceToFavoriteCopyWith(_$AddMarketPlaceToFavorite value,
+          $Res Function(_$AddMarketPlaceToFavorite) then) =
       __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
@@ -628,8 +672,8 @@ abstract class _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
 class __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res>
     extends _$HomeBlocEventCopyWithImpl<$Res, _$AddMarketPlaceToFavorite>
     implements _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
-  __$$AddMarketPlaceToFavoriteCopyWithImpl(
-      _$AddMarketPlaceToFavorite _value, $Res Function(_$AddMarketPlaceToFavorite) _then)
+  __$$AddMarketPlaceToFavoriteCopyWithImpl(_$AddMarketPlaceToFavorite _value,
+      $Res Function(_$AddMarketPlaceToFavorite) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -673,8 +717,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite> get copyWith =>
-      __$$AddMarketPlaceToFavoriteCopyWithImpl<_$AddMarketPlaceToFavorite>(this, _$identity);
+  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite>
+      get copyWith =>
+          __$$AddMarketPlaceToFavoriteCopyWithImpl<_$AddMarketPlaceToFavorite>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -728,9 +774,12 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
-    required TResult Function(GetHomeNearbyMarketPlaces value) getNearbyMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return addMarketPlaceToFavorite(this);
@@ -744,7 +793,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult? Function(GetHomeCategories value)? getCategories,
     TResult? Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetHomeRefreshData value)? reset,
   }) {
     return addMarketPlaceToFavorite?.call(this);
@@ -758,7 +808,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -770,17 +821,20 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
 }
 
 abstract class AddMarketPlaceToFavorite implements HomeBlocEvent {
-  const factory AddMarketPlaceToFavorite(final int id) = _$AddMarketPlaceToFavorite;
+  const factory AddMarketPlaceToFavorite(final int id) =
+      _$AddMarketPlaceToFavorite;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite> get copyWith => throw _privateConstructorUsedError;
+  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   factory _$$RemoveMarketPlaceFromFavoriteCopyWith(
-          _$RemoveMarketPlaceFromFavorite value, $Res Function(_$RemoveMarketPlaceFromFavorite) then) =
+          _$RemoveMarketPlaceFromFavorite value,
+          $Res Function(_$RemoveMarketPlaceFromFavorite) then) =
       __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
@@ -791,7 +845,8 @@ class __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>
     extends _$HomeBlocEventCopyWithImpl<$Res, _$RemoveMarketPlaceFromFavorite>
     implements _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   __$$RemoveMarketPlaceFromFavoriteCopyWithImpl(
-      _$RemoveMarketPlaceFromFavorite _value, $Res Function(_$RemoveMarketPlaceFromFavorite) _then)
+      _$RemoveMarketPlaceFromFavorite _value,
+      $Res Function(_$RemoveMarketPlaceFromFavorite) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -835,8 +890,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite> get copyWith =>
-      __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<_$RemoveMarketPlaceFromFavorite>(this, _$identity);
+  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite>
+      get copyWith => __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<
+          _$RemoveMarketPlaceFromFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -890,9 +946,12 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
-    required TResult Function(GetHomeNearbyMarketPlaces value) getNearbyMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return removeMarketPlaceToFavorite(this);
@@ -906,7 +965,8 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult? Function(GetHomeCategories value)? getCategories,
     TResult? Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetHomeRefreshData value)? reset,
   }) {
     return removeMarketPlaceToFavorite?.call(this);
@@ -920,7 +980,8 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -932,24 +993,28 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
 }
 
 abstract class RemoveMarketPlaceFromFavorite implements HomeBlocEvent {
-  const factory RemoveMarketPlaceFromFavorite(final int id) = _$RemoveMarketPlaceFromFavorite;
+  const factory RemoveMarketPlaceFromFavorite(final int id) =
+      _$RemoveMarketPlaceFromFavorite;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ResetHomeRefreshDataCopyWith<$Res> {
-  factory _$$ResetHomeRefreshDataCopyWith(_$ResetHomeRefreshData value, $Res Function(_$ResetHomeRefreshData) then) =
+  factory _$$ResetHomeRefreshDataCopyWith(_$ResetHomeRefreshData value,
+          $Res Function(_$ResetHomeRefreshData) then) =
       __$$ResetHomeRefreshDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ResetHomeRefreshDataCopyWithImpl<$Res> extends _$HomeBlocEventCopyWithImpl<$Res, _$ResetHomeRefreshData>
+class __$$ResetHomeRefreshDataCopyWithImpl<$Res>
+    extends _$HomeBlocEventCopyWithImpl<$Res, _$ResetHomeRefreshData>
     implements _$$ResetHomeRefreshDataCopyWith<$Res> {
-  __$$ResetHomeRefreshDataCopyWithImpl(_$ResetHomeRefreshData _value, $Res Function(_$ResetHomeRefreshData) _then)
+  __$$ResetHomeRefreshDataCopyWithImpl(_$ResetHomeRefreshData _value,
+      $Res Function(_$ResetHomeRefreshData) _then)
       : super(_value, _then);
 }
 
@@ -965,7 +1030,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ResetHomeRefreshData);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetHomeRefreshData);
   }
 
   @override
@@ -1023,9 +1089,12 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
     required TResult Function(GetHomeProfile value) getProfile,
     required TResult Function(GetHomeAds value) getAds,
     required TResult Function(GetHomeCategories value) getCategories,
-    required TResult Function(GetHomeNearbyMarketPlaces value) getNearbyMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetHomeNearbyMarketPlaces value)
+        getNearbyMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetHomeRefreshData value) reset,
   }) {
     return reset(this);
@@ -1039,7 +1108,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
     TResult? Function(GetHomeCategories value)? getCategories,
     TResult? Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetHomeRefreshData value)? reset,
   }) {
     return reset?.call(this);
@@ -1053,7 +1123,8 @@ class _$ResetHomeRefreshData implements ResetHomeRefreshData {
     TResult Function(GetHomeCategories value)? getCategories,
     TResult Function(GetHomeNearbyMarketPlaces value)? getNearbyMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetHomeRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -1151,12 +1222,14 @@ mixin _$HomeBlocState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomeBlocStateCopyWith<HomeBlocState> get copyWith => throw _privateConstructorUsedError;
+  $HomeBlocStateCopyWith<HomeBlocState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HomeBlocStateCopyWith<$Res> {
-  factory $HomeBlocStateCopyWith(HomeBlocState value, $Res Function(HomeBlocState) then) =
+  factory $HomeBlocStateCopyWith(
+          HomeBlocState value, $Res Function(HomeBlocState) then) =
       _$HomeBlocStateCopyWithImpl<$Res, HomeBlocState>;
   @useResult
   $Res call(
@@ -1174,7 +1247,8 @@ abstract class $HomeBlocStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HomeBlocStateCopyWithImpl<$Res, $Val extends HomeBlocState> implements $HomeBlocStateCopyWith<$Res> {
+class _$HomeBlocStateCopyWithImpl<$Res, $Val extends HomeBlocState>
+    implements $HomeBlocStateCopyWith<$Res> {
   _$HomeBlocStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1247,9 +1321,11 @@ class _$HomeBlocStateCopyWithImpl<$Res, $Val extends HomeBlocState> implements $
 }
 
 /// @nodoc
-abstract class _$$HomeBlocStateDefaultStateCopyWith<$Res> implements $HomeBlocStateCopyWith<$Res> {
+abstract class _$$HomeBlocStateDefaultStateCopyWith<$Res>
+    implements $HomeBlocStateCopyWith<$Res> {
   factory _$$HomeBlocStateDefaultStateCopyWith(
-          _$HomeBlocStateDefaultState value, $Res Function(_$HomeBlocStateDefaultState) then) =
+          _$HomeBlocStateDefaultState value,
+          $Res Function(_$HomeBlocStateDefaultState) then) =
       __$$HomeBlocStateDefaultStateCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1271,8 +1347,8 @@ abstract class _$$HomeBlocStateDefaultStateCopyWith<$Res> implements $HomeBlocSt
 class __$$HomeBlocStateDefaultStateCopyWithImpl<$Res>
     extends _$HomeBlocStateCopyWithImpl<$Res, _$HomeBlocStateDefaultState>
     implements _$$HomeBlocStateDefaultStateCopyWith<$Res> {
-  __$$HomeBlocStateDefaultStateCopyWithImpl(
-      _$HomeBlocStateDefaultState _value, $Res Function(_$HomeBlocStateDefaultState) _then)
+  __$$HomeBlocStateDefaultStateCopyWithImpl(_$HomeBlocStateDefaultState _value,
+      $Res Function(_$HomeBlocStateDefaultState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1422,19 +1498,28 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeBlocStateDefaultState &&
-            (identical(other.adsIsLoading, adsIsLoading) || other.adsIsLoading == adsIsLoading) &&
-            (identical(other.profileIsLoading, profileIsLoading) || other.profileIsLoading == profileIsLoading) &&
-            (identical(other.nearbyMarketPlaceIsLoading, nearbyMarketPlaceIsLoading) ||
-                other.nearbyMarketPlaceIsLoading == nearbyMarketPlaceIsLoading) &&
+            (identical(other.adsIsLoading, adsIsLoading) ||
+                other.adsIsLoading == adsIsLoading) &&
+            (identical(other.profileIsLoading, profileIsLoading) ||
+                other.profileIsLoading == profileIsLoading) &&
+            (identical(other.nearbyMarketPlaceIsLoading,
+                    nearbyMarketPlaceIsLoading) ||
+                other.nearbyMarketPlaceIsLoading ==
+                    nearbyMarketPlaceIsLoading) &&
             (identical(other.categoriesIsLoading, categoriesIsLoading) ||
                 other.categoriesIsLoading == categoriesIsLoading) &&
             (identical(other.error, error) || other.error == error) &&
-            (identical(other.refreshData, refreshData) || other.refreshData == refreshData) &&
-            const DeepCollectionEquality().equals(other._categories, _categories) &&
-            const DeepCollectionEquality().equals(other._companies, _companies) &&
+            (identical(other.refreshData, refreshData) ||
+                other.refreshData == refreshData) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories) &&
+            const DeepCollectionEquality()
+                .equals(other._companies, _companies) &&
             const DeepCollectionEquality().equals(other._adsList, _adsList) &&
-            const DeepCollectionEquality().equals(other._nearbyList, _nearbyList) &&
-            (identical(other.userAddress, userAddress) || other.userAddress == userAddress));
+            const DeepCollectionEquality()
+                .equals(other._nearbyList, _nearbyList) &&
+            (identical(other.userAddress, userAddress) ||
+                other.userAddress == userAddress));
   }
 
   @override
@@ -1455,8 +1540,9 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomeBlocStateDefaultStateCopyWith<_$HomeBlocStateDefaultState> get copyWith =>
-      __$$HomeBlocStateDefaultStateCopyWithImpl<_$HomeBlocStateDefaultState>(this, _$identity);
+  _$$HomeBlocStateDefaultStateCopyWith<_$HomeBlocStateDefaultState>
+      get copyWith => __$$HomeBlocStateDefaultStateCopyWithImpl<
+          _$HomeBlocStateDefaultState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1475,8 +1561,18 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             Address? userAddress)
         defaultState,
   }) {
-    return defaultState(adsIsLoading, profileIsLoading, nearbyMarketPlaceIsLoading, categoriesIsLoading, error,
-        refreshData, categories, companies, adsList, nearbyList, userAddress);
+    return defaultState(
+        adsIsLoading,
+        profileIsLoading,
+        nearbyMarketPlaceIsLoading,
+        categoriesIsLoading,
+        error,
+        refreshData,
+        categories,
+        companies,
+        adsList,
+        nearbyList,
+        userAddress);
   }
 
   @override
@@ -1496,8 +1592,18 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
             Address? userAddress)?
         defaultState,
   }) {
-    return defaultState?.call(adsIsLoading, profileIsLoading, nearbyMarketPlaceIsLoading, categoriesIsLoading, error,
-        refreshData, categories, companies, adsList, nearbyList, userAddress);
+    return defaultState?.call(
+        adsIsLoading,
+        profileIsLoading,
+        nearbyMarketPlaceIsLoading,
+        categoriesIsLoading,
+        error,
+        refreshData,
+        categories,
+        companies,
+        adsList,
+        nearbyList,
+        userAddress);
   }
 
   @override
@@ -1519,8 +1625,18 @@ class _$HomeBlocStateDefaultState implements HomeBlocStateDefaultState {
     required TResult orElse(),
   }) {
     if (defaultState != null) {
-      return defaultState(adsIsLoading, profileIsLoading, nearbyMarketPlaceIsLoading, categoriesIsLoading, error,
-          refreshData, categories, companies, adsList, nearbyList, userAddress);
+      return defaultState(
+          adsIsLoading,
+          profileIsLoading,
+          nearbyMarketPlaceIsLoading,
+          categoriesIsLoading,
+          error,
+          refreshData,
+          categories,
+          companies,
+          adsList,
+          nearbyList,
+          userAddress);
     }
     return orElse();
   }
@@ -1592,5 +1708,6 @@ abstract class HomeBlocStateDefaultState implements HomeBlocState {
   Address? get userAddress;
   @override
   @JsonKey(ignore: true)
-  _$$HomeBlocStateDefaultStateCopyWith<_$HomeBlocStateDefaultState> get copyWith => throw _privateConstructorUsedError;
+  _$$HomeBlocStateDefaultStateCopyWith<_$HomeBlocStateDefaultState>
+      get copyWith => throw _privateConstructorUsedError;
 }

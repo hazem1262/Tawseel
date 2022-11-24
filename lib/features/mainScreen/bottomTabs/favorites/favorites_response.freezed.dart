@@ -25,12 +25,14 @@ mixin _$FavoritesResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FavoritesResponseCopyWith<FavoritesResponse> get copyWith => throw _privateConstructorUsedError;
+  $FavoritesResponseCopyWith<FavoritesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FavoritesResponseCopyWith<$Res> {
-  factory $FavoritesResponseCopyWith(FavoritesResponse value, $Res Function(FavoritesResponse) then) =
+  factory $FavoritesResponseCopyWith(
+          FavoritesResponse value, $Res Function(FavoritesResponse) then) =
       _$FavoritesResponseCopyWithImpl<$Res, FavoritesResponse>;
   @useResult
   $Res call({List<MarketPlaceItem> data, MetaPagination meta});
@@ -76,8 +78,10 @@ class _$FavoritesResponseCopyWithImpl<$Res, $Val extends FavoritesResponse>
 }
 
 /// @nodoc
-abstract class _$$_FavoritesResponseCopyWith<$Res> implements $FavoritesResponseCopyWith<$Res> {
-  factory _$$_FavoritesResponseCopyWith(_$_FavoritesResponse value, $Res Function(_$_FavoritesResponse) then) =
+abstract class _$$_FavoritesResponseCopyWith<$Res>
+    implements $FavoritesResponseCopyWith<$Res> {
+  factory _$$_FavoritesResponseCopyWith(_$_FavoritesResponse value,
+          $Res Function(_$_FavoritesResponse) then) =
       __$$_FavoritesResponseCopyWithImpl<$Res>;
   @override
   @useResult
@@ -88,9 +92,11 @@ abstract class _$$_FavoritesResponseCopyWith<$Res> implements $FavoritesResponse
 }
 
 /// @nodoc
-class __$$_FavoritesResponseCopyWithImpl<$Res> extends _$FavoritesResponseCopyWithImpl<$Res, _$_FavoritesResponse>
+class __$$_FavoritesResponseCopyWithImpl<$Res>
+    extends _$FavoritesResponseCopyWithImpl<$Res, _$_FavoritesResponse>
     implements _$$_FavoritesResponseCopyWith<$Res> {
-  __$$_FavoritesResponseCopyWithImpl(_$_FavoritesResponse _value, $Res Function(_$_FavoritesResponse) _then)
+  __$$_FavoritesResponseCopyWithImpl(
+      _$_FavoritesResponse _value, $Res Function(_$_FavoritesResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,9 +121,11 @@ class __$$_FavoritesResponseCopyWithImpl<$Res> extends _$FavoritesResponseCopyWi
 /// @nodoc
 @JsonSerializable()
 class _$_FavoritesResponse implements _FavoritesResponse {
-  const _$_FavoritesResponse(final List<MarketPlaceItem> data, this.meta) : _data = data;
+  const _$_FavoritesResponse(final List<MarketPlaceItem> data, this.meta)
+      : _data = data;
 
-  factory _$_FavoritesResponse.fromJson(Map<String, dynamic> json) => _$$_FavoritesResponseFromJson(json);
+  factory _$_FavoritesResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_FavoritesResponseFromJson(json);
 
   final List<MarketPlaceItem> _data;
   @override
@@ -145,13 +153,15 @@ class _$_FavoritesResponse implements _FavoritesResponse {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_data), meta);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_data), meta);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_FavoritesResponseCopyWith<_$_FavoritesResponse> get copyWith =>
-      __$$_FavoritesResponseCopyWithImpl<_$_FavoritesResponse>(this, _$identity);
+      __$$_FavoritesResponseCopyWithImpl<_$_FavoritesResponse>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -162,9 +172,12 @@ class _$_FavoritesResponse implements _FavoritesResponse {
 }
 
 abstract class _FavoritesResponse implements FavoritesResponse {
-  const factory _FavoritesResponse(final List<MarketPlaceItem> data, final MetaPagination meta) = _$_FavoritesResponse;
+  const factory _FavoritesResponse(
+          final List<MarketPlaceItem> data, final MetaPagination meta) =
+      _$_FavoritesResponse;
 
-  factory _FavoritesResponse.fromJson(Map<String, dynamic> json) = _$_FavoritesResponse.fromJson;
+  factory _FavoritesResponse.fromJson(Map<String, dynamic> json) =
+      _$_FavoritesResponse.fromJson;
 
   @override
   List<MarketPlaceItem> get data;
@@ -172,5 +185,6 @@ abstract class _FavoritesResponse implements FavoritesResponse {
   MetaPagination get meta;
   @override
   @JsonKey(ignore: true)
-  _$$_FavoritesResponseCopyWith<_$_FavoritesResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_FavoritesResponseCopyWith<_$_FavoritesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }

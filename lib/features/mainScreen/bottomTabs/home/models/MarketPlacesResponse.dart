@@ -17,22 +17,22 @@ class MarketPlacesResponse with _$MarketPlacesResponse {
 @freezed
 class MarketPlaceItem with _$MarketPlaceItem {
   const factory MarketPlaceItem(
-    int id,
-    String? name,
-    String? description,
-    String? min_order,
-    String? delivery_time,
-    String? delivery_cost,
-    String? rating,
-    String? image,
-    String? logo,
-    String? distance,
-    bool is_favorite,
-    bool? is_loading,
-    List<CompanyItem> companies,
-    List<CategoryData> parent_categories,
-    List<CategoryData> sub_categories,
-  ) = _MarketPlaceItem;
+      int id,
+      String? name,
+      String? description,
+      String? min_order,
+      String? delivery_time,
+      String? delivery_cost,
+      String? rating,
+      String? image,
+      String? logo,
+      String? distance,
+      bool is_favorite,
+      bool? is_loading,
+      List<CompanyItem> companies,
+      List<CategoryData> parent_categories,
+      List<CategoryData> sub_categories,
+      Offer? offer) = _MarketPlaceItem;
 
   factory MarketPlaceItem.fromJson(Map<String, dynamic> json) => _$MarketPlaceItemFromJson(json);
 }
@@ -53,4 +53,18 @@ class CompanyItem with _$CompanyItem {
   ) = _CompanyItem;
 
   factory CompanyItem.fromJson(Map<String, dynamic> json) => _$CompanyItemFromJson(json);
+}
+
+@freezed
+class Offer with _$Offer {
+  const factory Offer(
+    int id,
+    String? name,
+    String? type,
+    String? amount,
+    String? from_distance,
+    String? to_distance,
+  ) = _Offer;
+
+  factory Offer.fromJson(Map<String, dynamic> json) => _$OfferFromJson(json);
 }

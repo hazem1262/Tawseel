@@ -25,12 +25,14 @@ mixin _$MarketPlacesResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MarketPlacesResponseCopyWith<MarketPlacesResponse> get copyWith => throw _privateConstructorUsedError;
+  $MarketPlacesResponseCopyWith<MarketPlacesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MarketPlacesResponseCopyWith<$Res> {
-  factory $MarketPlacesResponseCopyWith(MarketPlacesResponse value, $Res Function(MarketPlacesResponse) then) =
+  factory $MarketPlacesResponseCopyWith(MarketPlacesResponse value,
+          $Res Function(MarketPlacesResponse) then) =
       _$MarketPlacesResponseCopyWithImpl<$Res, MarketPlacesResponse>;
   @useResult
   $Res call({List<MarketPlaceItem> data, MetaPagination meta});
@@ -39,7 +41,8 @@ abstract class $MarketPlacesResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MarketPlacesResponseCopyWithImpl<$Res, $Val extends MarketPlacesResponse>
+class _$MarketPlacesResponseCopyWithImpl<$Res,
+        $Val extends MarketPlacesResponse>
     implements $MarketPlacesResponseCopyWith<$Res> {
   _$MarketPlacesResponseCopyWithImpl(this._value, this._then);
 
@@ -76,8 +79,10 @@ class _$MarketPlacesResponseCopyWithImpl<$Res, $Val extends MarketPlacesResponse
 }
 
 /// @nodoc
-abstract class _$$_MarketPlacesResponseCopyWith<$Res> implements $MarketPlacesResponseCopyWith<$Res> {
-  factory _$$_MarketPlacesResponseCopyWith(_$_MarketPlacesResponse value, $Res Function(_$_MarketPlacesResponse) then) =
+abstract class _$$_MarketPlacesResponseCopyWith<$Res>
+    implements $MarketPlacesResponseCopyWith<$Res> {
+  factory _$$_MarketPlacesResponseCopyWith(_$_MarketPlacesResponse value,
+          $Res Function(_$_MarketPlacesResponse) then) =
       __$$_MarketPlacesResponseCopyWithImpl<$Res>;
   @override
   @useResult
@@ -91,7 +96,8 @@ abstract class _$$_MarketPlacesResponseCopyWith<$Res> implements $MarketPlacesRe
 class __$$_MarketPlacesResponseCopyWithImpl<$Res>
     extends _$MarketPlacesResponseCopyWithImpl<$Res, _$_MarketPlacesResponse>
     implements _$$_MarketPlacesResponseCopyWith<$Res> {
-  __$$_MarketPlacesResponseCopyWithImpl(_$_MarketPlacesResponse _value, $Res Function(_$_MarketPlacesResponse) _then)
+  __$$_MarketPlacesResponseCopyWithImpl(_$_MarketPlacesResponse _value,
+      $Res Function(_$_MarketPlacesResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,9 +122,11 @@ class __$$_MarketPlacesResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_MarketPlacesResponse implements _MarketPlacesResponse {
-  const _$_MarketPlacesResponse(final List<MarketPlaceItem> data, this.meta) : _data = data;
+  const _$_MarketPlacesResponse(final List<MarketPlaceItem> data, this.meta)
+      : _data = data;
 
-  factory _$_MarketPlacesResponse.fromJson(Map<String, dynamic> json) => _$$_MarketPlacesResponseFromJson(json);
+  factory _$_MarketPlacesResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_MarketPlacesResponseFromJson(json);
 
   final List<MarketPlaceItem> _data;
   @override
@@ -146,13 +154,15 @@ class _$_MarketPlacesResponse implements _MarketPlacesResponse {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_data), meta);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_data), meta);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_MarketPlacesResponseCopyWith<_$_MarketPlacesResponse> get copyWith =>
-      __$$_MarketPlacesResponseCopyWithImpl<_$_MarketPlacesResponse>(this, _$identity);
+      __$$_MarketPlacesResponseCopyWithImpl<_$_MarketPlacesResponse>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -163,10 +173,12 @@ class _$_MarketPlacesResponse implements _MarketPlacesResponse {
 }
 
 abstract class _MarketPlacesResponse implements MarketPlacesResponse {
-  const factory _MarketPlacesResponse(final List<MarketPlaceItem> data, final MetaPagination meta) =
+  const factory _MarketPlacesResponse(
+          final List<MarketPlaceItem> data, final MetaPagination meta) =
       _$_MarketPlacesResponse;
 
-  factory _MarketPlacesResponse.fromJson(Map<String, dynamic> json) = _$_MarketPlacesResponse.fromJson;
+  factory _MarketPlacesResponse.fromJson(Map<String, dynamic> json) =
+      _$_MarketPlacesResponse.fromJson;
 
   @override
   List<MarketPlaceItem> get data;
@@ -174,7 +186,8 @@ abstract class _MarketPlacesResponse implements MarketPlacesResponse {
   MetaPagination get meta;
   @override
   @JsonKey(ignore: true)
-  _$$_MarketPlacesResponseCopyWith<_$_MarketPlacesResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_MarketPlacesResponseCopyWith<_$_MarketPlacesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 MarketPlaceItem _$MarketPlaceItemFromJson(Map<String, dynamic> json) {
@@ -196,17 +209,21 @@ mixin _$MarketPlaceItem {
   bool get is_favorite => throw _privateConstructorUsedError;
   bool? get is_loading => throw _privateConstructorUsedError;
   List<CompanyItem> get companies => throw _privateConstructorUsedError;
-  List<CategoryData> get parent_categories => throw _privateConstructorUsedError;
+  List<CategoryData> get parent_categories =>
+      throw _privateConstructorUsedError;
   List<CategoryData> get sub_categories => throw _privateConstructorUsedError;
+  Offer? get offer => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MarketPlaceItemCopyWith<MarketPlaceItem> get copyWith => throw _privateConstructorUsedError;
+  $MarketPlaceItemCopyWith<MarketPlaceItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MarketPlaceItemCopyWith<$Res> {
-  factory $MarketPlaceItemCopyWith(MarketPlaceItem value, $Res Function(MarketPlaceItem) then) =
+  factory $MarketPlaceItemCopyWith(
+          MarketPlaceItem value, $Res Function(MarketPlaceItem) then) =
       _$MarketPlaceItemCopyWithImpl<$Res, MarketPlaceItem>;
   @useResult
   $Res call(
@@ -224,11 +241,15 @@ abstract class $MarketPlaceItemCopyWith<$Res> {
       bool? is_loading,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
-      List<CategoryData> sub_categories});
+      List<CategoryData> sub_categories,
+      Offer? offer});
+
+  $OfferCopyWith<$Res>? get offer;
 }
 
 /// @nodoc
-class _$MarketPlaceItemCopyWithImpl<$Res, $Val extends MarketPlaceItem> implements $MarketPlaceItemCopyWith<$Res> {
+class _$MarketPlaceItemCopyWithImpl<$Res, $Val extends MarketPlaceItem>
+    implements $MarketPlaceItemCopyWith<$Res> {
   _$MarketPlaceItemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -254,6 +275,7 @@ class _$MarketPlaceItemCopyWithImpl<$Res, $Val extends MarketPlaceItem> implemen
     Object? companies = null,
     Object? parent_categories = null,
     Object? sub_categories = null,
+    Object? offer = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -316,13 +338,31 @@ class _$MarketPlaceItemCopyWithImpl<$Res, $Val extends MarketPlaceItem> implemen
           ? _value.sub_categories
           : sub_categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
+      offer: freezed == offer
+          ? _value.offer
+          : offer // ignore: cast_nullable_to_non_nullable
+              as Offer?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OfferCopyWith<$Res>? get offer {
+    if (_value.offer == null) {
+      return null;
+    }
+
+    return $OfferCopyWith<$Res>(_value.offer!, (value) {
+      return _then(_value.copyWith(offer: value) as $Val);
+    });
   }
 }
 
 /// @nodoc
-abstract class _$$_MarketPlaceItemCopyWith<$Res> implements $MarketPlaceItemCopyWith<$Res> {
-  factory _$$_MarketPlaceItemCopyWith(_$_MarketPlaceItem value, $Res Function(_$_MarketPlaceItem) then) =
+abstract class _$$_MarketPlaceItemCopyWith<$Res>
+    implements $MarketPlaceItemCopyWith<$Res> {
+  factory _$$_MarketPlaceItemCopyWith(
+          _$_MarketPlaceItem value, $Res Function(_$_MarketPlaceItem) then) =
       __$$_MarketPlaceItemCopyWithImpl<$Res>;
   @override
   @useResult
@@ -341,13 +381,19 @@ abstract class _$$_MarketPlaceItemCopyWith<$Res> implements $MarketPlaceItemCopy
       bool? is_loading,
       List<CompanyItem> companies,
       List<CategoryData> parent_categories,
-      List<CategoryData> sub_categories});
+      List<CategoryData> sub_categories,
+      Offer? offer});
+
+  @override
+  $OfferCopyWith<$Res>? get offer;
 }
 
 /// @nodoc
-class __$$_MarketPlaceItemCopyWithImpl<$Res> extends _$MarketPlaceItemCopyWithImpl<$Res, _$_MarketPlaceItem>
+class __$$_MarketPlaceItemCopyWithImpl<$Res>
+    extends _$MarketPlaceItemCopyWithImpl<$Res, _$_MarketPlaceItem>
     implements _$$_MarketPlaceItemCopyWith<$Res> {
-  __$$_MarketPlaceItemCopyWithImpl(_$_MarketPlaceItem _value, $Res Function(_$_MarketPlaceItem) _then)
+  __$$_MarketPlaceItemCopyWithImpl(
+      _$_MarketPlaceItem _value, $Res Function(_$_MarketPlaceItem) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -368,6 +414,7 @@ class __$$_MarketPlaceItemCopyWithImpl<$Res> extends _$MarketPlaceItemCopyWithIm
     Object? companies = null,
     Object? parent_categories = null,
     Object? sub_categories = null,
+    Object? offer = freezed,
   }) {
     return _then(_$_MarketPlaceItem(
       null == id
@@ -430,6 +477,10 @@ class __$$_MarketPlaceItemCopyWithImpl<$Res> extends _$MarketPlaceItemCopyWithIm
           ? _value._sub_categories
           : sub_categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryData>,
+      freezed == offer
+          ? _value.offer
+          : offer // ignore: cast_nullable_to_non_nullable
+              as Offer?,
     ));
   }
 }
@@ -452,12 +503,14 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       this.is_loading,
       final List<CompanyItem> companies,
       final List<CategoryData> parent_categories,
-      final List<CategoryData> sub_categories)
+      final List<CategoryData> sub_categories,
+      this.offer)
       : _companies = companies,
         _parent_categories = parent_categories,
         _sub_categories = sub_categories;
 
-  factory _$_MarketPlaceItem.fromJson(Map<String, dynamic> json) => _$$_MarketPlaceItemFromJson(json);
+  factory _$_MarketPlaceItem.fromJson(Map<String, dynamic> json) =>
+      _$$_MarketPlaceItemFromJson(json);
 
   @override
   final int id;
@@ -505,8 +558,11 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
   }
 
   @override
+  final Offer? offer;
+
+  @override
   String toString() {
-    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, distance: $distance, is_favorite: $is_favorite, is_loading: $is_loading, companies: $companies, parent_categories: $parent_categories, sub_categories: $sub_categories)';
+    return 'MarketPlaceItem(id: $id, name: $name, description: $description, min_order: $min_order, delivery_time: $delivery_time, delivery_cost: $delivery_cost, rating: $rating, image: $image, logo: $logo, distance: $distance, is_favorite: $is_favorite, is_loading: $is_loading, companies: $companies, parent_categories: $parent_categories, sub_categories: $sub_categories, offer: $offer)';
   }
 
   @override
@@ -516,19 +572,30 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
             other is _$_MarketPlaceItem &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) || other.description == description) &&
-            (identical(other.min_order, min_order) || other.min_order == min_order) &&
-            (identical(other.delivery_time, delivery_time) || other.delivery_time == delivery_time) &&
-            (identical(other.delivery_cost, delivery_cost) || other.delivery_cost == delivery_cost) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.min_order, min_order) ||
+                other.min_order == min_order) &&
+            (identical(other.delivery_time, delivery_time) ||
+                other.delivery_time == delivery_time) &&
+            (identical(other.delivery_cost, delivery_cost) ||
+                other.delivery_cost == delivery_cost) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.image, image) || other.image == image) &&
             (identical(other.logo, logo) || other.logo == logo) &&
-            (identical(other.distance, distance) || other.distance == distance) &&
-            (identical(other.is_favorite, is_favorite) || other.is_favorite == is_favorite) &&
-            (identical(other.is_loading, is_loading) || other.is_loading == is_loading) &&
-            const DeepCollectionEquality().equals(other._companies, _companies) &&
-            const DeepCollectionEquality().equals(other._parent_categories, _parent_categories) &&
-            const DeepCollectionEquality().equals(other._sub_categories, _sub_categories));
+            (identical(other.distance, distance) ||
+                other.distance == distance) &&
+            (identical(other.is_favorite, is_favorite) ||
+                other.is_favorite == is_favorite) &&
+            (identical(other.is_loading, is_loading) ||
+                other.is_loading == is_loading) &&
+            const DeepCollectionEquality()
+                .equals(other._companies, _companies) &&
+            const DeepCollectionEquality()
+                .equals(other._parent_categories, _parent_categories) &&
+            const DeepCollectionEquality()
+                .equals(other._sub_categories, _sub_categories) &&
+            (identical(other.offer, offer) || other.offer == offer));
   }
 
   @JsonKey(ignore: true)
@@ -549,7 +616,8 @@ class _$_MarketPlaceItem implements _MarketPlaceItem {
       is_loading,
       const DeepCollectionEquality().hash(_companies),
       const DeepCollectionEquality().hash(_parent_categories),
-      const DeepCollectionEquality().hash(_sub_categories));
+      const DeepCollectionEquality().hash(_sub_categories),
+      offer);
 
   @JsonKey(ignore: true)
   @override
@@ -581,9 +649,11 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
       final bool? is_loading,
       final List<CompanyItem> companies,
       final List<CategoryData> parent_categories,
-      final List<CategoryData> sub_categories) = _$_MarketPlaceItem;
+      final List<CategoryData> sub_categories,
+      final Offer? offer) = _$_MarketPlaceItem;
 
-  factory _MarketPlaceItem.fromJson(Map<String, dynamic> json) = _$_MarketPlaceItem.fromJson;
+  factory _MarketPlaceItem.fromJson(Map<String, dynamic> json) =
+      _$_MarketPlaceItem.fromJson;
 
   @override
   int get id;
@@ -616,8 +686,11 @@ abstract class _MarketPlaceItem implements MarketPlaceItem {
   @override
   List<CategoryData> get sub_categories;
   @override
+  Offer? get offer;
+  @override
   @JsonKey(ignore: true)
-  _$$_MarketPlaceItemCopyWith<_$_MarketPlaceItem> get copyWith => throw _privateConstructorUsedError;
+  _$$_MarketPlaceItemCopyWith<_$_MarketPlaceItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 CompanyItem _$CompanyItemFromJson(Map<String, dynamic> json) {
@@ -639,12 +712,14 @@ mixin _$CompanyItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CompanyItemCopyWith<CompanyItem> get copyWith => throw _privateConstructorUsedError;
+  $CompanyItemCopyWith<CompanyItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CompanyItemCopyWith<$Res> {
-  factory $CompanyItemCopyWith(CompanyItem value, $Res Function(CompanyItem) then) =
+  factory $CompanyItemCopyWith(
+          CompanyItem value, $Res Function(CompanyItem) then) =
       _$CompanyItemCopyWithImpl<$Res, CompanyItem>;
   @useResult
   $Res call(
@@ -661,7 +736,8 @@ abstract class $CompanyItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CompanyItemCopyWithImpl<$Res, $Val extends CompanyItem> implements $CompanyItemCopyWith<$Res> {
+class _$CompanyItemCopyWithImpl<$Res, $Val extends CompanyItem>
+    implements $CompanyItemCopyWith<$Res> {
   _$CompanyItemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -729,8 +805,10 @@ class _$CompanyItemCopyWithImpl<$Res, $Val extends CompanyItem> implements $Comp
 }
 
 /// @nodoc
-abstract class _$$_CompanyItemCopyWith<$Res> implements $CompanyItemCopyWith<$Res> {
-  factory _$$_CompanyItemCopyWith(_$_CompanyItem value, $Res Function(_$_CompanyItem) then) =
+abstract class _$$_CompanyItemCopyWith<$Res>
+    implements $CompanyItemCopyWith<$Res> {
+  factory _$$_CompanyItemCopyWith(
+          _$_CompanyItem value, $Res Function(_$_CompanyItem) then) =
       __$$_CompanyItemCopyWithImpl<$Res>;
   @override
   @useResult
@@ -748,9 +826,12 @@ abstract class _$$_CompanyItemCopyWith<$Res> implements $CompanyItemCopyWith<$Re
 }
 
 /// @nodoc
-class __$$_CompanyItemCopyWithImpl<$Res> extends _$CompanyItemCopyWithImpl<$Res, _$_CompanyItem>
+class __$$_CompanyItemCopyWithImpl<$Res>
+    extends _$CompanyItemCopyWithImpl<$Res, _$_CompanyItem>
     implements _$$_CompanyItemCopyWith<$Res> {
-  __$$_CompanyItemCopyWithImpl(_$_CompanyItem _value, $Res Function(_$_CompanyItem) _then) : super(_value, _then);
+  __$$_CompanyItemCopyWithImpl(
+      _$_CompanyItem _value, $Res Function(_$_CompanyItem) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -814,10 +895,20 @@ class __$$_CompanyItemCopyWithImpl<$Res> extends _$CompanyItemCopyWithImpl<$Res,
 /// @nodoc
 @JsonSerializable()
 class _$_CompanyItem implements _CompanyItem {
-  const _$_CompanyItem(this.id, this.name, this.phone, this.android_app_link, this.ios_app_link, this.delivery_cost,
-      this.min_order, this.image, this.is_best, this.isSelected);
+  const _$_CompanyItem(
+      this.id,
+      this.name,
+      this.phone,
+      this.android_app_link,
+      this.ios_app_link,
+      this.delivery_cost,
+      this.min_order,
+      this.image,
+      this.is_best,
+      this.isSelected);
 
-  factory _$_CompanyItem.fromJson(Map<String, dynamic> json) => _$$_CompanyItemFromJson(json);
+  factory _$_CompanyItem.fromJson(Map<String, dynamic> json) =>
+      _$$_CompanyItemFromJson(json);
 
   @override
   final int id;
@@ -853,19 +944,34 @@ class _$_CompanyItem implements _CompanyItem {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.android_app_link, android_app_link) || other.android_app_link == android_app_link) &&
-            (identical(other.ios_app_link, ios_app_link) || other.ios_app_link == ios_app_link) &&
-            (identical(other.delivery_cost, delivery_cost) || other.delivery_cost == delivery_cost) &&
-            (identical(other.min_order, min_order) || other.min_order == min_order) &&
+            (identical(other.android_app_link, android_app_link) ||
+                other.android_app_link == android_app_link) &&
+            (identical(other.ios_app_link, ios_app_link) ||
+                other.ios_app_link == ios_app_link) &&
+            (identical(other.delivery_cost, delivery_cost) ||
+                other.delivery_cost == delivery_cost) &&
+            (identical(other.min_order, min_order) ||
+                other.min_order == min_order) &&
             (identical(other.image, image) || other.image == image) &&
             (identical(other.is_best, is_best) || other.is_best == is_best) &&
-            (identical(other.isSelected, isSelected) || other.isSelected == isSelected));
+            (identical(other.isSelected, isSelected) ||
+                other.isSelected == isSelected));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, phone, android_app_link, ios_app_link, delivery_cost,
-      min_order, image, is_best, isSelected);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      phone,
+      android_app_link,
+      ios_app_link,
+      delivery_cost,
+      min_order,
+      image,
+      is_best,
+      isSelected);
 
   @JsonKey(ignore: true)
   @override
@@ -894,7 +1000,8 @@ abstract class _CompanyItem implements CompanyItem {
       final bool is_best,
       final bool? isSelected) = _$_CompanyItem;
 
-  factory _CompanyItem.fromJson(Map<String, dynamic> json) = _$_CompanyItem.fromJson;
+  factory _CompanyItem.fromJson(Map<String, dynamic> json) =
+      _$_CompanyItem.fromJson;
 
   @override
   int get id;
@@ -918,5 +1025,237 @@ abstract class _CompanyItem implements CompanyItem {
   bool? get isSelected;
   @override
   @JsonKey(ignore: true)
-  _$$_CompanyItemCopyWith<_$_CompanyItem> get copyWith => throw _privateConstructorUsedError;
+  _$$_CompanyItemCopyWith<_$_CompanyItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Offer _$OfferFromJson(Map<String, dynamic> json) {
+  return _Offer.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Offer {
+  int get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  String? get amount => throw _privateConstructorUsedError;
+  String? get from_distance => throw _privateConstructorUsedError;
+  String? get to_distance => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OfferCopyWith<Offer> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OfferCopyWith<$Res> {
+  factory $OfferCopyWith(Offer value, $Res Function(Offer) then) =
+      _$OfferCopyWithImpl<$Res, Offer>;
+  @useResult
+  $Res call(
+      {int id,
+      String? name,
+      String? type,
+      String? amount,
+      String? from_distance,
+      String? to_distance});
+}
+
+/// @nodoc
+class _$OfferCopyWithImpl<$Res, $Val extends Offer>
+    implements $OfferCopyWith<$Res> {
+  _$OfferCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = freezed,
+    Object? type = freezed,
+    Object? amount = freezed,
+    Object? from_distance = freezed,
+    Object? to_distance = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      amount: freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      from_distance: freezed == from_distance
+          ? _value.from_distance
+          : from_distance // ignore: cast_nullable_to_non_nullable
+              as String?,
+      to_distance: freezed == to_distance
+          ? _value.to_distance
+          : to_distance // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_OfferCopyWith<$Res> implements $OfferCopyWith<$Res> {
+  factory _$$_OfferCopyWith(_$_Offer value, $Res Function(_$_Offer) then) =
+      __$$_OfferCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {int id,
+      String? name,
+      String? type,
+      String? amount,
+      String? from_distance,
+      String? to_distance});
+}
+
+/// @nodoc
+class __$$_OfferCopyWithImpl<$Res> extends _$OfferCopyWithImpl<$Res, _$_Offer>
+    implements _$$_OfferCopyWith<$Res> {
+  __$$_OfferCopyWithImpl(_$_Offer _value, $Res Function(_$_Offer) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = freezed,
+    Object? type = freezed,
+    Object? amount = freezed,
+    Object? from_distance = freezed,
+    Object? to_distance = freezed,
+  }) {
+    return _then(_$_Offer(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      freezed == from_distance
+          ? _value.from_distance
+          : from_distance // ignore: cast_nullable_to_non_nullable
+              as String?,
+      freezed == to_distance
+          ? _value.to_distance
+          : to_distance // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Offer implements _Offer {
+  const _$_Offer(this.id, this.name, this.type, this.amount, this.from_distance,
+      this.to_distance);
+
+  factory _$_Offer.fromJson(Map<String, dynamic> json) =>
+      _$$_OfferFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String? name;
+  @override
+  final String? type;
+  @override
+  final String? amount;
+  @override
+  final String? from_distance;
+  @override
+  final String? to_distance;
+
+  @override
+  String toString() {
+    return 'Offer(id: $id, name: $name, type: $type, amount: $amount, from_distance: $from_distance, to_distance: $to_distance)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Offer &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.from_distance, from_distance) ||
+                other.from_distance == from_distance) &&
+            (identical(other.to_distance, to_distance) ||
+                other.to_distance == to_distance));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, name, type, amount, from_distance, to_distance);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_OfferCopyWith<_$_Offer> get copyWith =>
+      __$$_OfferCopyWithImpl<_$_Offer>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_OfferToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Offer implements Offer {
+  const factory _Offer(
+      final int id,
+      final String? name,
+      final String? type,
+      final String? amount,
+      final String? from_distance,
+      final String? to_distance) = _$_Offer;
+
+  factory _Offer.fromJson(Map<String, dynamic> json) = _$_Offer.fromJson;
+
+  @override
+  int get id;
+  @override
+  String? get name;
+  @override
+  String? get type;
+  @override
+  String? get amount;
+  @override
+  String? get from_distance;
+  @override
+  String? get to_distance;
+  @override
+  @JsonKey(ignore: true)
+  _$$_OfferCopyWith<_$_Offer> get copyWith =>
+      throw _privateConstructorUsedError;
 }

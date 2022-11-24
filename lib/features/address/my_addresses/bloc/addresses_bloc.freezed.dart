@@ -64,12 +64,14 @@ mixin _$MyAddressesEvent {
 
 /// @nodoc
 abstract class $MyAddressesEventCopyWith<$Res> {
-  factory $MyAddressesEventCopyWith(MyAddressesEvent value, $Res Function(MyAddressesEvent) then) =
+  factory $MyAddressesEventCopyWith(
+          MyAddressesEvent value, $Res Function(MyAddressesEvent) then) =
       _$MyAddressesEventCopyWithImpl<$Res, MyAddressesEvent>;
 }
 
 /// @nodoc
-class _$MyAddressesEventCopyWithImpl<$Res, $Val extends MyAddressesEvent> implements $MyAddressesEventCopyWith<$Res> {
+class _$MyAddressesEventCopyWithImpl<$Res, $Val extends MyAddressesEvent>
+    implements $MyAddressesEventCopyWith<$Res> {
   _$MyAddressesEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -80,14 +82,17 @@ class _$MyAddressesEventCopyWithImpl<$Res, $Val extends MyAddressesEvent> implem
 
 /// @nodoc
 abstract class _$$GetAddressesListEventCopyWith<$Res> {
-  factory _$$GetAddressesListEventCopyWith(_$GetAddressesListEvent value, $Res Function(_$GetAddressesListEvent) then) =
+  factory _$$GetAddressesListEventCopyWith(_$GetAddressesListEvent value,
+          $Res Function(_$GetAddressesListEvent) then) =
       __$$GetAddressesListEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAddressesListEventCopyWithImpl<$Res> extends _$MyAddressesEventCopyWithImpl<$Res, _$GetAddressesListEvent>
+class __$$GetAddressesListEventCopyWithImpl<$Res>
+    extends _$MyAddressesEventCopyWithImpl<$Res, _$GetAddressesListEvent>
     implements _$$GetAddressesListEventCopyWith<$Res> {
-  __$$GetAddressesListEventCopyWithImpl(_$GetAddressesListEvent _value, $Res Function(_$GetAddressesListEvent) _then)
+  __$$GetAddressesListEventCopyWithImpl(_$GetAddressesListEvent _value,
+      $Res Function(_$GetAddressesListEvent) _then)
       : super(_value, _then);
 }
 
@@ -103,7 +108,8 @@ class _$GetAddressesListEvent implements GetAddressesListEvent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetAddressesListEvent);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetAddressesListEvent);
   }
 
   @override
@@ -184,16 +190,19 @@ abstract class GetAddressesListEvent implements MyAddressesEvent {
 
 /// @nodoc
 abstract class _$$MakeAddressAsDefaultCopyWith<$Res> {
-  factory _$$MakeAddressAsDefaultCopyWith(_$MakeAddressAsDefault value, $Res Function(_$MakeAddressAsDefault) then) =
+  factory _$$MakeAddressAsDefaultCopyWith(_$MakeAddressAsDefault value,
+          $Res Function(_$MakeAddressAsDefault) then) =
       __$$MakeAddressAsDefaultCopyWithImpl<$Res>;
   @useResult
   $Res call({Address address});
 }
 
 /// @nodoc
-class __$$MakeAddressAsDefaultCopyWithImpl<$Res> extends _$MyAddressesEventCopyWithImpl<$Res, _$MakeAddressAsDefault>
+class __$$MakeAddressAsDefaultCopyWithImpl<$Res>
+    extends _$MyAddressesEventCopyWithImpl<$Res, _$MakeAddressAsDefault>
     implements _$$MakeAddressAsDefaultCopyWith<$Res> {
-  __$$MakeAddressAsDefaultCopyWithImpl(_$MakeAddressAsDefault _value, $Res Function(_$MakeAddressAsDefault) _then)
+  __$$MakeAddressAsDefaultCopyWithImpl(_$MakeAddressAsDefault _value,
+      $Res Function(_$MakeAddressAsDefault) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -238,7 +247,8 @@ class _$MakeAddressAsDefault implements MakeAddressAsDefault {
   @override
   @pragma('vm:prefer-inline')
   _$$MakeAddressAsDefaultCopyWith<_$MakeAddressAsDefault> get copyWith =>
-      __$$MakeAddressAsDefaultCopyWithImpl<_$MakeAddressAsDefault>(this, _$identity);
+      __$$MakeAddressAsDefaultCopyWithImpl<_$MakeAddressAsDefault>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -310,25 +320,31 @@ class _$MakeAddressAsDefault implements MakeAddressAsDefault {
 }
 
 abstract class MakeAddressAsDefault implements MyAddressesEvent {
-  const factory MakeAddressAsDefault(final Address address) = _$MakeAddressAsDefault;
+  const factory MakeAddressAsDefault(final Address address) =
+      _$MakeAddressAsDefault;
 
   Address get address;
   @JsonKey(ignore: true)
-  _$$MakeAddressAsDefaultCopyWith<_$MakeAddressAsDefault> get copyWith => throw _privateConstructorUsedError;
+  _$$MakeAddressAsDefaultCopyWith<_$MakeAddressAsDefault> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$DeleteAddressCopyWith<$Res> {
-  factory _$$DeleteAddressCopyWith(_$DeleteAddress value, $Res Function(_$DeleteAddress) then) =
+  factory _$$DeleteAddressCopyWith(
+          _$DeleteAddress value, $Res Function(_$DeleteAddress) then) =
       __$$DeleteAddressCopyWithImpl<$Res>;
   @useResult
   $Res call({Address address});
 }
 
 /// @nodoc
-class __$$DeleteAddressCopyWithImpl<$Res> extends _$MyAddressesEventCopyWithImpl<$Res, _$DeleteAddress>
+class __$$DeleteAddressCopyWithImpl<$Res>
+    extends _$MyAddressesEventCopyWithImpl<$Res, _$DeleteAddress>
     implements _$$DeleteAddressCopyWith<$Res> {
-  __$$DeleteAddressCopyWithImpl(_$DeleteAddress _value, $Res Function(_$DeleteAddress) _then) : super(_value, _then);
+  __$$DeleteAddressCopyWithImpl(
+      _$DeleteAddress _value, $Res Function(_$DeleteAddress) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -448,7 +464,8 @@ abstract class DeleteAddress implements MyAddressesEvent {
 
   Address get address;
   @JsonKey(ignore: true)
-  _$$DeleteAddressCopyWith<_$DeleteAddress> get copyWith => throw _privateConstructorUsedError;
+  _$$DeleteAddressCopyWith<_$DeleteAddress> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -459,17 +476,23 @@ mixin _$MyAddressesState {
   List<Address> get address => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, String error, bool refreshData, List<Address> address) defaultState,
+    required TResult Function(bool isLoading, String error, bool refreshData,
+            List<Address> address)
+        defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isLoading, String error, bool refreshData, List<Address> address)? defaultState,
+    TResult? Function(bool isLoading, String error, bool refreshData,
+            List<Address> address)?
+        defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool refreshData, List<Address> address)? defaultState,
+    TResult Function(bool isLoading, String error, bool refreshData,
+            List<Address> address)?
+        defaultState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -491,19 +514,23 @@ mixin _$MyAddressesState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MyAddressesStateCopyWith<MyAddressesState> get copyWith => throw _privateConstructorUsedError;
+  $MyAddressesStateCopyWith<MyAddressesState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MyAddressesStateCopyWith<$Res> {
-  factory $MyAddressesStateCopyWith(MyAddressesState value, $Res Function(MyAddressesState) then) =
+  factory $MyAddressesStateCopyWith(
+          MyAddressesState value, $Res Function(MyAddressesState) then) =
       _$MyAddressesStateCopyWithImpl<$Res, MyAddressesState>;
   @useResult
-  $Res call({bool isLoading, String error, bool refreshData, List<Address> address});
+  $Res call(
+      {bool isLoading, String error, bool refreshData, List<Address> address});
 }
 
 /// @nodoc
-class _$MyAddressesStateCopyWithImpl<$Res, $Val extends MyAddressesState> implements $MyAddressesStateCopyWith<$Res> {
+class _$MyAddressesStateCopyWithImpl<$Res, $Val extends MyAddressesState>
+    implements $MyAddressesStateCopyWith<$Res> {
   _$MyAddressesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -541,13 +568,16 @@ class _$MyAddressesStateCopyWithImpl<$Res, $Val extends MyAddressesState> implem
 }
 
 /// @nodoc
-abstract class _$$MyAddressesStateCurrentStateCopyWith<$Res> implements $MyAddressesStateCopyWith<$Res> {
+abstract class _$$MyAddressesStateCurrentStateCopyWith<$Res>
+    implements $MyAddressesStateCopyWith<$Res> {
   factory _$$MyAddressesStateCurrentStateCopyWith(
-          _$MyAddressesStateCurrentState value, $Res Function(_$MyAddressesStateCurrentState) then) =
+          _$MyAddressesStateCurrentState value,
+          $Res Function(_$MyAddressesStateCurrentState) then) =
       __$$MyAddressesStateCurrentStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, String error, bool refreshData, List<Address> address});
+  $Res call(
+      {bool isLoading, String error, bool refreshData, List<Address> address});
 }
 
 /// @nodoc
@@ -555,7 +585,8 @@ class __$$MyAddressesStateCurrentStateCopyWithImpl<$Res>
     extends _$MyAddressesStateCopyWithImpl<$Res, _$MyAddressesStateCurrentState>
     implements _$$MyAddressesStateCurrentStateCopyWith<$Res> {
   __$$MyAddressesStateCurrentStateCopyWithImpl(
-      _$MyAddressesStateCurrentState _value, $Res Function(_$MyAddressesStateCurrentState) _then)
+      _$MyAddressesStateCurrentState _value,
+      $Res Function(_$MyAddressesStateCurrentState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -591,7 +622,10 @@ class __$$MyAddressesStateCurrentStateCopyWithImpl<$Res>
 
 class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
   const _$MyAddressesStateCurrentState(
-      [this.isLoading = false, this.error = "", this.refreshData = false, final List<Address> address = const []])
+      [this.isLoading = false,
+      this.error = "",
+      this.refreshData = false,
+      final List<Address> address = const []])
       : _address = address;
 
   @override
@@ -621,26 +655,31 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MyAddressesStateCurrentState &&
-            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
             (identical(other.error, error) || other.error == error) &&
-            (identical(other.refreshData, refreshData) || other.refreshData == refreshData) &&
+            (identical(other.refreshData, refreshData) ||
+                other.refreshData == refreshData) &&
             const DeepCollectionEquality().equals(other._address, _address));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLoading, error, refreshData, const DeepCollectionEquality().hash(_address));
+  int get hashCode => Object.hash(runtimeType, isLoading, error, refreshData,
+      const DeepCollectionEquality().hash(_address));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MyAddressesStateCurrentStateCopyWith<_$MyAddressesStateCurrentState> get copyWith =>
-      __$$MyAddressesStateCurrentStateCopyWithImpl<_$MyAddressesStateCurrentState>(this, _$identity);
+  _$$MyAddressesStateCurrentStateCopyWith<_$MyAddressesStateCurrentState>
+      get copyWith => __$$MyAddressesStateCurrentStateCopyWithImpl<
+          _$MyAddressesStateCurrentState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, String error, bool refreshData, List<Address> address) defaultState,
+    required TResult Function(bool isLoading, String error, bool refreshData,
+            List<Address> address)
+        defaultState,
   }) {
     return defaultState(isLoading, error, refreshData, address);
   }
@@ -648,7 +687,9 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isLoading, String error, bool refreshData, List<Address> address)? defaultState,
+    TResult? Function(bool isLoading, String error, bool refreshData,
+            List<Address> address)?
+        defaultState,
   }) {
     return defaultState?.call(isLoading, error, refreshData, address);
   }
@@ -656,7 +697,9 @@ class _$MyAddressesStateCurrentState implements MyAddressesStateCurrentState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, String error, bool refreshData, List<Address> address)? defaultState,
+    TResult Function(bool isLoading, String error, bool refreshData,
+            List<Address> address)?
+        defaultState,
     required TResult orElse(),
   }) {
     if (defaultState != null) {
@@ -711,6 +754,6 @@ abstract class MyAddressesStateCurrentState implements MyAddressesState {
   List<Address> get address;
   @override
   @JsonKey(ignore: true)
-  _$$MyAddressesStateCurrentStateCopyWith<_$MyAddressesStateCurrentState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MyAddressesStateCurrentStateCopyWith<_$MyAddressesStateCurrentState>
+      get copyWith => throw _privateConstructorUsedError;
 }

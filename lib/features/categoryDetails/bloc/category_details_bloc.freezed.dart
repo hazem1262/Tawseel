@@ -53,11 +53,16 @@ mixin _$CategoryDetailsBlocEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetCategoryDetailsAds value) getAds,
-    required TResult Function(GetCategoryDetailsSubCategories value) getSubCategories,
-    required TResult Function(SelectCategoryDetailsSubCategory value) selectSubCategories,
-    required TResult Function(GetCategoryDetailsMarketPlaces value) getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetCategoryDetailsSubCategories value)
+        getSubCategories,
+    required TResult Function(SelectCategoryDetailsSubCategory value)
+        selectSubCategories,
+    required TResult Function(GetCategoryDetailsMarketPlaces value)
+        getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetCategoryDetailsRefreshData value) reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,10 +70,12 @@ mixin _$CategoryDetailsBlocEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetCategoryDetailsAds value)? getAds,
     TResult? Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult? Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult? Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult? Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetCategoryDetailsRefreshData value)? reset,
   }) =>
       throw _privateConstructorUsedError;
@@ -76,10 +83,12 @@ mixin _$CategoryDetailsBlocEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetCategoryDetailsAds value)? getAds,
     TResult Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetCategoryDetailsRefreshData value)? reset,
     required TResult orElse(),
   }) =>
@@ -88,13 +97,14 @@ mixin _$CategoryDetailsBlocEvent {
 
 /// @nodoc
 abstract class $CategoryDetailsBlocEventCopyWith<$Res> {
-  factory $CategoryDetailsBlocEventCopyWith(
-          CategoryDetailsBlocEvent value, $Res Function(CategoryDetailsBlocEvent) then) =
+  factory $CategoryDetailsBlocEventCopyWith(CategoryDetailsBlocEvent value,
+          $Res Function(CategoryDetailsBlocEvent) then) =
       _$CategoryDetailsBlocEventCopyWithImpl<$Res, CategoryDetailsBlocEvent>;
 }
 
 /// @nodoc
-class _$CategoryDetailsBlocEventCopyWithImpl<$Res, $Val extends CategoryDetailsBlocEvent>
+class _$CategoryDetailsBlocEventCopyWithImpl<$Res,
+        $Val extends CategoryDetailsBlocEvent>
     implements $CategoryDetailsBlocEventCopyWith<$Res> {
   _$CategoryDetailsBlocEventCopyWithImpl(this._value, this._then);
 
@@ -106,15 +116,18 @@ class _$CategoryDetailsBlocEventCopyWithImpl<$Res, $Val extends CategoryDetailsB
 
 /// @nodoc
 abstract class _$$GetCategoryDetailsAdsCopyWith<$Res> {
-  factory _$$GetCategoryDetailsAdsCopyWith(_$GetCategoryDetailsAds value, $Res Function(_$GetCategoryDetailsAds) then) =
+  factory _$$GetCategoryDetailsAdsCopyWith(_$GetCategoryDetailsAds value,
+          $Res Function(_$GetCategoryDetailsAds) then) =
       __$$GetCategoryDetailsAdsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$GetCategoryDetailsAdsCopyWithImpl<$Res>
-    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res, _$GetCategoryDetailsAds>
+    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res,
+        _$GetCategoryDetailsAds>
     implements _$$GetCategoryDetailsAdsCopyWith<$Res> {
-  __$$GetCategoryDetailsAdsCopyWithImpl(_$GetCategoryDetailsAds _value, $Res Function(_$GetCategoryDetailsAds) _then)
+  __$$GetCategoryDetailsAdsCopyWithImpl(_$GetCategoryDetailsAds _value,
+      $Res Function(_$GetCategoryDetailsAds) _then)
       : super(_value, _then);
 }
 
@@ -130,7 +143,8 @@ class _$GetCategoryDetailsAds implements GetCategoryDetailsAds {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetCategoryDetailsAds);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetCategoryDetailsAds);
   }
 
   @override
@@ -186,11 +200,16 @@ class _$GetCategoryDetailsAds implements GetCategoryDetailsAds {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetCategoryDetailsAds value) getAds,
-    required TResult Function(GetCategoryDetailsSubCategories value) getSubCategories,
-    required TResult Function(SelectCategoryDetailsSubCategory value) selectSubCategories,
-    required TResult Function(GetCategoryDetailsMarketPlaces value) getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetCategoryDetailsSubCategories value)
+        getSubCategories,
+    required TResult Function(SelectCategoryDetailsSubCategory value)
+        selectSubCategories,
+    required TResult Function(GetCategoryDetailsMarketPlaces value)
+        getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetCategoryDetailsRefreshData value) reset,
   }) {
     return getAds(this);
@@ -201,10 +220,12 @@ class _$GetCategoryDetailsAds implements GetCategoryDetailsAds {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetCategoryDetailsAds value)? getAds,
     TResult? Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult? Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult? Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult? Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetCategoryDetailsRefreshData value)? reset,
   }) {
     return getAds?.call(this);
@@ -215,10 +236,12 @@ class _$GetCategoryDetailsAds implements GetCategoryDetailsAds {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetCategoryDetailsAds value)? getAds,
     TResult Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetCategoryDetailsRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -236,7 +259,8 @@ abstract class GetCategoryDetailsAds implements CategoryDetailsBlocEvent {
 /// @nodoc
 abstract class _$$GetCategoryDetailsSubCategoriesCopyWith<$Res> {
   factory _$$GetCategoryDetailsSubCategoriesCopyWith(
-          _$GetCategoryDetailsSubCategories value, $Res Function(_$GetCategoryDetailsSubCategories) then) =
+          _$GetCategoryDetailsSubCategories value,
+          $Res Function(_$GetCategoryDetailsSubCategories) then) =
       __$$GetCategoryDetailsSubCategoriesCopyWithImpl<$Res>;
   @useResult
   $Res call({int categoryId});
@@ -244,10 +268,12 @@ abstract class _$$GetCategoryDetailsSubCategoriesCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetCategoryDetailsSubCategoriesCopyWithImpl<$Res>
-    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res, _$GetCategoryDetailsSubCategories>
+    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res,
+        _$GetCategoryDetailsSubCategories>
     implements _$$GetCategoryDetailsSubCategoriesCopyWith<$Res> {
   __$$GetCategoryDetailsSubCategoriesCopyWithImpl(
-      _$GetCategoryDetailsSubCategories _value, $Res Function(_$GetCategoryDetailsSubCategories) _then)
+      _$GetCategoryDetailsSubCategories _value,
+      $Res Function(_$GetCategoryDetailsSubCategories) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -266,7 +292,8 @@ class __$$GetCategoryDetailsSubCategoriesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetCategoryDetailsSubCategories implements GetCategoryDetailsSubCategories {
+class _$GetCategoryDetailsSubCategories
+    implements GetCategoryDetailsSubCategories {
   const _$GetCategoryDetailsSubCategories(this.categoryId);
 
   @override
@@ -282,7 +309,8 @@ class _$GetCategoryDetailsSubCategories implements GetCategoryDetailsSubCategori
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetCategoryDetailsSubCategories &&
-            (identical(other.categoryId, categoryId) || other.categoryId == categoryId));
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId));
   }
 
   @override
@@ -291,8 +319,9 @@ class _$GetCategoryDetailsSubCategories implements GetCategoryDetailsSubCategori
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetCategoryDetailsSubCategoriesCopyWith<_$GetCategoryDetailsSubCategories> get copyWith =>
-      __$$GetCategoryDetailsSubCategoriesCopyWithImpl<_$GetCategoryDetailsSubCategories>(this, _$identity);
+  _$$GetCategoryDetailsSubCategoriesCopyWith<_$GetCategoryDetailsSubCategories>
+      get copyWith => __$$GetCategoryDetailsSubCategoriesCopyWithImpl<
+          _$GetCategoryDetailsSubCategories>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -344,11 +373,16 @@ class _$GetCategoryDetailsSubCategories implements GetCategoryDetailsSubCategori
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetCategoryDetailsAds value) getAds,
-    required TResult Function(GetCategoryDetailsSubCategories value) getSubCategories,
-    required TResult Function(SelectCategoryDetailsSubCategory value) selectSubCategories,
-    required TResult Function(GetCategoryDetailsMarketPlaces value) getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetCategoryDetailsSubCategories value)
+        getSubCategories,
+    required TResult Function(SelectCategoryDetailsSubCategory value)
+        selectSubCategories,
+    required TResult Function(GetCategoryDetailsMarketPlaces value)
+        getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetCategoryDetailsRefreshData value) reset,
   }) {
     return getSubCategories(this);
@@ -359,10 +393,12 @@ class _$GetCategoryDetailsSubCategories implements GetCategoryDetailsSubCategori
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetCategoryDetailsAds value)? getAds,
     TResult? Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult? Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult? Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult? Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetCategoryDetailsRefreshData value)? reset,
   }) {
     return getSubCategories?.call(this);
@@ -373,10 +409,12 @@ class _$GetCategoryDetailsSubCategories implements GetCategoryDetailsSubCategori
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetCategoryDetailsAds value)? getAds,
     TResult Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetCategoryDetailsRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -387,19 +425,22 @@ class _$GetCategoryDetailsSubCategories implements GetCategoryDetailsSubCategori
   }
 }
 
-abstract class GetCategoryDetailsSubCategories implements CategoryDetailsBlocEvent {
-  const factory GetCategoryDetailsSubCategories(final int categoryId) = _$GetCategoryDetailsSubCategories;
+abstract class GetCategoryDetailsSubCategories
+    implements CategoryDetailsBlocEvent {
+  const factory GetCategoryDetailsSubCategories(final int categoryId) =
+      _$GetCategoryDetailsSubCategories;
 
   int get categoryId;
   @JsonKey(ignore: true)
-  _$$GetCategoryDetailsSubCategoriesCopyWith<_$GetCategoryDetailsSubCategories> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetCategoryDetailsSubCategoriesCopyWith<_$GetCategoryDetailsSubCategories>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SelectCategoryDetailsSubCategoryCopyWith<$Res> {
   factory _$$SelectCategoryDetailsSubCategoryCopyWith(
-          _$SelectCategoryDetailsSubCategory value, $Res Function(_$SelectCategoryDetailsSubCategory) then) =
+          _$SelectCategoryDetailsSubCategory value,
+          $Res Function(_$SelectCategoryDetailsSubCategory) then) =
       __$$SelectCategoryDetailsSubCategoryCopyWithImpl<$Res>;
   @useResult
   $Res call({int categoryId});
@@ -407,10 +448,12 @@ abstract class _$$SelectCategoryDetailsSubCategoryCopyWith<$Res> {
 
 /// @nodoc
 class __$$SelectCategoryDetailsSubCategoryCopyWithImpl<$Res>
-    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res, _$SelectCategoryDetailsSubCategory>
+    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res,
+        _$SelectCategoryDetailsSubCategory>
     implements _$$SelectCategoryDetailsSubCategoryCopyWith<$Res> {
   __$$SelectCategoryDetailsSubCategoryCopyWithImpl(
-      _$SelectCategoryDetailsSubCategory _value, $Res Function(_$SelectCategoryDetailsSubCategory) _then)
+      _$SelectCategoryDetailsSubCategory _value,
+      $Res Function(_$SelectCategoryDetailsSubCategory) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -429,7 +472,8 @@ class __$$SelectCategoryDetailsSubCategoryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SelectCategoryDetailsSubCategory implements SelectCategoryDetailsSubCategory {
+class _$SelectCategoryDetailsSubCategory
+    implements SelectCategoryDetailsSubCategory {
   const _$SelectCategoryDetailsSubCategory(this.categoryId);
 
   @override
@@ -445,7 +489,8 @@ class _$SelectCategoryDetailsSubCategory implements SelectCategoryDetailsSubCate
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SelectCategoryDetailsSubCategory &&
-            (identical(other.categoryId, categoryId) || other.categoryId == categoryId));
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId));
   }
 
   @override
@@ -454,8 +499,10 @@ class _$SelectCategoryDetailsSubCategory implements SelectCategoryDetailsSubCate
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelectCategoryDetailsSubCategoryCopyWith<_$SelectCategoryDetailsSubCategory> get copyWith =>
-      __$$SelectCategoryDetailsSubCategoryCopyWithImpl<_$SelectCategoryDetailsSubCategory>(this, _$identity);
+  _$$SelectCategoryDetailsSubCategoryCopyWith<
+          _$SelectCategoryDetailsSubCategory>
+      get copyWith => __$$SelectCategoryDetailsSubCategoryCopyWithImpl<
+          _$SelectCategoryDetailsSubCategory>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -507,11 +554,16 @@ class _$SelectCategoryDetailsSubCategory implements SelectCategoryDetailsSubCate
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetCategoryDetailsAds value) getAds,
-    required TResult Function(GetCategoryDetailsSubCategories value) getSubCategories,
-    required TResult Function(SelectCategoryDetailsSubCategory value) selectSubCategories,
-    required TResult Function(GetCategoryDetailsMarketPlaces value) getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetCategoryDetailsSubCategories value)
+        getSubCategories,
+    required TResult Function(SelectCategoryDetailsSubCategory value)
+        selectSubCategories,
+    required TResult Function(GetCategoryDetailsMarketPlaces value)
+        getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetCategoryDetailsRefreshData value) reset,
   }) {
     return selectSubCategories(this);
@@ -522,10 +574,12 @@ class _$SelectCategoryDetailsSubCategory implements SelectCategoryDetailsSubCate
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetCategoryDetailsAds value)? getAds,
     TResult? Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult? Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult? Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult? Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetCategoryDetailsRefreshData value)? reset,
   }) {
     return selectSubCategories?.call(this);
@@ -536,10 +590,12 @@ class _$SelectCategoryDetailsSubCategory implements SelectCategoryDetailsSubCate
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetCategoryDetailsAds value)? getAds,
     TResult Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetCategoryDetailsRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -550,19 +606,23 @@ class _$SelectCategoryDetailsSubCategory implements SelectCategoryDetailsSubCate
   }
 }
 
-abstract class SelectCategoryDetailsSubCategory implements CategoryDetailsBlocEvent {
-  const factory SelectCategoryDetailsSubCategory(final int categoryId) = _$SelectCategoryDetailsSubCategory;
+abstract class SelectCategoryDetailsSubCategory
+    implements CategoryDetailsBlocEvent {
+  const factory SelectCategoryDetailsSubCategory(final int categoryId) =
+      _$SelectCategoryDetailsSubCategory;
 
   int get categoryId;
   @JsonKey(ignore: true)
-  _$$SelectCategoryDetailsSubCategoryCopyWith<_$SelectCategoryDetailsSubCategory> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SelectCategoryDetailsSubCategoryCopyWith<
+          _$SelectCategoryDetailsSubCategory>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetCategoryDetailsMarketPlacesCopyWith<$Res> {
   factory _$$GetCategoryDetailsMarketPlacesCopyWith(
-          _$GetCategoryDetailsMarketPlaces value, $Res Function(_$GetCategoryDetailsMarketPlaces) then) =
+          _$GetCategoryDetailsMarketPlaces value,
+          $Res Function(_$GetCategoryDetailsMarketPlaces) then) =
       __$$GetCategoryDetailsMarketPlacesCopyWithImpl<$Res>;
   @useResult
   $Res call({List<int>? category_ids});
@@ -570,10 +630,12 @@ abstract class _$$GetCategoryDetailsMarketPlacesCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetCategoryDetailsMarketPlacesCopyWithImpl<$Res>
-    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res, _$GetCategoryDetailsMarketPlaces>
+    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res,
+        _$GetCategoryDetailsMarketPlaces>
     implements _$$GetCategoryDetailsMarketPlacesCopyWith<$Res> {
   __$$GetCategoryDetailsMarketPlacesCopyWithImpl(
-      _$GetCategoryDetailsMarketPlaces _value, $Res Function(_$GetCategoryDetailsMarketPlaces) _then)
+      _$GetCategoryDetailsMarketPlaces _value,
+      $Res Function(_$GetCategoryDetailsMarketPlaces) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -592,8 +654,10 @@ class __$$GetCategoryDetailsMarketPlacesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetCategoryDetailsMarketPlaces implements GetCategoryDetailsMarketPlaces {
-  const _$GetCategoryDetailsMarketPlaces(final List<int>? category_ids) : _category_ids = category_ids;
+class _$GetCategoryDetailsMarketPlaces
+    implements GetCategoryDetailsMarketPlaces {
+  const _$GetCategoryDetailsMarketPlaces(final List<int>? category_ids)
+      : _category_ids = category_ids;
 
   final List<int>? _category_ids;
   @override
@@ -614,17 +678,20 @@ class _$GetCategoryDetailsMarketPlaces implements GetCategoryDetailsMarketPlaces
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetCategoryDetailsMarketPlaces &&
-            const DeepCollectionEquality().equals(other._category_ids, _category_ids));
+            const DeepCollectionEquality()
+                .equals(other._category_ids, _category_ids));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_category_ids));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_category_ids));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetCategoryDetailsMarketPlacesCopyWith<_$GetCategoryDetailsMarketPlaces> get copyWith =>
-      __$$GetCategoryDetailsMarketPlacesCopyWithImpl<_$GetCategoryDetailsMarketPlaces>(this, _$identity);
+  _$$GetCategoryDetailsMarketPlacesCopyWith<_$GetCategoryDetailsMarketPlaces>
+      get copyWith => __$$GetCategoryDetailsMarketPlacesCopyWithImpl<
+          _$GetCategoryDetailsMarketPlaces>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -676,11 +743,16 @@ class _$GetCategoryDetailsMarketPlaces implements GetCategoryDetailsMarketPlaces
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetCategoryDetailsAds value) getAds,
-    required TResult Function(GetCategoryDetailsSubCategories value) getSubCategories,
-    required TResult Function(SelectCategoryDetailsSubCategory value) selectSubCategories,
-    required TResult Function(GetCategoryDetailsMarketPlaces value) getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetCategoryDetailsSubCategories value)
+        getSubCategories,
+    required TResult Function(SelectCategoryDetailsSubCategory value)
+        selectSubCategories,
+    required TResult Function(GetCategoryDetailsMarketPlaces value)
+        getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetCategoryDetailsRefreshData value) reset,
   }) {
     return getMarketPlaces(this);
@@ -691,10 +763,12 @@ class _$GetCategoryDetailsMarketPlaces implements GetCategoryDetailsMarketPlaces
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetCategoryDetailsAds value)? getAds,
     TResult? Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult? Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult? Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult? Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetCategoryDetailsRefreshData value)? reset,
   }) {
     return getMarketPlaces?.call(this);
@@ -705,10 +779,12 @@ class _$GetCategoryDetailsMarketPlaces implements GetCategoryDetailsMarketPlaces
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetCategoryDetailsAds value)? getAds,
     TResult Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetCategoryDetailsRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -719,19 +795,21 @@ class _$GetCategoryDetailsMarketPlaces implements GetCategoryDetailsMarketPlaces
   }
 }
 
-abstract class GetCategoryDetailsMarketPlaces implements CategoryDetailsBlocEvent {
-  const factory GetCategoryDetailsMarketPlaces(final List<int>? category_ids) = _$GetCategoryDetailsMarketPlaces;
+abstract class GetCategoryDetailsMarketPlaces
+    implements CategoryDetailsBlocEvent {
+  const factory GetCategoryDetailsMarketPlaces(final List<int>? category_ids) =
+      _$GetCategoryDetailsMarketPlaces;
 
   List<int>? get category_ids;
   @JsonKey(ignore: true)
-  _$$GetCategoryDetailsMarketPlacesCopyWith<_$GetCategoryDetailsMarketPlaces> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetCategoryDetailsMarketPlacesCopyWith<_$GetCategoryDetailsMarketPlaces>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
-  factory _$$AddMarketPlaceToFavoriteCopyWith(
-          _$AddMarketPlaceToFavorite value, $Res Function(_$AddMarketPlaceToFavorite) then) =
+  factory _$$AddMarketPlaceToFavoriteCopyWith(_$AddMarketPlaceToFavorite value,
+          $Res Function(_$AddMarketPlaceToFavorite) then) =
       __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
@@ -739,10 +817,11 @@ abstract class _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
 
 /// @nodoc
 class __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res>
-    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res, _$AddMarketPlaceToFavorite>
+    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res,
+        _$AddMarketPlaceToFavorite>
     implements _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
-  __$$AddMarketPlaceToFavoriteCopyWithImpl(
-      _$AddMarketPlaceToFavorite _value, $Res Function(_$AddMarketPlaceToFavorite) _then)
+  __$$AddMarketPlaceToFavoriteCopyWithImpl(_$AddMarketPlaceToFavorite _value,
+      $Res Function(_$AddMarketPlaceToFavorite) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -786,8 +865,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite> get copyWith =>
-      __$$AddMarketPlaceToFavoriteCopyWithImpl<_$AddMarketPlaceToFavorite>(this, _$identity);
+  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite>
+      get copyWith =>
+          __$$AddMarketPlaceToFavoriteCopyWithImpl<_$AddMarketPlaceToFavorite>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -839,11 +920,16 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetCategoryDetailsAds value) getAds,
-    required TResult Function(GetCategoryDetailsSubCategories value) getSubCategories,
-    required TResult Function(SelectCategoryDetailsSubCategory value) selectSubCategories,
-    required TResult Function(GetCategoryDetailsMarketPlaces value) getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetCategoryDetailsSubCategories value)
+        getSubCategories,
+    required TResult Function(SelectCategoryDetailsSubCategory value)
+        selectSubCategories,
+    required TResult Function(GetCategoryDetailsMarketPlaces value)
+        getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetCategoryDetailsRefreshData value) reset,
   }) {
     return addMarketPlaceToFavorite(this);
@@ -854,10 +940,12 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetCategoryDetailsAds value)? getAds,
     TResult? Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult? Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult? Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult? Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetCategoryDetailsRefreshData value)? reset,
   }) {
     return addMarketPlaceToFavorite?.call(this);
@@ -868,10 +956,12 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetCategoryDetailsAds value)? getAds,
     TResult Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetCategoryDetailsRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -883,17 +973,20 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
 }
 
 abstract class AddMarketPlaceToFavorite implements CategoryDetailsBlocEvent {
-  const factory AddMarketPlaceToFavorite(final int id) = _$AddMarketPlaceToFavorite;
+  const factory AddMarketPlaceToFavorite(final int id) =
+      _$AddMarketPlaceToFavorite;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite> get copyWith => throw _privateConstructorUsedError;
+  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   factory _$$RemoveMarketPlaceFromFavoriteCopyWith(
-          _$RemoveMarketPlaceFromFavorite value, $Res Function(_$RemoveMarketPlaceFromFavorite) then) =
+          _$RemoveMarketPlaceFromFavorite value,
+          $Res Function(_$RemoveMarketPlaceFromFavorite) then) =
       __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
@@ -901,10 +994,12 @@ abstract class _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
 
 /// @nodoc
 class __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>
-    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res, _$RemoveMarketPlaceFromFavorite>
+    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res,
+        _$RemoveMarketPlaceFromFavorite>
     implements _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   __$$RemoveMarketPlaceFromFavoriteCopyWithImpl(
-      _$RemoveMarketPlaceFromFavorite _value, $Res Function(_$RemoveMarketPlaceFromFavorite) _then)
+      _$RemoveMarketPlaceFromFavorite _value,
+      $Res Function(_$RemoveMarketPlaceFromFavorite) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -948,8 +1043,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite> get copyWith =>
-      __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<_$RemoveMarketPlaceFromFavorite>(this, _$identity);
+  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite>
+      get copyWith => __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<
+          _$RemoveMarketPlaceFromFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1001,11 +1097,16 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetCategoryDetailsAds value) getAds,
-    required TResult Function(GetCategoryDetailsSubCategories value) getSubCategories,
-    required TResult Function(SelectCategoryDetailsSubCategory value) selectSubCategories,
-    required TResult Function(GetCategoryDetailsMarketPlaces value) getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetCategoryDetailsSubCategories value)
+        getSubCategories,
+    required TResult Function(SelectCategoryDetailsSubCategory value)
+        selectSubCategories,
+    required TResult Function(GetCategoryDetailsMarketPlaces value)
+        getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetCategoryDetailsRefreshData value) reset,
   }) {
     return removeMarketPlaceToFavorite(this);
@@ -1016,10 +1117,12 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetCategoryDetailsAds value)? getAds,
     TResult? Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult? Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult? Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult? Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetCategoryDetailsRefreshData value)? reset,
   }) {
     return removeMarketPlaceToFavorite?.call(this);
@@ -1030,10 +1133,12 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetCategoryDetailsAds value)? getAds,
     TResult Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetCategoryDetailsRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -1044,34 +1149,40 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   }
 }
 
-abstract class RemoveMarketPlaceFromFavorite implements CategoryDetailsBlocEvent {
-  const factory RemoveMarketPlaceFromFavorite(final int id) = _$RemoveMarketPlaceFromFavorite;
+abstract class RemoveMarketPlaceFromFavorite
+    implements CategoryDetailsBlocEvent {
+  const factory RemoveMarketPlaceFromFavorite(final int id) =
+      _$RemoveMarketPlaceFromFavorite;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ResetCategoryDetailsRefreshDataCopyWith<$Res> {
   factory _$$ResetCategoryDetailsRefreshDataCopyWith(
-          _$ResetCategoryDetailsRefreshData value, $Res Function(_$ResetCategoryDetailsRefreshData) then) =
+          _$ResetCategoryDetailsRefreshData value,
+          $Res Function(_$ResetCategoryDetailsRefreshData) then) =
       __$$ResetCategoryDetailsRefreshDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ResetCategoryDetailsRefreshDataCopyWithImpl<$Res>
-    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res, _$ResetCategoryDetailsRefreshData>
+    extends _$CategoryDetailsBlocEventCopyWithImpl<$Res,
+        _$ResetCategoryDetailsRefreshData>
     implements _$$ResetCategoryDetailsRefreshDataCopyWith<$Res> {
   __$$ResetCategoryDetailsRefreshDataCopyWithImpl(
-      _$ResetCategoryDetailsRefreshData _value, $Res Function(_$ResetCategoryDetailsRefreshData) _then)
+      _$ResetCategoryDetailsRefreshData _value,
+      $Res Function(_$ResetCategoryDetailsRefreshData) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ResetCategoryDetailsRefreshData implements ResetCategoryDetailsRefreshData {
+class _$ResetCategoryDetailsRefreshData
+    implements ResetCategoryDetailsRefreshData {
   const _$ResetCategoryDetailsRefreshData();
 
   @override
@@ -1081,7 +1192,9 @@ class _$ResetCategoryDetailsRefreshData implements ResetCategoryDetailsRefreshDa
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ResetCategoryDetailsRefreshData);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResetCategoryDetailsRefreshData);
   }
 
   @override
@@ -1137,11 +1250,16 @@ class _$ResetCategoryDetailsRefreshData implements ResetCategoryDetailsRefreshDa
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetCategoryDetailsAds value) getAds,
-    required TResult Function(GetCategoryDetailsSubCategories value) getSubCategories,
-    required TResult Function(SelectCategoryDetailsSubCategory value) selectSubCategories,
-    required TResult Function(GetCategoryDetailsMarketPlaces value) getMarketPlaces,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(GetCategoryDetailsSubCategories value)
+        getSubCategories,
+    required TResult Function(SelectCategoryDetailsSubCategory value)
+        selectSubCategories,
+    required TResult Function(GetCategoryDetailsMarketPlaces value)
+        getMarketPlaces,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
     required TResult Function(ResetCategoryDetailsRefreshData value) reset,
   }) {
     return reset(this);
@@ -1152,10 +1270,12 @@ class _$ResetCategoryDetailsRefreshData implements ResetCategoryDetailsRefreshDa
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetCategoryDetailsAds value)? getAds,
     TResult? Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult? Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult? Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult? Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult? Function(ResetCategoryDetailsRefreshData value)? reset,
   }) {
     return reset?.call(this);
@@ -1166,10 +1286,12 @@ class _$ResetCategoryDetailsRefreshData implements ResetCategoryDetailsRefreshDa
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetCategoryDetailsAds value)? getAds,
     TResult Function(GetCategoryDetailsSubCategories value)? getSubCategories,
-    TResult Function(SelectCategoryDetailsSubCategory value)? selectSubCategories,
+    TResult Function(SelectCategoryDetailsSubCategory value)?
+        selectSubCategories,
     TResult Function(GetCategoryDetailsMarketPlaces value)? getMarketPlaces,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     TResult Function(ResetCategoryDetailsRefreshData value)? reset,
     required TResult orElse(),
   }) {
@@ -1180,8 +1302,10 @@ class _$ResetCategoryDetailsRefreshData implements ResetCategoryDetailsRefreshDa
   }
 }
 
-abstract class ResetCategoryDetailsRefreshData implements CategoryDetailsBlocEvent {
-  const factory ResetCategoryDetailsRefreshData() = _$ResetCategoryDetailsRefreshData;
+abstract class ResetCategoryDetailsRefreshData
+    implements CategoryDetailsBlocEvent {
+  const factory ResetCategoryDetailsRefreshData() =
+      _$ResetCategoryDetailsRefreshData;
 }
 
 /// @nodoc
@@ -1210,22 +1334,37 @@ mixin _$CategoryDetailsBlocState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool adsIsLoading, bool nearbyMarketPlaceIsLoading, bool categoriesIsLoading, String error,
-            bool refreshData, List<CategoryData> categories, List<AdsItem> adsList, List<MarketPlaceItem> nearbyList)?
+    TResult? Function(
+            bool adsIsLoading,
+            bool nearbyMarketPlaceIsLoading,
+            bool categoriesIsLoading,
+            String error,
+            bool refreshData,
+            List<CategoryData> categories,
+            List<AdsItem> adsList,
+            List<MarketPlaceItem> nearbyList)?
         defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool adsIsLoading, bool nearbyMarketPlaceIsLoading, bool categoriesIsLoading, String error,
-            bool refreshData, List<CategoryData> categories, List<AdsItem> adsList, List<MarketPlaceItem> nearbyList)?
+    TResult Function(
+            bool adsIsLoading,
+            bool nearbyMarketPlaceIsLoading,
+            bool categoriesIsLoading,
+            String error,
+            bool refreshData,
+            List<CategoryData> categories,
+            List<AdsItem> adsList,
+            List<MarketPlaceItem> nearbyList)?
         defaultState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CategoryDetailsBlocStateDefaultState value) defaultState,
+    required TResult Function(CategoryDetailsBlocStateDefaultState value)
+        defaultState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1241,13 +1380,14 @@ mixin _$CategoryDetailsBlocState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CategoryDetailsBlocStateCopyWith<CategoryDetailsBlocState> get copyWith => throw _privateConstructorUsedError;
+  $CategoryDetailsBlocStateCopyWith<CategoryDetailsBlocState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CategoryDetailsBlocStateCopyWith<$Res> {
-  factory $CategoryDetailsBlocStateCopyWith(
-          CategoryDetailsBlocState value, $Res Function(CategoryDetailsBlocState) then) =
+  factory $CategoryDetailsBlocStateCopyWith(CategoryDetailsBlocState value,
+          $Res Function(CategoryDetailsBlocState) then) =
       _$CategoryDetailsBlocStateCopyWithImpl<$Res, CategoryDetailsBlocState>;
   @useResult
   $Res call(
@@ -1262,7 +1402,8 @@ abstract class $CategoryDetailsBlocStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CategoryDetailsBlocStateCopyWithImpl<$Res, $Val extends CategoryDetailsBlocState>
+class _$CategoryDetailsBlocStateCopyWithImpl<$Res,
+        $Val extends CategoryDetailsBlocState>
     implements $CategoryDetailsBlocStateCopyWith<$Res> {
   _$CategoryDetailsBlocStateCopyWithImpl(this._value, this._then);
 
@@ -1324,7 +1465,8 @@ class _$CategoryDetailsBlocStateCopyWithImpl<$Res, $Val extends CategoryDetailsB
 abstract class _$$CategoryDetailsBlocStateDefaultStateCopyWith<$Res>
     implements $CategoryDetailsBlocStateCopyWith<$Res> {
   factory _$$CategoryDetailsBlocStateDefaultStateCopyWith(
-          _$CategoryDetailsBlocStateDefaultState value, $Res Function(_$CategoryDetailsBlocStateDefaultState) then) =
+          _$CategoryDetailsBlocStateDefaultState value,
+          $Res Function(_$CategoryDetailsBlocStateDefaultState) then) =
       __$$CategoryDetailsBlocStateDefaultStateCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1341,10 +1483,12 @@ abstract class _$$CategoryDetailsBlocStateDefaultStateCopyWith<$Res>
 
 /// @nodoc
 class __$$CategoryDetailsBlocStateDefaultStateCopyWithImpl<$Res>
-    extends _$CategoryDetailsBlocStateCopyWithImpl<$Res, _$CategoryDetailsBlocStateDefaultState>
+    extends _$CategoryDetailsBlocStateCopyWithImpl<$Res,
+        _$CategoryDetailsBlocStateDefaultState>
     implements _$$CategoryDetailsBlocStateDefaultStateCopyWith<$Res> {
   __$$CategoryDetailsBlocStateDefaultStateCopyWithImpl(
-      _$CategoryDetailsBlocStateDefaultState _value, $Res Function(_$CategoryDetailsBlocStateDefaultState) _then)
+      _$CategoryDetailsBlocStateDefaultState _value,
+      $Res Function(_$CategoryDetailsBlocStateDefaultState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1398,7 +1542,8 @@ class __$$CategoryDetailsBlocStateDefaultStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CategoryDetailsBlocStateDefaultState implements CategoryDetailsBlocStateDefaultState {
+class _$CategoryDetailsBlocStateDefaultState
+    implements CategoryDetailsBlocStateDefaultState {
   const _$CategoryDetailsBlocStateDefaultState(
       [this.adsIsLoading = false,
       this.nearbyMarketPlaceIsLoading = false,
@@ -1461,16 +1606,22 @@ class _$CategoryDetailsBlocStateDefaultState implements CategoryDetailsBlocState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CategoryDetailsBlocStateDefaultState &&
-            (identical(other.adsIsLoading, adsIsLoading) || other.adsIsLoading == adsIsLoading) &&
-            (identical(other.nearbyMarketPlaceIsLoading, nearbyMarketPlaceIsLoading) ||
-                other.nearbyMarketPlaceIsLoading == nearbyMarketPlaceIsLoading) &&
+            (identical(other.adsIsLoading, adsIsLoading) ||
+                other.adsIsLoading == adsIsLoading) &&
+            (identical(other.nearbyMarketPlaceIsLoading,
+                    nearbyMarketPlaceIsLoading) ||
+                other.nearbyMarketPlaceIsLoading ==
+                    nearbyMarketPlaceIsLoading) &&
             (identical(other.categoriesIsLoading, categoriesIsLoading) ||
                 other.categoriesIsLoading == categoriesIsLoading) &&
             (identical(other.error, error) || other.error == error) &&
-            (identical(other.refreshData, refreshData) || other.refreshData == refreshData) &&
-            const DeepCollectionEquality().equals(other._categories, _categories) &&
+            (identical(other.refreshData, refreshData) ||
+                other.refreshData == refreshData) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._adsList, _adsList) &&
-            const DeepCollectionEquality().equals(other._nearbyList, _nearbyList));
+            const DeepCollectionEquality()
+                .equals(other._nearbyList, _nearbyList));
   }
 
   @override
@@ -1488,8 +1639,10 @@ class _$CategoryDetailsBlocStateDefaultState implements CategoryDetailsBlocState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CategoryDetailsBlocStateDefaultStateCopyWith<_$CategoryDetailsBlocStateDefaultState> get copyWith =>
-      __$$CategoryDetailsBlocStateDefaultStateCopyWithImpl<_$CategoryDetailsBlocStateDefaultState>(this, _$identity);
+  _$$CategoryDetailsBlocStateDefaultStateCopyWith<
+          _$CategoryDetailsBlocStateDefaultState>
+      get copyWith => __$$CategoryDetailsBlocStateDefaultStateCopyWithImpl<
+          _$CategoryDetailsBlocStateDefaultState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1505,32 +1658,67 @@ class _$CategoryDetailsBlocStateDefaultState implements CategoryDetailsBlocState
             List<MarketPlaceItem> nearbyList)
         defaultState,
   }) {
-    return defaultState(adsIsLoading, nearbyMarketPlaceIsLoading, categoriesIsLoading, error, refreshData, categories,
-        adsList, nearbyList);
+    return defaultState(
+        adsIsLoading,
+        nearbyMarketPlaceIsLoading,
+        categoriesIsLoading,
+        error,
+        refreshData,
+        categories,
+        adsList,
+        nearbyList);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool adsIsLoading, bool nearbyMarketPlaceIsLoading, bool categoriesIsLoading, String error,
-            bool refreshData, List<CategoryData> categories, List<AdsItem> adsList, List<MarketPlaceItem> nearbyList)?
+    TResult? Function(
+            bool adsIsLoading,
+            bool nearbyMarketPlaceIsLoading,
+            bool categoriesIsLoading,
+            String error,
+            bool refreshData,
+            List<CategoryData> categories,
+            List<AdsItem> adsList,
+            List<MarketPlaceItem> nearbyList)?
         defaultState,
   }) {
-    return defaultState?.call(adsIsLoading, nearbyMarketPlaceIsLoading, categoriesIsLoading, error, refreshData,
-        categories, adsList, nearbyList);
+    return defaultState?.call(
+        adsIsLoading,
+        nearbyMarketPlaceIsLoading,
+        categoriesIsLoading,
+        error,
+        refreshData,
+        categories,
+        adsList,
+        nearbyList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool adsIsLoading, bool nearbyMarketPlaceIsLoading, bool categoriesIsLoading, String error,
-            bool refreshData, List<CategoryData> categories, List<AdsItem> adsList, List<MarketPlaceItem> nearbyList)?
+    TResult Function(
+            bool adsIsLoading,
+            bool nearbyMarketPlaceIsLoading,
+            bool categoriesIsLoading,
+            String error,
+            bool refreshData,
+            List<CategoryData> categories,
+            List<AdsItem> adsList,
+            List<MarketPlaceItem> nearbyList)?
         defaultState,
     required TResult orElse(),
   }) {
     if (defaultState != null) {
-      return defaultState(adsIsLoading, nearbyMarketPlaceIsLoading, categoriesIsLoading, error, refreshData, categories,
-          adsList, nearbyList);
+      return defaultState(
+          adsIsLoading,
+          nearbyMarketPlaceIsLoading,
+          categoriesIsLoading,
+          error,
+          refreshData,
+          categories,
+          adsList,
+          nearbyList);
     }
     return orElse();
   }
@@ -1538,7 +1726,8 @@ class _$CategoryDetailsBlocStateDefaultState implements CategoryDetailsBlocState
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CategoryDetailsBlocStateDefaultState value) defaultState,
+    required TResult Function(CategoryDetailsBlocStateDefaultState value)
+        defaultState,
   }) {
     return defaultState(this);
   }
@@ -1564,16 +1753,18 @@ class _$CategoryDetailsBlocStateDefaultState implements CategoryDetailsBlocState
   }
 }
 
-abstract class CategoryDetailsBlocStateDefaultState implements CategoryDetailsBlocState {
+abstract class CategoryDetailsBlocStateDefaultState
+    implements CategoryDetailsBlocState {
   const factory CategoryDetailsBlocStateDefaultState(
-      [final bool adsIsLoading,
-      final bool nearbyMarketPlaceIsLoading,
-      final bool categoriesIsLoading,
-      final String error,
-      final bool refreshData,
-      final List<CategoryData> categories,
-      final List<AdsItem> adsList,
-      final List<MarketPlaceItem> nearbyList]) = _$CategoryDetailsBlocStateDefaultState;
+          [final bool adsIsLoading,
+          final bool nearbyMarketPlaceIsLoading,
+          final bool categoriesIsLoading,
+          final String error,
+          final bool refreshData,
+          final List<CategoryData> categories,
+          final List<AdsItem> adsList,
+          final List<MarketPlaceItem> nearbyList]) =
+      _$CategoryDetailsBlocStateDefaultState;
 
   @override
   bool get adsIsLoading;
@@ -1593,6 +1784,7 @@ abstract class CategoryDetailsBlocStateDefaultState implements CategoryDetailsBl
   List<MarketPlaceItem> get nearbyList;
   @override
   @JsonKey(ignore: true)
-  _$$CategoryDetailsBlocStateDefaultStateCopyWith<_$CategoryDetailsBlocStateDefaultState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CategoryDetailsBlocStateDefaultStateCopyWith<
+          _$CategoryDetailsBlocStateDefaultState>
+      get copyWith => throw _privateConstructorUsedError;
 }

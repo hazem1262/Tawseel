@@ -45,8 +45,10 @@ mixin _$OffersEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,7 +56,8 @@ mixin _$OffersEvent {
     TResult? Function(GetOffers value)? getOffers,
     TResult? Function(ResetOffers value)? resetOffers,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +65,8 @@ mixin _$OffersEvent {
     TResult Function(GetOffers value)? getOffers,
     TResult Function(ResetOffers value)? resetOffers,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,12 +74,14 @@ mixin _$OffersEvent {
 
 /// @nodoc
 abstract class $OffersEventCopyWith<$Res> {
-  factory $OffersEventCopyWith(OffersEvent value, $Res Function(OffersEvent) then) =
+  factory $OffersEventCopyWith(
+          OffersEvent value, $Res Function(OffersEvent) then) =
       _$OffersEventCopyWithImpl<$Res, OffersEvent>;
 }
 
 /// @nodoc
-class _$OffersEventCopyWithImpl<$Res, $Val extends OffersEvent> implements $OffersEventCopyWith<$Res> {
+class _$OffersEventCopyWithImpl<$Res, $Val extends OffersEvent>
+    implements $OffersEventCopyWith<$Res> {
   _$OffersEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -86,13 +92,18 @@ class _$OffersEventCopyWithImpl<$Res, $Val extends OffersEvent> implements $Offe
 
 /// @nodoc
 abstract class _$$GetOffersCopyWith<$Res> {
-  factory _$$GetOffersCopyWith(_$GetOffers value, $Res Function(_$GetOffers) then) = __$$GetOffersCopyWithImpl<$Res>;
+  factory _$$GetOffersCopyWith(
+          _$GetOffers value, $Res Function(_$GetOffers) then) =
+      __$$GetOffersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res, _$GetOffers>
+class __$$GetOffersCopyWithImpl<$Res>
+    extends _$OffersEventCopyWithImpl<$Res, _$GetOffers>
     implements _$$GetOffersCopyWith<$Res> {
-  __$$GetOffersCopyWithImpl(_$GetOffers _value, $Res Function(_$GetOffers) _then) : super(_value, _then);
+  __$$GetOffersCopyWithImpl(
+      _$GetOffers _value, $Res Function(_$GetOffers) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -107,7 +118,8 @@ class _$GetOffers implements GetOffers {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetOffers);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetOffers);
   }
 
   @override
@@ -155,8 +167,10 @@ class _$GetOffers implements GetOffers {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
   }) {
     return getOffers(this);
   }
@@ -167,7 +181,8 @@ class _$GetOffers implements GetOffers {
     TResult? Function(GetOffers value)? getOffers,
     TResult? Function(ResetOffers value)? resetOffers,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
   }) {
     return getOffers?.call(this);
   }
@@ -178,7 +193,8 @@ class _$GetOffers implements GetOffers {
     TResult Function(GetOffers value)? getOffers,
     TResult Function(ResetOffers value)? resetOffers,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) {
     if (getOffers != null) {
@@ -194,14 +210,18 @@ abstract class GetOffers implements OffersEvent {
 
 /// @nodoc
 abstract class _$$ResetOffersCopyWith<$Res> {
-  factory _$$ResetOffersCopyWith(_$ResetOffers value, $Res Function(_$ResetOffers) then) =
+  factory _$$ResetOffersCopyWith(
+          _$ResetOffers value, $Res Function(_$ResetOffers) then) =
       __$$ResetOffersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ResetOffersCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res, _$ResetOffers>
+class __$$ResetOffersCopyWithImpl<$Res>
+    extends _$OffersEventCopyWithImpl<$Res, _$ResetOffers>
     implements _$$ResetOffersCopyWith<$Res> {
-  __$$ResetOffersCopyWithImpl(_$ResetOffers _value, $Res Function(_$ResetOffers) _then) : super(_value, _then);
+  __$$ResetOffersCopyWithImpl(
+      _$ResetOffers _value, $Res Function(_$ResetOffers) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -216,7 +236,8 @@ class _$ResetOffers implements ResetOffers {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ResetOffers);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetOffers);
   }
 
   @override
@@ -264,8 +285,10 @@ class _$ResetOffers implements ResetOffers {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
   }) {
     return resetOffers(this);
   }
@@ -276,7 +299,8 @@ class _$ResetOffers implements ResetOffers {
     TResult? Function(GetOffers value)? getOffers,
     TResult? Function(ResetOffers value)? resetOffers,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
   }) {
     return resetOffers?.call(this);
   }
@@ -287,7 +311,8 @@ class _$ResetOffers implements ResetOffers {
     TResult Function(GetOffers value)? getOffers,
     TResult Function(ResetOffers value)? resetOffers,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) {
     if (resetOffers != null) {
@@ -303,18 +328,19 @@ abstract class ResetOffers implements OffersEvent {
 
 /// @nodoc
 abstract class _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
-  factory _$$AddMarketPlaceToFavoriteCopyWith(
-          _$AddMarketPlaceToFavorite value, $Res Function(_$AddMarketPlaceToFavorite) then) =
+  factory _$$AddMarketPlaceToFavoriteCopyWith(_$AddMarketPlaceToFavorite value,
+          $Res Function(_$AddMarketPlaceToFavorite) then) =
       __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res> extends _$OffersEventCopyWithImpl<$Res, _$AddMarketPlaceToFavorite>
+class __$$AddMarketPlaceToFavoriteCopyWithImpl<$Res>
+    extends _$OffersEventCopyWithImpl<$Res, _$AddMarketPlaceToFavorite>
     implements _$$AddMarketPlaceToFavoriteCopyWith<$Res> {
-  __$$AddMarketPlaceToFavoriteCopyWithImpl(
-      _$AddMarketPlaceToFavorite _value, $Res Function(_$AddMarketPlaceToFavorite) _then)
+  __$$AddMarketPlaceToFavoriteCopyWithImpl(_$AddMarketPlaceToFavorite _value,
+      $Res Function(_$AddMarketPlaceToFavorite) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -358,8 +384,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite> get copyWith =>
-      __$$AddMarketPlaceToFavoriteCopyWithImpl<_$AddMarketPlaceToFavorite>(this, _$identity);
+  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite>
+      get copyWith =>
+          __$$AddMarketPlaceToFavoriteCopyWithImpl<_$AddMarketPlaceToFavorite>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -403,8 +431,10 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
   }) {
     return addMarketPlaceToFavorite(this);
   }
@@ -415,7 +445,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult? Function(GetOffers value)? getOffers,
     TResult? Function(ResetOffers value)? resetOffers,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
   }) {
     return addMarketPlaceToFavorite?.call(this);
   }
@@ -426,7 +457,8 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
     TResult Function(GetOffers value)? getOffers,
     TResult Function(ResetOffers value)? resetOffers,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) {
     if (addMarketPlaceToFavorite != null) {
@@ -437,17 +469,20 @@ class _$AddMarketPlaceToFavorite implements AddMarketPlaceToFavorite {
 }
 
 abstract class AddMarketPlaceToFavorite implements OffersEvent {
-  const factory AddMarketPlaceToFavorite(final int id) = _$AddMarketPlaceToFavorite;
+  const factory AddMarketPlaceToFavorite(final int id) =
+      _$AddMarketPlaceToFavorite;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite> get copyWith => throw _privateConstructorUsedError;
+  _$$AddMarketPlaceToFavoriteCopyWith<_$AddMarketPlaceToFavorite>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   factory _$$RemoveMarketPlaceFromFavoriteCopyWith(
-          _$RemoveMarketPlaceFromFavorite value, $Res Function(_$RemoveMarketPlaceFromFavorite) then) =
+          _$RemoveMarketPlaceFromFavorite value,
+          $Res Function(_$RemoveMarketPlaceFromFavorite) then) =
       __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
@@ -458,7 +493,8 @@ class __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<$Res>
     extends _$OffersEventCopyWithImpl<$Res, _$RemoveMarketPlaceFromFavorite>
     implements _$$RemoveMarketPlaceFromFavoriteCopyWith<$Res> {
   __$$RemoveMarketPlaceFromFavoriteCopyWithImpl(
-      _$RemoveMarketPlaceFromFavorite _value, $Res Function(_$RemoveMarketPlaceFromFavorite) _then)
+      _$RemoveMarketPlaceFromFavorite _value,
+      $Res Function(_$RemoveMarketPlaceFromFavorite) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -502,8 +538,9 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite> get copyWith =>
-      __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<_$RemoveMarketPlaceFromFavorite>(this, _$identity);
+  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite>
+      get copyWith => __$$RemoveMarketPlaceFromFavoriteCopyWithImpl<
+          _$RemoveMarketPlaceFromFavorite>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -547,8 +584,10 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
   TResult map<TResult extends Object?>({
     required TResult Function(GetOffers value) getOffers,
     required TResult Function(ResetOffers value) resetOffers,
-    required TResult Function(AddMarketPlaceToFavorite value) addMarketPlaceToFavorite,
-    required TResult Function(RemoveMarketPlaceFromFavorite value) removeMarketPlaceToFavorite,
+    required TResult Function(AddMarketPlaceToFavorite value)
+        addMarketPlaceToFavorite,
+    required TResult Function(RemoveMarketPlaceFromFavorite value)
+        removeMarketPlaceToFavorite,
   }) {
     return removeMarketPlaceToFavorite(this);
   }
@@ -559,7 +598,8 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult? Function(GetOffers value)? getOffers,
     TResult? Function(ResetOffers value)? resetOffers,
     TResult? Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult? Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult? Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
   }) {
     return removeMarketPlaceToFavorite?.call(this);
   }
@@ -570,7 +610,8 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
     TResult Function(GetOffers value)? getOffers,
     TResult Function(ResetOffers value)? resetOffers,
     TResult Function(AddMarketPlaceToFavorite value)? addMarketPlaceToFavorite,
-    TResult Function(RemoveMarketPlaceFromFavorite value)? removeMarketPlaceToFavorite,
+    TResult Function(RemoveMarketPlaceFromFavorite value)?
+        removeMarketPlaceToFavorite,
     required TResult orElse(),
   }) {
     if (removeMarketPlaceToFavorite != null) {
@@ -581,12 +622,13 @@ class _$RemoveMarketPlaceFromFavorite implements RemoveMarketPlaceFromFavorite {
 }
 
 abstract class RemoveMarketPlaceFromFavorite implements OffersEvent {
-  const factory RemoveMarketPlaceFromFavorite(final int id) = _$RemoveMarketPlaceFromFavorite;
+  const factory RemoveMarketPlaceFromFavorite(final int id) =
+      _$RemoveMarketPlaceFromFavorite;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RemoveMarketPlaceFromFavoriteCopyWith<_$RemoveMarketPlaceFromFavorite>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -599,12 +641,14 @@ mixin _$OffersState {
   bool get hasMorePages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $OffersStateCopyWith<OffersState> get copyWith => throw _privateConstructorUsedError;
+  $OffersStateCopyWith<OffersState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OffersStateCopyWith<$Res> {
-  factory $OffersStateCopyWith(OffersState value, $Res Function(OffersState) then) =
+  factory $OffersStateCopyWith(
+          OffersState value, $Res Function(OffersState) then) =
       _$OffersStateCopyWithImpl<$Res, OffersState>;
   @useResult
   $Res call(
@@ -617,7 +661,8 @@ abstract class $OffersStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OffersStateCopyWithImpl<$Res, $Val extends OffersState> implements $OffersStateCopyWith<$Res> {
+class _$OffersStateCopyWithImpl<$Res, $Val extends OffersState>
+    implements $OffersStateCopyWith<$Res> {
   _$OffersStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -665,8 +710,10 @@ class _$OffersStateCopyWithImpl<$Res, $Val extends OffersState> implements $Offe
 }
 
 /// @nodoc
-abstract class _$$OffersDefaultStateCopyWith<$Res> implements $OffersStateCopyWith<$Res> {
-  factory _$$OffersDefaultStateCopyWith(_$OffersDefaultState value, $Res Function(_$OffersDefaultState) then) =
+abstract class _$$OffersDefaultStateCopyWith<$Res>
+    implements $OffersStateCopyWith<$Res> {
+  factory _$$OffersDefaultStateCopyWith(_$OffersDefaultState value,
+          $Res Function(_$OffersDefaultState) then) =
       __$$OffersDefaultStateCopyWithImpl<$Res>;
   @override
   @useResult
@@ -680,9 +727,11 @@ abstract class _$$OffersDefaultStateCopyWith<$Res> implements $OffersStateCopyWi
 }
 
 /// @nodoc
-class __$$OffersDefaultStateCopyWithImpl<$Res> extends _$OffersStateCopyWithImpl<$Res, _$OffersDefaultState>
+class __$$OffersDefaultStateCopyWithImpl<$Res>
+    extends _$OffersStateCopyWithImpl<$Res, _$OffersDefaultState>
     implements _$$OffersDefaultStateCopyWith<$Res> {
-  __$$OffersDefaultStateCopyWithImpl(_$OffersDefaultState _value, $Res Function(_$OffersDefaultState) _then)
+  __$$OffersDefaultStateCopyWithImpl(
+      _$OffersDefaultState _value, $Res Function(_$OffersDefaultState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -770,24 +819,35 @@ class _$OffersDefaultState implements OffersDefaultState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OffersDefaultState &&
-            (identical(other.isPagingLoading, isPagingLoading) || other.isPagingLoading == isPagingLoading) &&
+            (identical(other.isPagingLoading, isPagingLoading) ||
+                other.isPagingLoading == isPagingLoading) &&
             (identical(other.isOffersListLoading, isOffersListLoading) ||
                 other.isOffersListLoading == isOffersListLoading) &&
             (identical(other.error, error) || other.error == error) &&
-            (identical(other.refreshData, refreshData) || other.refreshData == refreshData) &&
-            const DeepCollectionEquality().equals(other._offersList, _offersList) &&
-            (identical(other.hasMorePages, hasMorePages) || other.hasMorePages == hasMorePages));
+            (identical(other.refreshData, refreshData) ||
+                other.refreshData == refreshData) &&
+            const DeepCollectionEquality()
+                .equals(other._offersList, _offersList) &&
+            (identical(other.hasMorePages, hasMorePages) ||
+                other.hasMorePages == hasMorePages));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isPagingLoading, isOffersListLoading, error, refreshData,
-      const DeepCollectionEquality().hash(_offersList), hasMorePages);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isPagingLoading,
+      isOffersListLoading,
+      error,
+      refreshData,
+      const DeepCollectionEquality().hash(_offersList),
+      hasMorePages);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$OffersDefaultStateCopyWith<_$OffersDefaultState> get copyWith =>
-      __$$OffersDefaultStateCopyWithImpl<_$OffersDefaultState>(this, _$identity);
+      __$$OffersDefaultStateCopyWithImpl<_$OffersDefaultState>(
+          this, _$identity);
 }
 
 abstract class OffersDefaultState implements OffersState {
@@ -813,5 +873,6 @@ abstract class OffersDefaultState implements OffersState {
   bool get hasMorePages;
   @override
   @JsonKey(ignore: true)
-  _$$OffersDefaultStateCopyWith<_$OffersDefaultState> get copyWith => throw _privateConstructorUsedError;
+  _$$OffersDefaultStateCopyWith<_$OffersDefaultState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

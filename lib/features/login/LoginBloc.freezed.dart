@@ -64,12 +64,14 @@ mixin _$LoginEvent {
 
 /// @nodoc
 abstract class $LoginEventCopyWith<$Res> {
-  factory $LoginEventCopyWith(LoginEvent value, $Res Function(LoginEvent) then) =
+  factory $LoginEventCopyWith(
+          LoginEvent value, $Res Function(LoginEvent) then) =
       _$LoginEventCopyWithImpl<$Res, LoginEvent>;
 }
 
 /// @nodoc
-class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent> implements $LoginEventCopyWith<$Res> {
+class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
+    implements $LoginEventCopyWith<$Res> {
   _$LoginEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -80,16 +82,20 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent> implements $LoginE
 
 /// @nodoc
 abstract class _$$LoginWithPhoneCopyWith<$Res> {
-  factory _$$LoginWithPhoneCopyWith(_$LoginWithPhone value, $Res Function(_$LoginWithPhone) then) =
+  factory _$$LoginWithPhoneCopyWith(
+          _$LoginWithPhone value, $Res Function(_$LoginWithPhone) then) =
       __$$LoginWithPhoneCopyWithImpl<$Res>;
   @useResult
   $Res call({String phone, String password});
 }
 
 /// @nodoc
-class __$$LoginWithPhoneCopyWithImpl<$Res> extends _$LoginEventCopyWithImpl<$Res, _$LoginWithPhone>
+class __$$LoginWithPhoneCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$LoginWithPhone>
     implements _$$LoginWithPhoneCopyWith<$Res> {
-  __$$LoginWithPhoneCopyWithImpl(_$LoginWithPhone _value, $Res Function(_$LoginWithPhone) _then) : super(_value, _then);
+  __$$LoginWithPhoneCopyWithImpl(
+      _$LoginWithPhone _value, $Res Function(_$LoginWithPhone) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -140,7 +146,8 @@ class _$LoginWithPhone with DiagnosticableTreeMixin implements LoginWithPhone {
         (other.runtimeType == runtimeType &&
             other is _$LoginWithPhone &&
             (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.password, password) || other.password == password));
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
@@ -222,26 +229,31 @@ class _$LoginWithPhone with DiagnosticableTreeMixin implements LoginWithPhone {
 }
 
 abstract class LoginWithPhone implements LoginEvent {
-  const factory LoginWithPhone(final String phone, final String password) = _$LoginWithPhone;
+  const factory LoginWithPhone(final String phone, final String password) =
+      _$LoginWithPhone;
 
   String get phone;
   String get password;
   @JsonKey(ignore: true)
-  _$$LoginWithPhoneCopyWith<_$LoginWithPhone> get copyWith => throw _privateConstructorUsedError;
+  _$$LoginWithPhoneCopyWith<_$LoginWithPhone> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LoginWithGoogleCopyWith<$Res> {
-  factory _$$LoginWithGoogleCopyWith(_$LoginWithGoogle value, $Res Function(_$LoginWithGoogle) then) =
+  factory _$$LoginWithGoogleCopyWith(
+          _$LoginWithGoogle value, $Res Function(_$LoginWithGoogle) then) =
       __$$LoginWithGoogleCopyWithImpl<$Res>;
   @useResult
   $Res call({String googleToken});
 }
 
 /// @nodoc
-class __$$LoginWithGoogleCopyWithImpl<$Res> extends _$LoginEventCopyWithImpl<$Res, _$LoginWithGoogle>
+class __$$LoginWithGoogleCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$LoginWithGoogle>
     implements _$$LoginWithGoogleCopyWith<$Res> {
-  __$$LoginWithGoogleCopyWithImpl(_$LoginWithGoogle _value, $Res Function(_$LoginWithGoogle) _then)
+  __$$LoginWithGoogleCopyWithImpl(
+      _$LoginWithGoogle _value, $Res Function(_$LoginWithGoogle) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -260,7 +272,9 @@ class __$$LoginWithGoogleCopyWithImpl<$Res> extends _$LoginEventCopyWithImpl<$Re
 
 /// @nodoc
 
-class _$LoginWithGoogle with DiagnosticableTreeMixin implements LoginWithGoogle {
+class _$LoginWithGoogle
+    with DiagnosticableTreeMixin
+    implements LoginWithGoogle {
   const _$LoginWithGoogle(this.googleToken);
 
   @override
@@ -284,7 +298,8 @@ class _$LoginWithGoogle with DiagnosticableTreeMixin implements LoginWithGoogle 
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginWithGoogle &&
-            (identical(other.googleToken, googleToken) || other.googleToken == googleToken));
+            (identical(other.googleToken, googleToken) ||
+                other.googleToken == googleToken));
   }
 
   @override
@@ -370,21 +385,26 @@ abstract class LoginWithGoogle implements LoginEvent {
 
   String get googleToken;
   @JsonKey(ignore: true)
-  _$$LoginWithGoogleCopyWith<_$LoginWithGoogle> get copyWith => throw _privateConstructorUsedError;
+  _$$LoginWithGoogleCopyWith<_$LoginWithGoogle> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LoginWithAppleCopyWith<$Res> {
-  factory _$$LoginWithAppleCopyWith(_$LoginWithApple value, $Res Function(_$LoginWithApple) then) =
+  factory _$$LoginWithAppleCopyWith(
+          _$LoginWithApple value, $Res Function(_$LoginWithApple) then) =
       __$$LoginWithAppleCopyWithImpl<$Res>;
   @useResult
   $Res call({String appleToken});
 }
 
 /// @nodoc
-class __$$LoginWithAppleCopyWithImpl<$Res> extends _$LoginEventCopyWithImpl<$Res, _$LoginWithApple>
+class __$$LoginWithAppleCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$LoginWithApple>
     implements _$$LoginWithAppleCopyWith<$Res> {
-  __$$LoginWithAppleCopyWithImpl(_$LoginWithApple _value, $Res Function(_$LoginWithApple) _then) : super(_value, _then);
+  __$$LoginWithAppleCopyWithImpl(
+      _$LoginWithApple _value, $Res Function(_$LoginWithApple) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -426,7 +446,8 @@ class _$LoginWithApple with DiagnosticableTreeMixin implements LoginWithApple {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginWithApple &&
-            (identical(other.appleToken, appleToken) || other.appleToken == appleToken));
+            (identical(other.appleToken, appleToken) ||
+                other.appleToken == appleToken));
   }
 
   @override
@@ -512,7 +533,8 @@ abstract class LoginWithApple implements LoginEvent {
 
   String get appleToken;
   @JsonKey(ignore: true)
-  _$$LoginWithAppleCopyWith<_$LoginWithApple> get copyWith => throw _privateConstructorUsedError;
+  _$$LoginWithAppleCopyWith<_$LoginWithApple> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -522,9 +544,12 @@ mixin _$LoginViewState {
     required TResult Function() initialState,
     required TResult Function() isLoading,
     required TResult Function(String error) hassError,
-    required TResult Function(LoginResponse response) loggedInWithPhoneSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithGoogleSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithAppleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithAppleSuccessfully,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -553,9 +578,12 @@ mixin _$LoginViewState {
     required TResult Function(_InitialState value) initialState,
     required TResult Function(LoginIsLoading value) isLoading,
     required TResult Function(_HasError value) hassError,
-    required TResult Function(_LoggedInWithPhoneSuccessfully value) loggedInWithPhoneSuccessfully,
-    required TResult Function(_LoggedInWithGoogleSuccessfully value) loggedInWithGoogleSuccessfully,
-    required TResult Function(_LoggedInWithAppleSuccessfully value) loggedInWithAppleSuccessfully,
+    required TResult Function(_LoggedInWithPhoneSuccessfully value)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(_LoggedInWithGoogleSuccessfully value)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(_LoggedInWithAppleSuccessfully value)
+        loggedInWithAppleSuccessfully,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -563,9 +591,12 @@ mixin _$LoginViewState {
     TResult? Function(_InitialState value)? initialState,
     TResult? Function(LoginIsLoading value)? isLoading,
     TResult? Function(_HasError value)? hassError,
-    TResult? Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult? Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult? Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult? Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult? Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult? Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -573,9 +604,12 @@ mixin _$LoginViewState {
     TResult Function(_InitialState value)? initialState,
     TResult Function(LoginIsLoading value)? isLoading,
     TResult Function(_HasError value)? hassError,
-    TResult Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -583,12 +617,14 @@ mixin _$LoginViewState {
 
 /// @nodoc
 abstract class $LoginViewStateCopyWith<$Res> {
-  factory $LoginViewStateCopyWith(LoginViewState value, $Res Function(LoginViewState) then) =
+  factory $LoginViewStateCopyWith(
+          LoginViewState value, $Res Function(LoginViewState) then) =
       _$LoginViewStateCopyWithImpl<$Res, LoginViewState>;
 }
 
 /// @nodoc
-class _$LoginViewStateCopyWithImpl<$Res, $Val extends LoginViewState> implements $LoginViewStateCopyWith<$Res> {
+class _$LoginViewStateCopyWithImpl<$Res, $Val extends LoginViewState>
+    implements $LoginViewStateCopyWith<$Res> {
   _$LoginViewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -599,14 +635,18 @@ class _$LoginViewStateCopyWithImpl<$Res, $Val extends LoginViewState> implements
 
 /// @nodoc
 abstract class _$$_InitialStateCopyWith<$Res> {
-  factory _$$_InitialStateCopyWith(_$_InitialState value, $Res Function(_$_InitialState) then) =
+  factory _$$_InitialStateCopyWith(
+          _$_InitialState value, $Res Function(_$_InitialState) then) =
       __$$_InitialStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialStateCopyWithImpl<$Res> extends _$LoginViewStateCopyWithImpl<$Res, _$_InitialState>
+class __$$_InitialStateCopyWithImpl<$Res>
+    extends _$LoginViewStateCopyWithImpl<$Res, _$_InitialState>
     implements _$$_InitialStateCopyWith<$Res> {
-  __$$_InitialStateCopyWithImpl(_$_InitialState _value, $Res Function(_$_InitialState) _then) : super(_value, _then);
+  __$$_InitialStateCopyWithImpl(
+      _$_InitialState _value, $Res Function(_$_InitialState) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -627,7 +667,8 @@ class _$_InitialState with DiagnosticableTreeMixin implements _InitialState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_InitialState);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_InitialState);
   }
 
   @override
@@ -639,9 +680,12 @@ class _$_InitialState with DiagnosticableTreeMixin implements _InitialState {
     required TResult Function() initialState,
     required TResult Function() isLoading,
     required TResult Function(String error) hassError,
-    required TResult Function(LoginResponse response) loggedInWithPhoneSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithGoogleSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithAppleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithAppleSuccessfully,
   }) {
     return initialState();
   }
@@ -682,9 +726,12 @@ class _$_InitialState with DiagnosticableTreeMixin implements _InitialState {
     required TResult Function(_InitialState value) initialState,
     required TResult Function(LoginIsLoading value) isLoading,
     required TResult Function(_HasError value) hassError,
-    required TResult Function(_LoggedInWithPhoneSuccessfully value) loggedInWithPhoneSuccessfully,
-    required TResult Function(_LoggedInWithGoogleSuccessfully value) loggedInWithGoogleSuccessfully,
-    required TResult Function(_LoggedInWithAppleSuccessfully value) loggedInWithAppleSuccessfully,
+    required TResult Function(_LoggedInWithPhoneSuccessfully value)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(_LoggedInWithGoogleSuccessfully value)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(_LoggedInWithAppleSuccessfully value)
+        loggedInWithAppleSuccessfully,
   }) {
     return initialState(this);
   }
@@ -695,9 +742,12 @@ class _$_InitialState with DiagnosticableTreeMixin implements _InitialState {
     TResult? Function(_InitialState value)? initialState,
     TResult? Function(LoginIsLoading value)? isLoading,
     TResult? Function(_HasError value)? hassError,
-    TResult? Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult? Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult? Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult? Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult? Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult? Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
   }) {
     return initialState?.call(this);
   }
@@ -708,9 +758,12 @@ class _$_InitialState with DiagnosticableTreeMixin implements _InitialState {
     TResult Function(_InitialState value)? initialState,
     TResult Function(LoginIsLoading value)? isLoading,
     TResult Function(_HasError value)? hassError,
-    TResult Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
     required TResult orElse(),
   }) {
     if (initialState != null) {
@@ -726,14 +779,18 @@ abstract class _InitialState implements LoginViewState {
 
 /// @nodoc
 abstract class _$$LoginIsLoadingCopyWith<$Res> {
-  factory _$$LoginIsLoadingCopyWith(_$LoginIsLoading value, $Res Function(_$LoginIsLoading) then) =
+  factory _$$LoginIsLoadingCopyWith(
+          _$LoginIsLoading value, $Res Function(_$LoginIsLoading) then) =
       __$$LoginIsLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginIsLoadingCopyWithImpl<$Res> extends _$LoginViewStateCopyWithImpl<$Res, _$LoginIsLoading>
+class __$$LoginIsLoadingCopyWithImpl<$Res>
+    extends _$LoginViewStateCopyWithImpl<$Res, _$LoginIsLoading>
     implements _$$LoginIsLoadingCopyWith<$Res> {
-  __$$LoginIsLoadingCopyWithImpl(_$LoginIsLoading _value, $Res Function(_$LoginIsLoading) _then) : super(_value, _then);
+  __$$LoginIsLoadingCopyWithImpl(
+      _$LoginIsLoading _value, $Res Function(_$LoginIsLoading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -754,7 +811,8 @@ class _$LoginIsLoading with DiagnosticableTreeMixin implements LoginIsLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoginIsLoading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoginIsLoading);
   }
 
   @override
@@ -766,9 +824,12 @@ class _$LoginIsLoading with DiagnosticableTreeMixin implements LoginIsLoading {
     required TResult Function() initialState,
     required TResult Function() isLoading,
     required TResult Function(String error) hassError,
-    required TResult Function(LoginResponse response) loggedInWithPhoneSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithGoogleSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithAppleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithAppleSuccessfully,
   }) {
     return isLoading();
   }
@@ -809,9 +870,12 @@ class _$LoginIsLoading with DiagnosticableTreeMixin implements LoginIsLoading {
     required TResult Function(_InitialState value) initialState,
     required TResult Function(LoginIsLoading value) isLoading,
     required TResult Function(_HasError value) hassError,
-    required TResult Function(_LoggedInWithPhoneSuccessfully value) loggedInWithPhoneSuccessfully,
-    required TResult Function(_LoggedInWithGoogleSuccessfully value) loggedInWithGoogleSuccessfully,
-    required TResult Function(_LoggedInWithAppleSuccessfully value) loggedInWithAppleSuccessfully,
+    required TResult Function(_LoggedInWithPhoneSuccessfully value)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(_LoggedInWithGoogleSuccessfully value)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(_LoggedInWithAppleSuccessfully value)
+        loggedInWithAppleSuccessfully,
   }) {
     return isLoading(this);
   }
@@ -822,9 +886,12 @@ class _$LoginIsLoading with DiagnosticableTreeMixin implements LoginIsLoading {
     TResult? Function(_InitialState value)? initialState,
     TResult? Function(LoginIsLoading value)? isLoading,
     TResult? Function(_HasError value)? hassError,
-    TResult? Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult? Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult? Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult? Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult? Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult? Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
   }) {
     return isLoading?.call(this);
   }
@@ -835,9 +902,12 @@ class _$LoginIsLoading with DiagnosticableTreeMixin implements LoginIsLoading {
     TResult Function(_InitialState value)? initialState,
     TResult Function(LoginIsLoading value)? isLoading,
     TResult Function(_HasError value)? hassError,
-    TResult Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
     required TResult orElse(),
   }) {
     if (isLoading != null) {
@@ -853,15 +923,20 @@ abstract class LoginIsLoading implements LoginViewState {
 
 /// @nodoc
 abstract class _$$_HasErrorCopyWith<$Res> {
-  factory _$$_HasErrorCopyWith(_$_HasError value, $Res Function(_$_HasError) then) = __$$_HasErrorCopyWithImpl<$Res>;
+  factory _$$_HasErrorCopyWith(
+          _$_HasError value, $Res Function(_$_HasError) then) =
+      __$$_HasErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$_HasErrorCopyWithImpl<$Res> extends _$LoginViewStateCopyWithImpl<$Res, _$_HasError>
+class __$$_HasErrorCopyWithImpl<$Res>
+    extends _$LoginViewStateCopyWithImpl<$Res, _$_HasError>
     implements _$$_HasErrorCopyWith<$Res> {
-  __$$_HasErrorCopyWithImpl(_$_HasError _value, $Res Function(_$_HasError) _then) : super(_value, _then);
+  __$$_HasErrorCopyWithImpl(
+      _$_HasError _value, $Res Function(_$_HasError) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -912,7 +987,8 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HasErrorCopyWith<_$_HasError> get copyWith => __$$_HasErrorCopyWithImpl<_$_HasError>(this, _$identity);
+  _$$_HasErrorCopyWith<_$_HasError> get copyWith =>
+      __$$_HasErrorCopyWithImpl<_$_HasError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -920,9 +996,12 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
     required TResult Function() initialState,
     required TResult Function() isLoading,
     required TResult Function(String error) hassError,
-    required TResult Function(LoginResponse response) loggedInWithPhoneSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithGoogleSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithAppleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithAppleSuccessfully,
   }) {
     return hassError(error);
   }
@@ -963,9 +1042,12 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
     required TResult Function(_InitialState value) initialState,
     required TResult Function(LoginIsLoading value) isLoading,
     required TResult Function(_HasError value) hassError,
-    required TResult Function(_LoggedInWithPhoneSuccessfully value) loggedInWithPhoneSuccessfully,
-    required TResult Function(_LoggedInWithGoogleSuccessfully value) loggedInWithGoogleSuccessfully,
-    required TResult Function(_LoggedInWithAppleSuccessfully value) loggedInWithAppleSuccessfully,
+    required TResult Function(_LoggedInWithPhoneSuccessfully value)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(_LoggedInWithGoogleSuccessfully value)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(_LoggedInWithAppleSuccessfully value)
+        loggedInWithAppleSuccessfully,
   }) {
     return hassError(this);
   }
@@ -976,9 +1058,12 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
     TResult? Function(_InitialState value)? initialState,
     TResult? Function(LoginIsLoading value)? isLoading,
     TResult? Function(_HasError value)? hassError,
-    TResult? Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult? Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult? Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult? Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult? Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult? Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
   }) {
     return hassError?.call(this);
   }
@@ -989,9 +1074,12 @@ class _$_HasError with DiagnosticableTreeMixin implements _HasError {
     TResult Function(_InitialState value)? initialState,
     TResult Function(LoginIsLoading value)? isLoading,
     TResult Function(_HasError value)? hassError,
-    TResult Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
     required TResult orElse(),
   }) {
     if (hassError != null) {
@@ -1006,13 +1094,15 @@ abstract class _HasError implements LoginViewState {
 
   String get error;
   @JsonKey(ignore: true)
-  _$$_HasErrorCopyWith<_$_HasError> get copyWith => throw _privateConstructorUsedError;
+  _$$_HasErrorCopyWith<_$_HasError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_LoggedInWithPhoneSuccessfullyCopyWith<$Res> {
   factory _$$_LoggedInWithPhoneSuccessfullyCopyWith(
-          _$_LoggedInWithPhoneSuccessfully value, $Res Function(_$_LoggedInWithPhoneSuccessfully) then) =
+          _$_LoggedInWithPhoneSuccessfully value,
+          $Res Function(_$_LoggedInWithPhoneSuccessfully) then) =
       __$$_LoggedInWithPhoneSuccessfullyCopyWithImpl<$Res>;
   @useResult
   $Res call({LoginResponse response});
@@ -1025,7 +1115,8 @@ class __$$_LoggedInWithPhoneSuccessfullyCopyWithImpl<$Res>
     extends _$LoginViewStateCopyWithImpl<$Res, _$_LoggedInWithPhoneSuccessfully>
     implements _$$_LoggedInWithPhoneSuccessfullyCopyWith<$Res> {
   __$$_LoggedInWithPhoneSuccessfullyCopyWithImpl(
-      _$_LoggedInWithPhoneSuccessfully _value, $Res Function(_$_LoggedInWithPhoneSuccessfully) _then)
+      _$_LoggedInWithPhoneSuccessfully _value,
+      $Res Function(_$_LoggedInWithPhoneSuccessfully) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1052,7 +1143,9 @@ class __$$_LoggedInWithPhoneSuccessfullyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _LoggedInWithPhoneSuccessfully {
+class _$_LoggedInWithPhoneSuccessfully
+    with DiagnosticableTreeMixin
+    implements _LoggedInWithPhoneSuccessfully {
   const _$_LoggedInWithPhoneSuccessfully(this.response);
 
   @override
@@ -1067,7 +1160,8 @@ class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'LoginViewState.loggedInWithPhoneSuccessfully'))
+      ..add(DiagnosticsProperty(
+          'type', 'LoginViewState.loggedInWithPhoneSuccessfully'))
       ..add(DiagnosticsProperty('response', response));
   }
 
@@ -1076,7 +1170,8 @@ class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoggedInWithPhoneSuccessfully &&
-            (identical(other.response, response) || other.response == response));
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
@@ -1085,8 +1180,9 @@ class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoggedInWithPhoneSuccessfullyCopyWith<_$_LoggedInWithPhoneSuccessfully> get copyWith =>
-      __$$_LoggedInWithPhoneSuccessfullyCopyWithImpl<_$_LoggedInWithPhoneSuccessfully>(this, _$identity);
+  _$$_LoggedInWithPhoneSuccessfullyCopyWith<_$_LoggedInWithPhoneSuccessfully>
+      get copyWith => __$$_LoggedInWithPhoneSuccessfullyCopyWithImpl<
+          _$_LoggedInWithPhoneSuccessfully>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1094,9 +1190,12 @@ class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _
     required TResult Function() initialState,
     required TResult Function() isLoading,
     required TResult Function(String error) hassError,
-    required TResult Function(LoginResponse response) loggedInWithPhoneSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithGoogleSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithAppleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithPhoneSuccessfully(response);
   }
@@ -1137,9 +1236,12 @@ class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _
     required TResult Function(_InitialState value) initialState,
     required TResult Function(LoginIsLoading value) isLoading,
     required TResult Function(_HasError value) hassError,
-    required TResult Function(_LoggedInWithPhoneSuccessfully value) loggedInWithPhoneSuccessfully,
-    required TResult Function(_LoggedInWithGoogleSuccessfully value) loggedInWithGoogleSuccessfully,
-    required TResult Function(_LoggedInWithAppleSuccessfully value) loggedInWithAppleSuccessfully,
+    required TResult Function(_LoggedInWithPhoneSuccessfully value)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(_LoggedInWithGoogleSuccessfully value)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(_LoggedInWithAppleSuccessfully value)
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithPhoneSuccessfully(this);
   }
@@ -1150,9 +1252,12 @@ class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _
     TResult? Function(_InitialState value)? initialState,
     TResult? Function(LoginIsLoading value)? isLoading,
     TResult? Function(_HasError value)? hassError,
-    TResult? Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult? Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult? Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult? Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult? Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult? Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithPhoneSuccessfully?.call(this);
   }
@@ -1163,9 +1268,12 @@ class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _
     TResult Function(_InitialState value)? initialState,
     TResult Function(LoginIsLoading value)? isLoading,
     TResult Function(_HasError value)? hassError,
-    TResult Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
     required TResult orElse(),
   }) {
     if (loggedInWithPhoneSuccessfully != null) {
@@ -1176,18 +1284,20 @@ class _$_LoggedInWithPhoneSuccessfully with DiagnosticableTreeMixin implements _
 }
 
 abstract class _LoggedInWithPhoneSuccessfully implements LoginViewState {
-  const factory _LoggedInWithPhoneSuccessfully(final LoginResponse response) = _$_LoggedInWithPhoneSuccessfully;
+  const factory _LoggedInWithPhoneSuccessfully(final LoginResponse response) =
+      _$_LoggedInWithPhoneSuccessfully;
 
   LoginResponse get response;
   @JsonKey(ignore: true)
-  _$$_LoggedInWithPhoneSuccessfullyCopyWith<_$_LoggedInWithPhoneSuccessfully> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_LoggedInWithPhoneSuccessfullyCopyWith<_$_LoggedInWithPhoneSuccessfully>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_LoggedInWithGoogleSuccessfullyCopyWith<$Res> {
   factory _$$_LoggedInWithGoogleSuccessfullyCopyWith(
-          _$_LoggedInWithGoogleSuccessfully value, $Res Function(_$_LoggedInWithGoogleSuccessfully) then) =
+          _$_LoggedInWithGoogleSuccessfully value,
+          $Res Function(_$_LoggedInWithGoogleSuccessfully) then) =
       __$$_LoggedInWithGoogleSuccessfullyCopyWithImpl<$Res>;
   @useResult
   $Res call({LoginResponse response});
@@ -1197,10 +1307,12 @@ abstract class _$$_LoggedInWithGoogleSuccessfullyCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoggedInWithGoogleSuccessfullyCopyWithImpl<$Res>
-    extends _$LoginViewStateCopyWithImpl<$Res, _$_LoggedInWithGoogleSuccessfully>
+    extends _$LoginViewStateCopyWithImpl<$Res,
+        _$_LoggedInWithGoogleSuccessfully>
     implements _$$_LoggedInWithGoogleSuccessfullyCopyWith<$Res> {
   __$$_LoggedInWithGoogleSuccessfullyCopyWithImpl(
-      _$_LoggedInWithGoogleSuccessfully _value, $Res Function(_$_LoggedInWithGoogleSuccessfully) _then)
+      _$_LoggedInWithGoogleSuccessfully _value,
+      $Res Function(_$_LoggedInWithGoogleSuccessfully) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1227,7 +1339,9 @@ class __$$_LoggedInWithGoogleSuccessfullyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements _LoggedInWithGoogleSuccessfully {
+class _$_LoggedInWithGoogleSuccessfully
+    with DiagnosticableTreeMixin
+    implements _LoggedInWithGoogleSuccessfully {
   const _$_LoggedInWithGoogleSuccessfully(this.response);
 
   @override
@@ -1242,7 +1356,8 @@ class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements 
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'LoginViewState.loggedInWithGoogleSuccessfully'))
+      ..add(DiagnosticsProperty(
+          'type', 'LoginViewState.loggedInWithGoogleSuccessfully'))
       ..add(DiagnosticsProperty('response', response));
   }
 
@@ -1251,7 +1366,8 @@ class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements 
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoggedInWithGoogleSuccessfully &&
-            (identical(other.response, response) || other.response == response));
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
@@ -1260,8 +1376,9 @@ class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoggedInWithGoogleSuccessfullyCopyWith<_$_LoggedInWithGoogleSuccessfully> get copyWith =>
-      __$$_LoggedInWithGoogleSuccessfullyCopyWithImpl<_$_LoggedInWithGoogleSuccessfully>(this, _$identity);
+  _$$_LoggedInWithGoogleSuccessfullyCopyWith<_$_LoggedInWithGoogleSuccessfully>
+      get copyWith => __$$_LoggedInWithGoogleSuccessfullyCopyWithImpl<
+          _$_LoggedInWithGoogleSuccessfully>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1269,9 +1386,12 @@ class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements 
     required TResult Function() initialState,
     required TResult Function() isLoading,
     required TResult Function(String error) hassError,
-    required TResult Function(LoginResponse response) loggedInWithPhoneSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithGoogleSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithAppleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithGoogleSuccessfully(response);
   }
@@ -1312,9 +1432,12 @@ class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements 
     required TResult Function(_InitialState value) initialState,
     required TResult Function(LoginIsLoading value) isLoading,
     required TResult Function(_HasError value) hassError,
-    required TResult Function(_LoggedInWithPhoneSuccessfully value) loggedInWithPhoneSuccessfully,
-    required TResult Function(_LoggedInWithGoogleSuccessfully value) loggedInWithGoogleSuccessfully,
-    required TResult Function(_LoggedInWithAppleSuccessfully value) loggedInWithAppleSuccessfully,
+    required TResult Function(_LoggedInWithPhoneSuccessfully value)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(_LoggedInWithGoogleSuccessfully value)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(_LoggedInWithAppleSuccessfully value)
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithGoogleSuccessfully(this);
   }
@@ -1325,9 +1448,12 @@ class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements 
     TResult? Function(_InitialState value)? initialState,
     TResult? Function(LoginIsLoading value)? isLoading,
     TResult? Function(_HasError value)? hassError,
-    TResult? Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult? Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult? Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult? Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult? Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult? Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithGoogleSuccessfully?.call(this);
   }
@@ -1338,9 +1464,12 @@ class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements 
     TResult Function(_InitialState value)? initialState,
     TResult Function(LoginIsLoading value)? isLoading,
     TResult Function(_HasError value)? hassError,
-    TResult Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
     required TResult orElse(),
   }) {
     if (loggedInWithGoogleSuccessfully != null) {
@@ -1351,18 +1480,20 @@ class _$_LoggedInWithGoogleSuccessfully with DiagnosticableTreeMixin implements 
 }
 
 abstract class _LoggedInWithGoogleSuccessfully implements LoginViewState {
-  const factory _LoggedInWithGoogleSuccessfully(final LoginResponse response) = _$_LoggedInWithGoogleSuccessfully;
+  const factory _LoggedInWithGoogleSuccessfully(final LoginResponse response) =
+      _$_LoggedInWithGoogleSuccessfully;
 
   LoginResponse get response;
   @JsonKey(ignore: true)
-  _$$_LoggedInWithGoogleSuccessfullyCopyWith<_$_LoggedInWithGoogleSuccessfully> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_LoggedInWithGoogleSuccessfullyCopyWith<_$_LoggedInWithGoogleSuccessfully>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_LoggedInWithAppleSuccessfullyCopyWith<$Res> {
   factory _$$_LoggedInWithAppleSuccessfullyCopyWith(
-          _$_LoggedInWithAppleSuccessfully value, $Res Function(_$_LoggedInWithAppleSuccessfully) then) =
+          _$_LoggedInWithAppleSuccessfully value,
+          $Res Function(_$_LoggedInWithAppleSuccessfully) then) =
       __$$_LoggedInWithAppleSuccessfullyCopyWithImpl<$Res>;
   @useResult
   $Res call({LoginResponse response});
@@ -1375,7 +1506,8 @@ class __$$_LoggedInWithAppleSuccessfullyCopyWithImpl<$Res>
     extends _$LoginViewStateCopyWithImpl<$Res, _$_LoggedInWithAppleSuccessfully>
     implements _$$_LoggedInWithAppleSuccessfullyCopyWith<$Res> {
   __$$_LoggedInWithAppleSuccessfullyCopyWithImpl(
-      _$_LoggedInWithAppleSuccessfully _value, $Res Function(_$_LoggedInWithAppleSuccessfully) _then)
+      _$_LoggedInWithAppleSuccessfully _value,
+      $Res Function(_$_LoggedInWithAppleSuccessfully) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1402,7 +1534,9 @@ class __$$_LoggedInWithAppleSuccessfullyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _LoggedInWithAppleSuccessfully {
+class _$_LoggedInWithAppleSuccessfully
+    with DiagnosticableTreeMixin
+    implements _LoggedInWithAppleSuccessfully {
   const _$_LoggedInWithAppleSuccessfully(this.response);
 
   @override
@@ -1417,7 +1551,8 @@ class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'LoginViewState.loggedInWithAppleSuccessfully'))
+      ..add(DiagnosticsProperty(
+          'type', 'LoginViewState.loggedInWithAppleSuccessfully'))
       ..add(DiagnosticsProperty('response', response));
   }
 
@@ -1426,7 +1561,8 @@ class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoggedInWithAppleSuccessfully &&
-            (identical(other.response, response) || other.response == response));
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
@@ -1435,8 +1571,9 @@ class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoggedInWithAppleSuccessfullyCopyWith<_$_LoggedInWithAppleSuccessfully> get copyWith =>
-      __$$_LoggedInWithAppleSuccessfullyCopyWithImpl<_$_LoggedInWithAppleSuccessfully>(this, _$identity);
+  _$$_LoggedInWithAppleSuccessfullyCopyWith<_$_LoggedInWithAppleSuccessfully>
+      get copyWith => __$$_LoggedInWithAppleSuccessfullyCopyWithImpl<
+          _$_LoggedInWithAppleSuccessfully>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1444,9 +1581,12 @@ class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _
     required TResult Function() initialState,
     required TResult Function() isLoading,
     required TResult Function(String error) hassError,
-    required TResult Function(LoginResponse response) loggedInWithPhoneSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithGoogleSuccessfully,
-    required TResult Function(LoginResponse response) loggedInWithAppleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(LoginResponse response)
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithAppleSuccessfully(response);
   }
@@ -1487,9 +1627,12 @@ class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _
     required TResult Function(_InitialState value) initialState,
     required TResult Function(LoginIsLoading value) isLoading,
     required TResult Function(_HasError value) hassError,
-    required TResult Function(_LoggedInWithPhoneSuccessfully value) loggedInWithPhoneSuccessfully,
-    required TResult Function(_LoggedInWithGoogleSuccessfully value) loggedInWithGoogleSuccessfully,
-    required TResult Function(_LoggedInWithAppleSuccessfully value) loggedInWithAppleSuccessfully,
+    required TResult Function(_LoggedInWithPhoneSuccessfully value)
+        loggedInWithPhoneSuccessfully,
+    required TResult Function(_LoggedInWithGoogleSuccessfully value)
+        loggedInWithGoogleSuccessfully,
+    required TResult Function(_LoggedInWithAppleSuccessfully value)
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithAppleSuccessfully(this);
   }
@@ -1500,9 +1643,12 @@ class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _
     TResult? Function(_InitialState value)? initialState,
     TResult? Function(LoginIsLoading value)? isLoading,
     TResult? Function(_HasError value)? hassError,
-    TResult? Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult? Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult? Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult? Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult? Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult? Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
   }) {
     return loggedInWithAppleSuccessfully?.call(this);
   }
@@ -1513,9 +1659,12 @@ class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _
     TResult Function(_InitialState value)? initialState,
     TResult Function(LoginIsLoading value)? isLoading,
     TResult Function(_HasError value)? hassError,
-    TResult Function(_LoggedInWithPhoneSuccessfully value)? loggedInWithPhoneSuccessfully,
-    TResult Function(_LoggedInWithGoogleSuccessfully value)? loggedInWithGoogleSuccessfully,
-    TResult Function(_LoggedInWithAppleSuccessfully value)? loggedInWithAppleSuccessfully,
+    TResult Function(_LoggedInWithPhoneSuccessfully value)?
+        loggedInWithPhoneSuccessfully,
+    TResult Function(_LoggedInWithGoogleSuccessfully value)?
+        loggedInWithGoogleSuccessfully,
+    TResult Function(_LoggedInWithAppleSuccessfully value)?
+        loggedInWithAppleSuccessfully,
     required TResult orElse(),
   }) {
     if (loggedInWithAppleSuccessfully != null) {
@@ -1526,10 +1675,11 @@ class _$_LoggedInWithAppleSuccessfully with DiagnosticableTreeMixin implements _
 }
 
 abstract class _LoggedInWithAppleSuccessfully implements LoginViewState {
-  const factory _LoggedInWithAppleSuccessfully(final LoginResponse response) = _$_LoggedInWithAppleSuccessfully;
+  const factory _LoggedInWithAppleSuccessfully(final LoginResponse response) =
+      _$_LoggedInWithAppleSuccessfully;
 
   LoginResponse get response;
   @JsonKey(ignore: true)
-  _$$_LoggedInWithAppleSuccessfullyCopyWith<_$_LoggedInWithAppleSuccessfully> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_LoggedInWithAppleSuccessfullyCopyWith<_$_LoggedInWithAppleSuccessfully>
+      get copyWith => throw _privateConstructorUsedError;
 }

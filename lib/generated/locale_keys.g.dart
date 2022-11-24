@@ -124,4 +124,5 @@ abstract class LocaleKeys {
   static const delete_account_message = 'delete_account_message';
   static const delete_account_message2 = 'delete_account_message2';
   static const delete_account = 'delete_account';
+  static const offer = 'offer';
 }

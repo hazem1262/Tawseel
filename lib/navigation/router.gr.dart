@@ -24,11 +24,14 @@ import '../features/landingScreen/LandingScreen.dart' as _i2;
 import '../features/locationPicker/LocationPickerDialog.dart' as _i8;
 import '../features/locationPicker/user_picked_location.dart' as _i28;
 import '../features/login/LoginScreen.dart' as _i3;
-import '../features/mainScreen/bottomTabs/favorites/FavoritesScreen.dart' as _i22;
+import '../features/mainScreen/bottomTabs/favorites/FavoritesScreen.dart'
+    as _i22;
 import '../features/mainScreen/bottomTabs/home/HomeScreen.dart' as _i20;
 import '../features/mainScreen/bottomTabs/offers/OffersScreen.dart' as _i21;
-import '../features/mainScreen/bottomTabs/profile/editProfileScreen/EditProfileScreen.dart' as _i7;
-import '../features/mainScreen/bottomTabs/profile/profileScreen/ProfileScreen.dart' as _i23;
+import '../features/mainScreen/bottomTabs/profile/editProfileScreen/EditProfileScreen.dart'
+    as _i7;
+import '../features/mainScreen/bottomTabs/profile/profileScreen/ProfileScreen.dart'
+    as _i23;
 import '../features/mainScreen/MainScreen.dart' as _i6;
 import '../features/otp/models/otp_models.dart' as _i27;
 import '../features/otp/OtpScreen.dart' as _i5;
@@ -43,12 +46,14 @@ import '../features/terms/terms_and_conditions.dart' as _i15;
 import '../features/view_all_marketplace/view_all_marketplace.dart' as _i18;
 
 class AppRouter extends _i24.RootStackRouter {
-  AppRouter([_i25.GlobalKey<_i25.NavigatorState>? navigatorKey]) : super(navigatorKey);
+  AppRouter([_i25.GlobalKey<_i25.NavigatorState>? navigatorKey])
+      : super(navigatorKey);
 
   @override
   final Map<String, _i24.PageFactory> pagesMap = {
     SplashScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<SplashScreenRouteArgs>(orElse: () => const SplashScreenRouteArgs());
+      final args = routeData.argsAs<SplashScreenRouteArgs>(
+          orElse: () => const SplashScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i1.SplashScreen(key: args.key),
@@ -67,7 +72,8 @@ class AppRouter extends _i24.RootStackRouter {
       );
     },
     SignUpScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<SignUpScreenRouteArgs>(orElse: () => const SignUpScreenRouteArgs());
+      final args = routeData.argsAs<SignUpScreenRouteArgs>(
+          orElse: () => const SignUpScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i4.SignUpScreen(key: args.key),
@@ -85,14 +91,16 @@ class AppRouter extends _i24.RootStackRouter {
       );
     },
     MainScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<MainScreenRouteArgs>(orElse: () => const MainScreenRouteArgs());
+      final args = routeData.argsAs<MainScreenRouteArgs>(
+          orElse: () => const MainScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i6.MainScreen(key: args.key),
       );
     },
     EditProfileScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<EditProfileScreenRouteArgs>(orElse: () => const EditProfileScreenRouteArgs());
+      final args = routeData.argsAs<EditProfileScreenRouteArgs>(
+          orElse: () => const EditProfileScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i7.EditProfileScreen(key: args.key),
@@ -140,14 +148,16 @@ class AppRouter extends _i24.RootStackRouter {
       );
     },
     SupportScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<SupportScreenRouteArgs>(orElse: () => const SupportScreenRouteArgs());
+      final args = routeData.argsAs<SupportScreenRouteArgs>(
+          orElse: () => const SupportScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i12.SupportScreen(key: args.key),
       );
     },
     MyAddressesScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<MyAddressesScreenRouteArgs>(orElse: () => const MyAddressesScreenRouteArgs());
+      final args = routeData.argsAs<MyAddressesScreenRouteArgs>(
+          orElse: () => const MyAddressesScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i13.MyAddressesScreen(key: args.key),
@@ -165,22 +175,24 @@ class AppRouter extends _i24.RootStackRouter {
       );
     },
     TermsAndConditionsScreenRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<TermsAndConditionsScreenRouteArgs>(orElse: () => const TermsAndConditionsScreenRouteArgs());
+      final args = routeData.argsAs<TermsAndConditionsScreenRouteArgs>(
+          orElse: () => const TermsAndConditionsScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i15.TermsAndConditionsScreen(key: args.key),
       );
     },
     AboutUsScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<AboutUsScreenRouteArgs>(orElse: () => const AboutUsScreenRouteArgs());
+      final args = routeData.argsAs<AboutUsScreenRouteArgs>(
+          orElse: () => const AboutUsScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i16.AboutUsScreen(key: args.key),
       );
     },
     SearchScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<SearchScreenRouteArgs>(orElse: () => const SearchScreenRouteArgs());
+      final args = routeData.argsAs<SearchScreenRouteArgs>(
+          orElse: () => const SearchScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i17.SearchScreen(
@@ -190,7 +202,8 @@ class AppRouter extends _i24.RootStackRouter {
       );
     },
     ViewAllMarketPlacesRoute.name: (routeData) {
-      final args = routeData.argsAs<ViewAllMarketPlacesRouteArgs>(orElse: () => const ViewAllMarketPlacesRouteArgs());
+      final args = routeData.argsAs<ViewAllMarketPlacesRouteArgs>(
+          orElse: () => const ViewAllMarketPlacesRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i18.ViewAllMarketPlaces(
@@ -214,28 +227,32 @@ class AppRouter extends _i24.RootStackRouter {
       );
     },
     HomeScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<HomeScreenRouteArgs>(orElse: () => const HomeScreenRouteArgs());
+      final args = routeData.argsAs<HomeScreenRouteArgs>(
+          orElse: () => const HomeScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i20.HomeScreen(key: args.key),
       );
     },
     OffersScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<OffersScreenRouteArgs>(orElse: () => const OffersScreenRouteArgs());
+      final args = routeData.argsAs<OffersScreenRouteArgs>(
+          orElse: () => const OffersScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i21.OffersScreen(key: args.key),
       );
     },
     FavoritesScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<FavoritesScreenRouteArgs>(orElse: () => const FavoritesScreenRouteArgs());
+      final args = routeData.argsAs<FavoritesScreenRouteArgs>(
+          orElse: () => const FavoritesScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i22.FavoritesScreen(key: args.key),
       );
     },
     ProfileScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<ProfileScreenRouteArgs>(orElse: () => const ProfileScreenRouteArgs());
+      final args = routeData.argsAs<ProfileScreenRouteArgs>(
+          orElse: () => const ProfileScreenRouteArgs());
       return _i24.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i23.ProfileScreen(key: args.key),
@@ -486,7 +503,8 @@ class MainScreenRouteArgs {
 
 /// generated route for
 /// [_i7.EditProfileScreen]
-class EditProfileScreenRoute extends _i24.PageRouteInfo<EditProfileScreenRouteArgs> {
+class EditProfileScreenRoute
+    extends _i24.PageRouteInfo<EditProfileScreenRouteArgs> {
   EditProfileScreenRoute({_i26.Key? key})
       : super(
           EditProfileScreenRoute.name,
@@ -510,7 +528,8 @@ class EditProfileScreenRouteArgs {
 
 /// generated route for
 /// [_i8.LocationPickerDialog]
-class LocationPickerDialogRoute extends _i24.PageRouteInfo<LocationPickerDialogRouteArgs> {
+class LocationPickerDialogRoute
+    extends _i24.PageRouteInfo<LocationPickerDialogRouteArgs> {
   LocationPickerDialogRoute({
     _i26.Key? key,
     required bool oppenedFromMyAddresses,
@@ -544,7 +563,8 @@ class LocationPickerDialogRouteArgs {
 
 /// generated route for
 /// [_i9.AddressDetailsScreen]
-class AddressDetailsScreenRoute extends _i24.PageRouteInfo<AddressDetailsScreenRouteArgs> {
+class AddressDetailsScreenRoute
+    extends _i24.PageRouteInfo<AddressDetailsScreenRouteArgs> {
   AddressDetailsScreenRoute({
     _i26.Key? key,
     required _i28.UserPickedLocation pickedLocation,
@@ -583,7 +603,8 @@ class AddressDetailsScreenRouteArgs {
 
 /// generated route for
 /// [_i10.SendPhoneScreen]
-class SendPhoneScreenRoute extends _i24.PageRouteInfo<SendPhoneScreenRouteArgs> {
+class SendPhoneScreenRoute
+    extends _i24.PageRouteInfo<SendPhoneScreenRouteArgs> {
   SendPhoneScreenRoute({
     _i26.Key? key,
     required _i10.Intention intention,
@@ -617,7 +638,8 @@ class SendPhoneScreenRouteArgs {
 
 /// generated route for
 /// [_i11.ChangePasswordScreen]
-class ChangePasswordScreenRoute extends _i24.PageRouteInfo<ChangePasswordScreenRouteArgs> {
+class ChangePasswordScreenRoute
+    extends _i24.PageRouteInfo<ChangePasswordScreenRouteArgs> {
   ChangePasswordScreenRoute({
     _i26.Key? key,
     required _i11.ChangePasswordIntention intention,
@@ -675,7 +697,8 @@ class SupportScreenRouteArgs {
 
 /// generated route for
 /// [_i13.MyAddressesScreen]
-class MyAddressesScreenRoute extends _i24.PageRouteInfo<MyAddressesScreenRouteArgs> {
+class MyAddressesScreenRoute
+    extends _i24.PageRouteInfo<MyAddressesScreenRouteArgs> {
   MyAddressesScreenRoute({_i26.Key? key})
       : super(
           MyAddressesScreenRoute.name,
@@ -699,7 +722,8 @@ class MyAddressesScreenRouteArgs {
 
 /// generated route for
 /// [_i14.CategoryDetailsScreen]
-class CategoryDetailsScreenRoute extends _i24.PageRouteInfo<CategoryDetailsScreenRouteArgs> {
+class CategoryDetailsScreenRoute
+    extends _i24.PageRouteInfo<CategoryDetailsScreenRouteArgs> {
   CategoryDetailsScreenRoute({
     _i26.Key? key,
     required int categoryId,
@@ -738,7 +762,8 @@ class CategoryDetailsScreenRouteArgs {
 
 /// generated route for
 /// [_i15.TermsAndConditionsScreen]
-class TermsAndConditionsScreenRoute extends _i24.PageRouteInfo<TermsAndConditionsScreenRouteArgs> {
+class TermsAndConditionsScreenRoute
+    extends _i24.PageRouteInfo<TermsAndConditionsScreenRouteArgs> {
   TermsAndConditionsScreenRoute({_i26.Key? key})
       : super(
           TermsAndConditionsScreenRoute.name,
@@ -820,7 +845,8 @@ class SearchScreenRouteArgs {
 
 /// generated route for
 /// [_i18.ViewAllMarketPlaces]
-class ViewAllMarketPlacesRoute extends _i24.PageRouteInfo<ViewAllMarketPlacesRouteArgs> {
+class ViewAllMarketPlacesRoute
+    extends _i24.PageRouteInfo<ViewAllMarketPlacesRouteArgs> {
   ViewAllMarketPlacesRoute({
     int? categoryId,
     String? categoryName,
@@ -956,7 +982,8 @@ class OffersScreenRouteArgs {
 
 /// generated route for
 /// [_i22.FavoritesScreen]
-class FavoritesScreenRoute extends _i24.PageRouteInfo<FavoritesScreenRouteArgs> {
+class FavoritesScreenRoute
+    extends _i24.PageRouteInfo<FavoritesScreenRouteArgs> {
   FavoritesScreenRoute({_i26.Key? key})
       : super(
           FavoritesScreenRoute.name,

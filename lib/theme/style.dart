@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../main.dart';
-
 const LargeTextSize = 26.0;
 const MeduimTextSize = 20.0;
 const SmallTitleTextSize = 18.0;
@@ -14,6 +12,8 @@ const Color creamyWhite = Color(0xffF5F6FA);
 const Color creamyGrey = Color(0xffACB1C0);
 
 const Color creamyWhiteBorder = Color(0xffE8ECEF);
+const Color lightOrange = Color(0x20FFBA6B);
+const Color orange = Color(0xFFE1AE41);
 const Color tawseelDarkGrey = Color(0xff676767);
 const Color textColor = Color(0xff353534);
 

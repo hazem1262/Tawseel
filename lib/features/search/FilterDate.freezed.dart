@@ -23,12 +23,14 @@ mixin _$FilterDate {
   int get max_distance => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FilterDateCopyWith<FilterDate> get copyWith => throw _privateConstructorUsedError;
+  $FilterDateCopyWith<FilterDate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FilterDateCopyWith<$Res> {
-  factory $FilterDateCopyWith(FilterDate value, $Res Function(FilterDate) then) =
+  factory $FilterDateCopyWith(
+          FilterDate value, $Res Function(FilterDate) then) =
       _$FilterDateCopyWithImpl<$Res, FilterDate>;
   @useResult
   $Res call(
@@ -40,7 +42,8 @@ abstract class $FilterDateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FilterDateCopyWithImpl<$Res, $Val extends FilterDate> implements $FilterDateCopyWith<$Res> {
+class _$FilterDateCopyWithImpl<$Res, $Val extends FilterDate>
+    implements $FilterDateCopyWith<$Res> {
   _$FilterDateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -83,8 +86,10 @@ class _$FilterDateCopyWithImpl<$Res, $Val extends FilterDate> implements $Filter
 }
 
 /// @nodoc
-abstract class _$$_FilterDateCopyWith<$Res> implements $FilterDateCopyWith<$Res> {
-  factory _$$_FilterDateCopyWith(_$_FilterDate value, $Res Function(_$_FilterDate) then) =
+abstract class _$$_FilterDateCopyWith<$Res>
+    implements $FilterDateCopyWith<$Res> {
+  factory _$$_FilterDateCopyWith(
+          _$_FilterDate value, $Res Function(_$_FilterDate) then) =
       __$$_FilterDateCopyWithImpl<$Res>;
   @override
   @useResult
@@ -97,9 +102,12 @@ abstract class _$$_FilterDateCopyWith<$Res> implements $FilterDateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FilterDateCopyWithImpl<$Res> extends _$FilterDateCopyWithImpl<$Res, _$_FilterDate>
+class __$$_FilterDateCopyWithImpl<$Res>
+    extends _$FilterDateCopyWithImpl<$Res, _$_FilterDate>
     implements _$$_FilterDateCopyWith<$Res> {
-  __$$_FilterDateCopyWithImpl(_$_FilterDate _value, $Res Function(_$_FilterDate) _then) : super(_value, _then);
+  __$$_FilterDateCopyWithImpl(
+      _$_FilterDate _value, $Res Function(_$_FilterDate) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -178,13 +186,18 @@ class _$_FilterDate implements _FilterDate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FilterDate &&
-            const DeepCollectionEquality().equals(other._categories, _categories) &&
-            const DeepCollectionEquality().equals(other._companies, _companies) &&
-            (identical(other.delivery_price_range_from, delivery_price_range_from) ||
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories) &&
+            const DeepCollectionEquality()
+                .equals(other._companies, _companies) &&
+            (identical(other.delivery_price_range_from,
+                    delivery_price_range_from) ||
                 other.delivery_price_range_from == delivery_price_range_from) &&
-            (identical(other.delivery_price_range_to, delivery_price_range_to) ||
+            (identical(
+                    other.delivery_price_range_to, delivery_price_range_to) ||
                 other.delivery_price_range_to == delivery_price_range_to) &&
-            (identical(other.max_distance, max_distance) || other.max_distance == max_distance));
+            (identical(other.max_distance, max_distance) ||
+                other.max_distance == max_distance));
   }
 
   @override
@@ -199,7 +212,8 @@ class _$_FilterDate implements _FilterDate {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FilterDateCopyWith<_$_FilterDate> get copyWith => __$$_FilterDateCopyWithImpl<_$_FilterDate>(this, _$identity);
+  _$$_FilterDateCopyWith<_$_FilterDate> get copyWith =>
+      __$$_FilterDateCopyWithImpl<_$_FilterDate>(this, _$identity);
 }
 
 abstract class _FilterDate implements FilterDate {
@@ -222,5 +236,6 @@ abstract class _FilterDate implements FilterDate {
   int get max_distance;
   @override
   @JsonKey(ignore: true)
-  _$$_FilterDateCopyWith<_$_FilterDate> get copyWith => throw _privateConstructorUsedError;
+  _$$_FilterDateCopyWith<_$_FilterDate> get copyWith =>
+      throw _privateConstructorUsedError;
 }

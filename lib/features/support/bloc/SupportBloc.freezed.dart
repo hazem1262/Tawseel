@@ -20,7 +20,8 @@ mixin _$SupportEvent {
   String get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String subject, String message) sendSupportMessage,
+    required TResult Function(String subject, String message)
+        sendSupportMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,19 +53,22 @@ mixin _$SupportEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SupportEventCopyWith<SupportEvent> get copyWith => throw _privateConstructorUsedError;
+  $SupportEventCopyWith<SupportEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SupportEventCopyWith<$Res> {
-  factory $SupportEventCopyWith(SupportEvent value, $Res Function(SupportEvent) then) =
+  factory $SupportEventCopyWith(
+          SupportEvent value, $Res Function(SupportEvent) then) =
       _$SupportEventCopyWithImpl<$Res, SupportEvent>;
   @useResult
   $Res call({String subject, String message});
 }
 
 /// @nodoc
-class _$SupportEventCopyWithImpl<$Res, $Val extends SupportEvent> implements $SupportEventCopyWith<$Res> {
+class _$SupportEventCopyWithImpl<$Res, $Val extends SupportEvent>
+    implements $SupportEventCopyWith<$Res> {
   _$SupportEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -92,8 +96,10 @@ class _$SupportEventCopyWithImpl<$Res, $Val extends SupportEvent> implements $Su
 }
 
 /// @nodoc
-abstract class _$$SendSupportMessageCopyWith<$Res> implements $SupportEventCopyWith<$Res> {
-  factory _$$SendSupportMessageCopyWith(_$SendSupportMessage value, $Res Function(_$SendSupportMessage) then) =
+abstract class _$$SendSupportMessageCopyWith<$Res>
+    implements $SupportEventCopyWith<$Res> {
+  factory _$$SendSupportMessageCopyWith(_$SendSupportMessage value,
+          $Res Function(_$SendSupportMessage) then) =
       __$$SendSupportMessageCopyWithImpl<$Res>;
   @override
   @useResult
@@ -101,9 +107,11 @@ abstract class _$$SendSupportMessageCopyWith<$Res> implements $SupportEventCopyW
 }
 
 /// @nodoc
-class __$$SendSupportMessageCopyWithImpl<$Res> extends _$SupportEventCopyWithImpl<$Res, _$SendSupportMessage>
+class __$$SendSupportMessageCopyWithImpl<$Res>
+    extends _$SupportEventCopyWithImpl<$Res, _$SendSupportMessage>
     implements _$$SendSupportMessageCopyWith<$Res> {
-  __$$SendSupportMessageCopyWithImpl(_$SendSupportMessage _value, $Res Function(_$SendSupportMessage) _then)
+  __$$SendSupportMessageCopyWithImpl(
+      _$SendSupportMessage _value, $Res Function(_$SendSupportMessage) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -156,12 +164,14 @@ class _$SendSupportMessage implements SendSupportMessage {
   @override
   @pragma('vm:prefer-inline')
   _$$SendSupportMessageCopyWith<_$SendSupportMessage> get copyWith =>
-      __$$SendSupportMessageCopyWithImpl<_$SendSupportMessage>(this, _$identity);
+      __$$SendSupportMessageCopyWithImpl<_$SendSupportMessage>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String subject, String message) sendSupportMessage,
+    required TResult Function(String subject, String message)
+        sendSupportMessage,
   }) {
     return sendSupportMessage(subject, message);
   }
@@ -216,7 +226,8 @@ class _$SendSupportMessage implements SendSupportMessage {
 }
 
 abstract class SendSupportMessage implements SupportEvent {
-  const factory SendSupportMessage(final String subject, final String message) = _$SendSupportMessage;
+  const factory SendSupportMessage(final String subject, final String message) =
+      _$SendSupportMessage;
 
   @override
   String get subject;
@@ -224,7 +235,8 @@ abstract class SendSupportMessage implements SupportEvent {
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$SendSupportMessageCopyWith<_$SendSupportMessage> get copyWith => throw _privateConstructorUsedError;
+  _$$SendSupportMessageCopyWith<_$SendSupportMessage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -234,19 +246,22 @@ mixin _$SupportState {
   bool get messageSentSuccessfully => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SupportStateCopyWith<SupportState> get copyWith => throw _privateConstructorUsedError;
+  $SupportStateCopyWith<SupportState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SupportStateCopyWith<$Res> {
-  factory $SupportStateCopyWith(SupportState value, $Res Function(SupportState) then) =
+  factory $SupportStateCopyWith(
+          SupportState value, $Res Function(SupportState) then) =
       _$SupportStateCopyWithImpl<$Res, SupportState>;
   @useResult
   $Res call({bool isLoading, String error, bool messageSentSuccessfully});
 }
 
 /// @nodoc
-class _$SupportStateCopyWithImpl<$Res, $Val extends SupportState> implements $SupportStateCopyWith<$Res> {
+class _$SupportStateCopyWithImpl<$Res, $Val extends SupportState>
+    implements $SupportStateCopyWith<$Res> {
   _$SupportStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -279,8 +294,10 @@ class _$SupportStateCopyWithImpl<$Res, $Val extends SupportState> implements $Su
 }
 
 /// @nodoc
-abstract class _$$SupportDefaultStateCopyWith<$Res> implements $SupportStateCopyWith<$Res> {
-  factory _$$SupportDefaultStateCopyWith(_$SupportDefaultState value, $Res Function(_$SupportDefaultState) then) =
+abstract class _$$SupportDefaultStateCopyWith<$Res>
+    implements $SupportStateCopyWith<$Res> {
+  factory _$$SupportDefaultStateCopyWith(_$SupportDefaultState value,
+          $Res Function(_$SupportDefaultState) then) =
       __$$SupportDefaultStateCopyWithImpl<$Res>;
   @override
   @useResult
@@ -288,9 +305,11 @@ abstract class _$$SupportDefaultStateCopyWith<$Res> implements $SupportStateCopy
 }
 
 /// @nodoc
-class __$$SupportDefaultStateCopyWithImpl<$Res> extends _$SupportStateCopyWithImpl<$Res, _$SupportDefaultState>
+class __$$SupportDefaultStateCopyWithImpl<$Res>
+    extends _$SupportStateCopyWithImpl<$Res, _$SupportDefaultState>
     implements _$$SupportDefaultStateCopyWith<$Res> {
-  __$$SupportDefaultStateCopyWithImpl(_$SupportDefaultState _value, $Res Function(_$SupportDefaultState) _then)
+  __$$SupportDefaultStateCopyWithImpl(
+      _$SupportDefaultState _value, $Res Function(_$SupportDefaultState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -320,7 +339,10 @@ class __$$SupportDefaultStateCopyWithImpl<$Res> extends _$SupportStateCopyWithIm
 /// @nodoc
 
 class _$SupportDefaultState implements SupportDefaultState {
-  const _$SupportDefaultState([this.isLoading = false, this.error = "", this.messageSentSuccessfully = false]);
+  const _$SupportDefaultState(
+      [this.isLoading = false,
+      this.error = "",
+      this.messageSentSuccessfully = false]);
 
   @override
   @JsonKey()
@@ -342,25 +364,31 @@ class _$SupportDefaultState implements SupportDefaultState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SupportDefaultState &&
-            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
             (identical(other.error, error) || other.error == error) &&
-            (identical(other.messageSentSuccessfully, messageSentSuccessfully) ||
+            (identical(
+                    other.messageSentSuccessfully, messageSentSuccessfully) ||
                 other.messageSentSuccessfully == messageSentSuccessfully));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, error, messageSentSuccessfully);
+  int get hashCode =>
+      Object.hash(runtimeType, isLoading, error, messageSentSuccessfully);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SupportDefaultStateCopyWith<_$SupportDefaultState> get copyWith =>
-      __$$SupportDefaultStateCopyWithImpl<_$SupportDefaultState>(this, _$identity);
+      __$$SupportDefaultStateCopyWithImpl<_$SupportDefaultState>(
+          this, _$identity);
 }
 
 abstract class SupportDefaultState implements SupportState {
-  const factory SupportDefaultState([final bool isLoading, final String error, final bool messageSentSuccessfully]) =
-      _$SupportDefaultState;
+  const factory SupportDefaultState(
+      [final bool isLoading,
+      final String error,
+      final bool messageSentSuccessfully]) = _$SupportDefaultState;
 
   @override
   bool get isLoading;
@@ -370,5 +398,6 @@ abstract class SupportDefaultState implements SupportState {
   bool get messageSentSuccessfully;
   @override
   @JsonKey(ignore: true)
-  _$$SupportDefaultStateCopyWith<_$SupportDefaultState> get copyWith => throw _privateConstructorUsedError;
+  _$$SupportDefaultStateCopyWith<_$SupportDefaultState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

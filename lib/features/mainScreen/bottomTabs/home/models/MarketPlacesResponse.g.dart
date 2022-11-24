@@ -6,17 +6,24 @@ part of 'MarketPlacesResponse.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MarketPlacesResponse _$$_MarketPlacesResponseFromJson(Map<String, dynamic> json) => _$_MarketPlacesResponse(
-      (json['data'] as List<dynamic>).map((e) => MarketPlaceItem.fromJson(e as Map<String, dynamic>)).toList(),
+_$_MarketPlacesResponse _$$_MarketPlacesResponseFromJson(
+        Map<String, dynamic> json) =>
+    _$_MarketPlacesResponse(
+      (json['data'] as List<dynamic>)
+          .map((e) => MarketPlaceItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
       MetaPagination.fromJson(json['meta'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MarketPlacesResponseToJson(_$_MarketPlacesResponse instance) => <String, dynamic>{
+Map<String, dynamic> _$$_MarketPlacesResponseToJson(
+        _$_MarketPlacesResponse instance) =>
+    <String, dynamic>{
       'data': instance.data,
       'meta': instance.meta,
     };
 
-_$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) => _$_MarketPlaceItem(
+_$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) =>
+    _$_MarketPlaceItem(
       json['id'] as int,
       json['name'] as String?,
       json['description'] as String?,
@@ -29,14 +36,22 @@ _$_MarketPlaceItem _$$_MarketPlaceItemFromJson(Map<String, dynamic> json) => _$_
       json['distance'] as String?,
       json['is_favorite'] as bool,
       json['is_loading'] as bool?,
-      (json['companies'] as List<dynamic>).map((e) => CompanyItem.fromJson(e as Map<String, dynamic>)).toList(),
+      (json['companies'] as List<dynamic>)
+          .map((e) => CompanyItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
       (json['parent_categories'] as List<dynamic>)
           .map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
           .toList(),
-      (json['sub_categories'] as List<dynamic>).map((e) => CategoryData.fromJson(e as Map<String, dynamic>)).toList(),
+      (json['sub_categories'] as List<dynamic>)
+          .map((e) => CategoryData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      json['offer'] == null
+          ? null
+          : Offer.fromJson(json['offer'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) => <String, dynamic>{
+Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
@@ -52,9 +67,11 @@ Map<String, dynamic> _$$_MarketPlaceItemToJson(_$_MarketPlaceItem instance) => <
       'companies': instance.companies,
       'parent_categories': instance.parent_categories,
       'sub_categories': instance.sub_categories,
+      'offer': instance.offer,
     };
 
-_$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) => _$_CompanyItem(
+_$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) =>
+    _$_CompanyItem(
       json['id'] as int,
       json['name'] as String,
       json['phone'] as String,
@@ -67,7 +84,8 @@ _$_CompanyItem _$$_CompanyItemFromJson(Map<String, dynamic> json) => _$_CompanyI
       json['isSelected'] as bool?,
     );
 
-Map<String, dynamic> _$$_CompanyItemToJson(_$_CompanyItem instance) => <String, dynamic>{
+Map<String, dynamic> _$$_CompanyItemToJson(_$_CompanyItem instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'phone': instance.phone,
@@ -78,4 +96,22 @@ Map<String, dynamic> _$$_CompanyItemToJson(_$_CompanyItem instance) => <String, 
       'image': instance.image,
       'is_best': instance.is_best,
       'isSelected': instance.isSelected,
+    };
+
+_$_Offer _$$_OfferFromJson(Map<String, dynamic> json) => _$_Offer(
+      json['id'] as int,
+      json['name'] as String?,
+      json['type'] as String?,
+      json['amount'] as String?,
+      json['from_distance'] as String?,
+      json['to_distance'] as String?,
+    );
+
+Map<String, dynamic> _$$_OfferToJson(_$_Offer instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'type': instance.type,
+      'amount': instance.amount,
+      'from_distance': instance.from_distance,
+      'to_distance': instance.to_distance,
     };

@@ -597,7 +597,7 @@ Widget adItem(AdsItem ad, Function onClick) {
 
 Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem item) onClick,
     Function(MarketPlaceItem item) onFavoriteClicked,
-    [bool showFavorite = true]) {
+    [bool showFavorite = true, bool fromOfferScreen = false]) {
   final itemHeight = screenHeight * 0.35;
   return InkWell(
     onTap: () {
@@ -621,23 +621,45 @@ Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem ite
         children: [
           Column(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25),
-                  topRight: Radius.circular(25),
-                ),
-                child: CachedNetworkImage(
-                  imageUrl: marketPlace.image ?? "",
-                  fit: BoxFit.fill,
-                  width: double.infinity,
-                  height: itemHeight * 0.6,
-                  placeholder: (context, url) => Center(child: CircularProgressIndicator()),
-                  errorWidget: (context, url, error) => Container(
-                    width: double.infinity,
-                    color: Colors.grey,
-                    child: Icon(Icons.error),
+              Stack(
+                alignment: AlignmentDirectional.bottomEnd,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25),
+                    ),
+                    child: CachedNetworkImage(
+                      imageUrl: marketPlace.image ?? "",
+                      fit: BoxFit.fill,
+                      width: double.infinity,
+                      height: itemHeight * 0.6,
+                      placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                      errorWidget: (context, url, error) => Container(
+                        width: double.infinity,
+                        color: Colors.grey,
+                        child: Icon(Icons.error),
+                      ),
+                    ),
                   ),
-                ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        margin: EdgeInsetsDirectional.only(end: 8, bottom: 12),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 4,
+                        ),
+                        decoration: BoxDecoration(
+                          color: tawseelDarkGrey,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: rateWidget(marketPlace.rating ?? "", Colors.white, CaptionTextSize),
+                      ),
+                    ],
+                  ),
+                ],
               ),
               Container(
                 padding: EdgeInsets.all(8),
@@ -660,17 +682,21 @@ Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem ite
                           ),
                         ),
                         SizedBox(width: 4),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 4,
+                        if (marketPlace.offer != null && !fromOfferScreen)
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: lightOrange,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Text(
+                              LocaleKeys.offer.tr(),
+                              style: TextStyle(color: orange, fontWeight: FontWeight.w800),
+                            ),
                           ),
-                          decoration: BoxDecoration(
-                            color: tawseelDarkGrey,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: rateWidget(marketPlace.rating ?? "", Colors.white, CaptionTextSize),
-                        ),
                       ],
                     ),
                     SizedBox(height: 8),

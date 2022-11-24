@@ -129,7 +129,7 @@ class OffersScreen extends StatelessWidget {
                                           ? RemoveMarketPlaceFromFavorite(item.id)
                                           : AddMarketPlaceToFavorite((item.id)),
                                     );
-                                  }, true);
+                                  }, true, true);
                                 },
                               ),
                             ),

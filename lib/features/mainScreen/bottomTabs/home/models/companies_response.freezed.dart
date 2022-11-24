@@ -24,12 +24,14 @@ mixin _$CompaniesResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CompaniesResponseCopyWith<CompaniesResponse> get copyWith => throw _privateConstructorUsedError;
+  $CompaniesResponseCopyWith<CompaniesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CompaniesResponseCopyWith<$Res> {
-  factory $CompaniesResponseCopyWith(CompaniesResponse value, $Res Function(CompaniesResponse) then) =
+  factory $CompaniesResponseCopyWith(
+          CompaniesResponse value, $Res Function(CompaniesResponse) then) =
       _$CompaniesResponseCopyWithImpl<$Res, CompaniesResponse>;
   @useResult
   $Res call({List<CompanyItem> data});
@@ -60,8 +62,10 @@ class _$CompaniesResponseCopyWithImpl<$Res, $Val extends CompaniesResponse>
 }
 
 /// @nodoc
-abstract class _$$_CompaniesResponseCopyWith<$Res> implements $CompaniesResponseCopyWith<$Res> {
-  factory _$$_CompaniesResponseCopyWith(_$_CompaniesResponse value, $Res Function(_$_CompaniesResponse) then) =
+abstract class _$$_CompaniesResponseCopyWith<$Res>
+    implements $CompaniesResponseCopyWith<$Res> {
+  factory _$$_CompaniesResponseCopyWith(_$_CompaniesResponse value,
+          $Res Function(_$_CompaniesResponse) then) =
       __$$_CompaniesResponseCopyWithImpl<$Res>;
   @override
   @useResult
@@ -69,9 +73,11 @@ abstract class _$$_CompaniesResponseCopyWith<$Res> implements $CompaniesResponse
 }
 
 /// @nodoc
-class __$$_CompaniesResponseCopyWithImpl<$Res> extends _$CompaniesResponseCopyWithImpl<$Res, _$_CompaniesResponse>
+class __$$_CompaniesResponseCopyWithImpl<$Res>
+    extends _$CompaniesResponseCopyWithImpl<$Res, _$_CompaniesResponse>
     implements _$$_CompaniesResponseCopyWith<$Res> {
-  __$$_CompaniesResponseCopyWithImpl(_$_CompaniesResponse _value, $Res Function(_$_CompaniesResponse) _then)
+  __$$_CompaniesResponseCopyWithImpl(
+      _$_CompaniesResponse _value, $Res Function(_$_CompaniesResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -93,7 +99,8 @@ class __$$_CompaniesResponseCopyWithImpl<$Res> extends _$CompaniesResponseCopyWi
 class _$_CompaniesResponse implements _CompaniesResponse {
   const _$_CompaniesResponse(final List<CompanyItem> data) : _data = data;
 
-  factory _$_CompaniesResponse.fromJson(Map<String, dynamic> json) => _$$_CompaniesResponseFromJson(json);
+  factory _$_CompaniesResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_CompaniesResponseFromJson(json);
 
   final List<CompanyItem> _data;
   @override
@@ -117,13 +124,15 @@ class _$_CompaniesResponse implements _CompaniesResponse {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_CompaniesResponseCopyWith<_$_CompaniesResponse> get copyWith =>
-      __$$_CompaniesResponseCopyWithImpl<_$_CompaniesResponse>(this, _$identity);
+      __$$_CompaniesResponseCopyWithImpl<_$_CompaniesResponse>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -134,15 +143,18 @@ class _$_CompaniesResponse implements _CompaniesResponse {
 }
 
 abstract class _CompaniesResponse implements CompaniesResponse {
-  const factory _CompaniesResponse(final List<CompanyItem> data) = _$_CompaniesResponse;
+  const factory _CompaniesResponse(final List<CompanyItem> data) =
+      _$_CompaniesResponse;
 
-  factory _CompaniesResponse.fromJson(Map<String, dynamic> json) = _$_CompaniesResponse.fromJson;
+  factory _CompaniesResponse.fromJson(Map<String, dynamic> json) =
+      _$_CompaniesResponse.fromJson;
 
   @override
   List<CompanyItem> get data;
   @override
   @JsonKey(ignore: true)
-  _$$_CompaniesResponseCopyWith<_$_CompaniesResponse> get copyWith => throw _privateConstructorUsedError;
+  _$$_CompaniesResponseCopyWith<_$_CompaniesResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -151,20 +163,24 @@ mixin _$CompaniesAndCategoriesModel {
   List<CategoryData> get categories => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CompaniesAndCategoriesModelCopyWith<CompaniesAndCategoriesModel> get copyWith => throw _privateConstructorUsedError;
+  $CompaniesAndCategoriesModelCopyWith<CompaniesAndCategoriesModel>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CompaniesAndCategoriesModelCopyWith<$Res> {
   factory $CompaniesAndCategoriesModelCopyWith(
-          CompaniesAndCategoriesModel value, $Res Function(CompaniesAndCategoriesModel) then) =
-      _$CompaniesAndCategoriesModelCopyWithImpl<$Res, CompaniesAndCategoriesModel>;
+          CompaniesAndCategoriesModel value,
+          $Res Function(CompaniesAndCategoriesModel) then) =
+      _$CompaniesAndCategoriesModelCopyWithImpl<$Res,
+          CompaniesAndCategoriesModel>;
   @useResult
   $Res call({List<CompanyItem> companies, List<CategoryData> categories});
 }
 
 /// @nodoc
-class _$CompaniesAndCategoriesModelCopyWithImpl<$Res, $Val extends CompaniesAndCategoriesModel>
+class _$CompaniesAndCategoriesModelCopyWithImpl<$Res,
+        $Val extends CompaniesAndCategoriesModel>
     implements $CompaniesAndCategoriesModelCopyWith<$Res> {
   _$CompaniesAndCategoriesModelCopyWithImpl(this._value, this._then);
 
@@ -193,9 +209,11 @@ class _$CompaniesAndCategoriesModelCopyWithImpl<$Res, $Val extends CompaniesAndC
 }
 
 /// @nodoc
-abstract class _$$_CompaniesAndCategoriesModelCopyWith<$Res> implements $CompaniesAndCategoriesModelCopyWith<$Res> {
+abstract class _$$_CompaniesAndCategoriesModelCopyWith<$Res>
+    implements $CompaniesAndCategoriesModelCopyWith<$Res> {
   factory _$$_CompaniesAndCategoriesModelCopyWith(
-          _$_CompaniesAndCategoriesModel value, $Res Function(_$_CompaniesAndCategoriesModel) then) =
+          _$_CompaniesAndCategoriesModel value,
+          $Res Function(_$_CompaniesAndCategoriesModel) then) =
       __$$_CompaniesAndCategoriesModelCopyWithImpl<$Res>;
   @override
   @useResult
@@ -204,10 +222,12 @@ abstract class _$$_CompaniesAndCategoriesModelCopyWith<$Res> implements $Compani
 
 /// @nodoc
 class __$$_CompaniesAndCategoriesModelCopyWithImpl<$Res>
-    extends _$CompaniesAndCategoriesModelCopyWithImpl<$Res, _$_CompaniesAndCategoriesModel>
+    extends _$CompaniesAndCategoriesModelCopyWithImpl<$Res,
+        _$_CompaniesAndCategoriesModel>
     implements _$$_CompaniesAndCategoriesModelCopyWith<$Res> {
   __$$_CompaniesAndCategoriesModelCopyWithImpl(
-      _$_CompaniesAndCategoriesModel _value, $Res Function(_$_CompaniesAndCategoriesModel) _then)
+      _$_CompaniesAndCategoriesModel _value,
+      $Res Function(_$_CompaniesAndCategoriesModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -232,7 +252,8 @@ class __$$_CompaniesAndCategoriesModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CompaniesAndCategoriesModel implements _CompaniesAndCategoriesModel {
-  const _$_CompaniesAndCategoriesModel(final List<CompanyItem> companies, final List<CategoryData> categories)
+  const _$_CompaniesAndCategoriesModel(
+      final List<CompanyItem> companies, final List<CategoryData> categories)
       : _companies = companies,
         _categories = categories;
 
@@ -260,24 +281,30 @@ class _$_CompaniesAndCategoriesModel implements _CompaniesAndCategoriesModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CompaniesAndCategoriesModel &&
-            const DeepCollectionEquality().equals(other._companies, _companies) &&
-            const DeepCollectionEquality().equals(other._categories, _categories));
+            const DeepCollectionEquality()
+                .equals(other._companies, _companies) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_companies), const DeepCollectionEquality().hash(_categories));
+      runtimeType,
+      const DeepCollectionEquality().hash(_companies),
+      const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CompaniesAndCategoriesModelCopyWith<_$_CompaniesAndCategoriesModel> get copyWith =>
-      __$$_CompaniesAndCategoriesModelCopyWithImpl<_$_CompaniesAndCategoriesModel>(this, _$identity);
+  _$$_CompaniesAndCategoriesModelCopyWith<_$_CompaniesAndCategoriesModel>
+      get copyWith => __$$_CompaniesAndCategoriesModelCopyWithImpl<
+          _$_CompaniesAndCategoriesModel>(this, _$identity);
 }
 
-abstract class _CompaniesAndCategoriesModel implements CompaniesAndCategoriesModel {
-  const factory _CompaniesAndCategoriesModel(final List<CompanyItem> companies, final List<CategoryData> categories) =
-      _$_CompaniesAndCategoriesModel;
+abstract class _CompaniesAndCategoriesModel
+    implements CompaniesAndCategoriesModel {
+  const factory _CompaniesAndCategoriesModel(final List<CompanyItem> companies,
+      final List<CategoryData> categories) = _$_CompaniesAndCategoriesModel;
 
   @override
   List<CompanyItem> get companies;
@@ -285,6 +312,6 @@ abstract class _CompaniesAndCategoriesModel implements CompaniesAndCategoriesMod
   List<CategoryData> get categories;
   @override
   @JsonKey(ignore: true)
-  _$$_CompaniesAndCategoriesModelCopyWith<_$_CompaniesAndCategoriesModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_CompaniesAndCategoriesModelCopyWith<_$_CompaniesAndCategoriesModel>
+      get copyWith => throw _privateConstructorUsedError;
 }
