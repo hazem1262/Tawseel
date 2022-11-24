@@ -1,5 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tawseel/utils/FavouriteManager.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/favorites/bloc/bloc/favorites_repo.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -28,13 +29,14 @@ class FavoritesState with _$FavoritesState {
   ]) = FavoritesDefaultState;
 }
 
-class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
+class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> implements FavouriteObserver {
   var _page = 1;
   var hasMorePages = true;
 
   IFavoritesRepository repo;
 
   FavoritesBloc(this.repo) : super(FavoritesDefaultState()) {
+    FavouriteManager.subscribe(this);
     on<FavoritesEvent>((event, emit) async {
       if (event is ResetFavoritesState) {
         _page = 1;
@@ -49,7 +51,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
           if (_page == 1)
             emit(
               state.copyWith(
-                listIsLoading: false,
+                listIsLoading: true,
                 refreshData: false,
                 emptyFirstPage: false,
                 hasMorePages: hasMorePages,
@@ -68,7 +70,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
               listIsLoading: false,
               refreshData: false,
               emptyFirstPage: (state.favoritesList + res.data).isEmpty,
-              favoritesList: state.favoritesList + res.data,
+              favoritesList: _page != 1 ? state.favoritesList + res.data : res.data,
               hasMorePages: hasMorePages,
             ),
           );
@@ -140,4 +142,18 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       }
     });
   }
+
+  @override
+  void update() {
+    add(ResetFavoritesState());
+  }
+
+  @override
+  Future<void> close() {
+    FavouriteManager.unSubscribe(this);
+    return super.close();
+  }
+
+  @override
+  String? tag = "FavoritesBloc";
 }

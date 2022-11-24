@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:bloc/bloc.dart';
+import 'package:tawseel/utils/FavouriteManager.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/offers/bloc/offers_repository.dart';
 import 'package:tawseel/utils/ktx.dart';
@@ -83,6 +84,7 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
         );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
+          FavouriteManager.notify();
           emit(
             state.copyWith(
                 offersList: state.offersList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
@@ -107,6 +109,7 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
         );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
+          FavouriteManager.notify();
           emit(
             state.copyWith(
                 offersList: state.offersList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),

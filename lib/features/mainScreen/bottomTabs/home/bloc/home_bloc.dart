@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tawseel/utils/FavouriteManager.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/AdsResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/MarketPlacesResponse.dart';
@@ -124,6 +125,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
         );
         try {
           await marketPlacesRepo.addMarketPlaceToFavorite(event.id);
+          FavouriteManager.notify();
           emit(
             state.copyWith(
                 nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: true, isLoading: false),
@@ -148,6 +150,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> {
         );
         try {
           await marketPlacesRepo.removeMarketPlaceFromFavorite(event.id);
+          FavouriteManager.notify();
           emit(
             state.copyWith(
                 nearbyList: state.nearbyList.setFavoriteLoadingFor(id: event.id, isFavorite: false, isLoading: false),

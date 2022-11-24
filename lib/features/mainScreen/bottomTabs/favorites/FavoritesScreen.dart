@@ -67,7 +67,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       ),
                       BlocBuilder<FavoritesBloc, FavoritesState>(
                         builder: (context, state) {
-                          return (!state.listIsLoading && state.emptyFirstPage)
+                          return (!state.listIsLoading && state.favoritesList.isEmpty)
                               ? emptyFavoritesWidget(context)
                               : favoritesArea(
                                   context: context,
