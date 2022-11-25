@@ -7,11 +7,13 @@ import 'package:tawseel/TawseelApp.dart';
 import 'package:tawseel/utils/AppState.dart';
 import 'package:tawseel/utils/di.dart';
 import 'package:tawseel/utils/globals.dart';
+import 'package:tawseel/utils/utils.dart';
 import 'features/address/models/AddressDetailsScreen.dart';
 
 void main() async {
   await initAppDependencies();
   await Firebase.initializeApp();
+  setUpCrashlytics();
   runApp(
     EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
