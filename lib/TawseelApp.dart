@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/navigation/router.gr.dart';
+import 'package:tawseel/utils/analytics/analytics_obserever.dart';
 import 'package:tawseel/utils/globals.dart';
 
 class TawseelApp extends StatefulWidget {
@@ -30,7 +31,9 @@ class _TawseelAppState extends State<TawseelApp> {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: MaterialApp.router(
-        routerDelegate: _appRouter.delegate(),
+        routerDelegate: _appRouter.delegate(
+          navigatorObservers: () => [AnalyticsNavigationObserver()]
+        ),
         routeInformationParser: _appRouter.defaultRouteParser(),
         debugShowCheckedModeBanner: false,
         localizationsDelegates: context.localizationDelegates,

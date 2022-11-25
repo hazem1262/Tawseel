@@ -10,6 +10,7 @@ import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/utils.dart';
 import 'features/address/models/AddressDetailsScreen.dart';
 
+
 void main() async {
   await initAppDependencies();
   await Firebase.initializeApp();
