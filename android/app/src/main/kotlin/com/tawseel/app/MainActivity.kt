@@ -1,4 +1,4 @@
-package com.esmaeel.tawseel.tawseel
+package com.tawseel.app
 
 import android.os.Build
 import android.os.Bundle
