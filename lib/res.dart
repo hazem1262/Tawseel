@@ -49,4 +49,5 @@ class Res {
 
   static const String scooter_icon = "assets/scooter_icon.png";
   static const String send_icon = "assets/send_icon.png";
+  static const String splash_background = "assets/splash_background.png";
 }

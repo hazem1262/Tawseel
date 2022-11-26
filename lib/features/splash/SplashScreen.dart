@@ -45,22 +45,10 @@ class _SplashScreenState extends State<SplashScreen> {
     // final width = size.width;
     // final height = size.width * (size.width / size.height);
 
-    return Scaffold(
-      backgroundColor: ThemeManager.primary,
-      body: SafeArea(
-        child: Center(
-          child: AnimatedContainer(
-            duration: Duration(milliseconds: 1100),
-            curve: Curves.fastOutSlowIn,
-            height: height,
-            width: width,
-            child: Image.asset(
-              Res.logo_splash,
-              height: height,
-              width: width,
-            ),
-          ),
-        ),
+    return Container(
+      decoration: BoxDecoration(image: DecorationImage(image: AssetImage(Res.splash_background), fit: BoxFit.cover)),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
       ),
     );
   }
