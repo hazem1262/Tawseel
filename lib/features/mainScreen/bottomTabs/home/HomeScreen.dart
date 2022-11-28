@@ -1088,30 +1088,27 @@ Widget bestCompanyWidget(BuildContext context, CompanyItem item, Function() onTa
         width: screenWidth,
         child: Stack(
           children: [
-            Container(
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: safeHeight * 0.054,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(8),
-                        topRight: Radius.circular(8),
-                      ),
-                      color: ThemeManager.primary,
-                    ),
-                    child: Text(
-                      LocaleKeys.best_price.tr(),
-                      style: TextStyle(color: Colors.white),
-                    ),
+            Positioned.directional(
+              textDirection: Directionality.of(context),
+              top: 0,
+              end: 0,
+              child: Container(
+                height: safeHeight * 0.054,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 7,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(8),
+                    topRight: Radius.circular(8),
                   ),
-                ],
+                  color: ThemeManager.primary,
+                ),
+                child: Text(
+                  LocaleKeys.best_price.tr(),
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             Positioned.directional(
