@@ -606,7 +606,7 @@ Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem ite
     child: Container(
       margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: tm.isDark() ? tm.grey800 : tm.white,
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
@@ -676,7 +676,7 @@ Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem ite
                             style: TextStyle(
                               fontSize: BodySmallTextSize,
                               fontWeight: FontWeight.w600,
-                              color: tm.titlecolorLight,
+                              color: tm.isDark() ? tm.white : tm.titlecolorLight,
                             ),
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -685,12 +685,12 @@ Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem ite
                         if (marketPlace.offer != null)
                           Container(
                             padding: EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: isAr ? 7 : 4,
+                              horizontal: 14,
+                              vertical: isAr ? 9 : 6,
                             ),
                             decoration: BoxDecoration(
                               color: lightOrange,
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(7),
                             ),
                             child: Row(
                               children: [

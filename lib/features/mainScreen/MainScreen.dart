@@ -32,13 +32,13 @@ class _MainScreenState extends State<MainScreen> {
             ),
             extendBody: true,
             bottomNavigationBar: Container(
-              color: Colors.white,
+              color: tm.isDark() ? Colors.grey[850] : Colors.grey[100],
               child: FloatingNavbar(
                 borderRadius: 20,
                 itemBorderRadius: 15,
                 iconSize: 30,
                 unselectedItemColor: tm.subtitleColorLight,
-                backgroundColor: Colors.white,
+                backgroundColor: tm.isDark() ? tm.grey800 : tm.white,
                 selectedBackgroundColor: ThemeManager.primary,
                 selectedItemColor: Colors.white,
                 onTap: (index) {

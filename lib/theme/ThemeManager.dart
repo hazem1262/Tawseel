@@ -16,6 +16,8 @@ class ThemeManager with ChangeNotifier {
 
   final subtitleColorLight = Color(0xff8383a1);
   final titlecolorLight = Color(0xff252554);
+  final grey800 = Colors.grey[800];
+  final white = Colors.white;
 
   final lightTheme = ThemeData(
     primarySwatch: primary.getMaterialColor(),
