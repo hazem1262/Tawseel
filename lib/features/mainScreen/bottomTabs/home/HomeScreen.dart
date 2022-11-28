@@ -597,7 +597,7 @@ Widget adItem(AdsItem ad, Function onClick) {
 
 Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem item) onClick,
     Function(MarketPlaceItem item) onFavoriteClicked,
-    [bool showFavorite = true, bool fromOfferScreen = false]) {
+    [bool showFavorite = true]) {
   final itemHeight = screenHeight * 0.35;
   return InkWell(
     onTap: () {
@@ -682,19 +682,40 @@ Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem ite
                           ),
                         ),
                         SizedBox(width: 4),
-                        if (marketPlace.offer != null && !fromOfferScreen)
+                        if (marketPlace.offer != null)
                           Container(
                             padding: EdgeInsets.symmetric(
                               horizontal: 10,
-                              vertical: 4,
+                              vertical: isAr ? 7 : 4,
                             ),
                             decoration: BoxDecoration(
                               color: lightOrange,
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            child: Text(
-                              LocaleKeys.offer.tr(),
-                              style: TextStyle(color: orange, fontWeight: FontWeight.w800),
+                            child: Row(
+                              children: [
+                                Text(
+                                  LocaleKeys.offer.tr(),
+                                  style: TextStyle(
+                                      fontSize: BodySmallTextSize,
+                                      color: orange,
+                                      fontWeight: FontWeight.w600,
+                                      height: isAr ? .7 : 1),
+                                ),
+                                Container(
+                                  margin: isAr
+                                      ? EdgeInsetsDirectional.only(top: 5, start: 2)
+                                      : EdgeInsetsDirectional.only(top: 0, start: 2),
+                                  child: Text(
+                                    "%",
+                                    style: TextStyle(
+                                        fontSize: BodySmallTextSize,
+                                        color: orange,
+                                        fontWeight: FontWeight.w600,
+                                        height: isAr ? .7 : 1),
+                                  ),
+                                )
+                              ],
                             ),
                           ),
                       ],

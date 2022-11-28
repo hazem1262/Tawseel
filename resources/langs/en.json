@@ -126,6 +126,6 @@
   "delete_account_message":"Are you sure you want to Delete your Account?",
   "delete_account_message2":"You can't undo this action.",
   "delete_account":"Double Tap to delete account",
-  "offer": "Offer %"
+  "offer": "Offer"
 
 }
