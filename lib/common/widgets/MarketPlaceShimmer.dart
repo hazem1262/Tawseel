@@ -16,7 +16,7 @@ Widget marketPlaceShimmer([int count = 4]) {
           children: List.generate(
               count,
               (index) => Shimmer.fromColors(
-                    baseColor: Colors.grey.shade200,
+                    baseColor: tm.isDark() ? tm.grey800! : Colors.grey.shade200,
                     highlightColor: ThemeManager.primary,
                     child: Container(
                       margin: EdgeInsets.all(8),

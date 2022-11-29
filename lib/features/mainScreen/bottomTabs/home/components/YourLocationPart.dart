@@ -58,13 +58,16 @@ class YourLocationPart extends StatelessWidget {
                     children: [
                       Flexible(
                         flex: 1,
-                        child: Text(
-                          addressText,
-                          style: Theme.of(context).textTheme.headline5!.copyWith(
-                                fontWeight: FontWeight.w600,
-                              ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                        child: Directionality(
+                          textDirection: TextDirection.ltr,
+                          child: Text(
+                            addressText,
+                            style: Theme.of(context).textTheme.headline5!.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                       ),
                       Icon(

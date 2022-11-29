@@ -22,7 +22,7 @@ class FoucsedMenu extends StatelessWidget {
       animateMenuItems: true,
       duration: Duration(milliseconds: 200),
       menuBoxDecoration: BoxDecoration(
-        color: Colors.white,
+        color: tm.isDark() ? tm.grey800 : tm.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(

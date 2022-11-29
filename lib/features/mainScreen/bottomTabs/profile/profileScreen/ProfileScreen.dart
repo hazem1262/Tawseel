@@ -473,18 +473,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           width: 3,
-          color: creamyWhiteBorder,
+          color: tm.isDark() ? tm.grey800! : creamyWhiteBorder,
           style: BorderStyle.solid,
         ),
       ),
       child: FlutterToggleTab(
-          unSelectedBackgroundColors: [creamyWhite],
+          unSelectedBackgroundColors: [tm.isDark() ? tm.grey800! : creamyWhite],
           width: width * 0.065,
           height: newheight * 0.062,
           borderRadius: 15,
           selectedIndex: selectedLanguage.index,
           selectedTextStyle: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.w500),
-          unSelectedTextStyle: TextStyle(color: Colors.black54, fontSize: 16, fontWeight: FontWeight.w500),
+          unSelectedTextStyle:
+              TextStyle(color: tm.isDark() ? tm.white : Colors.black54, fontSize: 16, fontWeight: FontWeight.w500),
           labels: ["En", "Ar"],
           selectedLabelIndex: (index) {
             onLanguageChange(index);

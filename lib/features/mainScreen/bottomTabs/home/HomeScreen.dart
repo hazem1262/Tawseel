@@ -1,7 +1,9 @@
 // ignore_for_file: unnecessary_statements, implementation_imports
 
+import 'dart:io';
 import 'dart:ui';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:device_apps/device_apps.dart';
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/src/public_ext.dart';
@@ -198,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      baseColor: Colors.grey.shade200,
+      baseColor: tm.isDark() ? tm.grey800! : Colors.grey.shade200,
       highlightColor: ThemeManager.primary,
     );
   }
@@ -212,12 +214,13 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {},
               menuItems: [
                 FocusedMenuItem(
+                  backgroundColor: tm.isDark() ? tm.grey800 : tm.white,
                   title: Text(
                     LocaleKeys.my_address.tr(),
                     style: TextStyle(
                       fontSize: CaptionTextSize,
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
+                      color: tm.isDark() ? tm.white : Colors.black,
                     ),
                   ),
                   onPressed: () {
@@ -225,6 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 FocusedMenuItem(
+                  backgroundColor: tm.isDark() ? tm.grey800 : tm.white,
                   trailingIcon: Icon(
                     Icons.add_location_alt_rounded,
                     color: ThemeManager.primary,
@@ -234,7 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       fontSize: CaptionTextSize,
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
+                      color: tm.isDark() ? tm.white : Colors.black,
                     ),
                   ),
                   onPressed: () {
@@ -313,7 +317,7 @@ Widget adsArea(bool isLoading, List<AdsItem> ads) {
                   return adItem(
                     ad,
                     () {
-                      appContext.showToast("${ad.image} clicked");
+                      // appContext.showToast("${ad.image} clicked");
                     },
                   );
                 },
@@ -489,7 +493,7 @@ Widget categoriesShimmer() {
                       ),
                     )).toList()),
       ),
-      baseColor: Colors.grey.shade200,
+      baseColor: tm.isDark() ? tm.grey800! : Colors.grey.shade200,
       highlightColor: ThemeManager.primary,
     ),
   );
@@ -515,7 +519,7 @@ Widget adsShimmer() {
                       ),
                     )).toList()),
       ),
-      baseColor: Colors.grey.shade200,
+      baseColor: tm.isDark() ? tm.grey800! : Colors.grey.shade200,
       highlightColor: ThemeManager.primary,
     ),
   );
@@ -529,7 +533,11 @@ Widget categoryItem(BuildContext context, CategoryData category, Function onClic
     child: Container(
       margin: EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
-          color: (category.isSelected ?? false) ? ThemeManager.primary : Colors.white,
+          color: (category.isSelected ?? false)
+              ? ThemeManager.primary
+              : tm.isDark()
+                  ? tm.grey800
+                  : Colors.white,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
@@ -559,7 +567,11 @@ Widget categoryItem(BuildContext context, CategoryData category, Function onClic
             "${category.name}",
             style: Theme.of(context).textTheme.caption!.copyWith(
                   fontSize: CaptionTextSize,
-                  color: (category.isSelected ?? false) ? Colors.white : ProfileActionsColor_Light,
+                  color: (category.isSelected ?? false)
+                      ? Colors.white
+                      : tm.isDark()
+                          ? tm.white
+                          : ProfileActionsColor_Light,
                   fontWeight: FontWeight.w600,
                 ),
           ),
@@ -1068,12 +1080,29 @@ Future<dynamic> showMarketPlaceCompaniesBottomSheet(
 }
 
 Future<void> openApp(CompanyItem item) async {
-  await LaunchApp.openApp(
-    androidPackageName: item.android_app_link.getPackageName(),
-    iosUrlScheme: item.getIosUrlScheme(),
-    appStoreLink: item.ios_app_link,
-    openStore: true,
-  );
+  try {
+    if (Platform.isAndroid) {
+      if (await LaunchApp.isAppInstalled(androidPackageName: item.android_app_link.getPackageName())) {
+        await DeviceApps.openApp(item.android_app_link.getPackageName());
+      } else {
+        await LaunchApp.openApp(
+          androidPackageName: item.android_app_link.getPackageName(),
+          iosUrlScheme: item.getIosUrlScheme(),
+          appStoreLink: item.ios_app_link,
+          openStore: true,
+        );
+      }
+    } else if (Platform.isIOS) {
+      await LaunchApp.openApp(
+        androidPackageName: item.android_app_link.getPackageName(),
+        iosUrlScheme: item.getIosUrlScheme(),
+        appStoreLink: item.ios_app_link,
+        openStore: true,
+      );
+    }
+  } catch (e) {
+    appContext.showToast(LocaleKeys.camera.tr());
+  }
 }
 
 Widget bestCompanyWidget(BuildContext context, CompanyItem item, Function() onTap) {

@@ -19,10 +19,7 @@ SizedBox LoadingButton({VoidCallback? onPressed, bool isLoading = false, bool di
         onPressed: enablePressing ? onPressed : null,
         child: !isLoading
             ? Text(text, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold))
-            : SizedBox(
-                width: 16,
-                height: 16,
-                child: CircularProgressIndicator(color: tm.isDark() ? Colors.red : tm.lightTheme.primaryColor)),
+            : SizedBox(width: 16, height: 16, child: CircularProgressIndicator(color: tm.lightTheme.primaryColor)),
       ),
     ),
   );

@@ -162,7 +162,7 @@ class OffersScreen extends StatelessWidget {
             ),
           ).toList(),
         ),
-        baseColor: Colors.grey.shade200,
+        baseColor: tm.isDark() ? tm.grey800! : Colors.grey.shade200,
         highlightColor: ThemeManager.primary,
       ),
     );
