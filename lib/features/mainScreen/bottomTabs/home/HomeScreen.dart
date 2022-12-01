@@ -825,17 +825,13 @@ Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem ite
                           children: [
                             SizedBox(width: 8),
                             Container(
-                              width: screenWidth * 0.235,
+                              width: screenWidth * 0.225,
                               height: safeHeight * 0.032,
                               decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.grey.shade300,
-                                  width: 1.5,
-                                ),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(8),
                                 child: Container(
                                   child: CachedNetworkImage(
                                     fit: BoxFit.fitWidth,

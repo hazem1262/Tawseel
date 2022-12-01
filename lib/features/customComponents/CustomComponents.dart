@@ -23,7 +23,7 @@ class SearchButton extends StatelessWidget {
         ],
       ),
       child: Card(
-        color: Colors.white,
+        color: tm.isDark() ? tm.grey800 : tm.white,
         elevation: 0.1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -33,7 +33,7 @@ class SearchButton extends StatelessWidget {
           onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ImageIcon(AssetImage(Res.search_icon), color: Colors.grey),
+            child: ImageIcon(AssetImage(Res.search_icon), color: tm.isDark() ? tm.white : tm.grey800),
           ),
         ),
       ),
@@ -59,7 +59,7 @@ class AppBackButton extends StatelessWidget {
       child: RotatedBox(
         quarterTurns: isAr ? 2 : 0,
         child: Card(
-          color: Colors.white,
+          color: tm.isDark() ? tm.grey800 : tm.white,
           elevation: 0.1,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -69,10 +69,7 @@ class AppBackButton extends StatelessWidget {
             onTap: () => appContext.router.pop(),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.arrow_back_ios_new_outlined,
-                color: Colors.black87,
-              ),
+              child: Icon(Icons.arrow_back_ios_new_outlined, color: tm.isDark() ? tm.white : tm.grey800),
             ),
           ),
         ),
@@ -97,7 +94,7 @@ class LogoutButton extends StatelessWidget {
         ],
       ),
       child: Card(
-        color: Colors.white,
+        color: tm.isDark() ? tm.grey800 : tm.white,
         elevation: 0.1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -110,7 +107,7 @@ class LogoutButton extends StatelessWidget {
           },
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ImageIcon(AssetImage(Res.logout_icon), color: Colors.grey),
+            child: ImageIcon(AssetImage(Res.logout_icon), color: tm.isDark() ? tm.white : tm.grey800),
           ),
         ),
       ),

@@ -144,7 +144,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
                   width: 3,
-                  color: Colors.white,
+                  color: tm.isDark() ? Colors.black26 : Colors.white,
                   style: BorderStyle.solid,
                 ),
               ),
