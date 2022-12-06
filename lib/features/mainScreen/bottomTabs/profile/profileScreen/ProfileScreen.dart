@@ -226,14 +226,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             profileActionItem(
               text: LocaleKeys.dark_mode.tr(),
               icon: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode, size: 24),
-              onPressed: null,
-              actionWidget: GestureDetector(
-                child: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode),
-                onTap: () {
-                  tm.toggleMode();
-                  appContext.openOnly(MainScreenRoute());
-                },
-              ),
+              onPressed: () {
+                tm.toggleMode();
+                appContext.openOnly(MainScreenRoute());
+              },
+              actionWidget: Icon(liveTm.isDark() ? Icons.light_mode : Icons.dark_mode),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),
@@ -530,6 +527,7 @@ class profileActionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     theme = Theme.of(context);
     return GestureDetector(
+      behavior: HitTestBehavior.translucent,
       onTap: onPressed,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
