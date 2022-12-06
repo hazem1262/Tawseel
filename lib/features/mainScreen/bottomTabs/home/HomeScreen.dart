@@ -1165,13 +1165,16 @@ Widget bestCompanyWidget(BuildContext context, CompanyItem item, Function() onTa
                               borderRadius: BorderRadius.circular(8),
                             ),
                             width: screenWidth * 0.25,
-                            child: CachedNetworkImage(
-                              height: safeHeight * 0.03,
-                              width: double.infinity,
-                              imageUrl: item.image,
-                              fit: BoxFit.fitWidth,
-                              placeholder: (context, url) => Center(child: CircularProgressIndicator()),
-                              errorWidget: (context, url, error) => Icon(Icons.error),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: CachedNetworkImage(
+                                height: safeHeight * 0.03,
+                                width: double.infinity,
+                                imageUrl: item.image,
+                                fit: BoxFit.fitWidth,
+                                placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                                errorWidget: (context, url, error) => Icon(Icons.error),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -1261,17 +1264,20 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     width: screenWidth * 0.25,
-                    child: CachedNetworkImage(
-                      height: screenHeight * 0.03,
-                      width: double.infinity,
-                      imageUrl: item.image,
-                      fit: BoxFit.fitWidth,
-                      placeholder: (context, url) => Container(
-                        width: 20,
-                        height: 20,
-                        child: Center(child: CircularProgressIndicator()),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: CachedNetworkImage(
+                        height: screenHeight * 0.03,
+                        width: double.infinity,
+                        imageUrl: item.image,
+                        fit: BoxFit.fitWidth,
+                        placeholder: (context, url) => Container(
+                          width: 20,
+                          height: 20,
+                          child: Center(child: CircularProgressIndicator()),
+                        ),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
-                      errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
                   ),
                   SizedBox(
