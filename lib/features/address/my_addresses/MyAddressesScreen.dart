@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,12 +9,14 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:tawseel/features/address/my_addresses/bloc/AddressesRepository.dart';
 import 'package:tawseel/features/address/my_addresses/bloc/addresses_bloc.dart';
 import 'package:tawseel/features/customComponents/CustomComponents.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_bloc.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/generated/locale_keys.g.dart';
 import 'package:tawseel/models/address.dart';
 import 'package:tawseel/navigation/router.gr.dart';
 import 'package:tawseel/res.dart';
 import 'package:tawseel/theme/ThemeManager.dart';
+import 'package:tawseel/utils/AddressChangeManager.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 
@@ -21,7 +24,6 @@ class MyAddressesScreen extends StatelessWidget {
   MyAddressesScreen({Key? key}) : super(key: key);
 
   RefreshController _refreshController = RefreshController(initialRefresh: false);
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -233,21 +235,39 @@ class MyAddressesScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (showDelete)
-                        CupertinoContextMenu(
+                        GestureDetector(
+                          onTap: () {
+                            showCupertinoModalPopup<void>(
+                              barrierColor: Colors.black.withAlpha(0),
+                              context: context,
+                              builder: (BuildContext ctx) {
+                                return CupertinoActionSheet(
+                                  actions: [
+                                    CupertinoActionSheetAction(
+                                        onPressed: () {
+                                          context.read<MyAddressesBloc>().add(DeleteAddress(address));
+                                          Navigator.pop(context);
+                                        },
+                                        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                                          Text(LocaleKeys.delete.tr()),
+                                          Container(
+                                              width: 20,
+                                              height: 20,
+                                              child: Image.asset(
+                                                Res.delete_icon,
+                                                color: ThemeManager.primary,
+                                              ))
+                                        ])),
+                                  ],
+                                );
+                              },
+                            );
+                          },
                           child: Container(
                             width: width / 20,
                             height: width / 20,
                             child: Image.asset(Res.three_dots),
                           ),
-                          actions: [
-                            CupertinoContextMenuAction(
-                              child: const Text(LocaleKeys.delete).tr(),
-                              onPressed: () {
-                                context.read<MyAddressesBloc>().add(DeleteAddress(address));
-                                Navigator.pop(context);
-                              },
-                            ),
-                          ],
                         )
                       else
                         Container(
@@ -273,12 +293,14 @@ class MyAddressesScreen extends StatelessWidget {
     // return Text(address.address.toString());
   }
 
-  void addNewAddress(BuildContext context) {
-    appContext
-        .openIfExist(
-          LocationPickerDialogRoute(oppenedFromMyAddresses: true),
-        )
-        .then((value) => {context.read<MyAddressesBloc>().add(GetAddressesListEvent())});
+  Future<void> addNewAddress(BuildContext context) async {
+    var result = await appContext.router.push(
+      LocationPickerDialogRoute(oppenedFromMyAddresses: true),
+    ) as bool;
+    if (result) {
+      context.read<MyAddressesBloc>().add(GetAddressesListEvent());
+      AddressChangeManager.notify(tag: HomeBloc.blocTag);
+    }
   }
 }
 

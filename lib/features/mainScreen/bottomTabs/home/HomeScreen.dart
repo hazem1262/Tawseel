@@ -224,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   onPressed: () {
-                    appContext.openIfExist(MyAddressesScreenRoute());
+                    appContext.pushRoute(MyAddressesScreenRoute());
                   },
                 ),
                 FocusedMenuItem(

@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tawseel/utils/AddressChangeManager.dart';
 import 'package:tawseel/utils/FavouriteManager.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/AdsResponse.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/home/models/CategoriesResponse.dart';
@@ -48,7 +49,7 @@ class HomeBlocState with _$HomeBlocState {
   ]) = HomeBlocStateDefaultState;
 }
 
-class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> implements FavouriteObserver {
+class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> implements FavouriteObserver, AddressChangeObserver {
   static final blocTag = "HomeBloc";
   IAdsRepository adsRepo;
   IProfileRepository profileRepo;
@@ -62,6 +63,7 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> implements FavouriteOb
     this.filterRepo,
   ) : super(HomeBlocStateDefaultState()) {
     FavouriteManager.subscribe(this);
+    AddressChangeManager.subscribe(this);
     on<HomeBlocEvent>((event, emit) async {
       if (event is GetHomeProfile) {
         emit(state.copyWith(profileIsLoading: true, error: ""));
@@ -186,6 +188,18 @@ class HomeBloc extends Bloc<HomeBlocEvent, HomeBlocState> implements FavouriteOb
   @override
   Future<void> close() {
     FavouriteManager.unSubscribe(this);
+    AddressChangeManager.unSubscribe(this);
     return super.close();
   }
+
+  @override
+  void updateAddress() {
+    add(GetHomeProfile());
+    add(GetHomeAds());
+    add(GetHomeCategories());
+    add(GetHomeNearbyMarketPlaces());
+  }
+
+  @override
+  String? addressChangeTag = blocTag;
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:tawseel/features/mainScreen/bottomTabs/home/bloc/home_bloc.dart';
 import 'package:tawseel/features/mainScreen/bottomTabs/profile/editProfileScreen/bloc/ProfileRepository.dart';
 import 'package:tawseel/models/address.dart';
+import 'package:tawseel/utils/AddressChangeManager.dart';
 
 import 'AddressesRepository.dart';
 
@@ -58,6 +60,7 @@ class MyAddressesBloc extends Bloc<MyAddressesEvent, MyAddressesState> {
         emit(state.copyWith(isLoading: true));
         try {
           await addressRepo.makeAddressAsDefault(event.address);
+          AddressChangeManager.notify(tag: HomeBloc.blocTag);
           emit(state.copyWith(
             isLoading: false,
             refreshData: true,
@@ -73,6 +76,7 @@ class MyAddressesBloc extends Bloc<MyAddressesEvent, MyAddressesState> {
       if (event is DeleteAddress) {
         emit(state.copyWith(isLoading: true));
         try {
+          await addressRepo.deleteAddress(event.address.id.toString());
           emit(state.copyWith(
             isLoading: false,
             refreshData: true,

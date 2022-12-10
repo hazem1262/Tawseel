@@ -335,16 +335,19 @@ class _LocationPickerDialogState extends State<LocationPickerDialog> {
     hideSuggestions();
   }
 
-  void createAddress(BuildContext context) {
+  Future<void> createAddress(BuildContext context) async {
     if (pickedLocation == null) {
       appContext.showToast(LocaleKeys.pick_location_first.tr());
       return;
     }
 
-    appContext.router.popAndPush(AddressDetailsScreenRoute(
+    var result = await appContext.router.push(AddressDetailsScreenRoute(
       pickedLocation: pickedLocation!,
       oppenedFromMyAddresses: widget.oppenedFromMyAddresses,
-    ));
+    )) as bool;
+    if (result) {
+      appContext.router.pop(true);
+    }
   }
 
   var searchIsLoading = false;
