@@ -1159,7 +1159,7 @@ Widget bestCompanyWidget(BuildContext context, CompanyItem item, Function() onTa
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            padding: EdgeInsets.all(2),
+                            padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Colors.transparent,
                               borderRadius: BorderRadius.circular(8),
@@ -1168,7 +1168,7 @@ Widget bestCompanyWidget(BuildContext context, CompanyItem item, Function() onTa
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: CachedNetworkImage(
-                                height: safeHeight * 0.03,
+                                height: screenHeight * 0.03,
                                 width: double.infinity,
                                 imageUrl: item.image,
                                 fit: BoxFit.fitWidth,
