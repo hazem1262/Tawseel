@@ -33,6 +33,7 @@ import 'package:tawseel/theme/style.dart';
 import 'package:tawseel/utils/globals.dart';
 import 'package:tawseel/utils/ktx.dart';
 import 'package:auto_route/src/router/auto_router_x.dart';
+import 'package:tawseel/utils/utils.dart';
 import 'bloc/home_bloc.dart';
 import 'components/YourLocationPart.dart';
 import 'models/AdsResponse.dart';
@@ -802,7 +803,7 @@ Widget marketPlaceItem(MarketPlaceItem marketPlace, Function(MarketPlaceItem ite
                                 vertical: 4,
                               ),
                               child: Text(
-                                marketPlace.isFreeDelivery() ? LocaleKeys.free.tr() : "${marketPlace.delivery_cost}",
+                                isFreePrice(price: marketPlace.delivery_cost??"") ? LocaleKeys.free.tr() : "${marketPlace.delivery_cost}",
                                 style: TextStyle(
                                   fontSize: CaptionTextSize,
                                   fontWeight: FontWeight.w500,
@@ -1210,7 +1211,7 @@ Widget bestCompanyWidget(BuildContext context, CompanyItem item, Function() onTa
                                 color: ThemeManager.primary.withAlpha(30),
                               ),
                               child: Text(
-                                item.isFreeDelivery() ? LocaleKeys.free.tr() : "${item.delivery_cost}",
+                                isFreePrice(price: item.delivery_cost??"") ? LocaleKeys.free.tr() : "${item.delivery_cost}",
                                 style: Theme.of(context).textTheme.caption!.copyWith(
                                       fontSize: CaptionTextSize,
                                       color: tm.isDark() ? Colors.white : ThemeManager.primary,
@@ -1313,7 +1314,7 @@ Widget companyWidget(BuildContext context, CompanyItem item, Function() onTap) {
                         color: ThemeManager.primary.withAlpha(30),
                       ),
                       child: Text(
-                        item.isFreeDelivery() ? LocaleKeys.free.tr() : "${item.delivery_cost}",
+                        isFreePrice(price: item.delivery_cost??"") ? LocaleKeys.free.tr() : "${item.delivery_cost}",
                         style: Theme.of(context).textTheme.caption!.copyWith(
                               fontSize: CaptionTextSize,
                               color: tm.isDark() ? Colors.white : ThemeManager.primary,

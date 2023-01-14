@@ -24,3 +24,9 @@ void setUpCrashlytics() async{
     }).sendPort);
   }
 }
+
+bool isFreePrice({required String price}) {
+  return freePricesList.contains(price);
+}
+
+const List freePricesList = ["0 SAR", "٠ ريال", "0 ريال", "0.00 ريال", "0.00 SAR"];

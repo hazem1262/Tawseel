@@ -245,11 +245,6 @@ extension MarketPlaceDtx on MarketPlaceItem {
 
     return cats + (subCats.isNotEmpty ? ", " : "") + subCats;
   }
-
-  bool isFreeDelivery() =>
-      (this.delivery_cost?.contains("0 SAR") ?? false) ||
-      (this.delivery_cost?.contains("٠ ريال") ?? false) ||
-      (this.delivery_cost?.contains("0 ريال") ?? false);
 }
 
 final SCHEMES_MAP = {
@@ -282,9 +277,4 @@ extension CompaniesDtx on CompanyItem {
 // Wssel:com.w99l.customer.payments://
 
   String getIosUrlScheme() => SCHEMES_MAP["id" + this.ios_app_link.split("/id")[1].split("?")[0]] ??= this.ios_app_link;
-
-  bool isFreeDelivery() =>
-      (this.delivery_cost?.contains("0 SAR") ?? false) ||
-      (this.delivery_cost?.contains("٠ ريال") ?? false) ||
-      (this.delivery_cost?.contains("0 ريال") ?? false);
 }
